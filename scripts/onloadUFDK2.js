@@ -35,19 +35,19 @@ const chrSel = {
 	myusha: document.getElementById("character-myusha"),
 }
 
-const pageMusic = new Audio("../audio/music/UFDK2 - Character Select.ogg");
+const pageMusic = new Audio("audio/music/UFDK2 - Character Select.ogg");
 pageMusic.loop = true;
 pageMusic.volume = 0.2;
 pageMusic.play();
 
 const sfx = {
 	cursor: [
-		new Audio("../audio/sfx/ufdk2/cursor1.ogg"),
-		new Audio("../audio/sfx/ufdk2/cursor2.ogg"),
-		new Audio("../audio/sfx/ufdk2/cursor3.ogg"),
-		new Audio("../audio/sfx/ufdk2/cursor4.ogg"),
+		new Audio("audio/sfx/ufdk2/cursor1.ogg"),
+		new Audio("audio/sfx/ufdk2/cursor2.ogg"),
+		new Audio("audio/sfx/ufdk2/cursor3.ogg"),
+		new Audio("audio/sfx/ufdk2/cursor4.ogg"),
 	],
-	confirm: new Audio("../audio/sfx/ufdk2/confirm.ogg"),
+	confirm: new Audio("audio/sfx/ufdk2/confirm.ogg"),
 }
 sfx.cursor.volume = 0.2;
 sfx.confirm.volume = 1;
@@ -66,7 +66,7 @@ function hoverDisplay(charFileName) {
 	sfx.cursor[randNum].currentTime = 0;
 	sfx.cursor[randNum].play();
 	if (previewDisplayOn) {
-		chrPrevImg.src = "../img/portraits/ufdk2/" + charFileName + ".png";
+		chrPrevImg.src = "img/portraits/ufdk2/" + charFileName + ".png";
 	}
 }
 
@@ -444,7 +444,7 @@ function runDisplay(characterName) {
 	function writeCharInfo(detailInfo, ratings, likeOrDislike, charDescription, charFileName) {
 		updateOV(detailInfo, ratings, likeOrDislike, charDescription);
 		
-		chrPrevImg.src = "../img/portraits/ufdk2/" + charFileName + ".png";
+		chrPrevImg.src = "img/portraits/ufdk2/" + charFileName + ".png";
 	}
 	
 	switch (characterName) {

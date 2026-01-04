@@ -48,15 +48,15 @@ var previewDisplayOn = true;
 function clearDisplay() {
 	chrPrevImg.src = "";
 	chrPrevImg.style.display = "none";
-	chrSymbol.src = "../img/characterSelect/sg/Symbol_none.webp";
+	chrSymbol.src = "img/characterSelect/sg/Symbol_none.webp";
 }
 
-const pageMusic = new Audio("../audio/music/SG - select_loop.ogg");
+const pageMusic = new Audio("audio/music/SG - select_loop.ogg");
 pageMusic.loop = true;
 pageMusic.volume = 0.2;
 pageMusic.preload = "auto";
 
-const pageMusicIntro = new Audio("../audio/music/SG - select_intro.ogg");
+const pageMusicIntro = new Audio("audio/music/SG - select_intro.ogg");
 pageMusicIntro.volume = 0.2;
 pageMusicIntro.play();
 
@@ -65,9 +65,9 @@ pageMusicIntro.onended = function() {
 }
 
 const sfx = {
-	cursor: new Audio("../audio/sfx/sg/selectslide.p1.2.ogg"),
-	portrait: new Audio("../audio/sfx/sg/charportrait.fadein.whoosh.p1.ogg"),
-	confirm: new Audio("../audio/sfx/sg/selectconfirm.p1.3.ogg"),
+	cursor: new Audio("audio/sfx/sg/selectslide.p1.2.ogg"),
+	portrait: new Audio("audio/sfx/sg/charportrait.fadein.whoosh.p1.ogg"),
+	confirm: new Audio("audio/sfx/sg/selectconfirm.p1.3.ogg"),
 }
 sfx.cursor.volume = 0.2;
 sfx.portrait.volume = 0.2;
@@ -88,17 +88,17 @@ function playSelectAudio() {
 
 chrSel.marie.addEventListener("mouseover",
 	(event) => {
-		chrImg.marie.src = "../img/characterSelect/sg/Marie_icon_selected.webp";
+		chrImg.marie.src = "img/characterSelect/sg/Marie_icon_selected.webp";
 		playSelectAudio();
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/characterSelect/sg/Marie_portrait.webp";
+			chrPrevImg.src = "img/characterSelect/sg/Marie_portrait.webp";
 			chrPrevImg.style.display = "block";
 		}
 	}
 );
 chrSel.marie.addEventListener("mouseout",
 	(event) => {
-		chrImg.marie.src = "../img/characterSelect/sg/Marie_icon.webp";
+		chrImg.marie.src = "img/characterSelect/sg/Marie_icon.webp";
 		if (previewDisplayOn) {
 			clearDisplay();
 		}
@@ -107,17 +107,17 @@ chrSel.marie.addEventListener("mouseout",
 
 chrSel.squigly.addEventListener("mouseover",
 	(event) => {
-		chrImg.squigly.src = "../img/characterSelect/sg/Squigly_icon_selected.webp";
+		chrImg.squigly.src = "img/characterSelect/sg/Squigly_icon_selected.webp";
 		playSelectAudio();
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/characterSelect/sg/Squigly_portrait.webp";
+			chrPrevImg.src = "img/characterSelect/sg/Squigly_portrait.webp";
 			chrPrevImg.style.display = "block";
 		}
 	}
 );
 chrSel.squigly.addEventListener("mouseout",
 	(event) => {
-		chrImg.squigly.src = "../img/characterSelect/sg/Squigly_icon.webp";
+		chrImg.squigly.src = "img/characterSelect/sg/Squigly_icon.webp";
 		if (previewDisplayOn) {
 			clearDisplay();
 		}
@@ -126,17 +126,17 @@ chrSel.squigly.addEventListener("mouseout",
 
 chrSel.band.addEventListener("mouseover",
 	(event) => {
-		chrImg.band.src = "../img/characterSelect/sg/Big_Band_icon_selected.webp";
+		chrImg.band.src = "img/characterSelect/sg/Big_Band_icon_selected.webp";
 		playSelectAudio();
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/characterSelect/sg/Big_Band_portrait.webp";
+			chrPrevImg.src = "img/characterSelect/sg/Big_Band_portrait.webp";
 			chrPrevImg.style.display = "block";
 		}
 	}
 );
 chrSel.band.addEventListener("mouseout",
 	(event) => {
-		chrImg.band.src = "../img/characterSelect/sg/Big_Band_icon.webp";
+		chrImg.band.src = "img/characterSelect/sg/Big_Band_icon.webp";
 		if (previewDisplayOn) {
 			clearDisplay();
 		}
@@ -145,17 +145,17 @@ chrSel.band.addEventListener("mouseout",
 
 chrSel.eliza.addEventListener("mouseover",
 	(event) => {
-		chrImg.eliza.src = "../img/characterSelect/sg/Eliza_icon_selected.webp";
+		chrImg.eliza.src = "img/characterSelect/sg/Eliza_icon_selected.webp";
 		playSelectAudio();
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/characterSelect/sg/Eliza_portrait.webp";
+			chrPrevImg.src = "img/characterSelect/sg/Eliza_portrait.webp";
 			chrPrevImg.style.display = "block";
 		}
 	}
 );
 chrSel.eliza.addEventListener("mouseout",
 	(event) => {
-		chrImg.eliza.src = "../img/characterSelect/sg/Eliza_icon.webp";
+		chrImg.eliza.src = "img/characterSelect/sg/Eliza_icon.webp";
 		if (previewDisplayOn) {
 			clearDisplay();
 		}
@@ -164,17 +164,17 @@ chrSel.eliza.addEventListener("mouseout",
 
 chrSel.fortune.addEventListener("mouseover",
 	(event) => {
-		chrImg.fortune.src = "../img/characterSelect/sg/Ms._Fortune_icon_selected.webp";
+		chrImg.fortune.src = "img/characterSelect/sg/Ms._Fortune_icon_selected.webp";
 		playSelectAudio();
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/characterSelect/sg/Ms._Fortune_portrait.webp";
+			chrPrevImg.src = "img/characterSelect/sg/Ms._Fortune_portrait.webp";
 			chrPrevImg.style.display = "block";
 		}
 	}
 );
 chrSel.fortune.addEventListener("mouseout",
 	(event) => {
-		chrImg.fortune.src = "../img/characterSelect/sg/Ms._Fortune_icon.webp";
+		chrImg.fortune.src = "img/characterSelect/sg/Ms._Fortune_icon.webp";
 		if (previewDisplayOn) {
 			clearDisplay();
 		}
@@ -183,17 +183,17 @@ chrSel.fortune.addEventListener("mouseout",
 
 chrSel.peacock.addEventListener("mouseover",
 	(event) => {
-		chrImg.peacock.src = "../img/characterSelect/sg/Peacock_icon_selected.webp";
+		chrImg.peacock.src = "img/characterSelect/sg/Peacock_icon_selected.webp";
 		playSelectAudio();
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/characterSelect/sg/Peacock_portrait.webp";
+			chrPrevImg.src = "img/characterSelect/sg/Peacock_portrait.webp";
 			chrPrevImg.style.display = "block";
 		}
 	}
 );
 chrSel.peacock.addEventListener("mouseout",
 	(event) => {
-		chrImg.peacock.src = "../img/characterSelect/sg/Peacock_icon.webp";
+		chrImg.peacock.src = "img/characterSelect/sg/Peacock_icon.webp";
 		if (previewDisplayOn) {
 			clearDisplay();
 		}
@@ -202,17 +202,17 @@ chrSel.peacock.addEventListener("mouseout",
 
 chrSel.painwheel.addEventListener("mouseover",
 	(event) => {
-		chrImg.painwheel.src = "../img/characterSelect/sg/Painwheel_icon_selected.webp";
+		chrImg.painwheel.src = "img/characterSelect/sg/Painwheel_icon_selected.webp";
 		playSelectAudio();
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/characterSelect/sg/Painwheel_portrait.webp";
+			chrPrevImg.src = "img/characterSelect/sg/Painwheel_portrait.webp";
 			chrPrevImg.style.display = "block";
 		}
 	}
 );
 chrSel.painwheel.addEventListener("mouseout",
 	(event) => {
-		chrImg.painwheel.src = "../img/characterSelect/sg/Painwheel_icon.webp";
+		chrImg.painwheel.src = "img/characterSelect/sg/Painwheel_icon.webp";
 		if (previewDisplayOn) {
 			clearDisplay();
 		}
@@ -221,17 +221,17 @@ chrSel.painwheel.addEventListener("mouseout",
 
 chrSel.filia.addEventListener("mouseover",
 	(event) => {
-		chrImg.filia.src = "../img/characterSelect/sg/Filia_icon_selected.webp";
+		chrImg.filia.src = "img/characterSelect/sg/Filia_icon_selected.webp";
 		playSelectAudio();
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/characterSelect/sg/Filia_portrait.webp";
+			chrPrevImg.src = "img/characterSelect/sg/Filia_portrait.webp";
 			chrPrevImg.style.display = "block";
 		}
 	}
 );
 chrSel.filia.addEventListener("mouseout",
 	(event) => {
-		chrImg.filia.src = "../img/characterSelect/sg/Filia_icon.webp";
+		chrImg.filia.src = "img/characterSelect/sg/Filia_icon.webp";
 		if (previewDisplayOn) {
 			clearDisplay();
 		}
@@ -240,7 +240,7 @@ chrSel.filia.addEventListener("mouseout",
 
 chrSel.random.addEventListener("mouseover",
 	(event) => {
-		chrImg.random.src = "../img/characterSelect/sg/Random_icon_selected.webp";
+		chrImg.random.src = "img/characterSelect/sg/Random_icon_selected.webp";
 		sfx.cursor.pause();
 		sfx.cursor.currentTime = 0;
 		sfx.cursor.play();
@@ -248,23 +248,23 @@ chrSel.random.addEventListener("mouseover",
 );
 chrSel.random.addEventListener("mouseout",
 	(event) => {
-		chrImg.random.src = "../img/characterSelect/sg/Random_icon.webp";
+		chrImg.random.src = "img/characterSelect/sg/Random_icon.webp";
 	}
 );
 
 chrSel.cerebella.addEventListener("mouseover",
 	(event) => {
-		chrImg.cerebella.src = "../img/characterSelect/sg/Cerebella_icon_selected.webp";
+		chrImg.cerebella.src = "img/characterSelect/sg/Cerebella_icon_selected.webp";
 		playSelectAudio();
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/characterSelect/sg/Cerebella_portrait.webp";
+			chrPrevImg.src = "img/characterSelect/sg/Cerebella_portrait.webp";
 			chrPrevImg.style.display = "block";
 		}
 	}
 );
 chrSel.cerebella.addEventListener("mouseout",
 	(event) => {
-		chrImg.cerebella.src = "../img/characterSelect/sg/Cerebella_icon.webp";
+		chrImg.cerebella.src = "img/characterSelect/sg/Cerebella_icon.webp";
 		if (previewDisplayOn) {
 			clearDisplay();
 		}
@@ -273,17 +273,17 @@ chrSel.cerebella.addEventListener("mouseout",
 
 chrSel.valentine.addEventListener("mouseover",
 	(event) => {
-		chrImg.valentine.src = "../img/characterSelect/sg/Valentine_icon_selected.webp";
+		chrImg.valentine.src = "img/characterSelect/sg/Valentine_icon_selected.webp";
 		playSelectAudio();
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/characterSelect/sg/Valentine_portrait.webp";
+			chrPrevImg.src = "img/characterSelect/sg/Valentine_portrait.webp";
 			chrPrevImg.style.display = "block";
 		}
 	}
 );
 chrSel.valentine.addEventListener("mouseout",
 	(event) => {
-		chrImg.valentine.src = "../img/characterSelect/sg/Valentine_icon.webp";
+		chrImg.valentine.src = "img/characterSelect/sg/Valentine_icon.webp";
 		if (previewDisplayOn) {
 			clearDisplay();
 		}
@@ -292,17 +292,17 @@ chrSel.valentine.addEventListener("mouseout",
 
 chrSel.parasoul.addEventListener("mouseover",
 	(event) => {
-		chrImg.parasoul.src = "../img/characterSelect/sg/Parasoul_icon_selected.webp";
+		chrImg.parasoul.src = "img/characterSelect/sg/Parasoul_icon_selected.webp";
 		playSelectAudio();
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/characterSelect/sg/Parasoul_portrait.webp";
+			chrPrevImg.src = "img/characterSelect/sg/Parasoul_portrait.webp";
 			chrPrevImg.style.display = "block";
 		}
 	}
 );
 chrSel.parasoul.addEventListener("mouseout",
 	(event) => {
-		chrImg.parasoul.src = "../img/characterSelect/sg/Parasoul_icon.webp";
+		chrImg.parasoul.src = "img/characterSelect/sg/Parasoul_icon.webp";
 		if (previewDisplayOn) {
 			clearDisplay();
 		}
@@ -311,17 +311,17 @@ chrSel.parasoul.addEventListener("mouseout",
 
 chrSel.double.addEventListener("mouseover",
 	(event) => {
-		chrImg.double.src = "../img/characterSelect/sg/Double_icon_selected.webp";
+		chrImg.double.src = "img/characterSelect/sg/Double_icon_selected.webp";
 		playSelectAudio();
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/characterSelect/sg/Double_portrait.webp";
+			chrPrevImg.src = "img/characterSelect/sg/Double_portrait.webp";
 			chrPrevImg.style.display = "block";
 		}
 	}
 );
 chrSel.double.addEventListener("mouseout",
 	(event) => {
-		chrImg.double.src = "../img/characterSelect/sg/Double_icon.webp";
+		chrImg.double.src = "img/characterSelect/sg/Double_icon.webp";
 		if (previewDisplayOn) {
 			clearDisplay();
 		}
@@ -330,17 +330,17 @@ chrSel.double.addEventListener("mouseout",
 
 chrSel.fukua.addEventListener("mouseover",
 	(event) => {
-		chrImg.fukua.src = "../img/characterSelect/sg/Fukua_icon_selected.webp";
+		chrImg.fukua.src = "img/characterSelect/sg/Fukua_icon_selected.webp";
 		playSelectAudio();
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/characterSelect/sg/Fukua_portrait.webp";
+			chrPrevImg.src = "img/characterSelect/sg/Fukua_portrait.webp";
 			chrPrevImg.style.display = "block";
 		}
 	}
 );
 chrSel.fukua.addEventListener("mouseout",
 	(event) => {
-		chrImg.fukua.src = "../img/characterSelect/sg/Fukua_icon.webp";
+		chrImg.fukua.src = "img/characterSelect/sg/Fukua_icon.webp";
 		if (previewDisplayOn) {
 			clearDisplay();
 		}
@@ -349,17 +349,17 @@ chrSel.fukua.addEventListener("mouseout",
 
 chrSel.beowulf.addEventListener("mouseover",
 	(event) => {
-		chrImg.beowulf.src = "../img/characterSelect/sg/Beowulf_icon_selected.webp";
+		chrImg.beowulf.src = "img/characterSelect/sg/Beowulf_icon_selected.webp";
 		playSelectAudio();
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/characterSelect/sg/Beowulf_portrait.webp";
+			chrPrevImg.src = "img/characterSelect/sg/Beowulf_portrait.webp";
 			chrPrevImg.style.display = "block";
 		}
 	}
 );
 chrSel.beowulf.addEventListener("mouseout",
 	(event) => {
-		chrImg.beowulf.src = "../img/characterSelect/sg/Beowulf_icon.webp";
+		chrImg.beowulf.src = "img/characterSelect/sg/Beowulf_icon.webp";
 		if (previewDisplayOn) {
 			clearDisplay();
 		}
@@ -368,17 +368,17 @@ chrSel.beowulf.addEventListener("mouseout",
 
 chrSel.robo.addEventListener("mouseover",
 	(event) => {
-		chrImg.robo.src = "../img/characterSelect/sg/Robo-Fortune_icon_selected.webp";
+		chrImg.robo.src = "img/characterSelect/sg/Robo-Fortune_icon_selected.webp";
 		playSelectAudio();
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/characterSelect/sg/Robo-Fortune_portrait.webp";
+			chrPrevImg.src = "img/characterSelect/sg/Robo-Fortune_portrait.webp";
 			chrPrevImg.style.display = "block";
 		}
 	}
 );
 chrSel.robo.addEventListener("mouseout",
 	(event) => {
-		chrImg.robo.src = "../img/characterSelect/sg/Robo-Fortune_icon.webp";
+		chrImg.robo.src = "img/characterSelect/sg/Robo-Fortune_icon.webp";
 		if (previewDisplayOn) {
 			clearDisplay();
 		}
@@ -387,17 +387,17 @@ chrSel.robo.addEventListener("mouseout",
 
 chrSel.umbrella.addEventListener("mouseover",
 	(event) => {
-		chrImg.umbrella.src = "../img/characterSelect/sg/Umbrella_icon_selected.webp";
+		chrImg.umbrella.src = "img/characterSelect/sg/Umbrella_icon_selected.webp";
 		playSelectAudio();
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/characterSelect/sg/Umbrella_portrait.webp";
+			chrPrevImg.src = "img/characterSelect/sg/Umbrella_portrait.webp";
 			chrPrevImg.style.display = "block";
 		}
 	}
 );
 chrSel.umbrella.addEventListener("mouseout",
 	(event) => {
-		chrImg.umbrella.src = "../img/characterSelect/sg/Umbrella_icon.webp";
+		chrImg.umbrella.src = "img/characterSelect/sg/Umbrella_icon.webp";
 		if (previewDisplayOn) {
 			clearDisplay();
 		}
@@ -406,17 +406,17 @@ chrSel.umbrella.addEventListener("mouseout",
 
 chrSel.annie.addEventListener("mouseover",
 	(event) => {
-		chrImg.annie.src = "../img/characterSelect/sg/Annie_icon_selected.webp";
+		chrImg.annie.src = "img/characterSelect/sg/Annie_icon_selected.webp";
 		playSelectAudio();
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/characterSelect/sg/Annie_portrait.webp";
+			chrPrevImg.src = "img/characterSelect/sg/Annie_portrait.webp";
 			chrPrevImg.style.display = "block";
 		}
 	}
 );
 chrSel.annie.addEventListener("mouseout",
 	(event) => {
-		chrImg.annie.src = "../img/characterSelect/sg/Annie_icon.webp";
+		chrImg.annie.src = "img/characterSelect/sg/Annie_icon.webp";
 		if (previewDisplayOn) {
 			clearDisplay();
 		}
@@ -425,17 +425,17 @@ chrSel.annie.addEventListener("mouseout",
 
 chrSel.dahlia.addEventListener("mouseover",
 	(event) => {
-		chrImg.dahlia.src = "../img/characterSelect/sg/Black_Dahlia_icon_selected.webp";
+		chrImg.dahlia.src = "img/characterSelect/sg/Black_Dahlia_icon_selected.webp";
 		playSelectAudio();
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/characterSelect/sg/Black_Dahlia_portrait.webp";
+			chrPrevImg.src = "img/characterSelect/sg/Black_Dahlia_portrait.webp";
 			chrPrevImg.style.display = "block";
 		}
 	}
 );
 chrSel.dahlia.addEventListener("mouseout",
 	(event) => {
-		chrImg.dahlia.src = "../img/characterSelect/sg/Black_Dahlia_icon.webp";
+		chrImg.dahlia.src = "img/characterSelect/sg/Black_Dahlia_icon.webp";
 		if (previewDisplayOn) {
 			clearDisplay();
 		}
@@ -515,8 +515,8 @@ function runDisplay(characterName) {
 	function writeCharInfo(detailInfo, ratings, likeOrDislike, charDescription, charFileName) {
 		updateOV(detailInfo, ratings, likeOrDislike, charDescription);
 		
-		chrPrevImg.src = "../img/characterSelect/sg/" + charFileName + "_portrait.webp";
-		chrSymbol.src = "../img/characterSelect/sg/Symbol_" + charFileName + ".webp";
+		chrPrevImg.src = "img/characterSelect/sg/" + charFileName + "_portrait.webp";
+		chrSymbol.src = "img/characterSelect/sg/Symbol_" + charFileName + ".webp";
 	}
 	
 	switch (characterName) {
@@ -792,7 +792,7 @@ function runDisplay(characterName) {
 			break;
 	}
 	chrPrevImg.style.display = "block";
-	document.getElementsByClassName("description-area")[0].style.background = "url('../img/characterSelect/sg/Layout_window.webp')";
+	document.getElementsByClassName("description-area")[0].style.background = "url('img/characterSelect/sg/Layout_window.webp')";
 	document.getElementsByClassName("description-area")[0].style.backgroundSize = "100% 100%";
 }
 

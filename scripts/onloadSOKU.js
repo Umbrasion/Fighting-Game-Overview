@@ -24,14 +24,14 @@ const chrSel = {
 	tenshi: document.getElementById("character-tenshi"),
 }
 
-const pageMusic = new Audio("../audio/music/SOKU - Select Character.ogg");
+const pageMusic = new Audio("audio/music/SOKU - Select Character.ogg");
 pageMusic.loop = true;
 pageMusic.volume = 0.2;
 pageMusic.play();
 
 const sfx = {
-	cursor: new Audio("../audio/sfx/soku/039.wav"),
-	confirm: new Audio("../audio/sfx/soku/040.wav"),
+	cursor: new Audio("audio/sfx/soku/039.wav"),
+	confirm: new Audio("audio/sfx/soku/040.wav"),
 }
 sfx.cursor.volume = 0.3;
 sfx.confirm.volume = 0.3;
@@ -49,7 +49,7 @@ function hoverDisplay(charFileName, charTitle) {
 	sfx.cursor.currentTime = 0;
 	sfx.cursor.play();
 	if (previewDisplayOn) {
-		chrPrevImg.style.backgroundImage = "url('../img/characterSelect/soku/" + charFileName + "_cut_portrait.png')";
+		chrPrevImg.style.backgroundImage = "url('img/characterSelect/soku/" + charFileName + "_cut_portrait.png')";
 		chrTitle.innerHTML = charTitle;
 		chrName.innerHTML = charFileName.replace(/_/g, " ");
 		
@@ -215,7 +215,7 @@ function runDisplay(characterName) {
 	function writeCharInfo(detailInfo, ratings, likeOrDislike, charDescription, charFileName, charTitle) {
 		updateOV(detailInfo, ratings, likeOrDislike, charDescription);
 		
-		chrPrevImg.style.backgroundImage = "url('../img/characterSelect/soku/" + charFileName + "_cut_portrait.png')";
+		chrPrevImg.style.backgroundImage = "url('img/characterSelect/soku/" + charFileName + "_cut_portrait.png')";
 		chrTitle.innerHTML = charTitle;
 		chrName.innerHTML = charFileName.replace(/_/g, " ");
 	}

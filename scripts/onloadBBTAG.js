@@ -64,14 +64,14 @@ const charSelOthers = {
 	logo: document.getElementById("logo-other"),
 }
 
-/*const pageMusic = new Audio("../audio/music/BBTAG - .ogg");
+/*const pageMusic = new Audio("audio/music/BBTAG - .ogg");
 pageMusic.loop = true;
 pageMusic.volume = 0.2;
 pageMusic.play();*/
 
 const sfx = {
-	cursor: new Audio("../audio/sfx/bbcf/400_menu_select.wav"),
-	confirm: new Audio("../audio/sfx/bbcf/401_decision.wav"),
+	cursor: new Audio("audio/sfx/bbcf/400_menu_select.wav"),
+	confirm: new Audio("audio/sfx/bbcf/401_decision.wav"),
 }
 sfx.cursor.volume = 0.4;
 sfx.confirm.volume = 0.4;
@@ -96,7 +96,7 @@ function hoverDisplay(charFileName, seriesName, extraSeriesInfo = ["", "", "", f
 		void document.getElementById("info-portrait-temp").offsetWidth;
 		document.getElementById("info-portrait-temp").classList.add("tempportrait-onhover");
 		
-		chrPrevImg.src = "../img/portraits/bbtag/" + charFileName + ".png";
+		chrPrevImg.src = "img/portraits/bbtag/" + charFileName + ".png";
 		
 		if (charFileName == "Es") {
 			chrName.innerHTML = charFileName;
@@ -114,20 +114,20 @@ function hoverDisplay(charFileName, seriesName, extraSeriesInfo = ["", "", "", f
 		if (seriesName == "AH3" || seriesName == "SK" || seriesName == "AKBK") {
 			console.log(extraSeriesInfo[3]);
 			if (!extraSeriesInfo[3]) {
-				charSelOthers.bg.style.backgroundImage = "url('../img/characterSelect/bbtag/" + seriesName + "_border.webp')";
-				charSelOthers.bgL.style.backgroundImage = "url('../img/characterSelect/bbtag/" + seriesName + "_border.webp')";
-				charSelOthers.bgR.style.backgroundImage = "url('../img/characterSelect/bbtag/" + seriesName + "_border.webp')";
-				charSelOthers.bgR2.style.backgroundImage = "url('../img/characterSelect/bbtag/" + seriesName + "_border.webp')";
-				charSelOthers.logo.src = "../img/logos/bbtag/" + extraSeriesInfo[0] + "_logo_bbtag_select.webp";
+				charSelOthers.bg.style.backgroundImage = "url('img/characterSelect/bbtag/" + seriesName + "_border.webp')";
+				charSelOthers.bgL.style.backgroundImage = "url('img/characterSelect/bbtag/" + seriesName + "_border.webp')";
+				charSelOthers.bgR.style.backgroundImage = "url('img/characterSelect/bbtag/" + seriesName + "_border.webp')";
+				charSelOthers.bgR2.style.backgroundImage = "url('img/characterSelect/bbtag/" + seriesName + "_border.webp')";
+				charSelOthers.logo.src = "img/logos/bbtag/" + extraSeriesInfo[0] + "_logo_bbtag_select.webp";
 				charSelOthers.logo.style.width = extraSeriesInfo[1] + "px";
 				charSelOthers.logo.style.marginTop = extraSeriesInfo[2] + "px";
 			}
 		} else {
-			charSelOthers.bg.style.backgroundImage = "url('../img/characterSelect/bbtag/AH3_border.webp')";
-			charSelOthers.bgL.style.backgroundImage = "url('../img/characterSelect/bbtag/AH3_border.webp')";
-			charSelOthers.bgR.style.backgroundImage = "url('../img/characterSelect/bbtag/AH3_border.webp')";
-			charSelOthers.bgR2.style.backgroundImage = "url('../img/characterSelect/bbtag/AH3_border.webp')";
-			charSelOthers.logo.src = "../img/logos/bbtag/AH3LMSS_logo_bbtag_select.webp";
+			charSelOthers.bg.style.backgroundImage = "url('img/characterSelect/bbtag/AH3_border.webp')";
+			charSelOthers.bgL.style.backgroundImage = "url('img/characterSelect/bbtag/AH3_border.webp')";
+			charSelOthers.bgR.style.backgroundImage = "url('img/characterSelect/bbtag/AH3_border.webp')";
+			charSelOthers.bgR2.style.backgroundImage = "url('img/characterSelect/bbtag/AH3_border.webp')";
+			charSelOthers.logo.src = "img/logos/bbtag/AH3LMSS_logo_bbtag_select.webp";
 			charSelOthers.logo.style.width = "198px";
 			charSelOthers.logo.style.marginTop = "18px";
 		}
@@ -956,7 +956,7 @@ function runDisplay(characterName) {
 		
 		overviewItems.description.innerHTML = charDescription;
 		
-		chrPrevImg.src = "../img/portraits/bbtag/" + charFileName + ".png";
+		chrPrevImg.src = "img/portraits/bbtag/" + charFileName + ".png";
 		if (charFileName == "Es") {
 			chrName.innerHTML = charFileName;
 		} else if (charFileName == "Nu-13") {
@@ -967,7 +967,7 @@ function runDisplay(characterName) {
 			chrName.innerHTML = charFileName.toUpperCase().replace(/_/g, " ");
 		}
 		
-		document.getElementById("info-portrait-temp").src = "../img/portraits/bbtag/" + charFileName + ".png";
+		document.getElementById("info-portrait-temp").src = "img/portraits/bbtag/" + charFileName + ".png";
 		
 		var seriesColor;
 		switch (seriesName) {

@@ -97,12 +97,12 @@ const chrImg = {
 	kefla: document.getElementById("selectbox-kefla"),
 }
 
-const pageMusic = new Audio("../audio/music/DBFZ - Character Select loop.ogg");
+const pageMusic = new Audio("audio/music/DBFZ - Character Select loop.ogg");
 pageMusic.loop = true;
 pageMusic.volume = 0.2;
 pageMusic.preload = "auto";
 
-const pageMusicIntro = new Audio("../audio/music/DBFZ - Character Select intro.ogg");
+const pageMusicIntro = new Audio("audio/music/DBFZ - Character Select intro.ogg");
 pageMusicIntro.volume = 0.2;
 pageMusicIntro.play();
 
@@ -111,12 +111,12 @@ pageMusicIntro.onended = function() {
 }
 
 const sfx = {
-	cursor: new Audio("../audio/sfx/dbfz/ARC_MENU_SYS_Cursor_CharaSel.ogg"),
-	cursor2: new Audio("../audio/sfx/dbfz/ARC_MENU_SYS_CharaApp_1.ogg"),
-	confirm: new Audio("../audio/sfx/dbfz/ARC_MENU_SYS_Decide_1.ogg"),
-	random: new Audio("../audio/sfx/dbfz/ARC_MENU_SYS_Cursor_Random.ogg"),
-	announcer: new Audio("../audio/sfx/dbfz/announcer/Name_Goku_(Super_Saiyan).ogg"),
-	//banter: new Audio("../audio/sfx/dbfz/"),
+	cursor: new Audio("audio/sfx/dbfz/ARC_MENU_SYS_Cursor_CharaSel.ogg"),
+	cursor2: new Audio("audio/sfx/dbfz/ARC_MENU_SYS_CharaApp_1.ogg"),
+	confirm: new Audio("audio/sfx/dbfz/ARC_MENU_SYS_Decide_1.ogg"),
+	random: new Audio("audio/sfx/dbfz/ARC_MENU_SYS_Cursor_Random.ogg"),
+	announcer: new Audio("audio/sfx/dbfz/announcer/Name_Goku_(Super_Saiyan).ogg"),
+	//banter: new Audio("audio/sfx/dbfz/"),
 }
 sfx.cursor.volume = 0.12;
 sfx.cursor2.volume = 0.12;
@@ -149,7 +149,7 @@ function hoverDisplay(charFileName, iconImg) {
 	
 	iconImg.style.transform = "translate(0, -10%)";
 	if (previewDisplayOn) {
-		chrPrevImg.src = "../img/portraits/dbfz/" + charFileName + ".png";
+		chrPrevImg.src = "img/portraits/dbfz/" + charFileName + ".png";
 		chrName.innerHTML = charFileName.replace(/_/g, " ");
 		
 		chrPrevImg.classList.remove("portrait-onhover");
@@ -673,136 +673,136 @@ function randomDisplay() {
 	var displayCharacter = Math.floor(Math.random() * 44)
 	switch (displayCharacter) {
 		case 0:
-			chrPrevImg.src = "../img/portraits/dbfz/Master_Roshi.png";
+			chrPrevImg.src = "img/portraits/dbfz/Master_Roshi.png";
 			break;
 		case 1:
-			chrPrevImg.src = "../img/portraits/dbfz/Gogeta_(SSGSS).png";
+			chrPrevImg.src = "img/portraits/dbfz/Gogeta_(SSGSS).png";
 			break;
 		case 2:
-			chrPrevImg.src = "../img/portraits/dbfz/Goku.png";
+			chrPrevImg.src = "img/portraits/dbfz/Goku.png";
 			break;
 		case 3:
-			chrPrevImg.src = "../img/portraits/dbfz/Tien.png";
+			chrPrevImg.src = "img/portraits/dbfz/Tien.png";
 			break;
 		case 4:
-			chrPrevImg.src = "../img/portraits/dbfz/Yamcha.png";
+			chrPrevImg.src = "img/portraits/dbfz/Yamcha.png";
 			break;
 		case 5:
-			chrPrevImg.src = "../img/portraits/dbfz/Krillin.png";
+			chrPrevImg.src = "img/portraits/dbfz/Krillin.png";
 			break;
 		case 6:
-			chrPrevImg.src = "../img/portraits/dbfz/Goku_(Super_Saiyan).png";
+			chrPrevImg.src = "img/portraits/dbfz/Goku_(Super_Saiyan).png";
 			break;
 		case 7:
-			chrPrevImg.src = "../img/portraits/dbfz/Android_21_(Lab_Coat).png";
+			chrPrevImg.src = "img/portraits/dbfz/Android_21_(Lab_Coat).png";
 			break;
 		case 8:
-			chrPrevImg.src = "../img/portraits/dbfz/Frieza.png";
+			chrPrevImg.src = "img/portraits/dbfz/Frieza.png";
 			break;
 		case 9:
-			chrPrevImg.src = "../img/portraits/dbfz/Kid_Buu.png";
+			chrPrevImg.src = "img/portraits/dbfz/Kid_Buu.png";
 			break;
 		case 10:
-			chrPrevImg.src = "../img/portraits/dbfz/Captain_Ginyu.png";
+			chrPrevImg.src = "img/portraits/dbfz/Captain_Ginyu.png";
 			break;
 		case 11:
-			chrPrevImg.src = "../img/portraits/dbfz/Nappa.png";
+			chrPrevImg.src = "img/portraits/dbfz/Nappa.png";
 			break;
 		case 12:
-			chrPrevImg.src = "../img/portraits/dbfz/Vegeta.png";
+			chrPrevImg.src = "img/portraits/dbfz/Vegeta.png";
 			break;
 		case 13:
-			chrPrevImg.src = "../img/portraits/dbfz/Broly_(DBS).png";
+			chrPrevImg.src = "img/portraits/dbfz/Broly_(DBS).png";
 			break;
 		case 14:
-			chrPrevImg.src = "../img/portraits/dbfz/Super_Baby_2.png";
+			chrPrevImg.src = "img/portraits/dbfz/Super_Baby_2.png";
 			break;
 		case 15:
-			chrPrevImg.src = "../img/portraits/dbfz/Goku_(GT).png";
+			chrPrevImg.src = "img/portraits/dbfz/Goku_(GT).png";
 			break;
 		case 16:
-			chrPrevImg.src = "../img/portraits/dbfz/Android_17.png";
+			chrPrevImg.src = "img/portraits/dbfz/Android_17.png";
 			break;
 		case 17:
-			chrPrevImg.src = "../img/portraits/dbfz/Bardock.png";
+			chrPrevImg.src = "img/portraits/dbfz/Bardock.png";
 			break;
 		case 18:
-			chrPrevImg.src = "../img/portraits/dbfz/Goku_(SSGSS).png";
+			chrPrevImg.src = "img/portraits/dbfz/Goku_(SSGSS).png";
 			break;
 		case 19:
-			chrPrevImg.src = "../img/portraits/dbfz/Gohan_(Adult).png";
+			chrPrevImg.src = "img/portraits/dbfz/Gohan_(Adult).png";
 			break;
 		case 20:
-			chrPrevImg.src = "../img/portraits/dbfz/Trunks.png";
+			chrPrevImg.src = "img/portraits/dbfz/Trunks.png";
 			break;
 		case 21:
-			chrPrevImg.src = "../img/portraits/dbfz/Vegeta_(Super_Saiyan).png";
+			chrPrevImg.src = "img/portraits/dbfz/Vegeta_(Super_Saiyan).png";
 			break;
 		case 22:
-			chrPrevImg.src = "../img/portraits/dbfz/Cell.png";
+			chrPrevImg.src = "img/portraits/dbfz/Cell.png";
 			break;
 		case 23:
-			chrPrevImg.src = "../img/portraits/dbfz/Android_18.png";
+			chrPrevImg.src = "img/portraits/dbfz/Android_18.png";
 			break;
 		case 24:
-			chrPrevImg.src = "../img/portraits/dbfz/Android_16.png";
+			chrPrevImg.src = "img/portraits/dbfz/Android_16.png";
 			break;
 		case 25:
-			chrPrevImg.src = "../img/portraits/dbfz/Android_21.png";
+			chrPrevImg.src = "img/portraits/dbfz/Android_21.png";
 			break;
 		case 26:
-			chrPrevImg.src = "../img/portraits/dbfz/Broly.png";
+			chrPrevImg.src = "img/portraits/dbfz/Broly.png";
 			break;
 		case 27:
-			chrPrevImg.src = "../img/portraits/dbfz/Cooler.png";
+			chrPrevImg.src = "img/portraits/dbfz/Cooler.png";
 			break;
 		case 28:
-			chrPrevImg.src = "../img/portraits/dbfz/Janemba.png";
+			chrPrevImg.src = "img/portraits/dbfz/Janemba.png";
 			break;
 		case 29:
-			chrPrevImg.src = "../img/portraits/dbfz/Goku_(Ultra_Instinct).png";
+			chrPrevImg.src = "img/portraits/dbfz/Goku_(Ultra_Instinct).png";
 			break;
 		case 30:
-			chrPrevImg.src = "../img/portraits/dbfz/Videl.png";
+			chrPrevImg.src = "img/portraits/dbfz/Videl.png";
 			break;
 		case 31:
-			chrPrevImg.src = "../img/portraits/dbfz/Vegito_(SSGSS).png";
+			chrPrevImg.src = "img/portraits/dbfz/Vegito_(SSGSS).png";
 			break;
 		case 32:
-			chrPrevImg.src = "../img/portraits/dbfz/Vegeta_(SSGSS).png";
+			chrPrevImg.src = "img/portraits/dbfz/Vegeta_(SSGSS).png";
 			break;
 		case 33:
-			chrPrevImg.src = "../img/portraits/dbfz/Gotenks.png";
+			chrPrevImg.src = "img/portraits/dbfz/Gotenks.png";
 			break;
 		case 34:
-			chrPrevImg.src = "../img/portraits/dbfz/Piccolo.png";
+			chrPrevImg.src = "img/portraits/dbfz/Piccolo.png";
 			break;
 		case 35:
-			chrPrevImg.src = "../img/portraits/dbfz/Gohan_(Teen).png";
+			chrPrevImg.src = "img/portraits/dbfz/Gohan_(Teen).png";
 			break;
 		case 36:
-			chrPrevImg.src = "../img/portraits/dbfz/Gogeta_(SS4).png";
+			chrPrevImg.src = "img/portraits/dbfz/Gogeta_(SS4).png";
 			break;
 		case 37:
-			chrPrevImg.src = "../img/portraits/dbfz/Majin_Buu.png";
+			chrPrevImg.src = "img/portraits/dbfz/Majin_Buu.png";
 			break;
 		case 38:
-			chrPrevImg.src = "../img/portraits/dbfz/Beerus.png";
+			chrPrevImg.src = "img/portraits/dbfz/Beerus.png";
 			break;
 		case 39:
-			chrPrevImg.src = "../img/portraits/dbfz/Hit.png";
+			chrPrevImg.src = "img/portraits/dbfz/Hit.png";
 			break;
 		case 40:
-			chrPrevImg.src = "../img/portraits/dbfz/Goku_Black.png";
+			chrPrevImg.src = "img/portraits/dbfz/Goku_Black.png";
 			break;
 		case 41:
-			chrPrevImg.src = "../img/portraits/dbfz/Zamasu_(Fused).png";
+			chrPrevImg.src = "img/portraits/dbfz/Zamasu_(Fused).png";
 			break;
 		case 42:
-			chrPrevImg.src = "../img/portraits/dbfz/Jiren.png";
+			chrPrevImg.src = "img/portraits/dbfz/Jiren.png";
 			break;
 		case 43:
-			chrPrevImg.src = "../img/portraits/dbfz/Kefla.png";
+			chrPrevImg.src = "img/portraits/dbfz/Kefla.png";
 			break;
 	}
 	cycleRandom = setTimeout(randomDisplay, 80);
@@ -959,19 +959,19 @@ function runDisplay(characterName) {
 	
 	switch (characterName) {
 		case "Android_21_(Lab_Coat)":
-			sfx.announcer.src = "../audio/sfx/dbfz/announcer/Name_Android_21.ogg";
+			sfx.announcer.src = "audio/sfx/dbfz/announcer/Name_Android_21.ogg";
 			break;
 		case "Broly_(DBS)":
-			sfx.announcer.src = "../audio/sfx/dbfz/announcer/Name_Broly.ogg";
+			sfx.announcer.src = "audio/sfx/dbfz/announcer/Name_Broly.ogg";
 			break;
 		case "Goku_(GT)": case "Goku_(Ultra_Instinct)":
-			sfx.announcer.src = "../audio/sfx/dbfz/announcer/Name_Goku_(Super_Saiyan).ogg";
+			sfx.announcer.src = "audio/sfx/dbfz/announcer/Name_Goku_(Super_Saiyan).ogg";
 			break;
 		case "Gogeta_(SS4)":
-			sfx.announcer.src = "../audio/sfx/dbfz/announcer/Name_Gogeta_(SSGSS).ogg";
+			sfx.announcer.src = "audio/sfx/dbfz/announcer/Name_Gogeta_(SSGSS).ogg";
 			break;
 		default:
-			sfx.announcer.src = "../audio/sfx/dbfz/announcer/Name_" + characterName + ".ogg";
+			sfx.announcer.src = "audio/sfx/dbfz/announcer/Name_" + characterName + ".ogg";
 			break;
 	}
 	sfx.announcer.play();
@@ -981,7 +981,7 @@ function runDisplay(characterName) {
 	function writeCharInfo(detailInfo, ratings, likeOrDislike, charDescription, charFileName, charTitle) {
 		updateOV(detailInfo, ratings, likeOrDislike, charDescription);
 		
-		chrPrevImg.src = "../img/portraits/dbfz/" + charFileName + ".png";
+		chrPrevImg.src = "img/portraits/dbfz/" + charFileName + ".png";
 		chrName.innerHTML = charFileName.replace(/_/g, " ");
 		
 		chrPrevImg.classList.remove("portrait-onselect");

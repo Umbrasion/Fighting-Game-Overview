@@ -43,7 +43,7 @@ function clearDisplay() {
 
 function hoverDisplay(charFileName) {
 	if (previewDisplayOn) {
-		chrPrevImg.src = "../img/portraits/roa/" + charFileName + ".png";
+		chrPrevImg.src = "img/portraits/roa/" + charFileName + ".png";
 		chrName.innerHTML = charFileName.toUpperCase().replace(/_/g, " ");;
 	}
 }

@@ -16,12 +16,12 @@ const chrSel = {
 	botan: document.getElementById("character-botan"),
 }
 
-const pageMusic = new Audio("../audio/music/ISD - Who Wants a Showdown loop.ogg");
+const pageMusic = new Audio("audio/music/ISD - Who Wants a Showdown loop.ogg");
 pageMusic.loop = true;
 pageMusic.volume = 0.2;
 pageMusic.preload = "auto";
 
-const pageMusicIntro = new Audio("../audio/music/ISD - Who Wants a Showdown intro.ogg");
+const pageMusicIntro = new Audio("audio/music/ISD - Who Wants a Showdown intro.ogg");
 pageMusicIntro.volume = 0.2;
 
 pageMusic.addEventListener("canplay", function() {
@@ -32,9 +32,9 @@ pageMusicIntro.onended = function() {
 }
 
 const sfx = {
-	cursor1: new Audio("../audio/sfx/isd/cursor1.ogg"),
-	cursor2: new Audio("../audio/sfx/isd/cursor2.ogg"),
-	confirm: new Audio("../audio/sfx/isd/confirm.ogg"),
+	cursor1: new Audio("audio/sfx/isd/cursor1.ogg"),
+	cursor2: new Audio("audio/sfx/isd/cursor2.ogg"),
+	confirm: new Audio("audio/sfx/isd/confirm.ogg"),
 }
 sfx.cursor1.volume = 1;
 sfx.cursor2.volume = 1;
@@ -58,8 +58,8 @@ var previewDisplayOn = true;
 function hoverDisplay(charFileName) {
 	playCursor();
 	if (previewDisplayOn) {
-		chrPrevImg.src = "../img/portraits/isd/" + charFileName + "_small.png";
-		chrName.src = "../img/characterSelect/isd/logos/" + charFileName + "_logo.png";
+		chrPrevImg.src = "img/portraits/isd/" + charFileName + "_small.png";
+		chrName.src = "img/characterSelect/isd/logos/" + charFileName + "_logo.png";
 	}
 }
 
@@ -207,10 +207,10 @@ function runDisplay(characterName) {
 	function writeCharInfo(detailInfo, ratings, likeOrDislike, charDescription, charFileName) {
 		updateOV(detailInfo, ratings, likeOrDislike, charDescription);
 		
-		chrPrevImg.src = "../img/portraits/isd/" + charFileName + "_small.png";
-		chrName.src = "../img/characterSelect/isd/logos/" + charFileName + "_logo.png";
+		chrPrevImg.src = "img/portraits/isd/" + charFileName + "_small.png";
+		chrName.src = "img/characterSelect/isd/logos/" + charFileName + "_logo.png";
 
-		var announcer = new Audio("../audio/sfx/isd/announcer/" + charFileName + "_call.ogg");
+		var announcer = new Audio("audio/sfx/isd/announcer/" + charFileName + "_call.ogg");
 		announcer.volume = 0.75;
 		announcer.play();
 		announcer.onended = function() {
@@ -243,7 +243,7 @@ function runDisplay(characterName) {
 			if (!banter.paused) {
 				banter.pause();
 			}
-			banter = new Audio("../audio/sfx/isd/banter/" + charFileName + "_" + banterNum + ".ogg");
+			banter = new Audio("audio/sfx/isd/banter/" + charFileName + "_" + banterNum + ".ogg");
 			banter.volume = 0.75;
 			banter.currentTime = 0;
 			banter.play();

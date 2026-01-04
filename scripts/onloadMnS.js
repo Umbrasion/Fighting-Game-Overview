@@ -24,14 +24,14 @@ const chrSel = {
 }*/
 
 // THE PAGE MUSIC IS NOT A PERFECT LOOP. DON'T FORGET TO FIX THAT EVENTUALLY
-const pageMusic = new Audio("../audio/music/MnS - music_mainthema.ogg");
+const pageMusic = new Audio("audio/music/MnS - music_mainthema.ogg");
 pageMusic.loop = true;
 pageMusic.volume = 0.2;
 pageMusic.play();
 
 /*const sfx = {
-	cursor: new Audio("../audio/sfx/mns/"),
-	confirm: new Audio("../audio/sfx/mns/"),
+	cursor: new Audio("audio/sfx/mns/"),
+	confirm: new Audio("audio/sfx/mns/"),
 }
 sfx.cursor.volume = 0.1;
 sfx.confirm.volume = 0.1;*/
@@ -52,7 +52,7 @@ function hoverDisplay(charFileName) {
 		if (charFileName === "Random") {
 			chrPrevImg.src = "";
 		} else {
-			chrPrevImg.src = "../img/portraits/mns/" + charFileName + ".webp";
+			chrPrevImg.src = "img/portraits/mns/" + charFileName + ".webp";
 		}
 		chrName.innerHTML = charFileName.replace(/_/g, " ");
 	}

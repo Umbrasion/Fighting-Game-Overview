@@ -137,14 +137,14 @@ const chrSel = [
 	document.getElementById("character-random"),
 ]
 
-/*const pageMusic = new Audio("../audio/music/SOKU - Select Character.ogg");
+/*const pageMusic = new Audio("audio/music/SOKU - Select Character.ogg");
 pageMusic.loop = true;
 pageMusic.volume = 0.2;
 pageMusic.play();
 
 const sfx = {
-	cursor: new Audio("../audio/sfx/soku/039.wav"),
-	confirm: new Audio("../audio/sfx/soku/040.wav"),
+	cursor: new Audio("audio/sfx/soku/039.wav"),
+	confirm: new Audio("audio/sfx/soku/040.wav"),
 }
 sfx.cursor.volume = 0.3;
 sfx.confirm.volume = 0.3;*/
@@ -159,7 +159,7 @@ function hoverDisplay(charFileName, charIcon) {
 	document.getElementById("positioner-" + charIcon).classList.add("icon-onhover");
 	if (previewDisplayOn) {
 		chrName.innerHTML = charFileName.replace(/_/g, " ");
-		chrPrevImg.src = "../img/portraits/rex/" + charFileName + ".png";
+		chrPrevImg.src = "img/portraits/rex/" + charFileName + ".png";
 	}
 }
 
@@ -204,7 +204,7 @@ function runDisplay(characterName, ele, eleOverride = false) {
 		updateOV(detailInfo, ratings, likeOrDislike, charDescription);
 		
 		chrPrevImg.style.opacity = 1;
-		chrPrevImg.src = "../img/portraits/rex/" + charFileName + ".png";
+		chrPrevImg.src = "img/portraits/rex/" + charFileName + ".png";
 		chrName.innerHTML = charFileName.replace(/_/g, " ");
 	}
 

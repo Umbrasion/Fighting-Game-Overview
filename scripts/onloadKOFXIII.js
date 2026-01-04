@@ -61,7 +61,7 @@ var previewDisplayOn = true;
 chrSel.kyo.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Kyo_Kusanagi.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Kyo_Kusanagi.png";
 			chrName.innerHTML = "KYO KUSANAGI";
 		}
 	}
@@ -77,7 +77,7 @@ chrSel.kyo.addEventListener("mouseout",
 chrSel.benimaru.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Benimaru_Nikaido.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Benimaru_Nikaido.png";
 			chrName.innerHTML = "BENIMARU NIKAIDO";
 		}
 	}
@@ -93,7 +93,7 @@ chrSel.benimaru.addEventListener("mouseout",
 chrSel.daimon.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Goro_Daimon.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Goro_Daimon.png";
 			chrName.innerHTML = "GORO DAIMON";
 		}
 	}
@@ -109,7 +109,7 @@ chrSel.daimon.addEventListener("mouseout",
 chrSel.terry.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Terry_Bogard.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Terry_Bogard.png";
 			chrName.innerHTML = "TERRY BOGARD";
 		}
 	}
@@ -125,7 +125,7 @@ chrSel.terry.addEventListener("mouseout",
 chrSel.andy.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Andy_Bogard.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Andy_Bogard.png";
 			chrName.innerHTML = "ANDY BOGARD";
 		}
 	}
@@ -141,7 +141,7 @@ chrSel.andy.addEventListener("mouseout",
 chrSel.joe.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Joe_Higashi.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Joe_Higashi.png";
 			chrName.innerHTML = "JOE HIGASHI";
 		}
 	}
@@ -172,7 +172,7 @@ chrSel.random.addEventListener("mouseout",
 chrSel.billy.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Billy_Kane.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Billy_Kane.png";
 			chrName.innerHTML = "BILLY KANE";
 		}
 	}
@@ -188,7 +188,7 @@ chrSel.billy.addEventListener("mouseout",
 chrSel.ash.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Ash_Crimson.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Ash_Crimson.png";
 			chrName.innerHTML = "ASH CRIMSON";
 		}
 	}
@@ -204,7 +204,7 @@ chrSel.ash.addEventListener("mouseout",
 chrSel.saiki.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Saiki.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Saiki.png";
 			chrName.innerHTML = "SAIKI";
 		}
 	}
@@ -220,7 +220,7 @@ chrSel.saiki.addEventListener("mouseout",
 chrSel.ryo.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Ryo_Sakazaki.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Ryo_Sakazaki.png";
 			chrName.innerHTML = "RYO SAKAZAKI";
 		}
 	}
@@ -236,7 +236,7 @@ chrSel.ryo.addEventListener("mouseout",
 chrSel.robert.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Robert_Garcia.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Robert_Garcia.png";
 			chrName.innerHTML = "ROBERT GARCIA";
 		}
 	}
@@ -252,7 +252,7 @@ chrSel.robert.addEventListener("mouseout",
 chrSel.takuma.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Takuma_Sakazaki.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Takuma_Sakazaki.png";
 			chrName.innerHTML = "TAKUMA SAKAZAKI";
 		}
 	}
@@ -268,7 +268,7 @@ chrSel.takuma.addEventListener("mouseout",
 chrSel.iori.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Iori_Yagami.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Iori_Yagami.png";
 			chrName.innerHTML = "IROI YAGAMI";
 		}
 	}
@@ -284,7 +284,7 @@ chrSel.iori.addEventListener("mouseout",
 chrSel.mature.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Mature.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Mature.png";
 			chrName.innerHTML = "MATURE";
 		}
 	}
@@ -300,7 +300,7 @@ chrSel.mature.addEventListener("mouseout",
 chrSel.vice.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Vice.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Vice.png";
 			chrName.innerHTML = "VICE";
 		}
 	}
@@ -316,7 +316,7 @@ chrSel.vice.addEventListener("mouseout",
 chrSel.elisabeth.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Elisabeth_Branctorche.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Elisabeth_Branctorche.png";
 			chrName.innerHTML = "ELISABETH BRANCTORCHE";
 		}
 	}
@@ -332,7 +332,7 @@ chrSel.elisabeth.addEventListener("mouseout",
 chrSel.duo.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Duo_Lon.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Duo_Lon.png";
 			chrName.innerHTML = "DUO LON";
 		}
 	}
@@ -348,7 +348,7 @@ chrSel.duo.addEventListener("mouseout",
 chrSel.shen.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Shen_Woo.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Shen_Woo.png";
 			chrName.innerHTML = "SHEN WOO";
 		}
 	}
@@ -364,7 +364,7 @@ chrSel.shen.addEventListener("mouseout",
 chrSel.kim.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Kim_Kaphwan.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Kim_Kaphwan.png";
 			chrName.innerHTML = "KIM KAPHWAN";
 		}
 	}
@@ -380,7 +380,7 @@ chrSel.kim.addEventListener("mouseout",
 chrSel.hwa.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Hwa_Jai.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Hwa_Jai.png";
 			chrName.innerHTML = "HWA JAI";
 		}
 	}
@@ -396,7 +396,7 @@ chrSel.hwa.addEventListener("mouseout",
 chrSel.raiden.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Raiden.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Raiden.png";
 			chrName.innerHTML = "RAIDEN";
 		}
 	}
@@ -412,7 +412,7 @@ chrSel.raiden.addEventListener("mouseout",
 chrSel.mai.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Mai_Shiranui.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Mai_Shiranui.png";
 			chrName.innerHTML = "MAI SHIRANUI";
 		}
 	}
@@ -428,7 +428,7 @@ chrSel.mai.addEventListener("mouseout",
 chrSel.king.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/King.png";
+			chrPrevImg.src = "img/portraits/kofxiii/King.png";
 			chrName.innerHTML = "KING";
 		}
 	}
@@ -444,7 +444,7 @@ chrSel.king.addEventListener("mouseout",
 chrSel.yuri.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Yuri_Sakazaki.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Yuri_Sakazaki.png";
 			chrName.innerHTML = "YURI SAKAZAKI";
 		}
 	}
@@ -460,7 +460,7 @@ chrSel.yuri.addEventListener("mouseout",
 chrSel.k.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/K'.png";
+			chrPrevImg.src = "img/portraits/kofxiii/K'.png";
 			chrName.innerHTML = "K'";
 		}
 	}
@@ -476,7 +476,7 @@ chrSel.k.addEventListener("mouseout",
 chrSel.kula.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Kula_Diamond.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Kula_Diamond.png";
 			chrName.innerHTML = "KULA DIAMOND";
 		}
 	}
@@ -492,7 +492,7 @@ chrSel.kula.addEventListener("mouseout",
 chrSel.maxima.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Maxima.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Maxima.png";
 			chrName.innerHTML = "MAXIMA";
 		}
 	}
@@ -508,7 +508,7 @@ chrSel.maxima.addEventListener("mouseout",
 chrSel.athena.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Athena_Asamiya.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Athena_Asamiya.png";
 			chrName.innerHTML = "ATHENA ASAMIYA";
 		}
 	}
@@ -524,7 +524,7 @@ chrSel.athena.addEventListener("mouseout",
 chrSel.sie.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Sie_Kensou.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Sie_Kensou.png";
 			chrName.innerHTML = "SIE KENSOU";
 		}
 	}
@@ -540,7 +540,7 @@ chrSel.sie.addEventListener("mouseout",
 chrSel.chin.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Chin_Gentsai.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Chin_Gentsai.png";
 			chrName.innerHTML = "CHIN GENTSAI";
 		}
 	}
@@ -556,7 +556,7 @@ chrSel.chin.addEventListener("mouseout",
 chrSel.ralf.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Ralf_Jones.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Ralf_Jones.png";
 			chrName.innerHTML = "RALF JONES";
 		}
 	}
@@ -572,7 +572,7 @@ chrSel.ralf.addEventListener("mouseout",
 chrSel.clark.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Clark_Still.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Clark_Still.png";
 			chrName.innerHTML = "CLARK STILL";
 		}
 	}
@@ -588,7 +588,7 @@ chrSel.clark.addEventListener("mouseout",
 chrSel.leona.addEventListener("mouseover",
 	(event) => {
 		if (previewDisplayOn) {
-			chrPrevImg.src = "../img/portraits/kofxiii/Leona_Heidern.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Leona_Heidern.png";
 			chrName.innerHTML = "LEONA HEIDERN";
 		}
 	}
@@ -634,7 +634,7 @@ function runDisplay(characterName) {
 					<p><b>Kyo Kusanagi</b> is</p>
 				</div>
 			`
-			chrPrevImg.src = "../img/portraits/kofxiii/Kyo_Kusanagi.png";
+			chrPrevImg.src = "img/portraits/kofxiii/Kyo_Kusanagi.png";
 			chrName.innerHTML = "KYO KUSANAGI";
 			break;
 	}

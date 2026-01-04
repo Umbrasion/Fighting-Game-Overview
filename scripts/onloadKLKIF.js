@@ -14,12 +14,12 @@ const chrSel = {
 	mako: document.getElementById("character-mako"),
 }
 
-const pageMusic = new Audio("../audio/music/KLKIF - Main Menu Theme loop.ogg");
+const pageMusic = new Audio("audio/music/KLKIF - Main Menu Theme loop.ogg");
 pageMusic.loop = true;
 pageMusic.volume = 0.2;
 pageMusic.preload = "auto";
 
-const pageMusicIntro = new Audio("../audio/music/KLKIF - Main Menu Theme intro.ogg");
+const pageMusicIntro = new Audio("audio/music/KLKIF - Main Menu Theme intro.ogg");
 pageMusicIntro.volume = 0.2;
 
 pageMusic.addEventListener("canplay", function() {
@@ -30,8 +30,8 @@ pageMusicIntro.onended = function() {
 }
 
 const sfx = {
-	cursor: new Audio("../audio/sfx/klkif/cursor.ogg"),
-	confirm: new Audio("../audio/sfx/klkif/confirm.ogg"),
+	cursor: new Audio("audio/sfx/klkif/cursor.ogg"),
+	confirm: new Audio("audio/sfx/klkif/confirm.ogg"),
 }
 sfx.cursor.volume = 0.4;
 sfx.confirm.volume = 0.4;
@@ -52,7 +52,7 @@ function hoverDisplay(charFileName) {
 	sfx.cursor.currentTime = 0;
 	sfx.cursor.play();
 	if (previewDisplayOn) {
-		chrPrevImg.src = "../img/portraits/klkif/" + charFileName + ".png";
+		chrPrevImg.src = "img/portraits/klkif/" + charFileName + ".png";
 		chrName.innerHTML = charFileName.replace(/_/g, " ").toUpperCase();
 	}
 }
@@ -229,7 +229,7 @@ function runDisplay(characterName, overrideDisableActions = false) {
 		sfx.confirm.currentTime = 0;
 		sfx.confirm.play();
 		sfx.confirm.onended = function() {
-			var characterBanter = new Audio("../audio/sfx/klkif/banter/" + characterName + "_select.ogg");
+			var characterBanter = new Audio("audio/sfx/klkif/banter/" + characterName + "_select.ogg");
 			characterBanter.volume = 0.35;
 			characterBanter.play();
 		};
@@ -239,7 +239,7 @@ function runDisplay(characterName, overrideDisableActions = false) {
 		function writeCharInfo(detailInfo, ratings, likeOrDislike, charDescription, charFileName) {
 			updateOV(detailInfo, ratings, likeOrDislike, charDescription);
 			
-			chrPrevImg.src = "../img/portraits/klkif/" + charFileName + ".png";
+			chrPrevImg.src = "img/portraits/klkif/" + charFileName + ".png";
 			chrName.innerHTML = charFileName.replace(/_/g, " ").toUpperCase();
 		}
 		

@@ -4,96 +4,14 @@
 		<title>Dragon Ball FighterZ | Fighting Game Overview</title>
 		<link rel="stylesheet" href="../styles/main.css">
 		<link rel="stylesheet" href="../styles/infoColors.css">
+		<link rel="stylesheet" href="../styles/games/DBFZ.css">
 		<script src="../scripts/common.js"></script>
 		<script src="../scripts/cssResize.js" defer></script>
 		<script src="../scripts/onloadDBFZ.js" defer></script>
 		<script src="../scripts/jquery-3.7.1.min.js"></script>
-		<style>
-			body {
-				height: 100vh;
-				font-family: "Proba Pro";
-			}
-			
-			#characterselect {
-				height: calc(100vh - 32px);
-				padding: 16px;
-				display: block;
-			}
-			
-			#info-name {
-				text-align: left;
-				font-family: "DBZ 0";
-				font-size: 2.5em;
-				transform: rotate(75deg) translate(57%, -340%);
-				filter: drop-shadow(2px 2px black);
-			}
-
-			.selectbox-container, .selectbox-fullroster {
-				max-width: 100%;
-			}
-
-			.selectbox-container {
-				position: absolute;
-				bottom: 40px;
-				left: 0;
-				right: 0;
-				margin: auto;
-			}
-
-			.selectbox-positioner {
-				pointer-events: none;
-				position: relative;
-				width: 0px;
-				height: 0px;
-			}
-
-			.selectbox-character img {
-				transform-origin: center;
-			}
-
-			.portrait-area, .description-area {
-				padding: 0px 60px;
-			}
-			
-			.portrait-onhover {
-				animation-name: portrait-onhover;
-				animation-duration: 0.08s;
-				animation-iteration-count: 1;
-				animation-timing-function: linear;
-			}
-			
-			@keyframes portrait-onhover {
-				from {
-					transform: translate(0,-20px);
-					opacity: 0;
-				}
-				
-				to {
-					transform: translate(0,0);
-					opacity: 1;
-				}
-			}
-			
-			.portrait-onselect {
-				animation-name: portrait-onselect;
-				animation-duration: 0.3s;
-				animation-iteration-count: 1;
-				animation-timing-function: cubic-bezier(.55,.06,.68,.19);
-			}
-			
-			@keyframes portrait-onselect {
-				from {
-					filter: saturate(2) brightness(2) drop-shadow(0px 0px 2px #FE5D00) drop-shadow(0px 0px 2px #FE5D00) drop-shadow(0px 0px 2px #FE5D00);
-				}
-				
-				to {
-					
-				}
-			}
-		</style>
 	</head>
 	<body>
-		<img class="game-logo" src="../img/logos/DBFZ_logo.png">
+		<img class="game-logo" src="img/logos/DBFZ_logo.png">
 		<div id="characterselect">
 			<div class="preview-area">
 				<div class="portrait-area">
@@ -107,230 +25,230 @@
 				<div class="selectbox-container">
 					<div id="positioner-random" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Random_icon.webp" id="selectbox-random">
+							<img src="img/characterSelect/dbfz/Random_icon.webp" id="selectbox-random">
 						</div>
 					</div>
 					<div id="positioner-roshi" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Master_Roshi_icon.webp" id="selectbox-roshi">
+							<img src="img/characterSelect/dbfz/Master_Roshi_icon.webp" id="selectbox-roshi">
 						</div>
 					</div>
 					<div id="positioner-gogeta-ssgss" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Gogeta_(SSGSS)_icon.webp" id="selectbox-gogeta-ssgss">
+							<img src="img/characterSelect/dbfz/Gogeta_(SSGSS)_icon.webp" id="selectbox-gogeta-ssgss">
 						</div>
 					</div>
 					<div id="positioner-goku" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Goku_icon.webp" id="selectbox-goku">
+							<img src="img/characterSelect/dbfz/Goku_icon.webp" id="selectbox-goku">
 						</div>
 					</div>
 					<div id="positioner-tien" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Tien_icon.webp" id="selectbox-tien">
+							<img src="img/characterSelect/dbfz/Tien_icon.webp" id="selectbox-tien">
 						</div>
 					</div>
 					<div id="positioner-yamcha" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Yamcha_icon.webp" id="selectbox-yamcha">
+							<img src="img/characterSelect/dbfz/Yamcha_icon.webp" id="selectbox-yamcha">
 						</div>
 					</div>
 					<div id="positioner-krillin" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Krillin_icon.webp" id="selectbox-krillin">
+							<img src="img/characterSelect/dbfz/Krillin_icon.webp" id="selectbox-krillin">
 						</div>
 					</div>
 					<div id="positioner-goku-ss" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Goku_(Super_Saiyan)_icon.webp" id="selectbox-goku-ss">
+							<img src="img/characterSelect/dbfz/Goku_(Super_Saiyan)_icon.webp" id="selectbox-goku-ss">
 						</div>
 					</div>
 					<div id="positioner-labcoat" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Android_21_(Lab_Coat)_icon.webp" id="selectbox-labcoat">
+							<img src="img/characterSelect/dbfz/Android_21_(Lab_Coat)_icon.webp" id="selectbox-labcoat">
 						</div>
 					</div>
 					<div id="positioner-frieza" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Frieza_icon.webp" id="selectbox-frieza">
+							<img src="img/characterSelect/dbfz/Frieza_icon.webp" id="selectbox-frieza">
 						</div>
 					</div>
 					<div id="positioner-kidbuu" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Kid_Buu_icon.webp" id="selectbox-kidbuu">
+							<img src="img/characterSelect/dbfz/Kid_Buu_icon.webp" id="selectbox-kidbuu">
 						</div>
 					</div>
 					<div id="positioner-ginyu" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Captain_Ginyu_icon.webp" id="selectbox-ginyu">
+							<img src="img/characterSelect/dbfz/Captain_Ginyu_icon.webp" id="selectbox-ginyu">
 						</div>
 					</div>
 					<div id="positioner-nappa" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Nappa_icon.webp" id="selectbox-nappa">
+							<img src="img/characterSelect/dbfz/Nappa_icon.webp" id="selectbox-nappa">
 						</div>
 					</div>
 					<div id="positioner-vegeta" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Vegeta_icon.webp" id="selectbox-vegeta">
+							<img src="img/characterSelect/dbfz/Vegeta_icon.webp" id="selectbox-vegeta">
 						</div>
 					</div>
 					<div id="positioner-broly-dbs" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Broly_(DBS)_icon.webp" id="selectbox-broly-dbs">
+							<img src="img/characterSelect/dbfz/Broly_(DBS)_icon.webp" id="selectbox-broly-dbs">
 						</div>
 					</div>
 					<div id="positioner-superbaby2" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Super_Baby_2_icon.webp" id="selectbox-superbaby2">
+							<img src="img/characterSelect/dbfz/Super_Baby_2_icon.webp" id="selectbox-superbaby2">
 						</div>
 					</div>
 					<div id="positioner-goku-gt" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Goku_(GT)_icon.webp" id="selectbox-goku-gt">
+							<img src="img/characterSelect/dbfz/Goku_(GT)_icon.webp" id="selectbox-goku-gt">
 						</div>
 					</div>
 					<div id="positioner-android17" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Android_17_icon.webp" id="selectbox-android17">
+							<img src="img/characterSelect/dbfz/Android_17_icon.webp" id="selectbox-android17">
 						</div>
 					</div>
 					<div id="positioner-bardock" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Bardock_icon.webp" id="selectbox-bardock">
+							<img src="img/characterSelect/dbfz/Bardock_icon.webp" id="selectbox-bardock">
 						</div>
 					</div>
 					<div id="positioner-goku-ssgss" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Goku_(SSGSS)_icon.webp" id="selectbox-goku-ssgss">
+							<img src="img/characterSelect/dbfz/Goku_(SSGSS)_icon.webp" id="selectbox-goku-ssgss">
 						</div>
 					</div>
 					<div id="positioner-gohan-adult" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Gohan_(Adult)_icon.webp" id="selectbox-gohan-adult">
+							<img src="img/characterSelect/dbfz/Gohan_(Adult)_icon.webp" id="selectbox-gohan-adult">
 						</div>
 					</div>
 					<div id="positioner-trunks" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Trunks_icon.webp" id="selectbox-trunks">
+							<img src="img/characterSelect/dbfz/Trunks_icon.webp" id="selectbox-trunks">
 						</div>
 					</div>
 					<div id="positioner-vegeta-ss" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Vegeta_(Super_Saiyan)_icon.webp" id="selectbox-vegeta-ss">
+							<img src="img/characterSelect/dbfz/Vegeta_(Super_Saiyan)_icon.webp" id="selectbox-vegeta-ss">
 						</div>
 					</div>
 					<div id="positioner-cell" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Cell_icon.webp" id="selectbox-cell">
+							<img src="img/characterSelect/dbfz/Cell_icon.webp" id="selectbox-cell">
 						</div>
 					</div>
 					<div id="positioner-android18" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Android_18_icon.webp" id="selectbox-android18">
+							<img src="img/characterSelect/dbfz/Android_18_icon.webp" id="selectbox-android18">
 						</div>
 					</div>
 					<div id="positioner-android16" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Android_16_icon.webp" id="selectbox-android16">
+							<img src="img/characterSelect/dbfz/Android_16_icon.webp" id="selectbox-android16">
 						</div>
 					</div>
 					<div id="positioner-android21" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Android_21_icon.webp" id="selectbox-android21">
+							<img src="img/characterSelect/dbfz/Android_21_icon.webp" id="selectbox-android21">
 						</div>
 					</div>
 					<div id="positioner-broly" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Broly_icon.webp" id="selectbox-broly">
+							<img src="img/characterSelect/dbfz/Broly_icon.webp" id="selectbox-broly">
 						</div>
 					</div>
 					<div id="positioner-cooler" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Cooler_icon.webp" id="selectbox-cooler">
+							<img src="img/characterSelect/dbfz/Cooler_icon.webp" id="selectbox-cooler">
 						</div>
 					</div>
 					<div id="positioner-janemba" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Janemba_icon.webp" id="selectbox-janemba">
+							<img src="img/characterSelect/dbfz/Janemba_icon.webp" id="selectbox-janemba">
 						</div>
 					</div>
 					<div id="positioner-goku-ui" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Goku_(Ultra_Instinct)_icon.webp" id="selectbox-goku-ui">
+							<img src="img/characterSelect/dbfz/Goku_(Ultra_Instinct)_icon.webp" id="selectbox-goku-ui">
 						</div>
 					</div>
 					<div id="positioner-videl" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Videl_icon.webp" id="selectbox-videl">
+							<img src="img/characterSelect/dbfz/Videl_icon.webp" id="selectbox-videl">
 						</div>
 					</div>
 					<div id="positioner-vegito-ssgss" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Vegito_(SSGSS)_icon.webp" id="selectbox-vegito-ssgss">
+							<img src="img/characterSelect/dbfz/Vegito_(SSGSS)_icon.webp" id="selectbox-vegito-ssgss">
 						</div>
 					</div>
 					<div id="positioner-vegeta-ssgss" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Vegeta_(SSGSS)_icon.webp" id="selectbox-vegeta-ssgss">
+							<img src="img/characterSelect/dbfz/Vegeta_(SSGSS)_icon.webp" id="selectbox-vegeta-ssgss">
 						</div>
 					</div>
 					<div id="positioner-gotenks" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Gotenks_icon.webp" id="selectbox-gotenks">
+							<img src="img/characterSelect/dbfz/Gotenks_icon.webp" id="selectbox-gotenks">
 						</div>
 					</div>
 					<div id="positioner-piccolo" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Piccolo_icon.webp" id="selectbox-piccolo">
+							<img src="img/characterSelect/dbfz/Piccolo_icon.webp" id="selectbox-piccolo">
 						</div>
 					</div>
 					<div id="positioner-gohan-teen" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Gohan_(Teen)_icon.webp" id="selectbox-gohan-teen">
+							<img src="img/characterSelect/dbfz/Gohan_(Teen)_icon.webp" id="selectbox-gohan-teen">
 						</div>
 					</div>
 					<div id="positioner-gogeta-ss4" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Gogeta_(SS4)_icon.webp" id="selectbox-gogeta-ss4">
+							<img src="img/characterSelect/dbfz/Gogeta_(SS4)_icon.webp" id="selectbox-gogeta-ss4">
 						</div>
 					</div>
 					<div id="positioner-majinbuu" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Majin_Buu_icon.webp" id="selectbox-majinbuu">
+							<img src="img/characterSelect/dbfz/Majin_Buu_icon.webp" id="selectbox-majinbuu">
 						</div>
 					</div>
 					<div id="positioner-beerus" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Beerus_icon.webp" id="selectbox-beerus">
+							<img src="img/characterSelect/dbfz/Beerus_icon.webp" id="selectbox-beerus">
 						</div>
 					</div>
 					<div id="positioner-hit" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Hit_icon.webp" id="selectbox-hit">
+							<img src="img/characterSelect/dbfz/Hit_icon.webp" id="selectbox-hit">
 						</div>
 					</div>
 					<div id="positioner-gokublack" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Goku_Black_icon.webp" id="selectbox-gokublack">
+							<img src="img/characterSelect/dbfz/Goku_Black_icon.webp" id="selectbox-gokublack">
 						</div>
 					</div>
 					<div id="positioner-zamasu" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Zamasu_(Fused)_icon.webp" id="selectbox-zamasu">
+							<img src="img/characterSelect/dbfz/Zamasu_(Fused)_icon.webp" id="selectbox-zamasu">
 						</div>
 					</div>
 					<div id="positioner-jiren" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Jiren_icon.webp" id="selectbox-jiren">
+							<img src="img/characterSelect/dbfz/Jiren_icon.webp" id="selectbox-jiren">
 						</div>
 					</div>
 					<div id="positioner-kefla" class="selectbox-positioner">
 						<div class="selectbox selectbox-character">
-							<img src="../img/characterSelect/dbfz/Kefla_icon.webp" id="selectbox-kefla">
+							<img src="img/characterSelect/dbfz/Kefla_icon.webp" id="selectbox-kefla">
 						</div>
 					</div>
-					<img class="selectbox-fullroster" src="../img/characterSelect/dbfz/Full_Roster.webp" usemap="#mapselect">
+					<img class="selectbox-fullroster" src="img/characterSelect/dbfz/Full_Roster.webp" usemap="#mapselect">
 					<map name="mapselect">
 						<area id="character-random" onclick="runDisplay('Random')" shape="poly" coords="425,0, 459,0, 471,11, 467,42, 462,47, 450,47, 448,49, 436,49, 434,47, 422,47, 417,42, 413,12">
 						<!-- X change: 115, Y change: 2 -->
@@ -384,7 +302,7 @@
 			</div>
 		</div>
 		<div class="preload-container">
-			<img src="../img/portraits/dbfz/.png">
+			<img src="img/portraits/dbfz/.png">
 		</div>
 	</body>
 </html>

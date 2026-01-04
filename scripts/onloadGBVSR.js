@@ -42,14 +42,14 @@ const chrSel = {
 	random: document.getElementById("character-random"),
 }
 
-const pageMusic = new Audio("../audio/music/GBVSR - Character Select.ogg");
+const pageMusic = new Audio("audio/music/GBVSR - Character Select.ogg");
 pageMusic.loop = true;
 pageMusic.volume = 0.15;
 pageMusic.play();
 
 const sfx = {
-	cursor: new Audio("../audio/sfx/gbvsr/SE_SYS_Cursor.ogg"),
-	confirm: new Audio("../audio/sfx/gbvsr/SE_SYS_Decide1.ogg"),
+	cursor: new Audio("audio/sfx/gbvsr/SE_SYS_Cursor.ogg"),
+	confirm: new Audio("audio/sfx/gbvsr/SE_SYS_Decide1.ogg"),
 }
 sfx.cursor.volume = 0.1;
 sfx.confirm.volume = 0.1;
@@ -67,7 +67,7 @@ function hoverDisplay(charFileName, scaleMeasures) {
 	sfx.cursor.currentTime = 0;
 	sfx.cursor.play();
 	if (previewDisplayOn) {
-		chrPrevImg.src = "../img/portraits/gbvsr/" + charFileName + ".png";
+		chrPrevImg.src = "img/portraits/gbvsr/" + charFileName + ".png";
 		if (charFileName == "Lunalu") {
 			charFileName = "Random";
 		}
@@ -447,7 +447,7 @@ function runDisplay(characterName) {
 	function writeCharInfo(detailInfo, ratings, likeOrDislike, charDescription, charFileName, scaleMeasures) {
 		updateOV(detailInfo, ratings, likeOrDislike, charDescription);
 		
-		chrPrevImg.src = "../img/portraits/gbvsr/" + charFileName + ".png";
+		chrPrevImg.src = "img/portraits/gbvsr/" + charFileName + ".png";
 		//chrPrevImg.onload = function() {
 			chrPrevImg.style.transform = "scale(" + scaleMeasures[0] + ") translate(" + scaleMeasures[1] + "%, " + scaleMeasures[2] + "%)";
 		//};

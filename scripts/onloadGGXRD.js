@@ -29,15 +29,15 @@ const chrSel = {
 	random: document.getElementById("character-random"),
 }
 
-const pageMusic = new Audio("../audio/music/GGXRD - Fizz.ogg");
+const pageMusic = new Audio("audio/music/GGXRD - Fizz.ogg");
 pageMusic.loop = true;
 pageMusic.volume = 0.15;
 pageMusic.play();
 
 const sfx = {
-	cursor: new Audio("../audio/sfx/ggxrd/cursor.ogg"),
-	confirm: new Audio("../audio/sfx/ggxrd/confirm.ogg"),
-	announcer: new Audio("../audio/sfx/ggxrd/announcer_intro.ogg"),
+	cursor: new Audio("audio/sfx/ggxrd/cursor.ogg"),
+	confirm: new Audio("audio/sfx/ggxrd/confirm.ogg"),
+	announcer: new Audio("audio/sfx/ggxrd/announcer_intro.ogg"),
 }
 sfx.cursor.volume = 0.1;
 sfx.confirm.volume = 0.15;
@@ -77,8 +77,8 @@ function hoverDisplay(charFileName, iconElement, inCenter = false) {
 	sfx.cursor.currentTime = 0;
 	sfx.cursor.play();
 	if (previewDisplayOn) {
-		chrPrevImg.src = "../img/portraits/ggxrd/" + charFileName + ".png";
-		chrName.src = "../img/characterSelect/ggxrd/Name_" + charFileName + ".png";
+		chrPrevImg.src = "img/portraits/ggxrd/" + charFileName + ".png";
+		chrName.src = "img/characterSelect/ggxrd/Name_" + charFileName + ".png";
 		chrPrevImg.classList.remove("portrait-onhover");
 		chrName.classList.remove("name-onhover");
 		void chrPrevImg.offsetWidth;
@@ -517,8 +517,8 @@ function randomDisplay() {
 				case 0:
 					clearIcons();
 					if (previewDisplayOn) {
-						chrPrevImg.src = "../img/portraits/ggxrd/Kum_Haehyun.png";
-						chrName.src = "../img/characterSelect/ggxrd/Name_Kum_Haehyun.png";
+						chrPrevImg.src = "img/portraits/ggxrd/Kum_Haehyun.png";
+						chrName.src = "img/characterSelect/ggxrd/Name_Kum_Haehyun.png";
 						chrPrevImg.classList.add("portrait-onhover");
 						chrName.classList.add("name-onhover");
 					}
@@ -527,8 +527,8 @@ function randomDisplay() {
 				case 1:
 					clearIcons();
 					if (previewDisplayOn) {
-						chrPrevImg.src = "../img/portraits/ggxrd/Elphelt_Valentine.png";
-						chrName.src = "../img/characterSelect/ggxrd/Name_Elphelt_Valentine.png";
+						chrPrevImg.src = "img/portraits/ggxrd/Elphelt_Valentine.png";
+						chrName.src = "img/characterSelect/ggxrd/Name_Elphelt_Valentine.png";
 						chrPrevImg.classList.add("portrait-onhover");
 						chrName.classList.add("name-onhover");
 					}
@@ -537,8 +537,8 @@ function randomDisplay() {
 				case 2:
 					clearIcons();
 					if (previewDisplayOn) {
-						chrPrevImg.src = "../img/portraits/ggxrd/Sol_Badguy.png";
-						chrName.src = "../img/characterSelect/ggxrd/Name_Sol_Badguy.png";
+						chrPrevImg.src = "img/portraits/ggxrd/Sol_Badguy.png";
+						chrName.src = "img/characterSelect/ggxrd/Name_Sol_Badguy.png";
 						chrPrevImg.classList.add("portrait-onhover");
 						chrName.classList.add("name-onhover");
 					}
@@ -547,8 +547,8 @@ function randomDisplay() {
 				case 3:
 					clearIcons();
 					if (previewDisplayOn) {
-						chrPrevImg.src = "../img/portraits/ggxrd/Ky_Kiske.png";
-						chrName.src = "../img/characterSelect/ggxrd/Name_Ky_Kiske.png";
+						chrPrevImg.src = "img/portraits/ggxrd/Ky_Kiske.png";
+						chrName.src = "img/characterSelect/ggxrd/Name_Ky_Kiske.png";
 						chrPrevImg.classList.add("portrait-onhover");
 						chrName.classList.add("name-onhover");
 					}
@@ -557,8 +557,8 @@ function randomDisplay() {
 				case 4:
 					clearIcons();
 					if (previewDisplayOn) {
-						chrPrevImg.src = "../img/portraits/ggxrd/Ramlethal_Valentine.png";
-						chrName.src = "../img/characterSelect/ggxrd/Name_Ramlethal_Valentine.png";
+						chrPrevImg.src = "img/portraits/ggxrd/Ramlethal_Valentine.png";
+						chrName.src = "img/characterSelect/ggxrd/Name_Ramlethal_Valentine.png";
 						chrPrevImg.classList.add("portrait-onhover");
 						chrName.classList.add("name-onhover");
 					}
@@ -567,8 +567,8 @@ function randomDisplay() {
 				case 5:
 					clearIcons();
 					if (previewDisplayOn) {
-						chrPrevImg.src = "../img/portraits/ggxrd/Raven.png";
-						chrName.src = "../img/characterSelect/ggxrd/Name_Raven.png";
+						chrPrevImg.src = "img/portraits/ggxrd/Raven.png";
+						chrName.src = "img/characterSelect/ggxrd/Name_Raven.png";
 						chrPrevImg.classList.add("portrait-onhover");
 						chrName.classList.add("name-onhover");
 					}
@@ -577,8 +577,8 @@ function randomDisplay() {
 				case 6:
 					clearIcons();
 					if (previewDisplayOn) {
-						chrPrevImg.src = "../img/portraits/ggxrd/Sin_Kiske.png";
-						chrName.src = "../img/characterSelect/ggxrd/Name_Sin_Kiske.png";
+						chrPrevImg.src = "img/portraits/ggxrd/Sin_Kiske.png";
+						chrName.src = "img/characterSelect/ggxrd/Name_Sin_Kiske.png";
 						chrPrevImg.classList.add("portrait-onhover");
 						chrName.classList.add("name-onhover");
 					}
@@ -587,8 +587,8 @@ function randomDisplay() {
 				case 7:
 					clearIcons();
 					if (previewDisplayOn) {
-						chrPrevImg.src = "../img/portraits/ggxrd/Johnny.png";
-						chrName.src = "../img/characterSelect/ggxrd/Name_Johnny.png";
+						chrPrevImg.src = "img/portraits/ggxrd/Johnny.png";
+						chrName.src = "img/characterSelect/ggxrd/Name_Johnny.png";
 						chrPrevImg.classList.add("portrait-onhover");
 						chrName.classList.add("name-onhover");
 					}
@@ -598,8 +598,8 @@ function randomDisplay() {
 				case 8:
 					clearIcons();
 					if (previewDisplayOn) {
-						chrPrevImg.src = "../img/portraits/ggxrd/May.png";
-						chrName.src = "../img/characterSelect/ggxrd/Name_May.png";
+						chrPrevImg.src = "img/portraits/ggxrd/May.png";
+						chrName.src = "img/characterSelect/ggxrd/Name_May.png";
 						chrPrevImg.classList.add("portrait-onhover");
 						chrName.classList.add("name-onhover");
 					}
@@ -609,8 +609,8 @@ function randomDisplay() {
 				case 9:
 					clearIcons();
 					if (previewDisplayOn) {
-						chrPrevImg.src = "../img/portraits/ggxrd/Leo_Whitefang.png";
-						chrName.src = "../img/characterSelect/ggxrd/Name_Leo_Whitefang.png";
+						chrPrevImg.src = "img/portraits/ggxrd/Leo_Whitefang.png";
+						chrName.src = "img/characterSelect/ggxrd/Name_Leo_Whitefang.png";
 						chrPrevImg.classList.add("portrait-onhover");
 						chrName.classList.add("name-onhover");
 					}
@@ -619,8 +619,8 @@ function randomDisplay() {
 				case 10:
 					clearIcons();
 					if (previewDisplayOn) {
-						chrPrevImg.src = "../img/portraits/ggxrd/Chipp_Zanuff.png";
-						chrName.src = "../img/characterSelect/ggxrd/Name_Chipp_Zanuff.png";
+						chrPrevImg.src = "img/portraits/ggxrd/Chipp_Zanuff.png";
+						chrName.src = "img/characterSelect/ggxrd/Name_Chipp_Zanuff.png";
 						chrPrevImg.classList.add("portrait-onhover");
 						chrName.classList.add("name-onhover");
 					}
@@ -629,8 +629,8 @@ function randomDisplay() {
 				case 11:
 					clearIcons();
 					if (previewDisplayOn) {
-						chrPrevImg.src = "../img/portraits/ggxrd/Millia_Rage.png";
-						chrName.src = "../img/characterSelect/ggxrd/Name_Millia_Rage.png";
+						chrPrevImg.src = "img/portraits/ggxrd/Millia_Rage.png";
+						chrName.src = "img/characterSelect/ggxrd/Name_Millia_Rage.png";
 						chrPrevImg.classList.add("portrait-onhover");
 						chrName.classList.add("name-onhover");
 					}
@@ -640,8 +640,8 @@ function randomDisplay() {
 				case 12:
 					clearIcons();
 					if (previewDisplayOn) {
-						chrPrevImg.src = "../img/portraits/ggxrd/Baiken.png";
-						chrName.src = "../img/characterSelect/ggxrd/Name_Baiken.png";
+						chrPrevImg.src = "img/portraits/ggxrd/Baiken.png";
+						chrName.src = "img/characterSelect/ggxrd/Name_Baiken.png";
 						chrPrevImg.classList.add("portrait-onhover");
 						chrName.classList.add("name-onhover");
 					}
@@ -651,8 +651,8 @@ function randomDisplay() {
 				case 13:
 					clearIcons();
 					if (previewDisplayOn) {
-						chrPrevImg.src = "../img/portraits/ggxrd/Answer.png";
-						chrName.src = "../img/characterSelect/ggxrd/Name_Answer.png";
+						chrPrevImg.src = "img/portraits/ggxrd/Answer.png";
+						chrName.src = "img/characterSelect/ggxrd/Name_Answer.png";
 						chrPrevImg.classList.add("portrait-onhover");
 						chrName.classList.add("name-onhover");
 					}
@@ -662,8 +662,8 @@ function randomDisplay() {
 				case 14:
 					clearIcons();
 					if (previewDisplayOn) {
-						chrPrevImg.src = "../img/portraits/ggxrd/Zato=1.png";
-						chrName.src = "../img/characterSelect/ggxrd/Name_Zato=1.png";
+						chrPrevImg.src = "img/portraits/ggxrd/Zato=1.png";
+						chrName.src = "img/characterSelect/ggxrd/Name_Zato=1.png";
 						chrPrevImg.classList.add("portrait-onhover");
 						chrName.classList.add("name-onhover");
 					}
@@ -673,8 +673,8 @@ function randomDisplay() {
 				case 15:
 					clearIcons();
 					if (previewDisplayOn) {
-						chrPrevImg.src = "../img/portraits/ggxrd/Potemkin.png";
-						chrName.src = "../img/characterSelect/ggxrd/Name_Potemkin.png";
+						chrPrevImg.src = "img/portraits/ggxrd/Potemkin.png";
+						chrName.src = "img/characterSelect/ggxrd/Name_Potemkin.png";
 						chrPrevImg.classList.add("portrait-onhover");
 						chrName.classList.add("name-onhover");
 					}
@@ -683,8 +683,8 @@ function randomDisplay() {
 				case 16:
 					clearIcons();
 					if (previewDisplayOn) {
-						chrPrevImg.src = "../img/portraits/ggxrd/I-No.png";
-						chrName.src = "../img/characterSelect/ggxrd/Name_I-No.png";
+						chrPrevImg.src = "img/portraits/ggxrd/I-No.png";
+						chrName.src = "img/characterSelect/ggxrd/Name_I-No.png";
 						chrPrevImg.classList.add("portrait-onhover");
 						chrName.classList.add("name-onhover");
 					}
@@ -693,8 +693,8 @@ function randomDisplay() {
 				case 17:
 					clearIcons();
 					if (previewDisplayOn) {
-						chrPrevImg.src = "../img/portraits/ggxrd/Slayer.png";
-						chrName.src = "../img/characterSelect/ggxrd/Name_Slayer.png";
+						chrPrevImg.src = "img/portraits/ggxrd/Slayer.png";
+						chrName.src = "img/characterSelect/ggxrd/Name_Slayer.png";
 						chrPrevImg.classList.add("portrait-onhover");
 						chrName.classList.add("name-onhover");
 					}
@@ -704,8 +704,8 @@ function randomDisplay() {
 				case 18:
 					clearIcons();
 					if (previewDisplayOn) {
-						chrPrevImg.src = "../img/portraits/ggxrd/Venom.png";
-						chrName.src = "../img/characterSelect/ggxrd/Name_Venom.png";
+						chrPrevImg.src = "img/portraits/ggxrd/Venom.png";
+						chrName.src = "img/characterSelect/ggxrd/Name_Venom.png";
 						chrPrevImg.classList.add("portrait-onhover");
 						chrName.classList.add("name-onhover");
 					}
@@ -715,8 +715,8 @@ function randomDisplay() {
 				case 19:
 					clearIcons();
 					if (previewDisplayOn) {
-						chrPrevImg.src = "../img/portraits/ggxrd/Axl_Low.png";
-						chrName.src = "../img/characterSelect/ggxrd/Name_Axl_Low.png";
+						chrPrevImg.src = "img/portraits/ggxrd/Axl_Low.png";
+						chrName.src = "img/characterSelect/ggxrd/Name_Axl_Low.png";
 						chrPrevImg.classList.add("portrait-onhover");
 						chrName.classList.add("name-onhover");
 					}
@@ -725,8 +725,8 @@ function randomDisplay() {
 				case 20:
 					clearIcons();
 					if (previewDisplayOn) {
-						chrPrevImg.src = "../img/portraits/ggxrd/Dizzy.png";
-						chrName.src = "../img/characterSelect/ggxrd/Name_Dizzy.png";
+						chrPrevImg.src = "img/portraits/ggxrd/Dizzy.png";
+						chrName.src = "img/characterSelect/ggxrd/Name_Dizzy.png";
 						chrPrevImg.classList.add("portrait-onhover");
 						chrName.classList.add("name-onhover");
 					}
@@ -735,8 +735,8 @@ function randomDisplay() {
 				case 21:
 					clearIcons();
 					if (previewDisplayOn) {
-						chrPrevImg.src = "../img/portraits/ggxrd/Faust.png";
-						chrName.src = "../img/characterSelect/ggxrd/Name_Faust.png";
+						chrPrevImg.src = "img/portraits/ggxrd/Faust.png";
+						chrName.src = "img/characterSelect/ggxrd/Name_Faust.png";
 						chrPrevImg.classList.add("portrait-onhover");
 						chrName.classList.add("name-onhover");
 					}
@@ -745,8 +745,8 @@ function randomDisplay() {
 				case 22:
 					clearIcons();
 					if (previewDisplayOn) {
-						chrPrevImg.src = "../img/portraits/ggxrd/Bedman.png";
-						chrName.src = "../img/characterSelect/ggxrd/Name_Bedman.png";
+						chrPrevImg.src = "img/portraits/ggxrd/Bedman.png";
+						chrName.src = "img/characterSelect/ggxrd/Name_Bedman.png";
 						chrPrevImg.classList.add("portrait-onhover");
 						chrName.classList.add("name-onhover");
 					}
@@ -755,8 +755,8 @@ function randomDisplay() {
 				case 23:
 					clearIcons();
 					if (previewDisplayOn) {
-						chrPrevImg.src = "../img/portraits/ggxrd/Jack-O'_Valentine.png";
-						chrName.src = "../img/characterSelect/ggxrd/Name_Jack-O'_Valentine.png";
+						chrPrevImg.src = "img/portraits/ggxrd/Jack-O'_Valentine.png";
+						chrName.src = "img/characterSelect/ggxrd/Name_Jack-O'_Valentine.png";
 						chrPrevImg.classList.add("portrait-onhover");
 						chrName.classList.add("name-onhover");
 					}
@@ -765,8 +765,8 @@ function randomDisplay() {
 				case 24:
 					clearIcons();
 					if (previewDisplayOn) {
-						chrPrevImg.src = "../img/portraits/ggxrd/Jam_Kuradoberi.png";
-						chrName.src = "../img/characterSelect/ggxrd/Name_Jam_Kuradoberi.png";
+						chrPrevImg.src = "img/portraits/ggxrd/Jam_Kuradoberi.png";
+						chrName.src = "img/characterSelect/ggxrd/Name_Jam_Kuradoberi.png";
 						chrPrevImg.classList.add("portrait-onhover");
 						chrName.classList.add("name-onhover");
 					}
@@ -939,8 +939,8 @@ function runDisplay(characterName) {
 	function writeCharInfo(detailInfo, ratings, likeOrDislike, charDescription, charFileName, scaleMeasures) {
 		updateOV(detailInfo, ratings, likeOrDislike, charDescription);
 		
-		chrPrevImg.src = "../img/portraits/ggxrd/" + charFileName + ".png";
-		chrName.src = "../img/characterSelect/ggxrd/Name_" + charFileName + ".png";
+		chrPrevImg.src = "img/portraits/ggxrd/" + charFileName + ".png";
+		chrName.src = "img/characterSelect/ggxrd/Name_" + charFileName + ".png";
 	}
 	
 	switch (characterName) {
@@ -1325,12 +1325,12 @@ function runDisplay(characterName) {
 
 /*function preloadImages() {
 	const imageToLoad = [
-		"../img/characterSelect/ggxrd/Kum_Haehyun_icon.png",
-		"../img/portraits/ggxrd/Kum_Haehyun.png",
-		"../img/characterSelect/ggxrd/Chipp_Zanuff_icon.png",
-		"../img/portraits/ggxrd/Chipp_Zanuff.png",
-		"../img/characterSelect/ggxrd/Dizzy_icon.png",
-		"../img/portraits/ggxrd/Dizzy.png",
+		"img/characterSelect/ggxrd/Kum_Haehyun_icon.png",
+		"img/portraits/ggxrd/Kum_Haehyun.png",
+		"img/characterSelect/ggxrd/Chipp_Zanuff_icon.png",
+		"img/portraits/ggxrd/Chipp_Zanuff.png",
+		"img/characterSelect/ggxrd/Dizzy_icon.png",
+		"img/portraits/ggxrd/Dizzy.png",
 	];
 	for (i = 0; i > imageToLoad.length; i++) {
 		document.getElementById("image-loader").style.backgroundImage = imageToLoad[i];

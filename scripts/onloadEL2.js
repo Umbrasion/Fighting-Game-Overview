@@ -13,14 +13,14 @@ const chrSel = {
 	yagabi: document.getElementById("character-yagabi"),
 }
 
-const pageMusic = new Audio("../audio/music/EL2 - 01_pselect.ogg");
+const pageMusic = new Audio("audio/music/EL2 - 01_pselect.ogg");
 pageMusic.loop = true;
 pageMusic.volume = 0.15;
 pageMusic.play();
 
 const sfx = {
-	cursor: new Audio("../audio/sfx/el2/00000_cursor.wav"),
-	confirm: new Audio("../audio/sfx/el2/00010_enter.wav"),
+	cursor: new Audio("audio/sfx/el2/00000_cursor.wav"),
+	confirm: new Audio("audio/sfx/el2/00010_enter.wav"),
 }
 sfx.cursor.volume = 0.2;
 sfx.confirm.volume = 0.2;
@@ -40,11 +40,11 @@ function hoverDisplay(charFileName, offsetValue = 0, flipPortrait = false) {
 	sfx.cursor.play();
 	if (previewDisplayOn) {
 		if (charFileName == "Yagabi") {
-			chrPrevImg.src = "../img/portraits/el2/" + charFileName + ".png";
+			chrPrevImg.src = "img/portraits/el2/" + charFileName + ".png";
 		// } else if (charFileName == "Serena") {
-		// 	chrPrevImg.src = "../img/portraits/el2/Unfinished_scale.png";
+		// 	chrPrevImg.src = "img/portraits/el2/Unfinished_scale.png";
 		} else {
-			chrPrevImg.src = "../img/portraits/el2/" + charFileName + "_small.png";
+			chrPrevImg.src = "img/portraits/el2/" + charFileName + "_small.png";
 		}
 		chrName.innerHTML = charFileName.toUpperCase().replace(/_/g, " ");
 		if (flipPortrait) {
@@ -175,9 +175,9 @@ function runDisplay(characterName) {
 	function writeCharInfo(detailInfo, ratings, likeOrDislike, charDescription, charFileName, tranformInfo) {
 		updateOV(detailInfo, ratings, likeOrDislike, charDescription);
 
-		chrPrevImg.src = "../img/portraits/el2/" + charFileName + "_small.png";
+		chrPrevImg.src = "img/portraits/el2/" + charFileName + "_small.png";
 		if (charFileName == "Yagabi") {
-			chrPrevImg.src = "../img/portraits/el2/" + charFileName + ".png";
+			chrPrevImg.src = "img/portraits/el2/" + charFileName + ".png";
 		}
 		chrName.innerHTML = charFileName.toUpperCase().replace(/_/g, " ");
 		

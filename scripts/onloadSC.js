@@ -29,7 +29,7 @@ function hoverDisplay(charFileName, ) {
 	// sfx.cursor.fastSeek(0);
 	// sfx.cursor.play();
 	if (previewDisplayOn) {
-		chrPrevImg.src = "../img/portraits/sc/" + charFileName + ".png";
+		chrPrevImg.src = "img/portraits/sc/" + charFileName + ".png";
 		chrName.innerHTML = charFileName.replace(/_/g, " ");
 	}
 }
@@ -55,7 +55,7 @@ function runDisplay(characterName) {
 	function writeCharInfo(detailInfo, ratings, likeOrDislike, charDescription, charFileName) {
 		updateOV(detailInfo, ratings, likeOrDislike, charDescription);
 		
-		chrPrevImg.src = "../img/portraits/sc/" + charFileName + ".png";
+		chrPrevImg.src = "img/portraits/sc/" + charFileName + ".png";
 		chrName.innerHTML = charFileName.replace(/_/g, " ");
 	}
 	
