@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Idol Showdown | Fighting Game Overview</title>
+		<link rel="stylesheet" href="../styles/main.css">
+		<link rel="stylesheet" href="../styles/infoColors.css">
+		<link rel="stylesheet" href="../styles/games/ISD.css">
+		<script src="../scripts/common.js"></script>
+		<script src="../scripts/cssResize.js" defer></script>
+		<script src="../scripts/onloadISD.js" defer></script>
+		<script src="../scripts/jquery-3.7.1.min.js"></script>
+	</head>
+	<body>
+		<img class="game-logo" src="../img/logos/ISD_logo.png" style="margin-top: 2em">
+		<div id="upperbanner">
+			<span>CHOOSE YOUR IDOL ◆ </span>
+			<span>CHOOSE YOUR IDOL ◆ </span>
+			<span>CHOOSE YOUR IDOL ◆ </span>
+			<span>CHOOSE YOUR IDOL ◆ </span>
+			<span>CHOOSE YOUR IDOL ◆ </span>
+			<span>CHOOSE YOUR IDOL ◆ </span>
+			<span>CHOOSE YOUR IDOL ◆ </span>
+			<span>CHOOSE YOUR IDOL ◆ </span>
+			<span>CHOOSE YOUR IDOL ◆ </span>
+			<span>CHOOSE YOUR IDOL ◆ </span>
+		</div>
+		<div id="characterselect">
+			<div class="preview-area">
+				<div class="portrait-area">
+					<div style="display: flex; flex-direction: column; width: 0px; height: 0px; margin: auto; justify-content: left; align-items: center">
+						<div style="width: fit-content">
+							<img id="info-portrait" src="" style="max-width: none">
+						</div>
+					</div>
+					<img id="info-name" class="info-title" src="">
+				</div>
+				<div class="selectbox-container">
+					<div id="positioner-random" class="selectbox-positioner" style="left: 156px; top: 0px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/isd/Random_icon.webp" id="selectbox-random" style="height: 131px">
+						</div>
+					</div>
+					<div id="positioner-fubuki" class="selectbox-positioner" style="left: 78px; top: 76px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/isd/Shirakami_Fubuki_icon.webp" id="selectbox-fubuki" style="height: 131px">
+						</div>
+					</div>
+					<div id="positioner-korone" class="selectbox-positioner" style="left: 233px; top: 76px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/isd/Inugami_Korone_icon.webp" id="selectbox-korone">
+						</div>
+					</div>
+					<div id="positioner-suisei" class="selectbox-positioner" style="left: 0px; top: 153px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/isd/Hoshimachi_Suisei_icon.webp" id="selectbox-suisei">
+						</div>
+					</div>
+					<div id="positioner-koyori" class="selectbox-positioner" style="left: 155px; top: 153px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/isd/Hakui_Koyori_icon.webp" id="selectbox-koyori">
+						</div>
+					</div>
+					<div id="positioner-sora" class="selectbox-positioner" style="left: 311px; top: 153px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/isd/Tokino_Sora_icon.webp" id="selectbox-sora" style="width: 131px">
+						</div>
+					</div>
+					<div id="positioner-ollie" class="selectbox-positioner" style="left: 78px; top: 231px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/isd/Kureiji_Ollie_icon.webp" id="selectbox-ollie">
+						</div>
+					</div>
+					<div id="positioner-ina" class="selectbox-positioner" style="left: 233px; top: 231px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/isd/Ninomae_Ina'nis_icon.webp" id="selectbox-ina">
+						</div>
+					</div>
+					<div id="positioner-aki" class="selectbox-positioner" style="left: 0px; top: 308px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/isd/Aki_Rosenthal_icon.webp" id="selectbox-aki" style="width: 131px; height: 131px">
+						</div>
+					</div>
+					<div id="positioner-pekora" class="selectbox-positioner" style="left: 155px; top: 308px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/isd/Usada_Pekora_icon.webp" id="selectbox-pekora" style="height: 131px">
+						</div>
+					</div>
+					<div id="positioner-ayame" class="selectbox-positioner" style="left: 310px; top: 308px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/isd/Nakiri_Ayame_icon.webp" id="selectbox-ayame">
+						</div>
+					</div>
+					<div id="positioner-coco" class="selectbox-positioner" style="left: 78px; top: 386px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/isd/Kiryu_Coco_icon.webp" id="selectbox-coco">
+						</div>
+					</div>
+					<div id="positioner-botan" class="selectbox-positioner" style="left: 233px; top: 386px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/isd/Shishiro_Botan_icon.webp" id="selectbox-botan" style="width: 131px">
+						</div>
+					</div>
+					<img class="selectbox-fullroster" src="../img/characterSelect/isd/Full_Roster.webp" usemap="#mapselect">
+					<!-- Need to work on this later -->
+					<map name="mapselect">
+						<!-- Add/Subtract 9 for extended corners -->
+						<!-- -9y, +9x, +9y, -9x -->
+						<area id="character-random" onclick="runDisplay('Random')" shape="poly" coords="221,-9, 295,64, 221,138, 147,64">
+						<area id="character-fubuki" onclick="runDisplay('Shirakami_Fubuki')" shape="poly" coords="144,67, 219,142, 144,217, 69,142">
+						<area id="character-korone" onclick="runDisplay('Inugami_Korone')" shape="poly" coords="299,67, 374,142, 299,216, 225,142">
+						<area id="character-suisei" onclick="runDisplay('Hoshimachi_Suisei')" shape="poly" coords="66,154, 132,219, 66,285, 0,219"><!---->
+						<area id="character-koyori" onclick="runDisplay('Hakui_Koyori')" shape="poly" coords="221,153, 286,219, 221,285, 155,219"><!---->
+						<area id="character-sora" onclick="runDisplay('Tokino_Sora')" shape="poly" coords="377,154, 442,219, 377,285, 311,219"><!---->
+						<area id="character-ollie" onclick="runDisplay('Kureiji_Ollie')" shape="poly" coords="144,232, 210,297, 144,363, 79,297"><!---->
+						<area id="character-ina" onclick="runDisplay('Ninomae_Inanis')" shape="poly" coords="299,232, 364,297, 299,362, 224,297"><!---->
+						<area id="character-aki" onclick="runDisplay('Aki_Rosenthal')" shape="poly" coords="66,308, 131,374, 66,440, 0,374"><!---->
+						<area id="character-pekora" onclick="runDisplay('Usada_Pekora')" shape="poly" coords="221,308, 286,374, 221,439, 155,374"><!---->
+						<area id="character-ayame" onclick="runDisplay('Nakiri_Ayame')" shape="poly" coords="376,309, 441,374, 376,439, 310,374"><!---->
+						<area id="character-coco" onclick="runDisplay('Kiryu_Coco')" shape="poly" coords="144,386, 209,452, 144,517, 78,452"><!---->
+						<area id="character-botan" onclick="runDisplay('Shishiro_Botan')" shape="poly" coords="299,386, 364,452, 299,517, 233,452"><!---->
+					</map>
+				</div>
+				<div class="description-area"></div>
+			</div>
+		</div>
+	</body>
+</html>

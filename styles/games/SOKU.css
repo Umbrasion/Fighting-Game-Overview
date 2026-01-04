@@ -1,0 +1,160 @@
+:root {
+    background-color: black;
+}
+
+body {
+    font-family: "STD Heavy";
+}
+
+#characterselect {
+    max-width: 1080px;
+    padding: 0px;
+}
+
+.preview-area {
+    flex-direction: column;
+    position: relative;
+    overflow: clip
+}
+
+.portrait-area {
+    background-image: url("../../img/characterSelect/soku/BG_P1.png");
+    background-repeat: repeat-x;
+    background-size: 100%;
+    
+    animation-name: portraitbg-loop;
+    animation-duration: 21.5s;
+    animation-direction: reverse;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes portraitbg-loop {
+    from {
+        background-position: 0px;
+    }
+    
+    to {
+        background-position: 1080px;
+    }
+}
+
+#info-portrait {
+    background-repeat: no-repeat;
+    background-size: 109.4%;
+    width: 1080px;
+    height: 298px;
+    display: block;
+}
+
+#info-name-area {
+    padding-right: 10px;
+}
+
+#info-title {
+    font-size: 26px;
+    background: linear-gradient(to bottom, #FFFFFF, #FFFAB3);
+    background-clip: text;
+    color: transparent;
+}
+
+#info-name {
+    font-size: 50px;
+    transform: scale(0.8,1);
+    transform-origin: right;
+}
+
+#info-title, #info-name {
+    text-align: right;
+    filter: drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px black);
+}
+
+.selectbox-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 0px;
+}
+
+#css-pointer, #css-needle {
+    position: absolute;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+    pointer-events: none;
+}
+
+#css-pointer {
+    position: absolute;
+    z-index: 99;
+    width: 72px;
+    height: 72px;
+    background-image: url("../../img/characterSelect/soku/CSS_Cogwheel.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    top: -36px;
+}
+
+#css-needle {
+    z-index: 101;
+    position: absolute;
+    width: 48px;
+    height: 72px;
+    top: -11px;
+}
+
+.selectbox-character {
+    z-index: 100;
+    position: relative;
+}
+
+.selectbox-character, .selectbox-character img {
+    width: 54px;
+    height: 216px;
+}
+
+.description-area {
+    flex: 1 0 calc(100vh - 514px);
+    background-image: url("../../img/characterSelect/soku/BG_Menu.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 0px 10px;
+}
+
+.portrait-onhover {
+    animation-name: portrait-onhover;
+    animation-duration: 0.25s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-delay: 0s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes portrait-onhover {
+    from {
+        transform: translate(-900px, 0);
+    }
+    
+    to {
+        transform: translate(0, 0);
+    }
+}
+
+.name-onhover {
+    animation-name: name-onhover;
+    animation-duration: 0.25s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-delay: 0s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes name-onhover {
+    from {
+        transform: translate(240px, 0);
+    }
+    
+    to {
+        transform: translate(0, 0);
+    }
+}

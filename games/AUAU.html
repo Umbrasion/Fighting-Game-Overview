@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Among Us Arena Ultimate | Fighting Game Overview</title>
+		<link rel="stylesheet" href="../styles/main.css">
+		<script src="../scripts/charInfoDisplay.js" defer></script>
+		<script src="../scripts/cssResize.js" defer></script>
+		<script src="../scripts/onloadAUAU.js" defer></script>
+		<script src="../scripts/jquery-3.7.1.min.js"></script>
+		<style>
+			.selectbox-container {
+				background-color: #9FB7A3;
+				padding: 20px;
+				border-radius: 10px;
+				display: grid;
+				grid-template-columns: auto auto;
+			}
+
+			.selectbox {
+				background-color: #7F8F80;
+				border-radius: 10px;
+			}
+
+			.selectbox-title {
+				color: black;
+				font-size: 36px;
+				background-color: #C8DBCA;
+				margin-right: 20px;
+				margin-bottom: 20px;
+				padding: 10px 0px;
+			}
+
+			.selectbox-preview {
+				padding: 132px 55px;
+				margin-right: 20px;
+			}
+
+			.selectbox-name {
+				color: black;
+				font-size: 36px;
+				margin-top: 20px;
+				margin-right: 20px;
+			}
+
+			.preview-character {
+				margin: auto;
+			}
+
+			.selectbox-colors {
+				width: 456px;
+				display: flex;
+				gap: 4px 28px;
+				flex-flow: row wrap;
+				justify-content: center;
+				padding: 23px 35px 17px 34px;
+			}
+
+			.selectbox-secret {
+				width: 456px;
+				display: flex;
+				gap: 4px 28px;
+				flex-flow: row wrap;
+				justify-content: center;
+				padding: 23px 35px 17px 34px;
+				margin-top: 20px;
+			}
+
+			.previewAUAU {
+				width: 93px;
+				height: 93px;
+			}
+
+			.preview-row-top {
+				width: 93px;
+				height: 92px;
+			}
+
+			.previewAUAU img {
+				min-width: 100%;
+				min-height: 100%;
+			}
+
+			.colorRed {
+				color: #C71211;
+			}
+
+			.colorBlue {
+				color: #132FD3;
+			}
+
+			.colorGreen {
+				color: #10802E;
+			}
+
+			.colorPink {
+				color: #EF55BB;
+			}
+
+			.colorOrange {
+				color: #EF7D0D;
+			}
+
+			.colorYellow {
+				color: #F7F758;
+			}
+
+			.colorBlack {
+				color: #3F484F;
+			}
+
+			.colorWhite {
+				color: #D5E1F1;
+			}
+
+			.colorPurple {
+				color: #6B2FBD;
+			}
+
+			.colorBrown {
+				color: #70491E;
+			}
+
+			.colorCyan {
+				color: #39FFDE;
+			}
+
+			.colorLime {
+				color: #4FF039;
+			}
+
+			.colorTan {
+				color: #908975;
+			}
+
+			.colorRose {
+				color: #E9C0D3;
+			}
+
+			.colorBanana {
+				color: #FFFFBB;
+			}
+
+			.colorMaroon {
+				color: #6A293B;
+			}
+
+			.colorGrey {
+				color: #8497A7;
+			}
+
+			.colorCoral {
+				color: #EC7579;
+			}
+
+			.colorOlive {
+				color: #607218;
+			}
+
+			.colorMint {
+				color: #BBF0B8;
+			}
+
+			.colorChocolate {
+				color: #392C1E;
+			}
+
+			.colorTeal {
+				color: #479A91;
+			}
+
+			.colorFlame {
+				color: #E43E08;
+			}
+
+			.colorNavy {
+				color: #1B2A58;
+			}
+
+			.colorGold {
+				color: #FFC84E;
+			}
+
+			.colorSky {
+				color: #91C8FA;
+			}
+
+			.colorApricot {
+				color: #FFD8B2;
+			}
+
+			.colorLavender {
+				color: #7D7EA9;
+			}
+
+			.colorChartreuse {
+				color: #C3F003;
+			}
+
+			.colorEggplant {
+				color: #6E4A61;
+			}
+
+			.colorFortegreen {
+				color: #1D9853;
+			}
+
+			.colorUndefined {
+				color: #FF0000;
+			}
+			/* Also #0000FF & #01FF30 */
+
+			.colorCharcoal {
+				color: #3D4053;
+			}
+			/* Also #E92646 */
+		</style>
+	</head>
+	<body>
+		<div id="characterselect">
+			<div class="selectbox-container">
+				<div>
+					<div class="selectbox selectbox-title">Choose your 'Mongus</div>
+					<div class="selectbox selectbox-preview">
+						<img id="preview-character" src="../img/characterSelect/auau/Blank.png">
+					</div>
+					<div class="selectbox selectbox-name">
+						<span id="select-name">-</span>
+					</div>
+				</div>
+				<div>
+					<div class="selectbox selectbox-colors">
+						<a href="Impostor.html">
+							<div class="previewAUAU preview-row-top">
+								<img src="../img/characterSelect/auau/Pet_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Red">
+							<div class="previewAUAU preview-row-top colorRed">
+								<img src="../img/characterSelect/auau/Red_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Blue">
+							<div class="previewAUAU preview-row-top colorBlue">
+								<img src="../img/characterSelect/auau/Blue_icon.webp">
+							</div>
+						</a>
+						<a href="Random_Color.html">
+							<div class="previewAUAU preview-row-top colorRandom">
+								<img src="../img/characterSelect/auau/Random_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Green">
+							<div class="previewAUAU colorGreen">
+								<img src="../img/characterSelect/auau/Green_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Pink">
+							<div class="previewAUAU colorPink">
+								<img src="../img/characterSelect/auau/Pink_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Orange">
+							<div class="previewAUAU colorOrange">
+								<img src="../img/characterSelect/auau/Orange_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Yellow">
+							<div class="previewAUAU colorYellow">
+								<img src="../img/characterSelect/auau/Yellow_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Black">
+							<div class="previewAUAU colorBlack">
+								<img src="../img/characterSelect/auau/Black_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#White">
+							<div class="previewAUAU colorWhite">
+								<img src="../img/characterSelect/auau/White_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Purple">
+							<div class="previewAUAU colorPurple">
+								<img src="../img/characterSelect/auau/Purple_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Brown">
+							<div class="previewAUAU colorBrown">
+								<img src="../img/characterSelect/auau/Brown_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Cyan">
+							<div class="previewAUAU colorCyan">
+								<img src="../img/characterSelect/auau/Cyan_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Lime">
+							<div class="previewAUAU colorLime">
+								<img src="../img/characterSelect/auau/Lime_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Tan">
+							<div class="previewAUAU colorTan">
+								<img src="../img/characterSelect/auau/Tan_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Rose">
+							<div class="previewAUAU colorRose">
+								<img src="../img/characterSelect/auau/Rose_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Banana">
+							<div class="previewAUAU colorBanana">
+								<img src="../img/characterSelect/auau/Banana_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Maroon">
+							<div class="previewAUAU colorMaroon">
+								<img src="../img/characterSelect/auau/Maroon_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Grey">
+							<div class="previewAUAU colorGrey">
+								<img src="../img/characterSelect/auau/Grey_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Coral">
+							<div class="previewAUAU colorCoral">
+								<img src="../img/characterSelect/auau/Coral_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Olive">
+							<div class="previewAUAU colorOlive">
+								<img src="../img/characterSelect/auau/Olive_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Mint">
+							<div class="previewAUAU colorMint">
+								<img src="../img/characterSelect/auau/Mint_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Chocolate">
+							<div class="previewAUAU colorChocolate">
+								<img src="../img/characterSelect/auau/Chocolate_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Teal">
+							<div class="previewAUAU colorTeal">
+								<img src="../img/characterSelect/auau/Teal_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Flame">
+							<div class="previewAUAU colorFlame">
+								<img src="../img/characterSelect/auau/Flame_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Navy">
+							<div class="previewAUAU colorNavy">
+								<img src="../img/characterSelect/auau/Navy_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Gold">
+							<div class="previewAUAU colorGold">
+								<img src="../img/characterSelect/auau/Gold_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Sky">
+							<div class="previewAUAU colorSky">
+								<img src="../img/characterSelect/auau/Sky_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Apricot">
+							<div class="previewAUAU colorApricot">
+								<img src="../img/characterSelect/auau/Apricot_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Lavender">
+							<div class="previewAUAU colorLavender">
+								<img src="../img/characterSelect/auau/Lavender_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Chartreuse">
+							<div class="previewAUAU colorChartreuse">
+								<img src="../img/characterSelect/auau/Chartreuse_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Eggplant">
+							<div class="previewAUAU colorEggplant">
+								<img src="../img/characterSelect/auau/Eggplant_icon.webp">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox selectbox-secret">
+						<a href="Colors.html#Fortegreen">
+							<div class="previewAUAU colorFortegreen">
+								<img src="../img/characterSelect/auau/Fortegreen_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Undefined">
+							<div class="previewAUAU colorUndefined">
+								<img src="../img/characterSelect/auau/Undefined_icon.webp">
+							</div>
+						</a>
+						<a href="Colors.html#Charcoal">
+							<div class="previewAUAU colorCharcoal">
+								<img src="../img/characterSelect/auau/Charcoal_icon.webp">
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

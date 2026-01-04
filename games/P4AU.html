@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Persona 4 Arena Ultimax | Fighting Game Overview</title>
+		<link rel="stylesheet" href="../styles/main.css">
+		<link rel="stylesheet" href="../styles/infoColors.css">
+		<link rel="stylesheet" href="../styles/games/P4AU.css">
+		<script src="../scripts/common.js"></script>
+		<script src="../scripts/cssResize.js" defer></script>
+		<script src="../scripts/onloadP4AU.js" defer></script>
+		<script src="../scripts/jquery-3.7.1.min.js"></script>
+	</head>
+	<body>
+		<img class="game-logo" src="../img/logos/P4AU_logo.png">
+		<div id="characterselect">
+			<div class="preview-area">
+				<a id="type-select" onclick="altDisplay()" style="visibility: hidden;">
+					<img src="../img/characterSelect/p4au/Type_Normal.png">
+				</a>
+				<div class="portrait-area">
+					<div id="info-name-positioner">
+						<img id="info-name" class="info-title">
+					</div>
+					<div id="info-portrait-positioner">
+						<div id="info-portrait"></div>
+					</div>
+				</div>
+				<div class="description-area"></div>
+				<div class="selectbox-container">
+					<div class="selectbox-positioner">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/p4au/Margaret_icon.png" id="selectbox-margaret">
+						</div>
+					</div>
+					<div class="selectbox-positioner">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/p4au/Ken_Amada_icon.png" id="selectbox-ken">
+						</div>
+					</div>
+					<div class="selectbox-positioner">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/p4au/Sho_icon.png" id="selectbox-sho">
+						</div>
+					</div>
+					<div class="selectbox-positioner">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/p4au/Yukari_Takeba_icon.png" id="selectbox-yukari">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="z-index: 500">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/p4au/Naoto_Shirogane_icon.png" id="selectbox-naoto">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="z-index: 500">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/p4au/Labrys_icon.png" id="selectbox-labrys">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="z-index: 500">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/p4au/Teddie_icon.png" id="selectbox-teddie">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="z-index: 500">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/p4au/Mitsuru_Kirijo_icon.png" id="selectbox-mitsuru">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="z-index: 500">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/p4au/Yukiko_Amagi_icon.png" id="selectbox-yukiko">
+						</div>
+					</div>
+					<div id="positioner-aigis" class="selectbox-positioner" style="z-index: 500">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/p4au/Aigis_icon.png" id="selectbox-aigis">
+						</div>
+					</div>
+					<div id="positioner-narukami" class="selectbox-positioner" style="z-index: 500">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/p4au/Yu_Narukami_icon.png" id="selectbox-narukami">
+						</div>
+					</div>
+					<div id="positioner-adachi" class="selectbox-positioner" style="z-index: 500">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/p4au/Tohru_Adachi_icon.png" id="selectbox-adachi">
+						</div>
+					</div>
+					<div id="positioner-yosuke" class="selectbox-positioner" style="z-index: 500">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/p4au/Yosuke_Hanamura_icon.png" id="selectbox-yosuke">
+						</div>
+					</div>
+					<div id="positioner-elizabeth" class="selectbox-positioner" style="z-index: 500">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/p4au/Elizabeth_icon.png" id="selectbox-elizabeth">
+						</div>
+					</div>
+					<div id="positioner-chie" class="selectbox-positioner" style="z-index: 500">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/p4au/Chie_Satonaka_icon.png" id="selectbox-chie">
+						</div>
+					</div>
+					<div id="positioner-akihiko" class="selectbox-positioner" style="z-index: 500">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/p4au/Akihiko_Sanada_icon.png" id="selectbox-akihiko">
+						</div>
+					</div>
+					<div id="positioner-kanji" class="selectbox-positioner" style="z-index: 500">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/p4au/Kanji_Tatsumi_icon.png" id="selectbox-kanji">
+						</div>
+					</div>
+					<div id="positioner-slabrys" class="selectbox-positioner" style="z-index: 500">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/p4au/Shadow_Labrys_icon.png" id="selectbox-slabrys">
+						</div>
+					</div>
+					<div id="positioner-minazuki" class="selectbox-positioner" style="z-index: 500">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/p4au/Minazuki_icon.png" id="selectbox-minazuki">
+						</div>
+					</div>
+					<div id="positioner-junpei" class="selectbox-positioner" style="z-index: 500">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/p4au/Junpei_Iori_icon.png" id="selectbox-junpei">
+						</div>
+					</div>
+					<div id="positioner-marie" class="selectbox-positioner" style="z-index: 500">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/p4au/Marie_icon.png" id="selectbox-marie">
+						</div>
+					</div>
+					<div id="positioner-rise" class="selectbox-positioner" style="z-index: 500">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/p4au/Rise_Kujikawa_icon.png" id="selectbox-rise">
+						</div>
+					</div>
+					<img class="selectbox-fullroster" src="../img/characterSelect/p4au/Full_Roster.webp" usemap="#mapselect">
+					<map name="mapselect">
+						<area id="character-margaret" onclick="runDisplay('Margaret', this)" shape="poly" coords="0,612, 189,593, 223,698, 203,737, 65,782, 23,761, 0,692">
+						<area id="character-ken" onclick="runDisplay('Ken_Amada', this)" shape="poly" coords="66,785, 203,740, 244,761, 277,864, 92,973, 45,827" data-shadow-exists="true">
+						<area id="character-sho" onclick="runDisplay('Sho', this)" shape="poly" coords="193,527, 384,564, 409,641, 392,676, 266,717, 226,697">
+						<area id="character-yukari" onclick="runDisplay('Yukari_Takeba', this)" shape="poly" coords="266,720, 392,679, 428,698, 452,773, 281,863, 247,760" data-shadow-exists="true">
+						<area id="character-naoto" onclick="runDisplay('Naoto_Shirogane', this)" shape="poly" coords="389,564, 557,530, 578,592, 563,620, 448,657, 413,640" data-shadow-exists="true">
+						<area id="character-labrys" onclick="runDisplay('Labrys', this)" shape="poly" coords="450,660, 564,623, 593,638, 613,699, 456,771, 431,696" data-shadow-exists="true">
+						<area id="character-teddie" onclick="runDisplay('Teddie', this)" shape="poly" coords="561,529, 712,492, 730,546, 718,569, 608,605, 581,591" data-shadow-exists="true">
+						<area id="character-mitsuru" onclick="runDisplay('Mitsuru_Kirijo', this)" shape="poly" coords="609,609, 719,573, 743,584, 760,639, 617,697, 596,635" data-shadow-exists="true">
+						<area id="character-yukiko" onclick="runDisplay('Yukiko_Amagi', this)" shape="poly" coords="716,491, 858,451, 874,500, 863,522, 756,557, 733,545" data-shadow-exists="true">
+						<area id="character-aigis" onclick="runDisplay('Aigis', this)" shape="poly" coords="758,560, 863,526, 886,536, 903,586, 764,637, 746,583" data-shadow-exists="true">
+						<area id="character-narukami" onclick="runDisplay('Yu_Narukami', this)" shape="poly" coords="862,450, 992,407, 1009,456, 997,479, 900,510, 877,498" data-shadow-exists="true">
+						<area id="character-adachi" onclick="runDisplay('Tohru_Adachi', this)" shape="poly" coords="902,513, 998,482, 1021,494, 1037,542, 907,586, 890,536">
+						<area id="character-yosuke" onclick="runDisplay('Yosuke_Hanamura', this)" shape="poly" coords="996,406, 1135,355, 1153,410, 1142,431, 1034,467, 1012,456" data-shadow-exists="true">
+						<area id="character-elizabeth" onclick="runDisplay('Elizabeth', this)" shape="poly" coords="1036,470, 1142,435, 1166,448, 1182,501, 1040,542, 1024,492">
+						<area id="character-chie" onclick="runDisplay('Chie_Satonaka', this)" shape="poly" coords="1138,353, 1283,295, 1303,357, 1289,384, 1179,420, 1156,408" data-shadow-exists="true">
+						<area id="character-akihiko" onclick="runDisplay('Akihiko_Sanada', this)" shape="poly" coords="1179,424, 1290,387, 1317,401, 1337,463, 1187,501, 1168,446" data-shadow-exists="true">
+						<area id="character-kanji" onclick="runDisplay('Kanji_Tatsumi', this)" shape="poly" coords="1286,293, 1443,221, 1468,296, 1450,332, 1334,369, 1306,355" data-shadow-exists="true">
+						<area id="character-slabrys" onclick="runDisplay('Shadow_Labrys', this)" shape="poly" coords="1335,373, 1450,336, 1486,354, 1510,428, 1341,463, 1321,401">
+						<area id="character-minazuki" onclick="runDisplay('Minazuki', this)" shape="poly" coords="1446,219, 1618,130, 1652,233, 1631,273, 1506,313, 1471,296">
+						<area id="character-junpei" onclick="runDisplay('Junpei_Iori', this)" shape="poly" coords="1508,316, 1632,276, 1673,297, 1706,399, 1515,428, 1489,352" data-shadow-exists="true">
+						<area id="character-marie" onclick="runDisplay('Marie', this)" shape="poly" coords="1622,128, 1806,19, 1854,165, 1832,207, 1695,252, 1655,232">
+						<area id="character-rise" onclick="runDisplay('Rise_Kujikawa', this)" shape="poly" coords="1696,255, 1833,211, 1876,233, 1920,367, 1920,377, 1710,399, 1676,295" data-shadow-exists="true">
+					</map>
+				</div>
+			</div>
+		</div>
+		<div class="preload-container">
+			<img src="../img/portraits/p4au/Margaret_cut.png">
+			<img src="../img/portraits/p4au/Ken_Amada_cut.png">
+			<img src="../img/portraits/p4au/Sho_cut.png">
+			<img src="../img/portraits/p4au/Yukari_Takeba_cut.png">
+			<img src="../img/portraits/p4au/Naoto_Shirogane_cut.png">
+			<img src="../img/portraits/p4au/Labrys_cut.png">
+			<img src="../img/portraits/p4au/Teddie_cut.png">
+			<img src="../img/portraits/p4au/Mitsuru_Kirijo_cut.png">
+			<img src="../img/portraits/p4au/Yukiko_Amagi_cut.png">
+			<img src="../img/portraits/p4au/Aigis_cut.png">
+			<img src="../img/portraits/p4au/Yu_Narukami_cut.png">
+			<img src="../img/portraits/p4au/Tohru_Adachi_cut.png">
+			<img src="../img/portraits/p4au/Yosuke_Hanamura_cut.png">
+			<img src="../img/portraits/p4au/Elizabeth_cut.png">
+			<img src="../img/portraits/p4au/Chie_Satonaka_cut.png">
+			<img src="../img/portraits/p4au/Akihiko_Sanada_cut.png">
+			<img src="../img/portraits/p4au/Kanji_Tatsumi_cut.png">
+			<img src="../img/portraits/p4au/Shadow_Labrys_cut.png">
+			<img src="../img/portraits/p4au/Minazuki_cut.png">
+			<img src="../img/portraits/p4au/Junpei_Iori_cut.png">
+			<img src="../img/portraits/p4au/Marie_cut.png">
+			<img src="../img/portraits/p4au/Rise_Kujikawa_cut.png">
+		</div>
+	</body>
+</html>

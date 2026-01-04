@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Guilty Gear Xrd REV 2 | Fighting Game Overview</title>
+		<link rel="stylesheet" href="../styles/main.css">
+		<link rel="stylesheet" href="../styles/infoColors.css">
+		<link rel="stylesheet" href="../styles/games/GGXRD.css">
+		<script src="../scripts/common.js"></script>
+		<script src="../scripts/cssResize.js" defer></script>
+		<script src="../scripts/onloadGGXRD.js" defer></script>
+		<script src="../scripts/jquery-3.7.1.min.js"></script>
+	</head>
+	<body>
+		<img class="game-logo" src="../img/logos/GGXRD_logo.png">
+		<div id="characterselect" style="width: auto">
+			<div class="preview-area">
+				<div class="portrait-area">
+					<div style="display: flex; width: 0px; height: 0px; margin: auto; justify-content: center; z-index: 100">
+						<img id="info-portrait" src="" style="height: 80vh; max-width: none">
+					</div>
+					<img id="info-name" class="info-title" style="max-width: 100%; margin-top: 60vh; position: relative; z-index: 500">
+				</div>
+				<div class="selectbox-container">
+					<div class="selectbox-positioner" style="left: 0px; top: 0px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ggxrd/Kum_Haehyun_icon.png" id="selectbox-haehyun" style="opacity: 0">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 0px; top: 0px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ggxrd/Elphelt_Valentine_icon.png" id="selectbox-elphelt" style="opacity: 0">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 0px; top: 0px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ggxrd/Sol_Badguy_icon.png" id="selectbox-sol" style="opacity: 0">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 0px; top: 0px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ggxrd/Ky_Kiske_icon.png" id="selectbox-ky" style="opacity: 0">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 0px; top: 0px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ggxrd/Ramlethal_Valentine_icon.png" id="selectbox-ramlethal" style="opacity: 0">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 0px; top: 0px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ggxrd/Raven_icon.png" id="selectbox-raven" style="opacity: 0">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 0px; top: 0px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ggxrd/Sin_Kiske_icon.png" id="selectbox-sin" style="opacity: 0">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 0px; top: 0px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ggxrd/Johnny_icon.png" id="selectbox-johnny" style="opacity: 0">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 0px; top: 0px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ggxrd/May_icon.png" id="selectbox-may" style="opacity: 0">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 0px; top: 0px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ggxrd/Leo_Whitefang_icon.png" id="selectbox-leo" style="opacity: 0">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 0px; top: 0px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ggxrd/Chipp_Zanuff_icon.png" id="selectbox-chipp" style="opacity: 0">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 0px; top: 0px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ggxrd/Millia_Rage_icon.png" id="selectbox-millia" style="opacity: 0">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 0px; top: 0px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ggxrd/Baiken_icon.png" id="selectbox-baiken" style="opacity: 0">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 0px; top: 0px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ggxrd/Answer_icon.png" id="selectbox-answer" style="opacity: 0">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 0px; top: 0px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ggxrd/Zato=1_icon.png" id="selectbox-zato" style="opacity: 0">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 0px; top: 0px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ggxrd/Potemkin_icon.png" id="selectbox-potemkin" style="opacity: 0">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 0px; top: 0px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ggxrd/I-No_icon.png" id="selectbox-ino" style="opacity: 0">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 0px; top: 0px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ggxrd/Slayer_icon.png" id="selectbox-slayer" style="opacity: 0">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 0px; top: 0px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ggxrd/Venom_icon.png" id="selectbox-venom" style="opacity: 0">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 0px; top: 0px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ggxrd/Axl_Low_icon.png" id="selectbox-axl" style="opacity: 0">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 0px; top: 0px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ggxrd/Dizzy_icon.png" id="selectbox-dizzy" style="opacity: 0">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 0px; top: 0px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ggxrd/Faust_icon.png" id="selectbox-faust" style="opacity: 0">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 0px; top: 0px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ggxrd/Bedman_icon.png" id="selectbox-bedman" style="opacity: 0">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 0px; top: 0px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ggxrd/Jack-O'_Valentine_icon.png" id="selectbox-jacko" style="opacity: 0">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 0px; top: 0px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ggxrd/Jam_Kuradoberi_icon.png" id="selectbox-jam" style="opacity: 0">
+						</div>
+					</div>
+					<div id="roster-clipper">
+						<img class="selectbox-fullroster" src="../img/characterSelect/ggxrd/Full_Roster.png">
+					</div>
+					<img class="selectbox-fullroster-sizer" src="../img/characterSelect/ggxrd/Full_Roster_sizer.png" usemap="#mapselect">
+					<map name="mapselect">
+						<area id="character-haehyun" onclick="runDisplay('Kum_Haehyun')" shape="poly" coords="127,4, 196,64, 196,144, 128,165, 58,106, 58,27">
+						<area id="character-elphelt" onclick="runDisplay('Elphelt_Valentine')" shape="poly" coords="283,42, 352,102, 352,182, 284,203, 214,144, 214,65">
+						<area id="character-sol" onclick="runDisplay('Sol_Badguy')" shape="poly" coords="433,76, 502,136, 502,216, 434,237, 364,178, 364,99">
+						<area id="character-ky" onclick="runDisplay('Ky_Kiske')" shape="poly" coords="575,76, 506,136, 506,216, 574,237, 644,178, 644,99">
+						<area id="character-ramlethal" onclick="runDisplay('Ramlethal_Valentine')" shape="poly" coords="724,42, 655,102, 655,182, 723,203, 793,144, 793,65">
+						<area id="character-raven" onclick="runDisplay('Raven')" shape="poly" coords="880,4, 811,64, 811,144, 879,165, 949,106, 949,27">
+						<area id="character-sin" onclick="runDisplay('Sin_Kiske')" shape="poly" coords="208,144, 277,204, 277,284, 209,305, 139,246, 139,167">
+						<area id="character-johnny" onclick="runDisplay('Johnny')" shape="poly" coords="360,178, 429,238, 429,318, 361,339, 291,280, 291,201">
+						<area id="character-may" onclick="runDisplay('May')" shape="poly" coords="647,180, 578,240, 578,320, 646,341, 716,282, 716,203">
+						<area id="character-leo" onclick="runDisplay('Leo_Whitefang')" shape="poly" coords="798,144, 729,204, 729,284, 797,305, 867,246, 867,167">
+						<area id="character-chipp" onclick="runDisplay('Chipp_Zanuff')" shape="poly" coords="137,249, 206,309, 206,389, 138,410, 68,351, 68,272">
+						<area id="character-millia" onclick="runDisplay('Millia_Rage')" shape="poly" coords="288,282, 357,342, 357,422, 289,443, 219,384, 219,305">
+						<area id="character-baiken" onclick="runDisplay('Baiken')" shape="poly" coords="433,320, 502,380, 502,460, 434,481, 364,422, 364,343">
+						<area id="character-answer" onclick="runDisplay('Answer')" shape="poly" coords="576,320, 507,380, 507,460, 575,481, 645,422, 645,343">
+						<area id="character-zato" onclick="runDisplay('Zato=1')" shape="poly" coords="718,284, 649,344, 649,424, 717,445, 787,386, 787,307">
+						<area id="character-potemkin" onclick="runDisplay('Potemkin')" shape="poly" coords="869,249, 800,309, 800,389, 868,410, 938,351, 938,272">
+						<area id="character-ino" onclick="runDisplay('I-No')" shape="poly" coords="208,390, 277,450, 277,530, 209,551, 139,492, 139,413">
+						<area id="character-slayer" onclick="runDisplay('Slayer')" shape="poly" coords="362,423, 431,483, 431,563, 363,584, 293,525, 293,446">
+						<area id="character-venom" onclick="runDisplay('Venom')" shape="poly" coords="646,424, 577,484, 577,564, 645,585, 715,526, 715,447">
+						<area id="character-axl" onclick="runDisplay('Axl_Low')" shape="poly" coords="799,390, 730,450, 730,530, 798,551, 868,492, 868,413">
+						<area id="character-dizzy" onclick="runDisplay('Dizzy')" shape="poly" coords="127,496, 196,556, 196,636, 128,657, 58,598, 58,519">
+						<area id="character-faust" onclick="runDisplay('Faust')" shape="poly" coords="279,531, 348,591, 348,671, 280,692, 210,633, 210,554">
+						<area id="character-bedman" onclick="runDisplay('Bedman')" shape="poly" coords="434,564, 503,624, 503,704, 435,725, 365,666, 365,587">
+						<area id="character-jacko" onclick="runDisplay('Jack-O_Valentine')" shape="poly" coords="575,564, 506,624, 506,704, 574,725, 644,666, 644,587">
+						<area id="character-jam" onclick="runDisplay('Jam_Kuradoberi')" shape="poly" coords="728,531, 659,591, 659,671, 727,692, 797,633, 797,554">
+						<area id="character-random" onclick="runDisplay('Random')" shape="poly" coords="879,496, 810,556, 810,636, 878,657, 948,598, 948,519">
+					</map>
+				</div>
+				<div class="description-area"></div>
+			</div>
+		</div>
+		<div class="preload-container">
+			<img src="../img/portraits/ggxrd/Kum_Haehyun.png">
+			<img src="../img/portraits/ggxrd/Elphelt_Valentine.png">
+			<img src="../img/portraits/ggxrd/Sol_Badguy.png">
+			<img src="../img/portraits/ggxrd/Ky_Kiske.png">
+			<img src="../img/portraits/ggxrd/Ramlethal_Valentine.png">
+			<img src="../img/portraits/ggxrd/Raven.png">
+			<img src="../img/portraits/ggxrd/Sin_Kiske.png">
+			<img src="../img/portraits/ggxrd/Johnny.png">
+			<img src="../img/portraits/ggxrd/May.png">
+			<img src="../img/portraits/ggxrd/Leo_Whitefang.png">
+			<img src="../img/portraits/ggxrd/Chipp_Zanuff.png">
+			<img src="../img/portraits/ggxrd/Millia_Rage.png">
+			<img src="../img/portraits/ggxrd/Baiken.png">
+			<img src="../img/portraits/ggxrd/Answer.png">
+			<img src="../img/portraits/ggxrd/Zato=1.png">
+			<img src="../img/portraits/ggxrd/Potemkin.png">
+			<img src="../img/portraits/ggxrd/I-No.png">
+			<img src="../img/portraits/ggxrd/Slayer.png">
+			<img src="../img/portraits/ggxrd/Venom.png">
+			<img src="../img/portraits/ggxrd/Axl_Low.png">
+			<img src="../img/portraits/ggxrd/Dizzy.png">
+			<img src="../img/portraits/ggxrd/Faust.png">
+			<img src="../img/portraits/ggxrd/Bedman.png">
+			<img src="../img/portraits/ggxrd/Jack-O'_Valentine.png">
+			<img src="../img/portraits/ggxrd/Jam_Kuradoberi.png">
+		</div>
+	</body>
+</html>

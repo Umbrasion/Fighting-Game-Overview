@@ -1,0 +1,162 @@
+:root {
+    background-image: linear-gradient(-16deg, #C60000 0%, #000 44%, #000 56%, #C60000 100%);
+    height: fit-content;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0px;
+}
+
+#characterselect {
+    display: block;
+    padding: 0px;
+    width: 100vw;
+}
+
+#type-select {
+    position: absolute;
+    top: 0.8vw;
+    right: 35vw;
+    z-index: 600;
+    cursor: pointer;
+}
+
+#type-select img {
+    display: block;
+    width: 300px;
+}
+
+.portrait-area, .description-area {
+    width: 0px;
+    height: 0px;
+    z-index: 100;
+}
+
+#info-portrait-positioner {
+    width: fit-content;
+    height: fit-content;
+    max-width: none;
+    background: no-repeat;
+    overflow: clip;
+    transform: rotate(-18deg);
+    transform-origin: bottom left;
+}
+
+#info-portrait {
+    max-width: none;
+    background: no-repeat;
+    background-size: 90%;
+    overflow: visible;
+    transform: rotate(18deg);
+    z-index: 105;
+    filter: drop-shadow(-18px 0px #15FDF0) drop-shadow(-18px 0px #054DD0);
+}
+
+#info-name-positioner {
+    display: flex;
+    flex-direction: column;
+    width: 0px;
+    height: 0px;
+    margin: auto;
+    justify-content: left;
+    align-items: center
+}
+
+#info-name {
+    flex-shrink: 0;
+    z-index: 110;
+    position: relative;
+    transform: rotate(-16deg);
+    transform-origin: top right;
+}
+
+.description-area {
+    position: absolute;
+    width: 53vw;
+    transform: translate(-10vw,-1vh) rotate(-12deg);
+}
+
+.selectbox-container {
+    width: 100%;
+    overflow: clip;
+    z-index: 500;
+}
+
+.selectbox-character img {
+    opacity: 0;
+    transform-origin: top left;
+}
+
+.selectbox-container, .selectbox-fullroster  {
+    position: relative;
+}
+
+.selectbox-fullroster {
+    width: 100%;
+}
+
+.selectbox-positioner {
+    pointer-events: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    width: 0px;
+    height: 0px;
+    z-index: 501;
+}
+
+.portrait-onhover {
+    animation-name: portrait-onhover;
+    animation-duration: 0.4s;
+    animation-iteration-count: 1;
+    animation-direction: linear;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+}
+
+@keyframes portrait-onhover {
+    0% {
+        transform: translate(-100%,0) rotate(-18deg);
+    }
+    
+    30% {
+        transform: translate(-2%,0) rotate(-18deg);
+    }
+    
+    100% {
+        transform: translate(0,0) rotate(-18deg);
+    }
+}
+
+.name-onhover {
+    animation-name: name-onhover;
+    animation-duration: 0.4s;
+    animation-iteration-count: 1;
+    animation-direction: linear;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+}
+
+@keyframes name-onhover {
+    0% {
+        transform: scale(2) rotate(-16deg);
+        opacity: 0;
+    }
+    
+    75% {
+        transform: scale(2) rotate(-16deg);
+        opacity: 0;
+    }
+    
+    96% {
+        transform: scale(0.92) rotate(-16deg);
+        opacity: 1;
+    }
+    
+    100% {
+        transform: scale(1) rotate(-16deg);
+        opacity: 1;
+    }
+}

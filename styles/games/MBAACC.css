@@ -1,0 +1,191 @@
+:root {
+    background-color: black;
+    background-image: url("../../img/backgrounds/MBAACC.png");
+    background-size: auto 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.portrait-area, .description-area {
+    padding: 0px 40px;
+}
+
+.portrait-area {
+    position: relative;
+    height: 800px;
+}
+
+#info-portrait, #info-portrait-temp {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+}
+
+#info-name {
+    position: absolute;
+    bottom: 0px;
+    left: 100px;
+    z-index: 500;
+    filter: drop-shadow(0px 0px 1px #7E00FF) drop-shadow(0px 0px 1px #7E00FF) drop-shadow(0px 0px 1px #7E00FF) drop-shadow(0px 0px 1px #7E00FF);
+    text-align: left;
+}
+
+b, th, h2, h3 {
+    filter: drop-shadow(0px 0px 1px #7E00FF) drop-shadow(0px 0px 1px #7E00FF) drop-shadow(0px 0px 1px #7E00FF) drop-shadow(0px 0px 1px #7E00FF);
+}
+
+.selectbox-container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    gap: 6px;
+    height: fit-content;
+    margin-top: 60px;
+}
+
+.character-box {
+    transform: rotate3d(0, 1, 0, -90deg);
+}
+
+.selectbox-row {
+    gap: 12px;
+}
+
+.selectbox-character img {
+    width: 68px;
+}
+
+.icon-onstart {
+    animation-name: icon-onstart;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-direction: linear;
+    animation-delay: 0s;
+    animation-timing-function: ease-out;
+    transform: rotate3d(0, 0, 0, 0);
+}
+
+@keyframes icon-onstart {
+    from {
+        transform: rotate(-90deg) rotate3d(0, 1, 0, -90deg) scale(1);
+        filter: contrast(0.5) brightness(2);
+    }
+    
+    to {
+        transform: rotate(0deg) rotate3d(0, 0, 0, 0) scale(1);
+        filter: contrast(1) brightness(1);
+    }
+}
+
+.portrait-onhover {
+    animation-name: portrait-onhover;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-delay: 0s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes portrait-onhover {
+    0% {
+        transform: translate(-200px, 0);
+        filter: contrast(0) brightness(2);
+        opacity: 0;
+    }
+
+    10% {
+        filter: contrast(0) brightness(2);
+    }
+    
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.name-onhover {
+    animation-name: name-onhover;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+}
+
+@keyframes name-onhover {
+    from {
+        transform: translate(-300px, 0);
+    }
+    
+    to {
+        transform: translate(0, 0);
+    }
+}
+
+.portrait-onselect {
+    animation-name: portraitonselect;
+    animation-duration: 0.6s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+}
+
+@keyframes portraitonselect {
+    0% {
+        transform: scale(1);
+        filter: contrast(0) brightness(2);
+        opacity: 1;
+    }
+    
+    100% {
+        transform: scale(1.1);
+        filter: contrast(0) brightness(2);
+        opacity: 0;
+    }
+}
+
+#background-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    aspect-ratio: 4 / 3;
+    margin: auto;
+    overflow: clip;
+}
+
+.bg-text {
+    position: absolute;
+    font-family: serif;
+    font-size: 24px;
+    color: rgba(163,139,145,0.8);
+    width: 100vw;
+    opacity: 0;
+
+    animation-name: text-scroll;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@keyframes text-scroll {
+    0% {
+        transform: translate(0,0);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+    
+    100% {
+        transform: translate(var(--end-coords), 0);
+        opacity: 0;
+    }
+}

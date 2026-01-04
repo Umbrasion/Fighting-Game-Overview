@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Super Smash REX | Fighting Game Overview</title>
+		<link rel="stylesheet" href="../styles/main.css">
+		<link rel="stylesheet" href="../styles/infoColors.css">
+		<link rel="stylesheet" href="../styles/games/REX.css">
+		<script src="../scripts/common.js"></script>
+		<script src="../scripts/cssResize.js" defer></script>
+		<script src="../scripts/onloadREX.js" defer></script>
+		<script src="../scripts/jquery-3.7.1.min.js"></script>
+	</head>
+	<body>
+		<div id="characterselect">
+			<div class="preview-area">
+				<div class="selectbox-container">
+					<div class="selectbox-row">
+						<div id="positioner-drmario" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div id="selectbox-drmario" class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Dr._Mario_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-drluigi" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Dr._Luigi_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-mario" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Mario_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-luigi" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Luigi_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-bowser" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Bowser_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-drybowser" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Dry_Bowser_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-peach" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Peach_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-daisy" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Daisy_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-toad" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Toad_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-wario" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Wario_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-waluigi" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Waluigi_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-yoshi" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Yoshi_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-dk" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Donkey_Kong_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-diddy" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Diddy_Kong_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-krool" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/King_K._Rool_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-geno" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Geno_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-zss" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Zero_Suit_Samus_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-samus" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Samus_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-dsamus" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Dark_Samus_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-ridley" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Ridley_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-mac" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Little_Mac_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-wiifit" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Wii_Fit_Trainer_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+					</div>
+					<div class="selectbox-row">
+						<div id="positioner-deity" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Fierce_Deity.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-ylink" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Young_Link_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-link" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Link_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-sheik" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Sheik_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-zelda" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Zelda_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-ganondorf" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Ganondorf_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-phantom" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Phantom_Ganon_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-tlink" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Toon_Link_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-tzelda" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Toon_Zelda_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-pichu" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Pichu_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-pikachu" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Pikachu_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-jigglypuff" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Jigglypuff_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-squirtle" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Squirtle_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-ivysaur" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Ivysaur_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-charizard" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Charizard_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-mewtwo" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Mewtwo_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-lucario" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Lucario_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-sceptile" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Sceptile_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-blaziken" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Blaziken_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-incineroar" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Incineroar_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-zeraora" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Zeraora_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+					</div>
+					<div class="selectbox-row">
+						<div id="positioner-kirby" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Kirby_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-metaknight" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Meta_Knight_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-joe" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Knuckle_Joe_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-bandana" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Bandana_Dee_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-dedede" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/King_Dedede_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-fox" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Fox_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-falco" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Falco_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-wolf" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Wolf_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-falcon" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Captain_Falcon_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-blood" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Blood_Falcon_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-blackshadow" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Black_Shadow_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-deathborn" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Deathborn_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-ninten" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Ninten_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-ness" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Ness_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-lucas" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Lucas_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-kumatora" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Kumatora_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-masked" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Masked_Man_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-climbers" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Ice_Climbers_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-gnw" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Mr._Game_&_Watch_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-rob" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/R.O.B._icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-sukapon" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Sukapon_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-isabelle" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Isabelle_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+					</div>
+					<div class="selectbox-row">
+						<div id="positioner-marth" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Marth_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-navarre" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Navarre_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-roy" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Roy_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-lyn" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Lyn_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-ike" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Ike_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-blackknight" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Black_Knight_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-robin" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Robin_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-chrom" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Chrom_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-lucina" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Lucina_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-corrin" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Corrin_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-olimar" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Olimar_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-louie" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Louie_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-alph" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Alph_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-shulk" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Shulk_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-metalface" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Metal_Face_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-pyra" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Pyra_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-mythra" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Mythra_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-pit" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Pit_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-palutena" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Palutena_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-dpit" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Dark_Pit_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-isaac" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Isaac_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+					</div>
+					<div class="selectbox-row">
+						<div id="positioner-bigboss" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Big_Boss_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-snake" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Snake_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-simon" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Simon_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-richter" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Richter_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-alucard" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Alucard_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-bomberman" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Bomberman_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-sonic" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Sonic_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-tails" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Tails_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-knuckles" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Knuckles_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-msonic" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Metal_Sonic_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-shadow" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Shadow_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-silver" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Silver_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-bayonetta" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Bayonetta_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-yu" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Yu_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-joker" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Joker_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-vectorman" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Vectorman_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-x" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/X_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-zero" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Zero_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-ryu" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Ryu_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-ken" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Ken_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-pacman" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Pac-Man_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-kazuya" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Kazuya_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+					</div>
+					<div class="selectbox-row">
+						<div id="positioner-terry" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Terry_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-rock" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Rock_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-cloud" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Cloud_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-zack" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Zack_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-sephiroth" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Sephiroth_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-squall" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Squall_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-hero" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Hero_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-sora" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Sora_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-banjo" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Banjo_&_Kazooie_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-chief" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Master_Chief_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-subzero" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Sub-Zero_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-nu" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Nu-13_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-sol" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Sol_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-sans" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Sans_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-elizabeth" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Elizabeth_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-shovelknight" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Shovel_Knight_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-dragon" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Dragon_King_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-sandbag" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Sandbag_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-primid" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Primid_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-alloys" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Alloys_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+						<div id="positioner-random" class="selectbox-positioner" style="left: 0px; top: 0px">
+							<div class="selectbox selectbox-character">
+								<img class="selectbox-icon-details selectbox-icon-bg">
+								<img class="selectbox-icon" src="../img/characterSelect/rex/Random_icon.png">
+								<img class="selectbox-icon-details selectbox-icon-border">
+							</div>
+						</div>
+					</div>
+					<img class="selectbox-fullroster" src="../img/characterSelect/rex/Full_Roster.webp" usemap="#mapselect">
+					<map name="mapselect">
+						<area id="character-drmario" class="iconarea-row1" onclick="runDisplay('Dr._Mario', this)" shape="poly" coords="">
+						<area id="character-drluigi" class="iconarea-row1" onclick="runDisplay('Dr._Luigi', this)" shape="poly" coords="">
+						<area id="character-mario" class="iconarea-row1" onclick="runDisplay('Mario', this)" shape="poly" coords="" data-has-lload="true">
+						<area id="character-luigi" class="iconarea-row1" onclick="runDisplay('Luigi', this)" shape="poly" coords="">
+						<area id="character-bowser" class="iconarea-row1" onclick="runDisplay('Bowser', this)" shape="poly" coords="" data-has-lload="true">
+						<area id="character-drybowser" class="iconarea-row1" onclick="runDisplay('Dry_Bowser', this)" shape="poly" coords="" data-has-lload="true">
+						<area id="character-peach" class="iconarea-row1" onclick="runDisplay('Peach', this)" shape="poly" coords="">
+						<area id="character-daisy" class="iconarea-row1" onclick="runDisplay('Daisy', this)" shape="poly" coords="">
+						<area id="character-toad" class="iconarea-row1" onclick="runDisplay('Toad', this)" shape="poly" coords="">
+						<area id="character-wario" class="iconarea-row1" onclick="runDisplay('Wario', this)" shape="poly" coords="" data-has-lload="true">
+						<area id="character-waluigi" class="iconarea-row1" onclick="runDisplay('Waluigi', this)" shape="poly" coords="">
+						<area id="character-yoshi" class="iconarea-row1" onclick="runDisplay('Yoshi', this)" shape="poly" coords="">
+						<area id="character-dk" class="iconarea-row1" onclick="runDisplay('Donkey_Kong', this)" shape="poly" coords="" data-has-lload="true">
+						<area id="character-diddy" class="iconarea-row1" onclick="runDisplay('Diddy_Kong', this)" shape="poly" coords="">
+						<area id="character-krool" class="iconarea-row1" onclick="runDisplay('King_K._Rool', this)" shape="poly" coords="">
+						<area id="character-geno" class="iconarea-row1" onclick="runDisplay('Geno', this)" shape="poly" coords="">
+						<area id="character-zss" class="iconarea-row1" onclick="runDisplay('Zero_Suit_Samus', this)" shape="poly" coords="" data-has-lload="true">
+						<area id="character-samus" class="iconarea-row1" onclick="runDisplay('Samus', this)" shape="poly" coords="" data-has-lload="true">
+						<area id="character-dsamus" class="iconarea-row1" onclick="runDisplay('Dark_Samus', this)" shape="poly" coords="" data-has-lload="true">
+						<area id="character-ridley" class="iconarea-row1" onclick="runDisplay('Ridley', this)" shape="poly" coords="">
+						<area id="character-mac" class="iconarea-row1" onclick="runDisplay('Little_Mac', this)" shape="poly" coords="">
+						<area id="character-wiifit" class="iconarea-row1" onclick="runDisplay('Wii_Fit_Trainer', this)" shape="poly" coords="">
+
+						<area id="character-deity" class="iconarea-row2" onclick="runDisplay('Fierce_Deity', this)" shape="poly" coords="">
+						<area id="character-ylink" class="iconarea-row2" onclick="runDisplay('Young_Link', this)" shape="poly" coords="">
+						<area id="character-link" class="iconarea-row2" onclick="runDisplay('Link', this)" shape="poly" coords="">
+						<area id="character-sheik" class="iconarea-row2" onclick="runDisplay('Sheik', this)" shape="poly" coords="">
+						<area id="character-zelda" class="iconarea-row2" onclick="runDisplay('Zelda', this)" shape="poly" coords="">
+						<area id="character-ganondorf" class="iconarea-row2" onclick="runDisplay('Ganondorf', this)" shape="poly" coords="" data-has-lload="true">
+						<area id="character-phantom" class="iconarea-row2" onclick="runDisplay('Phantom_Ganon', this)" shape="poly" coords="">
+						<area id="character-tlink" class="iconarea-row2" onclick="runDisplay('Toon_Link', this)" shape="poly" coords="">
+						<area id="character-tzelda" class="iconarea-row2" onclick="runDisplay('Toon_Zelda', this)" shape="poly" coords="">
+						<area id="character-pichu" class="iconarea-row2" onclick="runDisplay('Pichu', this)" shape="poly" coords="">
+						<area id="character-pikachu" class="iconarea-row2" onclick="runDisplay('Pikachu', this)" shape="poly" coords="">
+						<area id="character-jigglypuff" class="iconarea-row2" onclick="runDisplay('Jigglypuff', this)" shape="poly" coords="" data-has-lload="true">
+						<area id="character-squirtle" class="iconarea-row2" onclick="runDisplay('Squirtle', this)" shape="poly" coords="">
+						<area id="character-ivysaur" class="iconarea-row2" onclick="runDisplay('Ivysaur', this)" shape="poly" coords="">
+						<area id="character-charizard" class="iconarea-row2" onclick="runDisplay('Charizard', this)" shape="poly" coords="" data-has-lload="true">
+						<area id="character-mewtwo" class="iconarea-row2" onclick="runDisplay('Mewtwo', this)" shape="poly" coords="" data-has-lload="true">
+						<area id="character-lucario" class="iconarea-row2" onclick="runDisplay('Lucario', this)" shape="poly" coords="" data-has-lload="true">
+						<area id="character-sceptile" class="iconarea-row2" onclick="runDisplay('Sceptile', this)" shape="poly" coords="">
+						<area id="character-blaziken" class="iconarea-row2" onclick="runDisplay('Blaziken', this)" shape="poly" coords="">
+						<area id="character-incineroar" class="iconarea-row2" onclick="runDisplay('Incineroar', this)" shape="poly" coords="">
+						<area id="character-zeraora" class="iconarea-row2" onclick="runDisplay('Zeraora', this)" shape="poly" coords="">
+
+						<area id="character-kirby" class="iconarea-row3" onclick="runDisplay('Kirby', this)" shape="poly" coords="">
+						<area id="character-metaknight" class="iconarea-row3" onclick="runDisplay('Meta_Knight', this)" shape="poly" coords="" data-has-lload="true">
+						<area id="character-joe" class="iconarea-row3" onclick="runDisplay('Knucke_Joe', this)" shape="poly" coords="">
+						<area id="character-bandana" class="iconarea-row3" onclick="runDisplay('Bandana_Dee', this)" shape="poly" coords="">
+						<area id="character-dedede" class="iconarea-row3" onclick="runDisplay('King_Dedede', this)" shape="poly" coords="">
+						<area id="character-fox" class="iconarea-row3" onclick="runDisplay('Fox', this)" shape="poly" coords="">
+						<area id="character-falco" class="iconarea-row3" onclick="runDisplay('Falco', this)" shape="poly" coords="" data-has-lload="true">
+						<area id="character-wolf" class="iconarea-row3" onclick="runDisplay('Wolf', this)" shape="poly" coords="" data-has-lload="true">
+						<area id="character-falcon" class="iconarea-row3" onclick="runDisplay('Captain_Falcon', this)" shape="poly" coords="">
+						<area id="character-blood" class="iconarea-row3" onclick="runDisplay('Blood_Falcon', this)" shape="poly" coords="">
+						<area id="character-blackshadow" class="iconarea-row3" onclick="runDisplay('Black_Shadow', this)" shape="poly" coords="">
+						<area id="character-deathborn" class="iconarea-row3" onclick="runDisplay('Deathborn', this)" shape="poly" coords="">
+						<area id="character-ninten" class="iconarea-row3" onclick="runDisplay('Ninten', this)" shape="poly" coords="">
+						<area id="character-ness" class="iconarea-row3" onclick="runDisplay('Ness', this)" shape="poly" coords="">
+						<area id="character-lucas" class="iconarea-row3" onclick="runDisplay('Lucas', this)" shape="poly" coords="" data-has-lload="true">
+						<area id="character-kumatora" class="iconarea-row3" onclick="runDisplay('Kumatora', this)" shape="poly" coords="">
+						<area id="character-masked" class="iconarea-row3" onclick="runDisplay('Masked_Man', this)" shape="poly" coords="">
+						<area id="character-climbers" class="iconarea-row3" onclick="runDisplay('Ice_Climbers', this)" shape="poly" coords="" data-has-lload="true">
+						<area id="character-gnw" class="iconarea-row3" onclick="runDisplay('Mr._Game_&_Watch', this)" shape="poly" coords="">
+						<area id="character-rob" class="iconarea-row3" onclick="runDisplay('R.O.B.', this)" shape="poly" coords="">
+						<area id="character-sukapon" class="iconarea-row3" onclick="runDisplay('Sukapon', this)" shape="poly" coords="">
+						<area id="character-isabelle" class="iconarea-row3" onclick="runDisplay('Isabelle', this)" shape="poly" coords="">
+
+						<area id="character-marth" class="iconarea-row4" onclick="runDisplay('Marth', this)" shape="poly" coords="">
+						<area id="character-navarre" class="iconarea-row4" onclick="runDisplay('Navarre', this)" shape="poly" coords="">
+						<area id="character-roy" class="iconarea-row4" onclick="runDisplay('Roy', this)" shape="poly" coords="" data-has-lload="true">
+						<area id="character-lyn" class="iconarea-row4" onclick="runDisplay('Lyn', this)" shape="poly" coords="">
+						<area id="character-ike" class="iconarea-row4" onclick="runDisplay('Ike', this)" shape="poly" coords="">
+						<area id="character-blackknight" class="iconarea-row4" onclick="runDisplay('Black_Knight', this)" shape="poly" coords="">
+						<area id="character-robin" class="iconarea-row4" onclick="runDisplay('Robin', this)" shape="poly" coords="">
+						<area id="character-chrom" class="iconarea-row4" onclick="runDisplay('Chrom', this)" shape="poly" coords="" data-has-lload="true">
+						<area id="character-lucina" class="iconarea-row4" onclick="runDisplay('Lucina', this)" shape="poly" coords="" data-has-lload="true">
+						<area id="character-corrin" class="iconarea-row4" onclick="runDisplay('Corrin', this)" shape="poly" coords="">
+						<area id="character-olimar" class="iconarea-row4" onclick="runDisplay('Olimar', this)" shape="poly" coords="">
+						<area id="character-louie" class="iconarea-row4" onclick="runDisplay('Louie', this)" shape="poly" coords="">
+						<area id="character-alph" class="iconarea-row4" onclick="runDisplay('Alph', this)" shape="poly" coords="">
+						<area id="character-shulk" class="iconarea-row4" onclick="runDisplay('Shulk', this)" shape="poly" coords="">
+						<area id="character-metalface" class="iconarea-row4" onclick="runDisplay('Metal_Face', this)" shape="poly" coords="">
+						<area id="character-pyra" class="iconarea-row4" onclick="runDisplay('Pyra', this)" shape="poly" coords="">
+						<area id="character-mythra" class="iconarea-row4" onclick="runDisplay('Mythra', this)" shape="poly" coords="">
+						<area id="character-pit" class="iconarea-row4" onclick="runDisplay('Pit', this)" shape="poly" coords="">
+						<area id="character-palutena" class="iconarea-row4" onclick="runDisplay('Palutena', this)" shape="poly" coords="">
+						<area id="character-dpit" class="iconarea-row4" onclick="runDisplay('Dark_Pit', this)" shape="poly" coords="">
+						<area id="character-isaac" class="iconarea-row4" onclick="runDisplay('Isaac', this)" shape="poly" coords="">
+
+						<area id="character-bigboss" class="iconarea-row5" onclick="runDisplay('Big_Boss', this)" shape="poly" coords="">
+						<area id="character-snake" class="iconarea-row5" onclick="runDisplay('Snake', this)" shape="poly" coords="">
+						<area id="character-simon" class="iconarea-row5" onclick="runDisplay('Simon', this)" shape="poly" coords="">
+						<area id="character-richter" class="iconarea-row5" onclick="runDisplay('Richter', this)" shape="poly" coords="">
+						<area id="character-alucard" class="iconarea-row5" onclick="runDisplay('Alucard', this)" shape="poly" coords="">
+						<area id="character-bomberman" class="iconarea-row5" onclick="runDisplay('Bomberman', this)" shape="poly" coords="">
+						<area id="character-sonic" class="iconarea-row5" onclick="runDisplay('Sonic', this)" shape="poly" coords="" data-has-lload="true">
+						<area id="character-tails" class="iconarea-row5" onclick="runDisplay('Tails', this)" shape="poly" coords="">
+						<area id="character-knuckles" class="iconarea-row5" onclick="runDisplay('Knuckles', this)" shape="poly" coords="">
+						<area id="character-msonic" class="iconarea-row5" onclick="runDisplay('Metal_Sonic', this)" shape="poly" coords="">
+						<area id="character-shadow" class="iconarea-row5" onclick="runDisplay('Shadow', this)" shape="poly" coords="" data-has-lload="true">
+						<area id="character-silver" class="iconarea-row5" onclick="runDisplay('Silver', this)" shape="poly" coords="">
+						<area id="character-bayonetta" class="iconarea-row5" onclick="runDisplay('Bayonetta', this)" shape="poly" coords="">
+						<area id="character-yu" class="iconarea-row5" onclick="runDisplay('Yu', this)" shape="poly" coords="">
+						<area id="character-joker" class="iconarea-row5" onclick="runDisplay('Joker', this)" shape="poly" coords="">
+						<area id="character-vectorman" class="iconarea-row5" onclick="runDisplay('Vectorman', this)" shape="poly" coords="">
+						<area id="character-x" class="iconarea-row5" onclick="runDisplay('X', this)" shape="poly" coords="">
+						<area id="character-zero" class="iconarea-row5" onclick="runDisplay('Zero', this)" shape="poly" coords="">
+						<area id="character-ryu" class="iconarea-row5" onclick="runDisplay('Ryu', this)" shape="poly" coords="">
+						<area id="character-ken" class="iconarea-row5" onclick="runDisplay('Ken', this)" shape="poly" coords="">
+						<area id="character-pacman" class="iconarea-row5" onclick="runDisplay('Pac-Man', this)" shape="poly" coords="">
+						<area id="character-kazuya" class="iconarea-row5" onclick="runDisplay('Kazuya', this)" shape="poly" coords="">
+
+						<area id="character-terry" class="iconarea-row6" onclick="runDisplay('Terry', this)" shape="poly" coords="">
+						<area id="character-rock" class="iconarea-row6" onclick="runDisplay('Rock', this)" shape="poly" coords="">
+						<area id="character-cloud" class="iconarea-row6" onclick="runDisplay('Cloud', this)" shape="poly" coords="">
+						<area id="character-zack" class="iconarea-row6" onclick="runDisplay('Zack', this)" shape="poly" coords="">
+						<area id="character-sephiroth" class="iconarea-row6" onclick="runDisplay('Sephiroth', this)" shape="poly" coords="">
+						<area id="character-squall" class="iconarea-row6" onclick="runDisplay('Squall', this)" shape="poly" coords="">
+						<area id="character-hero" class="iconarea-row6" onclick="runDisplay('Hero', this)" shape="poly" coords="">
+						<area id="character-sora" class="iconarea-row6" onclick="runDisplay('Sora', this)" shape="poly" coords="">
+						<area id="character-banjo" class="iconarea-row6" onclick="runDisplay('Banjo_&_Kazooie', this)" shape="poly" coords="">
+						<area id="character-chief" class="iconarea-row6" onclick="runDisplay('Master_Chief', this)" shape="poly" coords="">
+						<area id="character-subzero" class="iconarea-row6" onclick="runDisplay('Sub-Zero', this)" shape="poly" coords="">
+						<area id="character-nu" class="iconarea-row6" onclick="runDisplay('Nu-13', this)" shape="poly" coords="">
+						<area id="character-sol" class="iconarea-row6" onclick="runDisplay('Sol', this)" shape="poly" coords="">
+						<area id="character-sans" class="iconarea-row6" onclick="runDisplay('Sans', this)" shape="poly" coords="">
+						<area id="character-elizabeth" class="iconarea-row6" onclick="runDisplay('Elizabeth', this)" shape="poly" coords="">
+						<area id="character-shovelknight" class="iconarea-row6" onclick="runDisplay('Shovel_Knight', this)" shape="poly" coords="">
+						<area id="character-dragon" class="iconarea-row6" onclick="runDisplay('Dragon_King', this)" shape="poly" coords="">
+						<area id="character-sandbag" class="iconarea-row6" onclick="runDisplay('Sandbag', this)" shape="poly" coords="">
+						<area id="character-primid" class="iconarea-row6" onclick="runDisplay('Primid', this)" shape="poly" coords="">
+						<area id="character-alloys" class="iconarea-row6" onclick="runDisplay('Alloys', this)" shape="poly" coords="">
+						<area id="character-random" class="iconarea-row6" onclick="runDisplay('Random', this)" shape="poly" coords="">
+					</map>
+				</div>
+				<div style="display: flex; flex-flow: row wrap; margin-top: 40px;">
+					<div class="portrait-area">
+						<div style="display: flex; flex-direction: column; width: 0px; height: 0px; margin: auto; justify-content: left; align-items: center; position: relative">
+							<div style="width: fit-content; position: relative">
+								<img id="info-portrait" src="" style="max-width: none; opacity: 0.5" data-lload-info="">
+								<a id="info-lload" onclick="altDisplay()" style="visibility: hidden; cursor: pointer">
+									<img src="../img/characterSelect/rex/L-Load_icon.png" style="width: 66px; position: absolute; top: 0px; left: 0px">
+								</a>
+							</div>
+						</div>
+						<img id="info-name" class="info-title" src="">
+					</div>
+					<div class="description-area"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

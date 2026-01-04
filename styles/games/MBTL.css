@@ -1,0 +1,149 @@
+:root {
+    background: radial-gradient(
+        circle at top,
+        #CEF7FB 0%,
+        #CEF7FB 20%,
+        #53B1D7 30%,
+        #53B1D7 50%,
+        #326FBD 70%,
+        #0E318F
+    );
+    background-size: 100vw 100%;
+    height: 100%;
+}
+
+body {
+    font-family: "Noto Serif JP";
+}
+
+#characterselect {
+    display: block;
+}
+
+#info-portrait {
+    filter: drop-shadow(-10px 0px 5px rgba(0,0,0,0.5));
+}
+
+#info-name {
+    opacity: 0.95;
+    filter: drop-shadow(0 0 1px #6190BD) drop-shadow(0 0 1px #6190BD);
+    margin-top: 75vh;
+    font-size: 2em;
+    text-align: right;
+}
+
+.selectbox-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 6px;
+    width: 714px;
+    padding: 0px 26px;
+}
+
+h1 {
+    background: linear-gradient(to right, #3C8CFF, #7080A0,#3C8CFF);
+    background-clip: text;
+    color: transparent;
+    font-size: 3em;
+    letter-spacing: 0.35em;
+    width: 100%;
+    height: fit-content;
+    margin: 0px;
+}
+
+.selectbox-column {
+    width: 84px;
+    height: fit-content;
+}
+
+.selectbox-column a {
+    opacity: 0;
+}
+
+.selectbox-character, .selectbox-character img, .selectbox-spacer {
+    width: 84px;
+    height: 213px;
+}
+
+a.selectbox-spacer  {
+    margin-bottom: 10px;
+}
+
+.cssicon-onstart {
+    animation-name: cssicon-onstart;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+}
+
+@keyframes cssicon-onstart {
+    0% {
+        transform: rotate(-20deg) rotate3d(0, 1, 0, 90deg) scale(0.7);
+        filter: contrast(0) brightness(2);
+    }
+
+    50% {
+        transform: rotate(-10deg) rotate3d(0, 0, 0, 0) scale(0.9);
+        filter: contrast(0) brightness(2);
+    }
+    
+    100% {
+        transform: rotate(0deg) rotate3d(0, 0, 0, 0) scale(1);
+        filter: contrast(1) brightness(1);
+    }
+}
+
+.portrait-onhover {
+    animation-name: portrait-onhover;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-delay: 0s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes portrait-onhover {
+    0% {
+        transform: translate(40px, 0);
+        opacity: 0;
+    }
+
+    60% {
+        transform: translate(5px, 0);
+        opacity: 1;
+    }
+    
+    100% {
+        
+    }
+}
+
+.name-onhover {
+    animation-name: name-onhover;
+    animation-duration: 0.18s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-delay: 0s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes name-onhover {
+    0% {
+        transform: translate(-80px, 0);
+        filter: drop-shadow(0 0 1px white) drop-shadow(0 0 1px white);
+        opacity: 1;
+    }
+
+    50% {
+        filter: drop-shadow(0 0 1px white) drop-shadow(0 0 1px white);
+        opacity: 0.95;
+    }
+
+    100% {
+        filter: drop-shadow(0 0 1px #6190BD) drop-shadow(0 0 1px #6190BD);
+        opacity: 0.95;
+    }
+}

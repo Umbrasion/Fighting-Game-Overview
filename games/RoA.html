@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Rivals of Aether | Fighting Game Overview</title>
+		<link rel="stylesheet" href="../styles/main.css">
+		<link rel="stylesheet" href="../styles/infoColors.css">
+		<link rel="stylesheet" href="../styles/games/RoA.css">
+		<script src="../scripts/common.js"></script>
+		<script src="../scripts/cssResize.js" defer></script>
+		<script src="../scripts/onloadRoA.js" defer></script>
+		<script src="../scripts/jquery-3.7.1.min.js"></script>
+	</head>
+	<body>
+		<div id="characterselect">
+			<div class="preview-area">
+				<div class="portrait-area">
+					<div style="display: flex; flex-direction: column; width: 0px; height: 0px; margin: auto; justify-content: left; align-items: center">
+						<img id="info-portrait" src="" style="">
+					</div>
+					<h2 id="info-name" class="info-title" style=""></h2>
+				</div>
+				<div class="selectbox-container">
+					<div class="selectbox-positioner">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/roa/Mollo_icon.webp" id="selectbox-mollo">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 96px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/roa/Clairen_icon.webp" id="selectbox-clairen">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 192px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/roa/Forsburn_icon.webp" id="selectbox-forsburn">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 288px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/roa/Zetterburn_icon.webp" id="selectbox-zetterburn">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 532px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/roa/Wrastor_icon.webp" id="selectbox-wrastor">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 392px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/roa/Random_icon.webp" id="selectbox-random" style="width: 172px; height: 94px">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 628px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/roa/Absa_icon.webp" id="selectbox-absa">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 724px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/roa/Elliana_icon.webp" id="selectbox-elliana">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 820px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/roa/Pomme_icon.webp" id="selectbox-pomme">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="top: 98px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/roa/Olympia_icon.webp" id="selectbox-olympia">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 96px; top: 98px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/roa/Sylvanos_icon.webp" id="selectbox-sylvanos">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 192px; top: 98px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/roa/Maypul_icon.webp" id="selectbox-maypul">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 288px; top: 98px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/roa/Kragg_icon.webp" id="selectbox-kragg">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 384px; top: 80px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/roa/Ori_&_Sein_icon.webp" id="selectbox-ori" style="width: 92px; height: 110px">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 480px; top: 80px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/roa/Shovel_Knight_icon.webp" id="selectbox-shovelknight" style="width: 92px; height: 110px">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 532px; top: 98px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/roa/Orcane_icon.webp" id="selectbox-orcane">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 628px; top: 98px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/roa/Etalus_icon.webp" id="selectbox-etalus">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 724px; top: 98px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/roa/Ranno_icon.webp" id="selectbox-ranno">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 820px; top: 98px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/roa/Hodan_icon.webp" id="selectbox-hodan">
+						</div>
+					</div>
+					<img class="selectbox-fullroster" src="../img/characterSelect/roa/Full_Roster.webp" usemap="#mapselect">
+					<map name="mapselect">
+						<area id="character-mollo" onclick="runDisplay('mollo')" shape="poly" coords="44,0, 136,0, 92,92, 0,92">
+						<area id="character-clairen" onclick="runDisplay('clairen')" shape="poly" coords="140,0, 232,0, 188,92, 96,92">
+						<area id="character-forsburn" onclick="runDisplay('forsburn')" shape="poly" coords="236,0, 328,0, 284,92, 192,92">
+						<area id="character-zetterburn" onclick="runDisplay('zetterburn')" shape="poly" coords="332,0, 424,0, 380,92, 288,92">
+						<area id="character-random" onclick="runDisplay('random')" shape="poly" coords="428,0, 528,0, 564,76, 490,94, 466,94, 392,76">
+						<area id="character-wrastor" onclick="runDisplay('wrastor')" shape="poly" coords="532,0, 624,0, 668,92, 576,92">
+						<area id="character-absa" onclick="runDisplay('absa')" shape="poly" coords="628,0, 720,0, 764,92, 672,92">
+						<area id="character-elliana" onclick="runDisplay('elliana')" shape="poly" coords="724,0, 816,0, 860,92, 768,92">
+						<area id="character-pomme" onclick="runDisplay('pomme')" shape="poly" coords="820,0, 912,0, 956,92, 864,92">
+						<area id="character-olympia" onclick="runDisplay('olympia')" shape="poly" coords="0,98, 92,98, 136,190, 44,190">
+						<area id="character-sylvanos" onclick="runDisplay('sylvanos')" shape="poly" coords="96,98, 188,98, 232,190, 140,190">
+						<area id="character-maypul" onclick="runDisplay('maypul')" shape="poly" coords="192,98, 284,98, 328,190, 236,190">
+						<area id="character-kragg" onclick="runDisplay('kragg')" shape="poly" coords="288,98, 380,98, 424,190, 332,190">
+						<area id="character-ori" onclick="runDisplay('ori')" shape="poly" coords="388,80, 396,80, 476,100, 476,190, 428,190, 384,102, 384,88">
+						<area id="character-shovelknight" onclick="runDisplay('shovelknight')" shape="poly" coords="480,100, 560,80, 568,80, 572,88, 572,102, 528,190, 480,190">
+						<area id="character-orcane" onclick="runDisplay('orcane')" shape="poly" coords="576,98, 668,98, 624,190, 532,190">
+						<area id="character-etalus" onclick="runDisplay('etalus')" shape="poly" coords="672,98, 764,98, 720,190, 628,190">
+						<area id="character-ranno" onclick="runDisplay('ranno')" shape="poly" coords="768,98, 860,98, 816,190, 724,190">
+						<area id="character-hodan" onclick="runDisplay('hodan')" shape="poly" coords="864,98, 956,98, 912,190, 820,190">
+					</map>
+				</div>
+				<div class="description-area"></div>
+			</div>
+		</div>
+		<div class="preload-container">
+			<img src="../img/portraits/roa/Zetterburn.png">
+		</div>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+#characterselect {
+    width: fit-content;
+}
+
+.preview-area {
+    margin-bottom: 100px;
+}
+
+.info-title {
+    color: #FEFA00;
+    font-family: serif;
+    font-size: 2em;
+    text-shadow: #FF0000 0px 0px 8px;
+}
+
+.css-sizer {
+    height: 0px;
+}
+
+.selectbox-container {
+    transform: translateY(-100%);
+}
+
+.selectbox-positioner {
+    position: relative;
+    width: 0px;
+    height: 0px;
+}
+
+.selectbox-positioner a {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.selectbox-character, .selectbox-container a {
+    width: 50px;
+    height: 124px;
+}
+
+.selectbox-character {
+    transform-origin: center;
+    opacity: 0;
+}
+
+.selectbox-character:hover {
+    opacity: 1;
+}

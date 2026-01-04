@@ -1,0 +1,147 @@
+html {
+    background-image: url("../../img/backgrounds/GBVSR.png");
+}
+
+body {
+    font-family: "Noto Sans";
+    height: fit-content;
+    min-height: 100vh;
+}
+
+#characterselect {
+    display: block;
+}
+
+#info-name {
+    font-size: 2em;
+    width: 70%;
+    height: fit-content;
+    padding: 0 0 0.3em 0;
+    border: solid white 2px;
+    margin: auto;
+    margin-top: 85vh;
+    position: relative;
+    z-index: 500;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.selectbox-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 9px 6px;
+    width: 694px;
+    height: fit-content;
+    margin-top: 4vh;
+}
+
+.selectbox-character, .selectbox-character img, .selectbox-spacer {
+    width: 64px;
+    height: 184px;
+}
+
+.selectbox-character {
+    opacity: 0;
+}
+
+.description-area {
+    background-color: rgba(0,0,0,0.6);
+    padding: 6px;
+    border: solid white 2px;
+    margin: 12px;
+}
+
+.cssicon-onstart {
+    animation-name: cssicon-onstart;
+    animation-duration: 0.16s;
+    animation-iteration-count: 1;
+    animation-direction: linear;
+    animation-delay: 0s;
+    animation-timing-function: ease-out;
+    opacity: 1;
+}
+
+@keyframes cssicon-onstart {
+    from {
+        transform: scale(3);
+        opacity: 0;
+    }
+    
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.cssiconextra-onstart {
+    animation-name: cssiconextra-onstart;
+    animation-duration: 0.8s;
+    animation-iteration-count: 1;
+    animation-direction: linear;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    opacity: 1;
+}
+
+@keyframes cssiconextra-onstart {
+    from {
+        transform: scale(1.1);
+        opacity: 0;
+    }
+    
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.portrait-onstart {
+    animation-name: portrait-onstart;
+    animation-duration: 0.16s;
+    animation-iteration-count: 1;
+    animation-direction: linear;
+    animation-delay: 0s;
+    animation-timing-function: ease-out;
+    opacity: 1;
+}
+
+@keyframes portrait-onstart {
+    from {
+        transform: scale(3);
+        opacity: 0;
+    }
+    
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.background-text-container {
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0), rgba(0,0,0,0.5));
+}
+
+.background-text {
+    width: 100vw;
+    height: 14vh;
+    background-size: cover;
+    background-repeat: repeat-x;
+
+    animation-name: bgtext-loop;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes bgtext-loop {
+    from {
+        background-position: 0px;
+    }
+    
+    to {
+        background-position: 4096px;
+    }
+}

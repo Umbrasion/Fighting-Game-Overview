@@ -1,0 +1,119 @@
+:root {
+    background: linear-gradient(to bottom, #2F4564 0%, #1B202B 10%, #232937 50%, #506995 100%);
+    height: fit-content;
+    min-height: 100vh;
+}
+
+.selectbox-positioner {
+    pointer-events: none;
+    position: relative;
+    width: 0px;
+    height: 0px;
+}
+
+.selectbox-character img {
+    width: 140px;
+    transform-origin: center;
+    filter: drop-shadow(0px 0px 4px black);
+}
+
+#info-name {
+    transform: translate(0, -9vh);
+}
+
+.portrait-onhover {
+    animation-name: portraitonhover;
+    animation-duration: 0.04s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+}
+
+@keyframes portraitonhover {
+    from {
+        transform: translate(-20px, 0);
+        opacity: 0.5;
+    }
+    
+    to {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+.portrait-onselect {
+    animation-name: portraitonselect;
+    animation-duration: 1.4s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+}
+
+@keyframes portraitonselect {
+    0% {
+        filter: brightness(1);
+    }
+    
+    8% {
+        filter: brightness(2);
+    }
+    
+    100% {
+        filter: brightness(1);
+    }
+}
+
+.tempportrait-onhover {
+    animation-name: tempportraitonhover;
+    animation-duration: 0.04s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+}
+
+@keyframes tempportraitonhover {
+    from {
+        transform: translate(0px, 0);
+        opacity: 1;
+    }
+    
+    to {
+        transform: translate(-20px, 0);
+        opacity: 0;
+    }
+}
+
+.tempportrait-onselect {
+    animation-name: tempportraitonselect;
+    animation-duration: 1.4s;
+    animation-iteration-count: 1;
+    animation-direction: linear;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+}
+
+@keyframes tempportraitonselect {
+    0% {
+        transform: scale(1.03);
+        filter: brightness(1);
+        opacity: 0;
+        z-index: 500;
+    }
+    
+    8% {
+        transform: scale(1.03);
+        filter: brightness(2);
+        opacity: 0.7;
+        z-index: 500;
+    }
+    
+    100% {
+        transform: scale(1.03);
+        filter: brightness(1);
+        opacity: 0;
+        z-index: 500;
+    }
+}

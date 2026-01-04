@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Touhou Hyouibana ~ Antinomy of Common Flowers | Fighting Game Overview</title>
+		<link rel="stylesheet" href="../styles/main.css">
+		<link rel="stylesheet" href="../styles/infoColors.css">
+		<script src="../scripts/common.js"></script>
+		<script src="../scripts/cssResize.js" defer></script>
+		<script src="../scripts/onloadAoCF.js" defer></script>
+		<script src="../scripts/jquery-3.7.1.min.js"></script>
+		<style>
+			html {
+				height: 100vh;
+			}
+			
+			body {
+				font-family: "DF POP Corn W12";
+				background-image: url("../img/backgrounds/HakureiShrine.png");
+				background-size: 100vw;
+				height: 100%;
+			}
+			
+			#characterselect {
+				height: calc(100% - 56px);
+				overflow: clip;
+			}
+			
+			.preview-area {
+				height: 100%;
+				background-color: rgba(10, 10, 40, 0.7);
+			}
+			
+			.portrait-area {
+				max-height: 565px;
+			}
+
+			#info-name::first-line {
+				background: linear-gradient(to bottom, #FFFFC0 0%, #FFFFC0 50%, #FFFF06 60%, #EF6600 90%, #8E0900 100%);
+				background-clip: text;
+				color: transparent;
+			}
+
+			#info-name span {
+				background: linear-gradient(to bottom, #FFFFC0 0%, #FFFFC0 50%, #FFFF06 60%, #EF6600 90%, #8E0900 100%);
+				background-clip: text;
+				color: transparent;
+			}
+			
+			.selectbox-container {
+				width: fit-content;
+				max-height: 100%;
+			}
+
+			h1 {
+				background: linear-gradient(to bottom, #FFFFC0 0%, #FFFFC0 50%, #FFFF06 60%, #EF6600 90%, #8E0900 100%);
+				background-clip: text;
+				color: transparent;
+			}
+			
+			.selectbox-fullroster {
+				margin: auto;
+			}
+			
+			.portrait-onselect {
+				animation-name: onselect;
+				animation-duration: 0.2s;
+				animation-iteration-count: 1;
+				animation-direction: normal;
+				animation-delay: 0s;
+				animation-timing-function: linear;
+			}
+			
+			@keyframes onselect {
+				from {
+					filter: contrast(0) brightness(2);
+				}
+				
+				to {
+					filter: contrast(1) brightness(1);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<img class="game-logo" src="../img/logos/AoCF_logo.png">
+		<div id="characterselect">
+			<div class="preview-area">
+				<div class="portrait-area">
+					<h2 id="info-name" class="info-title" style="height: 10%; margin: 0px 0px 3%"></h2>
+					<img id="info-portrait" src="" style="max-height: 86%">
+				</div>
+				<div class="selectbox-container">
+					<h1>Create the strongest duo!</h1>
+					<img class="selectbox-fullroster" src="../img/characterSelect/aocf/Full_Roster.png" usemap="#mapselect">
+					<map name="mapselect">
+						<area id="character-reimu" onclick="runDisplay('reimu')" shape="poly" coords="3,0, 124,0, 135,77, 39,77">
+						<area id="character-random" onclick="runDisplay('random')" shape="poly" coords="129,0, 248,0, 238,77, 140,77">
+						<area id="character-marisa" onclick="runDisplay('marisa')" shape="poly" coords="254,0, 375,0, 339,77, 244,77">
+						<area id="character-ichirin" onclick="runDisplay('ichirin')" shape="poly" coords="39,81, 135,81, 141,158, 54,158">
+						<area id="character-nitori" onclick="runDisplay('nitori')" shape="poly" coords="140,81, 238,81, 231,158, 147,158">
+						<area id="character-futo" onclick="runDisplay('futo')" shape="poly" coords="243,81, 339,81, 325,158, 237,158">
+						<area id="character-byakuren" onclick="runDisplay('byakuren')" shape="poly" coords="54,162, 142,162, 144,239, 60,239">
+						<area id="character-kokoro" onclick="runDisplay('kokoro')" shape="poly" coords="147,162, 231,162, 227,239, 150,239">
+						<area id="character-miko" onclick="runDisplay('miko')" shape="poly" coords="237,162, 324,162, 318,239, 234,239">
+						<area id="character-koishi" onclick="runDisplay('koishi')" shape="poly" coords="60,243, 144,243, 144,320, 60,320">
+						<area id="character-kasen" onclick="runDisplay('kasen')" shape="poly" coords="233,243, 318,243, 318,320, 233,320">
+						<area id="character-mokou" onclick="runDisplay('mokou')" shape="poly" coords="59,324, 144,324, 141,401, 54,401">
+						<area id="character-mamizou" onclick="runDisplay('mamizou')" shape="poly" coords="150,324, 229,324, 232,401, 146,401">
+						<area id="character-sukuna" onclick="runDisplay('sukuna')" shape="poly" coords="233,324, 319,324, 325,401, 237,401">
+						<area id="character-reisen" onclick="runDisplay('reisen')" shape="poly" coords="53,405, 140,405, 133,482, 38,482">
+						<area id="character-doremy" onclick="runDisplay('doremy')" shape="poly" coords="146,405, 232,405, 239,482, 139,482">
+						<area id="character-sumireko" onclick="runDisplay('sumireko')" shape="poly" coords="237,405, 325,405, 339,482, 245,482">
+						<area id="character-tenshi" onclick="runDisplay('tenshi')" shape="poly" coords="38,486, 133,486, 121,565, 0,565">
+						<area id="character-joon" onclick="runDisplay('joon')" shape="poly" coords="139,486, 239,486, 251,565, 127,565">
+						<area id="character-yukari" onclick="runDisplay('yukari')" shape="poly" coords="245,486, 340,486, 378,565, 257,565">
+					</map>
+				</div>
+				<div class="description-area"></div>
+			</div>
+		</div>
+		<div class="preload-container">
+			<img src="../img/portraits/aocf/Reimu_Hakurei.png">
+			<img src="../img/portraits/aocf/Reimu_Hakurei_selected.png">
+			<img src="../img/portraits/aocf/Marisa_Kirisame.png">
+			<img src="../img/portraits/aocf/Marisa_Kirisame_selected.png">
+			<img src="../img/portraits/aocf/Ichirin_Kumoi.png">
+			<img src="../img/portraits/aocf/Ichirin_Kumoi_selected.png">
+			<img src="../img/portraits/aocf/Nitori_Kawashiro.png">
+			<img src="../img/portraits/aocf/Nitori_Kawashiro_selected.png">
+			<img src="../img/portraits/aocf/Mononobe_no_Futo.png">
+			<img src="../img/portraits/aocf/Mononobe_no_Futo_selected.png">
+			<img src="../img/portraits/aocf/Byakuren_Hijiri.png">
+			<img src="../img/portraits/aocf/Byakuren_Hijiri_selected.png">
+			<img src="../img/portraits/aocf/Hata_no_Kokoro.png">
+			<img src="../img/portraits/aocf/Hata_no_Kokoro_selected.png">
+			<img src="../img/portraits/aocf/Toyosatomimi_no_Miko.png">
+			<img src="../img/portraits/aocf/Toyosatomimi_no_Miko_selected.png">
+			<img src="../img/portraits/aocf/Koishi_Komeiji.png">
+			<img src="../img/portraits/aocf/Koishi_Komeiji_selected.png">
+			<img src="../img/portraits/aocf/Kasen_Ibaraki.png">
+			<img src="../img/portraits/aocf/Kasen_Ibaraki_selected.png">
+			<img src="../img/portraits/aocf/Fujiwara_no_Mokou.png">
+			<img src="../img/portraits/aocf/Fujiwara_no_Mokou_selected.png">
+			<img src="../img/portraits/aocf/Mamizou_Futatsuiwa.png">
+			<img src="../img/portraits/aocf/Mamizou_Futatsuiwa_selected.png">
+			<img src="../img/portraits/aocf/Shinmyoumaru_Sukuna.png">
+			<img src="../img/portraits/aocf/Shinmyoumaru_Sukuna_selected.png">
+			<img src="../img/portraits/aocf/Reisen_Udongein_Inaba.png">
+			<img src="../img/portraits/aocf/Reisen_Udongein_Inaba_selected.png">
+			<img src="../img/portraits/aocf/Doremy_Sweet.png">
+			<img src="../img/portraits/aocf/Doremy_Sweet_selected.png">
+			<img src="../img/portraits/aocf/Sumireko_Usami.png">
+			<img src="../img/portraits/aocf/Sumireko_Usami_selected.png">
+			<img src="../img/portraits/aocf/Tenshi_Hinanawi.png">
+			<img src="../img/portraits/aocf/Tenshi_Hinanawi_selected.png">
+			<img src="../img/portraits/aocf/Joon_Yorigami.png">
+			<img src="../img/portraits/aocf/Joon_Yorigami_selected.png">
+			<img src="../img/portraits/aocf/Yukari_Yakumo.png">
+			<img src="../img/portraits/aocf/Yukari_Yakumo_selected.png">
+		</div>
+	</body>
+</html>

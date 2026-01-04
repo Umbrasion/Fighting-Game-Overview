@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Slap City | Fighting Game Overview</title>
+		<link rel="stylesheet" href="../styles/main.css">
+		<link rel="stylesheet" href="../styles/infoColors.css">
+		<link rel="stylesheet" href="../styles/games/SC.css">
+		<script src="../scripts/common.js"></script>
+		<script src="../scripts/cssResize.js" defer></script>
+		<script src="../scripts/onloadSC.js" defer></script>
+		<script src="../scripts/jquery-3.7.1.min.js"></script>
+	</head>
+	<body>
+		<div id="characterselect">
+			<div class="preview-area">
+				<div class="selectbox-container">
+					<a id="character-ittle" class="character-box" onclick="runDisplay('Ittle_Dew')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/sc/Ittle_Dew_icon.webp">
+						</div>
+					</a>
+					<a id="character-ruby" class="character-box" onclick="runDisplay('Masked_Ruby')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/sc/Masked_Ruby_icon.webp">
+						</div>
+					</a>
+					<a id="character-jenny" class="character-box" onclick="runDisplay('Jenny_Fox')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/sc/Jenny_Fox_icon.webp">
+						</div>
+					</a>
+					<a id="character-fishbunjin" class="character-box" onclick="runDisplay('Ultra_Fishbunjin_3000')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/sc/Ultra_Fishbunjin_3000_icon.webp">
+						</div>
+					</a>
+					<a id="character-remedy" class="character-box" onclick="runDisplay('Princess_Remedy')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/sc/Princess_Remedy_icon.webp">
+						</div>
+					</a>
+					<a id="character-business" class="character-box" onclick="runDisplay('Business_Casual_Man')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/sc/Business_Casual_Man_icon.webp">
+						</div>
+					</a>
+					<a id="character-goddess" class="character-box" onclick="runDisplay('Goddess_of_Explosions')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/sc/Goddess_of_Explosions_icon.webp">
+						</div>
+					</a>
+					<a id="character-asha" class="character-box" onclick="runDisplay('Asha')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/sc/Asha_icon.webp">
+						</div>
+					</a>
+					<a id="character-frallan" class="character-box" onclick="runDisplay('Frallan')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/sc/Frallan_icon.webp">
+						</div>
+					</a>
+					<a id="character-tetron" class="character-box" onclick="runDisplay('Cruiser_Tetron')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/sc/Cruiser_Tetron_icon.webp">
+						</div>
+					</a>
+					<a id="character-orka" class="character-box" onclick="runDisplay('Orka')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/sc/Orka_icon.webp">
+						</div>
+					</a>
+				</div>
+				<div style="display: flex; flex-flow: row">
+					<div class="portrait-area">
+						<div style="display: flex; flex-direction: column; width: 0px; height: 0px; margin: auto; justify-content: left; align-items: center">
+							<div style="width: fit-content">
+								<img id="info-portrait" src="" style="max-width: none">
+							</div>
+						</div>
+						<h2 id="info-name" class="info-title"></h2>
+					</div>
+					<div class="description-area"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

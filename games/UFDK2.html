@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ultra Fight Da! Kyanta 2 | Fighting Game Overview</title>
+		<link rel="stylesheet" href="../styles/main.css">
+		<link rel="stylesheet" href="../styles/infoColors.css">
+		<link rel="stylesheet" href="../styles/games/UFDK2.css">
+		<script src="../scripts/common.js"></script>
+		<script src="../scripts/cssResize.js" defer></script>
+		<script src="../scripts/onloadUFDK2.js" defer></script>
+		<script src="../scripts/jquery-3.7.1.min.js"></script>
+	</head>
+	<body>
+		<img class="game-logo" src="../img/logos/UFDK2_logo.png">
+		<div id="characterselect">
+			<div class="preview-area">
+				<div class="portrait-area">
+					<div style="display: flex; flex-direction: column; width: 0px; height: 0px; margin: auto; justify-content: left; align-items: center">
+						<div style="width: fit-content; position: relative">
+							<img id="info-portrait" src="" style="height: 90vh; max-width: none">
+						</div>
+					</div>
+					<h2 id="info-name" class="info-title" style="height: 1.2em"></h2>
+				</div>
+				<div class="selectbox-container">
+					<img id="select-cursor" src="../img/characterSelect/ufdk2/icon_select.png" style="opacity: 0">
+					<a id="character-kamen" onclick="runDisplay('Japan_Kamen')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Japan_Kamen_icon.png">
+						</div>
+					</a>
+					<a id="character-zacky" onclick="runDisplay('ZackyWild')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/ZackyWild_icon.png">
+						</div>
+					</a>
+					<a id="character-chihiro" onclick="runDisplay('Chihiro')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Chihiro_icon.png">
+						</div>
+					</a>
+					<a id="character-blues" onclick="runDisplay('Blues')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Blues_icon.png">
+						</div>
+					</a>
+					<a id="character-sendou" onclick="runDisplay('Sendou')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Sendou_icon.png">
+						</div>
+					</a>
+					<a class="character-random" onclick="runDisplay('Random')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Unknown_icon.png">
+						</div>
+					</a>
+					<a class="character-random" onclick="runDisplay('Random')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Unknown_icon.png">
+						</div>
+					</a>
+					<a id="character-anna" onclick="runDisplay('Anna')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Anna_icon.png">
+						</div>
+					</a>
+					<a id="character-kyanta" onclick="runDisplay('Kyanta')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Kyanta_icon.png">
+						</div>
+					</a>
+					<a id="character-buttobi" onclick="runDisplay('Buttobi')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Buttobi_icon.png">
+						</div>
+					</a>
+					<a id="character-spike" onclick="runDisplay('Spike')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Spike_icon.png">
+						</div>
+					</a>
+					<a id="character-kinoko" onclick="runDisplay('Kinoko')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Kinoko_icon.png">
+						</div>
+					</a>
+					<a id="character-razuma" onclick="runDisplay('Robo_Azuma')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Robo_Azuma_icon.png">
+						</div>
+					</a>
+					<a id="character-garasha" onclick="runDisplay('Garasha')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Garasha_icon.png">
+						</div>
+					</a>
+					<a id="character-azuma" onclick="runDisplay('Investigator_Azuma')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Investigator_Azuma_icon.png">
+						</div>
+					</a>
+					<a id="character-jakor" onclick="runDisplay('Jakor')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Jakor_icon.png">
+						</div>
+					</a>
+					<a id="character-michelle" onclick="runDisplay('Michelle')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Michelle_icon.png">
+						</div>
+					</a>
+					<a id="character-rogue" onclick="runDisplay('Rogue')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Rogue_icon.png">
+						</div>
+					</a>
+					<a id="character-gyanta" onclick="runDisplay('Gyanta')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Gyanta_icon.png">
+						</div>
+					</a>
+					<a id="character-hisomi" onclick="runDisplay('Hisomi')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Hisomi_icon.png">
+						</div>
+					</a>
+					<a id="character-tsukinami" onclick="runDisplay('Tsukinami')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Tsukinami_icon.png">
+						</div>
+					</a>
+					<a id="character-rare" onclick="runDisplay('Rare')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Rare_icon.png">
+						</div>
+					</a>
+					<a id="character-welldone" onclick="runDisplay('Well_Done')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Well_Done_icon.png">
+						</div>
+					</a>
+					<a id="character-cocorn" onclick="runDisplay('Cocorn')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Cocorn_icon.png">
+						</div>
+					</a>
+					<a id="character-hatoyan" onclick="runDisplay('Hatoyan')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Hatoyan_icon.png">
+						</div>
+					</a>
+					<a id="character-mmichelle" onclick="runDisplay('Mask_Michelle')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Masked_Michelle_icon.png">
+						</div>
+					</a>
+					<a id="character-katana" onclick="runDisplay('Katana_Kyanta')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Katana_Kyanta_icon.png">
+						</div>
+					</a>
+					<a id="character-masao" onclick="runDisplay('Masao')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Masao_icon.png">
+						</div>
+					</a>
+					<a id="character-masako" onclick="runDisplay('Masako')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Masako_icon.png">
+						</div>
+					</a>
+					<a id="character-natanee" onclick="runDisplay('Natanee')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Natanee_icon.png">
+						</div>
+					</a>
+					<a class="character-random" onclick="runDisplay('Random')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Unknown_icon.png">
+						</div>
+					</a>
+					<a id="character-doctork" onclick="runDisplay('Doctor_K')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Doctor_K_icon.png">
+						</div>
+					</a>
+					<a id="character-nanatsu" onclick="runDisplay('Nanatsu')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Nanatsu_icon.png">
+						</div>
+					</a>
+					<a id="character-taro" onclick="runDisplay('Taro')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Taro_icon.png">
+						</div>
+					</a>
+					<a id="character-myusha" onclick="runDisplay('Myusha')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Myusha_icon.png">
+						</div>
+					</a>
+					<a class="character-random" onclick="runDisplay('Random')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/ufdk2/Unknown_icon.png">
+						</div>
+					</a>
+				</div>
+				<div class="description-area"></div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,93 @@
+/* Archetypes */
+
+.info-table span {
+	font-weight: bold;
+}
+
+.archetype-allrounder {
+	background: linear-gradient(to right, #E57784, #94A4E0);
+	background-clip: text;
+	color: transparent;
+}
+
+.archetype-shoto {
+	background: linear-gradient(to right, );
+	background-clip: text;
+	color: transparent;
+}
+
+.archetype-rushdown {
+	background: linear-gradient(to right, );
+	background-clip: text;
+	color: transparent;
+}
+
+.archetype-bruiser {
+	background: linear-gradient(to right, );
+	background-clip: text;
+	color: transparent;
+}
+
+.archetype-zoner {
+	background: linear-gradient(to right, );
+	background-clip: text;
+	color: transparent;
+}
+
+.archetype-grappler {
+	background: linear-gradient(to right, );
+	background-clip: text;
+	color: transparent;
+}
+
+.archetype-technical {
+	background: linear-gradient(to right, #A075D8, #8F95D6);
+	background-clip: text;
+	color: transparent;
+}
+
+/* Ranges */
+
+.range-closerange {
+	color: #E2537C;
+}
+
+.range-midrange {
+	color: #E0906D;
+}
+
+.range-longrange {
+	color: #D0DD9F;
+}
+
+.range-distance {
+	color: #99DBC7;
+}
+
+/* Unique Mechanics */
+
+.unimech-none {
+	color: #AEAEAE;
+}
+
+/* Star Ratings */
+
+.rating-1star {
+	color: #FF4C4C;
+}
+
+.rating-2star {
+	color: #FF934C;
+}
+
+.rating-3star {
+	color: #FFE14C;
+}
+
+.rating-4star {
+	color: #4CFF61;
+}
+
+.rating-5star {
+	color: #4CB4FF;
+}

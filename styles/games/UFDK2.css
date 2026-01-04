@@ -1,0 +1,32 @@
+:root {
+    background-image: url("../../img/characterSelect/ufdk2/BG.png");
+    background-size: cover;
+}
+
+body {
+    background-color: transparent;
+}
+
+.selectbox-character img {
+    display: block;
+    width: 84px;
+}
+
+.chrSelection {
+    display: block;
+}
+
+.selectbox-container {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: calc(84px * 6);
+    padding: 20px;
+}
+
+#select-cursor {
+    position: absolute;
+    width: 90px;
+    pointer-events: none;
+}

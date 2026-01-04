@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Touhou Hisoutensoku | Fighting Game Overview</title>
+		<link rel="stylesheet" href="../styles/main.css">
+		<link rel="stylesheet" href="../styles/infoColors.css">
+		<link rel="stylesheet" href="../styles/games/SOKU.css">
+		<script src="../scripts/common.js"></script>
+		<script src="../scripts/cssResize.js" defer></script>
+		<script src="../scripts/onloadSOKU.js" defer></script>
+		<script src="../scripts/jquery-3.7.1.min.js"></script>
+	</head>
+	<body>
+		<img class="game-logo" src="../img/logos/SOKU_logo.png">
+		<div id="characterselect">
+			<div class="preview-area">
+				<div class="portrait-area" style="height: fit-content">
+					<div style="position: relative; overflow: clip">
+						<div id="info-portrait"></div>
+						<span id="info-name-area" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; margin: auto; height: fit-content">
+							<h2 id="info-title" class="info-title" style="margin: 0px"></h2>
+							<h2 id="info-name" class="info-title" style="margin: 0px"></h2>
+						</span>
+					</div>
+				</div>
+				<div class="selectbox-container">
+					<img id="css-pointer" src="../img/characterSelect/soku/CSS_Cogwheel.png">
+					<img id="css-needle" src="../img/characterSelect/soku/CSS_Needle.png">
+					<a id="character-suika" onclick="runDisplay('Suika_Ibuki')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/soku/Suika_Ibuki_icon.webp">
+						</div>
+					</a>
+					<a id="character-yukari" onclick="runDisplay('Yukari_Yakumo')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/soku/Yukari_Yakumo_icon.webp">
+						</div>
+					</a>
+					<a id="character-yuyuko" onclick="runDisplay('Yuyuko_Saigyouji')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/soku/Yuyuko_Saigyouji_icon.webp">
+						</div>
+					</a>
+					<a id="character-remilia" onclick="runDisplay('Remilia_Scarlet')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/soku/Remilia_Scarlet_icon.webp">
+						</div>
+					</a>
+					<a id="character-youmu" onclick="runDisplay('Youmu_Konpaku')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/soku/Youmu_Konpaku_icon.webp">
+						</div>
+					</a>
+					<a id="character-patchouli" onclick="runDisplay('Patchouli_Knowledge')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/soku/Patchouli_Knowledge_icon.webp">
+						</div>
+					</a>
+					<a id="character-alice" onclick="runDisplay('Alice_Margatroid')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/soku/Alice_Margatroid_icon.webp">
+						</div>
+					</a>
+					<a id="character-sakuya" onclick="runDisplay('Sakuya_Izayoi')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/soku/Sakuya_Izayoi_icon.webp">
+						</div>
+					</a>
+					<a id="character-marisa" onclick="runDisplay('Marisa_Kirisame')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/soku/Marisa_Kirisame_icon.webp">
+						</div>
+					</a>
+					<a id="character-reimu" onclick="runDisplay('Reimu_Hakurei')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/soku/Reimu_Hakurei_icon.webp">
+						</div>
+					</a>
+					<a id="character-sanae" onclick="runDisplay('Sanae_Kochiya')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/soku/Sanae_Kochiya_icon.webp">
+						</div>
+					</a>
+					<a id="character-cirno" onclick="runDisplay('Cirno')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/soku/Cirno_icon.webp">
+						</div>
+					</a>
+					<a id="character-meiling" onclick="runDisplay('Hong_Meiling')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/soku/Hong_Meiling_icon.webp">
+						</div>
+					</a>
+					<a id="character-utsuho" onclick="runDisplay('Utsuho_Reiuji')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/soku/Utsuho_Reiuji_icon.webp">
+						</div>
+					</a>
+					<a id="character-suwako" onclick="runDisplay('Suwako_Moriya')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/soku/Suwako_Moriya_icon.webp">
+						</div>
+					</a>
+					<a id="character-reisen" onclick="runDisplay('Reisen_Udongein_Inaba')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/soku/Reisen_Udongein_Inaba_icon.webp">
+						</div>
+					</a>
+					<a id="character-aya" onclick="runDisplay('Aya_Shameimaru')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/soku/Aya_Shameimaru_icon.webp">
+						</div>
+					</a>
+					<a id="character-komachi" onclick="runDisplay('Komachi_Onozuka')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/soku/Komachi_Onozuka_icon.webp">
+						</div>
+					</a>
+					<a id="character-iku" onclick="runDisplay('Iku_Nagae')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/soku/Iku_Nagae_icon.webp">
+						</div>
+					</a>
+					<a id="character-tenshi" onclick="runDisplay('Tenshi_Hinanawi')">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/soku/Tenshi_Hinanawi_icon.webp">
+						</div>
+					</a>
+				</div>
+				<div class="description-area"></div>
+			</div>
+		</div>
+	</body>
+</html>

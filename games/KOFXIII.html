@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>The King of Fighters XIII | Fighting Game Overview</title>
+		<link rel="stylesheet" href="../styles/main.css">
+		<link rel="stylesheet" href="../styles/infoColors.css">
+		<link rel="stylesheet" href="../styles/games/KoFXIII.css">
+		<script src="../scripts/common.js"></script>
+		<script src="../scripts/cssResize.js" defer></script>
+		<script src="../scripts/onloadKOFXIII.js" defer></script>
+		<script src="../scripts/jquery-3.7.1.min.js"></script>
+	</head>
+	<body>
+		<img class="game-logo" src="../img/logos/KOFXIII_logo.png">
+		<div id="characterselect">
+			<div class="preview-area">
+				<div class="portrait-area" style="height: 730px">
+					<h2 id="info-name" class="info-title"></h2>
+					<img id="info-portrait" src="" style="height: 650px">
+				</div>
+				<div class="description-area"></div>
+			</div>
+			<div class="css-sizer">
+				<div class="selectbox-container">
+					<div class="selectbox-positioner" style="left: 0px; top: 0px">
+						<a id="character-kyo" onclick="runDisplay('kyo')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 61px; top: 0px">
+						<a id="character-benimaru" onclick="runDisplay('benimaru')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 122px; top: 0px">
+						<a id="character-daimon" onclick="runDisplay('daimon')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 180px; top: 0px">
+						<a id="character-terry" onclick="runDisplay('terry')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 241px; top: 0px">
+						<a id="character-andy" onclick="runDisplay('andy')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 302px; top: 0px">
+						<a id="character-joe" onclick="runDisplay('joe')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<!---->
+					<div class="selectbox-positioner" style="left: 360px; top: 0px">
+						<a id="character-random" onclick="runDisplay('random')" style="width: 95px; height: 123px">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor_random.png">
+							</div>
+						</a>
+					</div>
+					<!---->
+					<div class="selectbox-positioner" style="left: 458px; top: 0px">
+						<a id="character-billy" onclick="runDisplay('billy')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 511px; top: 0px">
+						<a id="character-ash" onclick="runDisplay('ash')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 565px; top: 0px">
+						<a id="character-saiki" onclick="runDisplay('saiki')" class="selectbox-positioner">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<!---->
+					<div class="selectbox-positioner" style="left: 617px; top: 0px">
+						<a id="character-randomteam" onclick="runDisplay('randomteam')" style="width: 95px; height: 123px">
+							<div class="selectbox selectbox-character" style="width: 95px; height: 123px">
+								<img src="../img/characterSelect/kofxiii/Select_cursor_random.png">
+							</div>
+						</a>
+					</div>
+					<!---->
+					<div class="selectbox-positioner" style="left: 720px; top: 0px">
+						<a id="character-ryo" onclick="runDisplay('ryo')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 781px; top: 0px">
+						<a id="character-robert" onclick="runDisplay('robert')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 842px; top: 0px">
+						<a id="character-takuma" onclick="runDisplay('takuma')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 900px; top: 0px">
+						<a id="character-iori" onclick="runDisplay('iori')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 961px; top: 0px">
+						<a id="character-mature" onclick="runDisplay('mature')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 1022px; top: 0px">
+						<a id="character-vice" onclick="runDisplay('vice')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 0px; top: 127px">
+						<a id="character-elisabeth" onclick="runDisplay('elisabeth')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 61px; top: 127px">
+						<a id="character-duo" onclick="runDisplay('duo')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 122px; top: 127px">
+						<a id="character-shen" onclick="runDisplay('shen')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 180px; top: 127px">
+						<a id="character-kim" onclick="runDisplay('kim')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 241px; top: 127px">
+						<a id="character-hwa" onclick="runDisplay('hwa')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 302px; top: 127px">
+						<a id="character-raiden" onclick="runDisplay('raiden')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 360px; top: 127px">
+						<a id="character-mai" onclick="runDisplay('mai')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 421px; top: 127px">
+						<a id="character-king" onclick="runDisplay('king')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 482px; top: 127px">
+						<a id="character-yuri" onclick="runDisplay('yuri')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 540px; top: 127px">
+						<a id="character-k" onclick="runDisplay('k')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 601px; top: 127px">
+						<a id="character-kula" onclick="runDisplay('kula')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 662px; top: 127px">
+						<a id="character-maxima" onclick="runDisplay('maxima')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 720px; top: 127px">
+						<a id="character-athena" onclick="runDisplay('athena')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 781px; top: 127px">
+						<a id="character-sie" onclick="runDisplay('sie')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 842px; top: 127px">
+						<a id="character-chin" onclick="runDisplay('chin')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 900px; top: 127px">
+						<a id="character-ralf" onclick="runDisplay('ralf')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 961px; top: 127px">
+						<a id="character-clark" onclick="runDisplay('clark')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-positioner" style="left: 1022px; top: 127px">
+						<a id="character-leona" onclick="runDisplay('leona')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/kofxiii/Select_cursor.png">
+							</div>
+						</a>
+					</div>
+					<img class="selectbox-fullroster" src="../img/characterSelect/kofxiii/Full_Roster.png" style="padding: 1px">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

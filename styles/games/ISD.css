@@ -1,0 +1,85 @@
+:root {
+    background-color: #65C2FF;
+}
+
+#characterselect {
+    display: block;
+}
+
+.portrait-area, .description-area {
+    padding: 0px 24px;
+}
+
+.portrait-area {
+    position: relative;
+}
+
+#info-portrait {
+    height: 80vh;
+}
+
+#info-name {
+    margin-top: 70vh;
+    max-width: 20vw;
+}
+
+.selectbox-container  {
+    padding: 0px 24px;
+}
+
+.selectbox-container, .selectbox-fullroster  {
+    width: 443px;
+    height: 518px;
+}
+
+.selectbox-positioner {
+    pointer-events: none;
+    position: relative;
+    width: 0px;
+    height: 0px;
+    transition: z-index 0s;
+}
+
+.selectbox-character img {
+    width: 132px;
+    height: 132px;
+    transform-origin: center;
+}
+
+#selectbox-random {
+    width: 130px;
+    height: 129px;
+    transform-origin: center;
+}
+
+.description-area {
+    background-color: #001C3B;
+    height: fit-content;
+    border-radius: 5%;
+}
+
+#upperbanner {
+    background-color: #252E33;
+    width: 200vw;
+    max-height: 1.6em;
+    padding: 0.3em;
+    border-top: solid white 2px;
+    border-bottom: solid white 2px;
+    overflow-x: hidden;
+    animation: banner-scroll 2s linear infinite;
+}
+
+#upperbanner span {
+    font-family: monospace;
+    font-size: 1.6em;
+}
+
+@keyframes banner-scroll {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-14em, 0);
+    }
+}

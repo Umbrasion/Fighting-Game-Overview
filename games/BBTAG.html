@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>BlazBlue: Cross Tag Battle | Fighting Game Overview</title>
+		<link rel="stylesheet" href="../styles/main.css">
+		<script src="../scripts/charInfoDisplay.js" defer></script>
+		<script src="../scripts/cssResize.js" defer></script>
+		<script src="../scripts/onloadBBTAG.js" defer></script>
+		<script src="../scripts/jquery-3.7.1.min.js"></script>
+		<style>
+			#characterselect {
+				display: block;
+			}
+
+			.selectbox-container {
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: left;
+				gap: 0px;
+			}
+
+			.selectbox-character {
+				width: 99px;
+				height: 133px;
+			}
+
+			.selectbox-character img {
+				position: relative;
+			}
+			
+			a:hover .selectbox-character img {
+				border-color: white;
+				outline: 2px solid white;
+				z-index: 500;
+			}
+			
+			#info-name {
+				font-family: serif;
+				padding-top: 8px;
+				margin-top: 80vh;
+				color: #FF3333;
+				filter: drop-shadow(2px 2px #FFFFFF);
+			}
+
+			.selectbox-scroll {
+				display: flex;
+				flex-flow: row;
+				justify-content: left;
+				gap: 0px;
+				width: 693px;
+				height: 133px;
+				overflow-x: auto;
+				overflow-y: hidden;
+				-ms-overflow-style: none;
+				scrollbar-width: none;
+			}
+			
+			.scroll-arrow {
+				width: 30px;
+				cursor: pointer;
+				user-select: none;
+			}
+			
+			.scroll-arrow div {
+				width: inherit;
+				height: 100%;
+				position: relative;
+				text-align: center;
+			}
+			
+			.scroll-arrow img {
+				display: block;
+				width: 30px;
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+
+			.logospace {
+				width: 198px;
+				height: 133px;
+			}
+
+			.logospace img {
+				max-width: 198px;
+			}
+
+			.chrSelBlazBlue img {
+				border: solid 2px #1E32C1;
+			}
+
+			.chrSelPersona img {
+				border: solid 2px #AC9925;
+			}
+
+			.chrSelUnderNight img {
+				border: solid 2px #492581;
+			}
+
+			.chrSelRWBY img {
+				border: solid 2px #BF1F1F;
+			}
+
+			.chrSelArcanaHeart img {
+				border: solid 2px #FF3CFF;
+			}
+
+			.chrSelSenranKagura img {
+				border: solid 2px #14C5CE;
+			}
+
+			.chrSelAkatsukiBlitzkampf img {
+				border: solid 2px #2D2D2D;
+			}
+
+			.chrSelRandom img {
+				border: solid 2px #459218;
+			}
+			
+			.portrait-onhover {
+				animation-name: portraitonhover;
+				animation-duration: 0.04s;
+				animation-iteration-count: 1;
+				animation-direction: normal;
+				animation-delay: 0s;
+				animation-timing-function: linear;
+			}
+			
+			@keyframes portraitonhover {
+				from {
+					transform: translate(-20px, 0);
+					opacity: 0.5;
+				}
+				
+				to {
+					transform: translate(0, 0);
+					opacity: 1;
+				}
+			}
+			
+			.portrait-onselect {
+				animation-name: portraitonselect;
+				animation-duration: 1.4s;
+				animation-iteration-count: 1;
+				animation-direction: normal;
+				animation-delay: 0s;
+				animation-timing-function: linear;
+			}
+			
+			@keyframes portraitonselect {
+				0% {
+					filter: brightness(1);
+				}
+				
+				8% {
+					filter: brightness(2);
+				}
+				
+				100% {
+					filter: brightness(1);
+				}
+			}
+			
+			.tempportrait-onhover {
+				animation-name: tempportraitonhover;
+				animation-duration: 0.04s;
+				animation-iteration-count: 1;
+				animation-direction: normal;
+				animation-delay: 0s;
+				animation-timing-function: linear;
+			}
+			
+			@keyframes tempportraitonhover {
+				from {
+					transform: translate(0px, 0);
+					opacity: 1;
+				}
+				
+				to {
+					transform: translate(-20px, 0);
+					opacity: 0;
+				}
+			}
+			
+			.tempportrait-onselect {
+				animation-name: tempportraitonselect;
+				animation-duration: 1.4s;
+				animation-iteration-count: 1;
+				animation-direction: linear;
+				animation-delay: 0s;
+				animation-timing-function: linear;
+			}
+			
+			@keyframes tempportraitonselect {
+				0% {
+					transform: scale(1.07);
+					filter: brightness(1);
+					opacity: 0;
+					z-index: 500;
+				}
+				
+				8% {
+					transform: scale(1.07);
+					filter: brightness(2);
+					opacity: 0.7;
+					z-index: 500;
+				}
+				
+				100% {
+					transform: scale(1.07);
+					filter: brightness(1);
+					opacity: 0;
+					z-index: 500;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="characterselect">
+			<div class="preview-area">
+				<div class="portrait-area">
+					<div style="display: flex; flex-direction: column; width: 0px; height: 0px; margin: auto; justify-content: left; align-items: center">
+						<div style="height: 0px;">
+							<img id="info-portrait-temp" src="" style="height: 80vh; max-width: none; opacity: 0; position: relative">
+						</div>
+						<div style="width: fit-content">
+							<img id="info-portrait" src="" style="height: 80vh; max-width: none">
+						</div>
+					</div>
+					<h2 id="info-name" class="info-title" style=""></h2>
+				</div>
+				<div>
+					<div class="selectbox-container">
+						<div class="logospace" style="background-image: url('../img/characterSelect/bbtag/BB_border.webp')">
+							<img src="../img/logos/BBCF_logo.png" style="margin-top: 8px">
+						</div>
+						<a class="scroll-arrow" onclick="scrollSelection('blazblue', false)">
+							<div style="background-image: url('../img/characterSelect/bbtag/BB_border.webp')">
+								<img src="../img/characterSelect/bbtag/SelectArrowL.webp" style="">
+							</div>
+						</a>
+						<div id="selectbox-scroll-blazblue" class="selectbox-scroll">
+							<a id="character-ragna" class="scroll-char-blazblue" onclick="runDisplay('ragna')">
+								<div class="selectbox selectbox-character chrSelBlazBlue">
+									<img src="../img/characterSelect/bbtag/Ragna_the_Bloodedge_icon.webp">
+								</div>
+							</a>
+							<a id="character-jin" class="scroll-char-blazblue" onclick="runDisplay('jin')">
+								<div class="selectbox selectbox-character chrSelBlazBlue">
+									<img src="../img/characterSelect/bbtag/Jin_Kisaragi_icon.webp">
+								</div>
+							</a>
+							<a id="character-noel" class="scroll-char-blazblue" onclick="runDisplay('noel')">
+								<div class="selectbox selectbox-character chrSelBlazBlue">
+									<img src="../img/characterSelect/bbtag/Noel_Vermillion_icon.webp">
+								</div>
+							</a>
+							<a id="character-rachel" class="scroll-char-blazblue" onclick="runDisplay('rachel')">
+								<div class="selectbox selectbox-character chrSelBlazBlue">
+									<img src="../img/characterSelect/bbtag/Rachel_Alucard_icon.webp">
+								</div>
+							</a>
+							<a id="character-tager" class="scroll-char-blazblue" onclick="runDisplay('tager')">
+								<div class="selectbox selectbox-character chrSelBlazBlue">
+									<img src="../img/characterSelect/bbtag/Iron_Tager_icon.webp">
+								</div>
+							</a>
+							<a id="character-hakumen" class="scroll-char-blazblue" onclick="runDisplay('hakumen')">
+								<div class="selectbox selectbox-character chrSelBlazBlue">
+									<img src="../img/characterSelect/bbtag/Hakumen_icon.webp">
+								</div>
+							</a>
+							<a id="character-nu" class="scroll-char-blazblue" onclick="runDisplay('nu')">
+								<div class="selectbox selectbox-character chrSelBlazBlue">
+									<img src="../img/characterSelect/bbtag/Nu-13_icon.webp">
+								</div>
+							</a>
+							<a id="character-hazama" class="scroll-char-blazblue" onclick="runDisplay('hazama')">
+								<div class="selectbox selectbox-character chrSelBlazBlue">
+									<img src="../img/characterSelect/bbtag/Hazama_icon.webp">
+								</div>
+							</a>
+							<a id="character-makoto" class="scroll-char-blazblue" onclick="runDisplay('makoto')">
+								<div class="selectbox selectbox-character chrSelBlazBlue">
+									<img src="../img/characterSelect/bbtag/Makoto_Nanaya_icon.webp">
+								</div>
+							</a>
+							<a id="character-platinum" class="scroll-char-blazblue" onclick="runDisplay('platinum')">
+								<div class="selectbox selectbox-character chrSelBlazBlue">
+									<img src="../img/characterSelect/bbtag/Platinum_the_Trinity_icon.webp">
+								</div>
+							</a>
+							<a id="character-izayoi" class="scroll-char-blazblue" onclick="runDisplay('izayoi')">
+								<div class="selectbox selectbox-character chrSelBlazBlue">
+									<img src="../img/characterSelect/bbtag/Izayoi_icon.webp">
+								</div>
+							</a>
+							<a id="character-azrael" class="scroll-char-blazblue" onclick="runDisplay('azrael')">
+								<div class="selectbox selectbox-character chrSelBlazBlue">
+									<img src="../img/characterSelect/bbtag/Azrael_icon.webp">
+								</div>
+							</a>
+							<a id="character-celica" class="scroll-char-blazblue" onclick="runDisplay('celica')">
+								<div class="selectbox selectbox-character chrSelBlazBlue">
+									<img src="../img/characterSelect/bbtag/Celica_A._Mercury_icon.webp">
+								</div>
+							</a>
+							<a id="character-nine" class="scroll-char-blazblue" onclick="runDisplay('nine')">
+								<div class="selectbox selectbox-character chrSelBlazBlue">
+									<img src="../img/characterSelect/bbtag/Nine_the_Phantom_icon.webp">
+								</div>
+							</a>
+							<a id="character-naoto" class="scroll-char-blazblue" onclick="runDisplay('naoto')">
+								<div class="selectbox selectbox-character chrSelBlazBlue">
+									<img src="../img/characterSelect/bbtag/Naoto_Kurogane_icon.webp">
+								</div>
+							</a>
+							<a id="character-susanoo" class="scroll-char-blazblue" onclick="runDisplay('susanoo')">
+								<div class="selectbox selectbox-character chrSelBlazBlue">
+									<img src="../img/characterSelect/bbtag/Susano'o_icon.webp">
+								</div>
+							</a>
+							<a id="character-es" class="scroll-char-blazblue" onclick="runDisplay('es')">
+								<div class="selectbox selectbox-character chrSelBlazBlue">
+									<img src="../img/characterSelect/bbtag/Es_icon.webp">
+								</div>
+							</a>
+							<a id="character-mai" class="scroll-char-blazblue" onclick="runDisplay('mai')">
+								<div class="selectbox selectbox-character chrSelBlazBlue">
+									<img src="../img/characterSelect/bbtag/Mai_Natsume_icon.webp">
+								</div>
+							</a>
+							<a id="character-jubei" class="scroll-char-blazblue" onclick="runDisplay('jubei')">
+								<div class="selectbox selectbox-character chrSelBlazBlue">
+									<img src="../img/characterSelect/bbtag/Jubei_icon.webp">
+								</div>
+							</a>
+							<div id="scroll-endbar-blazblue"></div>
+						</div>
+						<a class="scroll-arrow" onclick="scrollSelection('blazblue', true)">
+							<div style="background-image: url('../img/characterSelect/bbtag/BB_border.webp')">
+								<img src="../img/characterSelect/bbtag/SelectArrowR.webp" style="">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-container">
+						<div class="logospace" style="background-image: url('../img/characterSelect/bbtag/P4A_border.webp')">
+							<img src="../img/logos/bbtag/P4A_logo_bbtag_select.webp" style="width: 180px; margin-top: 8px">
+						</div>
+						<a class="scroll-arrow" onclick="scrollSelection('persona', false)">
+							<div style="background-image: url('../img/characterSelect/bbtag/P4A_border.webp')">
+								<img src="../img/characterSelect/bbtag/SelectArrowL.webp" style="">
+							</div>
+						</a>
+						<div id="selectbox-scroll-persona" class="selectbox-scroll">
+							<a id="character-narukami" class="scroll-char-persona" onclick="runDisplay('narukami')">
+								<div class="selectbox selectbox-character chrSelPersona">
+									<img src="../img/characterSelect/bbtag/Yu_Narukami_icon.webp">
+								</div>
+							</a>
+							<a id="character-yosuke" class="scroll-char-persona" onclick="runDisplay('yosuke')">
+								<div class="selectbox selectbox-character chrSelPersona">
+									<img src="../img/characterSelect/bbtag/Yosuke_Hanamura_icon.webp">
+								</div>
+							</a>
+							<a id="character-chie" class="scroll-char-persona" onclick="runDisplay('chie')">
+								<div class="selectbox selectbox-character chrSelPersona">
+									<img src="../img/characterSelect/bbtag/Chie_Satonaka_icon.webp">
+								</div>
+							</a>
+							<a id="character-yukiko" class="scroll-char-persona" onclick="runDisplay('yukiko')">
+								<div class="selectbox selectbox-character chrSelPersona">
+									<img src="../img/characterSelect/bbtag/Yukiko_Amagi_icon.webp">
+								</div>
+							</a>
+							<a id="character-kanji" class="scroll-char-persona" onclick="runDisplay('kanji')">
+								<div class="selectbox selectbox-character chrSelPersona">
+									<img src="../img/characterSelect/bbtag/Kanji_Tatsumi_icon.webp">
+								</div>
+							</a>
+							<a id="character-teddie" class="scroll-char-persona" onclick="runDisplay('teddie')">
+								<div class="selectbox selectbox-character chrSelPersona">
+									<img src="../img/characterSelect/bbtag/Teddie_icon.webp">
+								</div>
+							</a>
+							<a id="character-naotos" class="scroll-char-persona" onclick="runDisplay('naotos')">
+								<div class="selectbox selectbox-character chrSelPersona">
+									<img src="../img/characterSelect/bbtag/Naoto_Shirogane_icon.webp">
+								</div>
+							</a>
+							<a id="character-mitsuru" class="scroll-char-persona" onclick="runDisplay('mitsuru')">
+								<div class="selectbox selectbox-character chrSelPersona">
+									<img src="../img/characterSelect/bbtag/Mitsuru_Kirijo_icon.webp">
+								</div>
+							</a>
+							<a id="character-akihiko" class="scroll-char-persona" onclick="runDisplay('akihiko')">
+								<div class="selectbox selectbox-character chrSelPersona">
+									<img src="../img/characterSelect/bbtag/Akihiko_Sanada_icon.webp">
+								</div>
+							</a>
+							<a id="character-aegis" class="scroll-char-persona" onclick="runDisplay('aegis')">
+								<div class="selectbox selectbox-character chrSelPersona">
+									<img src="../img/characterSelect/bbtag/Aegis_icon.webp">
+								</div>
+							</a>
+							<a id="character-elizabeth" class="scroll-char-persona" onclick="runDisplay('elizabeth')">
+								<div class="selectbox selectbox-character chrSelPersona">
+									<img src="../img/characterSelect/bbtag/Elizabeth_icon.webp">
+								</div>
+							</a>
+							<a id="character-labrys" class="scroll-char-persona" onclick="runDisplay('labrys')">
+								<div class="selectbox selectbox-character chrSelPersona">
+									<img src="../img/characterSelect/bbtag/Labrys_icon.webp">
+								</div>
+							</a>
+							<a id="character-adachi" class="scroll-char-persona" onclick="runDisplay('adachi')">
+								<div class="selectbox selectbox-character chrSelPersona">
+									<img src="../img/characterSelect/bbtag/Tohru_Adachi_icon.webp">
+								</div>
+							</a>
+						</div>
+						<a class="scroll-arrow" onclick="scrollSelection('persona', true)">
+							<div style="background-image: url('../img/characterSelect/bbtag/P4A_border.webp')">
+								<img src="../img/characterSelect/bbtag/SelectArrowR.webp" style="">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-container">
+						<div class="logospace" style="background-image: url('../img/characterSelect/bbtag/UNI_border.webp')">
+							<img src="../img/logos/bbtag/UNIST_logo_bbtag_select.webp" style="width: 180px; margin-top: 40px">
+						</div>
+						<a class="scroll-arrow" onclick="scrollSelection('undernight', false)">
+							<div style="background-image: url('../img/characterSelect/bbtag/UNI_border.webp')">
+								<img src="../img/characterSelect/bbtag/SelectArrowL.webp" style="">
+							</div>
+						</a>
+						<div id="selectbox-scroll-undernight" class="selectbox-scroll">
+							<a id="character-hyde" class="scroll-char-undernight" onclick="runDisplay('hyde')">
+								<div class="selectbox selectbox-character chrSelUnderNight">
+									<img src="../img/characterSelect/bbtag/Hyde_icon.webp">
+								</div>
+							</a>
+							<a id="character-linne" class="scroll-char-undernight" onclick="runDisplay('linne')">
+								<div class="selectbox selectbox-character chrSelUnderNight">
+									<img src="../img/characterSelect/bbtag/Linne_icon.webp">
+								</div>
+							</a>
+							<a id="character-waldstein" class="scroll-char-undernight" onclick="runDisplay('waldstein')">
+								<div class="selectbox selectbox-character chrSelUnderNight">
+									<img src="../img/characterSelect/bbtag/Waldstein_icon.webp">
+								</div>
+							</a>
+							<a id="character-carmine" class="scroll-char-undernight" onclick="runDisplay('carmine')">
+								<div class="selectbox selectbox-character chrSelUnderNight">
+									<img src="../img/characterSelect/bbtag/Carmine_icon.webp">
+								</div>
+							</a>
+							<a id="character-orie" class="scroll-char-undernight" onclick="runDisplay('orie')">
+								<div class="selectbox selectbox-character chrSelUnderNight">
+									<img src="../img/characterSelect/bbtag/Orie_icon.webp">
+								</div>
+							</a>
+							<a id="character-gordeau" class="scroll-char-undernight" onclick="runDisplay('gordeau')">
+								<div class="selectbox selectbox-character chrSelUnderNight">
+									<img src="../img/characterSelect/bbtag/Gordeau_icon.webp">
+								</div>
+							</a>
+							<a id="character-merkava" class="scroll-char-undernight" onclick="runDisplay('merkava')">
+								<div class="selectbox selectbox-character chrSelUnderNight">
+									<img src="../img/characterSelect/bbtag/Merkava_icon.webp">
+								</div>
+							</a>
+							<a id="character-vatista" class="scroll-char-undernight" onclick="runDisplay('vatista')">
+								<div class="selectbox selectbox-character chrSelUnderNight">
+									<img src="../img/characterSelect/bbtag/Vatista_icon.webp">
+								</div>
+							</a>
+							<a id="character-seth" class="scroll-char-undernight" onclick="runDisplay('seth')">
+								<div class="selectbox selectbox-character chrSelUnderNight">
+									<img src="../img/characterSelect/bbtag/Seth_icon.webp">
+								</div>
+							</a>
+							<a id="character-yuzuriha" class="scroll-char-undernight" onclick="runDisplay('yuzuriha')">
+								<div class="selectbox selectbox-character chrSelUnderNight">
+									<img src="../img/characterSelect/bbtag/Yuzuriha_icon.webp">
+								</div>
+							</a>
+							<a id="character-hilda" class="scroll-char-undernight" onclick="runDisplay('hilda')">
+								<div class="selectbox selectbox-character chrSelUnderNight">
+									<img src="../img/characterSelect/bbtag/Hilda_icon.webp">
+								</div>
+							</a>
+							<a id="character-mika" class="scroll-char-undernight" onclick="runDisplay('mika')">
+								<div class="selectbox selectbox-character chrSelUnderNight">
+									<img src="../img/characterSelect/bbtag/Mika_icon.webp">
+								</div>
+							</a>
+						</div>
+						<a class="scroll-arrow" onclick="scrollSelection('undernight', true)">
+							<div style="background-image: url('../img/characterSelect/bbtag/UNI_border.webp')">
+								<img src="../img/characterSelect/bbtag/SelectArrowR.webp" style="">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-container">
+						<div class="logospace" style="background-image: url('../img/characterSelect/bbtag/RWBY_border.webp')">
+							<img src="../img/logos/bbtag/RWBY_logo_bbtag_select.webp" style="width: 170px; padding-left: 8px; margin-top: 50px">
+						</div>
+						<a class="scroll-arrow">
+							<div style="background-image: url('../img/characterSelect/bbtag/RWBY_border.webp')">
+								<img src="../img/characterSelect/bbtag/SelectArrowNoneL.webp" style="">
+							</div>
+						</a>
+						<a id="character-ruby" onclick="runDisplay('ruby')">
+							<div class="selectbox selectbox-character chrSelRWBY">
+								<img src="../img/characterSelect/bbtag/Ruby_Rose_icon.webp">
+							</div>
+						</a>
+						<a id="character-weiss" onclick="runDisplay('weiss')">
+							<div class="selectbox selectbox-character chrSelRWBY">
+								<img src="../img/characterSelect/bbtag/Weiss_Schnee_icon.webp">
+							</div>
+						</a>
+						<a id="character-blake" onclick="runDisplay('blake')">
+							<div class="selectbox selectbox-character chrSelRWBY">
+								<img src="../img/characterSelect/bbtag/Blake_Belladonna_icon.webp">
+							</div>
+						</a>
+						<a id="character-yang" onclick="runDisplay('yang')">
+							<div class="selectbox selectbox-character chrSelRWBY">
+								<img src="../img/characterSelect/bbtag/Yang_Xiao_Long_icon.webp">
+							</div>
+						</a>
+						<a id="character-neo" onclick="runDisplay('neo')">
+							<div class="selectbox selectbox-character chrSelRWBY">
+								<img src="../img/characterSelect/bbtag/Neo_Politan_icon.webp">
+							</div>
+						</a>
+						<a class="scroll-arrow" style="width: 198px; cursor: auto">
+							<div style="background-image: url('../img/characterSelect/bbtag/RWBY_border.webp')"></div>
+						</a>
+						<a class="scroll-arrow">
+							<div style="background-image: url('../img/characterSelect/bbtag/RWBY_border.webp')">
+								<img src="../img/characterSelect/bbtag/SelectArrowNoneR.webp" style="">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-container">
+						<div id="selectbox-other" class="logospace" style="background-image: url('../img/characterSelect/bbtag/AH3_border.webp')">
+							<img id="logo-other" src="../img/logos/bbtag/AH3LMSS_logo_bbtag_select.webp" style="width: 198px; margin-top: 18px">
+						</div>
+						<a class="scroll-arrow">
+							<div id="scrollspace-other-l" style="background-image: url('../img/characterSelect/bbtag/AH3_border.webp')">
+								<img src="../img/characterSelect/bbtag/SelectArrowNoneL.webp" style="">
+							</div>
+						</a>
+						<a id="character-heart" onclick="runDisplay('heart')">
+							<div class="selectbox selectbox-character chrSelArcanaHeart">
+								<img src="../img/characterSelect/bbtag/Heart_Aino_icon.webp">
+							</div>
+						</a>
+						<a id="character-yumi" onclick="runDisplay('yumi')">
+							<div class="selectbox selectbox-character chrSelSenranKagura">
+								<img src="../img/characterSelect/bbtag/Yumi_icon.webp">
+							</div>
+						</a>
+						<a id="character-akatsuki" onclick="runDisplay('akatsuki')">
+							<div class="selectbox selectbox-character chrSelAkatsukiBlitzkampf">
+								<img src="../img/characterSelect/bbtag/Akatsuki_icon.webp">
+							</div>
+						</a>
+						<a id="character-blitztank" onclick="runDisplay('blitztank')">
+							<div class="selectbox selectbox-character chrSelAkatsukiBlitzkampf">
+								<img src="../img/characterSelect/bbtag/Blitztank_icon.webp">
+							</div>
+						</a>
+						<a class="scroll-arrow" style="width: 297px; cursor: auto">
+							<div id="scrollspace-other-r" style="background-image: url('../img/characterSelect/bbtag/AH3_border.webp')"></div>
+						</a>
+						<a class="scroll-arrow">
+							<div id="scrollspace-other-r2" style="background-image: url('../img/characterSelect/bbtag/AH3_border.webp')">
+								<img src="../img/characterSelect/bbtag/SelectArrowNoneR.webp" style="">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-container">
+						<div id="selectbox-extra" class="logospace" style="background-image: url('../img/characterSelect/bbtag/ETC_border.webp')">
+							<img id="logo-extra" src="../img/logos/bbtag/ETC_logo_bbtag_select.webp" style="width: 170px; margin-top: 35px">
+						</div>
+						<a class="scroll-arrow">
+							<div style="background-image: url('../img/characterSelect/bbtag/ETC_border.webp')">
+								<img src="../img/characterSelect/bbtag/SelectArrowNoneL.webp" style="">
+							</div>
+						</a>
+						<a id="character-random" onclick="runDisplay('random')">
+							<div class="selectbox selectbox-character chrSelRandom">
+								<img src="../img/characterSelect/bbtag/Random_icon.webp">
+							</div>
+						</a>
+						<a class="scroll-arrow" style="width: 594px; cursor: auto">
+							<div style="background-image: url('../img/characterSelect/bbtag/ETC_border.webp')"></div>
+						</a>
+						<a class="scroll-arrow">
+							<div style="background-image: url('../img/characterSelect/bbtag/ETC_border.webp')">
+								<img src="../img/characterSelect/bbtag/SelectArrowNoneR.webp" style="">
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="description-area"></div>
+			</div>
+		</div>
+		<div class="preload-container">
+			<img src="../img/portraits/bbtag/Ragna_the_Bloodedge.png">
+			<img src="../img/portraits/bbtag/Jin_Kisaragi.png">
+			<img src="../img/portraits/bbtag/Noel_Vermillion.png">
+			<img src="../img/portraits/bbtag/Rachel_Alucard.png">
+			<img src="../img/portraits/bbtag/Iron_Tager.png">
+			<img src="../img/portraits/bbtag/Hakumen.png">
+			<img src="../img/portraits/bbtag/Nu-13.png">
+			<img src="../img/portraits/bbtag/Hazama.png">
+			<img src="../img/portraits/bbtag/Makoto_Nanaya.png">
+			<img src="../img/portraits/bbtag/Platinum_the_Trinity.png">
+			<img src="../img/portraits/bbtag/Izayoi.png">
+			<img src="../img/portraits/bbtag/Azrael.png">
+			<img src="../img/portraits/bbtag/Celica_A._Mercury.png">
+			<img src="../img/portraits/bbtag/Nine_the_Phantom.png">
+			<img src="../img/portraits/bbtag/Naoto_Kurogane.png">
+			<img src="../img/portraits/bbtag/Susano'o.png">
+			<img src="../img/portraits/bbtag/Es.png">
+			<img src="../img/portraits/bbtag/Mai_Natsume.png">
+			<img src="../img/portraits/bbtag/Jubei.png">
+			<img src="../img/portraits/bbtag/Yu_Narukami.png">
+			<img src="../img/portraits/bbtag/Yosuke_Hanamura.png">
+			<img src="../img/portraits/bbtag/Chie_Satonaka.png">
+			<img src="../img/portraits/bbtag/Yukiko_Amagi.png">
+			<img src="../img/portraits/bbtag/Kanji_Tatsumi.png">
+			<img src="../img/portraits/bbtag/Teddie.png">
+			<img src="../img/portraits/bbtag/Naoto_Shirogane.png">
+			<img src="../img/portraits/bbtag/Mitsuru_Kirijo.png">
+			<img src="../img/portraits/bbtag/Akihiko_Sanada.png">
+			<img src="../img/portraits/bbtag/Aegis.png">
+			<img src="../img/portraits/bbtag/Elizabeth.png">
+			<img src="../img/portraits/bbtag/Labrys.png">
+			<img src="../img/portraits/bbtag/Tohru_Adachi.png">
+			<img src="../img/portraits/bbtag/Hyde.png">
+			<img src="../img/portraits/bbtag/Linne.png">
+			<img src="../img/portraits/bbtag/Waldstein.png">
+			<img src="../img/portraits/bbtag/Carmine.png">
+			<img src="../img/portraits/bbtag/Orie.png">
+			<img src="../img/portraits/bbtag/Gordeau.png">
+			<img src="../img/portraits/bbtag/Merkava.png">
+			<img src="../img/portraits/bbtag/Vatista.png">
+			<img src="../img/portraits/bbtag/Seth.png">
+			<img src="../img/portraits/bbtag/Yuzuriha.png">
+			<img src="../img/portraits/bbtag/Hilda.png">
+			<img src="../img/portraits/bbtag/Mika.png">
+			<img src="../img/portraits/bbtag/Ruby_Rose.png">
+			<img src="../img/portraits/bbtag/Weiss_Schnee.png">
+			<img src="../img/portraits/bbtag/Blake_Belladonna.png">
+			<img src="../img/portraits/bbtag/Yang_Xiao_Long.png">
+			<img src="../img/portraits/bbtag/Neo_Politan.png">
+			<img src="../img/portraits/bbtag/Heart_Aino.png">
+			<img src="../img/portraits/bbtag/Yumi.png">
+			<img src="../img/portraits/bbtag/Akatsuki.png">
+			<img src="../img/portraits/bbtag/Blitztank.png">
+			<img src="../img/characterSelect/bbtag/AH3_border.webp">
+			<img src="../img/characterSelect/bbtag/SK_border.webp">
+			<img src="../img/characterSelect/bbtag/AKBK_border.webp">
+			<img src="../img/logos/bbtag/AH3LMSS_logo_bbtag_select.webp">
+			<img src="../img/logos/bbtag/SKEV_logo_bbtag_select.webp">
+			<img src="../img/logos/bbtag/AKBK_logo_bbtag_select.webp">
+		</div>
+	</body>
+</html>

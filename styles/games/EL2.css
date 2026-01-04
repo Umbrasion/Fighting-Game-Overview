@@ -1,0 +1,113 @@
+body {
+    font-family: "Geo";
+}
+
+#characterselect {
+    display: block;
+}
+
+.description-area {
+    padding: 20px;
+}
+
+#info-name {
+    font-size: 4em;
+    height: 10%;
+    margin: 80vh 0px 3%
+}
+
+#info-portrait {
+    height: 80vh;
+    max-width: none;
+}
+
+.selectbox-container {
+    margin: 25px;
+    font-size: 0px;
+}
+
+.selectbox-row-container {
+    height: 85px;
+}
+
+.selectbox-container a {
+    display: inline-block;
+    transform: rotate(-45deg);
+}
+
+.selectbox-character img {
+    position: relative;
+    top: 0px;
+    bottom: 0px;
+    width: 108px;
+}
+
+.selectbox-character img:hover {
+    outline: 3px solid red;
+}
+
+.selectbox-spacer {
+    display: inline-block;
+    width: 59px;
+}
+
+#selectbox-main:hover {
+    content: url("../../img/characterSelect/el2/Main_icon_selected.webp");
+}
+
+#selectbox-sisca:hover {
+    content: url("../../img/characterSelect/el2/Sisca_icon_selected.webp");
+}
+
+#selectbox-qdora:hover {
+    content: url("../../img/characterSelect/el2/Qdora_icon_selected.webp");
+}
+
+#selectbox-tae:hover {
+    content: url("../../img/characterSelect/el2/Akamine_Tae_icon_selected.webp");
+}
+
+#selectbox-tina:hover {
+    content: url("../../img/characterSelect/el2/Tina_icon_selected.webp");
+}
+
+#selectbox-cecil:hover {
+    content: url("../../img/characterSelect/el2/Cecil_icon_selected.webp");
+}
+
+#selectbox-stina:hover {
+    content: url("../../img/characterSelect/el2/Saving_Tina_icon_selected.webp");
+}
+
+#selectbox-alcott:hover {
+    content: url("../../img/characterSelect/el2/Alcott_icon_selected.webp");
+}
+
+#selectbox-serena:hover {
+    content: url("../../img/characterSelect/el2/Serena_icon_selected.webp");
+}
+
+#selectbox-yagabi:hover {
+    content: url("../../img/characterSelect/el2/Yagabi_icon_selected.webp");
+}
+
+.portrait-onhover {
+    animation-name: portraitonhover;
+    animation-duration: 0.15s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-delay: 0s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes portraitonhover {
+    from {
+        transform: translate(-100px, 0);
+        opacity: 0.3;
+    }
+    
+    to {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}

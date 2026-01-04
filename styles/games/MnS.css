@@ -1,0 +1,18 @@
+body {
+    margin: 0px;
+}
+
+#characterselect {
+    padding: 0px;
+}
+
+.selectbox-positioner {
+    pointer-events: none;
+    position: relative;
+    width: 0px;
+    height: 0px;
+}
+
+.selectbox-fullroster {
+    height: 100vh;
+}

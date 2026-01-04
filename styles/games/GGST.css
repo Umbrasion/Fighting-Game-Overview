@@ -1,0 +1,14 @@
+#characterselect {
+    display: block;
+    width: calc(100% - 40px);
+    margin: 0px;
+}
+
+.selectbox-row a:hover {
+    transform: scale(1.14);
+}
+
+.selectbox-character img, .selectbox-spacer {
+    display: block;
+    max-width: 82px;
+}

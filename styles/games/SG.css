@@ -1,0 +1,62 @@
+body {
+    margin: 0px;
+    height: 100vh;
+    overflow: clip;
+    background: url("../../img/characterSelect/sg/Background.webp");
+    font-family: "Selznick Remix NF";
+}
+
+#characterselect {
+    padding: 0px 20px;
+    width: calc(100% - 40px);
+    height: 100vh;
+    position: static;
+}
+
+.portrait-area {
+    z-index: auto;
+}
+
+.portrait-area, .description-area {
+    min-width: 400px;
+    padding: 20px;
+}
+
+.description-area {
+    height: fit-content;
+    margin-top: 80px;
+}
+
+#overview-description {
+    font-size: 1.1em;
+    padding: 0px 6%;
+}
+
+.selectbox-container {
+    width: fit-content;
+}
+
+.selectbox-container img {
+    height: 100vh;
+}
+
+.selectbox-overlay {
+    pointer-events: none;
+}
+
+.layout-style {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+}
+
+.info-table {
+    font-size: 1em;
+}
+
+th {
+    font-weight: normal
+}

@@ -1,0 +1,25 @@
+#characterselect {
+    display: block;
+    font-size: 0px;
+}
+
+.selectbox-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 0px;
+    max-width: 1200px;
+}
+
+.selectbox-character {
+    
+}
+
+.selectbox-character img {
+    width: 75px;
+}
+
+.selectbox-spacer {
+    display: inline-block;
+    width: 75px;
+}

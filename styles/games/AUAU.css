@@ -1,0 +1,205 @@
+.selectbox-container {
+    background-color: #9FB7A3;
+    padding: 20px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.selectbox {
+    background-color: #7F8F80;
+    border-radius: 10px;
+}
+
+.selectbox-title {
+    color: black;
+    font-size: 36px;
+    background-color: #C8DBCA;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding: 10px 0px;
+}
+
+.selectbox-preview {
+    padding: 132px 55px;
+    margin-right: 20px;
+}
+
+.selectbox-name {
+    color: black;
+    font-size: 36px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.preview-character {
+    margin: auto;
+}
+
+.selectbox-colors {
+    width: 456px;
+    display: flex;
+    gap: 4px 28px;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 23px 35px 17px 34px;
+}
+
+.selectbox-secret {
+    width: 456px;
+    display: flex;
+    gap: 4px 28px;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 23px 35px 17px 34px;
+    margin-top: 20px;
+}
+
+.previewAUAU {
+    width: 93px;
+    height: 93px;
+}
+
+.preview-row-top {
+    width: 93px;
+    height: 92px;
+}
+
+.previewAUAU img {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.colorRed {
+    color: #C71211;
+}
+
+.colorBlue {
+    color: #132FD3;
+}
+
+.colorGreen {
+    color: #10802E;
+}
+
+.colorPink {
+    color: #EF55BB;
+}
+
+.colorOrange {
+    color: #EF7D0D;
+}
+
+.colorYellow {
+    color: #F7F758;
+}
+
+.colorBlack {
+    color: #3F484F;
+}
+
+.colorWhite {
+    color: #D5E1F1;
+}
+
+.colorPurple {
+    color: #6B2FBD;
+}
+
+.colorBrown {
+    color: #70491E;
+}
+
+.colorCyan {
+    color: #39FFDE;
+}
+
+.colorLime {
+    color: #4FF039;
+}
+
+.colorTan {
+    color: #908975;
+}
+
+.colorRose {
+    color: #E9C0D3;
+}
+
+.colorBanana {
+    color: #FFFFBB;
+}
+
+.colorMaroon {
+    color: #6A293B;
+}
+
+.colorGrey {
+    color: #8497A7;
+}
+
+.colorCoral {
+    color: #EC7579;
+}
+
+.colorOlive {
+    color: #607218;
+}
+
+.colorMint {
+    color: #BBF0B8;
+}
+
+.colorChocolate {
+    color: #392C1E;
+}
+
+.colorTeal {
+    color: #479A91;
+}
+
+.colorFlame {
+    color: #E43E08;
+}
+
+.colorNavy {
+    color: #1B2A58;
+}
+
+.colorGold {
+    color: #FFC84E;
+}
+
+.colorSky {
+    color: #91C8FA;
+}
+
+.colorApricot {
+    color: #FFD8B2;
+}
+
+.colorLavender {
+    color: #7D7EA9;
+}
+
+.colorChartreuse {
+    color: #C3F003;
+}
+
+.colorEggplant {
+    color: #6E4A61;
+}
+
+.colorFortegreen {
+    color: #1D9853;
+}
+
+.colorUndefined {
+    color: #FF0000;
+}
+/* Also #0000FF & #01FF30 */
+
+.colorCharcoal {
+    color: #3D4053;
+}
+/* Also #E92646 */

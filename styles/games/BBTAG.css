@@ -1,0 +1,205 @@
+#characterselect {
+    display: block;
+}
+
+.selectbox-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: left;
+    gap: 0px;
+}
+
+.selectbox-character {
+    width: 99px;
+    height: 133px;
+}
+
+.selectbox-character img {
+    position: relative;
+}
+
+a:hover .selectbox-character img {
+    border-color: white;
+    outline: 2px solid white;
+    z-index: 500;
+}
+
+#info-name {
+    font-family: serif;
+    padding-top: 8px;
+    margin-top: 80vh;
+    color: #FF3333;
+    filter: drop-shadow(2px 2px #FFFFFF);
+}
+
+.selectbox-scroll {
+    display: flex;
+    flex-flow: row;
+    justify-content: left;
+    gap: 0px;
+    width: 693px;
+    height: 133px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scroll-arrow {
+    width: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.scroll-arrow div {
+    width: inherit;
+    height: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.scroll-arrow img {
+    display: block;
+    width: 30px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.logospace {
+    width: 198px;
+    height: 133px;
+}
+
+.logospace img {
+    max-width: 198px;
+}
+
+.chrSelBlazBlue img {
+    border: solid 2px #1E32C1;
+}
+
+.chrSelPersona img {
+    border: solid 2px #AC9925;
+}
+
+.chrSelUnderNight img {
+    border: solid 2px #492581;
+}
+
+.chrSelRWBY img {
+    border: solid 2px #BF1F1F;
+}
+
+.chrSelArcanaHeart img {
+    border: solid 2px #FF3CFF;
+}
+
+.chrSelSenranKagura img {
+    border: solid 2px #14C5CE;
+}
+
+.chrSelAkatsukiBlitzkampf img {
+    border: solid 2px #2D2D2D;
+}
+
+.chrSelRandom img {
+    border: solid 2px #459218;
+}
+
+.portrait-onhover {
+    animation-name: portraitonhover;
+    animation-duration: 0.04s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+}
+
+@keyframes portraitonhover {
+    from {
+        transform: translate(-20px, 0);
+        opacity: 0.5;
+    }
+    
+    to {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+.portrait-onselect {
+    animation-name: portraitonselect;
+    animation-duration: 1.4s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+}
+
+@keyframes portraitonselect {
+    0% {
+        filter: brightness(1);
+    }
+    
+    8% {
+        filter: brightness(2);
+    }
+    
+    100% {
+        filter: brightness(1);
+    }
+}
+
+.tempportrait-onhover {
+    animation-name: tempportraitonhover;
+    animation-duration: 0.04s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+}
+
+@keyframes tempportraitonhover {
+    from {
+        transform: translate(0px, 0);
+        opacity: 1;
+    }
+    
+    to {
+        transform: translate(-20px, 0);
+        opacity: 0;
+    }
+}
+
+.tempportrait-onselect {
+    animation-name: tempportraitonselect;
+    animation-duration: 1.4s;
+    animation-iteration-count: 1;
+    animation-direction: linear;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+}
+
+@keyframes tempportraitonselect {
+    0% {
+        transform: scale(1.07);
+        filter: brightness(1);
+        opacity: 0;
+        z-index: 500;
+    }
+    
+    8% {
+        transform: scale(1.07);
+        filter: brightness(2);
+        opacity: 0.7;
+        z-index: 500;
+    }
+    
+    100% {
+        transform: scale(1.07);
+        filter: brightness(1);
+        opacity: 0;
+        z-index: 500;
+    }
+}

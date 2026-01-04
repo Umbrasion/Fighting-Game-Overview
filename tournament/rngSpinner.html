@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>RNG Spinner</title>
+		<link rel="stylesheet" href="../styles/main.css">
+		<script src="../scripts/jquery-3.7.1.min.js"></script>
+		<script src="spinner.js" defer></script>
+		<script src="conditions.js" defer></script>
+		<style>
+			body {
+				font-family: "Doodlian";
+				text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+			}
+			
+			main {
+				display: flex;
+				text-align: center;
+			}
+			
+			.game-area, .condition-area {
+				flex: 0px 1 0;
+			}
+			
+			.segment-header {
+				font-size: 3em;
+				margin: 14px 0px;
+			}
+			
+			.segment-subheader {
+				font-size: 2em;
+				margin: 10px 0px;
+			}
+			
+			.segment-info {
+				padding: 30px;
+				font-family: sans-serif;
+				font-size: 1.2em;
+				text-align: left;
+			}
+			
+			#rules-list {
+				padding-left: 40px;
+			}
+			
+			.tourney-logo {
+				width: 20vw;
+			}
+			
+			.slots-area {
+				display: flex;
+				justify-content: center;
+				flex-flow: row;
+				width: fit-content;
+				border: solid black 6px;
+				border-radius: 25px;
+				margin: 10px auto;
+				overflow: clip;
+			}
+			
+			.slot-roll {
+				width: 600px;
+				overflow: clip;
+				background: linear-gradient(to right, #E5E1D7, #FFFFFF, #E5E1D7);
+				text-align: center;
+			}
+			
+			#slot-roller {
+				height: 200px;
+			}
+			
+			#slot-roller-condition {
+				height: 80px;
+			}
+			
+			.slot-image-container {
+				display: flex;
+				height: 200px;
+			}
+			
+			.slot-image {
+				display: block;
+				max-width: 580px;
+				max-height: 180px;
+				margin: auto;
+				filter: drop-shadow(0px 0px 5px black);
+			}
+			
+			.slot-text-container {
+				display: flex;
+				height: 80px;
+			}
+			
+			.slot-text {
+				display: block;
+				width: 580px;
+				padding-top: 6px;
+				margin: auto;
+				filter: drop-shadow(0px 0px 5px black);
+				font-size: 30px;
+			}
+			
+			.roll-button {
+				font-weight: bold;
+				cursor: pointer;
+				font-family: "Doodlian";
+				color: white;
+				text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+				padding: 8px 10px 6px;
+				background: #3A5E33;
+				border: solid black 4px;
+			}
+			
+			.roll-button:hover {
+				background: #4A7741;
+			}
+			
+			.roll-button-null {
+				background: #2D352B;
+				pointer-events: none;
+			}
+			
+			#main-button {
+				font-size: 2.5em;
+			}
+			
+			#reroll-button {
+				font-size: 1.2em;
+				border: solid black 2px;
+			}
+			
+			.sloticon-spinin {
+				animation-name: sloticon-spinin;
+				animation-duration: 0.3s;
+				animation-iteration-count: 1;
+				animation-direction: normal;
+				animation-delay: 0s;
+				animation-timing-function: ease-out;
+			}
+			
+			@keyframes sloticon-spinin {
+				0% {
+					transform: translate(0,0);
+				}
+				
+				95% {
+					transform: translate(0,7px);
+				}
+				
+				100% {
+					transform: translate(0,0);
+				}
+			}
+			
+			.sloticon-spinout {
+				animation-name: sloticon-spinout;
+				animation-duration: 0.5s;
+				animation-iteration-count: 1;
+				animation-direction: normal;
+				animation-delay: 0s;
+				animation-timing-function: ease-out;
+			}
+			
+			@keyframes sloticon-spinout {
+				0% {
+					transform: translate(0,0);
+				}
+				
+				10% {
+					transform: translate(0,-7px);
+				}
+				
+				100% {
+					transform: translate(0,0);
+				}
+			}
+			
+			.text-rainbow {
+				animation: text-rainbow 1s linear 0s infinite normal;
+				filter: grayscale(40%);
+			}
+			
+			@keyframes text-rainbow {
+				0% {
+					color: rgba(255, 0, 0, 1);
+				}
+				
+				10% {
+					color: rgba(255, 154, 0, 1);
+				}
+				
+				20% {
+					color: rgba(208, 222, 33, 1);
+				}
+				
+				30% {
+					color: rgba(79, 220, 74, 1);
+				}
+				
+				40% {
+					color: rgba(63, 218, 216, 1);
+				}
+				
+				50% {
+					color: rgba(47, 201, 226, 1);
+				}
+				
+				60% {
+					color: rgba(28, 127, 238, 1);
+				}
+				
+				70% {
+					color: rgba(95, 21, 242, 1);
+				}
+				
+				80% {
+					color: rgba(186, 12, 248, 1);
+				}
+				
+				90% {
+					color: rgba(251, 7, 217, 1);
+				}
+				
+				100% {
+					color: rgba(255, 0, 0, 1);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<div class="game-area">
+				<h1 class="segment-header">RULES</h1>
+				<h2 id="game-name" class="segment-subheader"></h2>
+				<ul id="rules-list" class="segment-info">
+					<li id="rules-time" class=""></li>
+					<li id="rules-lives" class=""></li>
+					<li id="rules-stages" class=""></li>
+					<li id="rules-characters" class=""></li>
+					<li id="rules-" class=""></li>
+					<li id="rules-" class=""></li>
+					<li id="rules-" class=""></li>
+					<li id="rules-" class=""></li>
+					<li id="rules-" class=""></li>
+				</ul>
+				<h2 id="game-name-extra1" class="segment-subheader"></h2>
+				<ul id="rules-list-extra1" class="segment-info">
+					<li id="rules-time" class=""></li>
+					<li id="rules-lives" class=""></li>
+					<li id="rules-stages" class=""></li>
+					<li id="rules-characters" class=""></li>
+					<li id="rules-" class=""></li>
+					<li id="rules-" class=""></li>
+					<li id="rules-" class=""></li>
+					<li id="rules-" class=""></li>
+					<li id="rules-" class=""></li>
+				</ul>
+				<h2 id="game-name-extra2" class="segment-subheader"></h2>
+				<ul id="rules-list-extra2" class="segment-info">
+					<li id="rules-time" class=""></li>
+					<li id="rules-lives" class=""></li>
+					<li id="rules-stages" class=""></li>
+					<li id="rules-characters" class=""></li>
+					<li id="rules-" class=""></li>
+					<li id="rules-" class=""></li>
+					<li id="rules-" class=""></li>
+					<li id="rules-" class=""></li>
+					<li id="rules-" class=""></li>
+				</ul>
+			</div>
+			<div class="logo-area">
+				<img class="tourney-logo" src="../img/logos/RNG_logo.png">
+				<div class="slots-area">
+					<div id="slot-roller" class="slot-roll">
+						<div id="slot-container">
+							<div class="slot-image-container">
+								<img class="slot-image" src="../img/logos/RNG_logo.png">
+							</div>
+							<div class="slot-image-container">
+								<img class="slot-image" src="../img/logos/AFQM_logo.png">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="slots-area">
+					<div id="slot-roller-condition" class="slot-roll">
+						<div id="slot-container-condition">
+							<div class="slot-text-container">
+								<span class="slot-text">CONDITION</span>
+							</div>
+							<div class="slot-text-container">
+								<span class="slot-text"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div>
+					<button id="main-button" class="roll-button" onclick="initiateRoll()"><span id="main-button-text" class="">LET THE HANDS OF FATE DECIDE!</span></button><br><br>
+					<button id="reroll-button" class="roll-button" onclick="initiateReroll()">Reroll Pick</button>
+				</div>
+			</div>
+			<div class="condition-area">
+				<h1 class="segment-header">CONDITION</h1>
+				<h2 id="condition-name" class="segment-subheader"></h2>
+				<p id="condition-description" class="segment-info"></p>
+				<h2 id="condition-name-extra1" class="segment-subheader"></h2>
+				<p id="condition-description-extra1" class="segment-info"></p>
+				<h2 id="condition-name-extra2" class="segment-subheader"></h2>
+				<p id="condition-description-extra2" class="segment-info"></p>
+			</div>
+		</main>
+	</body>
+</html>

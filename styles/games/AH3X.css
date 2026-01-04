@@ -1,0 +1,140 @@
+#characterselect {
+    display: block;
+}
+
+.selectbox-container a {
+    display: inline-block;
+}
+
+.size-small-small, .size-small-small img {
+    width: 145px;
+    height: 103px;
+}
+
+.size-small-big, .size-small-big img {
+    width: 145px;
+    height: 104px;
+}
+
+.size-big-small, .size-big-small img {
+    width: 146px;
+    height: 103px;
+}
+
+.size-big-big, .size-big-big img {
+    width: 146px;
+    height: 104px;
+}
+
+.selectbox-character-row {
+    width: fit-content;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: left;
+    gap: 5px 3px;
+    margin-bottom: 5px;
+}
+
+.character-weiss:hover img {
+    content: url("../../img/characterSelect/ah3x/Weiss_icon_selected.webp");
+}
+
+.character-schar:hover img {
+    content: url("../../img/characterSelect/ah3x/Scharlochrot_icon_selected.webp");
+}
+
+.character-petra:hover img {
+    content: url("../../img/characterSelect/ah3x/Petra_Johanna_Lagerkvist_icon_selected.webp");
+}
+
+.character-pistrix:hover img {
+    content: url("../../img/characterSelect/ah3x/Series_Pistrix_No.29_icon_selected.webp");
+}
+
+.character-eko:hover img {
+    content: url("../../img/characterSelect/ah3x/Eko_icon_selected.webp");
+}
+
+.character-clarice:hover img {
+    content: url("../../img/characterSelect/ah3x/Clarice_di_Lanze_icon_selected.webp");
+}
+
+.character-elsa:hover img {
+    content: url("../../img/characterSelect/ah3x/Elsa_la_Conti_icon_selected.webp");
+}
+
+.character-zenia:hover img {
+    content: url("../../img/characterSelect/ah3x/Zenia_Valov_icon_selected.webp");
+}
+
+.character-dorothy:hover img {
+    content: url("../../img/characterSelect/ah3x/Dorothy_Albright_icon_selected.webp");
+}
+
+.character-mei:hover img {
+    content: url("../../img/characterSelect/ah3x/Mei-Fang_icon_selected.webp");
+}
+
+.character-liese:hover img {
+    content: url("../../img/characterSelect/ah3x/Lieselotte_Achenbach_icon_selected.webp");
+}
+
+.character-cath:hover img {
+    content: url("../../img/characterSelect/ah3x/Catherine_Kyoubashi_icon_selected.webp");
+}
+
+.character-kira:hover img {
+    content: url("../../img/characterSelect/ah3x/Kira_Daidohji_icon_selected.webp");
+}
+
+.character-lilica:hover img {
+    content: url("../../img/characterSelect/ah3x/Lilica_Felchenerow_icon_selected.webp");
+}
+
+.character-fiona:hover img {
+    content: url("../../img/characterSelect/ah3x/Fiona_Mayfield_icon_selected.webp");
+}
+
+.character-akane:hover img {
+    content: url("../../img/characterSelect/ah3x/Akane_Inuwaka_icon_selected.webp");
+}
+
+.character-yoriko:hover img {
+    content: url("../../img/characterSelect/ah3x/Yoriko_Yasuzumi_icon_selected.webp");
+}
+
+.character-angelia:hover img {
+    content: url("../../img/characterSelect/ah3x/Angelia_Avallone_icon_selected.webp");
+}
+
+.character-nazuna:hover img {
+    content: url("../../img/characterSelect/ah3x/Nazuna_Inuwaka_icon_selected.webp");
+}
+
+.character-saki:hover img {
+    content: url("../../img/characterSelect/ah3x/Saki_Tsuzura_icon_selected.webp");
+}
+
+.character-maori:hover img {
+    content: url("../../img/characterSelect/ah3x/Maori_Kasuga_icon_selected.webp");
+}
+
+.character-konoha:hover img {
+    content: url("../../img/characterSelect/ah3x/Konoha_icon_selected.webp");
+}
+
+.character-dark:hover img {
+    content: url("../../img/characterSelect/ah3x/Dark_Heart_icon_selected.webp");
+}
+
+.character-aino:hover img {
+    content: url("../../img/characterSelect/ah3x/Heart_Aino_icon_selected.webp");
+}
+
+.character-minori:hover img {
+    content: url("../../img/characterSelect/ah3x/Minori_Amanohara_icon_selected.webp");
+}
+
+.character-kamui:hover img {
+    content: url("../../img/characterSelect/ah3x/Kamui_Tokinomiya_icon_selected.webp");
+}

@@ -1,0 +1,16 @@
+.chrSelection {
+    display: block;
+}
+
+.selectbox-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 0px;
+    width: 936px;
+}
+
+.selectbox-container a, .selectbox-character, .selectbox-character img {
+    width: 72px;
+    height: 41px;
+}

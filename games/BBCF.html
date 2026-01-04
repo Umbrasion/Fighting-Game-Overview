@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>BlazBlue: Central Fiction | Fighting Game Overview</title>
+		<link rel="stylesheet" href="../styles/main.css">
+		<link rel="stylesheet" href="../styles/infoColors.css">
+		<script src="../scripts/common.js"></script>
+		<script src="../scripts/cssResize.js" defer></script>
+		<script src="../scripts/onloadBBCF.js" defer></script>
+		<script src="../scripts/jquery-3.7.1.min.js"></script>
+		<style>
+			:root {
+				background: linear-gradient(to bottom, #2F4564 0%, #1B202B 10%, #232937 50%, #506995 100%);
+				height: fit-content;
+				min-height: 100vh;
+			}
+
+			.selectbox-positioner {
+				pointer-events: none;
+				position: relative;
+				width: 0px;
+				height: 0px;
+			}
+
+			.selectbox-character img {
+				width: 140px;
+				transform-origin: center;
+				filter: drop-shadow(0px 0px 4px black);
+			}
+
+			#info-name {
+				transform: translate(0, -9vh);
+			}
+			
+			.portrait-onhover {
+				animation-name: portraitonhover;
+				animation-duration: 0.04s;
+				animation-iteration-count: 1;
+				animation-direction: normal;
+				animation-delay: 0s;
+				animation-timing-function: linear;
+			}
+			
+			@keyframes portraitonhover {
+				from {
+					transform: translate(-20px, 0);
+					opacity: 0.5;
+				}
+				
+				to {
+					transform: translate(0, 0);
+					opacity: 1;
+				}
+			}
+			
+			.portrait-onselect {
+				animation-name: portraitonselect;
+				animation-duration: 1.4s;
+				animation-iteration-count: 1;
+				animation-direction: normal;
+				animation-delay: 0s;
+				animation-timing-function: linear;
+			}
+			
+			@keyframes portraitonselect {
+				0% {
+					filter: brightness(1);
+				}
+				
+				8% {
+					filter: brightness(2);
+				}
+				
+				100% {
+					filter: brightness(1);
+				}
+			}
+			
+			.tempportrait-onhover {
+				animation-name: tempportraitonhover;
+				animation-duration: 0.04s;
+				animation-iteration-count: 1;
+				animation-direction: normal;
+				animation-delay: 0s;
+				animation-timing-function: linear;
+			}
+			
+			@keyframes tempportraitonhover {
+				from {
+					transform: translate(0px, 0);
+					opacity: 1;
+				}
+				
+				to {
+					transform: translate(-20px, 0);
+					opacity: 0;
+				}
+			}
+			
+			.tempportrait-onselect {
+				animation-name: tempportraitonselect;
+				animation-duration: 1.4s;
+				animation-iteration-count: 1;
+				animation-direction: linear;
+				animation-delay: 0s;
+				animation-timing-function: linear;
+			}
+			
+			@keyframes tempportraitonselect {
+				0% {
+					transform: scale(1.03);
+					filter: brightness(1);
+					opacity: 0;
+					z-index: 500;
+				}
+				
+				8% {
+					transform: scale(1.03);
+					filter: brightness(2);
+					opacity: 0.7;
+					z-index: 500;
+				}
+				
+				100% {
+					transform: scale(1.03);
+					filter: brightness(1);
+					opacity: 0;
+					z-index: 500;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<img class="game-logo" src="../img/logos/BBCF_logo.png">
+		<div id="characterselect">
+			<div class="preview-area">
+				<div class="portrait-area">
+					<div style="display: flex; flex-direction: column; width: 0px; height: 0px; margin: auto; justify-content: left; align-items: center">
+						<div style="height: 0px;">
+							<img id="info-portrait-temp" src="" style="height: 86vh; max-width: none; opacity: 0; position: relative">
+						</div>
+						<div style="width: fit-content">
+							<img id="info-portrait" src="" style="height: 86vh; max-width: none">
+						</div>
+						<div style="width: fit-content">
+							<img id="info-name" class="info-title" style="height: 6vh">
+						</div>
+					</div>
+				</div>
+				<div class="selectbox-container">
+					<div class="selectbox-positioner" style="left: 0px; top: 60px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-es" src="../img/characterSelect/bbcf/Es_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 0px; top: 187px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-nu" src="../img/characterSelect/bbcf/Nu-13_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 0px; top: 314px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-bullet" src="../img/characterSelect/bbcf/Bullet_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 0px; top: 440px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-tager" src="../img/characterSelect/bbcf/Iron_Tager_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 120px; top: 121px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-hazama" src="../img/characterSelect/bbcf/Hazama_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 120px; top: 248px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-kagura" src="../img/characterSelect/bbcf/Kagura_Mutsuki_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 120px; top: 375px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-celica" src="../img/characterSelect/bbcf/Celica_A._Mercury_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 120px; top: 501px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-litchi" src="../img/characterSelect/bbcf/Litchi_Faye_Ling_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 120px; top: 628px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-platinum" src="../img/characterSelect/bbcf/Platinum_the_Trinity_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 240px; top: 60px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-naoto" src="../img/characterSelect/bbcf/Naoto_Kurogane_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 240px; top: 187px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-ragna" src="../img/characterSelect/bbcf/Ragna_the_Bloodedge_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 240px; top: 314px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-noel" src="../img/characterSelect/bbcf/Noel_Vermillion_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 240px; top: 440px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-makoto" src="../img/characterSelect/bbcf/Makoto_Nanaya_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 240px; top: 567px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-relius" src="../img/characterSelect/bbcf/Relius_Clover_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 240px; top: 693px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-valkenhayn" src="../img/characterSelect/bbcf/Valkenhayn_R._Hellsing_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 360px; top: 0px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-susanoo" src="../img/characterSelect/bbcf/Susano'o_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 360px; top: 121px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-jubei" src="../img/characterSelect/bbcf/Jubei_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 360px; top: 251px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-izanami" src="../img/characterSelect/bbcf/Izanami_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 360px; top: 377px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-nine" src="../img/characterSelect/bbcf/Nine_the_Phantom_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 360px; top: 504px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-terumi" src="../img/characterSelect/bbcf/Yuuki_Terumi_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 360px; top: 630px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-mu" src="../img/characterSelect/bbcf/Mu-12_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 480px; top: 60px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-hibiki" src="../img/characterSelect/bbcf/Hibiki_Kohaku_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 480px; top: 187px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-jin" src="../img/characterSelect/bbcf/Jin_Kisaragi_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 480px; top: 314px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-rachel" src="../img/characterSelect/bbcf/Rachel_Alucard_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 480px; top: 440px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-hakumen" src="../img/characterSelect/bbcf/Hakumen_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 480px; top: 567px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-carl" src="../img/characterSelect/bbcf/Carl_Clover_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 480px; top: 693px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-taokaka" src="../img/characterSelect/bbcf/Taokaka_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 600px; top: 121px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-tsubaki" src="../img/characterSelect/bbcf/Tsubaki_Yayoi_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 600px; top: 248px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-kokonoe" src="../img/characterSelect/bbcf/Kokonoe_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 600px; top: 375px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-izayoi" src="../img/characterSelect/bbcf/Izayoi_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 600px; top: 501px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-arakune" src="../img/characterSelect/bbcf/Arakune_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 600px; top: 628px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-bang" src="../img/characterSelect/bbcf/Bang_Shishigami_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 720px; top: 60px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-mai" src="../img/characterSelect/bbcf/Mai_Natsume_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 720px; top: 187px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-lambda" src="../img/characterSelect/bbcf/Lambda-11_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 720px; top: 314px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-azrael" src="../img/characterSelect/bbcf/Azrael_icon.webp">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 720px; top: 440px">
+						<div class="selectbox selectbox-character">
+							<img id="selectbox-amane" src="../img/characterSelect/bbcf/Amane_Nishiki_icon.webp">
+						</div>
+					</div>
+					<img class="selectbox-fullroster" src="../img/characterSelect/bbcf/Full_Roster.webp" usemap="#mapselect">
+					<map name="mapselect">
+						<area id="character-es" onclick="runDisplay('Es')" shape="poly" coords="35,60, 105,60, 140,118, 106,175, 34,175, 0,118" style="background-color: #FFFFFF; display: block">
+						<area id="character-nu" onclick="runDisplay('Nu-13')" shape="poly" coords="35,187, 105,187, 140,244, 106,301, 34,301, 0,244">
+						<area id="character-bullet" onclick="runDisplay('Bullet')" shape="poly" coords="35,314, 105,314, 140,371, 106,428, 34,428, 0,371">
+						<area id="character-tager" onclick="runDisplay('Iron_Tager')" shape="poly" coords="35,440, 105,440, 140,497, 106,555, 34,555, 0,497">
+						<area id="character-hazama" onclick="runDisplay('Hazama')" shape="poly" coords="155,121, 225,121, 260,179, 226,236, 154,236, 120,179">
+						<area id="character-kagura" onclick="runDisplay('Kagura_Mutsuki')" shape="poly" coords="155,248, 225,248, 260,305, 226,362, 154,362, 120,305">
+						<area id="character-celica" onclick="runDisplay('Celica_A._Mercury')" shape="poly" coords="155,375, 225,375, 260,432, 226,489, 154,489, 120,432">
+						<area id="character-litchi" onclick="runDisplay('Litchi_Faye_Ling')" shape="poly" coords="155,501, 225,501, 260,558, 226,615, 154,615, 120,558">
+						<area id="character-platinum" onclick="runDisplay('Platinum_the_Trinity')" shape="poly" coords="155,628, 225,628, 260,685, 226,742, 154,742, 120,685">
+						<area id="character-naoto" onclick="runDisplay('Naoto_Kurogane')" shape="poly" coords="275,60, 345,60, 380,118, 346,175, 274,175, 240,118">
+						<area id="character-ragna" onclick="runDisplay('Ragna_the_Bloodedge')" shape="poly" coords="275,187, 345,187, 380,244, 346,301, 274,301, 240,244">
+						<area id="character-noel" onclick="runDisplay('Noel_Vermillion')" shape="poly" coords="275,314, 345,314, 380,371, 346,428, 274,428, 240,371">
+						<area id="character-makoto" onclick="runDisplay('Makoto_Nanaya')" shape="poly" coords="275,440, 345,440, 380,497, 346,555, 274,555, 240,497">
+						<area id="character-relius" onclick="runDisplay('Relius_Clover')" shape="poly" coords="275,567, 345,567, 380,624, 346,681, 274,681, 240,624">
+						<area id="character-valkenhayn" onclick="runDisplay('Valkenhayn_R._Hellsing')" shape="poly" coords="275,693, 345,693, 380,750, 346,808, 274,808, 240,750">
+						<area id="character-susanoo" onclick="runDisplay('Susanoo')" shape="poly" coords="395,0, 465,0, 500,57, 466,114, 394,114, 360,57">
+						<area id="character-jubei" onclick="runDisplay('Jubei')" shape="poly" coords="395,121, 465,121, 500,179, 466,236, 394,236, 360,179">
+						<area id="character-izanami" onclick="runDisplay('Izanami')" shape="poly" coords="395,251, 465,251, 500,308, 466,365, 394,365, 360,308">
+						<area id="character-nine" onclick="runDisplay('Nine_the_Phantom')" shape="poly" coords="395,377, 465,377, 500,435, 466,492, 394,492, 360,435">
+						<area id="character-terumi" onclick="runDisplay('Yuuki_Terumi')" shape="poly" coords="395,504, 465,504, 500,561, 466,618, 394,618, 360,561">
+						<area id="character-mu" onclick="runDisplay('Mu-12')" shape="poly" coords="395,630, 465,630, 500,688, 466,745, 394,745, 360,688">
+						<area id="character-hibiki" onclick="runDisplay('Hibiki_Kohaku')" shape="poly" coords="515,60, 585,60, 620,118, 586,175, 514,175, 480,118">
+						<area id="character-jin" onclick="runDisplay('Jin_Kisaragi')" shape="poly" coords="515,187, 585,187, 620,244, 586,301, 514,301, 480,244">
+						<area id="character-rachel" onclick="runDisplay('Rachel_Alucard')" shape="poly" coords="515,314, 585,314, 620,371, 586,428, 514,428, 480,371">
+						<area id="character-hakumen" onclick="runDisplay('Hakumen')" shape="poly" coords="515,440, 585,440, 620,497, 586,555, 514,555, 480,497">
+						<area id="character-carl" onclick="runDisplay('Carl_Clover')" shape="poly" coords="515,567, 585,567, 620,624, 586,681, 514,681, 480,624">
+						<area id="character-taokaka" onclick="runDisplay('Taokaka')" shape="poly" coords="515,693, 585,693, 620,750, 586,808, 514,808, 480,750">
+						<area id="character-tsubaki" onclick="runDisplay('Tsubaki_Yayoi')" shape="poly" coords="635,121, 705,121, 740,179, 706,236, 634,236, 600,179">
+						<area id="character-kokonoe" onclick="runDisplay('Kokonoe')" shape="poly" coords="635,248, 705,248, 740,305, 706,362, 634,362, 600,305">
+						<area id="character-izayoi" onclick="runDisplay('Izayoi')" shape="poly" coords="635,375, 705,375, 740,432, 706,489, 634,489, 600,432">
+						<area id="character-arakune" onclick="runDisplay('Arakune')" shape="poly" coords="635,501, 705,501, 740,558, 706,615, 634,615, 600,558">
+						<area id="character-bang" onclick="runDisplay('Bang_Shishigami')" shape="poly" coords="635,628, 705,628, 740,685, 706,742, 634,742, 600,685">
+						<area id="character-mai" onclick="runDisplay('Mai_Natsume')" shape="poly" coords="755,60, 825,60, 860,118, 826,175, 754,175, 720,118">
+						<area id="character-lambda" onclick="runDisplay('Lambda-11')" shape="poly" coords="755,187, 825,187, 860,244, 826,301, 754,301, 720,244">
+						<area id="character-azrael" onclick="runDisplay('Azrael')" shape="poly" coords="755,314, 825,314, 860,371, 826,428, 754,428, 720,371">
+						<area id="character-amane" onclick="runDisplay('Amane_Nishiki')" shape="poly" coords="755,440, 825,440, 860,497, 826,555, 754,555, 720,497">
+					</map>
+				</div>
+				<div class="description-area"></div>
+			</div>
+		</div>
+		<div class="preload-container">
+			<img src="../img/portraits/bbcf/Es.png">
+			<img src="../img/portraits/bbcf/Nu-13.png">
+			<img src="../img/portraits/bbcf/Bullet.png">
+			<img src="../img/portraits/bbcf/Iron_Tager.png">
+			<img src="../img/portraits/bbcf/Hazama.png">
+			<img src="../img/portraits/bbcf/Kagura_Mutsuki.png">
+			<img src="../img/portraits/bbcf/Celica_A._Mercury.png">
+			<img src="../img/portraits/bbcf/Litchi_Faye_Ling.png">
+			<img src="../img/portraits/bbcf/Platinum_the_Trinity.png">
+			<img src="../img/portraits/bbcf/Naoto_Kurogane.png">
+			<img src="../img/portraits/bbcf/Ragna_the_Bloodedge.png">
+			<img src="../img/portraits/bbcf/Noel_Vermillion.png">
+			<img src="../img/portraits/bbcf/Makoto_Nanaya.png">
+			<img src="../img/portraits/bbcf/Relius_Clover.png">
+			<img src="../img/portraits/bbcf/Valkenhayn_R._Hellsing.png">
+			<img src="../img/portraits/bbcf/Susano'o.png">
+			<img src="../img/portraits/bbcf/Jubei.png">
+			<img src="../img/portraits/bbcf/Izanami.png">
+			<img src="../img/portraits/bbcf/Nine_the_Phantom.png">
+			<img src="../img/portraits/bbcf/Yuuki_Terumi.png">
+			<img src="../img/portraits/bbcf/Mu-12.png">
+			<img src="../img/portraits/bbcf/Hibiki_Kohaku.png">
+			<img src="../img/portraits/bbcf/Jin_Kisaragi.png">
+			<img src="../img/portraits/bbcf/Rachel_Alucard.png">
+			<img src="../img/portraits/bbcf/Hakumen.png">
+			<img src="../img/portraits/bbcf/Carl_Clover.png">
+			<img src="../img/portraits/bbcf/Taokaka.png">
+			<img src="../img/portraits/bbcf/Tsubaki_Yayoi.png">
+			<img src="../img/portraits/bbcf/Kokonoe.png">
+			<img src="../img/portraits/bbcf/Izayoi.png">
+			<img src="../img/portraits/bbcf/Arakune.png">
+			<img src="../img/portraits/bbcf/Bang_Shishigami.png">
+			<img src="../img/portraits/bbcf/Mai_Natsume.png">
+			<img src="../img/portraits/bbcf/Lambda-11.png">
+			<img src="../img/portraits/bbcf/Azrael.png">
+			<img src="../img/portraits/bbcf/Amane_Nishiki.png">
+		</div>
+	</body>
+</html>

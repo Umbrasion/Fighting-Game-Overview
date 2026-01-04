@@ -1,0 +1,303 @@
+:root {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	background-color: #19191E;
+}
+
+body {
+	font-family: sans-serif;
+	color: white;
+	background-size: 100vw 100vh;
+	font-size: 1em;
+	margin: 0px;
+}
+
+a {
+	color: #438CF2;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.segment-maintitle {
+	font-size: 3em;
+	text-align: center;
+}
+
+.games-container {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+	gap: 30px;
+	padding: 20px;
+}
+
+.gamebox {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	padding: 8px;
+	border: 1px solid gray;
+	border-radius: 3px;
+	width: 280px;
+}
+
+.gamebox-logocontainer {
+	aspect-ratio: 1 / 1;
+	border-bottom: solid 1px gray;
+	margin-bottom: 8px;
+}
+
+.gamebox-logo {
+	max-width: 100%;
+	max-height: 100%;
+	margin: 0;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.gamebox-title {
+	text-align: center;
+}
+
+.game-logo {
+	max-height: 180px;
+	max-width: 350px;
+	position: absolute;
+	top: 8px;
+	left: 8px;
+	z-index: 99;
+}
+
+#characterselect {
+	position: relative;
+	width: auto;
+	margin: auto;
+	text-align: center;
+	padding: 28px;
+}
+
+.portrait-area, .description-area {
+	z-index: 100;
+}
+
+.preview-area {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	gap: 0px;
+}
+
+.portrait-area, .description-area {
+	flex: 0px 1 0;
+	overflow: visible;
+}
+
+#info-portrait {
+	max-width: 100%;
+}
+
+.info-table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.info-table td, .info-table th {
+	vertical-align: top;
+	padding: 6px;
+	border: solid white 1px;
+	width: 50%;
+	height: fit-content;
+}
+
+.info-table th {
+	text-align: center;
+	vertical-align: middle;
+	font-size: 1em;
+}
+
+.info-table td {
+	text-align: center;
+	font-size: 0.9em;
+}
+
+.info-description {
+	text-align: left;
+}
+
+.list-likedislike {
+	padding-left: 20px;
+	margin: 6px 0px;
+}
+
+.selectbox-container {
+	width: fit-content;
+	position: relative;
+	z-index: 101;
+}
+
+.selectbox-container a {
+	display: block;
+}
+
+div.selectbox-positioner {
+	pointer-events: none;
+	position: relative;
+	width: 0px;
+	height: 0px;
+}
+
+.selectbox-character, area {
+	cursor: pointer;
+}
+
+.selectbox-character img {
+	display: block;
+}
+
+.selectbox-row {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	max-width: 100%;
+}
+
+.selectbox-fullroster {
+	display: block;
+}
+
+.preload-container {
+	opacity: 0;
+	font-size: 0;
+}
+
+.preload-container img {
+	height: 0px;
+	width: 0px;
+}
+
+#returnbutton {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	margin: 5px;
+	z-index: 1000;
+	font-family: inherit;
+	font-size: 1.2em;
+	cursor: pointer;
+}
+
+/* Stat Graph */
+
+#stat-graph-background {
+	background-image: url("../img/misc/RadarBG.png");
+	background-size: 100% 100%;
+	width: 70%;
+	max-width: 250px;
+	aspect-ratio: 1 / 1;
+	margin: 0px auto 10px;
+}
+
+#stat-graph-values {
+	background-color: rgba(255, 106, 0, 0.8);
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	transition: all 0.6s ease-out;
+	clip-path: polygon(
+		50% 55.5%,
+		50% 55.5%,
+		50% 55.5%,
+		50% 55.5%,
+		50% 55.5%
+	);
+	/* 
+		STATS:
+		top:
+			0: 50% 55.5%
+			1: 50% 44.4%
+			2: 50% 33.3%
+			3: 50% 22.2%
+			4: 50% 11.1%
+			5: 50% 0%
+		right:
+			0: 50% 55.5%
+			1: 59.86% 52.06%
+			2: 69.72% 48.62%
+			3: 79.58% 45.18%
+			4: 89.44% 41.74%
+			5: 99.3% 38.3%
+		bottom right:
+			0: 50% 55.5%
+			1: 56.132% 64.26%
+			2: 62.264% 73.02%
+			3: 68.396% 81.78%
+			4: 74.528% 90.54%
+			5: 80.66% 99.3%
+		bottom left:
+			0: 50% 55.5%
+			1: 43.866% 64.26%
+			2: 37.732% 73.02%
+			3: 31.598% 81.78%
+			4: 25.464% 90.54%
+			5: 19.33% 99.3%
+		left:
+			0: 50% 55.5%
+			1: 40.14% 52.06%
+			2: 30.28% 48.62%
+			3: 20.42% 45.18%
+			4: 10.56% 41.74%
+			5: 0.7% 38.3%
+	*/
+}
+
+/* Fonts */
+
+@font-face {
+	font-family: "DF POP Corn W12";
+	src: url("../fonts/DFPPOPCorn-W12.ttf");
+}
+
+@font-face {
+	font-family: "Selznick Remix NF";
+	src: url("../fonts/SelznickRemixNf-Dd3D.ttf");
+}
+
+@font-face {
+	font-family: "Geo";
+	src: url("../fonts/Geo-Regular.ttf");
+}
+
+@font-face {
+	font-family: "STD Heavy";
+	src: url("../fonts/A-OTF 光朝 Std-Heavy.otf");
+}
+
+@font-face {
+	font-family: "Noto Sans";
+	src: url("../fonts/NotoSans-Regular.ttf");
+}
+
+@font-face {
+	font-family: "Proba Pro";
+	src: url("../fonts/ProbaPro-Regular.otf");
+}
+
+@font-face {
+	font-family: "DBZ 0";
+	src: url("../fonts/DBZ_0_Default.otf");
+}
+
+@font-face {
+	font-family: "Noto Serif JP";
+	src: url("../fonts/NotoSerifJP-Regular.otf");
+}
+
+@font-face {
+	font-family: "Doodlian";
+	src: url("../fonts/Doodlian-Regular.ttf");
+}

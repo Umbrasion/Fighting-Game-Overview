@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DNF Duel | Fighting Game Overview</title>
+		<link rel="stylesheet" href="../styles/main.css">
+		<link rel="stylesheet" href="../styles/infoColors.css">
+		<link rel="stylesheet" href="../styles/games/DNFD.css">
+		<script src="../scripts/common.js" defer></script>
+		<script src="../scripts/cssResize.js" defer></script>
+		<script src="../scripts/onloadDNFD.js" defer></script>
+		<script src="../scripts/jquery-3.7.1.min.js"></script>
+	</head>
+	<body>
+		<div id="characterselect">
+			<div class="selectbox-container">
+				<div id="positioner-brawler" class="selectbox-positioner" style="">
+					<div class="selectbox selectbox-character">
+						<img src="../img/characterSelect/dnfd/Brawler_icon.png" id="selectbox-brawler" style="">
+					</div>
+				</div>
+				<div id="positioner-hitman" class="selectbox-positioner" style="">
+					<div class="selectbox selectbox-character">
+						<img src="../img/characterSelect/dnfd/Hitman_icon.png" id="selectbox-hitman" style="">
+					</div>
+				</div>
+				<div id="positioner-swiftmaster" class="selectbox-positioner" style="">
+					<div class="selectbox selectbox-character">
+						<img src="../img/characterSelect/dnfd/Swift_Master_icon.png" id="selectbox-swiftmaster" style="">
+					</div>
+				</div>
+				<div id="positioner-ranger" class="selectbox-positioner" style="">
+					<div class="selectbox selectbox-character">
+						<img src="../img/characterSelect/dnfd/Ranger_icon.png" id="selectbox-ranger" style="">
+					</div>
+				</div>
+				<div id="positioner-berserker" class="selectbox-positioner" style="">
+					<div class="selectbox selectbox-character">
+						<img src="../img/characterSelect/dnfd/Berserker_icon.png" id="selectbox-berserker" style="">
+					</div>
+				</div>
+				<div id="positioner-random" class="selectbox-positioner" style="">
+					<div class="selectbox selectbox-character">
+						<img src="../img/characterSelect/dnfd/Random_icon.png" id="selectbox-random" style="">
+					</div>
+				</div>
+				<div id="positioner-vanguard" class="selectbox-positioner" style="">
+					<div class="selectbox selectbox-character">
+						<img src="../img/characterSelect/dnfd/Vanguard_icon.png" id="selectbox-vanguard" style="">
+					</div>
+				</div>
+				<div id="positioner-launcher" class="selectbox-positioner" style="">
+					<div class="selectbox selectbox-character">
+						<img src="../img/characterSelect/dnfd/Launcher_icon.png" id="selectbox-launcher" style="">
+					</div>
+				</div>
+				<div id="positioner-enchantress" class="selectbox-positioner" style="">
+					<div class="selectbox selectbox-character">
+						<img src="../img/characterSelect/dnfd/Enchantress_icon.png" id="selectbox-enchantress" style="">
+					</div>
+				</div>
+				<div id="positioner-troubleshooter" class="selectbox-positioner" style="">
+					<div class="selectbox selectbox-character">
+						<img src="../img/characterSelect/dnfd/Trouble_Shooter_icon.png" id="selectbox-troubleshooter" style="">
+					</div>
+				</div>
+				<div id="positioner-battlemage" class="selectbox-positioner" style="">
+					<div class="selectbox selectbox-character">
+						<img src="../img/characterSelect/dnfd/Battle_Mage_icon.png" id="selectbox-battlemage" style="">
+					</div>
+				</div>
+				<div id="positioner-monk" class="selectbox-positioner" style="">
+					<div class="selectbox selectbox-character">
+						<img src="../img/characterSelect/dnfd/Monk_icon.png" id="selectbox-monk" style="">
+					</div>
+				</div>
+				<div id="positioner-dragonknight" class="selectbox-positioner" style="">
+					<div class="selectbox selectbox-character">
+						<img src="../img/characterSelect/dnfd/Dragon_Knight_icon.png" id="selectbox-dragonknight" style="">
+					</div>
+				</div>
+				<div id="positioner-kunoichi" class="selectbox-positioner" style="">
+					<div class="selectbox selectbox-character">
+						<img src="../img/characterSelect/dnfd/Kunoichi_icon.png" id="selectbox-kunoichi" style="">
+					</div>
+				</div>
+				<div id="positioner-inquisitor" class="selectbox-positioner" style="">
+					<div class="selectbox selectbox-character">
+						<img src="../img/characterSelect/dnfd/Inquisitor_icon.png" id="selectbox-inquisitor" style="">
+					</div>
+				</div>
+				<div id="positioner-striker" class="selectbox-positioner" style="">
+					<div class="selectbox selectbox-character">
+						<img src="../img/characterSelect/dnfd/Striker_icon.png" id="selectbox-striker" style="">
+					</div>
+				</div>
+				<div id="positioner-lostwarrior" class="selectbox-positioner" style="">
+					<div class="selectbox selectbox-character">
+						<img src="../img/characterSelect/dnfd/Lost_Warrior_icon.png" id="selectbox-lostwarrior" style="">
+					</div>
+				</div>
+				<div id="positioner-grappler" class="selectbox-positioner" style="">
+					<div class="selectbox selectbox-character">
+						<img src="../img/characterSelect/dnfd/Grappler_icon.png" id="selectbox-grappler" style="">
+					</div>
+				</div>
+				<div id="positioner-crusader" class="selectbox-positioner" style="">
+					<div class="selectbox selectbox-character">
+						<img src="../img/characterSelect/dnfd/Crusader_icon.png" id="selectbox-crusader" style="">
+					</div>
+				</div>
+				<div id="positioner-ghostblade" class="selectbox-positioner" style="">
+					<div class="selectbox selectbox-character">
+						<img src="../img/characterSelect/dnfd/Ghostblade_icon.png" id="selectbox-ghostblade" style="">
+					</div>
+				</div>
+				<div id="positioner-spectre" class="selectbox-positioner" style="">
+					<div class="selectbox selectbox-character">
+						<img src="../img/characterSelect/dnfd/Spectre_icon.png" id="selectbox-spectre" style="">
+					</div>
+				</div>
+				<div id="positioner-nenmaster" class="selectbox-positioner" style="">
+					<div class="selectbox selectbox-character">
+						<img src="../img/characterSelect/dnfd/Nen_Master_icon.png" id="selectbox-nenmaster" style="">
+					</div>
+				</div>
+				<img class="selectbox-fullroster" src="../img/characterSelect/dnfd/Full_Roster.webp" usemap="#mapselect">
+				<map name="mapselect">
+					<area id="character-brawler" href="Brawler.html" shape="poly" coords="60,0, 183,0, 125,90, 1,90">
+					<area id="character-hitman" href="Hitman.html" shape="poly" coords="204,0, 327,0, 269,90, 145,90">
+					<area id="character-swiftmaster" href="Swift_Master.html" shape="poly" coords="348,0, 471,0, 413,90, 289,90">
+					<area id="character-ranger" href="Ranger.html" shape="poly" coords="492,0, 615,0, 557,90, 433,90">
+					<area id="character-berserker" href="Berserker.html" shape="poly" coords="636,0, 759,0, 701,90, 577,90">
+					<area id="character-random" href="Random_Character.html" shape="poly" coords="780,0, 852,0, 911,90, 721,90">
+					<area id="character-vanguard" href="Vanguard.html" shape="poly" coords="873,0, 996,0, 1055,90, 931,90">
+					<area id="character-launcher" href="Launcher.html" shape="poly" coords="1017,0, 1140,0, 1199,90, 1075,90">
+					<area id="character-enchantress" href="Enchantress.html" shape="poly" coords="1161,0, 1284,0, 1343,90, 1219,90">
+					<area id="character-troubleshooter" href="Trouble_Shooter.html" shape="poly" coords="1305,0, 1428,0, 1487,90, 1363,90">
+					<area id="character-battlemage" href="Battle_Mage.html" shape="poly" coords="1449,0, 1572,0, 1631,90, 1507,90">
+					<area id="character-monk" href="Monk.html" shape="poly" coords="1,110, 124,110, 183,200, 59,200">
+					<area id="character-dragonknight" href="Dragon_Knight.html" shape="poly" coords="145,110, 268,110, 327,200, 203,200">
+					<area id="character-kunoichi" href="Kunoichi.html" shape="poly" coords="289,110, 412,110, 471,200, 347,200">
+					<area id="character-inquisitor" href="Inquisitor.html" shape="poly" coords="433,110, 556,110, 615,200, 491,200">
+					<area id="character-striker" href="Striker.html" shape="poly" coords="577,110, 700,110, 759,200, 635,200">
+					<area id="character-lostwarrior" href="Lost_Warrior.html" shape="poly" coords="720,110, 912,110, 853,200, 779,200">
+					<area id="character-grappler" href="Grappler.html" shape="poly" coords="932,110, 1055,110, 997,200, 873,200">
+					<area id="character-crusader" href="Crusader.html" shape="poly" coords="1076,110, 1199,110, 1141,200, 1017,200">
+					<area id="character-ghostblade" href="Ghostblade.html" shape="poly" coords="1220,110, 1343,110, 1285,200, 1161,200">
+					<area id="character-spectre" href="Spectre.html" shape="poly" coords="1364,110, 1487,110, 1429,200, 1305,200">
+					<area id="character-nenmaster" href="Nen_Master.html" shape="poly" coords="1508,110, 1631,110, 1573,200, 1449,200">
+				</map>
+			</div>
+		</div>
+	</body>
+</html>

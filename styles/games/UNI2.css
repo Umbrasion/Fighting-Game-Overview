@@ -1,0 +1,7 @@
+.selectbox-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 4px 2px;
+    width: 698px;
+}

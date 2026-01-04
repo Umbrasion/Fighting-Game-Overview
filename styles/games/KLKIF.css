@@ -1,0 +1,99 @@
+body {
+    margin: 0px;
+}
+
+#characterselect {
+    padding: 0px;
+}
+
+.preview-area {
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.selectbox-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 0px;
+    width: 100%;
+    background-image: url("../../img/characterSelect/klkif/Full_Roster.webp");
+}
+
+.selectbox-container a {
+    width: 100px;
+}
+
+#selectbox-nudist:hover {
+    content: url("../../img/characterSelect/klkif/Nudist_Beach_icon_selected.webp");
+}
+
+#selectbox-nui:hover {
+    content: url("../../img/characterSelect/klkif/Nui_Harime_icon_selected.webp");
+}
+
+#selectbox-inumuta:hover {
+    content: url("../../img/characterSelect/klkif/Hoka_Inumuta_icon_selected.webp");
+}
+
+#selectbox-gamagori:hover {
+    content: url("../../img/characterSelect/klkif/Ira_Gamagori_icon_selected.webp");
+}
+
+#selectbox-satsuki:hover {
+    content: url("../../img/characterSelect/klkif/Satsuki_Kiryuin_icon_selected.webp");
+}
+
+#selectbox-random:hover {
+    content: url("../../img/characterSelect/klkif/Random_icon_selected.webp");
+}
+
+#selectbox-ryuko:hover {
+    content: url("../../img/characterSelect/klkif/Ryuko_Matoi_icon_selected.webp");
+}
+
+#selectbox-sanageyama:hover {
+    content: url("../../img/characterSelect/klkif/Uzu_Sanageyama_icon_selected.webp");
+}
+
+#selectbox-jakuzure:hover {
+    content: url("../../img/characterSelect/klkif/Nonon_Jakuzure_icon_selected.webp");
+}
+
+#selectbox-ragyo:hover {
+    content: url("../../img/characterSelect/klkif/Ragyo_Kiryuin_icon_selected.webp");
+}
+
+#selectbox-mako:hover {
+    content: url("../../img/characterSelect/klkif/Mako_Mankanshoku_icon_selected.webp");
+}
+
+.portrait-area, .description-area {
+    height: calc(50vh - 101px);
+    min-height: 200px;
+}
+
+.info-title {
+    margin: 6px 0px;
+}
+
+.info-flexbox {
+    padding: 20px;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.info-flexbox div, .info-flexbox table {
+    flex: 1 1;
+}
+
+#info-name {
+    background: linear-gradient(to bottom, #FFFFFF, #858585);
+    background-clip: text;
+    color: transparent;
+    font-weight: 1000;
+    font-size: 2em;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Maiden &amp; Spell | Fighting Game Overview</title>
+		<link rel="stylesheet" href="../styles/main.css">
+		<link rel="stylesheet" href="../styles/infoColors.css">
+		<link rel="stylesheet" href="../styles/games/MnS.css">
+		<script src="../scripts/common.js"></script>
+		<script src="../scripts/cssResize.js" defer></script>
+		<script src="../scripts/onloadMnS.js" defer></script>
+		<script src="../scripts/jquery-3.7.1.min.js"></script>
+	</head>
+	<body>
+		<div id="characterselect">
+			<div class="preview-area">
+				<div class="portrait-area">
+					<div style="display: flex; flex-direction: column; width: 0px; height: 0px; margin: auto; justify-content: left; align-items: center">
+						<div style="width: fit-content">
+							<img id="info-portrait" src="" style="height: 70vh; max-width: none">
+						</div>
+					</div>
+					<h2 id="info-name" class="info-title" style="height: 6vh"></h2>
+				</div>
+				<div class="selectbox-container">
+					<!--div class="selectbox-positioner" style="left: 346px; top: 43px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/mns/Sun_Priestess_icon.webp" id="selectbox-priestess">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 308px; top: 149px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/mns/Silent_Redhood_icon.webp" id="selectbox-redhood">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 270px; top: 253px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/mns/Royal_Arcanist_icon.webp" id="selectbox-arcanist">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 233px; top: 358px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/mns/Hero_of_Frost_icon.webp" id="selectbox-hero">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 195px; top: 460px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/mns/Random_icon.webp" id="selectbox-random">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 157px; top: 564px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/mns/Dreadwyrm_Heir_icon.webp" id="selectbox-dreadwyrm">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 120px; top: 668px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/mns/Lich_of_Flowers_icon.webp" id="selectbox-lich">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 82px; top: 769px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/mns/Depth's_Secret_icon.webp" id="selectbox-secret">
+						</div>
+					</div>
+					<div class="selectbox-positioner" style="left: 44px; top: 875px">
+						<div class="selectbox selectbox-character">
+							<img src="../img/characterSelect/mns/Stormbeast_icon.webp" id="selectbox-stormbeast">
+						</div>
+					</div-->
+					<img class="selectbox-fullroster" src="../img/characterSelect/mns/Full_Roster.webp" usemap="#mapselect">
+					<map name="mapselect">
+						<area id="character-priestess" onclick="runDisplay('Sun_Priestess')" shape="poly" coords="381,43, 816,43, 781,138, 346,138">
+						<area id="character-redhood" onclick="runDisplay('Silent_Redhood')" shape="poly" coords="342,149, 778,149, 744,242, 308,242">
+						<area id="character-arcanist" onclick="runDisplay('Royal_Arcanist')" shape="poly" coords="304,253, 740,253, 706,346, 432,346">
+						<area id="character-hero" onclick="runDisplay('Hero_of_Frost')" shape="poly" coords="266,358, 702,358, 670,448, 233,448">
+						<area id="character-random" onclick="runDisplay('Random')" shape="poly" coords="229,460, 665,460, 632,552, 195,552">
+						<area id="character-dreadwyrm" onclick="runDisplay('Dreadwyrm_Heir')" shape="poly" coords="191,564, 628,564, 595,656, 157,656">
+						<area id="character-lich" onclick="runDisplay('Lich_of_Flowers')" shape="poly" coords="153,668, 591,668, 558,758, 120,758">
+						<area id="character-secret" onclick="runDisplay('Depths_Secret')" shape="poly" coords="116,769, 554,769, 520,863, 81,863">
+						<area id="character-stormbeast" onclick="runDisplay('Stormbeast')" shape="poly" coords="77,875, 516,875, 482,968, 43,968">
+					</map>
+				</div>
+				<div class="description-area"></div>
+			</div>
+		</div>
+		<div class="preload-container">
+			<img src="../img/portraits/mns/.png">
+		</div>
+	</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Melty Blood: Actress Again Current Code | Fighting Game Overview</title>
+		<link rel="stylesheet" href="../styles/main.css">
+		<link rel="stylesheet" href="../styles/infoColors.css">
+		<link rel="stylesheet" href="../styles/games/MBAACC.css">
+		<script src="../scripts/common.js"></script>
+		<script src="../scripts/cssResize.js" defer></script>
+		<script src="../scripts/onloadMBAACC.js" defer></script>
+		<script src="../scripts/jquery-3.7.1.min.js"></script>
+	</head>
+	<body>
+		<img class="game-logo" src="../img/logos/MBAACC_logo.png">
+		<div id="background-text">
+			<div class="text-container"></div>
+			<div class="text-container"></div>
+			<div class="text-container"></div>
+		</div>
+		<div id="characterselect">
+			<div class="preview-area">
+				<div class="portrait-area">
+					<div style="display: flex; flex-direction: column; width: 0px; height: 0px; margin: auto; justify-content: left; align-items: center">
+						<div style="width: fit-content">
+							<img id="info-portrait" src="" style="max-width: none">
+							<img id="info-portrait-temp" src="" style="max-width: none; opacity: 0">
+						</div>
+					</div>
+					<h2 id="info-name" class="info-title"></h2>
+				</div>
+				<div class="selectbox-container">
+					<div class="selectbox-row">
+						<a id="character-aoko" class="character-box" onclick="runDisplay('Aoko_Aozaki')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Aoko_Aozaki_icon.webp">
+							</div>
+						</a>
+						<a id="character-shiki" class="character-box" onclick="runDisplay('Shiki_Tohno')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Shiki_Tohno_icon.webp">
+							</div>
+						</a>
+						<a id="character-hime" class="character-box" onclick="runDisplay('Archetype_Earth')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Archetype_Earth_icon.webp">
+							</div>
+						</a>
+						<a id="character-nanaya" class="character-box" onclick="runDisplay('Shiki_Nanaya')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Shiki_Nanaya_icon.webp">
+							</div>
+						</a>
+						<a id="character-kouma" class="character-box" onclick="runDisplay('Kouma_Kishima')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Kouma_Kishima_icon.webp">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-row">
+						<a id="character-miyako" class="character-box" onclick="runDisplay('Miyako_Arima')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Miyako_Arima_icon.webp">
+							</div>
+						</a>
+						<a id="character-ciel" class="character-box" onclick="runDisplay('Ciel')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Ciel_icon.webp">
+							</div>
+						</a>
+						<a id="character-sion" class="character-box" onclick="runDisplay('Sion_Eltnam_Atlasia')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Sion_Eltnam_Atlasia_icon.webp">
+							</div>
+						</a>
+						<a id="character-riesbyfe" class="character-box" onclick="runDisplay('Riesbyfe_Stridberg')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Riesbyfe_Stridberg_icon.webp">
+							</div>
+						</a>
+						<a id="character-vsion" class="character-box" onclick="runDisplay('Sion_TATARI')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Sion_TATARI_icon.webp">
+							</div>
+						</a>
+						<a id="character-warachia" class="character-box" onclick="runDisplay('Warachia')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Warachia_icon.webp">
+							</div>
+						</a>
+						<a id="character-roa" class="character-box" onclick="runDisplay('Michael_Roa_Valdamjong')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Michael_Roa_Valdamjong_icon.webp">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-row">
+						<a id="character-maids" class="character-box" onclick="runDisplay('Hisui_&_Kohaku')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Hisui_and_Kohaku_icon.webp">
+							</div>
+						</a>
+						<a id="character-akiha" class="character-box" onclick="runDisplay('Akiha_Tohno')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Tohno_Akiha_icon.webp">
+							</div>
+						</a>
+						<a id="character-arcueid" class="character-box" onclick="runDisplay('Arcueid_Brunestud')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Arcueid_Brunestud_icon.webp">
+							</div>
+						</a>
+						<a id="character-pciel" class="character-box" onclick="runDisplay('Powered_Ciel')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Powered_Ciel_icon.webp">
+							</div>
+						</a>
+						<a id="character-warc" class="character-box" onclick="runDisplay('Red_Arcueid')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Red_Arcueid_icon.webp">
+							</div>
+						</a>
+						<a id="character-vakiha" class="character-box" onclick="runDisplay('Akiha_Vermilion')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Akiha_Vermilion_icon.webp">
+							</div>
+						</a>
+						<a id="character-mech" class="character-box" onclick="runDisplay('Mech-Hisui')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Mech-Hisui_icon.webp">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-row">
+						<a id="character-seifuku" class="character-box" onclick="runDisplay('Akiha_Tohno_(Seifuku)')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Seifuku_Tohno_Akiha_icon.webp">
+							</div>
+						</a>
+						<a id="character-satsuki" class="character-box" onclick="runDisplay('Satsuki_Yumizuka')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Satsuki_Yumiduka_icon.webp">
+							</div>
+						</a>
+						<a id="character-len" class="character-box" onclick="runDisplay('Len')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Len_icon.webp">
+							</div>
+						</a>
+						<a id="character-ryougi" class="character-box" onclick="runDisplay('Shiki_Ryougi')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Shiki_Ryougi_icon.webp">
+							</div>
+						</a>
+						<a id="character-wlen" class="character-box" onclick="runDisplay('White_Len')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/White_Len_icon.webp">
+							</div>
+						</a>
+						<a id="character-nero" class="character-box" onclick="runDisplay('Nrvnqsr_Chaos')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Nrvnqsr_Chaos_icon.webp">
+							</div>
+						</a>
+						<a id="character-necochaos" class="character-box" onclick="runDisplay('Neco-Arc_Chaos')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Neco-Arc_Chaos_icon.webp">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-row">
+						<a id="character-kohakumech" class="character-box" onclick="runDisplay('Kohaku_&_Mech')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Kohaku_and_Mech_icon.webp">
+							</div>
+						</a>
+						<a id="character-hisui" class="character-box" onclick="runDisplay('Hisui')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Hisui_icon.webp">
+							</div>
+						</a>
+						<a id="character-neco" class="character-box" onclick="runDisplay('Neco-Arc')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Neco-Arc_icon.webp">
+							</div>
+						</a>
+						<a id="character-kohaku" class="character-box" onclick="runDisplay('Kohaku')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Kohaku_icon.webp">
+							</div>
+						</a>
+						<a id="character-necomech" class="character-box" onclick="runDisplay('Neco_&_Mech')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Neco_and_Mech_icon.webp">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-row" style="margin: 0px 40px">
+						<a id="character-random" class="character-box" onclick="runDisplay('Random')">
+							<div class="selectbox selectbox-character">
+								<img src="../img/characterSelect/mbaacc/Random_icon.webp">
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="description-area"></div>
+			</div>
+		</div>
+	</body>
+</html>

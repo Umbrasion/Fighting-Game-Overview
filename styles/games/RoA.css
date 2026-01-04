@@ -1,0 +1,21 @@
+.chrSelection {
+    display: block;
+}
+
+.selectbox-container, .selectbox-fullroster {
+    width: 956px;
+    height: 190px;
+}
+
+.selectbox-positioner {
+    pointer-events: none;
+    position: relative;
+    width: 0px;
+    height: 0px;
+}
+
+.selectbox-character img {
+    width: 136px;
+    height: 92px;
+    transform-origin: center;
+}

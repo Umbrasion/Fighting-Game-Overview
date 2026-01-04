@@ -1,0 +1,16 @@
+.preview-area {
+    flex-flow: column wrap;
+}
+
+.selectbox-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 7px 22px;
+    max-width: calc(178px * 6 + 22px * 5);
+    margin: auto;
+}
+
+#info-portrait {
+    height: 50vh;
+}
