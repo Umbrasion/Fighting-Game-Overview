@@ -78,7 +78,7 @@ const chrImg = {
 	amane: document.getElementById("selectbox-amane"),
 }
 
-const pageMusic = new Audio("../audio/music/BBCF - Next Force.ogg");
+const pageMusic = new Audio("../audio/music/BBCF_Next_Force.ogg");
 pageMusic.loop = true;
 pageMusic.volume = 0.2;
 pageMusic.play();
