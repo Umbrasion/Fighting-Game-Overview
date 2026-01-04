@@ -78,14 +78,14 @@ const chrImg = {
 	amane: document.getElementById("selectbox-amane"),
 }
 
-const pageMusic = new Audio("../audio/music/BBCF_Next_Force.ogg");
+const pageMusic = new Audio("audio/music/BBCF_Next_Force.ogg");
 pageMusic.loop = true;
 pageMusic.volume = 0.2;
 pageMusic.play();
 
 const sfx = {
-	cursor: new Audio("../audio/sfx/bbcf/400_menu_select.wav"),
-	confirm: new Audio("../audio/sfx/bbcf/401_decision.wav"),
+	cursor: new Audio("audio/sfx/bbcf/400_menu_select.wav"),
+	confirm: new Audio("audio/sfx/bbcf/401_decision.wav"),
 }
 sfx.cursor.volume = 0.4;
 sfx.confirm.volume = 0.4;
@@ -98,42 +98,42 @@ function clearDisplay() {
 }
 
 function resetIcons() {
-	chrImg.es.src = "../img/characterSelect/bbcf/Es_icon.webp";
-	chrImg.nu.src = "../img/characterSelect/bbcf/Nu-13_icon.webp";
-	chrImg.bullet.src = "../img/characterSelect/bbcf/Bullet_icon.webp";
-	chrImg.tager.src = "../img/characterSelect/bbcf/Iron_Tager_icon.webp";
-	chrImg.hazama.src = "../img/characterSelect/bbcf/Hazama_icon.webp";
-	chrImg.kagura.src = "../img/characterSelect/bbcf/Kagura_Mutsuki_icon.webp";
-	chrImg.celica.src = "../img/characterSelect/bbcf/Celica_A._Mercury_icon.webp";
-	chrImg.litchi.src = "../img/characterSelect/bbcf/Litchi_Faye_Ling_icon.webp";
-	chrImg.platinum.src = "../img/characterSelect/bbcf/Platinum_the_Trinity_icon.webp";
-	chrImg.naoto.src = "../img/characterSelect/bbcf/Naoto_Kurogane_icon.webp";
-	chrImg.ragna.src = "../img/characterSelect/bbcf/Ragna_the_Bloodedge_icon.webp";
-	chrImg.noel.src = "../img/characterSelect/bbcf/Noel_Vermillion_icon.webp";
-	chrImg.makoto.src = "../img/characterSelect/bbcf/Makoto_Nanaya_icon.webp";
-	chrImg.relius.src = "../img/characterSelect/bbcf/Relius_Clover_icon.webp";
-	chrImg.valkenhayn.src = "../img/characterSelect/bbcf/Valkenhayn_R._Hellsing_icon.webp";
-	chrImg.susanoo.src = "../img/characterSelect/bbcf/Susano'o_icon.webp";
-	chrImg.jubei.src = "../img/characterSelect/bbcf/Jubei_icon.webp";
-	chrImg.izanami.src = "../img/characterSelect/bbcf/Izanami_icon.webp";
-	chrImg.nine.src = "../img/characterSelect/bbcf/Nine_the_Phantom_icon.webp";
-	chrImg.terumi.src = "../img/characterSelect/bbcf/Yuuki_Terumi_icon.webp";
-	chrImg.mu.src = "../img/characterSelect/bbcf/Mu-12_icon.webp";
-	chrImg.hibiki.src = "../img/characterSelect/bbcf/Hibiki_Kohaku_icon.webp";
-	chrImg.jin.src = "../img/characterSelect/bbcf/Jin_Kisaragi_icon.webp";
-	chrImg.rachel.src = "../img/characterSelect/bbcf/Rachel_Alucard_icon.webp";
-	chrImg.hakumen.src = "../img/characterSelect/bbcf/Hakumen_icon.webp";
-	chrImg.carl.src = "../img/characterSelect/bbcf/Carl_Clover_icon.webp";
-	chrImg.taokaka.src = "../img/characterSelect/bbcf/Taokaka_icon.webp";
-	chrImg.tsubaki.src = "../img/characterSelect/bbcf/Tsubaki_Yayoi_icon.webp";
-	chrImg.kokonoe.src = "../img/characterSelect/bbcf/Kokonoe_icon.webp";
-	chrImg.izayoi.src = "../img/characterSelect/bbcf/Izayoi_icon.webp";
-	chrImg.arakune.src = "../img/characterSelect/bbcf/Arakune_icon.webp";
-	chrImg.bang.src = "../img/characterSelect/bbcf/Bang_Shishigami_icon.webp";
-	chrImg.mai.src = "../img/characterSelect/bbcf/Mai_Natsume_icon.webp";
-	chrImg.lambda.src = "../img/characterSelect/bbcf/Lambda-11_icon.webp";
-	chrImg.azrael.src = "../img/characterSelect/bbcf/Azrael_icon.webp";
-	chrImg.amane.src = "../img/characterSelect/bbcf/Amane_Nishiki_icon.webp";
+	chrImg.es.src = "img/characterSelect/bbcf/Es_icon.webp";
+	chrImg.nu.src = "img/characterSelect/bbcf/Nu-13_icon.webp";
+	chrImg.bullet.src = "img/characterSelect/bbcf/Bullet_icon.webp";
+	chrImg.tager.src = "img/characterSelect/bbcf/Iron_Tager_icon.webp";
+	chrImg.hazama.src = "img/characterSelect/bbcf/Hazama_icon.webp";
+	chrImg.kagura.src = "img/characterSelect/bbcf/Kagura_Mutsuki_icon.webp";
+	chrImg.celica.src = "img/characterSelect/bbcf/Celica_A._Mercury_icon.webp";
+	chrImg.litchi.src = "img/characterSelect/bbcf/Litchi_Faye_Ling_icon.webp";
+	chrImg.platinum.src = "img/characterSelect/bbcf/Platinum_the_Trinity_icon.webp";
+	chrImg.naoto.src = "img/characterSelect/bbcf/Naoto_Kurogane_icon.webp";
+	chrImg.ragna.src = "img/characterSelect/bbcf/Ragna_the_Bloodedge_icon.webp";
+	chrImg.noel.src = "img/characterSelect/bbcf/Noel_Vermillion_icon.webp";
+	chrImg.makoto.src = "img/characterSelect/bbcf/Makoto_Nanaya_icon.webp";
+	chrImg.relius.src = "img/characterSelect/bbcf/Relius_Clover_icon.webp";
+	chrImg.valkenhayn.src = "img/characterSelect/bbcf/Valkenhayn_R._Hellsing_icon.webp";
+	chrImg.susanoo.src = "img/characterSelect/bbcf/Susano'o_icon.webp";
+	chrImg.jubei.src = "img/characterSelect/bbcf/Jubei_icon.webp";
+	chrImg.izanami.src = "img/characterSelect/bbcf/Izanami_icon.webp";
+	chrImg.nine.src = "img/characterSelect/bbcf/Nine_the_Phantom_icon.webp";
+	chrImg.terumi.src = "img/characterSelect/bbcf/Yuuki_Terumi_icon.webp";
+	chrImg.mu.src = "img/characterSelect/bbcf/Mu-12_icon.webp";
+	chrImg.hibiki.src = "img/characterSelect/bbcf/Hibiki_Kohaku_icon.webp";
+	chrImg.jin.src = "img/characterSelect/bbcf/Jin_Kisaragi_icon.webp";
+	chrImg.rachel.src = "img/characterSelect/bbcf/Rachel_Alucard_icon.webp";
+	chrImg.hakumen.src = "img/characterSelect/bbcf/Hakumen_icon.webp";
+	chrImg.carl.src = "img/characterSelect/bbcf/Carl_Clover_icon.webp";
+	chrImg.taokaka.src = "img/characterSelect/bbcf/Taokaka_icon.webp";
+	chrImg.tsubaki.src = "img/characterSelect/bbcf/Tsubaki_Yayoi_icon.webp";
+	chrImg.kokonoe.src = "img/characterSelect/bbcf/Kokonoe_icon.webp";
+	chrImg.izayoi.src = "img/characterSelect/bbcf/Izayoi_icon.webp";
+	chrImg.arakune.src = "img/characterSelect/bbcf/Arakune_icon.webp";
+	chrImg.bang.src = "img/characterSelect/bbcf/Bang_Shishigami_icon.webp";
+	chrImg.mai.src = "img/characterSelect/bbcf/Mai_Natsume_icon.webp";
+	chrImg.lambda.src = "img/characterSelect/bbcf/Lambda-11_icon.webp";
+	chrImg.azrael.src = "img/characterSelect/bbcf/Azrael_icon.webp";
+	chrImg.amane.src = "img/characterSelect/bbcf/Amane_Nishiki_icon.webp";
 }
 
 // Display on hover
@@ -141,7 +141,7 @@ function resetIcons() {
 function hoverDisplay(iconImg, charFileName) {
 	if (!iconImg.src.includes("_selected")) {
 		resetIcons();
-		iconImg.src = "../img/characterSelect/bbcf/" + charFileName + "_icon_selected.webp";
+		iconImg.src = "img/characterSelect/bbcf/" + charFileName + "_icon_selected.webp";
 		sfx.cursor.currentTime = 0;
 		sfx.cursor.play();
 		if (previewDisplayOn) {
@@ -152,8 +152,8 @@ function hoverDisplay(iconImg, charFileName) {
 			void document.getElementById("info-portrait-temp").offsetWidth;
 			document.getElementById("info-portrait-temp").classList.add("tempportrait-onhover");
 			
-			chrPrevImg.src = "../img/portraits/bbcf/" + charFileName + ".png";
-			chrName.src = "../img/characterSelect/bbcf/Nameplate_" + charFileName + ".png";
+			chrPrevImg.src = "img/portraits/bbcf/" + charFileName + ".png";
+			chrName.src = "img/characterSelect/bbcf/Nameplate_" + charFileName + ".png";
 			chrPrevImg.classList.remove("portrait-onhover");
 			void chrPrevImg.offsetWidth;
 			chrPrevImg.classList.add("portrait-onhover");
@@ -394,10 +394,10 @@ function runDisplay(characterName) {
 	function writeCharInfo(detailInfo, ratings, likeOrDislike, charDescription, charFileName) {
 		updateOV(detailInfo, ratings, likeOrDislike, charDescription);
 		
-		chrPrevImg.src = "../img/portraits/bbcf/" + charFileName + ".png";
-		chrName.src = "../img/characterSelect/bbcf/Nameplate_" + charFileName + ".png";
+		chrPrevImg.src = "img/portraits/bbcf/" + charFileName + ".png";
+		chrName.src = "img/characterSelect/bbcf/Nameplate_" + charFileName + ".png";
 		
-		document.getElementById("info-portrait-temp").src = "../img/portraits/bbcf/" + charFileName + ".png";
+		document.getElementById("info-portrait-temp").src = "img/portraits/bbcf/" + charFileName + ".png";
 	}
 	
 	switch (characterName) {
