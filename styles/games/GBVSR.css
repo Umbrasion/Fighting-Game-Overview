@@ -1,5 +1,6 @@
-html {
+:root {
     background-image: url("../../img/backgrounds/GBVSR.png");
+    overflow: clip;
 }
 
 body {

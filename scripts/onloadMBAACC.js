@@ -43,9 +43,13 @@ pageMusic.preload = "auto";
 const pageMusicIntro = new Audio("audio/music/MBAACC - Actor's Anteroom -Remastering- intro.ogg");
 pageMusicIntro.volume = 0.2;
 
-pageMusicIntro.play();
+pageMusic.addEventListener("canplay", playMusic);
+function playMusic() {
+	pageMusicIntro.play();
+}
 pageMusicIntro.onended = function() {
 	pageMusic.play();
+	pageMusic.removeEventListener("canplay", playMusic);
 }
 
 const sfx = {
@@ -68,7 +72,7 @@ function hoverDisplay(charFileName, charNameHiragana) {
 			chrPrevImg.style.height = chrPrevImg.naturalHeight * 1.8 + "px";
 			document.getElementById("info-portrait-temp").style.height = chrPrevImg.style.height;
 		};
-		chrName.innerHTML = "<span style='font-size: 1.6em'>" + charNameHiragana + "</span><br>";
+		chrName.innerHTML = "<span style='font-size: 1.6em; font-style: italic'>" + charNameHiragana + "</span><br>";
 		if (charFileName === "Aoko_Aozaki" || charFileName === "Shiki_Tohno" || charFileName === "Shiki_Nanaya" || charFileName === "Kouma_Kishima" || charFileName === "Miyako_Arima" || charFileName === "Akiha_Tohno" || charFileName === "Shiki_Ryougi") {
 			chrName.innerHTML += charFileName.split("_")[1].toUpperCase() + " " + charFileName.split("_")[0].toUpperCase();
 		} else if (charFileName === "Archetype_Earth") {
@@ -414,7 +418,7 @@ function runDisplay(characterName) {
 			chrPrevImg.style.height = chrPrevImg.naturalHeight * 1.8 + "px";
 			document.getElementById("info-portrait-temp").style.height = chrPrevImg.style.height;
 		};
-		chrName.innerHTML = "<span style='font-size: 1.6em'>" + charNameHiragana + "</span><br>";
+		chrName.innerHTML = "<span style='font-size: 1.6em; font-style: italic'>" + charNameHiragana + "</span><br>";
 		if (charFileName === "Aoko_Aozaki" || charFileName === "Shiki_Tohno" || charFileName === "Shiki_Nanaya" || charFileName === "Kouma_Kishima" || charFileName === "Miyako_Arima" || charFileName === "Akiha_Tohno" || charFileName === "Shiki_Ryougi") {
 			chrName.innerHTML += charFileName.split("_")[1].toUpperCase() + " " + charFileName.split("_")[0].toUpperCase();
 		} else if (charFileName === "Archetype_Earth") {
@@ -1081,3 +1085,7 @@ function textDisplay() {
 }
 
 setInterval(textDisplay, 666.6666666666666666666666666666);
+
+window.addEventListener("click", function() {
+	console.log(this.button);
+});

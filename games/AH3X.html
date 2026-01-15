@@ -12,153 +12,164 @@
 	</head>
 	<body>
 		<div id="characterselect">
-			<div class="selectbox-container">
-				<div class="selectbox-character-row">
-					<a onclick="runDisplay('Weiss')" class="charactericon size-big-small character-weiss">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ah3x/Weiss_icon.webp">
+			<div class="preview-area">
+				<div class="portrait-area">
+					<div style="display: flex; flex-direction: column; width: 0px; height: 0px; margin: auto; justify-content: left; align-items: center">
+						<div style="width: fit-content">
+							<img id="info-portrait" src="" style="height: 90vh; max-width: none">
 						</div>
-					</a>
-					<a onclick="runDisplay('Scharlochrot')" class="charactericon size-small-small character-schar">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ah3x/Scharlochrot_icon.webp">
-						</div>
-					</a>
-					<a onclick="runDisplay('Petra')" class="charactericon size-big-small character-petra">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ah3x/Petra_Johanna_Lagerkvist_icon.webp">
-						</div>
-					</a>
-					<a onclick="runDisplay('Pistrix')" class="charactericon size-big-small character-pistrix">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ah3x/Series_Pistrix_No.29_icon.webp">
-						</div>
-					</a>
+					</div>
+					<h2 id="info-name" class="info-title"></h2>
 				</div>
-				<div class="selectbox-character-row" style="margin-left: 26px">
-					<a onclick="Eko" class="charactericon size-small-small character-eko">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ah3x/Eko_icon.webp">
-						</div>
-					</a>
-					<a onclick="runDisplay('Clarice')" class="charactericon size-big-small character-clarice">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ah3x/Clarice_di_Lanze_icon.webp">
-						</div>
-					</a>
-					<a onclick="runDisplay('Elsa')" class="charactericon size-big-small character-elsa">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ah3x/Elsa_la_Conti_icon.webp">
-						</div>
-					</a>
+				<div class="selectbox-container">
+					<div class="selectbox-character-row">
+						<a onclick="runDisplay('Weiss')" id="character-weiss" class="charactericon">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ah3x/Weiss_icon.png">
+							</div>
+						</a>
+						<a onclick="runDisplay('Scharlachrot')" id="character-scharlachrot" class="charactericon">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ah3x/Scharlachrot_icon.png">
+							</div>
+						</a>
+						<a onclick="runDisplay('Petra_Johanna_Lagerkvist')" id="character-petra" class="charactericon">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ah3x/Petra_Johanna_Lagerkvist_icon.png">
+							</div>
+						</a>
+						<a onclick="runDisplay('Series_Pistrix_No.29')" id="character-pistrix" class="charactericon">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ah3x/Series_Pistrix_No.29_icon.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-character-row" style="margin-left: 26px">
+						<a onclick="runDisplay('Eko')" id="character-eko" class="charactericon">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ah3x/Eko_icon.png">
+							</div>
+						</a>
+						<a onclick="runDisplay('Clarice_di_Lanza')" id="character-clarice" class="charactericon">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ah3x/Clarice_di_Lanza_icon.png">
+							</div>
+						</a>
+						<a onclick="runDisplay('Elsa_la_Conti')" id="character-elsa" class="charactericon">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ah3x/Elsa_la_Conti_icon.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-character-row" style="margin-left: 51px">
+						<a onclick="runDisplay('Zenia_Valov')" id="character-zenia" class="charactericon">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ah3x/Zenia_Valov_icon.png">
+							</div>
+						</a>
+						<a onclick="runDisplay('Dorothy_Albright')" id="character-dorothy" class="charactericon">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ah3x/Dorothy_Albright_icon.png">
+							</div>
+						</a>
+						<a onclick="runDisplay('Mei-Fang')" id="character-mei" class="charactericon">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ah3x/Mei-Fang_icon.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-character-row" style="margin-left: 77px">
+						<a onclick="runDisplay('Lieselotte_Achenbach')" id="character-lieselotte" class="charactericon">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ah3x/Lieselotte_Achenbach_icon.png">
+							</div>
+						</a>
+						<a onclick="runDisplay('Catherine_Kyoubashi')" id="character-catherine" class="charactericon">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ah3x/Catherine_Kyoubashi_icon.png">
+							</div>
+						</a>
+						<a onclick="runDisplay('Kira_Daidohji')" id="character-kira" class="charactericon">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ah3x/Kira_Daidohji_icon.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-character-row" style="margin-left: 102px">
+						<a onclick="runDisplay('Lilica_Felchenerow')" id="character-lilica" class="charactericon">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ah3x/Lilica_Felchenerow_icon.png">
+							</div>
+						</a>
+						<a onclick="runDisplay('Fiona_Mayfield')" id="character-fiona" class="charactericon">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ah3x/Fiona_Mayfield_icon.png">
+							</div>
+						</a>
+						<a onclick="runDisplay('Akane_Inuwaka')" id="character-akane" class="charactericon">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ah3x/Akane_Inuwaka_icon.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-character-row" style="margin-left: 128px">
+						<a onclick="runDisplay('Yoriko_Yasuzumi')" id="character-yoriko" class="charactericon">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ah3x/Yoriko_Yasuzumi_icon.png">
+							</div>
+						</a>
+						<a onclick="runDisplay('Angelia_Avalon')" id="character-angelia" class="charactericon">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ah3x/Angelia_Avalon_icon.png">
+							</div>
+						</a>
+						<a onclick="runDisplay('Nazuna_Inuwaka')" id="character-nazuna" class="charactericon">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ah3x/Nazuna_Inuwaka_icon.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-character-row" style="margin-left: 153px">
+						<a onclick="runDisplay('Saki_Tsuzura')" id="character-saki" class="charactericon">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ah3x/Saki_Tsuzura_icon.png">
+							</div>
+						</a>
+						<a onclick="runDisplay('Maori_Kasuga')" id="character-maori" class="charactericon">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ah3x/Maori_Kasuga_icon.png">
+							</div>
+						</a>
+						<a onclick="runDisplay('Konoha')" id="character-konoha" class="charactericon">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ah3x/Konoha_icon.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-character-row" style="margin-bottom: 0px; margin-left: 30px">
+						<a onclick="runDisplay('Dark_Heart')" id="character-darkheart" class="charactericon">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ah3x/Dark_Heart_icon.png">
+							</div>
+						</a>
+						<a onclick="runDisplay('Heart_Aino')" id="character-heart" class="charactericon">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ah3x/Heart_Aino_icon.png">
+							</div>
+						</a>
+						<a onclick="runDisplay('Minori_Amanohara')" id="character-minori" class="charactericon">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ah3x/Minori_Amanohara_icon.png">
+							</div>
+						</a>
+						<a onclick="runDisplay('Kamui_Tokinomiya')" id="character-kamui" class="charactericon">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ah3x/Kamui_Tokinomiya_icon.png">
+							</div>
+						</a>
+					</div>
 				</div>
-				<div class="selectbox-character-row" style="margin-left: 51px">
-					<a onclick="runDisplay('Zenia')" class="charactericon size-big-small character-zenia">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ah3x/Zenia_Valov_icon.webp">
-						</div>
-					</a>
-					<a onclick="runDisplay('Dorothy')" class="charactericon size-big-small character-dorothy">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ah3x/Dorothy_Albright_icon.webp">
-						</div>
-					</a>
-					<a onclick="runDisplay('Mei-Fang')" class="charactericon size-small-small character-mei">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ah3x/Mei-Fang_icon.webp">
-						</div>
-					</a>
-				</div>
-				<div class="selectbox-character-row" style="margin-left: 77px">
-					<a onclick="runDisplay('Lieselotte')" class="charactericon size-small-big character-liese">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ah3x/Lieselotte_Achenbach_icon.webp">
-						</div>
-					</a>
-					<a onclick="runDisplay('Catherine')" class="charactericon size-big-big character-cath">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ah3x/Catherine_Kyoubashi_icon.webp">
-						</div>
-					</a>
-					<a onclick="runDisplay('Kira')" class="charactericon size-big-big character-kira">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ah3x/Kira_Daidohji_icon.webp">
-						</div>
-					</a>
-				</div>
-				<div class="selectbox-character-row" style="margin-left: 102px">
-					<a onclick="runDisplay('Lilica')" class="charactericon size-big-big character-lilica">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ah3x/Lilica_Felchenerow_icon.webp">
-						</div>
-					</a>
-					<a onclick="runDisplay('Fiona')" class="charactericon size-big-big character-fiona">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ah3x/Fiona_Mayfield_icon.webp">
-						</div>
-					</a>
-					<a onclick="runDisplay('Akane')" class="charactericon size-small-big character-akane">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ah3x/Akane_Inuwaka_icon.webp">
-						</div>
-					</a>
-				</div>
-				<div class="selectbox-character-row" style="margin-left: 128px">
-					<a onclick="runDisplay('Yoriko')" class="charactericon size-small-big character-yoriko">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ah3x/Yoriko_Yasuzumi_icon.webp">
-						</div>
-					</a>
-					<a onclick="runDisplay('Angelia')" class="charactericon size-big-big character-angelia">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ah3x/Angelia_Avallone_icon.webp">
-						</div>
-					</a>
-					<a onclick="runDisplay('Nazuna')" class="charactericon size-big-big character-nazuna">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ah3x/Nazuna_Inuwaka_icon.webp">
-						</div>
-					</a>
-				</div>
-				<div class="selectbox-character-row" style="margin-left: 153px">
-					<a onclick="runDisplay('Saki')" class="charactericon size-big-big character-saki">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ah3x/Saki_Tsuzura_icon.webp">
-						</div>
-					</a>
-					<a onclick="runDisplay('Maori')" class="charactericon size-big-big character-maori">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ah3x/Maori_Kasuga_icon.webp">
-						</div>
-					</a>
-					<a onclick="runDisplay('Konoha')" class="charactericon size-small-big character-konoha">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ah3x/Konoha_icon.webp">
-						</div>
-					</a>
-				</div>
-				<div class="selectbox-character-row" style="margin-bottom: 0px; margin-left: 30px">
-					<a onclick="runDisplay('DarkHeart')" class="charactericon size-big-big character-dark">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ah3x/Dark_Heart_icon.webp">
-						</div>
-					</a>
-					<a onclick="runDisplay('Heart')" class="charactericon size-big-big character-aino">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ah3x/Heart_Aino_icon.webp">
-						</div>
-					</a>
-					<a onclick="runDisplay('Minori')" class="charactericon size-small-big character-minori">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ah3x/Minori_Amanohara_icon.webp">
-						</div>
-					</a>
-					<a onclick="runDisplay('Kamui')" class="charactericon size-big-big character-kamui">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ah3x/Kamui_Tokinomiya_icon.webp">
-						</div>
-					</a>
-				</div>
+				<div class="description-area"></div>
 			</div>
 		</div>
 	</body>

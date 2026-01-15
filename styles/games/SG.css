@@ -1,3 +1,7 @@
+:root {
+    aspect-ratio: 16 / 9;
+}
+
 body {
     margin: 0px;
     height: 100vh;

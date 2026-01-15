@@ -1,0 +1,33 @@
+:root {
+    overflow: clip;
+}
+
+body {
+    font-family: "Noto Sans JP";
+}
+
+.selectbox-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 13px 7px;
+    width: 505px;
+    height: fit-content;
+    margin: 4vh 16px 0;
+}
+
+#info-portrait {
+    filter: drop-shadow(-22px 10px rgba(255,0,0,0.5));
+    transform: scale(2) translate(-8%, 22%);
+}
+
+#info-name {
+    position: relative;
+    font-size: 3em;
+	background: linear-gradient(to right, #FFFF00, #FFFFFF);
+	background-clip: text;
+	color: transparent;
+    width: fit-content;
+    margin: 60vh auto;
+    filter: drop-shadow(0px 0px 2px black);
+}

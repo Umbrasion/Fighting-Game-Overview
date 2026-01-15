@@ -27,15 +27,19 @@ const chrSel = [
 
 const pageMusic = new Audio("audio/music/MBTL - Moonlight of Reunion loop.ogg");
 pageMusic.loop = true;
-pageMusic.volume = 0.2;
+pageMusic.volume = 0.15;
 pageMusic.preload = "auto";
 
 const pageMusicIntro = new Audio("audio/music/MBTL - Moonlight of Reunion intro.ogg");
-pageMusicIntro.volume = 0.2;
-pageMusicIntro.play();
+pageMusicIntro.volume = 0.15;
 
+pageMusic.addEventListener("canplay", playMusic);
+function playMusic() {
+	pageMusicIntro.play();
+}
 pageMusicIntro.onended = function() {
 	pageMusic.play();
+	pageMusic.removeEventListener("canplay", playMusic);
 }
 
 const sfx = {
@@ -43,9 +47,9 @@ const sfx = {
 	confirm: new Audio("audio/sfx/mbtl/Menu_OK.wav"),
     announcer: new Audio("audio/sfx/mbtl/Sys00_0900.wav"),
 }
-sfx.cursor.volume = 0.5;
+sfx.cursor.volume = 0.4;
 sfx.confirm.volume = 0.2;
-sfx.announcer.volume = 0.3;
+sfx.announcer.volume = 0.25;
 sfx.announcer.play();
 
 var previewDisplayOn = true;
@@ -68,8 +72,8 @@ function hoverDisplay(charFileName) {
         }
         charBanter1 = new Audio("audio/sfx/mbtl/banter/" + charFileName + "_idle1.wav");
         charBanter2 = new Audio("audio/sfx/mbtl/banter/" + charFileName + "_idle2.wav");
-        charBanter1.volume = 0.3;
-        charBanter2.volume = 0.3;
+        charBanter1.volume = 0.25;
+        charBanter2.volume = 0.25;
         clearTimeout(banterTimer);
         banterTimer = setTimeout(function() {
             charBanter1.play();

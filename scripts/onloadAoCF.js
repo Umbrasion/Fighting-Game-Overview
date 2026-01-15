@@ -281,7 +281,6 @@ function randomDisplay() {
 
 function runDisplay(characterName) {
 	previewDisplayOn = false;
-	const descriptionArea = document.getElementsByClassName("description-area")[0];
 	chrPrevImg.classList.remove("portrait-onselect");
 	void chrPrevImg.offsetWidth;
 	

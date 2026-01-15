@@ -106,8 +106,13 @@ const pageMusicIntro = new Audio("audio/music/DBFZ - Character Select intro.ogg"
 pageMusicIntro.volume = 0.2;
 pageMusicIntro.play();
 
+pageMusic.addEventListener("canplay", playMusic);
+function playMusic() {
+	pageMusicIntro.play();
+}
 pageMusicIntro.onended = function() {
 	pageMusic.play();
+	pageMusic.removeEventListener("canplay", playMusic);
 }
 
 const sfx = {

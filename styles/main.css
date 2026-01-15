@@ -101,6 +101,10 @@ a:hover {
 	max-width: 100%;
 }
 
+#info-name {
+	position: relative;
+}
+
 .info-table {
 	border-collapse: collapse;
 	width: 100%;
@@ -300,4 +304,24 @@ div.selectbox-positioner {
 @font-face {
 	font-family: "Doodlian";
 	src: url("../fonts/Doodlian-Regular.ttf");
+}
+
+@font-face {
+	font-family: "Noto Sans JP";
+	src: url("../fonts/NotoSansJP-Regular.otf");
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-VariableFont.ttf");
+}
+
+@font-face {
+	font-family: "City Brawlers";
+	src: url("../fonts/CityBrawlersBoldCaps.otf");
+}
+
+@font-face {
+	font-family: "Strive Impact";
+	src: url("../fonts/Impact - Strive.otf");
 }

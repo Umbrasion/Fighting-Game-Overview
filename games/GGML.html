@@ -11,79 +11,91 @@
 		<script src="../scripts/jquery-3.7.1.min.js"></script>
 	</head>
 	<body>
+		<img class="game-logo" src="img/logos/GGML_logo.png">
 		<div id="characterselect">
-			<div class="selectbox-container">
-				<div class="selectbox-row">
-					<a onclick="runDisplay('Testament')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggml/Testament_icon.webp">
+			<div class="preview-area">
+				<div class="portrait-area">
+					<div style="display: flex; flex-direction: column; width: 0px; height: 0px; margin: auto; justify-content: left; align-items: center">
+						<div style="width: fit-content">
+							<img id="info-portrait" src="" style="height: 90vh; max-width: none">
 						</div>
-					</a>
-					<a onclick="runDisplay('Baiken')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggml/Baiken_icon.webp">
-						</div>
-					</a>
-					<a onclick="runDisplay('Justice')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggml/Justice_icon.webp">
-						</div>
-					</a>
+					</div>
+					<img id="info-name" class="info-title">
 				</div>
-				<div class="selectbox-row">
-					<a onclick="runDisplay('Potemkin')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggml/Potemkin_icon.webp">
-						</div>
-					</a>
-					<a onclick="runDisplay('Chipp_Zanuff')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggml/Chipp_Zanuff_icon.webp">
-						</div>
-					</a>
-					<a onclick="runDisplay('Sol_Badguy')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggml/Sol_Badguy_icon.webp">
-						</div>
-					</a>
-					<a onclick="runDisplay('Axl_Low')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggml/Axl_Low_icon.webp">
-						</div>
-					</a>
-					<a onclick="runDisplay('Millia_Rage')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggml/Millia_Rage_icon.webp">
-						</div>
-					</a>
+				<div class="selectbox-container">
+					<div class="selectbox-row">
+						<a id="character-testament" onclick="runDisplay('Testament')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggml/Testament_icon.png">
+							</div>
+						</a>
+						<a id="character-baiken" onclick="runDisplay('Baiken')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggml/Baiken_icon.png">
+							</div>
+						</a>
+						<a id="character-justice" onclick="runDisplay('Justice')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggml/Justice_icon.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-row">
+						<a id="character-potemkin" onclick="runDisplay('Potemkin')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggml/Potemkin_icon.png">
+							</div>
+						</a>
+						<a id="character-chipp" onclick="runDisplay('Chipp_Zanuff')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggml/Chipp_Zanuff_icon.png">
+							</div>
+						</a>
+						<a id="character-sol" onclick="runDisplay('Sol_Badguy')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggml/Sol_Badguy_icon.png">
+							</div>
+						</a>
+						<a id="character-axl" onclick="runDisplay('Axl_Low')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggml/Axl_Low_icon.png">
+							</div>
+						</a>
+						<a id="character-millia" onclick="runDisplay('Millia_Rage')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggml/Millia_Rage_icon.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-row">
+						<a id="character-may" onclick="runDisplay('May')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggml/May_icon.png">
+							</div>
+						</a>
+						<a id="character-kliff" onclick="runDisplay('Kliff_Undersn')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggml/Kliff_Undersn_icon.png">
+							</div>
+						</a>
+						<a id="character-ky" onclick="runDisplay('Ky_Kiske')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggml/Ky_Kiske_icon.png">
+							</div>
+						</a>
+						<a id="character-zato" onclick="runDisplay('Zato-1')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggml/Zato-1_icon.png">
+							</div>
+						</a>
+						<a id="character-baldhead" onclick="runDisplay('Dr._Baldhead')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggml/Dr._Baldhead_icon.png">
+							</div>
+						</a>
+					</div>
 				</div>
-				<div class="selectbox-row">
-					<a onclick="runDisplay('May')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggml/May_icon.webp">
-						</div>
-					</a>
-					<a onclick="runDisplay('Kliff_Undersn')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggml/Kliff_Undersn_icon.webp">
-						</div>
-					</a>
-					<a onclick="runDisplay('Ky_Kiske')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggml/Ky_Kiske_icon.webp">
-						</div>
-					</a>
-					<a onclick="runDisplay('Zato-1')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggml/Zato-1_icon.webp">
-						</div>
-					</a>
-					<a onclick="runDisplay('Dr._Baldhead')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggml/Dr._Baldhead_icon.webp">
-						</div>
-					</a>
-				</div>
+				<div class="description-area"></div>
 			</div>
 		</div>
 	</body>

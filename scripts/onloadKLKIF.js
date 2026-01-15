@@ -22,11 +22,13 @@ pageMusic.preload = "auto";
 const pageMusicIntro = new Audio("audio/music/KLKIF - Main Menu Theme intro.ogg");
 pageMusicIntro.volume = 0.2;
 
-pageMusic.addEventListener("canplay", function() {
+pageMusic.addEventListener("canplay", playMusic);
+function playMusic() {
 	pageMusicIntro.play();
-});
+}
 pageMusicIntro.onended = function() {
 	pageMusic.play();
+	pageMusic.removeEventListener("canplay", playMusic);
 }
 
 const sfx = {

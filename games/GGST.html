@@ -12,172 +12,186 @@
 	</head>
 	<body>
 		<div id="characterselect">
-			<div class="selectbox-container">
-				<div class="selectbox-row" style="gap: 9px; margin-bottom: 20px">
-					<a href="Queen_Dizzy.html">
+			<div class="preview-area">
+				<div class="portrait-area">
+					<div style="display: flex; flex-direction: column; width: 0px; height: 0px; margin: auto; justify-content: left; align-items: center">
+						<div style="width: fit-content">
+							<img id="info-portrait" src="" style="height: 92vh; max-width: none">
+						</div>
+					</div>
+					<h2 id="info-name" class="info-title" style="height: 1.2em"></h2>
+				</div>
+				<div class="selectbox-container">
+					<img id="select-cursor" src="img/characterSelect/ggst/Cursor.png" style="left: 745px; top: -9px">
+					<div class="flexbox-dummy"></div>
+					<a id="character-dizzy" onclick="runDisplay('Queen_Dizzy')">
 						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Queen_Dizzy_icon.webp" id="sampleImage" class="selectbox-image" style="">
+							<img src="img/characterSelect/ggst/Queen_Dizzy_icon.png">
 						</div>
 					</a>
-					<a href="Johnny.html">
+					<a id="character-johnny" onclick="runDisplay('Johnny')">
 						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Johnny_icon.webp" class="selectbox-image" style="">
+							<img src="img/characterSelect/ggst/Johnny_icon.png">
 						</div>
 					</a>
-					<a href="Testament.html">
+					<a id="character-testament" onclick="runDisplay('Testament')">
 						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Testament_icon.webp" class="selectbox-image" style="">
+							<img src="img/characterSelect/ggst/Testament_icon.png">
 						</div>
 					</a>
-					<a href="Jack-O'_Valentine.html">
+					<a id="character-jacko" onclick="runDisplay('Jack-O')">
 						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Jack-O'_Valentine_icon.webp" class="selectbox-image" style="">
+							<img src="img/characterSelect/ggst/Jack-O'_icon.png">
 						</div>
 					</a>
-					<a href="Nagoriyuki.html">
+					<a id="character-nagoriyuki" onclick="runDisplay('Nagoriyuki')">
 						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Nagoriyuki_icon.webp" class="selectbox-image" style="">
+							<img src="img/characterSelect/ggst/Nagoriyuki_icon.png">
 						</div>
 					</a>
-					<a href="Millia_Rage.html">
+					<a id="character-millia" onclick="runDisplay('Millia_Rage')">
 						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Millia_Rage_icon.webp" class="selectbox-image" style="">
+							<img src="img/characterSelect/ggst/Millia_Rage_icon.png">
 						</div>
 					</a>
-					<a href="Chipp_Zanuff.html">
+					<a id="character-chipp" onclick="runDisplay('Chipp_Zanuff')">
 						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Chipp_Zanuff_icon.webp" class="selectbox-image" style="">
+							<img src="img/characterSelect/ggst/Chipp_Zanuff_icon.png">
 						</div>
 					</a>
-					<a href="Sol_Badguy.html">
+					<a id="character-sol" onclick="runDisplay('Sol_Badguy')">
 						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Sol_Badguy_icon.webp" class="selectbox-image" style="">
+							<img src="img/characterSelect/ggst/Sol_Badguy_icon.png">
 						</div>
 					</a>
-					<a href="Ky_Kiske.html">
+					<a id="character-ky" onclick="runDisplay('Ky_Kiske')">
 						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Ky_Kiske_icon.webp" class="selectbox-image" style="">
+							<img src="img/characterSelect/ggst/Ky_Kiske_icon.png">
 						</div>
 					</a>
-					<a href="May.html">
+					<a id="character-may" onclick="runDisplay('May')">
 						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/May_icon.webp" class="selectbox-image" style="">
+							<img src="img/characterSelect/ggst/May_icon.png">
 						</div>
 					</a>
-					<a href="Zato-1.html">
+					<a id="character-zato" onclick="runDisplay('Zato-1')">
 						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Zato-1_icon.webp" class="selectbox-image" style="">
+							<img src="img/characterSelect/ggst/Zato-1_icon.png">
 						</div>
 					</a>
-					<a href="I-No.html">
+					<a id="character-ino" onclick="runDisplay('I-No')">
 						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/I-No_icon.webp" class="selectbox-image" style="">
+							<img src="img/characterSelect/ggst/I-No_icon.png">
 						</div>
 					</a>
-					<a href="Happy_Chaos.html">
+					<a id="character-chaos" onclick="runDisplay('Happy_Chaos')">
 						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Happy_Chaos_icon.webp" class="selectbox-image" style="">
+							<img src="img/characterSelect/ggst/Happy_Chaos_icon.png">
 						</div>
 					</a>
-					<a href="Bedman.html">
+					<a id="character-bedman" onclick="runDisplay('Bedman')">
 						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Bedman_icon.webp" class="selectbox-image" style="">
+							<img src="img/characterSelect/ggst/Bedman_icon.png">
 						</div>
 					</a>
-					<a href="Elphelt_Valentine.html">
+					<a id="character-elphelt" onclick="runDisplay('Elphelt_Valentine')">
 						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Elphelt_Valentine_icon.webp" class="selectbox-image" style="">
+							<img src="img/characterSelect/ggst/Elphelt_Valentine_icon.png">
 						</div>
 					</a>
-					<a href="Venom.html">
+					<a id="character-venom" onclick="runDisplay('Venom')">
 						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Venom_icon.webp" class="selectbox-image" style="">
+							<img src="img/characterSelect/ggst/Venom_icon.png">
+						</div>
+					</a>
+					<div class="flexbox-dummy"></div>
+					<a id="character-unika" onclick="runDisplay('Unika')">
+						<div class="selectbox selectbox-character">
+							<img src="img/characterSelect/ggst/Unika_icon.png">
+						</div>
+					</a>
+					<a id="character-aba" onclick="runDisplay('A.B.A')">
+						<div class="selectbox selectbox-character">
+							<img src="img/characterSelect/ggst/A.B.A_icon.png">
+						</div>
+					</a>
+					<a id="character-sin" onclick="runDisplay('Sin_Kiske')">
+						<div class="selectbox selectbox-character">
+							<img src="img/characterSelect/ggst/Sin_Kiske_icon.png">
+						</div>
+					</a>
+					<a id="character-baiken" onclick="runDisplay('Baiken')">
+						<div class="selectbox selectbox-character">
+							<img src="img/characterSelect/ggst/Baiken_icon.png">
+						</div>
+					</a>
+					<a id="character-anji" onclick="runDisplay('Anji_Mito')">
+						<div class="selectbox selectbox-character">
+							<img src="img/characterSelect/ggst/Anji_Mito_icon.png">
+						</div>
+					</a>
+					<a id="character-leo" onclick="runDisplay('Leo_Whitefang')">
+						<div class="selectbox selectbox-character">
+							<img src="img/characterSelect/ggst/Leo_Whitefang_icon.png">
+						</div>
+					</a>
+					<a id="character-faust" onclick="runDisplay('Faust')">
+						<div class="selectbox selectbox-character">
+							<img src="img/characterSelect/ggst/Faust_icon.png">
+						</div>
+					</a>
+					<a id="character-axl" onclick="runDisplay('Axl_Low')">
+						<div class="selectbox selectbox-character">
+							<img src="img/characterSelect/ggst/Axl_Low_icon.png">
+						</div>
+					</a>
+					<a id="character-random" onclick="runDisplay('Random')">
+						<div class="selectbox selectbox-character">
+							<img src="img/characterSelect/ggst/Random_icon.png">
+						</div>
+					</a>
+					<a id="character-potemkin" onclick="runDisplay('Potemkin')">
+						<div class="selectbox selectbox-character">
+							<img src="img/characterSelect/ggst/Potemkin_icon.png">
+						</div>
+					</a>
+					<a id="character-ramlethal" onclick="runDisplay('Ramlethal_Valentine')">
+						<div class="selectbox selectbox-character">
+							<img src="img/characterSelect/ggst/Ramlethal_Valentine_icon.png">
+						</div>
+					</a>
+					<a id="character-giovanna" onclick="runDisplay('Giovanna')">
+						<div class="selectbox selectbox-character">
+							<img src="img/characterSelect/ggst/Giovanna_icon.png">
+						</div>
+					</a>
+					<a id="character-goldlewis" onclick="runDisplay('Goldlewis_Dickinson')">
+						<div class="selectbox selectbox-character">
+							<img src="img/characterSelect/ggst/Goldlewis_Dickinson_icon.png">
+						</div>
+					</a>
+					<a id="character-bridget" onclick="runDisplay('Bridget')">
+						<div class="selectbox selectbox-character">
+							<img src="img/characterSelect/ggst/Bridget_icon.png">
+						</div>
+					</a>
+					<a id="character-asuka" onclick="runDisplay('Asuka_R._Kreutz')">
+						<div class="selectbox selectbox-character">
+							<img src="img/characterSelect/ggst/Asuka_R._Kreutz_icon.png">
+						</div>
+					</a>
+					<a id="character-slayer" onclick="runDisplay('Slayer')">
+						<div class="selectbox selectbox-character">
+							<img src="img/characterSelect/ggst/Slayer_icon.png">
+						</div>
+					</a>
+					<a id="character-lucy" onclick="runDisplay('Lucy')">
+						<div class="selectbox selectbox-character">
+							<img src="img/characterSelect/ggst/Lucy_icon.png">
 						</div>
 					</a>
 				</div>
-				<div class="selectbox-row" style="gap: 9px">
-					<a href="Unika.html">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Unika_icon.webp" class="selectbox-image" style="">
-						</div>
-					</a>
-					<a href="A.B.A.html">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/A.B.A_icon.webp" class="selectbox-image" style="">
-						</div>
-					</a>
-					<a href="Sin_Kiske.html">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Sin_Kiske_icon.webp" class="selectbox-image" style="">
-						</div>
-					</a>
-					<a href="Baiken.html">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Baiken_icon.webp" class="selectbox-image" style="">
-						</div>
-					</a>
-					<a href="Anji_Mito.html">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Anji_Mito_icon.webp" class="selectbox-image" style="">
-						</div>
-					</a>
-					<a href="Leo_Whitefang.html">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Leo_Whitefang_icon.webp" class="selectbox-image" style="">
-						</div>
-					</a>
-					<a href="Faust.html">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Faust_icon.webp" class="selectbox-image" style="">
-						</div>
-					</a>
-					<a href="Axl_Low.html">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Axl_Low_icon.webp" class="selectbox-image" style="">
-						</div>
-					</a>
-					<a href="Random_Character.html">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Random_icon.webp" class="selectbox-image" style="">
-						</div>
-					</a>
-					<a href="Potemkin.html">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Potemkin_icon.webp" class="selectbox-image" style="">
-						</div>
-					</a>
-					<a href="Ramlethal_Valentine.html">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Ramlethal_Valentine_icon.webp" class="selectbox-image" style="">
-						</div>
-					</a>
-					<a href="Giovanna.html">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Giovanna_icon.webp" class="selectbox-image" style="">
-						</div>
-					</a>
-					<a href="Goldlewis_Dickinson.html">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Goldlewis_Dickinson_icon.webp" class="selectbox-image" style="">
-						</div>
-					</a>
-					<a href="Bridget.html">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Bridget_icon.webp" class="selectbox-image" style="">
-						</div>
-					</a>
-					<a href="Asuka_R._Kreutz.html">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Asuka_R._Kreutz_icon.webp" class="selectbox-image" style="">
-						</div>
-					</a>
-					<a href="Slayer.html">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Slayer_icon.webp" class="selectbox-image" style="">
-						</div>
-					</a>
-					<div class="selectbox-spacer selectbox-image" style=""></div>
-				</div>
+				<div class="description-area"></div>
 			</div>
 		</div>
 	</body>

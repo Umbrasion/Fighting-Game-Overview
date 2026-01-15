@@ -1,14 +1,39 @@
+body {
+    min-height: 100vh;
+}
+
 #characterselect {
-    display: block;
-    width: calc(100% - 40px);
-    margin: 0px;
+    height: calc(100vh - 56px);
 }
 
-.selectbox-row a:hover {
-    transform: scale(1.14);
+#info-name {
+	font-family: "Strive Impact";
+    font-size: 3em;
+    font-weight: normal;
 }
 
-.selectbox-character img, .selectbox-spacer {
-    display: block;
-    max-width: 82px;
+.selectbox-container {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 4vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 38px 18px;
+    width: 1682px;
+    margin: auto;
+}
+
+.selectbox-character {
+    filter: drop-shadow(0 4px 4px black);
+}
+
+#select-cursor {
+    position: absolute;
+    width: 88px;
+    pointer-events: none;
+    z-index: 500;
+    transition-property: all;
+    transition-duration: 0.2s;
 }

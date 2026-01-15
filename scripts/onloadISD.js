@@ -24,11 +24,13 @@ pageMusic.preload = "auto";
 const pageMusicIntro = new Audio("audio/music/ISD - Who Wants a Showdown intro.ogg");
 pageMusicIntro.volume = 0.2;
 
-pageMusic.addEventListener("canplay", function() {
+pageMusic.addEventListener("canplay", playMusic);
+function playMusic() {
 	pageMusicIntro.play();
-});
+}
 pageMusicIntro.onended = function() {
 	pageMusic.play();
+	pageMusic.removeEventListener("canplay", playMusic);
 }
 
 const sfx = {

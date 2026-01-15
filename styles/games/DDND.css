@@ -1,8 +1,14 @@
+#info-name {
+    font-size: 3em;
+    font-weight: normal;
+}
+
 .selectbox-container {
     display: flex;
     flex-flow: row wrap;
     gap: 5px;
     width: calc(52px * 8 + 5px * 7);
+    height: fit-content;
 }
 
 .selectbox-container img {

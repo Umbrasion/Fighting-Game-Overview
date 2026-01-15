@@ -1,7 +1,141 @@
+body {
+    font-family: "Roboto";
+}
+
+.preview-area {
+    position: relative;
+}
+
+#character-lighting {
+    position: absolute;
+    left: 0;
+    z-index: 0;
+    width: 40vw;
+    height: 100vh;
+    /* background: radial-gradient(circle at 0% 100%, rgba(255,255,255,0.5) 0%, rgba(0,0,0,0), rgba(0,0,0,0)); */
+}
+
+#info-name {
+    font-weight: 1000;
+    font-size: 4em;
+    letter-spacing: 0.02em;
+    text-align: left;
+    transform: scale(1, 0.9);
+    filter: drop-shadow(0 0 1px black) drop-shadow(0 1px 1px black);
+    margin-top: calc(100vh - 550px);
+    margin-left: calc(25vw);
+}
+
+#info-portrait {
+    filter: drop-shadow(-20px 0px 5px rgba(0,0,0,0.3));
+}
+
 .selectbox-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    gap: 4px 2px;
-    width: 698px;
+    gap: 6px 3px;
+    width: 1047px;
+    margin: calc(94vh - 388px) auto auto;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
+
+.selectbox-character img {
+    width: 72px;
+    filter: drop-shadow(0px 6px 7px rgba(0,0,0,1));
+}
+
+#select-cursor {
+    position: absolute;
+    width: 72px;
+    pointer-events: none;
+    z-index: 500;
+    animation-name: cursor-idle;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in;
+}
+
+@keyframes cursor-idle {
+    from {
+        
+    }
+    
+    to {
+        filter: contrast(0.3) brightness(1.7);
+    }
+}
+
+.name-onhover {
+    animation-name: name-onhover;
+    animation-duration: 0.1s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-timing-function: linear;
+}
+
+@keyframes name-onhover {
+    from {
+        transform: translate(15px, 0px) scale(1, 0.9);
+        opacity: 0.5;
+    }
+    
+    to {
+        transform: translate(0px, 0px) scale(1, 0.9);
+        opacity: 1;
+    }
+}
+
+.portrait-onhover {
+    animation-name: portrait-onhover;
+    animation-duration: 0.22s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-timing-function: linear;
+}
+
+@keyframes portrait-onhover {
+    0% {
+        margin-left: 200px;
+        opacity: 0.2;
+    }
+
+    40% {
+        margin-left: 50px;
+        opacity: 1;
+    }
+    
+    100% {
+        margin-left: 0px;
+    }
+}
+
+.portrait-onselect {
+    animation-name: portrait-onselect;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+}
+
+@keyframes portrait-onselect {
+    0% {
+        filter: contrast(1) brightness(1);
+    }
+
+    20% {
+        filter: contrast(0) brightness(2);
+    }
+
+    80% {
+        filter: contrast(0) brightness(2);
+    }
+    
+    100% {
+        filter: contrast(1) brightness(1);
+    }
 }

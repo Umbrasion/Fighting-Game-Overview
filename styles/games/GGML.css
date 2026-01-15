@@ -1,0 +1,20 @@
+.game-logo {
+    margin-left: 15vh;
+}
+
+#info-name {
+    height: 100vh;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+    background: black;
+}
+
+.selectbox-container {
+    margin: calc(90vh - 288px) auto auto;
+}
+
+.selectbox-character img {
+    width: 96px;
+}

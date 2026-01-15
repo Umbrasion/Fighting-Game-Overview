@@ -13,7 +13,8 @@ body {
 #info-name {
     font-size: 4em;
     height: 10%;
-    margin: 80vh 0px 3%
+    margin: 80vh 0px 3%;
+    font-weight: normal;
 }
 
 #info-portrait {

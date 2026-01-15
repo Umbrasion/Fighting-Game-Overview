@@ -210,7 +210,7 @@ function runDisplay(characterName) {
 	sfx.confirm.currentTime = 0;
 	sfx.confirm.play();
 	
-	initializeOV("flexbox");
+	initializeOV("wide-scaled");
 	
 	function writeCharInfo(detailInfo, ratings, likeOrDislike, charDescription, charFileName, charTitle) {
 		updateOV(detailInfo, ratings, likeOrDislike, charDescription);

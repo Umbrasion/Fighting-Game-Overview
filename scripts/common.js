@@ -117,6 +117,12 @@ function initializeOV(formatType) {
 				<h2 class="info-title">OVERVIEW</h2>
 				<div style="display: flex">
 					<div id="overview-description" class="info-description" style="flex: 1 1 auto; padding: 0px 20px"></div>
+					<div style="flex: 0 0 270px">
+						<h3 class="info-subtitle">RATINGS</h3>
+						<div id="stat-graph-background" class="stat-graph">
+							<div id="stat-graph-values" class="stat-graph"></div>
+						</div>
+					</div>
 					<table class="info-table" style="flex: 0 1 auto; width: 35vw">
 						<tbody>
 							<tr>
@@ -159,12 +165,62 @@ function initializeOV(formatType) {
 							</tr>
 						</tbody>
 					</table>
+				</div>
+			`
+			break;
+		case "wide-scaled":
+			document.getElementsByClassName("description-area")[0].innerHTML = `
+				<h2 class="info-title">OVERVIEW</h2>
+				<div style="display: flex">
+					<div id="overview-description" class="info-description" style="flex: 1 1 auto; padding: 0px 20px; min-width: 35%"></div>
 					<div style="flex: 0 0 270px">
 						<h3 class="info-subtitle">RATINGS</h3>
 						<div id="stat-graph-background" class="stat-graph">
 							<div id="stat-graph-values" class="stat-graph"></div>
 						</div>
 					</div>
+					<table class="info-table" style="flex: 0 1 auto">
+						<tbody>
+							<tr>
+								<th>PLAYSTYLE</th>
+								<th>EFFECTIVE RANGE</th>
+							</tr>
+							<tr>
+								<td style="vertical-align: middle" id="overview-playstyle">
+									<span class="archetype-"></span>
+								</td>
+								<td style="vertical-align: middle" id="overview-range">
+									<span class="range-"></span>
+								</td>
+							</tr>
+							<tr>
+								<th>UNIQUE MECHANICS</th>
+								<th>EASE OF USE</th>
+							</tr>
+							<tr>
+								<td style="vertical-align: middle" id="overview-mechanics">
+									<span class="unimech-none">None</span>
+								</td>
+								<td style="vertical-align: middle" id="overview-rating-ease" class=""></td>
+							</tr>
+							<tr>
+								<th style="text-align: center">Play if you like:</th>
+								<th style="text-align: center">Avoid if you dislike:</th>
+							</tr>
+							<tr>
+								<td style="text-align: left">
+									<ul id="overview-list-like" class="list-likedislike">
+										
+									</ul>
+								</td>
+								<td style="text-align: left">
+									<ul id="overview-list-dislike" class="list-likedislike">
+										
+									</ul>
+								</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 			`
 			break;
@@ -301,3 +357,11 @@ function initializePageDisplay(gameName) {
 		});
 	}
 }
+
+// Debug
+
+window.onload = function() {
+	if (document.getElementById("navspace").dataset.goto !== "") {
+		initializePageDisplay(document.getElementById("navspace").dataset.goto)
+	}
+};

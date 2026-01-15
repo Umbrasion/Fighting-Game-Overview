@@ -1,0 +1,2348 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Game Info Progress | Fighting Game Overview</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="styles/main.css">
+		<link rel="stylesheet" href="styles/infoColors.css">
+		<link id="gamestyle" rel="stylesheet" href="">
+		<script src="scripts/common.js"></script>
+		<script src="scripts/cssResize.js" defer></script>
+		<script src="scripts/jquery-3.7.1.min.js"></script>
+		<style>
+			:root {
+				scrollbar-width: auto;
+			}
+
+			h1 {
+				text-align: center;
+			}
+
+			h2 {
+				border-bottom: solid white 2px;
+			}
+
+			h3 {
+				border-bottom: dashed lightgray 1px;
+			}
+
+			.main-grid {
+				display: grid;
+				grid-template-columns: auto 20em;
+				gap: 3em;
+				margin: 0px 2em;
+			}
+
+			.info-container, .info-subsection {
+				padding-left: 40px;
+			}
+
+			.info-subsection {
+				display: flex;
+				flex-flow: row wrap;
+				gap: 12px;
+			}
+
+			.info-subsubsection {
+				flex: 1 1 auto;
+				padding-right: 10px;
+				border-right: dashed gray 1px;
+				border-bottom: dashed gray 1px;
+			}
+
+			.game-status {
+				font-size: 1.4em;
+				border-bottom: none;
+			}
+
+			li {
+				padding-bottom: 10px;
+			}
+
+			.item-complete {
+				list-style-type: "✓  ";
+			}
+
+			.item-inprogress {
+				list-style-type: "~  ";
+			}
+
+			.item-incomplete {
+				list-style-type: "✗  ";
+			}
+
+			.item-complete::marker {
+				color: lightgreen;
+			}
+
+			.item-inprogress::marker {
+				color: yellow;
+			}
+
+			.item-incomplete::marker {
+				color: tomato;
+			}
+		</style>
+		<script id="dummyscript" src="" defer></script>
+	</head>
+	<body>
+		<h1>General Site To-Dos</h1>
+		<ul>
+			<li>Properly format the "Back to game select" button</li>
+			<li>Add mobile formatting for each game</li>
+			<li>Add a "simple mode" to allow for better accessability and less styling-reliant navigation</li>
+			<li>Make info displays appear as a pop-up rather than integrated into the character select (allowing for an easier time making space for them)</li>
+		</ul>
+		<h1>Game Info Progress</h1>
+		<div class="main-grid">
+			<main>
+				<h2 id="AFQM">A Few Quick Matches</h2>
+				<div id="AFQM-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-incomplete">Character select not added</li>
+								<li class="item-incomplete">Character portraits not added</li>
+								<li class="item-incomplete">Character names not added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-incomplete">Music not added</li>
+								<li class="item-incomplete">General sound effects not added</li>
+								<li class="item-incomplete">Announcer not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="AUAU">Among Us Arena Ultimate</h2>
+				<div id="AUAU-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Format is an older version that needs to be remade from scratch</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-incomplete">Music not added</li>
+								<li class="item-incomplete">General sound effects not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="AH3X">Arcana Heart 3 LOVEMAX SIXSTARS!!!!!! XTEND</h2>
+				<div id="AH3X-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-complete">Background added</li>
+								<li class="item-complete">Character select has visuals and is functional</li>
+								<li class="item-inprogress">Character portraits added; lack proper animations</li>
+								<li class="item-inprogress">Character names added; lack proper formatting</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-incomplete">Music not added</li>
+								<li class="item-incomplete">General sound effects not added</li>
+								<li class="item-incomplete">Character banter not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="BBCF">BlazBlue: Central Fiction</h2>
+				<div id="BBCF-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-complete">Background added</li>
+								<li class="item-complete">Character select has visuals and is functional</li>
+								<li class="item-complete">Character portraits added</li>
+								<li class="item-complete">Character names added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-complete">Music added</li>
+								<li class="item-complete">General sound effects added</li>
+								<li class="item-incomplete">Announcer voice not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Es</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Nu-13</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Bullet</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Iron Tager</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Hazama</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Kagura Mutsuki</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Celica A. Mercury</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Litchi Faye Ling</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Platinum the Trinity</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Naoto Kurogane</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Ragna the Bloodedge</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Noel Vermillion</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Makoto Nanaya</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Relius Clover</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Valkenhayn R. Hellsing</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Susano'o</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Jubei</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Izanami</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Nine the Phantom</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Yuuki Terumi</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Mu-12</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Hibiki Kohaku</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Jin Kisaragi</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Rachel Alucard</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Hakumen</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Carl Clover</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Taokaka</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Tsubaki Yayoi</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Kokonoe</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Izayoi</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Arakune</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Bang Shishigami</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Mai Natsume</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Lambda-11</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Azrael</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Amane Nishiki</h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="BBTAG">BlazBlue: Cross Tag Battle</h2>
+				<div id="BBTAG-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-complete">Character select has visuals and is functional</li>
+								<li class="item-complete">Character portraits added</li>
+								<li class="item-complete">Character names added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-incomplete">Music not added</li>
+								<li class="item-complete">General sound effects added</li>
+								<li class="item-incomplete">Announcer not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="NSC">Chaos Code -New Sign of Catastrophe-</h2>
+				<div id="NSC-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-inprogress">Character select has some visuals; not functional</li>
+								<li class="item-incomplete">Character portraits not added</li>
+								<li class="item-incomplete">Character names not added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-complete">Music added</li>
+								<li class="item-incomplete">General sound effects not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="DNFD">DNF Duel</h2>
+				<div id="DNFD-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>KNOWN ISSUES</h3>
+					<ul>
+						<li>Occasionally will fail to reposition character icons when loading in</li>
+					</ul>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-inprogress">Character select has visuals and is functional; functionality out of date</li>
+								<li class="item-incomplete">Character portraits not added</li>
+								<li class="item-incomplete">Character names not added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-incomplete">Music not added</li>
+								<li class="item-incomplete">General sound effects not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="DDND">Dong Dong Never Die: Judgement Day</h2>
+				<div id="DDND-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-complete">Character select has visuals and is functional</li>
+								<li class="item-inprogress">Character portraits added; lack proper formatting</li>
+								<li class="item-inprogress">Character names added; lack proper formatting</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-incomplete">Music not added</li>
+								<li class="item-incomplete">General sound effects not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="DBFZ">Dragon Ball FighterZ</h2>
+				<div id="DBFZ-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>KNOWN ISSUES</h3>
+					<ul>
+						<li>Occasionally will fail to reposition character icons when loading in</li>
+						<li>Occasionally will fail to load in certain character icons</li>
+					</ul>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-complete">Character select has visuals and is functional</li>
+								<li class="item-complete">Character portraits added</li>
+								<li class="item-complete">Character names added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-complete">Music added</li>
+								<li class="item-complete">General sound effects added</li>
+								<li class="item-complete">Announcer added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="EL2">E's Laf++</h2>
+				<div id="EL2-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-complete">Character select has visuals and is mostly functional</li>
+								<ul>
+									<li class="item-incomplete">Lacks functionality for random selection</li>
+								</ul>
+								<li class="item-complete">Character portraits added</li>
+								<li class="item-complete">Character names added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-complete">Music added</li>
+								<li class="item-complete">General sound effects added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="FM">Fraymakers</h2>
+				<div id="FM-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-inprogress">Character select has visuals and is functional; functionality out of date</li>
+								<li class="item-incomplete">Character portraits not added</li>
+								<li class="item-incomplete">Character names not added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-incomplete">Music not added</li>
+								<li class="item-incomplete">General sound effects not added</li>
+								<li class="item-incomplete">Announcer not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="GBVSR">Granblue Fantasy Versus: Rising</h2>
+				<div id="GBVSR-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-complete">Character select has visuals and is functional</li>
+								<li class="item-complete">Character portraits added</li>
+								<li class="item-complete">Character names added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-complete">Music added</li>
+								<li class="item-complete">General sound effects added</li>
+								<li class="item-incomplete">Announcer not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="GGML">Guilty Gear: The Missing Link</h2>
+				<div id="GGML-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-complete">Character select has visuals and is functional</li>
+								<li class="item-inprogress">Character portraits added; lack proper animations</li>
+								<li class="item-inprogress">Character names added; lack proper animations</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-incomplete">Music not added</li>
+								<li class="item-incomplete">General sound effects not added</li>
+								<li class="item-incomplete">Announcer not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="GGST">Guilty Gear -Strive-</h2>
+				<div id="GGST-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-complete">Character select added</li>
+								<li class="item-complete">Character portraits added</li>
+								<li class="item-complete">Character names added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-incomplete">Music not added</li>
+								<li class="item-incomplete">General sound effects not added</li>
+								<li class="item-incomplete">Announcer not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="GGXRD">Guilty Gear Xrd REV 2</h2>
+				<div id="GGXRD-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-complete">Character select has visuals and is functional</li>
+								<li class="item-complete">Character portraits added</li>
+								<li class="item-complete">Character names added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-complete">Music added</li>
+								<li class="item-complete">General sound effects added</li>
+								<li class="item-inprogress">Announcer partially added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="GGACR">Guilty Gear XX Accent Core +R</h2>
+				<div id="GGACR-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>KNOWN ISSUES</h3>
+					<ul>
+						<li></li>
+					</ul>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-inprogress">Character select has visuals and is functional; functionality out of date</li>
+								<li class="item-incomplete">Character portraits not added</li>
+								<li class="item-incomplete">Character names not added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-incomplete">Music not added</li>
+								<li class="item-incomplete">General sound effects not added</li>
+								<li class="item-incomplete">Announcer not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="HxHNI">HUNTER&times;HUNTER NEN&times;IMPACT</h2>
+				<div id="HxHNI-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-complete">Character select has visuals and is functional</li>
+								<li class="item-inprogress">Character portraits added; lack proper animations</li>
+								<li class="item-complete">Character names added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-incomplete">Music not added</li>
+								<li class="item-incomplete">General sound effects not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="ISD">Idol Showdown</h2>
+				<div id="ISD-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-complete">Background added</li>
+								<li class="item-inprogress">Character select has visuals and is functional; slight tweak to map dimensions needed</li>
+								<li class="item-complete">Character portraits added</li>
+								<li class="item-complete">Character names added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-complete">Music added</li>
+								<li class="item-complete">General sound effects added</li>
+								<li class="item-complete">Announcer added</li>
+								<li class="item-complete">Character banter added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="KLKIF">Kill la Kill -IF</h2>
+				<div id="KLKIF-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-inprogress">Character select has visuals and is mostly functional</li>
+								<ul>
+									<li class="item-incomplete">Lacks selection options for Ryuko Matoi (Dual Wield) and Satsuki Kiryuin (Dual Wield)</li>
+								</ul>
+								<li class="item-complete">Character portraits added; positioning tweaks needed</li>
+								<li class="item-complete">Character names added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-complete">Music added</li>
+								<li class="item-complete">General sound effects added</li>
+								<li class="item-complete">Character banter added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="KoFXIII">The King of Fighters XIII</h2>
+				<div id="KoFXIII-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-inprogress">Character select has visuals and is mostly functional; behind-the-scenes funtions out of date</li>
+								<ul>
+									<li class="item-incomplete">Lacks functionality for random selection</li>
+									<li class="item-incomplete">Lacks selection options for EX characters</li>
+								</ul>
+								<li class="item-complete">Character portraits added</li>
+								<li class="item-complete">Character names added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-incomplete">Music not added</li>
+								<li class="item-incomplete">General sound effects not added</li>
+								<li class="item-incomplete">Announcer not added</li>
+								<li class="item-incomplete">Character banter not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="KoFXV">The King of Fighters XV</h2>
+				<div id="KoFXV-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-incomplete">Character select not added</li>
+								<li class="item-incomplete">Character portraits not added</li>
+								<li class="item-incomplete">Character names not added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-incomplete">Music not added</li>
+								<li class="item-incomplete">General sound effects not added</li>
+								<li class="item-incomplete">Announcer not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="KF2">Kirby Fighters 2</h2>
+				<div id="KF2-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-inprogress">Character select has visuals; lacks funtionality</li>
+								<li>Character portraits unnecessary</li>
+								<li>Character names unnecessary</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-incomplete">Music not added</li>
+								<li class="item-incomplete">General sound effects not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="MnS">Maiden &amp; Spell</h2>
+				<div id="MnS-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-inprogress">Character select has visuals and is functional; functionality out of date</li>
+								<li class="item-inprogress">Character portraits added; improperly formatted</li>
+								<li class="item-inprogress">Character names added; improperly formatted</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-inprogress">Music added; loops improperly</li>
+								<li class="item-incomplete">General sound effects not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="MvCIB">Marvel vs. Capcom: Infinite &amp; Beyond</h2>
+				<div id="MvCIB-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-incomplete">Character select not added</li>
+								<li class="item-incomplete">Character portraits not added</li>
+								<li class="item-incomplete">Character names not added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-incomplete">Music not added</li>
+								<li class="item-incomplete">General sound effects not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="MBAACC">Melty Blood: Actress Again Current Code</h2>
+				<div id="MBAACC-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-complete">Background added</li>
+								<li class="item-complete">Character select has visuals and is functional</li>
+								<li class="item-complete">Character portraits added</li>
+								<li class="item-complete">Character names added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-complete">Music added</li>
+								<li class="item-complete">General sound effects added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="MBTL">Melty Blood: Type Lumina</h2>
+				<div id="MBTL-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-complete">Background added</li>
+								<li class="item-complete">Character select has visuals and is functional</li>
+								<li class="item-inprogress">Character portraits added; positioning tweaks needed</li>
+								<li class="item-complete">Character names added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-complete">Music added</li>
+								<li class="item-complete">General sound effects added</li>
+								<li class="item-complete">Announcer added</li>
+								<li class="item-complete">Character banter added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="MAAB">Million Arthur: Arcana Blood</h2>
+				<div id="MAAB-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-incomplete">Character select not added</li>
+								<li class="item-incomplete">Character portraits not added</li>
+								<li class="item-incomplete">Character names not added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-incomplete">Music not added</li>
+								<li class="item-incomplete">General sound effects not added</li>
+								<li class="item-incomplete">Announcer not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="MVS">Multiversus</h2>
+				<div id="MVS-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-incomplete">Character select not added</li>
+								<li class="item-incomplete">Character portraits not added</li>
+								<li class="item-incomplete">Character names not added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-incomplete">Music not added</li>
+								<li class="item-incomplete">General sound effects not added</li>
+								<li class="item-incomplete">Character banter effects not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="NASB2">Nickelodeon All-Star Brawl</h2>
+				<div id="NASB2-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-incomplete">Character select not added</li>
+								<li class="item-incomplete">Character portraits not added</li>
+								<li class="item-incomplete">Character names not added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-incomplete">Music not added</li>
+								<li class="item-incomplete">General sound effects not added</li>
+								<li class="item-incomplete">Announcer not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="P4AU">Persona 4 Arena: Ultimax</h2>
+				<div id="P4AU-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>KNOWN ISSUES</h3>
+					<ul>
+						<li>Image map will occasionally fail to load, resulting in loss of functionality</li>
+					</ul>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-complete">Background added</li>
+								<li class="item-complete">Character select has visuals and is functional</li>
+								<ul>
+									<li class="item-complete">Has selection options for shadow characters</li>
+								</ul>
+								<li class="item-complete">Character portraits added</li>
+								<li class="item-complete">Character names added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-complete">Music added</li>
+								<li class="item-complete">General sound effects added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="PTDX">Pokk&eacute;n Tournament DX</h2>
+				<div id="PTDX-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-incomplete">Character select not added</li>
+								<li class="item-incomplete">Character portraits not added</li>
+								<li class="item-incomplete">Character names not added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-incomplete">Music not added</li>
+								<li class="item-incomplete">General sound effects not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="RoA">Rivals of Aether</h2>
+				<div id="RoA-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-inprogress">Character select has visuals and is functional; functionality out of date</li>
+								<li class="item-incomplete">Character portraits not added</li>
+								<li class="item-incomplete">Character names not added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-incomplete">Music not added</li>
+								<li class="item-incomplete">General sound effects not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="RoA2">Rivals of Aether 2</h2>
+				<div id="RoA2-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-incomplete">Character select not added</li>
+								<li class="item-incomplete">Character portraits not added</li>
+								<li class="item-incomplete">Character names not added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-incomplete">Music not added</li>
+								<li class="item-incomplete">General sound effects not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="SG">Skullgirls</h2>
+				<div id="SG-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<ul>
+						<li>Image map will occasionally fail to load, resulting in loss of functionality</li>
+					</ul>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-complete">Background added</li>
+								<li class="item-complete">Character select has visuals and is functional</li>
+								<li class="item-inprogress">Character portraits added; lacks animations</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-complete">Music added</li>
+								<li class="item-complete">General sound effects added</li>
+								<li class="item-incomplete">Announcer not added</li>
+								<li class="item-incomplete">Character banter not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="SC">Slap City</h2>
+				<div id="SC-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-complete">Character select has visuals and is functional</li>
+								<li class="item-complete">Character portraits added</li>
+								<li class="item-inprogress">Character names added; formatting tweaks needed</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-incomplete">Music not added</li>
+								<li class="item-incomplete">General sound effects not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="SF6">Street Fighter 6</h2>
+				<div id="SF6-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-complete">Background added</li>
+								<li class="item-complete">Character select added</li>
+								<li class="item-complete">Character portraits added</li>
+								<li class="item-complete">Character names added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-incomplete">Music not added</li>
+								<li class="item-incomplete">General sound effects not added</li>
+								<li class="item-incomplete">Announcer effects not added</li>
+								<li class="item-incomplete">Character banter not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="SSBC">Super Smash Bros. Crusade</h2>
+				<div id="SSBC-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-inprogress">Character select has visuals and is functional; functionality out of date</li>
+								<li class="item-incomplete">Character portraits not added</li>
+								<li class="item-incomplete">Character names not added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-incomplete">Music not added</li>
+								<li class="item-incomplete">General sound effects not added</li>
+								<li class="item-incomplete">Announcer not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="SSBU">Super Smash Bros. Ultimate</h2>
+				<div id="SSBU-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-inprogress">Character select has visuals and is functional; functionality out of date</li>
+								<li class="item-incomplete">Character portraits not added</li>
+								<li class="item-incomplete">Character names not added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-incomplete">Music not added</li>
+								<li class="item-incomplete">General sound effects not added</li>
+								<li class="item-incomplete">Announcer not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="SSF2">Super Smash Flash 2</h2>
+				<div id="SSF2-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>KNOWN ISSUES</h3>
+					<ul>
+						<li></li>
+					</ul>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-inprogress">Character select has visuals and is functional; functionality out of date</li>
+								<li class="item-incomplete">Character portraits not added</li>
+								<li class="item-incomplete">Character names not added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-incomplete">Music not added</li>
+								<li class="item-incomplete">General sound effects not added</li>
+								<li class="item-incomplete">Announcer not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="REX">Super Smash REX</h2>
+				<div id="REX-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>KNOWN ISSUES</h3>
+					<ul>
+						<li></li>
+					</ul>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-complete">Background added</li>
+								<li class="item-complete">Character select has visuals and is functional</li>
+								<ul>
+									<li class="item-complete">Has selection options for L-load characters</li>
+								</ul>
+								<li class="item-inprogress">Character portraits partially added</li>
+								<li class="item-incomplete">Character names not added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-incomplete">Music not added</li>
+								<li class="item-incomplete">General sound effects not added</li>
+								<li class="item-incomplete">Announcer not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="T8">Tekken 8</h2>
+				<div id="MVS-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-incomplete">Character select not added</li>
+								<li class="item-incomplete">Character portraits not added</li>
+								<li class="item-incomplete">Character names not added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-incomplete">Music not added</li>
+								<li class="item-incomplete">General sound effects not added</li>
+								<li class="item-incomplete">Announcer not added</li>
+								<li class="item-incomplete">Character banter not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="SOKU">Touhou Hisoutensoku</h2>
+				<div id="SOKU-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-complete">Background added</li>
+								<li class="item-complete">Character select has visuals and is functional</li>
+								<li class="item-complete">Character portraits added</li>
+								<li class="item-complete">Character names added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-complete">Music added</li>
+								<li class="item-complete">General sound effects added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="AoCF">Touhou Hyouibana ~ Antinomy of Common Flowers</h2>
+				<div id="AoCF-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-complete">Background added</li>
+								<li class="item-complete">Character select has visuals and is functional</li>
+								<li class="item-complete">Character portraits added</li>
+								<li class="item-complete">Character names added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-complete">Music added</li>
+								<li class="item-complete">General sound effects added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="UMvC3">Ultimate Marvel vs. Capcom 3</h2>
+				<div id="MVS-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-incomplete">Character select not added</li>
+								<li class="item-incomplete">Character portraits not added</li>
+								<li class="item-incomplete">Character names not added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-incomplete">Music not added</li>
+								<li class="item-incomplete">General sound effects not added</li>
+								<li class="item-incomplete">Announcer not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="UFDK2">Ultra Fight Da! Kyanta 2</h2>
+				<div id="UFDK2-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-complete">Background added</li>
+								<li class="item-complete">Character select has visuals and is functional</li>
+								<li class="item-complete">Character portraits added</li>
+								<li class="item-complete">Character names added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-complete">Music added</li>
+								<li class="item-complete">General sound effects added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+				<h2 id="UNI2">Under Night In-Birth II Sys:Celes</h2>
+				<div id="UNI2-info" class="info-container">
+					<h3 class="game-status">STATUS: <span></span></h3>
+					<h3>STYLING</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4>Visuals</h4>
+							<ul>
+								<li class="item-incomplete">Background not added</li>
+								<li class="item-complete">Character select has visuals and is functional</li>
+								<li class="item-complete">Character portraits added</li>
+								<li class="item-complete">Character names added</li>
+							</ul>
+						</div>
+						<div class="info-subsubsection">
+							<h4>Audio</h4>
+							<ul>
+								<li class="item-complete">Music added</li>
+								<li class="item-complete">General sound effects added</li>
+								<li class="item-incomplete">Announcer not added</li>
+								<li class="item-incomplete">Character banter not added</li>
+							</ul>
+						</div>
+					</div>
+					<h3>CHARACTERS</h3>
+					<div class="info-subsection">
+						<div class="info-subsubsection">
+							<h4></h4>
+							<ul>
+								<li class="item-incomplete">Overview Info Missing</li>
+								<li class="item-incomplete">Ratings Info Missing</li>
+								<li class="item-incomplete">Description Missing</li>
+							</ul>
+						</div>
+					</div>
+					<h3>OTHER</h3>
+					<ul>
+						<li class="item-incomplete">Mobile format unsupported</li>
+					</ul>
+				</div>
+			</main>
+			<nav>
+				<h3>Jump To:</h3>
+				<ul>
+					<li>
+						<a href="#AFQM">A Few Quick Matches</a>
+					</li>
+					<li>
+						<a href="#AUAU">Among Us Arena Ultimate</a>
+					</li>
+					<li>
+						<a href="#AH3X">Arcana Heart 3 LOVEMAX SIXSTARS!!!!!! XTEND</a>
+					</li>
+					<li>
+						<a href="#BBCF">BlazBlue: Central Fiction</a>
+					</li>
+					<li>
+						<a href="#BBTAG">BlazBlue: Cross Tag Battle</a>
+					</li>
+					<li>
+						<a href="#NSC">Chaos Code -New Sign of Catastrophe-</a>
+					</li>
+					<li>
+						<a href="#DNFD">DNF Duel</a>
+					</li>
+					<li>
+						<a href="#DDND">Dong Dong Never Die: Judgement Day</a>
+					</li>
+					<li>
+						<a href="#DBFZ">Dragon Ball FighterZ</a>
+					</li>
+					<li>
+						<a href="#EL2">E's Laf++</a>
+					</li>
+					<li>
+						<a href="#FM">Fraymakers</a>
+					</li>
+					<li>
+						<a href="#GBVSR">Granblue Fantasy Versus: Rising</a>
+					</li>
+					<li>
+						<a href="#GGML">Guilty Gear: The Missing Link</a>
+					</li>
+					<li>
+						<a href="#GGST">Guilty Gear -Strive-</a>
+					</li>
+					<li>
+						<a href="#GGXRD">Guilty Gear Xrd REV 2</a>
+					</li>
+					<li>
+						<a href="#GGACR">Guilty Gear XX Accent Core +R</a>
+					</li>
+					<li>
+						<a href="#HxHNI">HUNTER&times;HUNTER NEN&times;IMPACT</a>
+					</li>
+					<li>
+						<a href="#ISD">Idol Showdown</a>
+					</li>
+					<li>
+						<a href="#KLKIF">Kill la Kill -IF</a>
+					</li>
+					<li>
+						<a href="#KoFXIII">The King of Fighters XIII</a>
+					</li>
+					<li>
+						<a href="#KoFXV">The King of Fighters XV</a>
+					</li>
+					<li>
+						<a href="#KF2">Kirby Fighters 2</a>
+					</li>
+					<li>
+						<a href="#MnS">Maiden &amp; Spell</a>
+					</li>
+					<li>
+						<a href="#MvCIB">Marvel vs. Capcom: Infinite &amp; Beyond</a>
+					</li>
+					<li>
+						<a href="#MBAACC">Melty Blood: Actress Again Current Code</a>
+					</li>
+					<li>
+						<a href="#MBTL">Melty Blood: Type Lumina</a>
+					</li>
+					<li>
+						<a href="#MAAB">Million Arthur: Arcana Blood</a>
+					</li>
+					<li>
+						<a href="#MVS">Multiversus</a>
+					</li>
+					<li>
+						<a href="#NASB2">Nickelodeon All-Star Brawl</a>
+					</li>
+					<li>
+						<a href="#P4AU">Persona 4 Arena: Ultimax</a>
+					</li>
+					<li>
+						<a href="#PTDX">Pokk&eacute;n Tournament DX</a>
+					</li>
+					<li>
+						<a href="#RoA">Rivals of Aether</a>
+					</li>
+					<li>
+						<a href="#RoA2">Rivals of Aether 2</a>
+					</li>
+					<li>
+						<a href="#SG">Skullgirls</a>
+					</li>
+					<li>
+						<a href="#SC">Slap City</a>
+					</li>
+					<li>
+						<a href="#SF6">Street Fighter 6</a>
+					</li>
+					<li>
+						<a href="#SSBC">Super Smash Bros. Crusade</a>
+					</li>
+					<li>
+						<a href="#SSBU">Super Smash Bros. Ultimate</a>
+					</li>
+					<li>
+						<a href="#SSF2">Super Smash Flash 2</a>
+					</li>
+					<li>
+						<a href="#REX">Super Smash REX</a>
+					</li>
+					<li>
+						<a href="#T8">Tekken 8</a>
+					</li>
+					<li>
+						<a href="#SOKU">Touhou Hisoutensoku</a>
+					</li>
+					<li>
+						<a href="#AoCF">Touhou Hyouibana ~ Antinomy of Common Flowers</a>
+					</li>
+					<li>
+						<a href="#UMvC3">Ultimate Marvel vs. Capcom 3</a>
+					</li>
+					<li>
+						<a href="#UFDK2">Ultra Fight Da! Kyanta 2</a>
+					</li>
+					<li>
+						<a href="#UNI2">Under Night In-Birth II Sys:Celes</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</body>
+</html>
