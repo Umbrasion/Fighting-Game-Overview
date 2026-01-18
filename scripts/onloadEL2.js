@@ -22,8 +22,8 @@ const sfx = {
 	cursor: new Audio("audio/sfx/el2/00000_cursor.wav"),
 	confirm: new Audio("audio/sfx/el2/00010_enter.wav"),
 }
-sfx.cursor.volume = 0.2;
-sfx.confirm.volume = 0.2;
+sfx.cursor.volume = 0.1;
+sfx.confirm.volume = 0.1;
 
 var previewDisplayOn = true;
 

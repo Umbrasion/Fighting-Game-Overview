@@ -51,8 +51,8 @@ const sfx = {
 	cursor: new Audio("audio/sfx/gbvsr/SE_SYS_Cursor.ogg"),
 	confirm: new Audio("audio/sfx/gbvsr/SE_SYS_Decide1.ogg"),
 }
-sfx.cursor.volume = 0.1;
-sfx.confirm.volume = 0.1;
+sfx.cursor.volume = 0.05;
+sfx.confirm.volume = 0.05;
 
 var previewDisplayOn = false;
 

@@ -339,21 +339,71 @@ function initializePageDisplay(gameName) {
 	} else {
 		fetch("games/" + gameName + ".html").then(response => response.text()).then(text => {
 			var pageData = text.split("<body>")[1].split("</body>")[0];
-			document.body.innerHTML = `<button id="returnbutton" onclick="initializePageDisplay()">Back to Game Select</button>` + pageData;
 
-			if (gameName !== undefined) {
-				gameStyle.href = "styles/games/" + gameName + ".css";
-			} else {
-				gameStyle.href = "";
+			document.body.innerHTML = `<h1 class="info-loading">Loading...</h1>`;
+
+			function loadPage() {
+				document.body.innerHTML = `<button id="returnbutton" onclick="initializePageDisplay()">Back to Game Select</button>` + pageData.split('<div class="preload-container">')[0];
+
+				if (gameName !== undefined) {
+					gameStyle.href = "styles/games/" + gameName + ".css";
+				} else {
+					gameStyle.href = "";
+				}
+
+				var head = document.getElementsByTagName("head")[0];
+				var script = document.createElement("script");
+				if (gameName !== undefined) {
+					script.src = "scripts/onload" + gameName + ".js";
+				}
+				head.removeChild(head.lastElementChild);
+				head.appendChild(script);
 			}
 
-			var head = document.getElementsByTagName("head")[0];
-			var script = document.createElement("script");
-			if (gameName !== undefined) {
-				script.src = "scripts/onload" + gameName + ".js";
+			// Loading
+
+			try {
+				var mediaList = pageData.split('<div class="preload-container">')[1].split("</div>")[0].split('src="');
+				mediaList.splice(0,1);
+				var preloadMedia = [];
+				mediaList.forEach(element => {
+					preloadMedia.push(element.split('">')[0]);
+				});
+
+				// Are you even a programmer if you aren't blatantly stealing code from StackOverflow
+				async function loadMedia(mediaUrlArray) {
+					const promiseArray = [];
+					const mediaArray = [];
+
+					for (let mediaUrl of mediaUrlArray) {
+						promiseArray.push(new Promise(resolve => {
+							var media;
+							if (mediaUrl.includes("img/")) {
+								media = new Image();
+								media.onload = resolve;
+							} else if (mediaUrl.includes("audio/")) {
+								media = new Audio();
+								media.oncanplaythrough = resolve;
+							}
+							
+							media.src = mediaUrl;
+							mediaArray.push(media);
+						}));
+					}
+
+					await Promise.all(promiseArray);
+					return true;
+				}
+				
+				loadMedia(preloadMedia).then(result => {
+					if (result) {
+						loadPage();
+					}
+				});
+			} catch (error) {
+				console.log("No preload found, failed to preload");
+				loadPage();
 			}
-			head.removeChild(head.lastElementChild);
-			head.appendChild(script);
 		});
 	}
 }

@@ -73,6 +73,10 @@ a:hover {
 	z-index: 99;
 }
 
+.info-loading {
+	text-align: center;
+}
+
 #characterselect {
 	position: relative;
 	width: auto;

@@ -182,7 +182,6 @@
    - Grimnir
    - Metera
    - Lowain
-   - Katalina
    - Vira
    - Yuel
    - Cagliostro
@@ -201,6 +200,8 @@
  - Colors 7-17 for various characters
  - Elphelt character costume [DLC]
  - Additional colors for Baiken & Answer [DLC]
+= GUILTY GEAR XX ACCENT CORE +R =
+ - 
 = HUNTER×HUNTER NEN×IMPACT =
  - All unlocked
 = IDOL SHOWDOWN =

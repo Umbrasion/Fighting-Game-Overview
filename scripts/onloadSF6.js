@@ -66,6 +66,8 @@ chrSel.forEach(element => {
 	);
 });
 
+// Display on click
+
 var announcer = new Audio();
 var banter = new Audio();
 
@@ -327,7 +329,7 @@ function runDisplay(characterName) {
 				characterName
 			);
 			break;
-		case "Chun-li":
+		case "Chun-Li":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",

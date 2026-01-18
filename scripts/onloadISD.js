@@ -151,9 +151,14 @@ chrSel.random.addEventListener("mouseover",
 
 var banterNum = 0;
 var prevBanterNum = 0;
+var announcer = new Audio();
 var banter = new Audio();
 
 function runDisplay(characterName) {
+	announcer.onended = function() {}
+	if (!announcer.paused) {
+		announcer.pause();
+	}
 	previewDisplayOn = false;
 	
 	sfx.confirm.currentTime = 0;
@@ -212,9 +217,12 @@ function runDisplay(characterName) {
 		chrPrevImg.src = "img/portraits/isd/" + charFileName + "_small.png";
 		chrName.src = "img/characterSelect/isd/logos/" + charFileName + "_logo.png";
 
-		var announcer = new Audio("audio/sfx/isd/announcer/" + charFileName + "_call.ogg");
+		announcer = new Audio("audio/sfx/isd/announcer/" + charFileName + "_call.ogg");
 		announcer.volume = 0.75;
 		announcer.play();
+		if (!banter.paused) {
+			banter.pause();
+		}
 		announcer.onended = function() {
 			reroll: while (true) {
 				switch (charFileName) {
@@ -240,10 +248,6 @@ function runDisplay(characterName) {
 					prevBanterNum = banterNum;
 					break reroll;
 				}
-			}
-
-			if (!banter.paused) {
-				banter.pause();
 			}
 			banter = new Audio("audio/sfx/isd/banter/" + charFileName + "_" + banterNum + ".ogg");
 			banter.volume = 0.75;

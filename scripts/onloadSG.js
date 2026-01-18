@@ -78,11 +78,9 @@ sfx.portrait.volume = 0.2;
 sfx.confirm.volume = 0.2;
 
 function playSelectAudio() {
-	sfx.cursor.pause();
 	sfx.cursor.currentTime = 0;
 	sfx.cursor.play();
 	if (previewDisplayOn) {
-		sfx.portrait.pause();
 		sfx.portrait.currentTime = 0;
 		sfx.portrait.play();
 	}
