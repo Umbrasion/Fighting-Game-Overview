@@ -112,7 +112,6 @@ function hoverDisplay(charFileName, seriesName, extraSeriesInfo = ["", "", "", f
 		void chrPrevImg.offsetWidth;
 		chrPrevImg.classList.add("portrait-onhover");
 		if (seriesName == "AH3" || seriesName == "SK" || seriesName == "AKBK") {
-			console.log(extraSeriesInfo[3]);
 			if (!extraSeriesInfo[3]) {
 				charSelOthers.bg.style.backgroundImage = "url('img/characterSelect/bbtag/" + seriesName + "_border.webp')";
 				charSelOthers.bgL.style.backgroundImage = "url('img/characterSelect/bbtag/" + seriesName + "_border.webp')";
@@ -361,7 +360,7 @@ chrSel.hyde.addEventListener("mouseover",
 
 chrSel.linne.addEventListener("mouseover",
 	(event) => {
-		hoverDisplay("linne", "UNI");
+		hoverDisplay("Linne", "UNI");
 	}
 );
 
