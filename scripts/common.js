@@ -369,7 +369,7 @@ function initializePageDisplay(gameName, skipTransition = false) {
 				element.style.pointerEvents = "none";
 			});
 
-			var selectSound = new Audio("../audio/sfx/" + gameName.toLowerCase() + "/menu_confirm.ogg");
+			var selectSound = new Audio("audio/sfx/" + gameName.toLowerCase() + "/menu_confirm.ogg");
 			selectSound.volume = 0.1;
 			selectSound.play();
 
