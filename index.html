@@ -3,6 +3,7 @@
 	<head>
 		<title>Fighting Game Overview</title>
 		<meta charset="utf-8">
+		<link rel="icon" href="favicon.ico">
 		<link rel="stylesheet" href="styles/main.css">
 		<link rel="stylesheet" href="styles/infoColors.css">
 		<link id="gamestyle" rel="stylesheet" href="">
@@ -12,6 +13,7 @@
 		<style>
 			.gamebox-logo {
 				min-width: 280px;
+				max-width: 280px;
 			}
 
 			.gamebox-completion {
@@ -25,448 +27,432 @@
 				padding: 20px;
 			}
 
-			.gamebox a {
+			.pagelink {
 				cursor: pointer;
+				transition: all 0.2s;
+				height: fit-content;
+			}
+
+			.pagelink:hover {
+				text-decoration: none;
+				transform: translate(0, -10px);
+				transition: all 0.2s;
+				animation: pagelink-onhover 0.8s ease-in-out -0.3s infinite alternate;
+			}
+
+			.pagelink-transition {
+				text-decoration: none;
+				transform: translate(0, -10px);
+				transition: all 0.2s;
+				animation: pagelink-onhover 0.8s ease-in-out -0.3s infinite alternate;
+			}
+			
+			@keyframes pagelink-onhover {
+				from {
+					filter: contrast(1) brightness(1);
+				}
+				
+				to {
+					filter: contrast(0.5) brightness(1.5) drop-shadow(0 0 2px white);
+				}
+			}
+
+			.transition-content {
+				transition: all 0.4s;
 			}
 		</style>
 		<script id="dummyscript" src="" defer></script>
 	</head>
 	<body>
 		<nav id="navspace" data-goto=""></nav>
-		<main>
+		<main class="transition-content">
 			<div class="content-segment">
-				<h1 class="segment-maintitle">All Games</h1>
+				<h1 class="segment-maintitle">SELECT YOUR GAME</h1>
 				<h3 style="color: red; text-align: center">NOTICE: All games currently only work on a horizontal layout. If any are viewed on a vertical/portrait layout, formatting errors may arise.</h3>
 				<h3 style="color: red; text-align: center">Information presented may be contestable or inaccurate; if you feel any information presented is as such, do reach out to me and let me know.</h3>
 				<!-- <h3 style="text-align: center">Current progress on all games can be found <a href="progress.html">HERE</a></h3> -->
 				<div class="games-container">
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('AFQM')">
+					<!-- Some alt text is spelled more phonetically for the purposes of screenreaders. Hopefully I'm not doing this horribly insufficiently -->
+					<a class="pagelink" onclick="initializePageDisplay('AFQM')" title="A Few Quick Matches">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/AFQM_logo.png" class="gamebox-logo">
+								<img src="img/logos/AFQM_logo.png" class="gamebox-logo" alt="A Few Quick Matches">
 							</div>
-							<figcaption class="gamebox-title">A Few Quick Matches</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: red">No Progress</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('AUAU')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('AUAU')" title="Among Us Arena Ultimate">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/AUAU_logo.png" class="gamebox-logo">
+								<img src="img/logos/AUAU_logo.png" class="gamebox-logo" alt="Among Us Arena Ultimate">
 							</div>
-							<figcaption class="gamebox-title">Among Us Arena Ultimate</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: tomato">Needs Rework</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('AH3X')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('AH3X')" title="Arcana Heart 3 Lovemax SIXSTARS!!!!!! Xtend">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/AH3X_logo.png" class="gamebox-logo">
+								<img src="img/logos/AH3X_logo.png" class="gamebox-logo" alt="Arcana Heart 3 Lovemax Sixstars Extend">
 							</div>
-							<figcaption class="gamebox-title">Arcana Heart 3 LOVEMAX SIXSTARS!!!!!! XTEND</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: yellow">Minor Additions/Formatting</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('BBCF')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('BBCF')" title="BlazBlue: Central Fiction">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/BBCF_logo.png" class="gamebox-logo">
+								<img src="img/logos/BBCF_logo.png" class="gamebox-logo" alt="BlazBlue: Central Fiction">
 							</div>
-							<figcaption class="gamebox-title">BlazBlue: Central Fiction</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: lightgreen">Presentable State</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('BBTAG')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('BBTAG')" title="BlazBlue: Cross Tag Battle">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/BBTAG_logo.png" class="gamebox-logo">
+								<img src="img/logos/BBTAG_logo.png" class="gamebox-logo" alt="BlazBlue: Cross Tag Battle">
 							</div>
-							<figcaption class="gamebox-title">BlazBlue: Cross Tag Battle</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: yellow">Minor Additions/Formatting</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('NSC')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('NSC')" title="Chaos Code -New Sign of Catastrophe-">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/NSC_logo.png" class="gamebox-logo">
+								<img src="img/logos/NSC_logo.png" class="gamebox-logo" alt="Chaos Code New Sign of Catastrophe">
 							</div>
-							<figcaption class="gamebox-title">Chaos Code -New Sign of Catastrophe-</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: tomato">Minor Progress</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('DNFD')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('DNFD')" title="DNF Duel">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/DNFD_logo.png" class="gamebox-logo">
+								<img src="img/logos/DNFD_logo.png" class="gamebox-logo" alt="DNF Duel">
 							</div>
-							<figcaption class="gamebox-title">DNF Duel</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: orange">Character Select Only</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('DDND')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('DDND')" title="Dong Dong Never Die: Judgement Day">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/DDND_logo.png" class="gamebox-logo">
+								<img src="img/logos/DDND_logo.png" class="gamebox-logo" alt="Dong Dong Never Die: Judgement Day">
 							</div>
-							<figcaption class="gamebox-title">Dong Dong Never Die: Judgement Day</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: yellow">Minor Additions/Formatting</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('DBFZ')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('DBFZ')" title="Dragon Ball FighterZ">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/DBFZ_logo.png" class="gamebox-logo">
+								<img src="img/logos/DBFZ_logo.png" class="gamebox-logo" alt="Dragon Ball Fighters">
 							</div>
-							<figcaption class="gamebox-title">Dragon Ball FighterZ</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: yellowgreen">Minor Additions</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('EL2')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('EL2')" title="E's Laf++">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/EL2_logo.png" class="gamebox-logo">
+								<img src="img/logos/EL2_logo.png" class="gamebox-logo" alt="E's Laf Plus Plus">
 							</div>
-							<figcaption class="gamebox-title">E's Laf++</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: yellowgreen">Minor Additions</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('FM')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('FM')" title="Fraymakers">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/FM_logo.png" class="gamebox-logo">
+								<img src="img/logos/FM_logo.png" class="gamebox-logo" alt="Fraymakers">
 							</div>
-							<figcaption class="gamebox-title">Fraymakers</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: orange">Character Select Only</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('GBVSR')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('GBVSR')" title="Granblue Fantasy Versus: Rising">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/GBVSR_logo.png" class="gamebox-logo">
+								<img src="img/logos/GBVSR_logo.png" class="gamebox-logo" alt="Granblue Fantasy Versus: Rising">
 							</div>
-							<figcaption class="gamebox-title">Granblue Fantasy Versus: Rising</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: lightgreen">Presentable State</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('GGML')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('GGML')" title="Guilty Gear: The Missing Link">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/GGML_logo.png" class="gamebox-logo">
+								<img src="img/logos/GGML_logo.png" class="gamebox-logo" alt="Guilty Gear: The Missing Link">
 							</div>
-							<figcaption class="gamebox-title">Guilty Gear: The Missing Link</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: yellow">Minor Additions/Formatting</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('GGST')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('GGST')" title="Guilty Gear -Strive-">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/GGST_logo.png" class="gamebox-logo">
+								<img src="img/logos/GGST_logo.png" class="gamebox-logo" alt="Guilty Gear Strive">
 							</div>
-							<figcaption class="gamebox-title">Guilty Gear -Strive-</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: yellow">Minor Additions/Formatting</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('GGXRD')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('GGXRD')" title="Guilty Gear Xrd REV 2">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/GGXRD_logo.png" class="gamebox-logo">
+								<img src="img/logos/GGXRD_logo.png" class="gamebox-logo" alt="Guilty Gear Xrd Rev 2">
 							</div>
-							<figcaption class="gamebox-title">Guilty Gear Xrd REV 2</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: yellowgreen">Minor Additions</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('GGACR')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('GGACR')" title="Guilty Gear XX Accent Core +R">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/GGACR_logo.png" class="gamebox-logo">
+								<img src="img/logos/GGACR_logo.png" class="gamebox-logo" alt="Guilty Gear XX Accent Core Plus R">
 							</div>
-							<figcaption class="gamebox-title">Guilty Gear XX Accent Core +R</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: orange">Character Select Only</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('HxHNI')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('HxHNI')" title="HUNTER&times;HUNTER NEN&times;IMPACT">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/HxHNI_logo.png" class="gamebox-logo">
+								<img src="img/logos/HxHNI_logo.png" class="gamebox-logo" alt="Hunter Hunter Nen Impact">
 							</div>
-							<figcaption class="gamebox-title">HUNTER&times;HUNTER NEN&times;IMPACT</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: yellow">Minor Additions/Formatting</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('ISD')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('ISD')" title="Idol Showdown">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/ISD_logo.png" class="gamebox-logo">
+								<img src="img/logos/ISD_logo.png" class="gamebox-logo" alt="Idol Showdown">
 							</div>
-							<figcaption class="gamebox-title">Idol Showdown</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: lightgreen">Presentable State</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('KLKIF')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('KLKIF')" title="Kill la Kill -IF">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/KLKIF_logo.png" class="gamebox-logo">
+								<img src="img/logos/KLKIF_logo.png" class="gamebox-logo" alt="Kill la Kill IF">
 							</div>
-							<figcaption class="gamebox-title">Kill la Kill -IF</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: yellowgreen">Minor Additions</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('KoFXIII')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('KoFXIII')" title="The King of Fighters XIII">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/KoFXIII_logo.png" class="gamebox-logo">
+								<img src="img/logos/KoFXIII_logo.png" class="gamebox-logo" alt="The King of Fighters 13">
 							</div>
-							<figcaption class="gamebox-title">The King of Fighters XIII</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: yellow">Rework/Minor Additions</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('KoFXV')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('KoFXV')" title="The King of FIghters XV">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/KoFXV_logo.png" class="gamebox-logo">
+								<img src="img/logos/KoFXV_logo.png" class="gamebox-logo" alt="The King of Fighters 15">
 							</div>
-							<figcaption class="gamebox-title">The King of Fighters XV</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: red">No Progress</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('KF2')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('KF2')" title="Kirby Fighters 2">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/KF2_logo.webp" class="gamebox-logo">
+								<img src="img/logos/KF2_logo.webp" class="gamebox-logo" alt="Kirby Fighters 2">
 							</div>
-							<figcaption class="gamebox-title">Kirby Fighters 2</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: orange">Character Select Only</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('MnS')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('MnS')" title="Maiden &amp; Spell">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/MnS_logo.png" class="gamebox-logo">
+								<img src="img/logos/MnS_logo.png" class="gamebox-logo" alt="Maiden and Spell">
 							</div>
-							<figcaption class="gamebox-title">Maiden &amp; Spell</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: yellow">Minor Additions/Formatting</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('MvCIB')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('MvCIB')" title="Marvel vs. Capcom: Infinite and Beyond">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/MvCIB_logo.png" class="gamebox-logo">
+								<img src="img/logos/MvCIB_logo.png" class="gamebox-logo" alt="Marvel vs. Capcom: Infinite and Beyond">
 							</div>
-							<figcaption class="gamebox-title">Marvel vs. Capcom: Infinite &amp; Beyond</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: red">No Progress</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('MBAACC')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('MBAACC')" title="Melty Blood: Actress">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/MBAACC_logo.png" class="gamebox-logo">
+								<img src="img/logos/MBAACC_logo.png" class="gamebox-logo" alt="Melty Blood: Actress Again Current Code">
 							</div>
-							<figcaption class="gamebox-title">Melty Blood: Actress Again Current Code</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: lightgreen">Presentable State</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('MBTL')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('MBTL')" title="Melty Blood: Type Lumina">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/MBTL_logo.png" class="gamebox-logo">
+								<img src="img/logos/MBTL_logo.png" class="gamebox-logo" alt="Melty Blood: Type Lumina">
 							</div>
-							<figcaption class="gamebox-title">Melty Blood: Type Lumina</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: lightgreen">Presentable State</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('MAAB')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('MAAB')" title="Million Arthur: Arcana Blood">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/MAAB_logo.png" class="gamebox-logo">
+								<img src="img/logos/MAAB_logo.png" class="gamebox-logo" alt="Million Arthur: Arcana Blood">
 							</div>
-							<figcaption class="gamebox-title">Million Arthur: Arcana Blood</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: red">No Progress</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('MVS')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('MVS')" title="Multiversus">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/MVS_logo.png" class="gamebox-logo">
+								<img src="img/logos/MVS_logo.png" class="gamebox-logo" alt="Multiversus">
 							</div>
-							<figcaption class="gamebox-title">Multiversus</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: red">No Progress</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('NASB2')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('NASB2')" title="Nickelodeon All-Star Brawl 2">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/NASB2_logo.png" class="gamebox-logo">
+								<img src="img/logos/NASB2_logo.png" class="gamebox-logo" alt="Nickelodeon All-Star Brawl 2">
 							</div>
-							<figcaption class="gamebox-title">Nickelodeon All-Star Brawl 2</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: red">No Progress</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('P4AU')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('P4AU')" title="Persona 4 Arena Ultimax">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/P4AU_logo.png" class="gamebox-logo">
+								<img src="img/logos/P4AU_logo.png" class="gamebox-logo" alt="Persona 4 Arena Ultimax">
 							</div>
-							<figcaption class="gamebox-title">Persona 4 Arena: Ultimax</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: lightgreen">Presentable State</figcaption>
-					</div>
-					<!--div class="gamebox">
-						<a onclick="initializePageDisplay('PKMNCC')">
+					</a>
+					<!--a class="pagelink" onclick="initializePageDisplay('PKMNCC')" title="Pok&eacute;mon Close Combat">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/PKMNCC_logo.png" class="gamebox-logo">
+								<img src="img/logos/PKMNCC_logo.png" class="gamebox-logo" alt="Pokemon Close Combat">
 							</div>
-							<figcaption class="gamebox-title">Pok&eacute;mon Close Combat</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: red">No Progress</figcaption>
-					</div-->
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('PTDX')">
+					</a-->
+					<a class="pagelink" onclick="initializePageDisplay('PTDX')" title="Pokk&eacute;n Tournament DX">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/PTDX_logo.webp" class="gamebox-logo">
+								<img src="img/logos/PTDX_logo.webp" class="gamebox-logo" alt="Pokken Tournament DX">
 							</div>
-							<figcaption class="gamebox-title">Pokk&eacute;n Tournament DX</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: red">No Progress</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('RoA')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('RoA')" title="Rivals of Aether">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/RoA_logo.png" class="gamebox-logo">
+								<img src="img/logos/RoA_logo.png" class="gamebox-logo" alt="Rivals of Aether">
 							</div>
-							<figcaption class="gamebox-title">Rivals of Aether</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: orange">Character Select Only</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('RoA2')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('RoA2')" title="Rivals of Aether 2">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/RoA2_logo.png" class="gamebox-logo">
+								<img src="img/logos/RoA2_logo.png" class="gamebox-logo" alt="Rivals of Aether 2">
 							</div>
-							<figcaption class="gamebox-title">Rivals of Aether 2</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: red">No Progress</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('SG')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('SG')" title="Skullgirls">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/SG_logo.png" class="gamebox-logo">
+								<img src="img/logos/SG_logo.png" class="gamebox-logo" alt="Skullgirls">
 							</div>
-							<figcaption class="gamebox-title">Skullgirls</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: lightgreen">Presentable State</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('SC')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('SC')" title="Slap City">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/SC_logo.png" class="gamebox-logo">
+								<img src="img/logos/SC_logo.png" class="gamebox-logo" alt="Slap City">
 							</div>
-							<figcaption class="gamebox-title">Slap City</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: yellow">Minor Additions/Formatting</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('SF6')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('SF6')" title="Street Fighter 6">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/SF6_logo.png" class="gamebox-logo">
+								<img src="img/logos/SF6_logo.png" class="gamebox-logo" alt="Street Fighter 6">
 							</div>
-							<figcaption class="gamebox-title">Street Fighter 6</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: lightgreen">Presentable State</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('SSBC')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('SSBC')" title="Super Smash Bros. Crusade">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/SSBC_logo.png" class="gamebox-logo">
+								<img src="img/logos/SSBC_logo.png" class="gamebox-logo" alt="Super Smash Bros. Crusade">
 							</div>
-							<figcaption class="gamebox-title">Super Smash Bros. Crusade</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: orange">Character Select Only</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('SSBU')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('SSBU')" title="Super Smash Bros. Ultimate">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/SSBU_logo.webp" class="gamebox-logo">
+								<img src="img/logos/SSBU_logo.webp" class="gamebox-logo" alt="Super Smash Bros. Ultimate">
 							</div>
-							<figcaption class="gamebox-title">Super Smash Bros. Ultimate</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: orange">Character Select Only</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('SSF2')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('SSF2')" title="Super Smash Flash 2">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/SSF2_logo.png" class="gamebox-logo">
+								<img src="img/logos/SSF2_logo.png" class="gamebox-logo" alt="Super Smash Flash 2">
 							</div>
-							<figcaption class="gamebox-title">Super Smash Flash 2</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: orange">Character Select Only</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('REX')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('REX')" title="Super Smash REX">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/REX_logo.png" class="gamebox-logo">
+								<img src="img/logos/REX_logo.png" class="gamebox-logo" alt="Super Smash REX">
 							</div>
-							<figcaption class="gamebox-title">Super Smash REX</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: yellow">Unadded Images/Minor Additions</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('T8')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('T8')" title="Tekken 8">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/T8_logo.webp" class="gamebox-logo">
+								<img src="img/logos/T8_logo.webp" class="gamebox-logo" alt="Tekken 8">
 							</div>
-							<figcaption class="gamebox-title">Tekken 8</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: red">No Progress</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('SOKU')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('SOKU')" title="Touhou Hisoutensoku">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/SOKU_logo.png" class="gamebox-logo">
+								<img src="img/logos/SOKU_logo.png" class="gamebox-logo" alt="Touhou Hisoutensoku">
 							</div>
-							<figcaption class="gamebox-title">Touhou Hisoutensoku</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: lightgreen">Presentable State</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('AoCF')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('AoCF')" title="Touhou Hyouibana ~ Antinomy of Common Flowers">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/AoCF_logo.png" class="gamebox-logo">
+								<img src="img/logos/AoCF_logo.png" class="gamebox-logo" alt="Touhou Hyouibana Antinomy of Common Flowers">
 							</div>
-							<figcaption class="gamebox-title">Touhou Hyouibana ~ Antinomy of Common Flowers</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: lightgreen">Presentable State (possible rework)</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('UMvC3')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('UMvC3')" title="Ultimate Marvel vs. Capcom 3">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/UMvC3_logo.png" class="gamebox-logo">
+								<img src="img/logos/UMvC3_logo.png" class="gamebox-logo" alt="Ultimate Marvel vs. Capcom 3">
 							</div>
-							<figcaption class="gamebox-title">Ultimate Marvel vs. Capcom 3</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: red">No Progress</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('UFDK2')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('UFDK2')" title="Ultra Fight Da! Kyanta 2">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/UFDK2_logo.jpg" class="gamebox-logo">
+								<img src="img/logos/UFDK2_logo.jpg" class="gamebox-logo" alt="Ultra Fight Da Kyanta 2">
 							</div>
-							<figcaption class="gamebox-title">Ultra Fight Da! Kyanta 2</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: lightgreen">Presentable State</figcaption>
-					</div>
-					<div class="gamebox">
-						<a onclick="initializePageDisplay('UNI2')">
+					</a>
+					<a class="pagelink" onclick="initializePageDisplay('UNI2')" title="Under Night In-Birth II Sys:Celes">
+						<div class="gamebox">
 							<div class="gamebox-logocontainer">
-								<img src="img/logos/UNI2_logo.png" class="gamebox-logo">
+								<img src="img/logos/UNI2_logo.png" class="gamebox-logo" alt="Under Night In-Birth 2 Sys: Celes">
 							</div>
-							<figcaption class="gamebox-title">Under Night In-Birth II Sys:Celes</figcaption>
-						</a>
+						</div>
 						<figcaption class="gamebox-completion" style="color: yellowgreen">Minor Additions</figcaption>
-					</div>
+					</a>
 				</div>
 			</div>
 		</main>
-		<footer>
+		<footer class="transition-content">
 			<p>Site created and maintained by Umbrasion</p>
 			<p>Additional help from ... with character info</p>
 			<p>I do not claim ownership of any assets (music, visuals, or otherwise) used on this site</p>

@@ -72,7 +72,6 @@ function hoverDisplay(charFileName, scaleMeasures) {
 			charFileName = "Random";
 		}
 		chrName.innerHTML = charFileName.replace(/_/g, " ");
-		
 		chrPrevImg.style.transform = "scale(" + scaleMeasures[0] + ") translate(" + scaleMeasures[1] + "%, " + scaleMeasures[2] + "%)";
 	}
 }

@@ -99,7 +99,6 @@
    - Zeta
    - Vaseraga
    - Beatrix
-   - Lancelot
    - Vane
    - Percival
    - Siegfried
@@ -111,7 +110,6 @@
    - Djeeta
    - Charlotta
    - Ferry
-   - Anila
    - Vikala
    - Galleon
    - Grimnir
@@ -123,7 +121,6 @@
    - Cagliostro
    - Wilnas
    - Sandalphon
-   - Nier
    - Belial/Avatar Belial
    - Lucilius
    - Meg
@@ -139,9 +136,7 @@
    - Versusia
    - Zooey
    - Ladiva
-   - Narmaya
    - Gran
-   - Djeeta
    - Charlotta
    - Ferry
    - Vikala
@@ -150,7 +145,6 @@
    - Lowain
    - Katalina
    - Vira
-   - Cagliostro
    - Wilnas
    - Sandalphon
    - Nier
@@ -162,7 +156,6 @@
    - Zeta
    - Vaseraga
    - Beatrix
-   - Eustace
    - Anre
    - Seox
    - Lancelot
@@ -236,7 +229,51 @@
 = MULTIVERSUS =
  - Whatever's left of the unlockable content
 = NICKELODEON ALL-STAR BRAWL 2 =
- - All unlocked (as long as there's nothing behind the singleplayer campaign)
+ - Mind Controlled Brawler outfit for:
+   - SpongeBob
+   - Squidward
+   - Mecha Plankton
+   - El Tigre
+   - Rocko
+   - Angry Beavers
+   - Korra
+   - Raphael
+   - Donatello
+   - April
+   - Danny Phantom
+   - Grandma Gertie
+   - Gerald
+   - Zim
+   - Reptar
+   - Ren & Stimpy
+   - Mr. Crabs
+   - Zuko
+   - Iroh
+   - Rocksteady
+ - Ghost Clone Brawler outfit for:
+   - SpongeBob
+   - Patrick
+   - Squidward
+   - Mecha Plankton
+   - El Tigre
+   - Rocko
+   - Angry Beavers
+   - Aang
+   - Korra
+   - Raphael
+   - Donatello
+   - April
+   - Danny Phantom
+   - Ember
+   - Grandma Gertie
+   - Gerald
+   - Zim
+   - Reptar
+   - Ren & Stimpy
+   - Mr. Crabs
+   - Zuko
+   - Iroh
+   - Rocksteady
 = PERSONA 4 ARENA ULTIMAX =
  - All unlocked
 = POKÉMON CLOSE COMBAT =

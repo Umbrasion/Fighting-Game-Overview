@@ -23,7 +23,19 @@ const chrSel = [
 	document.getElementById("character-phinks"),
 ];
 
+const pageMusic = new Audio("audio/music/HxHNI - Character Select.ogg");
+pageMusic.loop = true;
+pageMusic.volume = 0.2;
+pageMusic.play();
 
+const sfx = {
+	cursor: new Audio("audio/sfx/hxhni/cursor.ogg"),
+	confirm: new Audio("audio/sfx/hxhni/confirm.ogg"),
+	cancel: new Audio("audio/sfx/hxhni/cancel.ogg"),
+}
+sfx.cursor.volume = 0.2;
+sfx.confirm.volume = 0.2;
+sfx.cancel.volume = 0.2;
 
 var previewDisplayOn = true;
 
@@ -35,8 +47,8 @@ function clearDisplay() {
 // Display on hover
 
 function hoverDisplay(charFileName) {
-	//sfx.cursor.currentTime = 0;
-	//sfx.cursor.play();
+	sfx.cursor.currentTime = 0;
+	sfx.cursor.play();
 	if (previewDisplayOn) {
 		chrPrevImg.src = "img/portraits/hxhni/" + charFileName + ".webp";
 		chrName.innerHTML = charFileName.replace(/_/g, " ");
@@ -51,8 +63,13 @@ chrSel.forEach(element => {
 	);
 });
 
+var banter = new Audio();
+
 function runDisplay(characterName) {
 	previewDisplayOn = false;
+	if (!banter.paused) {
+		banter.pause();
+	}
 	// chrPrevImg.parentElement.classList.remove("portrait-onselect");
 	// void chrPrevImg.parentElement.offsetWidth;
 	
@@ -116,8 +133,8 @@ function runDisplay(characterName) {
 		}
 	}
 	
-	//sfx.confirm.currentTime = 0;
-	//sfx.confirm.play();
+	sfx.confirm.currentTime = 0;
+	sfx.confirm.play();
 	
 	initializeOV();
 	
@@ -126,6 +143,10 @@ function runDisplay(characterName) {
 		
 		chrPrevImg.src = "img/portraits/hxhni/" + charFileName + ".webp";
 		chrName.innerHTML = charFileName.replace(/_/g, " ");
+
+		banter = new Audio("audio/sfx/hxhni/banter/" + charFileName + "_select.ogg");
+		banter.volume = 0.4;
+		banter.play();
 	}
 	
 	switch (characterName) {

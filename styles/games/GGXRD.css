@@ -16,8 +16,13 @@
     z-index: 50;
 }
 
+.selectbox-character img {
+    user-select: none;
+}
+
 .selectbox-fullroster-sizer {
     display: block;
+    user-select: none;
 }
 
 #roster-clipper {
@@ -30,6 +35,7 @@
 
 .selectbox-fullroster {
     position: relative;
+    user-select: none;
 }
 
 .name-onhover {

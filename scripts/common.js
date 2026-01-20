@@ -329,82 +329,133 @@ function updateOV(detailInfo, ratings, likeOrDislike, charDescription) {
 
 // Initialization
 
-function initializePageDisplay(gameName) {
+function initializePageDisplay(gameName, skipTransition = false) {
 	var gameStyle = document.getElementById("gamestyle");
 	//var gameScript = document.getElementById("gamescript");
-
 	if (gameName === undefined) {
 		window.location.reload();
-	 	//pageMusic.pause();
+		//pageMusic.pause();
 	} else {
-		fetch("games/" + gameName + ".html").then(response => response.text()).then(text => {
-			var pageData = text.split("<body>")[1].split("</body>")[0];
+		if (skipTransition) {
+			beginPageLoad();
+		} else {
+			var pageLogos = Array.from(document.getElementsByClassName("gamebox-logo"));
 
-			document.body.innerHTML = `<h1 class="info-loading">Loading...</h1>`;
+			scrollPosition = window.pageYOffset;
+			document.body.style.position = "fixed";
+			document.body.style.top = "-" + scrollPosition + "px";
 
-			function loadPage() {
-				document.body.innerHTML = `<button id="returnbutton" onclick="initializePageDisplay()">Back to Game Select</button>` + pageData.split('<div class="preload-container">')[0];
-
-				if (gameName !== undefined) {
-					gameStyle.href = "styles/games/" + gameName + ".css";
-				} else {
-					gameStyle.href = "";
+			var logoToModify;
+			
+			pageLogos.forEach(element => {
+				if (element.src.includes(gameName)) {
+					logoToModify = element;
 				}
+			});
 
-				var head = document.getElementsByTagName("head")[0];
-				var script = document.createElement("script");
-				if (gameName !== undefined) {
-					script.src = "scripts/onload" + gameName + ".js";
-				}
-				head.removeChild(head.lastElementChild);
-				head.appendChild(script);
-			}
+			var animLogo = logoToModify.cloneNode();
+			var logoOffsets = logoToModify.getBoundingClientRect();
+			logoToModify.parentElement.parentElement.parentElement.classList.add("pagelink-transition");
+			// Set the animated logo's position
+			animLogo.style.position = "absolute";
+			animLogo.style.top = logoOffsets.top + (logoToModify.offsetHeight / 2) + scrollPosition + "px";
+			animLogo.style.left = logoOffsets.left + "px";
+			// Set the animated logo's transition properties
+			animLogo.style.transition = "all 0.5s ease-in-out";
+			// Add the animated logo
+			document.body.appendChild(animLogo);
+			document.querySelectorAll('.transition-content').forEach(element => {
+				element.style.opacity = 0;
+				element.style.pointerEvents = "none";
+			});
 
-			// Loading
+			var selectSound = new Audio("../audio/sfx/" + gameName.toLowerCase() + "/menu_confirm.ogg");
+			selectSound.volume = 0.1;
+			selectSound.play();
 
-			try {
-				var mediaList = pageData.split('<div class="preload-container">')[1].split("</div>")[0].split('src="');
-				mediaList.splice(0,1);
-				var preloadMedia = [];
-				mediaList.forEach(element => {
-					preloadMedia.push(element.split('">')[0]);
-				});
+			// Animate the logo
+			setTimeout(function() {
+				animLogo.style.top = "calc(50vh + " + scrollPosition + "px)";
+				animLogo.style.left = "calc(50vw - 140px)";
+				setTimeout(function() {
+					animLogo.style.transform = "scale(10)";
+					animLogo.style.opacity = 0;
+					setTimeout(beginPageLoad, 500);
+				}, 500);
+			}, 500);
+		}
 
-				// Are you even a programmer if you aren't blatantly stealing code from StackOverflow
-				async function loadMedia(mediaUrlArray) {
-					const promiseArray = [];
-					const mediaArray = [];
+		function beginPageLoad() {
+			fetch("games/" + gameName + ".html").then(response => response.text()).then(text => {
+				var pageData = text.split("<body>")[1].split("</body>")[0];
 
-					for (let mediaUrl of mediaUrlArray) {
-						promiseArray.push(new Promise(resolve => {
-							var media;
-							if (mediaUrl.includes("img/")) {
-								media = new Image();
-								media.onload = resolve;
-							} else if (mediaUrl.includes("audio/")) {
-								media = new Audio();
-								media.oncanplaythrough = resolve;
-							}
-							
-							media.src = mediaUrl;
-							mediaArray.push(media);
-						}));
+				document.body.style = "";
+				document.body.innerHTML = ``;
+
+				function loadPage() {
+					document.body.innerHTML = `<button id="returnbutton" onclick="initializePageDisplay()">Back to Game Select</button>` + pageData.split('<div class="preload-container">')[0];
+
+					if (gameName !== undefined) {
+						gameStyle.href = "styles/games/" + gameName + ".css";
+					} else {
+						gameStyle.href = "";
 					}
 
-					await Promise.all(promiseArray);
-					return true;
-				}
-				
-				loadMedia(preloadMedia).then(result => {
-					if (result) {
-						loadPage();
+					var head = document.getElementsByTagName("head")[0];
+					var script = document.createElement("script");
+					if (gameName !== undefined) {
+						script.src = "scripts/onload" + gameName + ".js";
 					}
-				});
-			} catch (error) {
-				console.log("No preload found, failed to preload");
-				loadPage();
-			}
-		});
+					head.removeChild(head.lastElementChild);
+					head.appendChild(script);
+				}
+
+				// Loading
+
+				try {
+					var mediaList = pageData.split('<div class="preload-container">')[1].split("</div>")[0].split('src="');
+					mediaList.splice(0,1);
+					var preloadMedia = [];
+					mediaList.forEach(element => {
+						preloadMedia.push(element.split('">')[0]);
+					});
+
+					// Are you even a programmer if you aren't blatantly stealing code from StackOverflow
+					async function loadMedia(mediaUrlArray) {
+						const promiseArray = [];
+						const mediaArray = [];
+
+						for (let mediaUrl of mediaUrlArray) {
+							promiseArray.push(new Promise(resolve => {
+								var media;
+								if (mediaUrl.includes("img/")) {
+									media = new Image();
+									media.onload = resolve;
+								} else if (mediaUrl.includes("audio/")) {
+									media = new Audio();
+									media.oncanplaythrough = resolve;
+								}
+								
+								media.src = mediaUrl;
+								mediaArray.push(media);
+							}));
+						}
+
+						await Promise.all(promiseArray);
+						return true;
+					}
+					
+					loadMedia(preloadMedia).then(result => {
+						if (result) {
+							loadPage();
+						}
+					});
+				} catch (error) {
+					console.log("No preload found, failed to preload");
+					loadPage();
+				}
+			});
+		}
 	}
 }
 
@@ -412,6 +463,6 @@ function initializePageDisplay(gameName) {
 
 window.onload = function() {
 	if (document.getElementById("navspace").dataset.goto !== "") {
-		initializePageDisplay(document.getElementById("navspace").dataset.goto)
+		initializePageDisplay(document.getElementById("navspace").dataset.goto, true)
 	}
 };

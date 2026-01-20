@@ -64,17 +64,29 @@ const charSelOthers = {
 	logo: document.getElementById("logo-other"),
 }
 
-/*const pageMusic = new Audio("audio/music/BBTAG - .ogg");
+const pageMusic = new Audio("audio/music/BBTAG - Character Select loop.ogg");
 pageMusic.loop = true;
-pageMusic.volume = 0.2;
-pageMusic.play();*/
+pageMusic.volume = 0.1;
+pageMusic.preload = "auto";
+
+const pageMusicIntro = new Audio("audio/music/BBTAG - Character Select intro.ogg");
+pageMusicIntro.volume = 0.1;
+
+pageMusic.addEventListener("canplay", playMusic);
+function playMusic() {
+	pageMusicIntro.play();
+}
+pageMusicIntro.onended = function() {
+	pageMusic.play();
+	pageMusic.removeEventListener("canplay", playMusic);
+}
 
 const sfx = {
 	cursor: new Audio("audio/sfx/bbcf/400_menu_select.wav"),
 	confirm: new Audio("audio/sfx/bbcf/401_decision.wav"),
 }
-sfx.cursor.volume = 0.4;
-sfx.confirm.volume = 0.4;
+sfx.cursor.volume = 0.3;
+sfx.confirm.volume = 0.3;
 
 var previewDisplayOn = true;
 

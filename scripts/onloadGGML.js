@@ -16,7 +16,17 @@ const chrSel = [
 	document.getElementById("character-baldhead"),
 ];
 
+const pageMusic = new Audio("audio/music/GGML - Mince -Character Selection Screen-.ogg");
+pageMusic.loop = true;
+pageMusic.volume = 0.2;
+pageMusic.play();
 
+const sfx = {
+	cursor: new Audio("audio/sfx/ggml/cursor.wav"),
+	confirm: new Audio("audio/sfx/ggml/confirm.wav"),
+}
+sfx.cursor.volume = 0.5;
+sfx.confirm.volume = 0.5;
 
 var previewDisplayOn = true;
 
@@ -28,8 +38,8 @@ function clearDisplay() {
 // Display on hover
 
 function hoverDisplay(charFileName) {
-	//sfx.cursor.currentTime = 0;
-	//sfx.cursor.play();
+	sfx.cursor.currentTime = 0;
+	sfx.cursor.play();
 	if (previewDisplayOn) {
 		chrPrevImg.src = "img/portraits/ggml/" + charFileName + ".png";
 		chrName.src = "img/characterSelect/ggml/Nameplate_" + charFileName + ".png";
@@ -49,8 +59,8 @@ function runDisplay(characterName) {
 	// chrPrevImg.parentElement.classList.remove("portrait-onselect");
 	// void chrPrevImg.parentElement.offsetWidth;
 	
-	//sfx.confirm.currentTime = 0;
-	//sfx.confirm.play();
+	sfx.confirm.currentTime = 0;
+	sfx.confirm.play();
 	
 	initializeOV();
 	

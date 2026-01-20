@@ -38,16 +38,35 @@ const chrSel = [
 
 var previewDisplayOn = true;
 
-function clearDisplay() {
-	chrPrevImg.src = "";
-	chrName.src = "";
+const pageMusic = new Audio("audio/music/GGST - Smell of The Game Instrumental loop.ogg");
+pageMusic.loop = true;
+pageMusic.volume = 0.7;
+pageMusic.preload = "auto";
+
+const pageMusicIntro = new Audio("audio/music/GGST - Smell of The Game Instrumental intro.ogg");
+pageMusicIntro.volume = 0.7;
+
+pageMusic.addEventListener("canplay", playMusic);
+function playMusic() {
+	pageMusicIntro.play();
 }
+pageMusicIntro.onended = function() {
+	pageMusic.play();
+	pageMusic.removeEventListener("canplay", playMusic);
+}
+
+const sfx = {
+	cursor: new Audio(),
+	confirm: new Audio("audio/sfx/ggst/confirm.ogg"),
+	cancel: new Audio("audio/sfx/ggst/cancel.ogg"),
+}
+sfx.cursor.volume = 0.5;
+sfx.confirm.volume = 0.3;
+sfx.cancel.volume = 0.5;
 
 // Display on hover
 
 function hoverDisplay(charFileName) {
-	//sfx.cursor.currentTime = 0;
-	//sfx.cursor.play();
 	if (previewDisplayOn) {
 		if (charFileName === "Jack-O") {
 			charFileName = "Jack-O'";
@@ -63,6 +82,8 @@ function hoverDisplay(charFileName) {
 	}
 }
 
+var positionIDPrevious = 7;
+
 function positionCursor(positionID) {
 	var csCursor = document.getElementById("select-cursor");
 	csCursor.style.opacity = 1;
@@ -73,6 +94,27 @@ function positionCursor(positionID) {
 		csCursor.style.left = Math.floor((positionID + 1) % 17) * 100 - 5 + "px";
 		csCursor.style.top = "101px";
 	}
+	
+	// Play audio based on direction
+	console.log(positionID);
+	if (positionID > positionIDPrevious && positionID >= 16 && positionIDPrevious < 16) {
+		sfx.cursor.src = "audio/sfx/ggst/cursor_down.ogg";
+		sfx.cursor.currentTime = 0;
+		sfx.cursor.play();
+	} else if (positionID > positionIDPrevious) {
+		sfx.cursor.src = "audio/sfx/ggst/cursor_right.ogg";
+		sfx.cursor.currentTime = 0;
+		sfx.cursor.play();
+	} else if (positionID < positionIDPrevious && positionID <= 15 && positionIDPrevious > 15) {
+		sfx.cursor.src = "audio/sfx/ggst/cursor_up.ogg";
+		sfx.cursor.currentTime = 0;
+		sfx.cursor.play();
+	} else if (positionID < positionIDPrevious) {
+		sfx.cursor.src = "audio/sfx/ggst/cursor_left.ogg";
+		sfx.cursor.currentTime = 0;
+		sfx.cursor.play();
+	}
+	positionIDPrevious = positionID;
 }
 
 chrSel.forEach(element => {
@@ -84,13 +126,20 @@ chrSel.forEach(element => {
 	);
 });
 
+var announcer = new Audio("audio/sfx/ggst/announcer/Charselect_call.ogg");
+announcer.volume = 0.2;
+announcer.play();
+
 function runDisplay(characterName) {
 	previewDisplayOn = false;
 	// chrPrevImg.parentElement.classList.remove("portrait-onselect");
 	// void chrPrevImg.parentElement.offsetWidth;
+
+	if (!announcer.paused) {
+		announcer.pause();
+	}
 	
 	if (characterName == "Random") {
-		clearDisplay();
 		switch (Math.floor(Math.random() * 32)) {
 			case 0:
 				characterName = "Queen_Dizzy";
@@ -191,8 +240,8 @@ function runDisplay(characterName) {
 		}
 	}
 	
-	//sfx.confirm.currentTime = 0;
-	//sfx.confirm.play();
+	sfx.confirm.currentTime = 0;
+	sfx.confirm.play();
 	
 	initializeOV();
 	
@@ -210,6 +259,10 @@ function runDisplay(characterName) {
 		} else {
 			chrName.innerHTML = charFileName.replace(/_/g, " ");
 		}
+
+		announcer = new Audio("audio/sfx/ggst/announcer/" + charFileName + "_call.ogg");
+		announcer.volume = 0.2;
+		announcer.play();
 	}
 	
 	switch (characterName) {

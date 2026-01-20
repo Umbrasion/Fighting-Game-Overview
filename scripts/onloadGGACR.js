@@ -1,3 +1,20 @@
+
+
+const pageMusic = new Audio("audio/music/GGACR - D.O.A.ogg");
+pageMusic.loop = true;
+pageMusic.volume = 0.2;
+pageMusic.play();
+
+const sfx = {
+	cursor: new Audio("audio/sfx/ggacr/cursor.wav"),
+	confirm: new Audio("audio/sfx/ggacr/confirm.wav"),
+	intro: new Audio("audio/sfx/ggacr/Charselect_call.wav"),
+}
+sfx.cursor.volume = 0.2;
+sfx.confirm.volume = 0.2;
+sfx.intro.volume = 0.2;
+sfx.intro.play();
+
 // Kliff
 
 const selKliff = document.getElementById("character-kliff");

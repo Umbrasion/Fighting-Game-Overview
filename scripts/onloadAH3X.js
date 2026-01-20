@@ -29,7 +29,19 @@ const chrSel = [
 	document.getElementById("character-kamui"),
 ];
 
+const pageMusic = new Audio("audio/music/AH3X - Maidens.ogg");
+pageMusic.loop = true;
+pageMusic.volume = 0.08;
+pageMusic.play();
 
+const sfx = {
+	cursor: new Audio("audio/sfx/ah3x/cursor.ogg"),
+	confirm: new Audio("audio/sfx/ah3x/confirm.ogg"),
+	cancel: new Audio("audio/sfx/ah3x/cancel.ogg"),
+}
+sfx.cursor.volume = 0.2;
+sfx.confirm.volume = 0.2;
+sfx.cancel.volume = 0.2;
 
 var previewDisplayOn = true;
 
@@ -41,8 +53,8 @@ function clearDisplay() {
 // Display on hover
 
 function hoverDisplay(charFileName, iconEle, offsetLR) {
-	//sfx.cursor.currentTime = 0;
-	//sfx.cursor.play();
+	sfx.cursor.currentTime = 0;
+	sfx.cursor.play();
     iconEle.src = "img/characterSelect/ah3x/" + charFileName + "_icon_selected.png";
 	if (previewDisplayOn) {
 		chrPrevImg.src = "img/portraits/ah3x/" + charFileName + ".png";
@@ -196,8 +208,8 @@ function runDisplay(characterName) {
 	// chrPrevImg.parentElement.classList.remove("portrait-onselect");
 	// void chrPrevImg.parentElement.offsetWidth;
 	
-	//sfx.confirm.currentTime = 0;
-	//sfx.confirm.play();
+	sfx.confirm.currentTime = 0;
+	sfx.confirm.play();
 	
 	initializeOV();
 	

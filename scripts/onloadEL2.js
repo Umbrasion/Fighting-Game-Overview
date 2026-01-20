@@ -10,6 +10,7 @@ const chrSel = {
 	stina: document.getElementById("character-stina"),
 	alcott: document.getElementById("character-alcott"),
 	serena: document.getElementById("character-serena"),
+	random: document.getElementById("character-random"),
 	yagabi: document.getElementById("character-yagabi"),
 }
 
@@ -39,6 +40,7 @@ function hoverDisplay(charFileName, offsetValue = 0, flipPortrait = false) {
 	sfx.cursor.currentTime = 0;
 	sfx.cursor.play();
 	if (previewDisplayOn) {
+		clearTimeout(cycleRandom);
 		if (charFileName == "Yagabi") {
 			chrPrevImg.src = "img/portraits/el2/" + charFileName + ".png";
 		// } else if (charFileName == "Serena") {
@@ -123,45 +125,108 @@ chrSel.yagabi.addEventListener("mouseover",
 	}
 );
 
+chrSel.random.addEventListener("mouseover",
+	() => {
+		sfx.cursor.currentTime = 0;
+		sfx.cursor.play();
+		if (previewDisplayOn) {
+			randomDisplay();
+		}
+	}
+);
+
+var cycleRandom;
+var previousSelection = -1;
+function randomDisplay() {
+	reroll: while (true) {
+		chrPrevImg.classList.remove("portrait-onhover");
+		void chrPrevImg.offsetWidth;
+		void chrName.offsetWidth;
+		
+		var displayCharacter = Math.floor(Math.random() * 10);
+		if (displayCharacter === previousSelection) {
+			continue reroll;
+		} else {
+			switch (displayCharacter) {
+				case 0:
+					hoverDisplay("Main");
+					break;
+				case 1:
+					hoverDisplay("Sisca", -20, true);
+					break;
+				case 2:
+					hoverDisplay("Qdora");
+					break;
+				case 3:
+					hoverDisplay("Akamine_Tae");
+					break;
+				case 4:
+					hoverDisplay("Tina");
+					break;
+				case 5:
+					hoverDisplay("Cecil");
+					break;
+				case 6:
+					hoverDisplay("Saving_Tina", 0, true);
+					break;
+				case 7:
+					hoverDisplay("Alcott", -11, true);
+					break;
+				case 8:
+					hoverDisplay("Serena");
+					break;
+				case 9:
+					hoverDisplay("Yagabi", -5, true);
+					break;
+			}
+			sfx.cursor.currentTime = 0;
+			sfx.cursor.play();
+			break reroll;
+		}
+	}
+	previousSelection = displayCharacter;
+	cycleRandom = setTimeout(randomDisplay, 50);
+}
+
 // Display on click
 
 function runDisplay(characterName) {
 	previewDisplayOn = false;
-	const descriptionArea = document.getElementsByClassName("description-area")[0];
+	clearTimeout(cycleRandom);
 	
-	if (characterName == "random") {
+	if (characterName === "Random") {
 		clearTimeout(cycleRandom);
 		clearDisplay();
 		switch (Math.floor(Math.random() * 10)) {
 			case 0:
-				characterName = "cecil";
+				characterName = "Cecil";
 				break;
 			case 1:
-				characterName = "main";
+				characterName = "Main";
 				break;
 			case 2:
-				characterName = "sisca";
+				characterName = "Sisca";
 				break;
 			case 3:
-				characterName = "stina";
+				characterName = "Saving_Tina";
 				break;
 			case 4:
-				characterName = "qdora";
+				characterName = "Qdora";
 				break;
 			case 5:
-				characterName = "alcott";
+				characterName = "Alcott";
 				break;
 			case 6:
-				characterName = "tae";
+				characterName = "Akamine_Tae";
 				break;
 			case 7:
-				characterName = "tina";
+				characterName = "Tina";
 				break;
 			case 8:
-				characterName = "serena";
+				characterName = "Serena";
 				break;
 			case 9:
-				characterName = "yagabi";
+				characterName = "Yagabi";
 				break;
 		}
 	}
@@ -193,7 +258,7 @@ function runDisplay(characterName) {
 	}
 	
 	switch (characterName) {
-		case "main":
+		case "Main":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -205,11 +270,11 @@ function runDisplay(characterName) {
 				`
 				<p><b>Main</b> is</p>
 				`,
-				"Main",
+				characterName,
 				[0, false]
 			);
 			break;
-		case "sisca":
+		case "Sisca":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -221,11 +286,11 @@ function runDisplay(characterName) {
 				`
 				<p><b>Sisca</b> is</p>
 				`,
-				"Sisca",
+				characterName,
 				[-20, true]
 			);
 			break;
-		case "qdora":
+		case "Qdora":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -237,11 +302,11 @@ function runDisplay(characterName) {
 				`
 				<p><b>Qdora</b> is</p>
 				`,
-				"Qdora",
+				characterName,
 				[0, false]
 			);
 			break;
-		case "tae":
+		case "Akamine_Tae":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -253,11 +318,11 @@ function runDisplay(characterName) {
 				`
 				<p><b>Akamine Tae</b> is</p>
 				`,
-				"Akamine_Tae",
+				characterName,
 				[0, false]
 			);
 			break;
-		case "tina":
+		case "Tina":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -269,11 +334,11 @@ function runDisplay(characterName) {
 				`
 				<p><b>Tina</b> is</p>
 				`,
-				"Tina",
+				characterName,
 				[0, false]
 			);
 			break;
-		case "cecil":
+		case "Cecil":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -285,11 +350,11 @@ function runDisplay(characterName) {
 				`
 				<p><b>Cecil</b> is</p>
 				`,
-				"Cecil",
+				characterName,
 				[0, false]
 			);
 			break;
-		case "stina":
+		case "Saving_Tina":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -301,11 +366,11 @@ function runDisplay(characterName) {
 				`
 				<p><b>Saving Tina</b> is</p>
 				`,
-				"Saving_Tina",
+				characterName,
 				[0, true]
 			);
 			break;
-		case "alcott":
+		case "Alcott":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -317,11 +382,11 @@ function runDisplay(characterName) {
 				`
 				<p><b>Alcott</b> is</p>
 				`,
-				"Alcott",
+				characterName,
 				[-11, true]
 			);
 			break;
-		case "serena":
+		case "Serena":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -334,11 +399,11 @@ function runDisplay(characterName) {
 				<p><b>NOTE:</b> At present, this character is highly unfinished, mainly using placeholders and old sprites, and is therefore subject to change.</p>
 				<p><b>Serena</b> is</p>
 				`,
-				"Serena",
+				characterName,
 				[0, false]
 			);
 			break;
-		case "yagabi":
+		case "Yagabi":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -350,7 +415,7 @@ function runDisplay(characterName) {
 				`
 				<p><b>Yagabi</b> is</p>
 				`,
-				"Yagabi",
+				characterName,
 				[-5, true]
 			);
 			break;

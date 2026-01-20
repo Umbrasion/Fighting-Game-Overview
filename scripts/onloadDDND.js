@@ -27,6 +27,22 @@ const chrSel = [
 	document.getElementById("character-korone"),
 ];
 
+const pageMusic = new Audio("audio/music/DDND - Character Select loop.ogg");
+pageMusic.loop = true;
+pageMusic.volume = 0.1;
+pageMusic.preload = "auto";
+
+const pageMusicIntro = new Audio("audio/music/DDND - Character Select intro.ogg");
+pageMusicIntro.volume = 0.1;
+
+pageMusic.addEventListener("canplay", playMusic);
+function playMusic() {
+	pageMusicIntro.play();
+}
+pageMusicIntro.onended = function() {
+	pageMusic.play();
+	pageMusic.removeEventListener("canplay", playMusic);
+}
 
 
 var previewDisplayOn = true;

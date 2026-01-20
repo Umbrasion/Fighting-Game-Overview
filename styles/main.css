@@ -41,13 +41,12 @@ a:hover {
 	flex-direction: column;
 	padding: 8px;
 	border: 1px solid gray;
-	border-radius: 3px;
+	border-radius: 5px;
 	width: 280px;
 }
 
 .gamebox-logocontainer {
 	aspect-ratio: 1 / 1;
-	border-bottom: solid 1px gray;
 	margin-bottom: 8px;
 }
 
@@ -328,4 +327,9 @@ div.selectbox-positioner {
 @font-face {
 	font-family: "Strive Impact";
 	src: url("../fonts/Impact - Strive.otf");
+}
+
+@font-face {
+	font-family: "VCR Mono";
+	src: url("../fonts/VCR_OSD_MONO_1.001.ttf");
 }

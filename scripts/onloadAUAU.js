@@ -1,3 +1,20 @@
+
+
+const pageMusic = new Audio("audio/music/AUAU - Character Select.ogg");
+pageMusic.loop = true;
+pageMusic.volume = 0.2;
+pageMusic.play();
+
+const sfx = {
+	cursor: new Audio("audio/sfx/auau/UI_Hover.wav"),
+	confirm: new Audio("audio/sfx/auau/UI_Select.wav"),
+	intro: new Audio("audio/sfx/auau/Player_SpawnIn2.wav"),
+}
+sfx.cursor.volume = 0.3;
+sfx.confirm.volume = 0.3;
+sfx.intro.volume = 0.3;
+sfx.intro.play();
+
 // Event listeners
 // There's probably a better way to do this but SHUR UP!
 

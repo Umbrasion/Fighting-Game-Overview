@@ -1,3 +1,10 @@
+
+
+const pageMusic = new Audio("audio/music/DNFD - Linking.ogg");
+pageMusic.loop = true;
+pageMusic.volume = 0.1;
+pageMusic.play();
+
 var sizeChange = "scale(1.1)";
 var zIndexChange = "500";
 

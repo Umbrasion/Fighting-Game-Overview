@@ -1,3 +1,7 @@
+body {
+	font-family: "VCR Mono";
+}
+
 .selectbox-container {
     background-color: #9FB7A3;
     padding: 20px;
