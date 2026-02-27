@@ -23,10 +23,21 @@ const chrSel = {
 	yukari: document.getElementById("character-yukari"),
 }
 
-const pageMusic = new Audio("audio/music/AoCF - Seeds of Suspicion.ogg");
+const pageMusic = new Audio("audio/music/AoCF - Blizzard of Scattering Possession Flowers loop.ogg");
 pageMusic.loop = true;
 pageMusic.volume = 0.1;
-pageMusic.play();
+
+const pageMusicIntro = new Audio("audio/music/AoCF - Blizzard of Scattering Possession Flowers intro.ogg");
+pageMusicIntro.volume = 0.1;
+
+pageMusic.addEventListener("canplay", playMusic);
+function playMusic() {
+	pageMusicIntro.play();
+}
+pageMusicIntro.onended = function() {
+	pageMusic.play();
+	pageMusic.removeEventListener("canplay", playMusic);
+}
 
 const sfx = {
 	cursor: new Audio("audio/sfx/aocf/aocfCursor.wav"),

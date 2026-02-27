@@ -509,7 +509,7 @@ function runDisplay(characterName) {
 var backgroundNum = 1;
 var backgroundNumForward = true;
 setInterval(function() {
-	document.body.style.backgroundImage = "url('../../img/backgrounds/DDND_" + backgroundNum + ".png')";
+	document.body.style.backgroundImage = "url('img/backgrounds/DDND_" + backgroundNum + ".png')";
 	if (backgroundNumForward) {
 		backgroundNum++;
 	} else {
