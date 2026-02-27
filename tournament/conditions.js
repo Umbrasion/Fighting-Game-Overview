@@ -1,15 +1,13 @@
 const conditionList = {
 	"AFQM": [
 		"1", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // 1 stock, 1 minute, best of 5
+		"3", // 100 stamina
+		"4", // Team battle with hard CPU Rend
+		"5", // 1 stock, 999 stamina
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"AUAU": [
 		"You are an IMPOSTOR", // Default
@@ -25,507 +23,453 @@ const conditionList = {
 	],
 	"AH3X": [
 		"1", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // Catherine dittos
+		"3", // Random battle
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"BBCF": [
 		"The Wheel of Fate is Turning", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"BBTAG": [
 		"Can't Escape From Crossing Fate", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
+	],
+	"NSC": [
+		"1", // Default
+		"2", // Boss versions
+		"3", // Chaos mode
+		"4", // Max Chaos gauge
+		"5", // 1.5x attack rate
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"DNFD": [
 		"The Seeds of Volition Bring Forth A Challenger", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
+	],
+	"DDND": [
+		"烂游戏", // Default
+		"2", // Mario dittos
+		"3", // Korone dittos
+		"4", // Glasses characters only
+		"5", // Hat characters only
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"DBFZ": [
 		"A Fierce Showdown is About to Begin", // Default
-		"2",
-		"3",
-		"4",
+		"2", // Only preset teams
+		"Heart Virus Inflicted", // Max input delay
 		"With Only Half My Strength...!", // 1v1 only
 		"Hi, I'm Goku!", // Goku/Goku fusions/Goku Black only
-		"7",
-		"8",
-		"9",
-		"10",
+		"6", // Only C assist
+		"That Wasn't Even My Full Power!", // Final character full Ki charge
+		"Don't Need Legs to Walk", // Super dash movement only
 	],
 	"EL2": [
 		"SET FIRE", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"FM": [
 		"1", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // Workshop
+		"3", // Random knockback angles
+		"4", // Stealth visibility
+		"5", // Fast game speed
+		"6", // Turbo mode on
+		"7", // Infinite jumps
+		"8", // Infinite assist
 	],
 	"GBVSR": [
 		"Believe in Victory", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"SUBHL Woes", // Super Ultimate controls
+		"3", // Random characters
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"GGML": [
 		"Heaven or Hell", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"GGST": [
-		"Mankind Knew They Could Not Change Society", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"Here Comes Daredevil!", // Default
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"GGXRD": [
-		"Get Down to Rock, Get Up to Burn", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"Who Dares to Enter the Mayhem", // Default
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"GGACR": [
 		"Let's Rock!", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // EX characters
+		"3", // Gold characters
+		"4", // Shadow characters
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
+	],
+	"HxHNI": [
+		"1", // Default
+		"2", // 20f input delay
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"ISD": [
 		"Let's Get Down to Business!", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"KLKIF": [
 		"1", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
-	"KOFXIII": [
+	"KoFXIII": [
 		"1", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
-	"KOFXV": [
+	"KoFXV": [
 		"1", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"KF2": [
 		"1", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"MnS": [
 		"1", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"MvCIB": [
 		"1", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"MBAACC": [
-		"Standby OK?", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"Sweet Voice and Melty Blood", // Default
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"MBTL": [
 		"Open Your Magic Circuit", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"MAAB": [
 		"This is a Kingdom's Junction", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"A familiar face?", // "Otherworldly" characters only (not assists)
+		"Nice chinchin!", // Foible Elle required as assist
+		"Elemental prowess", // Players must stick to a single element between character and assists
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"MVS": [
 		"1", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"NASB2": [
 		"1", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"P4AU": [
 		"1", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"PKMNCC": [
 		"1", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"PTDX": [
 		"1", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
-	],
-	"PP": [
-		"1", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"RoA": [
 		"1", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"RoA2": [
 		"1", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"SG": [
 		"It's Showtime!", // Default
-		"2",
-		"3",
-		"4",
-		"5",
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
 		"We've Only Got 1 Take!", // 30 second matches
 		"Stunt Double", // 2-character team, second position Double
 		"Skull...guys?", // 2-character team, only Big Band/Beowulf
-		"9",
-		"10",
 	],
 	"SC": [
 		"Welcome to Slap City", // Default
-		"2",
-		"3",
+		"2", // 
+		"3", // 
 		"Greatest Death Sport", // Slap Ball Mode, standard
-		"5",
-		"6",
+		"5", // 
 		"Slap a Bestie on Their Face", // Get partner for teams
-		"8",
 		"Visualizing monitization!", // Business Casual Man dittos; first to kill with sell air heavy wins
 		"Wrath of the Father", // Team battle with one Really Joel's Dad CPU
 	],
 	"SF6": [
 		"1", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"Play by the rules", // Heaven & Hell mode, no gimmick
+		"Stay on your toes", // Down & Out mode, Bull Run gimmick, matches are FT3
+		"I've got a job for you", // Rules & Regulations mode, no gimmick
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"SSBC": [
 		"1", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"SSBU": [
 		"1", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"SSF2": [
 		"1", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
+	],
+	"REX": [
+		"1", // Default
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"T8": [
 		"1", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"SOKU": [
 		"Unperceiving of Natural Law", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"AoCF": [
 		"Spirit Possesion Bloom", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"UMvC3": [
 		"1", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 	"UFDK2": [
 		"クソゲ", // Default
 		"Just You and Me", // Solo mode
 		"Turbo-Tastic!", // Turbo 10-stars
-		"4",
-		"5",
-		"6",
-		"7",
+		"4", // 
+		"5", // 
 		"Kyanta Krazy", // Kyanta/Kyanta-like characters only
 		"Risking it All", // Parry type only
 		"We Are Kinoko", // 1 character Kinoko only (no solo mode)
 	],
 	"UNI2": [
 		"Recurring VOID Effect", // Default
-		"2",
-		"3",
-		"4",
-		"5",
-		"6",
-		"7",
-		"8",
-		"9",
-		"10",
+		"2", // 
+		"3", // 
+		"4", // 
+		"5", // 
+		"6", // 
+		"7", // 
+		"8", // 
 	],
 };
 
@@ -546,8 +490,7 @@ function resetInfo() {
 resetInfo();
 
 function updateInfo(updateType, updateID) {
-	console.log(updateID);
-	if (updateType == "game") {
+	if (updateType === "game") {
 		switch (updateID) {
 			case "AFQM":
 				rulesList.innerHTML = `
@@ -578,7 +521,7 @@ function updateInfo(updateType, updateID) {
 				`;
 				break;
 		}
-	} else if (updateType == "condition") {
+	} else if (updateType === "condition") {
 		document.getElementById("condition-name").innerHTML = '"' + conditionList[currentGame][randNum] + '"';
 		if (updateID.includes("-0")) {
 			conditionDesc.innerHTML = "No rule changes, fights play out as normal.";
@@ -707,13 +650,13 @@ function updateInfo(updateType, updateID) {
 				
 				// The King of Fighters XIII
 				
-				case "KOFXIII-1":
+				case "KoFXIII-1":
 					conditionDesc.innerHTML = "";
 					break;
 				
 				// The King of Fighters XV
 				
-				case "KOFXV-1":
+				case "KoFXV-1":
 					conditionDesc.innerHTML = "";
 					break;
 				

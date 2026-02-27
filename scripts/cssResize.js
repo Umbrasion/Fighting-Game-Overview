@@ -1,5 +1,4 @@
-function autoResize(sizeSpace, chrMapArea, chrCoords, chrPortrait, iconPos, chrPosr) {
-	var offset;
+function autoResize(sizeSpace, chrMapArea, chrCoords, chrPortrait, iconPos) {
 	var tempCoords = "";
 	
 	var imageSize = [

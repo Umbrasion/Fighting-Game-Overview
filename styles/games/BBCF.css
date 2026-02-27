@@ -19,6 +19,7 @@
 
 #info-name {
     transform: translate(0, -9vh);
+    z-index: 600;
 }
 
 .portrait-onhover {

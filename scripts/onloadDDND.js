@@ -44,6 +44,12 @@ pageMusicIntro.onended = function() {
 	pageMusic.removeEventListener("canplay", playMusic);
 }
 
+const sfx = {
+	cursor: new Audio("audio/sfx/ddnd/cursor.wav"),
+	confirm: new Audio("audio/sfx/ddnd/confirm.wav"),
+}
+sfx.cursor.volume = 0.1;
+sfx.confirm.volume = 0.1;
 
 var previewDisplayOn = true;
 
@@ -55,142 +61,44 @@ function clearDisplay() {
 // Display on hover
 
 function hoverDisplay(charFileName, charNameHanzi) {
-	//sfx.cursor.currentTime = 0;
-	//sfx.cursor.play();
+	sfx.cursor.currentTime = 0;
+	sfx.cursor.play();
 	if (previewDisplayOn) {
 		chrPrevImg.src = "img/portraits/ddnd/" + charFileName + ".png";
 		chrName.innerHTML = charNameHanzi;
+
+		chrPrevImg.style.height = (chrPrevImg.naturalHeight / 480) * 100 + "vh";
+		if (charFileName === "Jian_Ci_Lang") {
+			chrPrevImg.style.bottom = ((205 - 39) / 480) * 100 + "vh";
+			chrPrevImg.style.transform = "scale(-1,1)";
+		} else {
+			chrPrevImg.style.bottom = "42.708333vh";
+			chrPrevImg.style.transform = "scale(1,1)";
+		}
 	}
 }
 
-chrSel[0].addEventListener("mouseover",
-    () => {
-        hoverDisplay("Dong_Dong", "東東");
-    }
-);
-chrSel[1].addEventListener("mouseover",
-    () => {
-        hoverDisplay("A_Shuang", "阿爽");
-    }
-);
-chrSel[2].addEventListener("mouseover",
-    () => {
-        hoverDisplay("Ken", "肯");
-    }
-);
-chrSel[3].addEventListener("mouseover",
-    () => {
-        hoverDisplay("Yin_Yin", "茵茵");
-    }
-);
-chrSel[4].addEventListener("mouseover",
-    () => {
-        hoverDisplay("Ming_Boy", "明仔");
-    }
-);
-chrSel[5].addEventListener("mouseover",
-    () => {
-        hoverDisplay("Liu_Mang", "足球流氓");
-    }
-);
-chrSel[6].addEventListener("mouseover",
-    () => {
-        hoverDisplay("Wu_Liao_Jun", "无聊君");
-    }
-);
-chrSel[7].addEventListener("mouseover",
-    () => {
-        hoverDisplay("Jie_Mei_Hua", "姐妹花");
-    }
-);
-chrSel[8].addEventListener("mouseover",
-    () => {
-        hoverDisplay("GOUKI", "GOUKI");
-    }
-);
-chrSel[9].addEventListener("mouseover",
-    () => {
-        hoverDisplay("Terminator", "终结者");
-    }
-);
-chrSel[10].addEventListener("mouseover",
-    () => {
-        hoverDisplay("Mian_Hua_Tang", "棉花糖");
-    }
-);
-chrSel[11].addEventListener("mouseover",
-    () => {
-        hoverDisplay("Jian_Ci_Lang", "健次郎");
-    }
-);
-chrSel[12].addEventListener("mouseover",
-    () => {
-        hoverDisplay("Mo_Shu_Shi", "魔術師");
-    }
-);
-chrSel[13].addEventListener("mouseover",
-    () => {
-        hoverDisplay("Jiang_Bao", "酱爆");
-    }
-);
-chrSel[14].addEventListener("mouseover",
-    () => {
-        hoverDisplay("Jie_Jie", "杰杰");
-    }
-);
-chrSel[15].addEventListener("mouseover",
-    () => {
-        hoverDisplay("Xiao_Ban", "小胖");
-    }
-);
-chrSel[16].addEventListener("mouseover",
-    () => {
-        hoverDisplay("Huo_Chai_Ren", "火柴人");
-    }
-);
-chrSel[17].addEventListener("mouseover",
-    () => {
-        hoverDisplay("Mario", "马里奥");
-    }
-);
-chrSel[18].addEventListener("mouseover",
-    () => {
-        hoverDisplay("Sun_Wu_Kong", "孙悟空");
-    }
-);
-chrSel[19].addEventListener("mouseover",
-    () => {
-        hoverDisplay("Da_Lan", "大懒");
-    }
-);
-chrSel[20].addEventListener("mouseover",
-    () => {
-        hoverDisplay("Zhuge_Liang", "諸葛亮");
-    }
-);
-chrSel[21].addEventListener("mouseover",
-    () => {
-        hoverDisplay("Fei_Fei", "菲菲");
-    }
-);
-chrSel[22].addEventListener("mouseover",
-    () => {
-        hoverDisplay("Sheng_Hua_Nan", "生化男");
-    }
-);
-chrSel[23].addEventListener("mouseover",
-    () => {
-        hoverDisplay("Korone", "<span style='font-family: serif'>KORONE</span>");
-    }
-);
+function positionCursor(positionID) {
+	csCursor = document.getElementById("select-cursor");
+
+	csCursor.style.left = Math.floor(positionID % 8) * 109 + 4 + "px";
+	csCursor.style.top = Math.floor(positionID / 8) * 105 + -6 + "px";
+}
+
+chrSel.forEach(element => {
+	element.addEventListener("mouseover",
+		(event) => {
+			hoverDisplay(event.target.parentElement.parentElement.onclick.toString().split("'")[1], event.target.dataset.hanzi);
+			positionCursor(chrSel.indexOf(event.target.parentElement.parentElement));
+		}
+	);
+});
 
 function runDisplay(characterName) {
 	previewDisplayOn = false;
-	// chrPrevImg.parentElement.classList.remove("portrait-onselect");
-	// void chrPrevImg.parentElement.offsetWidth;
 	
-	//sfx.confirm.currentTime = 0;
-	//sfx.confirm.play();
+	sfx.confirm.currentTime = 0;
+	sfx.confirm.play();
 	
 	initializeOV();
 	
@@ -199,6 +107,15 @@ function runDisplay(characterName) {
 		
 		chrPrevImg.src = "img/portraits/ddnd/" + charFileName + ".png";
 		chrName.innerHTML = charNameHanzi;
+
+		chrPrevImg.style.height = (chrPrevImg.naturalHeight / 480) * 100 + "vh";
+		if (charFileName === "Jian_Ci_Lang") {
+			chrPrevImg.style.bottom = ((205 - 39) / 480) * 100 + "vh";
+			chrPrevImg.style.transform = "scale(-1,1)";
+		} else {
+			chrPrevImg.style.bottom = "42.708333vh";
+			chrPrevImg.style.transform = "scale(1,1)";
+		}
 	}
 	
 	switch (characterName) {
@@ -588,3 +505,22 @@ function runDisplay(characterName) {
 			break;
     }
 }
+
+var backgroundNum = 1;
+var backgroundNumForward = true;
+setInterval(function() {
+	document.body.style.backgroundImage = "url('../../img/backgrounds/DDND_" + backgroundNum + ".png')";
+	if (backgroundNumForward) {
+		backgroundNum++;
+	} else {
+		backgroundNum--;
+	}
+	
+	if (backgroundNum === 5) {
+		backgroundNum = 3;
+		backgroundNumForward = false;
+	} else if (backgroundNum === 0) {
+		backgroundNum = 2;
+		backgroundNumForward = true;
+	}
+}, 145);

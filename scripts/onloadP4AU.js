@@ -52,7 +52,7 @@ const chrImg = {
 
 const pageMusic = new Audio("audio/music/P4AU - Electronica In Velvet Room Loop.ogg");
 pageMusic.loop = true;
-pageMusic.volume = 0.2;
+pageMusic.volume = 0.1;
 pageMusic.preload = "auto";
 
 // const pageMusicIntro = new Audio("../audio/music/P4AU - Electronica In Velvet Room Intro.ogg");
@@ -69,8 +69,8 @@ const sfx = {
 	cursor: new Audio("audio/sfx/p4au/p4auCursor.ogg"),
 	confirm: new Audio("audio/sfx/p4au/p4auConfirm.ogg"),
 }
-sfx.cursor.volume = 0.2;
-sfx.confirm.volume = 0.3;
+sfx.cursor.volume = 0.1;
+sfx.confirm.volume = 0.1;
 
 var previewDisplayOn = true;
 

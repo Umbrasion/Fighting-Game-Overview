@@ -99,11 +99,11 @@ const chrImg = {
 
 const pageMusic = new Audio("audio/music/DBFZ - Character Select loop.ogg");
 pageMusic.loop = true;
-pageMusic.volume = 0.2;
+pageMusic.volume = 0.11;
 pageMusic.preload = "auto";
 
 const pageMusicIntro = new Audio("audio/music/DBFZ - Character Select intro.ogg");
-pageMusicIntro.volume = 0.2;
+pageMusicIntro.volume = 0.11;
 pageMusicIntro.play();
 
 pageMusic.addEventListener("canplay", playMusic);
@@ -123,11 +123,11 @@ const sfx = {
 	announcer: new Audio("audio/sfx/dbfz/announcer/Name_Goku_(Super_Saiyan).ogg"),
 	//banter: new Audio("audio/sfx/dbfz/"),
 }
-sfx.cursor.volume = 0.12;
-sfx.cursor2.volume = 0.12;
-sfx.confirm.volume = 0.2;
-sfx.random.volume = 0.12;
-sfx.announcer.volume = 0.4;
+sfx.cursor.volume = 0.08;
+sfx.cursor2.volume = 0.08;
+sfx.confirm.volume = 0.15;
+sfx.random.volume = 0.08;
+sfx.announcer.volume = 0.2;
 //sfx.banter.volume = 0.1;
 
 sfx.random.loop = true;

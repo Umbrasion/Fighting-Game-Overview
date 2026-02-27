@@ -49,8 +49,11 @@ const sfx = {
 	],
 	confirm: new Audio("audio/sfx/ufdk2/confirm.ogg"),
 }
-sfx.cursor.volume = 0.2;
-sfx.confirm.volume = 1;
+sfx.cursor[0].volume = 0.6;
+sfx.cursor[1].volume = 0.6;
+sfx.cursor[2].volume = 0.6;
+sfx.cursor[3].volume = 0.6;
+sfx.confirm.volume = 0.7;
 
 var previewDisplayOn = true;
 

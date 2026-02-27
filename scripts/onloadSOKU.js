@@ -26,15 +26,15 @@ const chrSel = {
 
 const pageMusic = new Audio("audio/music/SOKU - Select Character.ogg");
 pageMusic.loop = true;
-pageMusic.volume = 0.2;
+pageMusic.volume = 0.1;
 pageMusic.play();
 
 const sfx = {
 	cursor: new Audio("audio/sfx/soku/039.wav"),
 	confirm: new Audio("audio/sfx/soku/040.wav"),
 }
-sfx.cursor.volume = 0.3;
-sfx.confirm.volume = 0.3;
+sfx.cursor.volume = 0.15;
+sfx.confirm.volume = 0.09;
 
 var previewDisplayOn = true;
 

@@ -2,6 +2,8 @@
 <html>
 	<head>
 		<title>RNG Spinner</title>
+		<meta charset="utf-8">
+		<link rel="icon" href="favicon.ico">
 		<link rel="stylesheet" href="../styles/main.css">
 		<script src="../scripts/jquery-3.7.1.min.js"></script>
 		<script src="spinner.js" defer></script>
@@ -44,6 +46,28 @@
 			
 			.tourney-logo {
 				width: 20vw;
+			}
+
+			.roller-lights {
+				position: absolute;
+				top: 16px;
+				left: -40px;
+				display: flex;
+				flex-flow: row;
+				justify-content: center;
+				gap: 610px;
+			}
+
+			.roller-lights img {
+				width: 40px;
+			}
+
+			#lights-middle {
+				top: 86px;
+			}
+
+			#lights-bottom {
+				top: 156px;
 			}
 			
 			.slots-area {
@@ -108,6 +132,7 @@
 				padding: 8px 10px 6px;
 				background: #3A5E33;
 				border: solid black 4px;
+				transition: all 0.08s;
 			}
 			
 			.roll-button:hover {
@@ -129,12 +154,7 @@
 			}
 			
 			.sloticon-spinin {
-				animation-name: sloticon-spinin;
-				animation-duration: 0.3s;
-				animation-iteration-count: 1;
-				animation-direction: normal;
-				animation-delay: 0s;
-				animation-timing-function: ease-out;
+				animation: sloticon-spinin 0.3s ease-out 0s 1 normal;
 			}
 			
 			@keyframes sloticon-spinin {
@@ -152,12 +172,7 @@
 			}
 			
 			.sloticon-spinout {
-				animation-name: sloticon-spinout;
-				animation-duration: 0.5s;
-				animation-iteration-count: 1;
-				animation-direction: normal;
-				animation-delay: 0s;
-				animation-timing-function: ease-out;
+				animation: sloticon-spinout 0.5s ease-out 0s 1 normal;
 			}
 			
 			@keyframes sloticon-spinout {
@@ -225,6 +240,58 @@
 				}
 			}
 		</style>
+		<style>
+			#debug-area {
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: center;
+				align-content: start;
+				gap: 4px;
+				background-color: #3A5E33;
+				width: 586px;
+				height: calc(98vh - 24px);
+				padding: 8px;
+				border: 4px solid black;
+				border-radius: 20px;
+				margin: 1vh;
+				transition: all 0.6s;
+				overflow-y: auto;
+				-ms-overflow-style: none;
+				scrollbar-width: none;
+			}
+
+			.debug-game {
+				text-align: center;
+				font-family: monospace;
+				background-color: #33502E;
+				width: 100px;
+				height: fit-content;
+				padding: 5px;
+				border: 2px solid #2D352B;
+				border-radius: 5px;
+			}
+
+			.debug-title {
+				font-size: 2em;
+				margin: 0px 0px 6px;
+			}
+
+			.debug-button {
+				font-family: monospace;
+				font-size: 1.5em;
+				background-color: #77808F;
+				border: 1px solid #2D352B;
+				border-radius: 4px;
+				cursor: pointer;
+			}
+
+			.debug-button:hover {
+				filter: brightness(1.2);	
+			}
+		</style>
 	</head>
 	<body>
 		<main>
@@ -267,35 +334,42 @@
 					<li id="rules-" class=""></li>
 				</ul>
 			</div>
-			<div class="logo-area">
-				<img class="tourney-logo" src="../img/logos/RNG_logo.png">
-				<div class="slots-area">
-					<div id="slot-roller" class="slot-roll">
-						<div id="slot-container">
-							<div class="slot-image-container">
-								<img class="slot-image" src="../img/logos/RNG_logo.png">
-							</div>
-							<div class="slot-image-container">
-								<img class="slot-image" src="../img/logos/AFQM_logo.png">
+			<div>
+				<div class="logo-area">
+					<img class="tourney-logo" src="../img/logos/RNG_logo.png">
+				</div>
+				<div style="position: relative;">
+					<div id="lights-top" class="roller-lights"><img src="Light_off.png"><img src="Light_off.png"></div>
+					<div id="lights-middle" class="roller-lights"><img src="Light_off.png"><img src="Light_off.png"></div>
+					<div id="lights-bottom" class="roller-lights"><img src="Light_off.png"><img src="Light_off.png"></div>
+					<div class="slots-area">
+						<div id="slot-roller" class="slot-roll">
+							<div id="slot-container">
+								<div class="slot-image-container">
+									<img class="slot-image" src="../img/logos/RNG_logo.png">
+								</div>
+								<div class="slot-image-container">
+									<img class="slot-image" src="../img/logos/AFQM_logo.png">
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="slots-area">
-					<div id="slot-roller-condition" class="slot-roll">
-						<div id="slot-container-condition">
-							<div class="slot-text-container">
-								<span class="slot-text">CONDITION</span>
-							</div>
-							<div class="slot-text-container">
-								<span class="slot-text"></span>
+					<div class="slots-area">
+						<div id="slot-roller-condition" class="slot-roll">
+							<div id="slot-container-condition">
+								<div class="slot-text-container">
+									<span class="slot-text">CONDITION</span>
+								</div>
+								<div class="slot-text-container">
+									<span class="slot-text"></span>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div>
-					<button id="main-button" class="roll-button" onclick="initiateRoll()"><span id="main-button-text" class="">LET THE HANDS OF FATE DECIDE!</span></button><br><br>
-					<button id="reroll-button" class="roll-button" onclick="initiateReroll()">Reroll Pick</button>
+					<div>
+						<button id="main-button" class="roll-button" onclick="initiateRoll()"><span id="main-button-text" class="">LET THE HANDS OF FATE DECIDE!</span></button><br><br>
+						<button id="reroll-button" class="roll-button" onclick="initiateReroll()">Reroll Pick</button>
+					</div>
 				</div>
 			</div>
 			<div class="condition-area">
@@ -308,5 +382,195 @@
 				<p id="condition-description-extra2" class="segment-info"></p>
 			</div>
 		</main>
+		<div id="debug-area" style="transform: translate(calc(-600px - 2vh), 0px)">
+			<div class="debug-game">
+				<h5 class="debug-title">AFQM</h5>
+				<button id="debug-button-AFQM" class="debug-button" onclick="toggleGame('AFQM')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">AUAU</h5>
+				<button id="debug-button-AUAU" class="debug-button" onclick="toggleGame('AUAU')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">AH3X</h5>
+				<button id="debug-button-AH3X" class="debug-button" onclick="toggleGame('AH3X')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">BBCF</h5>
+				<button id="debug-button-BBCF" class="debug-button" onclick="toggleGame('BBCF')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">BBTAG</h5>
+				<button id="debug-button-BBTAG" class="debug-button" onclick="toggleGame('BBTAG')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">NSC</h5>
+				<button id="debug-button-NSC" class="debug-button" onclick="toggleGame('NSC')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">DNFD</h5>
+				<button id="debug-button-DNFD" class="debug-button" onclick="toggleGame('DNFD')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">DDND</h5>
+				<button id="debug-button-DDND" class="debug-button" onclick="toggleGame('DDND')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">DBFZ</h5>
+				<button id="debug-button-DBFZ" class="debug-button" onclick="toggleGame('DBFZ')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">EL2</h5>
+				<button id="debug-button-EL2" class="debug-button" onclick="toggleGame('EL2')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">FM</h5>
+				<button id="debug-button-FM" class="debug-button" onclick="toggleGame('FM')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">GBVSR</h5>
+				<button id="debug-button-GBVSR" class="debug-button" onclick="toggleGame('GBVSR')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<!--div class="debug-game">
+				<h5 class="debug-title">GGML</h5>
+				<button id="debug-button-GGML" class="debug-button" onclick="toggleGame('GGML')" style="background-color: lightgreen">ALLOWED</button>
+			</div-->
+			<div class="debug-game">
+				<h5 class="debug-title">GGST</h5>
+				<button id="debug-button-GGST" class="debug-button" onclick="toggleGame('GGST')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">GGXRD</h5>
+				<button id="debug-button-GGXRD" class="debug-button" onclick="toggleGame('GGXRD')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">GGACR</h5>
+				<button id="debug-button-GGACR" class="debug-button" onclick="toggleGame('GGACR')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">HxHNI</h5>
+				<button id="debug-button-HxHNI" class="debug-button" onclick="toggleGame('HxHNI')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">ISD</h5>
+				<button id="debug-button-ISD" class="debug-button" onclick="toggleGame('ISD')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">KLKIF</h5>
+				<button id="debug-button-KLKIF" class="debug-button" onclick="toggleGame('KLKIF')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">KoFXIII</h5>
+				<button id="debug-button-KoFXIII" class="debug-button" onclick="toggleGame('KoFXIII')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">KoFXV</h5>
+				<button id="debug-button-KoFXV" class="debug-button" onclick="toggleGame('KoFXV')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">KF2</h5>
+				<button id="debug-button-KF2" class="debug-button" onclick="toggleGame('KF2')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">MnS</h5>
+				<button id="debug-button-MnS" class="debug-button" onclick="toggleGame('MnS')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">MvCIB</h5>
+				<button id="debug-button-MvCIB" class="debug-button" onclick="toggleGame('MvCIB')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">MBAACC</h5>
+				<button id="debug-button-MBAACC" class="debug-button" onclick="toggleGame('MBAACC')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">MBTL</h5>
+				<button id="debug-button-MBTL" class="debug-button" onclick="toggleGame('MBTL')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">MAAB</h5>
+				<button id="debug-button-MAAB" class="debug-button" onclick="toggleGame('MAAB')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">MVS</h5>
+				<button id="debug-button-MVS" class="debug-button" onclick="toggleGame('MVS')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">NASB2</h5>
+				<button id="debug-button-NASB2" class="debug-button" onclick="toggleGame('NASB2')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">P4AU</h5>
+				<button id="debug-button-P4AU" class="debug-button" onclick="toggleGame('P4AU')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<!--div class="debug-game">
+				<h5 class="debug-title">PKMNCC</h5>
+				<button id="debug-button-PKMNCC" class="debug-button" onclick="toggleGame('PKMNCC')" style="background-color: lightgreen">ALLOWED</button>
+			</div-->
+			<div class="debug-game">
+				<h5 class="debug-title">PTDX</h5>
+				<button id="debug-button-PTDX" class="debug-button" onclick="toggleGame('PTDX')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">RoA</h5>
+				<button id="debug-button-RoA" class="debug-button" onclick="toggleGame('RoA')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">RoA2</h5>
+				<button id="debug-button-RoA2" class="debug-button" onclick="toggleGame('RoA2')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">SG</h5>
+				<button id="debug-button-SG" class="debug-button" onclick="toggleGame('SG')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">SC</h5>
+				<button id="debug-button-SC" class="debug-button" onclick="toggleGame('SC')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">SF6</h5>
+				<button id="debug-button-SF6" class="debug-button" onclick="toggleGame('SF6')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">SSBC</h5>
+				<button id="debug-button-SSBC" class="debug-button" onclick="toggleGame('SSBC')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">SSBU</h5>
+				<button id="debug-button-SSBU" class="debug-button" onclick="toggleGame('SSBU')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">SSF2</h5>
+				<button id="debug-button-SSF2" class="debug-button" onclick="toggleGame('SSF2')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">REX</h5>
+				<button id="debug-button-REX" class="debug-button" onclick="toggleGame('REX')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">T8</h5>
+				<button id="debug-button-T8" class="debug-button" onclick="toggleGame('T8')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">SOKU</h5>
+				<button id="debug-button-SOKU" class="debug-button" onclick="toggleGame('SOKU')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">AoCF</h5>
+				<button id="debug-button-AoCF" class="debug-button" onclick="toggleGame('AoCF')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">UMvC3</h5>
+				<button id="debug-button-UMvC3" class="debug-button" onclick="toggleGame('UMvC3')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">UFDK2</h5>
+				<button id="debug-button-UFDK2" class="debug-button" onclick="toggleGame('UFDK2')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+			<div class="debug-game">
+				<h5 class="debug-title">UNI2</h5>
+				<button id="debug-button-UNI2" class="debug-button" onclick="toggleGame('UNI2')" style="background-color: lightgreen">ALLOWED</button>
+			</div>
+		</div>
 	</body>
 </html>

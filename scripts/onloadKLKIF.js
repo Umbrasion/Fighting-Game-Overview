@@ -16,11 +16,11 @@ const chrSel = {
 
 const pageMusic = new Audio("audio/music/KLKIF - Main Menu Theme loop.ogg");
 pageMusic.loop = true;
-pageMusic.volume = 0.2;
+pageMusic.volume = 0.1;
 pageMusic.preload = "auto";
 
 const pageMusicIntro = new Audio("audio/music/KLKIF - Main Menu Theme intro.ogg");
-pageMusicIntro.volume = 0.2;
+pageMusicIntro.volume = 0.1;
 
 pageMusic.addEventListener("canplay", playMusic);
 function playMusic() {
@@ -35,8 +35,8 @@ const sfx = {
 	cursor: new Audio("audio/sfx/klkif/cursor.ogg"),
 	confirm: new Audio("audio/sfx/klkif/confirm.ogg"),
 }
-sfx.cursor.volume = 0.4;
-sfx.confirm.volume = 0.4;
+sfx.cursor.volume = 0.2;
+sfx.confirm.volume = 0.2;
 
 function clearDisplay() {
 	if (previewDisplayOn) {
@@ -221,19 +221,23 @@ chrSel.random.addEventListener("mouseover",
 
 // Display on click
 
-var characterBanter = new Audio();
+var banter = new Audio();
 
 function runDisplay(characterName, overrideDisableActions = false) {
 	if (!disableActions || overrideDisableActions) {
+		sfx.confirm.onended = function() {}
+		if (!banter.paused) {
+			banter.pause();
+		}
 		previewDisplayOn = false;
 		disableActions = false;
 		
 		sfx.confirm.currentTime = 0;
 		sfx.confirm.play();
 		sfx.confirm.onended = function() {
-			var characterBanter = new Audio("audio/sfx/klkif/banter/" + characterName + "_select.ogg");
-			characterBanter.volume = 0.35;
-			characterBanter.play();
+			banter = new Audio("audio/sfx/klkif/banter/" + characterName + "_select.ogg");
+			banter.volume = 0.35;
+			banter.play();
 		};
 		
 		initializeOV("wide");

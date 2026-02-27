@@ -1,410 +1,483 @@
-
+const chrPrevImg = document.getElementById("info-portrait");
+const chrName = document.getElementById("info-name");
+const chrSel = [
+	document.getElementById("character-brawler"),
+	document.getElementById("character-hitman"),
+	document.getElementById("character-swiftmaster"),
+	document.getElementById("character-ranger"),
+	document.getElementById("character-berserker"),
+	document.getElementById("character-random"),
+	document.getElementById("character-vanguard"),
+	document.getElementById("character-launcher"),
+	document.getElementById("character-enchantress"),
+	document.getElementById("character-troubleshooter"),
+	document.getElementById("character-battlemage"),
+	document.getElementById("character-monk"),
+	document.getElementById("character-dragonknight"),
+	document.getElementById("character-kunoichi"),
+	document.getElementById("character-inquisitor"),
+	document.getElementById("character-striker"),
+	document.getElementById("character-lostwarrior"),
+	document.getElementById("character-grappler"),
+	document.getElementById("character-crusader"),
+	document.getElementById("character-ghostblade"),
+	document.getElementById("character-spectre"),
+	document.getElementById("character-nenmaster"),
+];
 
 const pageMusic = new Audio("audio/music/DNFD - Linking.ogg");
 pageMusic.loop = true;
-pageMusic.volume = 0.1;
+pageMusic.volume = 0.08;
 pageMusic.play();
 
-var sizeChange = "scale(1.1)";
-var zIndexChange = "500";
+const sfx = {
+	cursor: new Audio("audio/sfx/dnfd/SE_Menu_CharaCursor.ogg"),
+	confirm: new Audio("audio/sfx/dnfd/SE_Menu_CharaDecide.ogg"),
+	cancel: new Audio("audio/sfx/dnfd/SE_Menu_Cancel.ogg"),
+}
+sfx.cursor.volume = 0.6;
+sfx.confirm.volume = 0.2;
+sfx.cancel.volume = 0.25;
 
-// Brawler
+var previewDisplayOn = true;
+var interactionEnabled = true;
 
-const selBrawler = document.getElementById("character-brawler");
-const portBrawler = document.getElementById("selectbox-brawler");
-const posBrawler = document.getElementById("positioner-brawler");
-selBrawler.addEventListener("mouseover",
-	(event) => {
-		portBrawler.style.transform = sizeChange;
-		posBrawler.style.zIndex = zIndexChange;
+// Display on hover
+
+function hoverDisplay(targetChar) {
+	if (interactionEnabled) {
+		sfx.cursor.currentTime = 0;
+		sfx.cursor.play();
+		if (previewDisplayOn) {
+			var charFileName = targetChar.onclick.toString().split("'")[1];
+			var scaleMeasures = targetChar.dataset.scale.split(",");
+
+			if (chrPrevImg.src.includes(".png")) {
+				document.getElementById("info-portrait-temp").src = chrPrevImg.src;
+				document.getElementById("info-portrait-temp").style.transform = chrPrevImg.style.transform;
+			}
+
+			chrPrevImg.src = "img/portraits/dnfd/" + charFileName + ".png";
+			chrName.src = "img/characterSelect/dnfd/Nameplate_" + charFileName + ".png";
+			chrPrevImg.style.transform = "scale(" + scaleMeasures[0] + ") translate(" + scaleMeasures[1] + "%, " + scaleMeasures[2] + "%)";
+
+			chrPrevImg.classList.remove("portrait-onhover");
+			void chrPrevImg.offsetWidth;
+			chrPrevImg.classList.add("portrait-onhover");
+			document.getElementById("info-portrait-temp").classList.remove("tempportrait-onhover");
+			void document.getElementById("info-portrait-temp").offsetWidth;
+			document.getElementById("info-portrait-temp").classList.add("tempportrait-onhover");
+		}
 	}
-);
-selBrawler.addEventListener("mouseout",
-	(event) => {
-		portBrawler.style.transform = "scale(1)";
-		posBrawler.style.zIndex = "auto";
-	}
-);
+}
 
-// Hitman
-
-const selHitman = document.getElementById("character-hitman");
-const portHitman = document.getElementById("selectbox-hitman");
-const posHitman = document.getElementById("positioner-hitman");
-selHitman.addEventListener("mouseover",
-	(event) => {
-		portHitman.style.transform = sizeChange;
-		posHitman.style.zIndex = zIndexChange;
+function positionCursor(positionID) {
+	if (interactionEnabled) {
+		var csCursor = document.getElementById("select-cursor");
+		console.log(positionID);
+		csCursor.src = "img/characterSelect/dnfd/Cursor_1.png";
+		csCursor.style.width = "238px";
+		csCursor.style.height = "126px";
+		csCursor.style.transform = "";
+		if (positionID < 5) {
+			csCursor.style.left = Math.floor(positionID % 11) * 144 - 27 + "px";
+			csCursor.style.top = "-18px";
+		} else if (positionID > 16) {
+			csCursor.style.left = Math.floor(positionID % 11) * 144 - 18 + "px";
+			csCursor.style.top = "92px";
+		} else if (positionID > 5 && positionID < 11) {
+			csCursor.style.transform = "scale(-1,1)";
+			csCursor.style.left = Math.floor(positionID % 11) * 144 - 20 + "px";
+			csCursor.style.top = "-18px";
+		} else if (positionID > 10 && positionID < 16) {
+			csCursor.style.transform = "scale(-1,1)";
+			csCursor.style.left = Math.floor(positionID % 11) * 144 - 28 + "px";
+			csCursor.style.top = "92px";
+		} else if (positionID === 5) {
+			csCursor.src = "img/characterSelect/dnfd/Cursor_2.png";
+			csCursor.style.width = "246px";
+			csCursor.style.height = "127px";
+			csCursor.style.left = Math.floor(positionID % 11) * 144 - 27 + "px";
+			csCursor.style.top = "-18px";
+		} else if (positionID === 16) {
+			csCursor.src = "img/characterSelect/dnfd/Cursor_3.png";
+			csCursor.style.width = "246px";
+			csCursor.style.height = "127px";
+			csCursor.style.left = Math.floor(positionID % 11) * 144 - 27 + "px";
+			csCursor.style.top = "92px";
+		}
 	}
-);
-selHitman.addEventListener("mouseout",
-	(event) => {
-		portHitman.style.transform = "scale(1)";
-		posHitman.style.zIndex = "auto";
-	}
-);
+}
 
-// Swift Master
+chrSel.forEach(element => {
+	element.addEventListener("mouseover",
+		(event) => {
+			hoverDisplay(event.target);
+			positionCursor(chrSel.indexOf(event.target));
+		}
+	);
+});
 
-const selSwiftMaster = document.getElementById("character-swiftmaster");
-const portSwiftMaster = document.getElementById("selectbox-swiftmaster");
-const posSwiftMaster = document.getElementById("positioner-swiftmaster");
-selSwiftMaster.addEventListener("mouseover",
-	(event) => {
-		portSwiftMaster.style.transform = sizeChange;
-		posSwiftMaster.style.zIndex = zIndexChange;
-	}
-);
-selSwiftMaster.addEventListener("mouseout",
-	(event) => {
-		portSwiftMaster.style.transform = "scale(1)";
-		posSwiftMaster.style.zIndex = "auto";
-	}
-);
+// Display on click
 
-// Ranger
+var banter = new Audio();
 
-const selRanger = document.getElementById("character-ranger");
-const portRanger = document.getElementById("selectbox-ranger");
-const posRanger = document.getElementById("positioner-ranger");
-selRanger.addEventListener("mouseover",
-	(event) => {
-		portRanger.style.transform = sizeChange;
-		posRanger.style.zIndex = zIndexChange;
-	}
-);
-selRanger.addEventListener("mouseout",
-	(event) => {
-		portRanger.style.transform = "scale(1)";
-		posRanger.style.zIndex = "auto";
-	}
-);
+function runDisplay(characterName) {
+	if (interactionEnabled) {
+		previewDisplayOn = false;
+        interactionEnabled = false;
+		
+		sfx.confirm.currentTime = 0;
+		sfx.confirm.play();
+		
+		reroll: while (true) {
+			if (characterName === "Random") {
+				characterName = chrSel[Math.floor(Math.random() * chrSel.length)].onclick.toString().split("'")[1];
+				continue reroll;
+			} else {
+				break reroll;
+			}
+		}
+		
+		initializeOV("experimental");
 
-// Berserker
+		chrPrevImg.src = "img/portraits/dnfd/" + characterName + ".png";
+		chrName.src = "img/characterSelect/dnfd/Nameplate_" + characterName + ".png";
 
-const selBerserker = document.getElementById("character-berserker");
-const portBerserker = document.getElementById("selectbox-berserker");
-const posBerserker = document.getElementById("positioner-berserker");
-selBerserker.addEventListener("mouseover",
-	(event) => {
-		portBerserker.style.transform = sizeChange;
-		posBerserker.style.zIndex = zIndexChange;
-	}
-);
-selBerserker.addEventListener("mouseout",
-	(event) => {
-		portBerserker.style.transform = "scale(1)";
-		posBerserker.style.zIndex = "auto";
-	}
-);
+		var scaleMeasures = chrSel[chrSel.indexOf(document.getElementById("character-" + characterName.toLowerCase().replace("_","")))].dataset.scale.split(",");
+		chrPrevImg.style.transform = "scale(" + scaleMeasures[0] + ") translate(" + scaleMeasures[1] + "%, " + scaleMeasures[2] + "%)";
+		
+        if (!banter.paused) {
+			banter.pause();
+		}
 
-// Random
+        banter = new Audio("audio/sfx/dnfd/banter/" + characterName + "_select.ogg");
+        banter.volume = 0.2;
+        banter.play();
+		
+		switch (characterName) {
+			case "Brawler":
+				displayInfo = {
+					filename: characterName,
+					colors: 8,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Hitman":
+				displayInfo = {
+					filename: characterName,
+					colors: 8,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Swift_Master":
+				displayInfo = {
+					filename: characterName,
+					colors: 8,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Ranger":
+				displayInfo = {
+					filename: characterName,
+					colors: 8,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Berserker":
+				displayInfo = {
+					filename: characterName,
+					colors: 8,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Vanguard":
+				displayInfo = {
+					filename: characterName,
+					colors: 8,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Launcher":
+				displayInfo = {
+					filename: characterName,
+					colors: 8,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Enchantress":
+				displayInfo = {
+					filename: characterName,
+					colors: 8,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Trouble_Shooter":
+				displayInfo = {
+					filename: characterName,
+					colors: 8,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Battle_Mage":
+				displayInfo = {
+					filename: characterName,
+					colors: 8,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Monk":
+				displayInfo = {
+					filename: characterName,
+					colors: 8,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Dragon_Knight":
+				displayInfo = {
+					filename: characterName,
+					colors: 8,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Kunoichi":
+				displayInfo = {
+					filename: characterName,
+					colors: 8,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Inquisitor":
+				displayInfo = {
+					filename: characterName,
+					colors: 8,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Striker":
+				displayInfo = {
+					filename: characterName,
+					colors: 8,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Lost_Warrior":
+				displayInfo = {
+					filename: characterName,
+					colors: 8,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Grappler":
+				displayInfo = {
+					filename: characterName,
+					colors: 8,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Crusader":
+				displayInfo = {
+					filename: characterName,
+					colors: 8,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Ghostblade":
+				displayInfo = {
+					filename: characterName,
+					colors: 8,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Spectre":
+				displayInfo = {
+					filename: characterName,
+					colors: 8,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Nen_Master":
+				displayInfo = {
+					filename: characterName,
+					colors: 8,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+		}
 
-const selRandom = document.getElementById("character-random");
-const portRandom = document.getElementById("selectbox-random");
-const posRandom = document.getElementById("positioner-random");
-selRandom.addEventListener("mouseover",
-	(event) => {
-		portRandom.style.transform = sizeChange;
-		posRandom.style.zIndex = zIndexChange;
+		updateOV2(displayInfo, "dnfd");
 	}
-);
-selRandom.addEventListener("mouseout",
-	(event) => {
-		portRandom.style.transform = "scale(1)";
-		posRandom.style.zIndex = "auto";
-	}
-);
+}
 
-// Vanguard
-
-const selVanguard = document.getElementById("character-vanguard");
-const portVanguard = document.getElementById("selectbox-vanguard");
-const posVanguard = document.getElementById("positioner-vanguard");
-selVanguard.addEventListener("mouseover",
-	(event) => {
-		portVanguard.style.transform = sizeChange;
-		posVanguard.style.zIndex = zIndexChange;
-	}
-);
-selVanguard.addEventListener("mouseout",
-	(event) => {
-		portVanguard.style.transform = "scale(1)";
-		posVanguard.style.zIndex = "auto";
-	}
-);
-
-// Launcher
-
-const selLauncher = document.getElementById("character-launcher");
-const portLauncher = document.getElementById("selectbox-launcher");
-const posLauncher = document.getElementById("positioner-launcher");
-selLauncher.addEventListener("mouseover",
-	(event) => {
-		portLauncher.style.transform = sizeChange;
-		posLauncher.style.zIndex = zIndexChange;
-	}
-);
-selLauncher.addEventListener("mouseout",
-	(event) => {
-		portLauncher.style.transform = "scale(1)";
-		posLauncher.style.zIndex = "auto";
-	}
-);
-
-// Enchantress
-
-const selEnchantress = document.getElementById("character-enchantress");
-const portEnchantress = document.getElementById("selectbox-enchantress");
-const posEnchantress = document.getElementById("positioner-enchantress");
-selEnchantress.addEventListener("mouseover",
-	(event) => {
-		portEnchantress.style.transform = sizeChange;
-		posEnchantress.style.zIndex = zIndexChange;
-	}
-);
-selEnchantress.addEventListener("mouseout",
-	(event) => {
-		portEnchantress.style.transform = "scale(1)";
-		posEnchantress.style.zIndex = "auto";
-	}
-);
-
-// Trouble Shooter
-
-const selTroubleShooter = document.getElementById("character-troubleshooter");
-const portTroubleShooter = document.getElementById("selectbox-troubleshooter");
-const posTroubleShooter = document.getElementById("positioner-troubleshooter");
-selTroubleShooter.addEventListener("mouseover",
-	(event) => {
-		portTroubleShooter.style.transform = sizeChange;
-		posTroubleShooter.style.zIndex = zIndexChange;
-	}
-);
-selTroubleShooter.addEventListener("mouseout",
-	(event) => {
-		portTroubleShooter.style.transform = "scale(1)";
-		posTroubleShooter.style.zIndex = "auto";
-	}
-);
-
-// Battle Mage
-
-const selBattleMage = document.getElementById("character-battlemage");
-const portBattleMage = document.getElementById("selectbox-battlemage");
-const posBattleMage = document.getElementById("positioner-battlemage");
-selBattleMage.addEventListener("mouseover",
-	(event) => {
-		portBattleMage.style.transform = sizeChange;
-		posBattleMage.style.zIndex = zIndexChange;
-	}
-);
-selBattleMage.addEventListener("mouseout",
-	(event) => {
-		portBattleMage.style.transform = "scale(1)";
-		posBattleMage.style.zIndex = "auto";
-	}
-);
-
-// Monk
-
-const selMonk = document.getElementById("character-monk");
-const portMonk = document.getElementById("selectbox-monk");
-const posMonk = document.getElementById("positioner-monk");
-selMonk.addEventListener("mouseover",
-	(event) => {
-		portMonk.style.transform = sizeChange;
-		posMonk.style.zIndex = zIndexChange;
-	}
-);
-selMonk.addEventListener("mouseout",
-	(event) => {
-		portMonk.style.transform = "scale(1)";
-		posMonk.style.zIndex = "auto";
-	}
-);
-
-// Dragon Knight
-
-const selDragonKnight = document.getElementById("character-dragonknight");
-const portDragonKnight = document.getElementById("selectbox-dragonknight");
-const posDragonKnight = document.getElementById("positioner-dragonknight");
-selDragonKnight.addEventListener("mouseover",
-	(event) => {
-		portDragonKnight.style.transform = sizeChange;
-		posDragonKnight.style.zIndex = zIndexChange;
-	}
-);
-selDragonKnight.addEventListener("mouseout",
-	(event) => {
-		portDragonKnight.style.transform = "scale(1)";
-		posDragonKnight.style.zIndex = "auto";
-	}
-);
-
-// Kunoichi
-
-const selKunoichi = document.getElementById("character-kunoichi");
-const portKunoichi = document.getElementById("selectbox-kunoichi");
-const posKunoichi = document.getElementById("positioner-kunoichi");
-selKunoichi.addEventListener("mouseover",
-	(event) => {
-		portKunoichi.style.transform = sizeChange;
-		posKunoichi.style.zIndex = zIndexChange;
-	}
-);
-selKunoichi.addEventListener("mouseout",
-	(event) => {
-		portKunoichi.style.transform = "scale(1)";
-		posKunoichi.style.zIndex = "auto";
-	}
-);
-
-// Inquisitor
-
-const selInquisitor = document.getElementById("character-inquisitor");
-const portInquisitor = document.getElementById("selectbox-inquisitor");
-const posInquisitor = document.getElementById("positioner-inquisitor");
-selInquisitor.addEventListener("mouseover",
-	(event) => {
-		portInquisitor.style.transform = sizeChange;
-		posInquisitor.style.zIndex = zIndexChange;
-	}
-);
-selInquisitor.addEventListener("mouseout",
-	(event) => {
-		portInquisitor.style.transform = "scale(1)";
-		posInquisitor.style.zIndex = "auto";
-	}
-);
-
-// Striker
-
-const selStriker = document.getElementById("character-striker");
-const portStriker = document.getElementById("selectbox-striker");
-const posStriker = document.getElementById("positioner-striker");
-selStriker.addEventListener("mouseover",
-	(event) => {
-		portStriker.style.transform = sizeChange;
-		posStriker.style.zIndex = zIndexChange;
-	}
-);
-selStriker.addEventListener("mouseout",
-	(event) => {
-		portStriker.style.transform = "scale(1)";
-		posStriker.style.zIndex = "auto";
-	}
-);
-
-// Lost Warrior
-
-const selLostWarrior = document.getElementById("character-lostwarrior");
-const portLostWarrior = document.getElementById("selectbox-lostwarrior");
-const posLostWarrior = document.getElementById("positioner-lostwarrior");
-selLostWarrior.addEventListener("mouseover",
-	(event) => {
-		portLostWarrior.style.transform = sizeChange;
-		posLostWarrior.style.zIndex = zIndexChange;
-	}
-);
-selLostWarrior.addEventListener("mouseout",
-	(event) => {
-		portLostWarrior.style.transform = "scale(1)";
-		posLostWarrior.style.zIndex = "auto";
-	}
-);
-
-// Grappler
-
-const selGrappler = document.getElementById("character-grappler");
-const portGrappler = document.getElementById("selectbox-grappler");
-const posGrappler = document.getElementById("positioner-grappler");
-selGrappler.addEventListener("mouseover",
-	(event) => {
-		portGrappler.style.transform = sizeChange;
-		posGrappler.style.zIndex = zIndexChange;
-	}
-);
-selGrappler.addEventListener("mouseout",
-	(event) => {
-		portGrappler.style.transform = "scale(1)";
-		posGrappler.style.zIndex = "auto";
-	}
-);
-
-// Crusader
-
-const selCrusader = document.getElementById("character-crusader");
-const portCrusader = document.getElementById("selectbox-crusader");
-const posCrusader = document.getElementById("positioner-crusader");
-selCrusader.addEventListener("mouseover",
-	(event) => {
-		portCrusader.style.transform = sizeChange;
-		posCrusader.style.zIndex = zIndexChange;
-	}
-);
-selCrusader.addEventListener("mouseout",
-	(event) => {
-		portCrusader.style.transform = "scale(1)";
-		posCrusader.style.zIndex = "auto";
-	}
-);
-
-// Ghostblade
-
-const selGhostblade = document.getElementById("character-ghostblade");
-const portGhostblade = document.getElementById("selectbox-ghostblade");
-const posGhostblade = document.getElementById("positioner-ghostblade");
-selGhostblade.addEventListener("mouseover",
-	(event) => {
-		portGhostblade.style.transform = sizeChange;
-		posGhostblade.style.zIndex = zIndexChange;
-	}
-);
-selGhostblade.addEventListener("mouseout",
-	(event) => {
-		portGhostblade.style.transform = "scale(1)";
-		posGhostblade.style.zIndex = "auto";
-	}
-);
-
-// Spectre
-
-const selSpectre = document.getElementById("character-spectre");
-const portSpectre = document.getElementById("selectbox-spectre");
-const posSpectre = document.getElementById("positioner-spectre");
-selSpectre.addEventListener("mouseover",
-	(event) => {
-		portSpectre.style.transform = sizeChange;
-		posSpectre.style.zIndex = zIndexChange;
-	}
-);
-selSpectre.addEventListener("mouseout",
-	(event) => {
-		portSpectre.style.transform = "scale(1)";
-		posSpectre.style.zIndex = "auto";
-	}
-);
-
-// Nen Master
-
-const selNenMaster = document.getElementById("character-nenmaster");
-const portNenMaster = document.getElementById("selectbox-nenmaster");
-const posNenMaster = document.getElementById("positioner-nenmaster");
-selNenMaster.addEventListener("mouseover",
-	(event) => {
-		portNenMaster.style.transform = sizeChange;
-		posNenMaster.style.zIndex = zIndexChange;
-	}
-);
-selNenMaster.addEventListener("mouseout",
-	(event) => {
-		portNenMaster.style.transform = "scale(1)";
-		posNenMaster.style.zIndex = "auto";
-	}
-);
-
-$(window).resize(setLocations);
+/*$(window).resize(setLocations);
 
 // Keep in mind coordinates were measured at half scale rather than full scale
 // 'cause I'm a dummy dumb brain
@@ -521,4 +594,4 @@ function setLocations() {
 	autoResize("selectbox-fullroster", selNenMaster, chrCoords, portNenMaster, iconPos, posNenMaster);
 }
 
-document.getElementsByClassName("selectbox-fullroster")[0].onload = setTimeout(setLocations, 1);
+document.getElementsByClassName("selectbox-fullroster")[0].onload = setTimeout(setLocations, 1);*/

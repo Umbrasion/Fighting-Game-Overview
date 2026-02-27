@@ -31,7 +31,7 @@ const chrSel = {
 
 const pageMusic = new Audio("audio/music/GGXRD - Fizz.ogg");
 pageMusic.loop = true;
-pageMusic.volume = 0.15;
+pageMusic.volume = 0.1;
 pageMusic.play();
 
 const sfx = {
@@ -39,8 +39,8 @@ const sfx = {
 	confirm: new Audio("audio/sfx/ggxrd/confirm.ogg"),
 	announcer: new Audio("audio/sfx/ggxrd/announcer_intro.ogg"),
 }
-sfx.cursor.volume = 0.1;
-sfx.confirm.volume = 0.15;
+sfx.cursor.volume = 0.06;
+sfx.confirm.volume = 0.12;
 sfx.announcer.volume = 1;
 setTimeout(function() {sfx.announcer.play()}, 2200);
 

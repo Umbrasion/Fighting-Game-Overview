@@ -1,16 +1,17 @@
+:root {
+    cursor: url("../../img/characterSelect/mns/Cursor.png"), auto;
+}
+
+#returnbutton, area, .color-button, .description-exit {
+    cursor: url("../../img/characterSelect/mns/Cursor2.png"), auto;
+}
+
 body {
     margin: 0px;
 }
 
 #characterselect {
     padding: 0px;
-}
-
-.selectbox-positioner {
-    pointer-events: none;
-    position: relative;
-    width: 0px;
-    height: 0px;
 }
 
 .selectbox-fullroster {

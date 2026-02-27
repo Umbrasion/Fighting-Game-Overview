@@ -1,9 +1,82 @@
+:root {
+    background-image: url("../../img/backgrounds/DNFD.png");
+    background-size: 100% 100%;
+    overflow: clip;
+}
+
+body {
+	font-family: "Mah Sans";
+    min-height: 100vh;
+}
+
+.playerside-1p, .playerside-2p {
+    position: absolute;
+    top: 0px;
+    width: 50vw;
+    height: 100vh;
+}
+
+.playerside-1p {
+    background: linear-gradient(54deg, rgba(212, 63, 49, 0.5) 0%, rgba(212, 63, 49, 0.5) 54.8%, rgba(0, 0, 0, 0) 54.8%, rgba(0, 0, 0, 0) 100%);
+    left: 0px;
+}
+
+.playerside-2p {
+    background: linear-gradient(-54deg, rgba(48, 80, 168, 0.5) 0%, rgba(48, 80, 168, 0.5) 54.8%, rgba(0, 0, 0, 0) 54.8%, rgba(0, 0, 0, 0) 100%);
+    right: 0px;
+}
+
+#characterselect {
+    height: calc(100vh - 56px);
+}
+
 #characterselect {
     display: block;
 }
 
+.portrait-area :nth-child(1) {
+    filter: drop-shadow(-35px 20px 0px rgba(50,0,0,0.5));
+}
+
+.portrait-area :nth-child(1) :nth-child(1) {
+    filter: none;
+}
+
+#info-portrait {
+    filter: drop-shadow(0px 0px 1px white);
+}
+
+#info-name {
+    width: 100%;
+    transform: scale(0.65,1);
+    transform-origin: left;
+}
+
 .selectbox-container, .selectbox-fullroster {
     max-width: 100%;
+}
+
+.selectbox-container {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 4vh;
+    background: url("../../img/characterSelect/dnfd/Select_background.png");
+    width: 100vw;
+    aspect-ratio: 4 / 1;
+    margin: auto;
+}
+
+.icon-positioner {
+    position: relative;
+    margin-left: 7.5vw;
+    margin-top: 236px;
+}
+
+#select-cursor {
+    position: absolute;
+    z-index: 102;
+    pointer-events: none;
 }
 
 .selectbox-positioner {
@@ -14,6 +87,57 @@
 }
 
 .selectbox-character img {
-    /* transition: transform 0.3s; */
     transform-origin: center;
+    user-select: none;
+}
+
+.selectbox-fullroster {
+    user-select: none;
+}
+
+.description-area {
+    background: linear-gradient(to bottom, rgba(60,70,99,0.9), rgba(0,0,0,0.9));
+    border: 3px solid #7E6B5A;
+}
+
+.portrait-onhover {
+    animation-name: portraitonhover;
+    animation-duration: 0.15s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-delay: 0s;
+    animation-timing-function: cubic-bezier(0, 0, 0, 0.91);
+}
+
+@keyframes portraitonhover {
+    from {
+        margin-right: 160px;
+        opacity: 0;
+    }
+    
+    to {
+        margin-right: 0px;
+        opacity: 1;
+    }
+}
+
+.tempportrait-onhover {
+    animation-name: tempportraitonhover;
+    animation-duration: 0.15s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-delay: 0s;
+    animation-timing-function: cubic-bezier(0, 0, 0, 0.91);
+}
+
+@keyframes tempportraitonhover {
+    from {
+        margin-left: 0px;
+        opacity: 1;
+    }
+    
+    to {
+        margin-left: 160px;
+        opacity: 0;
+    }
 }

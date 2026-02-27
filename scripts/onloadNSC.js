@@ -6,7 +6,7 @@ const chrSel = [
 
 const pageMusic = new Audio("audio/music/NSC - Character Select.ogg");
 pageMusic.loop = true;
-pageMusic.volume = 0.4;
+pageMusic.volume = 0.2;
 pageMusic.play();
 
 const sfx = {

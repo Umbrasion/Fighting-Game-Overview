@@ -9,12 +9,165 @@
 		<script src="../scripts/cssResize.js" defer></script>
 		<script src="../scripts/onloadMAAB.js" defer></script>
 		<script src="../scripts/jquery-3.7.1.min.js"></script>
-		<style>
-			
-		</style>
 	</head>
 	<body>
+		<img class="game-logo" src="img/logos/MAAB_logo.png">
 		<div id="characterselect">
+			<div class="preview-area">
+				<div class="portrait-area">
+					<div style="display: flex; flex-direction: column; width: 0px; height: 0px; margin: auto; justify-content: left; align-items: center">
+						<div style="width: fit-content">
+							<img id="info-portrait" src="" style="height: 92vh">
+							<img id="info-portrait-reflection" src="" style="height: 92vh">
+						</div>
+					</div>
+					<h2 id="info-name" class="info-title" style="height: 1.2em"></h2>
+				</div>
+				<div class="selectbox-container">
+					<a id="character-koume" onclick="runDisplay('Otherworldly_Koume_Sakiyama')">
+						<div class="selectbox-character">
+							<img src="img/characterSelect/maab/icon_back.png">
+							<img class="icon-selected" src="img/characterSelect/maab/Otherworldly_Koume_Sakiyama_icon_selected.png">
+						</div>
+					</a>
+					<a id="character-snowwhite" onclick="runDisplay('Unique_Snow_White')">
+						<div class="selectbox-character">
+							<img src="img/characterSelect/maab/icon_back.png">
+							<img class="icon-selected" src="img/characterSelect/maab/Unique_Snow_White_icon_selected.png">
+						</div>
+					</a>
+					<a id="character-bisclavret" onclick="runDisplay('Type_II_Bisclavret')">
+						<div class="selectbox-character">
+							<img src="img/characterSelect/maab/icon_back.png">
+							<img class="icon-selected" src="img/characterSelect/maab/Type_II_Bisclavret_icon_selected.png">
+						</div>
+					</a>
+					<a id="character-thief" onclick="runDisplay('Thief_Arthur')">
+						<div class="selectbox-character">
+							<img src="img/characterSelect/maab/icon_back.png">
+							<img class="icon-selected" src="img/characterSelect/maab/Thief_Arthur_icon_selected.png">
+						</div>
+					</a>
+					<a id="character-blade" onclick="runDisplay('Blade-Protector_Arthur')">
+						<div class="selectbox-character">
+							<img src="img/characterSelect/maab/icon_back.png">
+							<img class="icon-selected" src="img/characterSelect/maab/Blade-Protector_Arthur_icon_selected.png">
+						</div>
+					</a>
+					<a id="character-twinblade" onclick="runDisplay('Twinblade_Arthur')">
+						<div class="selectbox-character">
+							<img src="img/characterSelect/maab/icon_back.png">
+							<img class="icon-selected" src="img/characterSelect/maab/Twinblade_Arthur_icon_selected.png">
+						</div>
+					</a>
+					<a id="character-wildcat" onclick="runDisplay('Wildcat_Arthur')">
+						<div class="selectbox-character">
+							<img src="img/characterSelect/maab/icon_back.png">
+							<img class="icon-selected" src="img/characterSelect/maab/Wildcat_Arthur_icon_selected.png">
+						</div>
+					</a>
+					<a id="character-iai" onclick="runDisplay('Iai_Arthur')">
+						<div class="selectbox-character">
+							<img src="img/characterSelect/maab/icon_back.png">
+							<img class="icon-selected" src="img/characterSelect/maab/Iai_Arthur_icon_selected.png">
+						</div>
+					</a>
+					<a id="character-zechs" onclick="runDisplay('Zechs_Siegfried')" style="margin-left: 2px">
+						<div class="selectbox-character">
+							<img src="img/characterSelect/maab/icon_back.png">
+							<img class="icon-selected" src="img/characterSelect/maab/Zechs_Siegfried_icon_selected.png">
+						</div>
+					</a>
+					<a id="character-nimue" onclick="runDisplay('Hybrid_Nimue')">
+						<div class="selectbox-character">
+							<img src="img/characterSelect/maab/icon_back.png">
+							<img class="icon-selected" src="img/characterSelect/maab/Hybrid_Nimue_icon_selected.png">
+						</div>
+					</a>
+					<a id="character-void" onclick="runDisplay('Void_Eternal_Flame')">
+						<div class="selectbox-character">
+							<img src="img/characterSelect/maab/icon_back.png">
+							<img class="icon-selected" src="img/characterSelect/maab/Void_Eternal_Flame_icon_selected.png">
+						</div>
+					</a>
+					<a id="character-riesz" onclick="runDisplay('Otherworldly_Riesz')">
+						<div class="selectbox-character">
+							<img src="img/characterSelect/maab/icon_back.png">
+							<img class="icon-selected" src="img/characterSelect/maab/Otherworldly_Riesz_icon_selected.png">
+						</div>
+					</a>
+					<a id="character-iori" onclick="runDisplay('Otherworldly_Iori_Yagami')">
+						<div class="selectbox-character">
+							<img src="img/characterSelect/maab/icon_back.png">
+							<img class="icon-selected" src="img/characterSelect/maab/Otherworldly_Iori_Yagami_icon_selected.png">
+						</div>
+					</a>
+				</div>
+		<div class="preload-container">
+			<img src="img/backgrounds/MAAB.png">
+			<!---->
+			<img src="img/portraits/maab/Otherworldly_Koume_Sakiyama.png">
+			<img src="img/portraits/maab/Unique_Snow_White.png">
+			<img src="img/portraits/maab/Type_II_Bisclavret.png">
+			<img src="img/portraits/maab/Thief_Arthur.png">
+			<img src="img/portraits/maab/Blade-Protector_Arthur.png">
+			<img src="img/portraits/maab/Twinblade_Arthur.png">
+			<img src="img/portraits/maab/Wildcat_Arthur.png">
+			<img src="img/portraits/maab/Iai_Arthur.png">
+			<img src="img/portraits/maab/Zechs_Siegfried.png">
+			<img src="img/portraits/maab/Hybrid_Nimue.png">
+			<img src="img/portraits/maab/Void_Eternal_Flame.png">
+			<img src="img/portraits/maab/Otherworldly_Riesz.png">
+			<img src="img/portraits/maab/Otherworldly_Iori_Yagami.png">
+			<!---->
+			<img src="img/characterSelect/maab/Otherworldly_Koume_Sakiyama_icon.webp">
+			<img src="img/characterSelect/maab/Unique_Snow_White_icon.webp">
+			<img src="img/characterSelect/maab/Type_II_Bisclavret_icon.webp">
+			<img src="img/characterSelect/maab/Thief_Arthur_icon.webp">
+			<img src="img/characterSelect/maab/Blade-Protector_Arthur_icon.webp">
+			<img src="img/characterSelect/maab/Twinblade_Arthur_icon.webp">
+			<img src="img/characterSelect/maab/Wildcat_Arthur_icon.webp">
+			<img src="img/characterSelect/maab/Iai_Arthur_icon.webp">
+			<img src="img/characterSelect/maab/Zechs_Siegfried_icon.webp">
+			<img src="img/characterSelect/maab/Hybrid_Nimue_icon.webp">
+			<img src="img/characterSelect/maab/Void_Eternal_Flame_icon.webp">
+			<img src="img/characterSelect/maab/Otherworldly_Riesz_icon.webp">
+			<img src="img/characterSelect/maab/Otherworldly_Iori_Yagami_icon.webp">
+			<!---->
+			<img src="img/characterSelect/maab/Otherworldly_Koume_Sakiyama_icon_selected.png">
+			<img src="img/characterSelect/maab/Unique_Snow_White_icon_selected.png">
+			<img src="img/characterSelect/maab/Type_II_Bisclavret_icon_selected.png">
+			<img src="img/characterSelect/maab/Thief_Arthur_icon_selected.png">
+			<img src="img/characterSelect/maab/Blade-Protector_Arthur_icon_selected.png">
+			<img src="img/characterSelect/maab/Twinblade_Arthur_icon_selected.png">
+			<img src="img/characterSelect/maab/Wildcat_Arthur_icon_selected.png">
+			<img src="img/characterSelect/maab/Iai_Arthur_icon_selected.png">
+			<img src="img/characterSelect/maab/Zechs_Siegfried_icon_selected.png">
+			<img src="img/characterSelect/maab/Hybrid_Nimue_icon_selected.png">
+			<img src="img/characterSelect/maab/Void_Eternal_Flame_icon_selected.png">
+			<img src="img/characterSelect/maab/Otherworldly_Riesz_icon_selected.png">
+			<img src="img/characterSelect/maab/Otherworldly_Iori_Yagami_icon_selected.png">
+			<!---->
+			<audio muted=true src="audio/music/MAAB - Character Select intro.ogg"></audio>
+			<audio muted=true src="audio/music/MAAB - Character Select loop.ogg"></audio>
+			<audio muted=true src="audio/sfx/maab/cursor.ogg"></audio>
+			<audio muted=true src="audio/sfx/maab/confirm.ogg"></audio>
+			<audio muted=true src="audio/sfx/maab/cancel.ogg"></audio>
+			<audio muted=true src="audio/sfx/maab/Charselect_call.ogg"></audio>
+			<!---->
+			<audio muted=true src="audio/sfx/maab/banter/Otherworldly_Koume_Sakiyama_select.ogg"></audio>
+			<audio muted=true src="audio/sfx/maab/banter/Unique_Snow_White_select.ogg"></audio>
+			<audio muted=true src="audio/sfx/maab/banter/Type_II_Bisclavret_select.ogg"></audio>
+			<audio muted=true src="audio/sfx/maab/banter/Thief_Arthur_select.ogg"></audio>
+			<audio muted=true src="audio/sfx/maab/banter/Blade-Protector_Arthur_select.ogg"></audio>
+			<audio muted=true src="audio/sfx/maab/banter/Twinblade_Arthur_select.ogg"></audio>
+			<audio muted=true src="audio/sfx/maab/banter/Wildcat_Arthur_select.ogg"></audio>
+			<audio muted=true src="audio/sfx/maab/banter/Iai_Arthur_select.ogg"></audio>
+			<audio muted=true src="audio/sfx/maab/banter/Zechs_Siegfried_select.ogg"></audio>
+			<audio muted=true src="audio/sfx/maab/banter/Hybrid_Nimue_select.ogg"></audio>
+			<audio muted=true src="audio/sfx/maab/banter/Void_Eternal_Flame_select.ogg"></audio>
+			<audio muted=true src="audio/sfx/maab/banter/Otherworldly_Riesz_select.ogg"></audio>
+			<audio muted=true src="audio/sfx/maab/banter/Otherworldly_Iori_Yagami_select.ogg"></audio>
 		</div>
 	</body>
 </html>

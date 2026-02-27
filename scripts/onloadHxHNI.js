@@ -25,7 +25,7 @@ const chrSel = [
 
 const pageMusic = new Audio("audio/music/HxHNI - Character Select.ogg");
 pageMusic.loop = true;
-pageMusic.volume = 0.2;
+pageMusic.volume = 0.25;
 pageMusic.play();
 
 const sfx = {

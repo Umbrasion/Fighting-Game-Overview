@@ -30,6 +30,8 @@ a:hover .selectbox-character img {
     margin-top: 80vh;
     color: #FF3333;
     filter: drop-shadow(2px 2px #FFFFFF);
+    position: relative;
+    z-index: 600;
 }
 
 .selectbox-scroll {

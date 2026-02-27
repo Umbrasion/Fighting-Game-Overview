@@ -1,61 +1,60 @@
 const chrPrevImg = document.getElementById("info-portrait");
 const chrName = document.getElementById("info-name");
-const chrSel = {
-	ragna: document.getElementById("character-ragna"),
-	jin: document.getElementById("character-jin"),
-	noel: document.getElementById("character-noel"),
-	rachel: document.getElementById("character-rachel"),
-	tager: document.getElementById("character-tager"),
-	hakumen: document.getElementById("character-hakumen"),
-	nu: document.getElementById("character-nu"),
-	hazama: document.getElementById("character-hazama"),
-	makoto: document.getElementById("character-makoto"),
-	platinum: document.getElementById("character-platinum"),
-	izayoi: document.getElementById("character-izayoi"),
-	azrael: document.getElementById("character-azrael"),
-	celica: document.getElementById("character-celica"),
-	nine: document.getElementById("character-nine"),
-	naoto: document.getElementById("character-naoto"),
-	susanoo: document.getElementById("character-susanoo"),
-	es: document.getElementById("character-es"),
-	mai: document.getElementById("character-mai"),
-	jubei: document.getElementById("character-jubei"),
-	narukami: document.getElementById("character-narukami"),
-	yosuke: document.getElementById("character-yosuke"),
-	chie: document.getElementById("character-chie"),
-	yukiko: document.getElementById("character-yukiko"),
-	kanji: document.getElementById("character-kanji"),
-	teddie: document.getElementById("character-teddie"),
-	naotos: document.getElementById("character-naotos"),
-	mitsuru: document.getElementById("character-mitsuru"),
-	akihiko: document.getElementById("character-akihiko"),
-	aegis: document.getElementById("character-aegis"),
-	elizabeth: document.getElementById("character-elizabeth"),
-	labrys: document.getElementById("character-labrys"),
-	adachi: document.getElementById("character-adachi"),
-	hyde: document.getElementById("character-hyde"),
-	linne: document.getElementById("character-linne"),
-	waldstein: document.getElementById("character-waldstein"),
-	carmine: document.getElementById("character-carmine"),
-	orie: document.getElementById("character-orie"),
-	gordeau: document.getElementById("character-gordeau"),
-	merkava: document.getElementById("character-merkava"),
-	vatista: document.getElementById("character-vatista"),
-	seth: document.getElementById("character-seth"),
-	yuzuriha: document.getElementById("character-yuzuriha"),
-	hilda: document.getElementById("character-hilda"),
-	mika: document.getElementById("character-mika"),
-	ruby: document.getElementById("character-ruby"),
-	weiss: document.getElementById("character-weiss"),
-	blake: document.getElementById("character-blake"),
-	yang: document.getElementById("character-yang"),
-	neo: document.getElementById("character-neo"),
-	heart: document.getElementById("character-heart"),
-	yumi: document.getElementById("character-yumi"),
-	akatsuki: document.getElementById("character-akatsuki"),
-	blitztank: document.getElementById("character-blitztank"),
-	random: document.getElementById("character-random"),
-}
+const chrSel = [
+	document.getElementById("character-ragna"),
+	document.getElementById("character-jin"),
+	document.getElementById("character-noel"),
+	document.getElementById("character-rachel"),
+	document.getElementById("character-tager"),
+	document.getElementById("character-hakumen"),
+	document.getElementById("character-nu"),
+	document.getElementById("character-hazama"),
+	document.getElementById("character-makoto"),
+	document.getElementById("character-platinum"),
+	document.getElementById("character-izayoi"),
+	document.getElementById("character-azrael"),
+	document.getElementById("character-celica"),
+	document.getElementById("character-nine"),
+	document.getElementById("character-naoto"),
+	document.getElementById("character-susanoo"),
+	document.getElementById("character-es"),
+	document.getElementById("character-mai"),
+	document.getElementById("character-jubei"),
+	document.getElementById("character-narukami"),
+	document.getElementById("character-yosuke"),
+	document.getElementById("character-chie"),
+	document.getElementById("character-yukiko"),
+	document.getElementById("character-kanji"),
+	document.getElementById("character-teddie"),
+	document.getElementById("character-naotos"),
+	document.getElementById("character-mitsuru"),
+	document.getElementById("character-akihiko"),
+	document.getElementById("character-aegis"),
+	document.getElementById("character-elizabeth"),
+	document.getElementById("character-labrys"),
+	document.getElementById("character-adachi"),
+	document.getElementById("character-hyde"),
+	document.getElementById("character-linne"),
+	document.getElementById("character-waldstein"),
+	document.getElementById("character-carmine"),
+	document.getElementById("character-orie"),
+	document.getElementById("character-gordeau"),
+	document.getElementById("character-merkava"),
+	document.getElementById("character-vatista"),
+	document.getElementById("character-seth"),
+	document.getElementById("character-yuzuriha"),
+	document.getElementById("character-hilda"),
+	document.getElementById("character-mika"),
+	document.getElementById("character-ruby"),
+	document.getElementById("character-weiss"),
+	document.getElementById("character-blake"),
+	document.getElementById("character-yang"),
+	document.getElementById("character-neo"),
+	document.getElementById("character-heart"),
+	document.getElementById("character-yumi"),
+	document.getElementById("character-akatsuki"),
+	document.getElementById("character-blitztank"),
+];
 const charSelOthers = {
 	bg: document.getElementById("selectbox-other"),
 	bgL: document.getElementById("scrollspace-other-l"),
@@ -66,11 +65,11 @@ const charSelOthers = {
 
 const pageMusic = new Audio("audio/music/BBTAG - Character Select loop.ogg");
 pageMusic.loop = true;
-pageMusic.volume = 0.1;
+pageMusic.volume = 0.08;
 pageMusic.preload = "auto";
 
 const pageMusicIntro = new Audio("audio/music/BBTAG - Character Select intro.ogg");
-pageMusicIntro.volume = 0.1;
+pageMusicIntro.volume = 0.08;
 
 pageMusic.addEventListener("canplay", playMusic);
 function playMusic() {
@@ -85,8 +84,8 @@ const sfx = {
 	cursor: new Audio("audio/sfx/bbcf/400_menu_select.wav"),
 	confirm: new Audio("audio/sfx/bbcf/401_decision.wav"),
 }
-sfx.cursor.volume = 0.3;
-sfx.confirm.volume = 0.3;
+sfx.cursor.volume = 0.2;
+sfx.confirm.volume = 0.2;
 
 var previewDisplayOn = true;
 
@@ -97,7 +96,8 @@ function clearDisplay() {
 
 // Display on hover
 
-function hoverDisplay(charFileName, seriesName, extraSeriesInfo = ["", "", "", false]) {
+function hoverDisplay(charFileName, seriesName) {
+	clearTimeout(cycleRandom);
 	sfx.cursor.currentTime = 0;
 	sfx.cursor.play();
 	if (previewDisplayOn) {
@@ -109,12 +109,16 @@ function hoverDisplay(charFileName, seriesName, extraSeriesInfo = ["", "", "", f
 		document.getElementById("info-portrait-temp").classList.add("tempportrait-onhover");
 		
 		chrPrevImg.src = "img/portraits/bbtag/" + charFileName + ".png";
+	
+		if (charFileName === "Susanoo") {
+			charFileName = "Susano'o";
+		}
 		
-		if (charFileName == "Es") {
+		if (charFileName === "Es") {
 			chrName.innerHTML = charFileName;
-		} else if (charFileName == "Nu-13") {
+		} else if (charFileName === "Nu-13") {
 			chrName.innerHTML = "&mu;-No.12-";
-		} else if (seriesName == "BB") {
+		} else if (seriesName === "BB") {
 			chrName.innerHTML = charFileName.toUpperCase().replace(/_/g, "=");
 		} else {
 			chrName.innerHTML = charFileName.toUpperCase().replace(/_/g, " ");
@@ -123,25 +127,6 @@ function hoverDisplay(charFileName, seriesName, extraSeriesInfo = ["", "", "", f
 		chrPrevImg.classList.remove("portrait-onhover");
 		void chrPrevImg.offsetWidth;
 		chrPrevImg.classList.add("portrait-onhover");
-		if (seriesName == "AH3" || seriesName == "SK" || seriesName == "AKBK") {
-			if (!extraSeriesInfo[3]) {
-				charSelOthers.bg.style.backgroundImage = "url('img/characterSelect/bbtag/" + seriesName + "_border.webp')";
-				charSelOthers.bgL.style.backgroundImage = "url('img/characterSelect/bbtag/" + seriesName + "_border.webp')";
-				charSelOthers.bgR.style.backgroundImage = "url('img/characterSelect/bbtag/" + seriesName + "_border.webp')";
-				charSelOthers.bgR2.style.backgroundImage = "url('img/characterSelect/bbtag/" + seriesName + "_border.webp')";
-				charSelOthers.logo.src = "img/logos/bbtag/" + extraSeriesInfo[0] + "_logo_bbtag_select.webp";
-				charSelOthers.logo.style.width = extraSeriesInfo[1] + "px";
-				charSelOthers.logo.style.marginTop = extraSeriesInfo[2] + "px";
-			}
-		} else {
-			charSelOthers.bg.style.backgroundImage = "url('img/characterSelect/bbtag/AH3_border.webp')";
-			charSelOthers.bgL.style.backgroundImage = "url('img/characterSelect/bbtag/AH3_border.webp')";
-			charSelOthers.bgR.style.backgroundImage = "url('img/characterSelect/bbtag/AH3_border.webp')";
-			charSelOthers.bgR2.style.backgroundImage = "url('img/characterSelect/bbtag/AH3_border.webp')";
-			charSelOthers.logo.src = "img/logos/bbtag/AH3LMSS_logo_bbtag_select.webp";
-			charSelOthers.logo.style.width = "198px";
-			charSelOthers.logo.style.marginTop = "18px";
-		}
 		
 		var seriesColor;
 		switch (seriesName) {
@@ -170,340 +155,68 @@ function hoverDisplay(charFileName, seriesName, extraSeriesInfo = ["", "", "", f
 		document.getElementById("info-portrait-temp").style.filter = chrPrevImg.style.filter;
 		chrPrevImg.style.filter = "drop-shadow(-10px 0px " + seriesColor + ")";
 	}
+	if (seriesName === "AH3" || seriesName === "SK" || seriesName === "AKBK") {
+		if (!disableExtraChange) {
+			charSelOthers.bg.style.backgroundImage = "url('img/characterSelect/bbtag/" + seriesName + "_border.webp')";
+			charSelOthers.bgL.style.backgroundImage = "url('img/characterSelect/bbtag/" + seriesName + "_border.webp')";
+			charSelOthers.bgR.style.backgroundImage = "url('img/characterSelect/bbtag/" + seriesName + "_border.webp')";
+			charSelOthers.bgR2.style.backgroundImage = "url('img/characterSelect/bbtag/" + seriesName + "_border.webp')";
+
+			if (seriesName === "AH3") {
+				charSelOthers.logo.src = "img/logos/bbtag/AH3LMSS_logo_bbtag_select.webp";
+				charSelOthers.logo.style.width = "198px";
+				charSelOthers.logo.style.marginTop = "18px";
+			} else if (seriesName === "SK") {
+				charSelOthers.logo.src = "img/logos/bbtag/SKEV_logo_bbtag_select.webp";
+				charSelOthers.logo.style.width = "198px";
+				charSelOthers.logo.style.marginTop = "18px";
+			} else if (seriesName === "AKBK") {
+				charSelOthers.logo.src = "img/logos/bbtag/AKBK_logo_bbtag_select.webp";
+				charSelOthers.logo.style.width = "190px";
+				charSelOthers.logo.style.marginTop = "50px";
+			}
+		}
+	} else {
+		charSelOthers.bg.style.backgroundImage = "url('img/characterSelect/bbtag/AH3_border.webp')";
+		charSelOthers.bgL.style.backgroundImage = "url('img/characterSelect/bbtag/AH3_border.webp')";
+		charSelOthers.bgR.style.backgroundImage = "url('img/characterSelect/bbtag/AH3_border.webp')";
+		charSelOthers.bgR2.style.backgroundImage = "url('img/characterSelect/bbtag/AH3_border.webp')";
+		charSelOthers.logo.src = "img/logos/bbtag/AH3LMSS_logo_bbtag_select.webp";
+		charSelOthers.logo.style.width = "198px";
+		charSelOthers.logo.style.marginTop = "18px";
+	}
 }
 
-chrSel.ragna.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Ragna_the_Bloodedge", "BB");
-	}
-);
+chrSel.forEach(element => {
+	element.addEventListener("mouseover",
+		(event) => {
+			disableExtraChange = false;
+			hoverDisplay(event.target.parentElement.parentElement.onclick.toString().split("'")[1], event.target.parentElement.parentElement.dataset.series);
+		}
+	);
+});
 
-chrSel.jin.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Jin_Kisaragi", "BB");
-	}
-);
-
-chrSel.noel.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Noel_Vermillion", "BB");
-	}
-);
-
-chrSel.rachel.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Rachel_Alucard", "BB");
-	}
-);
-
-chrSel.tager.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Iron_Tager", "BB");
-	}
-);
-
-chrSel.hakumen.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Hakumen", "BB");
-	}
-);
-
-chrSel.nu.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Nu-13", "BB");
-	}
-);
-
-chrSel.hazama.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Hazama", "BB");
-	}
-);
-
-chrSel.makoto.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Makoto_Nanaya", "BB");
-	}
-);
-
-chrSel.platinum.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Platinum_the_Trinity", "BB");
-	}
-);
-
-chrSel.izayoi.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Izayoi", "BB");
-	}
-);
-
-chrSel.azrael.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Azrael", "BB");
-	}
-);
-
-chrSel.celica.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Celica_A._Mercury", "BB");
-	}
-);
-
-chrSel.nine.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Nine_the_Phantom", "BB");
-	}
-);
-
-chrSel.naoto.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Naoto_Kurogane", "BB");
-	}
-);
-
-chrSel.susanoo.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Susano'o", "BB");
-	}
-);
-
-chrSel.es.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Es", "BB");
-	}
-);
-
-chrSel.mai.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Mai_Natsume", "BB");
-	}
-);
-
-chrSel.jubei.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Jubei", "BB");
-	}
-);
-
-chrSel.narukami.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Yu_Narukami", "P4A");
-	}
-);
-
-chrSel.yosuke.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Yosuke_Hanamura", "P4A");
-	}
-);
-
-chrSel.chie.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Chie_Satonaka", "P4A");
-	}
-);
-
-chrSel.yukiko.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Yukiko_Amagi", "P4A");
-	}
-);
-
-chrSel.kanji.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Kanji_Tatsumi", "P4A");
-	}
-);
-
-chrSel.teddie.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Teddie", "P4A");
-	}
-);
-
-chrSel.naotos.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Naoto_Shirogane", "P4A");
-	}
-);
-
-chrSel.mitsuru.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Mitsuru_Kirijo", "P4A");
-	}
-);
-
-chrSel.akihiko.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Akihiko_Sanada", "P4A");
-	}
-);
-
-chrSel.aegis.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Aegis", "P4A");
-	}
-);
-
-chrSel.elizabeth.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Elizabeth", "P4A");
-	}
-);
-
-chrSel.labrys.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Labrys", "P4A");
-	}
-);
-
-chrSel.adachi.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Tohru_Adachi", "P4A");
-	}
-);
-
-chrSel.hyde.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Hyde", "UNI");
-	}
-);
-
-chrSel.linne.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Linne", "UNI");
-	}
-);
-
-chrSel.waldstein.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Waldstein", "UNI");
-	}
-);
-
-chrSel.carmine.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Carmine", "UNI");
-	}
-);
-
-chrSel.orie.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Orie", "UNI");
-	}
-);
-
-chrSel.gordeau.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Gordeau", "UNI");
-	}
-);
-
-chrSel.merkava.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Merkava", "UNI");
-	}
-);
-
-chrSel.vatista.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Vatista", "UNI");
-	}
-);
-
-chrSel.seth.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Seth", "UNI");
-	}
-);
-
-chrSel.yuzuriha.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Yuzuriha", "UNI");
-	}
-);
-
-chrSel.hilda.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Hilda", "UNI");
-	}
-);
-
-chrSel.mika.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Mika", "UNI");
-	}
-);
-
-chrSel.ruby.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Ruby_Rose", "RWBY");
-	}
-);
-
-chrSel.weiss.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Weiss_Schnee", "RWBY");
-	}
-);
-
-chrSel.blake.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Blake_Belladonna", "RWBY");
-	}
-);
-
-chrSel.yang.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Yang_Xiao_Long", "RWBY");
-	}
-);
-
-chrSel.neo.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Neo_Politan", "RWBY");
-	}
-);
-
-chrSel.heart.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Heart_Aino", "AH3", ["AH3LMSS", 198, 18]);
-	}
-);
-
-chrSel.yumi.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Yumi", "SK", ["SKEV", 198, 18]);
-	}
-);
-
-chrSel.akatsuki.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Akatsuki", "AKBK", ["AKBK", 190, 50]);
-	}
-);
-
-chrSel.blitztank.addEventListener("mouseover",
-	(event) => {
-		hoverDisplay("Blitztank", "AKBK", ["AKBK", 190, 50]);
-	}
-);
-
-chrSel.random.addEventListener("mouseover",
-	(event) => {
+document.getElementById("character-random").addEventListener("mouseover",
+	() => {
 		sfx.cursor.currentTime = 0;
 		sfx.cursor.play();
-		randomDisplay();
-	}
-);
-chrSel.random.addEventListener("mouseout",
-	(event) => {
-		clearTimeout(cycleRandom);
+		disableExtraChange = true;
+		if (previewDisplayOn) {
+			randomDisplay();
+		}
+		charSelOthers.bg.style.backgroundImage = "url('img/characterSelect/bbtag/AH3_border.webp')";
+		charSelOthers.bgL.style.backgroundImage = "url('img/characterSelect/bbtag/AH3_border.webp')";
+		charSelOthers.bgR.style.backgroundImage = "url('img/characterSelect/bbtag/AH3_border.webp')";
+		charSelOthers.bgR2.style.backgroundImage = "url('img/characterSelect/bbtag/AH3_border.webp')";
+		charSelOthers.logo.src = "img/logos/bbtag/AH3LMSS_logo_bbtag_select.webp";
+		charSelOthers.logo.style.width = "198px";
+		charSelOthers.logo.style.marginTop = "18px";
 	}
 );
 
+var cycleRandom;
 var previousSelection = -1;
+var disableExtraChange = false;
 function randomDisplay() {
 	reroll: while (true) {
 		chrPrevImg.classList.remove("portrait-onhover");
@@ -512,7 +225,7 @@ function randomDisplay() {
 		void chrName.offsetWidth;
 		
 		var displayCharacter = Math.floor(Math.random() * 53)
-		if (displayCharacter == previousSelection) {
+		if (displayCharacter === previousSelection) {
 			continue reroll;
 		} else {
 			switch (displayCharacter) {
@@ -664,16 +377,16 @@ function randomDisplay() {
 					hoverDisplay("Neo_Politan", "RWBY");
 					break;
 				case 49:
-					hoverDisplay("Heart_Aino", "AH3", ["AH3LMSS", 198, 18, true]);
+					hoverDisplay("Heart_Aino", "AH3");
 					break;
 				case 50:
-					hoverDisplay("Yumi", "SK", ["SKEV", 198, 18, true]);
+					hoverDisplay("Yumi", "SK");
 					break;
 				case 51:
-					hoverDisplay("Akatsuki", "AKBK", ["AKBK", 190, 50, true]);
+					hoverDisplay("Akatsuki", "AKBK");
 					break;
 				case 52:
-					hoverDisplay("Blitztank", "AKBK", ["AKBK", 190, 50, true]);
+					hoverDisplay("Blitztank", "AKBK");
 					break;
 			}
 			sfx.cursor.currentTime = 0;
@@ -687,285 +400,42 @@ function randomDisplay() {
 
 // Display on click
 
+var announcer = new Audio("audio/sfx/bbtag/announcer/Charselect_call.wav");
+announcer.volume = 0.15;
+announcer.play();
+
 function runDisplay(characterName) {
 	previewDisplayOn = false;
-	const descriptionArea = document.getElementsByClassName("description-area")[0];
+	clearTimeout(cycleRandom);
+
 	chrPrevImg.parentElement.classList.remove("portrait-onselect");
 	void chrPrevImg.parentElement.offsetWidth;
 	document.getElementById("info-portrait-temp").classList.remove("tempportrait-onselect");
 	void document.getElementById("info-portrait-temp").offsetWidth;
-	
-	if (characterName == "random") {
-		clearTimeout(cycleRandom);
-		clearDisplay();
-		switch (Math.floor(Math.random() * 53)) {
-			case 0:
-				characterName = "ragna";
-				break;
-			case 1:
-				characterName = "jin";
-				break;
-			case 2:
-				characterName = "noel";
-				break;
-			case 3:
-				characterName = "rachel";
-				break;
-			case 4:
-				characterName = "tager";
-				break;
-			case 5:
-				characterName = "hakumen";
-				break;
-			case 6:
-				characterName = "nu";
-				break;
-			case 7:
-				characterName = "hazama";
-				break;
-			case 8:
-				characterName = "makoto";
-				break;
-			case 9:
-				characterName = "platinum";
-				break;
-			case 10:
-				characterName = "izayoi";
-				break;
-			case 11:
-				characterName = "azrael";
-				break;
-			case 12:
-				characterName = "celica";
-				break;
-			case 13:
-				characterName = "nine";
-				break;
-			case 14:
-				characterName = "naoto";
-				break;
-			case 15:
-				characterName = "susanoo";
-				break;
-			case 16:
-				characterName = "es";
-				break;
-			case 17:
-				characterName = "mai";
-				break;
-			case 18:
-				characterName = "jubei";
-				break;
-			case 19:
-				characterName = "narukami";
-				break;
-			case 20:
-				characterName = "yosuke";
-				break;
-			case 21:
-				characterName = "chie";
-				break;
-			case 22:
-				characterName = "yukiko";
-				break;
-			case 23:
-				characterName = "kanji";
-				break;
-			case 24:
-				characterName = "teddie";
-				break;
-			case 25:
-				characterName = "naotos";
-				break;
-			case 26:
-				characterName = "mitsuru";
-				break;
-			case 27:
-				characterName = "akihiko";
-				break;
-			case 28:
-				characterName = "aegis";
-				break;
-			case 29:
-				characterName = "elizabeth";
-				break;
-			case 30:
-				characterName = "labrys";
-				break;
-			case 31:
-				characterName = "adachi";
-				break;
-			case 32:
-				characterName = "hyde";
-				break;
-			case 33:
-				characterName = "linne";
-				break;
-			case 34:
-				characterName = "waldstein";
-				break;
-			case 35:
-				characterName = "carmine";
-				break;
-			case 36:
-				characterName = "orie";
-				break;
-			case 37:
-				characterName = "gordeau";
-				break;
-			case 38:
-				characterName = "merkava";
-				break;
-			case 39:
-				characterName = "vatista";
-				break;
-			case 40:
-				characterName = "seth";
-				break;
-			case 41:
-				characterName = "yuzuriha";
-				break;
-			case 42:
-				characterName = "hilda";
-				break;
-			case 43:
-				characterName = "mika";
-				break;
-			case 44:
-				characterName = "ruby";
-				break;
-			case 45:
-				characterName = "weiss";
-				break;
-			case 46:
-				characterName = "blake";
-				break;
-			case 47:
-				characterName = "yang";
-				break;
-			case 48:
-				characterName = "neo";
-				break;
-			case 49:
-				characterName = "heart";
-				break;
-			case 50:
-				characterName = "yumi";
-				break;
-			case 51:
-				characterName = "akatsuki";
-				break;
-			case 52:
-				characterName = "blitztank";
-				break;
-		}
+
+	if (!announcer.paused) {
+		announcer.pause();
 	}
 	
+	if (characterName === "Random") {
+		characterName = chrSel[Math.floor(Math.random() * chrSel.length)].onclick.toString().split("'")[1];
+	}
+	
+	if (characterName === "Susanoo") {
+		characterName = "Susano'o";
+	}
+
 	sfx.confirm.currentTime = 0;
 	sfx.confirm.play();
-	
-	// Initialize overview area
-	
-	descriptionArea.innerHTML = `
-		<h2 class="info-title">OVERVIEW</h2>
-		<table class="info-table">
-			<tbody>
-				<tr>
-					<th rowspan="2" style="vertical-align: middle">Playstyle</th>
-					<td rowspan="2" style="vertical-align: middle" id="overview-playstyle">
-						<span class="archetype-"></span>
-					</td>
-					<th>Offense</th>
-					<td id="overview-rating-offense" class=""></td>
-				</tr>
-				<tr>
-					<th>Defense</th>
-					<td id="overview-rating-defense" class=""></td>
-				</tr>
-				<tr>
-					<th rowspan="2" style="vertical-align: middle">Effective Range</th>
-					<td rowspan="2" style="vertical-align: middle" id="overview-range">
-						<span class="range-"></span>
-					</td>
-					<th>Damage</th>
-					<td id="overview-rating-damage" class=""></td>
-				</tr>
-				<tr>
-					<th>Speed</th>
-					<td id="overview-rating-speed" class=""></td>
-				</tr>
-				<tr>
-					<th rowspan="2" style="vertical-align: middle">Unique Mechanics</th>
-					<td rowspan="2" style="vertical-align: middle" id="overview-mechanics">
-						<span class="unimech-none">None</span>
-					</td>
-					<th>Zoning</th>
-					<td id="overview-rating-zoning" class=""></td>
-				</tr>
-				<tr>
-					<th>Ease of Use</th>
-					<td id="overview-rating-ease" class=""></td>
-				</tr>
-				<tr>
-					<th colspan="2" style="text-align: center">Play if you like:</th>
-					<th colspan="2" style="text-align: center">Avoid if you dislike:</th>
-				</tr>
-				<tr>
-					<td colspan="2">
-						<ul id="overview-list-like" class="list-likedislike">
-							
-						</ul>
-					</td>
-					<td colspan="2">
-						<ul id="overview-list-dislike" class="list-likedislike">
-							
-						</ul>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div id="overview-description" class="info-description">
-			
-		</div>
-	`
+
+	initializeOV();
+
+	announcer = new Audio("audio/sfx/bbtag/announcer/" + characterName + "_call.wav");
+	announcer.volume = 0.15;
+	announcer.play();
 	
 	function writeCharInfo(detailInfo, ratings, likeOrDislike, charDescription, charFileName, seriesName) {
-		var overviewItems = {
-			playstyle: document.getElementById("overview-playstyle"),
-			range: document.getElementById("overview-range"),
-			mechanics: document.getElementById("overview-mechanics"),
-			ratings: [
-				document.getElementById("overview-rating-offense"),
-				document.getElementById("overview-rating-defense"),
-				document.getElementById("overview-rating-damage"),
-				document.getElementById("overview-rating-speed"),
-				document.getElementById("overview-rating-zoning"),
-				document.getElementById("overview-rating-ease")
-			],
-			like: document.getElementById("overview-list-like"),
-			dislike: document.getElementById("overview-list-dislike"),
-			description: document.getElementById("overview-description"),
-		}
-		
-		overviewItems.playstyle.innerHTML = detailInfo[0];
-		overviewItems.range.innerHTML = detailInfo[1];
-		overviewItems.mechanics.innerHTML = detailInfo[2];
-		
-		for (i = 0; i < overviewItems.ratings.length; i++) {
-			overviewItems.ratings[i].classList.add("rating-" + ratings[i] + "star");
-			
-			for (j = 0; j < ratings[i]; j++) {
-				overviewItems.ratings[i].innerHTML += "&starf;";
-			}
-			for (j = 5; j > ratings[i]; j--) {
-				overviewItems.ratings[i].innerHTML += "&star;";
-			}
-		}
-		
-		overviewItems.like.innerHTML = likeOrDislike[0];
-		overviewItems.dislike.innerHTML = likeOrDislike[1];
-		
-		overviewItems.description.innerHTML = charDescription;
+		updateOV(detailInfo, ratings, likeOrDislike, charDescription);
 		
 		chrPrevImg.src = "img/portraits/bbtag/" + charFileName + ".png";
 		if (charFileName == "Es") {
@@ -1008,7 +478,7 @@ function runDisplay(characterName) {
 	}
 	
 	switch (characterName) {
-		case "ragna":
+		case "Ragna_the_Bloodedge":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1024,7 +494,7 @@ function runDisplay(characterName) {
 				"BB"
 			);
 			break;
-		case "jin":
+		case "Jin_Kisaragi":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1040,7 +510,7 @@ function runDisplay(characterName) {
 				"BB"
 			);
 			break;
-		case "noel":
+		case "Noel_Vermillion":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1056,7 +526,7 @@ function runDisplay(characterName) {
 				"BB"
 			);
 			break;
-		case "rachel":
+		case "Rachel_Alucard":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1072,7 +542,7 @@ function runDisplay(characterName) {
 				"BB"
 			);
 			break;
-		case "tager":
+		case "Iron_Tager":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1088,7 +558,7 @@ function runDisplay(characterName) {
 				"BB"
 			);
 			break;
-		case "hakumen":
+		case "Hakumen":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1104,7 +574,7 @@ function runDisplay(characterName) {
 				"BB"
 			);
 			break;
-		case "nu":
+		case "Nu-13":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1120,7 +590,7 @@ function runDisplay(characterName) {
 				"BB"
 			);
 			break;
-		case "hazama":
+		case "Hazama":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1136,7 +606,7 @@ function runDisplay(characterName) {
 				"BB"
 			);
 			break;
-		case "makoto":
+		case "Makoto_Nanaya":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1152,7 +622,7 @@ function runDisplay(characterName) {
 				"BB"
 			);
 			break;
-		case "platinum":
+		case "Platinum_the_Trinity":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1168,7 +638,7 @@ function runDisplay(characterName) {
 				"BB"
 			);
 			break;
-		case "izayoi":
+		case "Izayoi":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1184,7 +654,7 @@ function runDisplay(characterName) {
 				"BB"
 			);
 			break;
-		case "azrael":
+		case "Azrael":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1200,7 +670,7 @@ function runDisplay(characterName) {
 				"BB"
 			);
 			break;
-		case "celica":
+		case "Celica_A._Mercury":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1216,7 +686,7 @@ function runDisplay(characterName) {
 				"BB"
 			);
 			break;
-		case "nine":
+		case "Nine_the_Phantom":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1232,7 +702,7 @@ function runDisplay(characterName) {
 				"BB"
 			);
 			break;
-		case "naoto":
+		case "Naoto_Kurogane":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1248,7 +718,7 @@ function runDisplay(characterName) {
 				"BB"
 			);
 			break;
-		case "susanoo":
+		case "Susano'o":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1264,7 +734,7 @@ function runDisplay(characterName) {
 				"BB"
 			);
 			break;
-		case "es":
+		case "Es":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1280,7 +750,7 @@ function runDisplay(characterName) {
 				"BB"
 			);
 			break;
-		case "mai":
+		case "Mai_Natsume":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1296,7 +766,7 @@ function runDisplay(characterName) {
 				"BB"
 			);
 			break;
-		case "jubei":
+		case "Jubei":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1312,7 +782,7 @@ function runDisplay(characterName) {
 				"BB"
 			);
 			break;
-		case "narukami":
+		case "Yu_Narukami":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1328,7 +798,7 @@ function runDisplay(characterName) {
 				"P4A"
 			);
 			break;
-		case "yosuke":
+		case "Yosuke_Hanamura":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1344,7 +814,7 @@ function runDisplay(characterName) {
 				"P4A"
 			);
 			break;
-		case "chie":
+		case "Chie_Satonaka":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1360,7 +830,7 @@ function runDisplay(characterName) {
 				"P4A"
 			);
 			break;
-		case "yukiko":
+		case "Yukiko_Amagi":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1376,7 +846,7 @@ function runDisplay(characterName) {
 				"P4A"
 			);
 			break;
-		case "kanji":
+		case "Kanji_Tatsumi":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1392,7 +862,7 @@ function runDisplay(characterName) {
 				"P4A"
 			);
 			break;
-		case "teddie":
+		case "Teddie":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1408,7 +878,7 @@ function runDisplay(characterName) {
 				"P4A"
 			);
 			break;
-		case "naotos":
+		case "Naoto_Shirogane":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1424,7 +894,7 @@ function runDisplay(characterName) {
 				"P4A"
 			);
 			break;
-		case "mitsuru":
+		case "Mitsuru_Kirijo":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1440,7 +910,7 @@ function runDisplay(characterName) {
 				"P4A"
 			);
 			break;
-		case "akihiko":
+		case "Akihiko_Sanada":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1456,7 +926,7 @@ function runDisplay(characterName) {
 				"P4A"
 			);
 			break;
-		case "aegis":
+		case "Aegis":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1472,7 +942,7 @@ function runDisplay(characterName) {
 				"P4A"
 			);
 			break;
-		case "elizabeth":
+		case "Elizabeth":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1488,7 +958,7 @@ function runDisplay(characterName) {
 				"P4A"
 			);
 			break;
-		case "labrys":
+		case "Labrys":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1504,7 +974,7 @@ function runDisplay(characterName) {
 				"P4A"
 			);
 			break;
-		case "adachi":
+		case "Tohru_Adachi":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1520,7 +990,7 @@ function runDisplay(characterName) {
 				"P4A"
 			);
 			break;
-		case "hyde":
+		case "Hyde":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1536,7 +1006,7 @@ function runDisplay(characterName) {
 				"UNI"
 			);
 			break;
-		case "linne":
+		case "Linne":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1552,7 +1022,7 @@ function runDisplay(characterName) {
 				"UNI"
 			);
 			break;
-		case "waldstein":
+		case "Waldstein":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1568,7 +1038,7 @@ function runDisplay(characterName) {
 				"UNI"
 			);
 			break;
-		case "carmine":
+		case "Carmine":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1584,7 +1054,7 @@ function runDisplay(characterName) {
 				"UNI"
 			);
 			break;
-		case "orie":
+		case "Orie":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1600,7 +1070,7 @@ function runDisplay(characterName) {
 				"UNI"
 			);
 			break;
-		case "gordeau":
+		case "Gordeau":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1616,7 +1086,7 @@ function runDisplay(characterName) {
 				"UNI"
 			);
 			break;
-		case "merkava":
+		case "Merkava":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1632,7 +1102,7 @@ function runDisplay(characterName) {
 				"UNI"
 			);
 			break;
-		case "vatista":
+		case "Vatista":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1648,7 +1118,7 @@ function runDisplay(characterName) {
 				"UNI"
 			);
 			break;
-		case "seth":
+		case "Seth":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1664,7 +1134,7 @@ function runDisplay(characterName) {
 				"UNI"
 			);
 			break;
-		case "yuzuriha":
+		case "Yuzuriha":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1680,7 +1150,7 @@ function runDisplay(characterName) {
 				"UNI"
 			);
 			break;
-		case "hilda":
+		case "Hilda":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1696,7 +1166,7 @@ function runDisplay(characterName) {
 				"UNI"
 			);
 			break;
-		case "mika":
+		case "Mika":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1712,7 +1182,7 @@ function runDisplay(characterName) {
 				"UNI"
 			);
 			break;
-		case "ruby":
+		case "Ruby_Rose":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1728,7 +1198,7 @@ function runDisplay(characterName) {
 				"RWBY"
 			);
 			break;
-		case "weiss":
+		case "Weiss_Schnee":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1744,7 +1214,7 @@ function runDisplay(characterName) {
 				"RWBY"
 			);
 			break;
-		case "blake":
+		case "Blake_Belladonna":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1760,7 +1230,7 @@ function runDisplay(characterName) {
 				"RWBY"
 			);
 			break;
-		case "yang":
+		case "Yang_Xiao_Long":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1776,7 +1246,7 @@ function runDisplay(characterName) {
 				"RWBY"
 			);
 			break;
-		case "neo":
+		case "Neo_Politan":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1792,7 +1262,7 @@ function runDisplay(characterName) {
 				"RWBY"
 			);
 			break;
-		case "heart":
+		case "Heart_Aino":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1808,7 +1278,7 @@ function runDisplay(characterName) {
 				"AH3"
 			);
 			break;
-		case "yumi":
+		case "Yumi":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1824,7 +1294,7 @@ function runDisplay(characterName) {
 				"SK"
 			);
 			break;
-		case "akatsuki":
+		case "Akatsuki":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",
@@ -1840,7 +1310,7 @@ function runDisplay(characterName) {
 				"AKBK"
 			);
 			break;
-		case "blitztank":
+		case "Blitztank":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",

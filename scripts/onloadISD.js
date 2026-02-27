@@ -1,28 +1,27 @@
 const chrPrevImg = document.getElementById("info-portrait");
 const chrName = document.getElementById("info-name");
-const chrSel = {
-	random: document.getElementById("character-random"),
-	fubuki: document.getElementById("character-fubuki"),
-	korone: document.getElementById("character-korone"),
-	suisei: document.getElementById("character-suisei"),
-	koyori: document.getElementById("character-koyori"),
-	sora: document.getElementById("character-sora"),
-	ollie: document.getElementById("character-ollie"),
-	ina: document.getElementById("character-ina"),
-	aki: document.getElementById("character-aki"),
-	pekora: document.getElementById("character-pekora"),
-	ayame: document.getElementById("character-ayame"),
-	coco: document.getElementById("character-coco"),
-	botan: document.getElementById("character-botan"),
-}
+const chrSel = [
+	document.getElementById("character-fubuki"),
+	document.getElementById("character-korone"),
+	document.getElementById("character-suisei"),
+	document.getElementById("character-koyori"),
+	document.getElementById("character-sora"),
+	document.getElementById("character-ollie"),
+	document.getElementById("character-ina"),
+	document.getElementById("character-aki"),
+	document.getElementById("character-pekora"),
+	document.getElementById("character-ayame"),
+	document.getElementById("character-coco"),
+	document.getElementById("character-botan"),
+];
 
 const pageMusic = new Audio("audio/music/ISD - Who Wants a Showdown loop.ogg");
 pageMusic.loop = true;
-pageMusic.volume = 0.2;
+pageMusic.volume = 0.1;
 pageMusic.preload = "auto";
 
 const pageMusicIntro = new Audio("audio/music/ISD - Who Wants a Showdown intro.ogg");
-pageMusicIntro.volume = 0.2;
+pageMusicIntro.volume = 0.1;
 
 pageMusic.addEventListener("canplay", playMusic);
 function playMusic() {
@@ -37,10 +36,12 @@ const sfx = {
 	cursor1: new Audio("audio/sfx/isd/cursor1.ogg"),
 	cursor2: new Audio("audio/sfx/isd/cursor2.ogg"),
 	confirm: new Audio("audio/sfx/isd/confirm.ogg"),
+	cancel: new Audio("audio/sfx/isd/cancel.ogg"),
 }
-sfx.cursor1.volume = 1;
-sfx.cursor2.volume = 1;
+sfx.cursor1.volume = 0.8;
+sfx.cursor2.volume = 0.8;
 sfx.confirm.volume = 0.4;
+sfx.cancel.volume = 0.8;
 
 var cursorState = true;
 function playCursor() {
@@ -51,93 +52,37 @@ function playCursor() {
 		sfx.cursor2.currentTime = 0;
 		sfx.cursor2.play();
 	}
+	cursorState = !cursorState;
 }
 
 var previewDisplayOn = true;
+var interactionEnabled = true;
 
 // Display on hover
 
 function hoverDisplay(charFileName) {
-	playCursor();
-	if (previewDisplayOn) {
-		chrPrevImg.src = "img/portraits/isd/" + charFileName + "_small.png";
-		chrName.src = "img/characterSelect/isd/logos/" + charFileName + "_logo.png";
+	if (interactionEnabled) {
+		playCursor();
+		if (previewDisplayOn) {
+			if (charFileName === "Ninomae_Inanis") {
+				charFileName = "Ninomae_Ina'nis"
+			}
+			
+			chrPrevImg.src = "img/portraits/isd/" + charFileName + "_small.png";
+			chrName.src = "img/characterSelect/isd/logos/" + charFileName + "_logo.png";
+		}
 	}
 }
 
-chrSel.fubuki.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Shirakami_Fubuki");
-	}
-);
+chrSel.forEach(element => {
+	element.addEventListener("mouseover",
+		(event) => {
+			hoverDisplay(event.target.onclick.toString().split("'")[1]);
+		}
+	);
+});
 
-chrSel.korone.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Inugami_Korone");
-	}
-);
-
-chrSel.suisei.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Hoshimachi_Suisei");
-	}
-);
-
-chrSel.koyori.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Hakui_Koyori");
-	}
-);
-
-chrSel.sora.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Tokino_Sora");
-	}
-);
-
-chrSel.ollie.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Kureiji_Ollie");
-	}
-);
-
-chrSel.ina.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Ninomae_Ina'nis");
-	}
-);
-
-chrSel.aki.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Aki_Rosenthal");
-	}
-);
-
-chrSel.pekora.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Usada_Pekora");
-	}
-);
-
-chrSel.ayame.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Nakiri_Ayame");
-	}
-);
-
-chrSel.coco.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Kiryu_Coco");
-	}
-);
-
-chrSel.botan.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Shishiro_Botan");
-	}
-);
-
-chrSel.random.addEventListener("mouseover",
+document.getElementById("character-random").addEventListener("mouseover",
 	() => {
 		playCursor();
 		if (previewDisplayOn) {
@@ -155,77 +100,39 @@ var announcer = new Audio();
 var banter = new Audio();
 
 function runDisplay(characterName) {
-	announcer.onended = function() {}
-	if (!announcer.paused) {
-		announcer.pause();
-	}
-	previewDisplayOn = false;
-	
-	sfx.confirm.currentTime = 0;
-	sfx.confirm.play();
-	
-	initializeOV();
-	
-	if (characterName === "Ninomae_Inanis") {
-		characterName = "Ninomae_Ina'nis"
-	}
-
-	if (characterName === "Random") {
-		switch (Math.floor(Math.random() * 12)) {
-			case 0:
-				characterName = "Shirakami_Fubuki";
-				break;
-			case 1:
-				characterName = "Inugami_Korone";
-				break;
-			case 2:
-				characterName = "Hoshimachi_Suisei";
-				break;
-			case 3:
-				characterName = "Hakui_Koyori";
-				break;
-			case 4:
-				characterName = "Tokino_Sora";
-				break;
-			case 5:
-				characterName = "Kureiji_Ollie";
-				break;
-			case 6:
-				characterName = "Ninomae_Ina'nis";
-				break;
-			case 7:
-				characterName = "Aki_Rosenthal";
-				break;
-			case 8:
-				characterName = "Usada_Pekora";
-				break;
-			case 9:
-				characterName = "Nakiri_Ayame";
-				break;
-			case 10:
-				characterName = "Kiryu_Coco";
-				break;
-			case 11:
-				characterName = "Shishiro_Botan";
-				break;
+	if (interactionEnabled) {
+		announcer.onended = function() {}
+		if (!announcer.paused) {
+			announcer.pause();
 		}
-	}
-	
-	function writeCharInfo(detailInfo, ratings, likeOrDislike, charDescription, charFileName) {
-		updateOV(detailInfo, ratings, likeOrDislike, charDescription);
+		previewDisplayOn = false;
+		interactionEnabled = false;
 		
-		chrPrevImg.src = "img/portraits/isd/" + charFileName + "_small.png";
-		chrName.src = "img/characterSelect/isd/logos/" + charFileName + "_logo.png";
-
-		announcer = new Audio("audio/sfx/isd/announcer/" + charFileName + "_call.ogg");
-		announcer.volume = 0.75;
+		sfx.confirm.currentTime = 0;
+		sfx.confirm.play();
+		
+		initializeOV("experimental");
+		
+		if (characterName === "Random") {
+			characterName = chrSel[Math.floor(Math.random() * chrSel.length)].onclick.toString().split("'")[1];
+		}
+		
+		if (characterName === "Ninomae_Inanis") {
+			characterName = "Ninomae_Ina'nis"
+		}
+		
+		chrPrevImg.src = "img/portraits/isd/" + characterName + "_small.png";
+		chrName.src = "img/characterSelect/isd/logos/" + characterName + "_logo.png";
+			
+		announcer = new Audio("audio/sfx/isd/announcer/" + characterName + "_call.ogg");
+		announcer.volume = 0.3;
 		announcer.play();
 		if (!banter.paused) {
 			banter.pause();
 		}
 		announcer.onended = function() {
 			reroll: while (true) {
-				switch (charFileName) {
+				switch (characterName) {
 					case "Shishiro_Botan":
 						banterNum = 1;
 						break;
@@ -242,201 +149,202 @@ function runDisplay(characterName) {
 						banterNum = Math.floor(Math.random() * 5 + 1);
 						break;
 				}
-				if (banterNum === prevBanterNum && charFileName !== "Shishiro_Botan") {
+				if (banterNum === prevBanterNum && characterName !== "Shishiro_Botan") {
 					continue reroll;
 				} else {
 					prevBanterNum = banterNum;
 					break reroll;
 				}
 			}
-			banter = new Audio("audio/sfx/isd/banter/" + charFileName + "_" + banterNum + ".ogg");
-			banter.volume = 0.75;
+			banter = new Audio("audio/sfx/isd/banter/" + characterName + "_" + banterNum + ".ogg");
+			banter.volume = 0.3;
 			banter.currentTime = 0;
 			banter.play();
-		};
+		}
+		
+		switch (characterName) {
+			case "Shirakami_Fubuki":
+				displayInfo = {
+					filename: characterName,
+					colors: 20,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Inugami_Korone":
+				displayInfo = {
+					filename: characterName,
+					colors: 20,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Hoshimachi_Suisei":
+				displayInfo = {
+					filename: characterName,
+					colors: 20,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Hakui_Koyori":
+				displayInfo = {
+					filename: characterName,
+					colors: 20,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Tokino_Sora":
+				displayInfo = {
+					filename: characterName,
+					colors: 20,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Kureiji_Ollie":
+				displayInfo = {
+					filename: characterName,
+					colors: 20,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Ninomae_Ina'nis":
+				displayInfo = {
+					filename: characterName,
+					colors: 20,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Aki_Rosenthal":
+				displayInfo = {
+					filename: characterName,
+					colors: 20,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Usada_Pekora":
+				displayInfo = {
+					filename: characterName,
+					colors: 20,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Nakiri_Ayame":
+				displayInfo = {
+					filename: characterName,
+					colors: 20,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Kiryu_Coco":
+				displayInfo = {
+					filename: characterName,
+					colors: 20,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Shishiro_Botan":
+				displayInfo = {
+					filename: characterName,
+					colors: 20,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+		}
+
+		updateOV2(displayInfo, "isd");
 	}
-	
-	switch (characterName) {
-		case "Shirakami_Fubuki":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Inugami_Korone":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Hoshimachi_Suisei":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Hakui_Koyori":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Tokino_Sora":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Kureiji_Ollie":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Ninomae_Ina'nis":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Aki_Rosenthal":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Usada_Pekora":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Nakiri_Ayame":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Kiryu_Coco":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Shishiro_Botan":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-	}
-	document.getElementsByClassName("description-area")[0].style.outline = "2px solid white";
 }

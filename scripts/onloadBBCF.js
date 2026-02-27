@@ -80,15 +80,15 @@ const chrImg = {
 
 const pageMusic = new Audio("audio/music/BBCF - Next Force.ogg");
 pageMusic.loop = true;
-pageMusic.volume = 0.2;
+pageMusic.volume = 0.1;
 pageMusic.play();
 
 const sfx = {
 	cursor: new Audio("audio/sfx/bbcf/400_menu_select.wav"),
 	confirm: new Audio("audio/sfx/bbcf/401_decision.wav"),
 }
-sfx.cursor.volume = 0.4;
-sfx.confirm.volume = 0.4;
+sfx.cursor.volume = 0.2;
+sfx.confirm.volume = 0.2;
 
 var previewDisplayOn = true;
 
@@ -379,8 +379,16 @@ chrSel.amane.addEventListener("mouseover",
 
 // Display on click
 
+var announcer = new Audio("audio/sfx/bbcf/announcer/Charselect_call.wav");
+announcer.volume = 0.15;
+announcer.play();
+
 function runDisplay(characterName) {
 	previewDisplayOn = false;
+
+	if (!announcer.paused) {
+		announcer.pause();
+	}
 	
 	sfx.confirm.currentTime = 0;
 	sfx.confirm.play();
@@ -391,13 +399,17 @@ function runDisplay(characterName) {
 
 	initializeOV();
 	
-	function writeCharInfo(detailInfo, ratings, likeOrDislike, charDescription, charFileName) {
+	chrPrevImg.src = "img/portraits/bbcf/" + characterName + ".png";
+	chrName.src = "img/characterSelect/bbcf/Nameplate_" + characterName + ".png";
+	document.getElementById("info-portrait-temp").src = "img/portraits/bbcf/" + characterName + ".png";
+
+	announcer = new Audio("audio/sfx/bbcf/announcer/" + characterName + "_call.wav");
+	announcer.volume = 0.15;
+	announcer.play();
+		
+	
+	function writeCharInfo(detailInfo, ratings, likeOrDislike, charDescription) {
 		updateOV(detailInfo, ratings, likeOrDislike, charDescription);
-		
-		chrPrevImg.src = "img/portraits/bbcf/" + charFileName + ".png";
-		chrName.src = "img/characterSelect/bbcf/Nameplate_" + charFileName + ".png";
-		
-		document.getElementById("info-portrait-temp").src = "img/portraits/bbcf/" + charFileName + ".png";
 	}
 	
 	switch (characterName) {
@@ -611,7 +623,7 @@ function runDisplay(characterName) {
 				characterName
 			);
 			break;
-		case "valkenhayn":
+		case "Valkenhayn_R._Hellsing":
 			writeCharInfo(
 				[
 					"<span class='archetype-'></span>",

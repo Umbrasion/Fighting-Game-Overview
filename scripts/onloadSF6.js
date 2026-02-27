@@ -54,6 +54,7 @@ function hoverDisplay(charFileName) {
 	sfx.cursor.play();
 	if (previewDisplayOn) {
 		chrPrevImg.src = "img/portraits/sf6/" + charFileName + ".png";
+		document.getElementById("info-portrait-reflection").src = "img/portraits/sf6/" + charFileName + ".png";
 		chrName.innerHTML = charFileName.replace(/_/g, " ");
 	}
 }
@@ -87,6 +88,7 @@ function runDisplay(characterName) {
 		updateOV(detailInfo, ratings, likeOrDislike, charDescription);
 		
 		chrPrevImg.src = "img/portraits/sf6/" + charFileName + ".png";
+		document.getElementById("info-portrait-reflection").src = "img/portraits/sf6/" + charFileName + ".png";
 		chrName.innerHTML = charFileName.replace(/_/g, " ");
 
 		announcer = new Audio("audio/sfx/sf6/announcer/" + charFileName + "_call.ogg");

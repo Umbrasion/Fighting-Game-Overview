@@ -25,15 +25,15 @@ const chrSel = {
 
 const pageMusic = new Audio("audio/music/AoCF - Seeds of Suspicion.ogg");
 pageMusic.loop = true;
-pageMusic.volume = 0.2;
+pageMusic.volume = 0.1;
 pageMusic.play();
 
 const sfx = {
 	cursor: new Audio("audio/sfx/aocf/aocfCursor.wav"),
 	confirm: new Audio("audio/sfx/aocf/aocfOk.wav"),
 }
-sfx.cursor.volume = 0.2;
-sfx.confirm.volume = 0.2;
+sfx.cursor.volume = 0.1;
+sfx.confirm.volume = 0.1;
 
 var previewDisplayOn = true;
 

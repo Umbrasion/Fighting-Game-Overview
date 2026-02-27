@@ -3,6 +3,10 @@
     overflow: clip;
 }
 
+#returnbutton {
+    margin-top: 2.2em;
+}
+
 #characterselect {
     display: block;
 }
@@ -17,11 +21,28 @@
 
 #info-portrait {
     height: 80vh;
+    filter: drop-shadow(0 0 1px white) drop-shadow(0 0 1px white) drop-shadow(0 0 1px white) drop-shadow(0 0 1px white) drop-shadow(0 0 1px white);
 }
 
 #info-name {
     margin-top: 70vh;
     max-width: 20vw;
+}
+
+#returnbutton, .color-button, .description-exit {
+    background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.9) 85%, rgba(158, 158, 158, 0.9) 92%, rgba(54, 54, 54, 0.9) 95%, rgba(0, 0, 0, 0.9) 100%);
+    color: white;
+    font-weight: bold;
+    padding: 8px;
+    border: 4px solid white;
+    border-radius: 24px 16px;
+    transition: transform 0.08s linear;
+}
+
+#returnbutton:hover, .color-button:hover, .description-exit:hover {
+    background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.9) 85%, rgba(88, 147, 161, 0.9) 92%, rgba(30, 49, 54, 0.9) 95%, rgba(0, 0, 0, 0.9) 100%);
+    border: 4px solid #00E4FF;
+    transform: scale(1.06);
 }
 
 .selectbox-container  {
@@ -55,9 +76,12 @@
 }
 
 .description-area {
-    background-color: #001C3B;
-    height: fit-content;
-    border-radius: 5%;
+    background-image: linear-gradient(135deg, rgba(3,29,71,0.9) 0%, rgba(3,29,71,0.9) 40%, rgba(8,133,181,0.9) 70%, rgba(2,72,113,0.9) 80%, rgba(3,29,71,0.9) 100%);
+    background-repeat: no-repeat;
+    outline: solid #45C1FF 3px;
+    outline-offset: -7px;
+    border: solid white 4px;
+    border-radius: 20px;
 }
 
 #upperbanner {
@@ -68,7 +92,7 @@
     border-top: solid white 2px;
     border-bottom: solid white 2px;
     overflow-x: hidden;
-    animation: banner-scroll 2s linear infinite;
+    animation: banner-scroll 10s linear infinite;
 }
 
 #upperbanner span {

@@ -96,7 +96,6 @@ function positionCursor(positionID) {
 	}
 	
 	// Play audio based on direction
-	console.log(positionID);
 	if (positionID > positionIDPrevious && positionID >= 16 && positionIDPrevious < 16) {
 		sfx.cursor.src = "audio/sfx/ggst/cursor_down.ogg";
 		sfx.cursor.currentTime = 0;

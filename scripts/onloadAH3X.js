@@ -31,7 +31,7 @@ const chrSel = [
 
 const pageMusic = new Audio("audio/music/AH3X - Maidens.ogg");
 pageMusic.loop = true;
-pageMusic.volume = 0.08;
+pageMusic.volume = 0.05;
 pageMusic.play();
 
 const sfx = {
@@ -39,9 +39,9 @@ const sfx = {
 	confirm: new Audio("audio/sfx/ah3x/confirm.ogg"),
 	cancel: new Audio("audio/sfx/ah3x/cancel.ogg"),
 }
-sfx.cursor.volume = 0.2;
-sfx.confirm.volume = 0.2;
-sfx.cancel.volume = 0.2;
+sfx.cursor.volume = 0.15;
+sfx.confirm.volume = 0.15;
+sfx.cancel.volume = 0.15;
 
 var previewDisplayOn = true;
 

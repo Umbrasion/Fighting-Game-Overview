@@ -1041,30 +1041,31 @@ function textDisplay() {
 		"experience and imagination,and grow into stories of information,narrative<br><span style='margin-left: 318px'>and fairytale,touching the mind, the heart and the soul.</span>",
 	];
 	var textSpeed = Math.random() * (3 - 1) + 1;
-	if (previousValues.length === 2 && previousValues[0] === previousValues[1] && previousValues[0] === 1) {
-		textSpeed *= -1;
-	} else if (previousValues.length === 2 && previousValues[0] === previousValues[1] && previousValues[0] === 0) {
+	// if (previousValues.length === 2 && previousValues[0] === previousValues[1] && previousValues[0] === 1) {
+	// 	textSpeed *= -1;
+	// } else if (previousValues.length === 2 && previousValues[0] === previousValues[1] && previousValues[0] === 0) {
 		
-	} else {
+	// } else {
 		if (Math.floor(Math.random() * 2) === 1) {
 			textSpeed *= -1;
 		}
-	}
+	// }
 	var textPosition = [
 		Math.floor(Math.random() * textArea.clientWidth),
 		Math.floor(Math.random() * (textArea.clientHeight - 50)),
 	];
 	if (textSpeed > 0) {
-		previousValues.push(1);
+		// previousValues.push(1);
 		// ((max - clamp) - min) + min
 		textPosition[0] = Math.floor(Math.random() * ((textArea.clientWidth - 300) + 150) - 150);
 	} else {
-		previousValues.push(0);
+		// previousValues.push(0);
 		textPosition[0] = Math.floor(Math.random() * ((textArea.clientWidth) - 200) + 200);
 	}
+	var textSize = Math.random() * (1.6 - 1.2) + 1.2;
 
 	textContainer[textCounter].innerHTML = `
-		<div class="bg-text" style="--end-coords: ` + 6 * textSpeed + `vw; left: ` + textPosition[0] + `px; top: ` + textPosition[1] + `px;">
+		<div class="bg-text" style="--end-coords: ` + 6 * textSpeed + `vw; left: ` + textPosition[0] + `px; top: ` + textPosition[1] + `px; font-size: ` + textSize + `em">
 			` + textValues[Math.floor(Math.random() * textValues.length)] + `
 		</div>
 	`

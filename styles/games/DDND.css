@@ -1,17 +1,74 @@
+:root {
+    background-color: black;
+    background-image: url("../../img/backgrounds/DDND_1.png");
+    background-position: top;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+body {
+    min-height: 100vh;
+}
+
+#characterselect {
+    height: calc(100vh - 56px);
+}
+
+#info-portrait {
+    position: absolute;
+    bottom: 42.708333vh;
+    left: 4vw;
+    z-index: 500;
+}
+
 #info-name {
     font-size: 3em;
     font-weight: normal;
+    margin-top: calc(57.291666vh - 28px);
 }
 
 .selectbox-container {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0.41666vh;
     display: flex;
     flex-flow: row wrap;
     gap: 5px;
-    width: calc(52px * 8 + 5px * 7);
+    width: calc((52px * 2) * 8 + (5px * 2) * 7);
     height: fit-content;
+    margin: auto;
 }
 
 .selectbox-container img {
-    width: 52px;
-    height: 50px;
+    width: calc(52px * 2);
+    height: calc(50px * 2);
+}
+
+#select-cursor {
+    position: absolute;
+    width: calc(48px * 2);
+    height: calc(51px * 2);
+    pointer-events: none;
+    z-index: 500;
+}
+
+@keyframes textscroll {
+    from {
+        background-position: 0px;
+    }
+    
+    to {
+        background-position: 100vw;
+    }
+}
+
+@keyframes textscroll-bottom {
+    from {
+        background-position: 0px;
+    }
+    
+    to {
+        background-position: 100vw;
+    }
 }

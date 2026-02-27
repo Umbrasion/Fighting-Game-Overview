@@ -60,6 +60,7 @@ var banterTimer;
 var charBanter1 = new Audio();
 var charBanter2 = new Audio();
 function hoverDisplay(charFileName) {
+	clearTimeout(cycleRandom);
 	sfx.cursor.currentTime = 0;
 	sfx.cursor.play();
 	if (previewDisplayOn) {
@@ -101,12 +102,11 @@ chrSel.forEach(element => {
 
 document.getElementById("character-random").addEventListener("mouseover",
 	(event) => {
-		randomDisplay();
-	}
-);
-document.getElementById("character-random").addEventListener("mouseout",
-	(event) => {
-		clearTimeout(cycleRandom);
+		if (previewDisplayOn) {
+			randomDisplay();
+		} else {
+			hoverDisplay();
+		}
 	}
 );
 
@@ -119,72 +119,72 @@ function randomDisplay() {
 			continue reroll;
 		} else {
 			switch (displayCharacter) {
-					case 0:
-						hoverDisplay("Powered_Ciel");
-						break;
-					case 1:
-						hoverDisplay("Hisui_&_Kohaku");
-						break;
-					case 2:
-						hoverDisplay("Akiha_Tohno");
-						break;
-					case 3:
-						hoverDisplay("Arcueid_Brunestud");
-						break;
-					case 4:
-						hoverDisplay("Ciel");
-						break;
-					case 5:
-						hoverDisplay("Noel");
-						break;
-					case 6:
-						hoverDisplay("Mario_Gallo_Bestino");
-						break;
-					case 7:
-						hoverDisplay("Red_Arcueid");
-						break;
-					case 8:
-						hoverDisplay("Kohaku");
-						break;
-					case 9:
-						hoverDisplay("Miyako_Arima");
-						break;
-					case 10:
-						hoverDisplay("Kouma_Kishima");
-						break;
-					case 11:
-						hoverDisplay("Shiki_Tohno");
-						break;
-					case 12:
-						hoverDisplay("Michael_Roa_Valdamjong");
-						break;
-					case 13:
-						hoverDisplay("Vlov_Arkhangel");
-						break;
-					case 14:
-						hoverDisplay("Dead_Apostle_Noel");
-						break;
-					case 15:
-						hoverDisplay("Hisui");
-						break;
-					case 16:
-						hoverDisplay("Ushiwakamaru");
-						break;
-					case 17:
-						hoverDisplay("Neco-Arc");
-						break;
-					case 18:
-						hoverDisplay("Mash_Kyrielight");
-						break;
-					case 19:
-						hoverDisplay("Saber");
-						break;
-					case 20:
-						hoverDisplay("Aoko_Aozaki");
-						break;
-					case 21:
-						hoverDisplay("The_Count_of_Monte_Cristo");
-						break;
+				case 0:
+					hoverDisplay("Powered_Ciel");
+					break;
+				case 1:
+					hoverDisplay("Hisui_&_Kohaku");
+					break;
+				case 2:
+					hoverDisplay("Akiha_Tohno");
+					break;
+				case 3:
+					hoverDisplay("Arcueid_Brunestud");
+					break;
+				case 4:
+					hoverDisplay("Ciel");
+					break;
+				case 5:
+					hoverDisplay("Noel");
+					break;
+				case 6:
+					hoverDisplay("Mario_Gallo_Bestino");
+					break;
+				case 7:
+					hoverDisplay("Red_Arcueid");
+					break;
+				case 8:
+					hoverDisplay("Kohaku");
+					break;
+				case 9:
+					hoverDisplay("Miyako_Arima");
+					break;
+				case 10:
+					hoverDisplay("Kouma_Kishima");
+					break;
+				case 11:
+					hoverDisplay("Shiki_Tohno");
+					break;
+				case 12:
+					hoverDisplay("Michael_Roa_Valdamjong");
+					break;
+				case 13:
+					hoverDisplay("Vlov_Arkhangel");
+					break;
+				case 14:
+					hoverDisplay("Dead_Apostle_Noel");
+					break;
+				case 15:
+					hoverDisplay("Hisui");
+					break;
+				case 16:
+					hoverDisplay("Ushiwakamaru");
+					break;
+				case 17:
+					hoverDisplay("Neco-Arc");
+					break;
+				case 18:
+					hoverDisplay("Mash_Kyrielight");
+					break;
+				case 19:
+					hoverDisplay("Saber");
+					break;
+				case 20:
+					hoverDisplay("Aoko_Aozaki");
+					break;
+				case 21:
+					hoverDisplay("The_Count_of_Monte_Cristo");
+					break;
 			}
 			cycleRandom = setTimeout(randomDisplay, 125);
 			previousSelection = displayCharacter;
@@ -204,76 +204,9 @@ function runDisplay(characterName) {
 	sfx.confirm.play();
 	
 	initializeOV();
-
+	
 	if (characterName === "Random") {
-		switch (Math.floor(Math.random() * 22)) {
-			case 0:
-				characterName = "Powered_Ciel";
-				break;
-			case 1:
-				characterName = "Hisui_&_Kohaku";
-				break;
-			case 2:
-				characterName = "Akiha_Tohno";
-				break;
-			case 3:
-				characterName = "Arcueid_Brunestud";
-				break;
-			case 4:
-				characterName = "Ciel";
-				break;
-			case 5:
-				characterName = "Noel";
-				break;
-			case 6:
-				characterName = "Mario_Gallo_Bestino";
-				break;
-			case 7:
-				characterName = "Red_Arcueid";
-				break;
-			case 8:
-				characterName = "Kohaku";
-				break;
-			case 9:
-				characterName = "Miyako_Arima";
-				break;
-			case 10:
-				characterName = "Kouma_Kishima";
-				break;
-			case 11:
-				characterName = "Shiki_Tohno";
-				break;
-			case 12:
-				characterName = "Michael_Roa_Valdamjong";
-				break;
-			case 13:
-				characterName = "Vlov_Arkhangel";
-				break;
-			case 14:
-				characterName = "Dead_Apostle_Noel";
-				break;
-			case 15:
-				characterName = "Hisui";
-				break;
-			case 16:
-				characterName = "Ushiwakamaru";
-				break;
-			case 17:
-				characterName = "Neco-Arc";
-				break;
-			case 18:
-				characterName = "Mash_Kyrielight";
-				break;
-			case 19:
-				characterName = "Saber";
-				break;
-			case 20:
-				characterName = "Aoko_Aozaki";
-				break;
-			case 21:
-				characterName = "The_Count_of_Monte_Cristo";
-				break;
-		}
+		characterName = chrSel[Math.floor(Math.random() * chrSel.length)].onclick.toString().split("'")[1];
 	}
 	
 	function writeCharInfo(detailInfo, ratings, likeOrDislike, charDescription, charFileName) {

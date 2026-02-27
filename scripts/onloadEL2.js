@@ -16,15 +16,15 @@ const chrSel = {
 
 const pageMusic = new Audio("audio/music/EL2 - 01_pselect.ogg");
 pageMusic.loop = true;
-pageMusic.volume = 0.15;
+pageMusic.volume = 0.07;
 pageMusic.play();
 
 const sfx = {
 	cursor: new Audio("audio/sfx/el2/00000_cursor.wav"),
 	confirm: new Audio("audio/sfx/el2/00010_enter.wav"),
 }
-sfx.cursor.volume = 0.1;
-sfx.confirm.volume = 0.1;
+sfx.cursor.volume = 0.06;
+sfx.confirm.volume = 0.06;
 
 var previewDisplayOn = true;
 
@@ -36,7 +36,6 @@ function clearDisplay() {
 // Display on hover
 
 function hoverDisplay(charFileName, offsetValue = 0, flipPortrait = false) {
-	sfx.cursor.pause();
 	sfx.cursor.currentTime = 0;
 	sfx.cursor.play();
 	if (previewDisplayOn) {
@@ -230,8 +229,7 @@ function runDisplay(characterName) {
 				break;
 		}
 	}
-	
-	sfx.confirm.pause();
+
 	sfx.confirm.currentTime = 0;
 	sfx.confirm.play();
 	

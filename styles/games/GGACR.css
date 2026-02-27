@@ -1,10 +1,30 @@
+:root {
+    --css-resize-scale: 2;
+}
+
+body {
+    min-height: 100vh;
+}
+
+#characterselect {
+    height: calc(100vh - 56px);
+}
+
 #characterselect {
     display: block;
 }
 
 .selectbox-container, .selectbox-fullroster  {
-    width: 660px;
-    height: 177px;
+    width: calc(660px * var(--css-resize-scale));
+    height: calc(177px * var(--css-resize-scale));
+}
+
+.selectbox-container {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 4vh;
+    margin: auto;
 }
 
 .selectbox-positioner {
@@ -15,7 +35,12 @@
 }
 
 .selectbox-character img {
-    width: 74px;
-    height: 49px;
+    width: calc(74px * var(--css-resize-scale));
+    height: calc(49px * var(--css-resize-scale));
     transform-origin: center;
+}
+
+#selectbox-ordersol {
+    width: calc(90px * var(--css-resize-scale));
+    height: calc(46px * var(--css-resize-scale));
 }

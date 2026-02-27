@@ -1,50 +1,51 @@
 const chrPrevImg = document.getElementById("info-portrait");
 const chrName = document.getElementById("info-name");
-const chrSel = {
-	zeta: document.getElementById("character-zeta"),
-	vaseraga: document.getElementById("character-vaseraga"),
-	beatrix: document.getElementById("character-beatrix"),
-	eustace: document.getElementById("character-eustace"),
-	anre: document.getElementById("character-anre"),
-	seox: document.getElementById("character-seox"),
-	lancelot: document.getElementById("character-lancelot"),
-	vane: document.getElementById("character-vane"),
-	percival: document.getElementById("character-percival"),
-	siegfried: document.getElementById("character-siegfried"),
-	versusia: document.getElementById("character-versusia"),
-	zooey: document.getElementById("character-zooey"),
-	ladiva: document.getElementById("character-ladiva"),
-	narmaya: document.getElementById("character-narmaya"),
-	gran: document.getElementById("character-gran"),
-	djeeta: document.getElementById("character-djeeta"),
-	charlotta: document.getElementById("character-charlotta"),
-	ferry: document.getElementById("character-ferry"),
-	anila: document.getElementById("character-anila"),
-	vikala: document.getElementById("character-vikala"),
-	galleon: document.getElementById("character-galleon"),
-	grimnir: document.getElementById("character-grimnir"),
-	metera: document.getElementById("character-metera"),
-	lowain: document.getElementById("character-lowain"),
-	katalina: document.getElementById("character-katalina"),
-	vira: document.getElementById("character-vira"),
-	yuel: document.getElementById("character-yuel"),
-	soriz: document.getElementById("character-soriz"),
-	cagliostro: document.getElementById("character-cagliostro"),
-	wilnas: document.getElementById("character-wilnas"),
-	sandalphon: document.getElementById("character-sandalphon"),
-	nier: document.getElementById("character-nier"),
-	belial: document.getElementById("character-belial"),
-	beelzebub: document.getElementById("character-beelzebub"),
-	lucilius: document.getElementById("character-lucilius"),
-	avatar: document.getElementById("character-avatar"),
-	twob: document.getElementById("character-2b"),
-	meg: document.getElementById("character-meg"),
-	random: document.getElementById("character-random"),
-}
+const chrSel = [
+	document.getElementById("character-zeta"),
+	document.getElementById("character-vaseraga"),
+	document.getElementById("character-beatrix"),
+	document.getElementById("character-eustace"),
+	document.getElementById("character-anre"),
+	document.getElementById("character-seox"),
+	document.getElementById("character-lancelot"),
+	document.getElementById("character-vane"),
+	document.getElementById("character-percival"),
+	document.getElementById("character-siegfried"),
+	document.getElementById("character-versusia"),
+	document.getElementById("character-zooey"),
+	document.getElementById("character-ladiva"),
+	document.getElementById("character-narmaya"),
+	document.getElementById("character-gran"),
+	document.getElementById("character-djeeta"),
+	document.getElementById("character-charlotta"),
+	document.getElementById("character-ferry"),
+	document.getElementById("character-anila"),
+	document.getElementById("character-vikala"),
+	document.getElementById("character-galleon"),
+	document.getElementById("character-grimnir"),
+	document.getElementById("character-metera"),
+	document.getElementById("character-lowain"),
+	document.getElementById("character-katalina"),
+	document.getElementById("character-vira"),
+	document.getElementById("character-yuel"),
+	document.getElementById("character-soriz"),
+	document.getElementById("character-cagliostro"),
+	document.getElementById("character-wilnas"),
+	document.getElementById("character-ilsa"),
+	document.getElementById("character-sandalphon"),
+	document.getElementById("character-nier"),
+	document.getElementById("character-belial"),
+	document.getElementById("character-beelzebub"),
+	document.getElementById("character-lucilius"),
+	document.getElementById("character-avatar"),
+	document.getElementById("character-2b"),
+	document.getElementById("character-meg"),
+	document.getElementById("character-random"),
+];
 
 const pageMusic = new Audio("audio/music/GBVSR - Character Select.ogg");
 pageMusic.loop = true;
-pageMusic.volume = 0.15;
+pageMusic.volume = 0.1;
 pageMusic.play();
 
 const sfx = {
@@ -54,7 +55,8 @@ const sfx = {
 sfx.cursor.volume = 0.05;
 sfx.confirm.volume = 0.05;
 
-var previewDisplayOn = false;
+var previewDisplayOn = true;
+var interactionEnabled = false;
 
 function clearDisplay() {
 	chrPrevImg.src = "";
@@ -63,1006 +65,656 @@ function clearDisplay() {
 
 // Display on hover
 
-function hoverDisplay(charFileName, scaleMeasures) {
-	sfx.cursor.currentTime = 0;
-	sfx.cursor.play();
-	if (previewDisplayOn) {
-		chrPrevImg.src = "img/portraits/gbvsr/" + charFileName + ".png";
-		if (charFileName == "Lunalu") {
-			charFileName = "Random";
+function hoverDisplay(targetChar) {
+	if (interactionEnabled) {
+		sfx.cursor.currentTime = 0;
+		sfx.cursor.play();
+		if (previewDisplayOn) {
+			var charFileName = targetChar.parentElement.parentElement.onclick.toString().split("'")[1];
+			var scaleMeasures = targetChar.dataset.scale.split(",");
+
+			if (charFileName === "Random") {
+				chrPrevImg.src = "img/portraits/gbvsr/Lunalu_small.png";
+			} else {
+				chrPrevImg.src = "img/portraits/gbvsr/" + charFileName + "_small.png";
+			}
+			chrName.innerHTML = charFileName.replace(/_/g, " ");
+			chrPrevImg.style.transform = "scale(" + scaleMeasures[0] + ") translate(" + scaleMeasures[1] + "%, " + scaleMeasures[2] + "%)";
 		}
-		chrName.innerHTML = charFileName.replace(/_/g, " ");
-		chrPrevImg.style.transform = "scale(" + scaleMeasures[0] + ") translate(" + scaleMeasures[1] + "%, " + scaleMeasures[2] + "%)";
 	}
 }
-function addListeners() {
-	chrSel.zeta.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Zeta", [1.18, 4, -3]);
-		}
-	);
 
-	chrSel.vaseraga.addEventListener("mouseover",
+chrSel.forEach(element => {
+	element.addEventListener("mouseover",
 		(event) => {
-			hoverDisplay("Vaseraga", [1.4, 0, -10]);
+			hoverDisplay(event.target);
 		}
 	);
-
-	chrSel.beatrix.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Beatrix", [1.1, 0, 0]);
-		}
-	);
-
-	chrSel.eustace.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Eustace", [1.22, 0, -5]);
-		}
-	);
-
-	chrSel.anre.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Anre", [1.25, 0, -6]);
-		}
-	);
-
-	chrSel.seox.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Seox", [1.28, 0, -8]);
-		}
-	);
-
-	chrSel.lancelot.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Lancelot", [1.04, 10, 2]);
-		}
-	);
-
-	chrSel.vane.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Vane", [1.32, -5, -7]);
-		}
-	);
-
-	chrSel.percival.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Percival", [1.2, 0, 3]);
-		}
-	);
-
-	chrSel.siegfried.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Siegfried", [1.2, 0, 0]);
-		}
-	);
-
-	chrSel.versusia.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Versusia", [1.14, 4, 7]);
-		}
-	);
-
-	chrSel.zooey.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Zooey", [1.12, 3, -1]);
-		}
-	);
-
-	chrSel.ladiva.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Ladiva", [1.2, -2, 3]);
-		}
-	);
-
-	chrSel.narmaya.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Narmaya", [0.99, 3, 6]);
-		}
-	);
-
-	chrSel.gran.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Gran", [0.97, -3, 6]);
-		}
-	);
-
-	chrSel.djeeta.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Djeeta", [0.9, -5, 7]);
-		}
-	);
-
-	chrSel.charlotta.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Charlotta", [1, 2, 3]);
-		}
-	);
-
-	chrSel.ferry.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Ferry", [1, 0, 2]);
-		}
-	);
-
-	chrSel.anila.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Anila", [1.07, 6, 1]);
-		}
-	);
-
-	chrSel.vikala.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Vikala", [1.18, 2, -1]);
-		}
-	);
-
-	chrSel.galleon.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Galleon", [1.19, -1, -3]);
-		}
-	);
-
-	chrSel.grimnir.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Grimnir", [1.3, -5, 2]);
-		}
-	);
-
-	chrSel.metera.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Metera", [1.26, 0, -5]);
-		}
-	);
-
-	chrSel.lowain.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Lowain", [1.21, -2, 0]);
-		}
-	);
-
-	chrSel.katalina.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Katalina", [1.2, 6, -4]);
-		}
-	);
-
-	chrSel.vira.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Vira", [1.02, 7, 2]);
-		}
-	);
-
-	chrSel.yuel.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Yuel", [1.22, 2, -6]);
-		}
-	);
-
-	chrSel.soriz.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Soriz", [1, 8, 3]);
-		}
-	);
-
-	chrSel.cagliostro.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Cagliostro", [1.054, 5.5, 1.5]);
-		}
-	);
-
-	chrSel.wilnas.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Wilnas", [1.29, 4, -2]);
-		}
-	);
-
-	chrSel.sandalphon.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Sandalphon", [1.12, 15, 1]);
-		}
-	);
-
-	chrSel.nier.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Nier", [1.19, 4, 6]);
-		}
-	);
-
-	chrSel.belial.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Belial", [1.15, -5, 2]);
-		}
-	);
-
-	chrSel.beelzebub.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Beelzebub", [1.32, -4, -1]);
-		}
-	);
-
-	chrSel.lucilius.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Lucilius", [1.48, 4, 7]);
-		}
-	);
-
-	chrSel.avatar.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Avatar_Belial", [1.11, -6, 5]);
-		}
-	);
-
-	chrSel.twob.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("2B", [1.2, 4, -2]);
-		}
-	);
-
-	chrSel.meg.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Meg", [1.01, -2, 7.5]);
-		}
-	);
-
-	chrSel.random.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay("Lunalu", [1.03, 2, -2]);
-		}
-	);
-}
+});
 
 // Display on click
 
 function runDisplay(characterName) {
-	previewDisplayOn = false;
-	const descriptionArea = document.getElementsByClassName("description-area")[0];
-	// chrPrevImg.parentElement.classList.remove("portrait-onselect");
-	// void chrPrevImg.parentElement.offsetWidth;
-	
-	descriptionArea.style.opacity = 1;
-	
-	if (characterName == "Random") {
-		clearDisplay();
-		switch (Math.floor(Math.random() * 37)) {
-			case 0:
-				characterName = "Zeta";
+	if (interactionEnabled) {
+		previewDisplayOn = false;
+		const descriptionArea = document.getElementsByClassName("description-area")[0];
+		// chrPrevImg.parentElement.classList.remove("portrait-onselect");
+		// void chrPrevImg.parentElement.offsetWidth;
+		
+		descriptionArea.style.opacity = 1;
+		
+		if (characterName === "Random") {
+			characterName = chrSel[Math.floor(Math.random() * (chrSel.length - 1))].onclick.toString().split("'")[1];
+		}
+		
+		sfx.confirm.currentTime = 0;
+		sfx.confirm.play();
+			
+		initializeOV("experimental");
+
+		chrPrevImg.src = "img/portraits/gbvsr/" + characterName + "_small.png";
+		chrName.innerHTML = characterName.replace(/_/g, " ");
+
+		var charIcon;
+		chrSel.forEach(element => {
+			if (element.children[0].children[0].src.includes(characterName)) {
+				charIcon = element;
+			}
+		});
+		
+		var scaleMeasures = charIcon.children[0].children[0].dataset.scale.split(",");
+		chrPrevImg.style.transform = "scale(" + scaleMeasures[0] + ") translate(" + scaleMeasures[1] + "%, " + scaleMeasures[2] + "%)";
+		
+		switch (characterName) {
+			case "Zeta":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 1:
-				characterName = "Vaseraga";
+			case "Vaseraga":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 2:
-				characterName = "Beatrix";
+			case "Beatrix":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 3:
-				characterName = "Eustace";
+			case "Eustace":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 4:
-				characterName = "Anre";
+			case "Anre":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 5:
-				characterName = "Seox";
+			case "Seox":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 6:
-				characterName = "Lancelot";
+			case "Lancelot":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 7:
-				characterName = "Vane";
+			case "Vane":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 8:
-				characterName = "Percival";
+			case "Percival":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 9:
-				characterName = "Siegfried";
+			case "Siegfried":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 10:
-				characterName = "Versusia";
+			case "Versusia":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 11:
-				characterName = "Zooey";
+			case "Zooey":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 12:
-				characterName = "Ladiva";
+			case "Ladiva":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 13:
-				characterName = "Narmaya";
+			case "Narmaya":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 14:
-				characterName = "Gran";
+			case "Gran":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 15:
-				characterName = "Djeeta";
+			case "Djeeta":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 16:
-				characterName = "Charlotta";
+			case "Charlotta":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 17:
-				characterName = "Ferry";
+			case "Ferry":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 18:
-				characterName = "Anila";
+			case "Anila":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 19:
-				characterName = "Vikala";
+			case "Vikala":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 20:
-				characterName = "Galleon";
+			case "Galleon":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 21:
-				characterName = "Grimnir";
+			case "Grimnir":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 22:
-				characterName = "Metera";
+			case "Metera":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 23:
-				characterName = "Lowain";
+			case "Lowain":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 24:
-				characterName = "Katalina";
+			case "Katalina":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 25:
-				characterName = "Vira";
+			case "Vira":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 26:
-				characterName = "Yuel";
+			case "Yuel":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 27:
-				characterName = "Soriz";
+			case "Soriz":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 28:
-				characterName = "Cagliostro";
+			case "Cagliostro":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 29:
-				characterName = "Wilnas";
+			case "Wilnas":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 30:
-				characterName = "Sandalphon";
+			case "Ilsa":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 31:
-				characterName = "Nier";
+			case "Sandalphon":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 32:
-				characterName = "Belial";
+			case "Nier":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 33:
-				characterName = "Beelzebub";
+			case "Belial":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 34:
-				characterName = "Lucilius";
+			case "Beelzebub":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 35:
-				characterName = "Avatar_Belial";
+			case "Lucilius":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
-			case 36:
-				characterName = "2B";
+			case "Avatar_Belial":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "2B":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Meg":
+				displayInfo = {
+					filename: characterName,
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
 				break;
 		}
-	}
-	
-	sfx.confirm.currentTime = 0;
-	sfx.confirm.play();
-	
-	initializeOV();
-	
-	function writeCharInfo(detailInfo, ratings, likeOrDislike, charDescription, charFileName, scaleMeasures) {
-		updateOV(detailInfo, ratings, likeOrDislike, charDescription);
-		
-		chrPrevImg.src = "img/portraits/gbvsr/" + charFileName + ".png";
-		//chrPrevImg.onload = function() {
-			chrPrevImg.style.transform = "scale(" + scaleMeasures[0] + ") translate(" + scaleMeasures[1] + "%, " + scaleMeasures[2] + "%)";
-		//};
-		chrName.innerHTML = charFileName.replace(/_/g, " ");
-		
-	}
-	
-	switch (characterName) {
-		case "Zeta":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,4],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.18, 4, -3]
-			);
-			break;
-		case "Vaseraga":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,3],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.4, 0, -10]
-			);
-			break;
-		case "Beatrix":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,5],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.1, 0, 0]
-			);
-			break;
-		case "Eustace":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,3],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.22, 0, -5]
-			);
-			break;
-		case "Anre":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,3],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.25, 0, -6]
-			);
-			break;
-		case "Seox":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,4],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.28, 0, -8]
-			);
-			break;
-		case "Lancelot":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,4],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.04, 10, 2]
-			);
-			break;
-		case "Vane":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,3],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.32, -5, -7]
-			);
-			break;
-		case "Percival":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,3],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.2, 0, 3]
-			);
-			break;
-		case "Siegfried":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,4],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.2, 0, 0]
-			);
-			break;
-		case "Versusia":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,2],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.14, 4, 7]
-			);
-			break;
-		case "Zooey":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,3],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.12, 3, -1]
-			);
-			break;
-		case "Ladiva":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,2],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.2, -2, 3]
-			);
-			break;
-		case "Narmaya":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,2],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[0.99, 3, 6]
-			);
-			break;
-		case "Gran":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,5],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[0.97, -3, 6]
-			);
-			break;
-		case "Djeeta":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,5],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[0.9, -5, 7]
-			);
-			break;
-		case "Charlotta":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,4],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1, 2, 3]
-			);
-			break;
-		case "Ferry":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,2],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1, 0, 2]
-			);
-			break;
-		case "Anila":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,5],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.07, 6, 1]
-			);
-			break;
-		case "Vikala":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,3],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.18, 2, -1]
-			);
-			break;
-		case "Galleon":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,3],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.19, -1, -3]
-			);
-			break;
-		case "Grimnir":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,3],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.3, -5, 2]
-			);
-			break;
-		case "Metera":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,2],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.26, 0, -5]
-			);
-			break;
-		case "Lowain":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,3],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.21, -2, 0]
-			);
-			break;
-		case "Katalina":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,5],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.2, 6, -4]
-			);
-			break;
-		case "Vira":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,4],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.02, 7, 2]
-			);
-			break;
-		case "Yuel":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,4],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.22, 2, -6]
-			);
-			break;
-		case "Soriz":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,4],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1, 8, 3]
-			);
-			break;
-		case "Cagliostro":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,3],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.054, 5.5, 1.5]
-			);
-			break;
-		case "Wilnas":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,2],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.29, 4, -2]
-			);
-			break;
-		case "Sandalphon":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,3],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.12, 15, 1]
-			);
-			break;
-		case "Nier":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.19, 4, 6]
-			);
-			break;
-		case "Belial":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,4],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.15, -5, 2]
-			);
-			break;
-		case "Beelzebub":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,4],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.32, -4, -1]
-			);
-			break;
-		case "Lucilius":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,4],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.48, 4, 7]
-			);
-			break;
-		case "Avatar_Belial":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,3],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.11, -6, 5]
-			);
-			break;
-		case "2B":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,4],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.2, 4, -2]
-			);
-			break;
-		case "Meg":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,3],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				[1.01, -2, 7.5]
-			);
-			break;
+
+		updateOV2(displayInfo, "gbvsr");
 	}
 }
 
@@ -1079,14 +731,14 @@ function startupDisplay() {
 	}
 	
 	function addIconAnims() {
-		if (rowPosition == characterIcons.length / 2) {
+		if (rowPosition === characterIcons.length / 2) {
 			previewDisplayOn = true;
 			clearTimeout(classPush);
 		} else {
 			characterIcons[rowPosition][columnPosition].classList.add("cssicon-onstart");
 			columnPosition++;
 			
-			if (columnPosition == characterIcons[rowPosition].length) {
+			if (columnPosition === characterIcons[rowPosition].length) {
 				columnPosition = 0;
 				rowPosition++;
 			}
@@ -1096,14 +748,14 @@ function startupDisplay() {
 	}
 	
 	function addIconAnimsInverse() {
-		if (rowPositionInverse == characterIcons.length / 2 - 1) {
+		if (rowPositionInverse === characterIcons.length / 2 - 1) {
 			previewDisplayOn = true;
 			clearTimeout(classPushInverse);
 		} else {
 			characterIcons[rowPositionInverse][columnPositionInverse].classList.add("cssicon-onstart");
 			columnPositionInverse--;
 			
-			if (columnPositionInverse == -1) {
+			if (columnPositionInverse === -1) {
 				rowPositionInverse--;
 				columnPositionInverse = characterIcons[rowPositionInverse].length - 1;
 			}
@@ -1121,7 +773,9 @@ function startupDisplay() {
 }
 
 setTimeout(startupDisplay, 200);
-setTimeout(addListeners, 1000);
+setTimeout(function() {
+	interactionEnabled = true;
+}, 1000);
 
 document.getElementsByClassName("background-text-container")[0].style.height = document.body.clientHeight + "px";
 $(window).resize(function() {
