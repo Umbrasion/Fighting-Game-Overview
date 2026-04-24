@@ -12,44 +12,65 @@
 	</head>
 	<body>
 		<img class="game-logo" src="img/logos/AoCF_logo.png">
+		<img class="decor" src="img/characterSelect/aocf/Decor_1.png" style="width: 24.219vw">
+		<img class="decor" src="img/characterSelect/aocf/Decor_1.png" style="width: 24.219vw; right: 0; transform: scale(-1, 1)">
+		<img class="decor" src="img/characterSelect/aocf/Decor_2.png" style="width: 34.609vw; bottom: 0">
+		<img class="decor" src="img/characterSelect/aocf/Decor_2.png" style="width: 34.609vw; bottom: 0; right: 0; transform: scale(-1, 1)">
+		<img class="decor" src="img/characterSelect/aocf/Decor_3.png" style="width: 54.766vw; left: 0; right: 0; margin: auto">
 		<div id="characterselect">
+			<img id="info-portrait-select" src="">
 			<div class="preview-area">
-				<div class="portrait-area">
-					<h2 id="info-name" class="info-title" style="height: 10%; margin: 0px 0px 3%"></h2>
-					<img id="info-portrait" src="" style="max-height: 86%; max-width: 100%">
+				<div class="portrait-container" style="--image-src: url('');">
+					<img class="portrait-bg" src="img/characterSelect/aocf/Portrait_bg.png">
+					<div class="portrait-box">
+						<div id="info-portrait"></div>
+					</div>
+					<img class="portrait-border" src="img/characterSelect/aocf/Portrait_border.png">
 				</div>
-				<div class="selectbox-container">
-					<h1>Create the strongest duo!</h1>
+				<img id="info-name" src="">
+				<img class="selectbox-title" src="img/characterSelect/aocf/Title.png">
+				<div class="fullroster-container">
+					<img id="select-cursor" src="img/characterSelect/aocf/Cursor.png" style="left: 7%; top: -2.5%">
 					<img class="selectbox-fullroster" src="img/characterSelect/aocf/Full_Roster.png" usemap="#mapselect">
-					<map name="mapselect">
-						<area id="character-reimu" onclick="runDisplay('reimu')" shape="poly" coords="3,0, 124,0, 135,77, 39,77">
-						<area id="character-random" onclick="runDisplay('random')" shape="poly" coords="129,0, 248,0, 238,77, 140,77">
-						<area id="character-marisa" onclick="runDisplay('marisa')" shape="poly" coords="254,0, 375,0, 339,77, 244,77">
-						<area id="character-ichirin" onclick="runDisplay('ichirin')" shape="poly" coords="39,81, 135,81, 141,158, 54,158">
-						<area id="character-nitori" onclick="runDisplay('nitori')" shape="poly" coords="140,81, 238,81, 231,158, 147,158">
-						<area id="character-futo" onclick="runDisplay('futo')" shape="poly" coords="243,81, 339,81, 325,158, 237,158">
-						<area id="character-byakuren" onclick="runDisplay('byakuren')" shape="poly" coords="54,162, 142,162, 144,239, 60,239">
-						<area id="character-kokoro" onclick="runDisplay('kokoro')" shape="poly" coords="147,162, 231,162, 227,239, 150,239">
-						<area id="character-miko" onclick="runDisplay('miko')" shape="poly" coords="237,162, 324,162, 318,239, 234,239">
-						<area id="character-koishi" onclick="runDisplay('koishi')" shape="poly" coords="60,243, 144,243, 144,320, 60,320">
-						<area id="character-kasen" onclick="runDisplay('kasen')" shape="poly" coords="233,243, 318,243, 318,320, 233,320">
-						<area id="character-mokou" onclick="runDisplay('mokou')" shape="poly" coords="59,324, 144,324, 141,401, 54,401">
-						<area id="character-mamizou" onclick="runDisplay('mamizou')" shape="poly" coords="150,324, 229,324, 232,401, 146,401">
-						<area id="character-sukuna" onclick="runDisplay('sukuna')" shape="poly" coords="233,324, 319,324, 325,401, 237,401">
-						<area id="character-reisen" onclick="runDisplay('reisen')" shape="poly" coords="53,405, 140,405, 133,482, 38,482">
-						<area id="character-doremy" onclick="runDisplay('doremy')" shape="poly" coords="146,405, 232,405, 239,482, 139,482">
-						<area id="character-sumireko" onclick="runDisplay('sumireko')" shape="poly" coords="237,405, 325,405, 339,482, 245,482">
-						<area id="character-tenshi" onclick="runDisplay('tenshi')" shape="poly" coords="38,486, 133,486, 121,565, 0,565">
-						<area id="character-joon" onclick="runDisplay('joon')" shape="poly" coords="139,486, 239,486, 251,565, 127,565">
-						<area id="character-yukari" onclick="runDisplay('yukari')" shape="poly" coords="245,486, 340,486, 378,565, 257,565">
-					</map>
 				</div>
-				<div class="description-area"></div>
+				<map name="mapselect">
+					<area id="character-reimu" onclick="runDisplay('Reimu_Hakurei')" shape="poly" coords="3,0, 124,0, 135,77, 39,77" data-scale="80,30,-5" data-cursor="7,-2.5">
+					<area id="character-random" onclick="runDisplay('Random')" shape="poly" coords="129,0, 248,0, 238,77, 140,77" data-scale="0,0,0" data-cursor="36,-2.5">
+					<area id="character-marisa" onclick="runDisplay('Marisa_Kirisame')" shape="poly" coords="254,0, 375,0, 339,77, 244,77" data-scale="80,-190,0" data-cursor="66,-2.5">
+					<area id="character-ichirin" onclick="runDisplay('Ichirin_Kumoi')" shape="poly" coords="39,81, 135,81, 141,158, 54,158" data-scale="75,35,0" data-cursor="9.5,12">
+					<area id="character-nitori" onclick="runDisplay('Nitori_Kawashiro')" shape="poly" coords="140,81, 238,81, 231,158, 147,158" data-scale="70,40,0" data-cursor="36,12">
+					<area id="character-futo" onclick="runDisplay('Mononobe_no_Futo')" shape="poly" coords="243,81, 339,81, 325,158, 237,158" data-scale="75,40,10" data-cursor="61,12">
+					<area id="character-byakuren" onclick="runDisplay('Byakuren_Hijiri')" shape="poly" coords="54,162, 142,162, 144,239, 60,239" data-scale="75,500,0" data-cursor="11.5,26">
+					<area id="character-kokoro" onclick="runDisplay('Hata_no_Kokoro')" shape="poly" coords="147,162, 231,162, 227,239, 150,239" data-scale="90,-10,0" data-cursor="36,26">
+					<area id="character-miko" onclick="runDisplay('Toyosatomimi_no_Miko')" shape="poly" coords="237,162, 324,162, 318,239, 234,239" data-scale="75,20,10" data-cursor="60,26">
+					<area id="character-koishi" onclick="runDisplay('Koishi_Komeiji')" shape="poly" coords="60,243, 144,243, 144,320, 60,320" data-scale="70,50,10" data-cursor="11.5,40.5">
+					<area id="character-kasen" onclick="runDisplay('Kasen_Ibaraki')" shape="poly" coords="233,243, 318,243, 318,320, 233,320" data-scale="75,45,0" data-cursor="59.5,40.5">
+					<area id="character-mokou" onclick="runDisplay('Fujiwara_no_Mokou')" shape="poly" coords="59,324, 144,324, 141,401, 54,401" data-scale="70,-10,14" data-cursor="11.5,54.5">
+					<area id="character-mamizou" onclick="runDisplay('Mamizou_Futatsuiwa')" shape="poly" coords="150,324, 229,324, 232,401, 146,401" data-scale="80,50,5" data-cursor="36,54.5">
+					<area id="character-sukuna" onclick="runDisplay('Shinmyoumaru_Sukuna')" shape="poly" coords="233,324, 319,324, 325,401, 237,401" data-scale="65,40,20" data-cursor="60,54.5">
+					<area id="character-reisen" onclick="runDisplay('Reisen_Udongein_Inaba')" shape="poly" coords="53,405, 140,405, 133,482, 38,482" data-scale="80,0,15" data-cursor="9.5,69">
+					<area id="character-doremy" onclick="runDisplay('Doremy_Sweet')" shape="poly" coords="146,405, 232,405, 239,482, 139,482" data-scale="70,30,10" data-cursor="36,69">
+					<area id="character-sumireko" onclick="runDisplay('Sumireko_Usami')" shape="poly" coords="237,405, 325,405, 339,482, 245,482" data-scale="70,-20,10" data-cursor="61.5,69">
+					<area id="character-tenshi" onclick="runDisplay('Tenshi_Hinanawi')" shape="poly" coords="38,486, 133,486, 121,565, 0,565" data-scale="70,35,0" data-cursor="7,83">
+					<area id="character-joon" onclick="runDisplay('Joon_Yorigami')" shape="poly" coords="139,486, 239,486, 251,565, 127,565" data-scale="90,3000,-5" data-cursor="36,83">
+					<area id="character-yukari" onclick="runDisplay('Yukari_Yakumo')" shape="poly" coords="245,486, 340,486, 378,565, 257,565" data-scale="75,50,10" data-cursor="64.5,83">
+				</map>
 			</div>
+		</div>
+		<div class="description-bg">
+			<div class="description-area"></div>
 		</div>
 		<div class="preload-container">
 			<img src="img/backgrounds/HakureiShrine.png">
+			<img src="img/characterSelect/aocf/Decor_1.png">
+			<img src="img/characterSelect/aocf/Decor_2.png">
+			<img src="img/characterSelect/aocf/Decor_3.png">
+			<img src="img/characterSelect/aocf/Title.png">
 			<img src="img/characterSelect/aocf/Full_Roster.png">
+			<img src="img/characterSelect/aocf/Cursor.png">
+			<img src="img/characterSelect/aocf/Cursor_select.png">
+			<img src="img/characterSelect/aocf/Portrait_bg.png">
+			<img src="img/characterSelect/aocf/Portrait_border.png">
 			<!---->
 			<img src="img/portraits/aocf/Reimu_Hakurei.png">
 			<img src="img/portraits/aocf/Marisa_Kirisame.png">
@@ -91,7 +112,28 @@
 			<img src="img/portraits/aocf/Joon_Yorigami_selected.png">
 			<img src="img/portraits/aocf/Yukari_Yakumo_selected.png">
 			<!---->
-			<audio muted=true src="audio/music/AoCF - Seeds of Suspicion.ogg"></audio>
+			<img src="img/characterSelect/aocf/Nameplate_Reimu_Hakurei.png">
+			<img src="img/characterSelect/aocf/Nameplate_Marisa_Kirisame.png">
+			<img src="img/characterSelect/aocf/Nameplate_Ichirin_Kumoi.png">
+			<img src="img/characterSelect/aocf/Nameplate_Nitori_Kawashiro.png">
+			<img src="img/characterSelect/aocf/Nameplate_Mononobe_no_Futo.png">
+			<img src="img/characterSelect/aocf/Nameplate_Byakuren_Hijiri.png">
+			<img src="img/characterSelect/aocf/Nameplate_Hata_no_Kokoro.png">
+			<img src="img/characterSelect/aocf/Nameplate_Toyosatomimi_no_Miko.png">
+			<img src="img/characterSelect/aocf/Nameplate_Koishi_Komeiji.png">
+			<img src="img/characterSelect/aocf/Nameplate_Kasen_Ibaraki.png">
+			<img src="img/characterSelect/aocf/Nameplate_Fujiwara_no_Mokou.png">
+			<img src="img/characterSelect/aocf/Nameplate_Mamizou_Futatsuiwa.png">
+			<img src="img/characterSelect/aocf/Nameplate_Shinmyoumaru_Sukuna.png">
+			<img src="img/characterSelect/aocf/Nameplate_Reisen_Udongein_Inaba.png">
+			<img src="img/characterSelect/aocf/Nameplate_Doremy_Sweet.png">
+			<img src="img/characterSelect/aocf/Nameplate_Sumireko_Usami.png">
+			<img src="img/characterSelect/aocf/Nameplate_Tenshi_Hinanawi.png">
+			<img src="img/characterSelect/aocf/Nameplate_Joon_Yorigami.png">
+			<img src="img/characterSelect/aocf/Nameplate_Yukari_Yakumo.png">
+			<!---->
+			<audio muted=true src="audio/music/AoCF - Blizzard of Scattering Possession Flowers intro.ogg"></audio>
+			<audio muted=true src="audio/music/AoCF - Blizzard of Scattering Possession Flowers loop.ogg"></audio>
 			<audio muted=true src="audio/sfx/aocf/aocfCursor.wav"></audio>
 			<audio muted=true src="audio/sfx/aocf/aocfOk.wav"></audio>
 		</div>

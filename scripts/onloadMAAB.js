@@ -119,6 +119,7 @@ function runDisplay(characterName) {
             case "Otherworldly_Koume_Sakiyama":
                 displayInfo = {
                     filename: characterName,
+					nicknames: [""],
                     colors: 19,
                     playstyle: "Rushdown",
                     difficulty: 3,
@@ -135,6 +136,7 @@ function runDisplay(characterName) {
             case "Unique_Snow_White":
                 displayInfo = {
                     filename: characterName,
+					nicknames: [""],
                     colors: 19,
                     playstyle: "",
                     difficulty: 1,
@@ -151,6 +153,7 @@ function runDisplay(characterName) {
             case "Type_II_Bisclavret":
                 displayInfo = {
                     filename: characterName,
+					nicknames: [""],
                     colors: 19,
                     playstyle: "",
                     difficulty: 1,
@@ -167,6 +170,7 @@ function runDisplay(characterName) {
             case "Thief_Arthur":
                 displayInfo = {
                     filename: characterName,
+					nicknames: [""],
                     colors: 19,
                     playstyle: "",
                     difficulty: 1,
@@ -183,6 +187,7 @@ function runDisplay(characterName) {
             case "Blade-Protector_Arthur":
                 displayInfo = {
                     filename: characterName,
+					nicknames: [""],
                     colors: 19,
                     playstyle: "",
                     difficulty: 1,
@@ -199,6 +204,7 @@ function runDisplay(characterName) {
             case "Twinblade_Arthur":
                 displayInfo = {
                     filename: characterName,
+					nicknames: [""],
                     colors: 19,
                     playstyle: "",
                     difficulty: 1,
@@ -215,6 +221,7 @@ function runDisplay(characterName) {
             case "Wildcat_Arthur":
                 displayInfo = {
                     filename: characterName,
+					nicknames: [""],
                     colors: 19,
                     playstyle: "",
                     difficulty: 1,
@@ -231,6 +238,7 @@ function runDisplay(characterName) {
             case "Iai_Arthur":
                 displayInfo = {
                     filename: characterName,
+					nicknames: [""],
                     colors: 19,
                     playstyle: "",
                     difficulty: 1,
@@ -247,6 +255,7 @@ function runDisplay(characterName) {
             case "Zechs_Siegfried":
                 displayInfo = {
                     filename: characterName,
+					nicknames: [""],
                     colors: 19,
                     playstyle: "",
                     difficulty: 1,
@@ -263,6 +272,7 @@ function runDisplay(characterName) {
             case "Hybrid_Nimue":
                 displayInfo = {
                     filename: characterName,
+					nicknames: [""],
                     colors: 19,
                     playstyle: "",
                     difficulty: 1,
@@ -279,6 +289,7 @@ function runDisplay(characterName) {
             case "Void_Eternal_Flame":
                 displayInfo = {
                     filename: characterName,
+					nicknames: [""],
                     colors: 19,
                     playstyle: "",
                     difficulty: 1,
@@ -295,6 +306,7 @@ function runDisplay(characterName) {
             case "Otherworldly_Riesz":
                 displayInfo = {
                     filename: characterName,
+					nicknames: [""],
                     colors: 19,
                     playstyle: "",
                     difficulty: 1,
@@ -311,6 +323,7 @@ function runDisplay(characterName) {
             case "Otherworldly_Iori_Yagami":
                 displayInfo = {
                     filename: characterName,
+					nicknames: [""],
                     colors: 19,
                     playstyle: "",
                     difficulty: 1,

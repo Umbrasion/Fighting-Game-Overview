@@ -7,14 +7,430 @@
 		<link rel="stylesheet" href="../styles/games/KoFXV.css">
 		<script src="../scripts/common.js"></script>
 		<script src="../scripts/cssResize.js" defer></script>
-		<script src="../scripts/onloadKOFXV.js" defer></script>
+		<script src="../scripts/onloadKoFXV.js" defer></script>
 		<script src="../scripts/jquery-3.7.1.min.js"></script>
 		<style>
 			
 		</style>
 	</head>
 	<body>
+		<img class="game-logo" src="img/logos/KoFXV_logo.png">
 		<div id="characterselect">
+			<div class="preview-area">
+				<div class="portrait-area">
+					<div style="display: flex; flex-direction: column; width: 0px; height: 0px; margin: auto; justify-content: left; align-items: center">
+						<div style="width: fit-content">
+							<img id="info-portrait" src="">
+						</div>
+					</div>
+					<h2 id="info-name" class="info-title" style="height: 1.2em"></h2>
+				</div>
+				<div class="selectbox-container">
+					<div class="character-row character-row-top">
+						<a id="character-mature" onclick="runDisplay('Mature')">
+							<img src="img/characterSelect/kofxv/Mature_icon.png">
+						</a>
+						<a id="character-shingo" onclick="runDisplay('Shingo_Yabuki')">
+							<img src="img/characterSelect/kofxv/Shingo_Yabuki_icon.png">
+						</a>
+						<a id="character-kim" onclick="runDisplay('Kim_Kaphwan')">
+							<img src="img/characterSelect/kofxv/Kim_Kaphwan_icon.png">
+						</a>
+						<a id="character-sylvie" onclick="runDisplay('Sylvie_Paula_Paula')">
+							<img src="img/characterSelect/kofxv/Sylvie_Paula_Paula_icon.png">
+						</a>
+						<a id="character-najd" onclick="runDisplay('Najd')">
+							<img src="img/characterSelect/kofxv/Najd_icon.png">
+						</a>
+						<a id="character-duolon" onclick="runDisplay('Duo_Lon')">
+							<img src="img/characterSelect/kofxv/Duo_Lon_icon.png">
+						</a>
+						<a id="character-hinako" onclick="runDisplay('Hinako_Shijo')">
+							<img src="img/characterSelect/kofxv/Hinako_Shijo_icon.png">
+						</a>
+						<a id="character-goenitz" onclick="runDisplay('Goenitz')">
+							<img src="img/characterSelect/kofxv/Goenitz_icon.png">
+						</a>
+						<a id="character-vice" onclick="runDisplay('Vice')">
+							<img src="img/characterSelect/kofxv/Vice_icon.png">
+						</a>
+					</div>
+					<div class="character-row character-row-mid">
+						<a id="character-geese" onclick="runDisplay('Geese_Howard')">
+							<img src="img/characterSelect/kofxv/Geese_Howard_icon.png">
+						</a>
+						<a id="character-billy" onclick="runDisplay('Billy_Kane')">
+							<img src="img/characterSelect/kofxv/Billy_Kane_icon.png">
+						</a>
+						<a id="character-ryuji" onclick="runDisplay('Ryuji_Yamazaki')">
+							<img src="img/characterSelect/kofxv/Ryuji_Yamazaki_icon.png">
+						</a>
+						<a id="character-rock" onclick="runDisplay('Rock_Howard')">
+							<img src="img/characterSelect/kofxv/Rock_Howard_icon.png">
+						</a>
+						<a id="character-bjenet" onclick="runDisplay('B.Jenet')">
+							<img src="img/characterSelect/kofxv/B.Jenet_icon.png">
+						</a>
+						<a id="character-gato" onclick="runDisplay('Gato')">
+							<img src="img/characterSelect/kofxv/Gato_icon.png">
+						</a>
+						<a id="character-oyashiro" onclick="runDisplay('Orochi_Yashiro')">
+							<img src="img/characterSelect/kofxv/Orochi_Yashiro_icon.png">
+						</a>
+						<a id="character-oshermie" onclick="runDisplay('Orochi_Shermie')">
+							<img src="img/characterSelect/kofxv/Orochi_Shermie_icon.png">
+						</a>
+						<a id="character-ochris" onclick="runDisplay('Orochi_Chris')">
+							<img src="img/characterSelect/kofxv/Orochi_Chris_icon.png">
+						</a>
+						<a id="character-haohmaru" onclick="runDisplay('Haohmaru')">
+							<img src="img/characterSelect/kofxv/Haohmaru_icon.png">
+						</a>
+						<a id="character-nakoruru" onclick="runDisplay('Nakoruru')">
+							<img src="img/characterSelect/kofxv/Nakoruru_icon.png">
+						</a>
+						<a id="character-darli" onclick="runDisplay('Darli_Dagger')">
+							<img src="img/characterSelect/kofxv/Darli_Dagger_icon.png">
+						</a>
+						<a id="character-rugal" onclick="runDisplay('Omega_Rugal')">
+							<img src="img/characterSelect/kofxv/Omega_Rugal_icon.png">
+						</a>
+					</div>
+					<div class="character-row character-row-mid">
+						<a id="character-shunei" onclick="runDisplay('Shunei')">
+							<img src="img/characterSelect/kofxv/Shun'ei_icon.png">
+						</a>
+						<a id="character-meitenkun" onclick="runDisplay('Meitenkun')">
+							<img src="img/characterSelect/kofxv/Meitenkun_icon.png">
+						</a>
+						<a id="character-benimaru" onclick="runDisplay('Benimaru_Nikaido')">
+							<img src="img/characterSelect/kofxv/Benimaru_Nikaido_icon.png">
+						</a>
+						<a id="character-ash" onclick="runDisplay('Ash_Crimson')">
+							<img src="img/characterSelect/kofxv/Ash_Crimson_icon.png">
+						</a>
+						<a id="character-elisabeth" onclick="runDisplay('Elisabeth_Blanctorche')">
+							<img src="img/characterSelect/kofxv/Elisabeth_Blanctorche_icon.png">
+						</a>
+						<a id="character-kukri" onclick="runDisplay('Kukri')">
+							<img src="img/characterSelect/kofxv/Kukri_icon.png">
+						</a>
+						<a id="character-kyo" onclick="runDisplay('Kyo_Kusanagi')">
+							<img src="img/characterSelect/kofxv/Kyo_Kusanagi_icon.png">
+						</a>
+						<a id="character-iori" onclick="runDisplay('Iori_Yagami')">
+							<img src="img/characterSelect/kofxv/Iori_Yagami_icon.png">
+						</a>
+						<a id="character-chizuru" onclick="runDisplay('Chizuru_Kagura')">
+							<img src="img/characterSelect/kofxv/Chizuru_Kagura_icon.png">
+						</a>
+						<a id="character-kdash" onclick="runDisplay('KDash')">
+							<img src="img/characterSelect/kofxv/K'_icon.png">
+						</a>
+						<a id="character-maxima" onclick="runDisplay('Maxima')">
+							<img src="img/characterSelect/kofxv/Maxima_icon.png">
+						</a>
+						<a id="character-whip" onclick="runDisplay('Whip')">
+							<img src="img/characterSelect/kofxv/Whip_icon.png">
+						</a>
+						<a id="character-isla" onclick="runDisplay('Isla')">
+							<img src="img/characterSelect/kofxv/Isla_icon.png">
+						</a>
+						<a id="character-heidern" onclick="runDisplay('Heidern')">
+							<img src="img/characterSelect/kofxv/Heidern_icon.png">
+						</a>
+						<a id="character-dolores" onclick="runDisplay('Dolores')">
+							<img src="img/characterSelect/kofxv/Dolores_icon.png">
+						</a>
+					</div>
+					<div class="character-row character-row-mid">
+						<a id="character-terry" onclick="runDisplay('Terry_Bogard')">
+							<img src="img/characterSelect/kofxv/Terry_Bogard_icon.png">
+						</a>
+						<a id="character-andy" onclick="runDisplay('Andy_Bogard')">
+							<img src="img/characterSelect/kofxv/Andy_Bogard_icon.png">
+						</a>
+						<a id="character-joe" onclick="runDisplay('Joe_Higashi')">
+							<img src="img/characterSelect/kofxv/Joe_Higashi_icon.png">
+						</a>
+						<a id="character-ryo" onclick="runDisplay('Ryo_Sakazaki')">
+							<img src="img/characterSelect/kofxv/Ryo_Sakazaki_icon.png">
+						</a>
+						<a id="character-robert" onclick="runDisplay('Robert_Garcia')">
+							<img src="img/characterSelect/kofxv/Robert_Garcia_icon.png">
+						</a>
+						<a id="character-king" onclick="runDisplay('King')">
+							<img src="img/characterSelect/kofxv/King_icon.png">
+						</a>
+						<a id="character-yashiro" onclick="runDisplay('Yashiro_Nanakase')">
+							<img src="img/characterSelect/kofxv/Yashiro_Nanakase_icon.png">
+						</a>
+						<a id="character-shermie" onclick="runDisplay('Shermie')">
+							<img src="img/characterSelect/kofxv/Shermie_icon.png">
+						</a>
+						<a id="character-chris" onclick="runDisplay('Chris')">
+							<img src="img/characterSelect/kofxv/Chris_icon.png">
+						</a>
+						<a id="character-athena" onclick="runDisplay('Athena_Asamiya')">
+							<img src="img/characterSelect/kofxv/Athena_Asamiya_icon.png">
+						</a>
+						<a id="character-mai" onclick="runDisplay('Mai_Shiranui')">
+							<img src="img/characterSelect/kofxv/Mai_Shiranui_icon.png">
+						</a>
+						<a id="character-yuri" onclick="runDisplay('Yuri_Sakazaki')">
+							<img src="img/characterSelect/kofxv/Yuri_Sakazaki_icon.png">
+						</a>
+						<a id="character-leona" onclick="runDisplay('Leona_Heidern')">
+							<img src="img/characterSelect/kofxv/Leona_Heidern_icon.png">
+						</a>
+						<a id="character-ralf" onclick="runDisplay('Ralf_Jones')">
+							<img src="img/characterSelect/kofxv/Ralf_Jones_icon.png">
+						</a>
+						<a id="character-clark" onclick="runDisplay('Clark_Still')">
+							<img src="img/characterSelect/kofxv/Clark_Still_icon.png">
+						</a>
+					</div>
+					<div class="character-row character-row-last">
+						<a id="character-randomteam" onclick="runDisplay('Random')">
+							<img src="img/characterSelect/kofxv/Random_team_icon.png">
+						</a>
+						<a id="character-antonov" onclick="runDisplay('Antonov')">
+							<img src="img/characterSelect/kofxv/Antonov_icon.png">
+						</a>
+						<a id="character-ramon" onclick="runDisplay('Ramon')">
+							<img src="img/characterSelect/kofxv/Ramon_icon.png">
+						</a>
+						<a id="character-dinosaurs" onclick="runDisplay('King_of_Dinosaurs')">
+							<img src="img/characterSelect/kofxv/King_of_Dinosaurs_icon.png">
+						</a>
+						<a id="character-krohnen" onclick="runDisplay('Krohnen')">
+							<img src="img/characterSelect/kofxv/Krohnen_icon.png">
+						</a>
+						<a id="character-kula" onclick="runDisplay('Kula_Diamond')">
+							<img src="img/characterSelect/kofxv/Kula_Diamond_icon.png">
+						</a>
+						<a id="character-angel" onclick="runDisplay('Angel')">
+							<img src="img/characterSelect/kofxv/Angel_icon.png">
+						</a>
+						<a id="character-mary" onclick="runDisplay('Blue_Mary')">
+							<img src="img/characterSelect/kofxv/Blue_Mary_icon.png">
+						</a>
+						<a id="character-vanessa" onclick="runDisplay('Vanessa')">
+							<img src="img/characterSelect/kofxv/Vanessa_icon.png">
+						</a>
+						<a id="character-luong" onclick="runDisplay('Luong')">
+							<img src="img/characterSelect/kofxv/Luong_icon.png">
+						</a>
+						<a id="character-random" onclick="runDisplay('Random')">
+							<img src="img/characterSelect/kofxv/Random_icon.png">
+						</a>
+					</div>
+				</div>
+				<div class="p2-area"></div>
+			</div>
+		</div>
+		<div class="description-bg">
+			<div class="description-area"></div>
+		</div>
+		<div class="preload-container">
+			<img src="img/backgrounds/KofXV.png">
+			<img src="img/characterSelect/kofxv/Cursor.png">
+			<img src="img/characterSelect/kofxv/Cursor_random.png">
+			<!---->
+			<img src="img/characterSelect/kofxv/Mature_icon.png">
+			<img src="img/characterSelect/kofxv/Shingo_Yabuki_icon.png">
+			<img src="img/characterSelect/kofxv/Kim_Kaphwan_icon.png">
+			<img src="img/characterSelect/kofxv/Sylvie_Paula_Paula_icon.png">
+			<img src="img/characterSelect/kofxv/Najd_icon.png">
+			<img src="img/characterSelect/kofxv/Duo_Lon_icon.png">
+			<img src="img/characterSelect/kofxv/Hinako_Shijo_icon.png">
+			<img src="img/characterSelect/kofxv/Goenitz_icon.png">
+			<img src="img/characterSelect/kofxv/Vice_icon.png">
+			<img src="img/characterSelect/kofxv/Geese_Howard_icon.png">
+			<img src="img/characterSelect/kofxv/Billy_Kane_icon.png">
+			<img src="img/characterSelect/kofxv/Ryuji_Yamazaki_icon.png">
+			<img src="img/characterSelect/kofxv/Rock_Howard_icon.png">
+			<img src="img/characterSelect/kofxv/B.Jenet_icon.png">
+			<img src="img/characterSelect/kofxv/Gato_icon.png">
+			<img src="img/characterSelect/kofxv/Orochi_Yashiro_icon.png">
+			<img src="img/characterSelect/kofxv/Orochi_Shermie_icon.png">
+			<img src="img/characterSelect/kofxv/Orochi_Chris_icon.png">
+			<img src="img/characterSelect/kofxv/Haohmaru_icon.png">
+			<img src="img/characterSelect/kofxv/Nakoruru_icon.png">
+			<img src="img/characterSelect/kofxv/Darli_Dagger_icon.png">
+			<img src="img/characterSelect/kofxv/Omega_Rugal_icon.png">
+			<img src="img/characterSelect/kofxv/Shun'ei_icon.png">
+			<img src="img/characterSelect/kofxv/Meitenkun_icon.png">
+			<img src="img/characterSelect/kofxv/Benimaru_Nikaido_icon.png">
+			<img src="img/characterSelect/kofxv/Ash_Crimson_icon.png">
+			<img src="img/characterSelect/kofxv/Elisabeth_Blanctorche_icon.png">
+			<img src="img/characterSelect/kofxv/Kukri_icon.png">
+			<img src="img/characterSelect/kofxv/Kyo_Kusanagi_icon.png">
+			<img src="img/characterSelect/kofxv/Iori_Yagami_icon.png">
+			<img src="img/characterSelect/kofxv/Chizuru_Kagura_icon.png">
+			<img src="img/characterSelect/kofxv/K'_icon.png">
+			<img src="img/characterSelect/kofxv/Maxima_icon.png">
+			<img src="img/characterSelect/kofxv/Whip_icon.png">
+			<img src="img/characterSelect/kofxv/Isla_icon.png">
+			<img src="img/characterSelect/kofxv/Heidern_icon.png">
+			<img src="img/characterSelect/kofxv/Dolores_icon.png">
+			<img src="img/characterSelect/kofxv/Terry_Bogard_icon.png">
+			<img src="img/characterSelect/kofxv/Andy_Bogard_icon.png">
+			<img src="img/characterSelect/kofxv/Joe_Higashi_icon.png">
+			<img src="img/characterSelect/kofxv/Ryo_Sakazaki_icon.png">
+			<img src="img/characterSelect/kofxv/Robert_Garcia_icon.png">
+			<img src="img/characterSelect/kofxv/King_icon.png">
+			<img src="img/characterSelect/kofxv/Yashiro_Nanakase_icon.png">
+			<img src="img/characterSelect/kofxv/Shermie_icon.png">
+			<img src="img/characterSelect/kofxv/Chris_icon.png">
+			<img src="img/characterSelect/kofxv/Athena_Asamiya_icon.png">
+			<img src="img/characterSelect/kofxv/Mai_Shiranui_icon.png">
+			<img src="img/characterSelect/kofxv/Yuri_Sakazaki_icon.png">
+			<img src="img/characterSelect/kofxv/Leona_Heidern_icon.png">
+			<img src="img/characterSelect/kofxv/Ralf_Jones_icon.png">
+			<img src="img/characterSelect/kofxv/Clark_Still_icon.png">
+			<img src="img/characterSelect/kofxv/Antonov_icon.png">
+			<img src="img/characterSelect/kofxv/Ramon_icon.png">
+			<img src="img/characterSelect/kofxv/King_of_Dinosaurs_icon.png">
+			<img src="img/characterSelect/kofxv/Krohnen_icon.png">
+			<img src="img/characterSelect/kofxv/Kula_Diamond_icon.png">
+			<img src="img/characterSelect/kofxv/Angel_icon.png">
+			<img src="img/characterSelect/kofxv/Blue_Mary_icon.png">
+			<img src="img/characterSelect/kofxv/Vanessa_icon.png">
+			<img src="img/characterSelect/kofxv/Luong_icon.png">
+			<img src="img/characterSelect/kofxv/Random_team_icon.png">
+			<img src="img/characterSelect/kofxv/Random_icon.png">
+			<!---->
+			<img src="img/characterSelect/kofxv/Mature_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Shingo_Yabuki_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Kim_Kaphwan_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Sylvie_Paula_Paula_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Najd_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Duo_Lon_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Hinako_Shijo_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Goenitz_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Vice_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Geese_Howard_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Billy_Kane_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Ryuji_Yamazaki_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Rock_Howard_icon_selected.png">
+			<img src="img/characterSelect/kofxv/B.Jenet_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Gato_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Orochi_Yashiro_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Orochi_Shermie_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Orochi_Chris_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Haohmaru_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Nakoruru_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Darli_Dagger_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Omega_Rugal_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Shun'ei_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Meitenkun_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Benimaru_Nikaido_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Ash_Crimson_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Elisabeth_Blanctorche_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Kukri_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Kyo_Kusanagi_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Iori_Yagami_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Chizuru_Kagura_icon_selected.png">
+			<img src="img/characterSelect/kofxv/K'_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Maxima_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Whip_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Isla_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Heidern_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Dolores_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Terry_Bogard_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Andy_Bogard_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Joe_Higashi_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Ryo_Sakazaki_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Robert_Garcia_icon_selected.png">
+			<img src="img/characterSelect/kofxv/King_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Yashiro_Nanakase_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Shermie_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Chris_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Athena_Asamiya_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Mai_Shiranui_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Yuri_Sakazaki_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Leona_Heidern_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Ralf_Jones_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Clark_Still_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Antonov_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Ramon_icon_selected.png">
+			<img src="img/characterSelect/kofxv/King_of_Dinosaurs_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Krohnen_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Kula_Diamond_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Angel_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Blue_Mary_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Vanessa_icon_selected.png">
+			<img src="img/characterSelect/kofxv/Luong_icon_selected.png">
+			<!---->
+			<img src="img/portraits/kofxv/Mature.png">
+			<img src="img/portraits/kofxv/Shingo_Yabuki.png">
+			<img src="img/portraits/kofxv/Kim_Kaphwan.png">
+			<img src="img/portraits/kofxv/Sylvie_Paula_Paula.png">
+			<img src="img/portraits/kofxv/Najd.png">
+			<img src="img/portraits/kofxv/Duo_Lon.png">
+			<img src="img/portraits/kofxv/Hinako_Shijo.png">
+			<img src="img/portraits/kofxv/Goenitz.png">
+			<img src="img/portraits/kofxv/Vice.png">
+			<img src="img/portraits/kofxv/Geese_Howard.png">
+			<img src="img/portraits/kofxv/Billy_Kane.png">
+			<img src="img/portraits/kofxv/Ryuji_Yamazaki.png">
+			<img src="img/portraits/kofxv/Rock_Howard.png">
+			<img src="img/portraits/kofxv/B.Jenet.png">
+			<img src="img/portraits/kofxv/Gato.png">
+			<img src="img/portraits/kofxv/Orochi_Yashiro.png">
+			<img src="img/portraits/kofxv/Orochi_Shermie.png">
+			<img src="img/portraits/kofxv/Orochi_Chris.png">
+			<img src="img/portraits/kofxv/Haohmaru.png">
+			<img src="img/portraits/kofxv/Nakoruru.png">
+			<img src="img/portraits/kofxv/Darli_Dagger.png">
+			<img src="img/portraits/kofxv/Omega_Rugal.png">
+			<img src="img/portraits/kofxv/Shun'ei.png">
+			<img src="img/portraits/kofxv/Meitenkun.png">
+			<img src="img/portraits/kofxv/Benimaru_Nikaido.png">
+			<img src="img/portraits/kofxv/Ash_Crimson.png">
+			<img src="img/portraits/kofxv/Elisabeth_Blanctorche.png">
+			<img src="img/portraits/kofxv/Kukri.png">
+			<img src="img/portraits/kofxv/Kyo_Kusanagi.png">
+			<img src="img/portraits/kofxv/Iori_Yagami.png">
+			<img src="img/portraits/kofxv/Chizuru_Kagura.png">
+			<img src="img/portraits/kofxv/K'.png">
+			<img src="img/portraits/kofxv/Maxima.png">
+			<img src="img/portraits/kofxv/Whip.png">
+			<img src="img/portraits/kofxv/Isla.png">
+			<img src="img/portraits/kofxv/Heidern.png">
+			<img src="img/portraits/kofxv/Dolores.png">
+			<img src="img/portraits/kofxv/Terry_Bogard.png">
+			<img src="img/portraits/kofxv/Andy_Bogard.png">
+			<img src="img/portraits/kofxv/Joe_Higashi.png">
+			<img src="img/portraits/kofxv/Ryo_Sakazaki.png">
+			<img src="img/portraits/kofxv/Robert_Garcia.png">
+			<img src="img/portraits/kofxv/King.png">
+			<img src="img/portraits/kofxv/Yashiro_Nanakase.png">
+			<img src="img/portraits/kofxv/Shermie.png">
+			<img src="img/portraits/kofxv/Chris.png">
+			<img src="img/portraits/kofxv/Athena_Asamiya.png">
+			<img src="img/portraits/kofxv/Mai_Shiranui.png">
+			<img src="img/portraits/kofxv/Yuri_Sakazaki.png">
+			<img src="img/portraits/kofxv/Leona_Heidern.png">
+			<img src="img/portraits/kofxv/Ralf_Jones.png">
+			<img src="img/portraits/kofxv/Clark_Still.png">
+			<img src="img/portraits/kofxv/Antonov.png">
+			<img src="img/portraits/kofxv/Ramon.png">
+			<img src="img/portraits/kofxv/King_of_Dinosaurs.png">
+			<img src="img/portraits/kofxv/Krohnen.png">
+			<img src="img/portraits/kofxv/Kula_Diamond.png">
+			<img src="img/portraits/kofxv/Angel.png">
+			<img src="img/portraits/kofxv/Blue_Mary.png">
+			<img src="img/portraits/kofxv/Vanessa.png">
+			<img src="img/portraits/kofxv/Luong.png">
+			<!---->
+			<audio muted=true src="audio/music/KoFXV - Member Select intro.ogg"></audio>
+			<audio muted=true src="audio/music/KoFXV - Member Select loop.ogg"></audio>
+			<audio muted=true src="audio/sfx/kofxv/Cursor.ogg"></audio>
+			<audio muted=true src="audio/sfx/kofxv/Confirm.ogg"></audio>
+			<audio muted=true src="audio/sfx/kofxv/Cancel.ogg"></audio>
+			<audio muted=true src="audio/sfx/kofxv/Color_Cursor.ogg"></audio>
 		</div>
 	</body>
 </html>

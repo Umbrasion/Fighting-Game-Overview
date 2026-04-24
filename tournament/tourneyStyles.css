@@ -1,0 +1,347 @@
+:root {
+    /* background: linear-gradient(135deg,
+        #AE0001 0%, #AE0001 9.5%,
+        #FFDE00 9.5%, #FFDE00 10.5%,
+        #000 10.5%, #000 19.5%,
+        #FFDE00 19.5%, #FFDE00 20.5%,
+        #AE0001 20.5%, #AE0001 29.5%,
+        #FFDE00 29.5%, #FFDE00 30.5%,
+        #000 30.5%, #000 39.5%,
+        #FFDE00 39.5%, #FFDE00 40.5%,
+        #AE0001 40.5%, #AE0001 49.5%,
+        #FFDE00 49.5%, #FFDE00 50.5%,
+        #000 50.5%, #000 59.5%,
+        #FFDE00 59.5%, #FFDE00 60.5%,
+        #AE0001 60.5%, #AE0001 69.5%,
+        #FFDE00 69.5%, #FFDE00 70.5%,
+        #000 70.5%, #000 79.5%,
+        #FFDE00 79.5%, #FFDE00 80.5%,
+        #AE0001 80.5%, #AE0001 89.5%,
+        #FFDE00 89.5%, #FFDE00 90.5%,
+        #000 90.5%, #000 100%
+    ); */
+    background: linear-gradient(135deg, #1E301A 0%, #1E301A 20%, #314E2B, #314E2B, #1E301A 80%, #1E301A 100%);
+}
+
+body {
+    font-family: "Doodlian";
+    text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+}
+
+main {
+    display: flex;
+    text-align: center;
+}
+
+.game-area, .main-area, .condition-area {
+    height: 100vh;
+}
+
+.main-area {
+    background: radial-gradient(circle at center, );
+    border: 6vw solid transparent;
+    border-top: 0px;
+    border-bottom: 0px;
+}
+
+.game-area, .condition-area {
+    flex: 0px 1 0;
+    background: linear-gradient(135deg, #17171A, #404346, #404346, #17171A);
+    border: 4px solid transparent;
+    border-image: linear-gradient(135deg, #9B7715, #e4c828, #e4c828, #9B7715) 4;
+    border-top: transparent;
+    border-bottom: transparent;
+}
+
+.segment-header {
+    font-size: 3em;
+    margin: 14px 0px;
+}
+
+.segment-subheader {
+    font-size: 2em;
+    margin: 10px 0px;
+}
+
+.segment-info {
+    padding: 30px;
+    font-family: sans-serif;
+    font-size: 1.2em;
+    text-align: left;
+}
+
+#rules-list {
+    padding-left: 40px;
+}
+
+.tourney-logo {
+    width: 20vw;
+}
+
+.tourney-overlay, .tourney-overlay-hands {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 50vh;
+    margin: 1vh auto auto;
+}
+
+.tourney-overlay {
+    z-index: 0;
+}
+
+.tourney-overlay-hands {
+    z-index: 5;
+}
+
+.spin-area {
+    position: relative;
+    margin-top: 46vh;
+}
+
+.roller-lights {
+    position: absolute;
+    top: 16px;
+    left: -40px;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    gap: 610px;
+}
+
+.roller-lights img {
+    width: 40px;
+}
+
+#lights-middle {
+    top: 86px;
+}
+
+#lights-bottom {
+    top: 156px;
+}
+
+.slots-area {
+    display: flex;
+    justify-content: center;
+    flex-flow: row;
+    width: fit-content;
+    border: solid #333331 6px;
+    border-radius: 25px;
+    margin: 10px auto;
+    overflow: clip;
+}
+
+.slot-roll {
+    width: 600px;
+    overflow: clip;
+    background: linear-gradient(to bottom, #C5C2BA, #FFFFFF, #FFFFFF, #C5C2BA);
+    text-align: center;
+}
+
+#slot-roller {
+    height: 200px;
+}
+
+#slot-roller-condition {
+    height: 80px;
+}
+
+.slot-image-container {
+    display: flex;
+    height: 200px;
+}
+
+.slot-image {
+    display: block;
+    max-width: 580px;
+    max-height: 180px;
+    margin: auto;
+    filter: drop-shadow(0px 0px 5px black);
+}
+
+.slot-text-container {
+    display: flex;
+    height: 80px;
+}
+
+.slot-text {
+    display: block;
+    width: 580px;
+    padding-top: 6px;
+    margin: auto;
+    filter: drop-shadow(0px 0px 5px black);
+    font-size: 30px;
+}
+
+.roll-button {
+    font-weight: bold;
+    cursor: pointer;
+    font-family: "Doodlian";
+    color: white;
+    text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+    padding: 8px 10px 6px;
+    background: linear-gradient(to bottom, #509244, #3A5E33);
+    border: solid #091F07 4px;
+    border-radius: 10px;
+    transition: all 0.08s;
+}
+
+.roll-button:hover {
+    background: linear-gradient(to bottom, #3A5E33, #3D6E34);
+}
+
+.roll-button-null {
+    background: linear-gradient(to bottom, #2A4126, #243022);
+    pointer-events: none;
+}
+
+#main-button {
+    font-size: 2.2em;
+}
+
+#reroll-button {
+    font-size: 1.2em;
+    border: solid #091F07 2px;
+}
+
+.sloticon-spinin {
+    animation: sloticon-spinin 0.3s ease-out 0s 1 normal;
+}
+
+@keyframes sloticon-spinin {
+    0% {
+        transform: translate(0,0);
+    }
+    
+    95% {
+        transform: translate(0,7px);
+    }
+    
+    100% {
+        transform: translate(0,0);
+    }
+}
+
+.sloticon-spinout {
+    animation: sloticon-spinout 0.5s ease-out 0s 1 normal;
+}
+
+@keyframes sloticon-spinout {
+    0% {
+        transform: translate(0,0);
+    }
+    
+    10% {
+        transform: translate(0,-7px);
+    }
+    
+    100% {
+        transform: translate(0,0);
+    }
+}
+
+.text-rainbow {
+    animation: text-rainbow 1s linear 0s infinite normal;
+    filter: grayscale(40%);
+}
+
+@keyframes text-rainbow {
+    0% {
+        color: rgba(255, 0, 0, 1);
+    }
+    
+    10% {
+        color: rgba(255, 154, 0, 1);
+    }
+    
+    20% {
+        color: rgba(208, 222, 33, 1);
+    }
+    
+    30% {
+        color: rgba(79, 220, 74, 1);
+    }
+    
+    40% {
+        color: rgba(63, 218, 216, 1);
+    }
+    
+    50% {
+        color: rgba(47, 201, 226, 1);
+    }
+    
+    60% {
+        color: rgba(28, 127, 238, 1);
+    }
+    
+    70% {
+        color: rgba(95, 21, 242, 1);
+    }
+    
+    80% {
+        color: rgba(186, 12, 248, 1);
+    }
+    
+    90% {
+        color: rgba(251, 7, 217, 1);
+    }
+    
+    100% {
+        color: rgba(255, 0, 0, 1);
+    }
+}
+
+/* Debug Area*/
+
+#debug-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: start;
+    gap: 4px;
+    background-color: #3A5E33;
+    width: 586px;
+    height: calc(98vh - 24px);
+    padding: 8px;
+    border: 4px solid black;
+    border-radius: 20px;
+    margin: 1vh;
+    transition: all 0.6s;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.debug-game {
+    text-align: center;
+    font-family: monospace;
+    background-color: #33502E;
+    width: 100px;
+    height: fit-content;
+    padding: 5px;
+    border: 2px solid #2D352B;
+    border-radius: 5px;
+}
+
+.debug-title {
+    font-size: 2em;
+    margin: 0px 0px 6px;
+}
+
+.debug-button {
+    font-family: monospace;
+    font-size: 1.5em;
+    background-color: #77808F;
+    border: 1px solid #2D352B;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.debug-button:hover {
+    filter: brightness(1.2);	
+}

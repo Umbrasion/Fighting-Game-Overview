@@ -45,22 +45,24 @@ const chrSel = [
 
 const pageMusic = new Audio("audio/music/GBVSR - Character Select.ogg");
 pageMusic.loop = true;
-pageMusic.volume = 0.1;
+pageMusic.volume = 0.08;
 pageMusic.play();
 
 const sfx = {
 	cursor: new Audio("audio/sfx/gbvsr/SE_SYS_Cursor.ogg"),
 	confirm: new Audio("audio/sfx/gbvsr/SE_SYS_Decide1.ogg"),
+	cancel: new Audio("audio/sfx/gbvsr/SE_SYS_Cancel1.ogg"),
 }
 sfx.cursor.volume = 0.05;
 sfx.confirm.volume = 0.05;
+sfx.cancel.volume = 0.05;
 
 var previewDisplayOn = true;
 var interactionEnabled = false;
 
 function clearDisplay() {
 	chrPrevImg.src = "";
-	chrName.src = "";
+	chrName.innerHTML = "";
 }
 
 // Display on hover
@@ -94,9 +96,12 @@ chrSel.forEach(element => {
 
 // Display on click
 
+var announcer = new Audio();
+
 function runDisplay(characterName) {
 	if (interactionEnabled) {
 		previewDisplayOn = false;
+		interactionEnabled = false;
 		const descriptionArea = document.getElementsByClassName("description-area")[0];
 		// chrPrevImg.parentElement.classList.remove("portrait-onselect");
 		// void chrPrevImg.parentElement.offsetWidth;
@@ -114,16 +119,28 @@ function runDisplay(characterName) {
 
 		chrPrevImg.src = "img/portraits/gbvsr/" + characterName + "_small.png";
 		chrName.innerHTML = characterName.replace(/_/g, " ");
+		
+        if (!announcer.paused) {
+			announcer.pause();
+		}
+
+        announcer = new Audio("audio/sfx/gbvsr/announcer/" + characterName + "_call.ogg");
+		announcer.volume = 0.3;
+        announcer.play();
 
 		var charIcon;
 		chrSel.forEach(element => {
-			if (element.children[0].children[0].src.includes(characterName)) {
+			if (element.children[0].children[0].src.includes("/" + characterName + "_icon")) {
 				charIcon = element;
 			}
 		});
 		
 		var scaleMeasures = charIcon.children[0].children[0].dataset.scale.split(",");
 		chrPrevImg.style.transform = "scale(" + scaleMeasures[0] + ") translate(" + scaleMeasures[1] + "%, " + scaleMeasures[2] + "%)";
+		
+		if (exMode) {
+			characterName = "EX_" + characterName;
+		}
 		
 		switch (characterName) {
 			case "Zeta":
@@ -145,6 +162,7 @@ function runDisplay(characterName) {
 			case "Vaseraga":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -160,6 +178,7 @@ function runDisplay(characterName) {
 			case "Beatrix":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -175,6 +194,7 @@ function runDisplay(characterName) {
 			case "Eustace":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -190,6 +210,7 @@ function runDisplay(characterName) {
 			case "Anre":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -205,6 +226,7 @@ function runDisplay(characterName) {
 			case "Seox":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -220,6 +242,7 @@ function runDisplay(characterName) {
 			case "Lancelot":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -235,6 +258,7 @@ function runDisplay(characterName) {
 			case "Vane":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -250,6 +274,7 @@ function runDisplay(characterName) {
 			case "Percival":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -265,6 +290,7 @@ function runDisplay(characterName) {
 			case "Siegfried":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -280,6 +306,7 @@ function runDisplay(characterName) {
 			case "Versusia":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -295,6 +322,7 @@ function runDisplay(characterName) {
 			case "Zooey":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -310,6 +338,7 @@ function runDisplay(characterName) {
 			case "Ladiva":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -325,6 +354,7 @@ function runDisplay(characterName) {
 			case "Narmaya":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -340,6 +370,7 @@ function runDisplay(characterName) {
 			case "Gran":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -355,6 +386,7 @@ function runDisplay(characterName) {
 			case "Djeeta":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -370,6 +402,7 @@ function runDisplay(characterName) {
 			case "Charlotta":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -385,6 +418,7 @@ function runDisplay(characterName) {
 			case "Ferry":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -400,6 +434,7 @@ function runDisplay(characterName) {
 			case "Anila":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -415,6 +450,7 @@ function runDisplay(characterName) {
 			case "Vikala":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -430,6 +466,7 @@ function runDisplay(characterName) {
 			case "Galleon":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -445,6 +482,7 @@ function runDisplay(characterName) {
 			case "Grimnir":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -460,6 +498,7 @@ function runDisplay(characterName) {
 			case "Metera":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -475,6 +514,7 @@ function runDisplay(characterName) {
 			case "Lowain":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -490,6 +530,7 @@ function runDisplay(characterName) {
 			case "Katalina":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -505,6 +546,7 @@ function runDisplay(characterName) {
 			case "Vira":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -520,6 +562,7 @@ function runDisplay(characterName) {
 			case "Yuel":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -535,6 +578,7 @@ function runDisplay(characterName) {
 			case "Soriz":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -550,6 +594,7 @@ function runDisplay(characterName) {
 			case "Cagliostro":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -565,6 +610,7 @@ function runDisplay(characterName) {
 			case "Wilnas":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -580,6 +626,7 @@ function runDisplay(characterName) {
 			case "Ilsa":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -595,6 +642,7 @@ function runDisplay(characterName) {
 			case "Sandalphon":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -610,6 +658,7 @@ function runDisplay(characterName) {
 			case "Nier":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -625,6 +674,7 @@ function runDisplay(characterName) {
 			case "Belial":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -640,6 +690,7 @@ function runDisplay(characterName) {
 			case "Beelzebub":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -655,6 +706,7 @@ function runDisplay(characterName) {
 			case "Lucilius":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -670,6 +722,7 @@ function runDisplay(characterName) {
 			case "Avatar_Belial":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -685,6 +738,7 @@ function runDisplay(characterName) {
 			case "2B":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -700,6 +754,58 @@ function runDisplay(characterName) {
 			case "Meg":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			
+			// EX Characters
+			
+			case "EX_Narmaya":
+				displayInfo = {
+					filename: "Narmaya",
+					nicknames: [""],
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "EX_Gran":
+				displayInfo = {
+					filename: "Gran",
+					nicknames: [""],
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "EX_Djeeta":
+				displayInfo = {
+					filename: "Djeeta",
+					nicknames: [""],
 					colors: 23,
 					playstyle: "",
 					difficulty: 1,
@@ -781,3 +887,41 @@ document.getElementsByClassName("background-text-container")[0].style.height = d
 $(window).resize(function() {
 	document.getElementsByClassName("background-text-container")[0].style.height = document.body.clientHeight + "px";
 });
+
+var exMode = false;
+
+function toggleEX() {
+	if (interactionEnabled) {
+		clearDisplay();
+		
+		sfx.confirm.currentTime = 0;
+		sfx.confirm.play();
+
+		var exIcon = document.getElementById("ex-image");
+		if (exIcon.src.includes("EX_icon2")) {
+			exMode = true;
+			exIcon.src = "img/characterSelect/gbvsr/EX_icon.png";
+
+			chrSel.forEach(element => {
+				if (!element.children[0].children[0].src.includes("Narmaya") && !element.children[0].children[0].src.includes("Gran") && !element.children[0].children[0].src.includes("Djeeta")) {
+					element.style.filter = "brightness(0.5)";
+					element.style.pointerEvents = "none";
+				}
+			});
+			document.getElementById("info-name").style.backgroundColor = "rgba(19, 66, 119, 0.6)";
+			document.getElementsByClassName("description-area")[0].style.backgroundColor = "rgba(19, 66, 119, 0.6)";
+		} else {
+			exMode = false;
+			exIcon.src = "img/characterSelect/gbvsr/EX_icon2.png";
+
+			chrSel.forEach(element => {
+				if (!element.children[0].children[0].src.includes("Narmaya") && !element.children[0].children[0].src.includes("Gran") && !element.children[0].children[0].src.includes("Djeeta")) {
+					element.style.filter = "";
+					element.style.pointerEvents = "";
+				}
+			});
+			document.getElementById("info-name").style.backgroundColor = "rgba(0,0,0,0.6)";
+			document.getElementsByClassName("description-area")[0].style.backgroundColor = "rgba(0,0,0,0.6)";
+		}
+	}
+}

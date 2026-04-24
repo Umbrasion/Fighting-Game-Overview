@@ -1,6 +1,15 @@
 :root {
-    background-color: #65C2FF;
-    overflow: clip;
+    background-image: url("../../img/backgrounds/ISD.png");
+    background-size: 100% 100%;
+    overflow-y: clip;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.bg-decor {
+    position: absolute;
 }
 
 #returnbutton {
@@ -9,6 +18,10 @@
 
 #characterselect {
     display: block;
+}
+
+.preview-area {
+    height: calc(100vh - (1.6em + 20px));
 }
 
 .portrait-area, .description-area {
@@ -20,13 +33,19 @@
 }
 
 #info-portrait {
-    height: 80vh;
-    filter: drop-shadow(0 0 1px white) drop-shadow(0 0 1px white) drop-shadow(0 0 1px white) drop-shadow(0 0 1px white) drop-shadow(0 0 1px white);
+    height: 120vh;
+    z-index: 100;
+}
+
+.name-container {
+    position: absolute;
+    bottom: 16px;
+    left: 21vw;
 }
 
 #info-name {
-    margin-top: 70vh;
-    max-width: 20vw;
+    max-width: 23vw;
+    z-index: 102;
 }
 
 #returnbutton, .color-button, .description-exit {
@@ -63,16 +82,10 @@
 }
 
 .selectbox-character img {
-    width: 132px;
-    height: 132px;
+    width: 162px;
+    height: 162px;
     transform-origin: center;
-    filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.5))
-}
-
-#selectbox-random {
-    width: 130px;
-    height: 129px;
-    transform-origin: center;
+    /* filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.5)); */
 }
 
 .description-area {
@@ -91,6 +104,7 @@
     padding: 0.3em;
     border-top: solid white 2px;
     border-bottom: solid white 2px;
+    margin-bottom: 20px;
     overflow-x: hidden;
     animation: banner-scroll 10s linear infinite;
 }

@@ -1,7 +1,7 @@
 :root {
     background-image: url("../../img/backgrounds/DNFD.png");
     background-size: 100% 100%;
-    overflow: clip;
+    overflow-y: clip;
 }
 
 body {
@@ -27,7 +27,7 @@ body {
 }
 
 #characterselect {
-    height: calc(100vh - 56px);
+    height: calc(100vh);
 }
 
 #characterselect {

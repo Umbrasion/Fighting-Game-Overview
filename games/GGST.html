@@ -12,259 +12,275 @@
 	</head>
 	<body>
 		<img class="game-logo" src="img/logos/GGST_logo.png">
+		<div class="bg-decor bg-decor-playerbg" style="background-image: linear-gradient(#520B0A, #520B0A)"></div>
+		<div class="bg-decor bg-decor-playerbg" style="background-image: linear-gradient(#0E3855, #0E3855); right: 0px; transform: scale(-1, 1)"></div>
 		<div id="characterselect">
 			<div class="preview-area">
 				<div class="portrait-area">
 					<div style="display: flex; flex-direction: column; width: 0px; height: 0px; margin: auto; justify-content: left; align-items: center">
 						<div style="width: fit-content">
-							<img id="info-portrait" src="" style="height: 92vh; max-width: none">
+							<img id="info-portrait" src="" style="height: 100vh; max-width: none">
 						</div>
 					</div>
-					<h2 id="info-name" class="info-title" style="height: 1.2em"></h2>
+					<h2 id="info-name" class="info-title"></h2>
 				</div>
 				<div class="selectbox-container">
-					<img id="select-cursor" src="img/characterSelect/ggst/Cursor.png" style="left: 745px; top: -9px">
-					<div class="flexbox-dummy"></div>
-					<a id="character-dizzy" onclick="runDisplay('Queen_Dizzy')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Queen_Dizzy_icon.png">
-						</div>
-					</a>
-					<a id="character-johnny" onclick="runDisplay('Johnny')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Johnny_icon.png">
-						</div>
-					</a>
-					<a id="character-testament" onclick="runDisplay('Testament')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Testament_icon.png">
-						</div>
-					</a>
-					<a id="character-jacko" onclick="runDisplay('Jack-O')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Jack-O'_icon.png">
-						</div>
-					</a>
-					<a id="character-nagoriyuki" onclick="runDisplay('Nagoriyuki')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Nagoriyuki_icon.png">
-						</div>
-					</a>
-					<a id="character-millia" onclick="runDisplay('Millia_Rage')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Millia_Rage_icon.png">
-						</div>
-					</a>
-					<a id="character-chipp" onclick="runDisplay('Chipp_Zanuff')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Chipp_Zanuff_icon.png">
-						</div>
-					</a>
-					<a id="character-sol" onclick="runDisplay('Sol_Badguy')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Sol_Badguy_icon.png">
-						</div>
-					</a>
-					<a id="character-ky" onclick="runDisplay('Ky_Kiske')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Ky_Kiske_icon.png">
-						</div>
-					</a>
-					<a id="character-may" onclick="runDisplay('May')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/May_icon.png">
-						</div>
-					</a>
-					<a id="character-zato" onclick="runDisplay('Zato-1')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Zato-1_icon.png">
-						</div>
-					</a>
-					<a id="character-ino" onclick="runDisplay('I-No')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/I-No_icon.png">
-						</div>
-					</a>
-					<a id="character-chaos" onclick="runDisplay('Happy_Chaos')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Happy_Chaos_icon.png">
-						</div>
-					</a>
-					<a id="character-bedman" onclick="runDisplay('Bedman')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Bedman_icon.png">
-						</div>
-					</a>
-					<a id="character-elphelt" onclick="runDisplay('Elphelt_Valentine')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Elphelt_Valentine_icon.png">
-						</div>
-					</a>
-					<a id="character-venom" onclick="runDisplay('Venom')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Venom_icon.png">
-						</div>
-					</a>
-					<div class="flexbox-dummy"></div>
-					<a id="character-unika" onclick="runDisplay('Unika')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Unika_icon.png">
-						</div>
-					</a>
-					<a id="character-aba" onclick="runDisplay('A.B.A')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/A.B.A_icon.png">
-						</div>
-					</a>
-					<a id="character-sin" onclick="runDisplay('Sin_Kiske')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Sin_Kiske_icon.png">
-						</div>
-					</a>
-					<a id="character-baiken" onclick="runDisplay('Baiken')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Baiken_icon.png">
-						</div>
-					</a>
-					<a id="character-anji" onclick="runDisplay('Anji_Mito')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Anji_Mito_icon.png">
-						</div>
-					</a>
-					<a id="character-leo" onclick="runDisplay('Leo_Whitefang')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Leo_Whitefang_icon.png">
-						</div>
-					</a>
-					<a id="character-faust" onclick="runDisplay('Faust')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Faust_icon.png">
-						</div>
-					</a>
-					<a id="character-axl" onclick="runDisplay('Axl_Low')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Axl_Low_icon.png">
-						</div>
-					</a>
-					<a id="character-random" onclick="runDisplay('Random')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Random_icon.png">
-						</div>
-					</a>
-					<a id="character-potemkin" onclick="runDisplay('Potemkin')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Potemkin_icon.png">
-						</div>
-					</a>
-					<a id="character-ramlethal" onclick="runDisplay('Ramlethal_Valentine')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Ramlethal_Valentine_icon.png">
-						</div>
-					</a>
-					<a id="character-giovanna" onclick="runDisplay('Giovanna')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Giovanna_icon.png">
-						</div>
-					</a>
-					<a id="character-goldlewis" onclick="runDisplay('Goldlewis_Dickinson')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Goldlewis_Dickinson_icon.png">
-						</div>
-					</a>
-					<a id="character-bridget" onclick="runDisplay('Bridget')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Bridget_icon.png">
-						</div>
-					</a>
-					<a id="character-asuka" onclick="runDisplay('Asuka_R._Kreutz')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Asuka_R._Kreutz_icon.png">
-						</div>
-					</a>
-					<a id="character-slayer" onclick="runDisplay('Slayer')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Slayer_icon.png">
-						</div>
-					</a>
-					<a id="character-lucy" onclick="runDisplay('Lucy')">
-						<div class="selectbox selectbox-character">
-							<img src="img/characterSelect/ggst/Lucy_icon.png">
-						</div>
-					</a>
+					<img id="select-cursor" src="img/characterSelect/ggst/Cursor.png" style="left: 489px; top: 1px">
+					<div class="selectbox-row">
+						<div class="selectbox-spacer"></div>
+						<a id="character-unika" onclick="runDisplay('Unika')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Unika_icon.png">
+							</div>
+						</a>
+						<a id="character-asuka" onclick="runDisplay('Asuka_R._Kreutz')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Asuka_R._Kreutz_icon.png">
+							</div>
+						</a>
+						<a id="character-bridget" onclick="runDisplay('Bridget')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Bridget_icon.png">
+							</div>
+						</a>
+						<a id="character-ramlethal" onclick="runDisplay('Ramlethal_Valentine')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Ramlethal_Valentine_icon.png">
+							</div>
+						</a>
+						<a id="character-sol" onclick="runDisplay('Sol_Badguy')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Sol_Badguy_icon.png">
+							</div>
+						</a>
+						<a id="character-ky" onclick="runDisplay('Ky_Kiske')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Ky_Kiske_icon.png">
+							</div>
+						</a>
+						<a id="character-may" onclick="runDisplay('May')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/May_icon.png">
+							</div>
+						</a>
+						<a id="character-leo" onclick="runDisplay('Leo_Whitefang')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Leo_Whitefang_icon.png">
+							</div>
+						</a>
+						<a id="character-goldlewis" onclick="runDisplay('Goldlewis_Dickinson')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Goldlewis_Dickinson_icon.png">
+							</div>
+						</a>
+						<a id="character-baiken" onclick="runDisplay('Baiken')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Baiken_icon.png">
+							</div>
+						</a>
+						<a id="character-elphelt" onclick="runDisplay('Elphelt_Valentine')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Elphelt_Valentine_icon.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-row">
+						<a id="character-lucy" onclick="runDisplay('Lucy')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Lucy_icon.png">
+							</div>
+						</a>
+						<a id="character-dizzy" onclick="runDisplay('Queen_Dizzy')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Queen_Dizzy_icon.png">
+							</div>
+						</a>
+						<a id="character-sin" onclick="runDisplay('Sin_Kiske')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Sin_Kiske_icon.png">
+							</div>
+						</a>
+						<a id="character-nagoriyuki" onclick="runDisplay('Nagoriyuki')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Nagoriyuki_icon.png">
+							</div>
+						</a>
+						<a id="character-axl" onclick="runDisplay('Axl_Low')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Axl_Low_icon.png">
+							</div>
+						</a>
+						<a id="character-chipp" onclick="runDisplay('Chipp_Zanuff')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Chipp_Zanuff_icon.png">
+							</div>
+						</a>
+						<a id="character-potemkin" onclick="runDisplay('Potemkin')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Potemkin_icon.png">
+							</div>
+						</a>
+						<a id="character-giovanna" onclick="runDisplay('Giovanna')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Giovanna_icon.png">
+							</div>
+						</a>
+						<a id="character-jacko" onclick="runDisplay('Jack-O')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Jack-O'_icon.png">
+							</div>
+						</a>
+						<a id="character-testament" onclick="runDisplay('Testament')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Testament_icon.png">
+							</div>
+						</a>
+						<a id="character-aba" onclick="runDisplay('A.B.A')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/A.B.A_icon.png">
+							</div>
+						</a>
+					</div>
+					<div class="selectbox-row">
+						<a id="character-jam" onclick="runDisplay('Jam_Kuradoberi')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Jam_Kuradoberi_icon.png">
+							</div>
+						</a>
+						<a id="character-venom" onclick="runDisplay('Venom')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Venom_icon.png">
+							</div>
+						</a>
+						<a id="character-bedman" onclick="runDisplay('Bedman')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Bedman_icon.png">
+							</div>
+						</a>
+						<a id="character-anji" onclick="runDisplay('Anji_Mito')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Anji_Mito_icon.png">
+							</div>
+						</a>
+						<a id="character-faust" onclick="runDisplay('Faust')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Faust_icon.png">
+							</div>
+						</a>
+						<a id="character-millia" onclick="runDisplay('Millia_Rage')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Millia_Rage_icon.png">
+							</div>
+						</a>
+						<a id="character-zato" onclick="runDisplay('Zato-1')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Zato-1_icon.png">
+							</div>
+						</a>
+						<a id="character-ino" onclick="runDisplay('I-No')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/I-No_icon.png">
+							</div>
+						</a>
+						<a id="character-chaos" onclick="runDisplay('Happy_Chaos')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Happy_Chaos_icon.png">
+							</div>
+						</a>
+						<a id="character-johnny" onclick="runDisplay('Johnny')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Johnny_icon.png">
+							</div>
+						</a>
+						<a id="character-slayer" onclick="runDisplay('Slayer')">
+							<div class="selectbox selectbox-character">
+								<img src="img/characterSelect/ggst/Slayer_icon.png">
+							</div>
+						</a>
+						<div class="selectbox-spacer"></div>
+					</div>
 				</div>
-				<div class="description-area"></div>
+				<div class="p2-area"></div>
 			</div>
 		</div>
+		<div class="description-bg">
+			<div class="description-area"></div>
+		</div>
 		<div class="preload-container">
+			<img src="img/backgrounds/GGST.png">
+			<img src="img/characterSelect/ggst/Button.png">
+			<img src="img/characterSelect/ggst/BG_Detail.png">
 			<img src="img/characterSelect/ggst/Cursor.png">
+			<img src="img/characterSelect/ggst/Nameplate.png">
+			<img src="img/characterSelect/ggst/Window_icon.png">
 			<!---->
-			<img src="img/portraits/ggst/Queen_Dizzy.png">
-			<img src="img/portraits/ggst/Johnny.png">
-			<img src="img/portraits/ggst/Testament.png">
-			<img src="img/portraits/ggst/Jack-O'.png">
-			<img src="img/portraits/ggst/Nagoriyuki.png">
-			<img src="img/portraits/ggst/Millia_Rage.png">
-			<img src="img/portraits/ggst/Chipp_Zanuff.png">
+			<img src="img/portraits/ggst/Unika.png">
+			<img src="img/portraits/ggst/Asuka_R._Kreutz.png">
+			<img src="img/portraits/ggst/Bridget.png">
+			<img src="img/portraits/ggst/Ramlethal_Valentine.png">
 			<img src="img/portraits/ggst/Sol_Badguy.png">
 			<img src="img/portraits/ggst/Ky_Kiske.png">
 			<img src="img/portraits/ggst/May.png">
+			<img src="img/portraits/ggst/Leo_Whitefang.png">
+			<img src="img/portraits/ggst/Goldlewis_Dickinson.png">
+			<img src="img/portraits/ggst/Baiken.png">
+			<img src="img/portraits/ggst/Elphelt_Valentine.png">
+			<img src="img/portraits/ggst/Lucy.png">
+			<img src="img/portraits/ggst/Queen_Dizzy.png">
+			<img src="img/portraits/ggst/Sin_Kiske.png">
+			<img src="img/portraits/ggst/Nagoriyuki.png">
+			<img src="img/portraits/ggst/Axl_Low.png">
+			<img src="img/portraits/ggst/Chipp_Zanuff.png">
+			<img src="img/portraits/ggst/Potemkin.png">
+			<img src="img/portraits/ggst/Giovanna.png">
+			<img src="img/portraits/ggst/Jack-O'.png">
+			<img src="img/portraits/ggst/Testament.png">
+			<img src="img/portraits/ggst/A.B.A.png">
+			<img src="img/portraits/ggst/Jam_Kuradoberi.png">
+			<img src="img/portraits/ggst/Venom.png">
+			<img src="img/portraits/ggst/Bedman.png">
+			<img src="img/portraits/ggst/Anji_Mito.png">
+			<img src="img/portraits/ggst/Faust.png">
+			<img src="img/portraits/ggst/Millia_Rage.png">
 			<img src="img/portraits/ggst/Zato-1.png">
 			<img src="img/portraits/ggst/I-No.png">
 			<img src="img/portraits/ggst/Happy_Chaos.png">
-			<img src="img/portraits/ggst/Bedman.png">
-			<img src="img/portraits/ggst/Elphelt_Valentine.png">
-			<img src="img/portraits/ggst/Venom.png">
-			<img src="img/portraits/ggst/Unika.png">
-			<img src="img/portraits/ggst/A.B.A.png">
-			<img src="img/portraits/ggst/Sin_Kiske.png">
-			<img src="img/portraits/ggst/Baiken.png">
-			<img src="img/portraits/ggst/Anji_Mito.png">
-			<img src="img/portraits/ggst/Leo_Whitefang.png">
-			<img src="img/portraits/ggst/Faust.png">
-			<img src="img/portraits/ggst/Axl_Low.png">
-			<img src="img/portraits/ggst/Random.png">
-			<img src="img/portraits/ggst/Potemkin.png">
-			<img src="img/portraits/ggst/Ramlethal_Valentine.png">
-			<img src="img/portraits/ggst/Giovanna.png">
-			<img src="img/portraits/ggst/Goldlewis_Dickinson.png">
-			<img src="img/portraits/ggst/Bridget.png">
-			<img src="img/portraits/ggst/Asuka_R._Kreutz.png">
+			<img src="img/portraits/ggst/Johnny.png">
 			<img src="img/portraits/ggst/Slayer.png">
-			<img src="img/portraits/ggst/Lucy.png">
 			<!---->
-			<img src="img/characterSelect/ggst/Queen_Dizzy_icon.png">
-			<img src="img/characterSelect/ggst/Johnny_icon.png">
-			<img src="img/characterSelect/ggst/Testament_icon.png">
-			<img src="img/characterSelect/ggst/Jack-O'_icon.png">
-			<img src="img/characterSelect/ggst/Nagoriyuki_icon.png">
-			<img src="img/characterSelect/ggst/Millia_Rage_icon.png">
-			<img src="img/characterSelect/ggst/Chipp_Zanuff_icon.png">
+			<img src="img/characterSelect/ggst/Unika_icon.png">
+			<img src="img/characterSelect/ggst/Asuka_R._Kreutz_icon.png">
+			<img src="img/characterSelect/ggst/Bridget_icon.png">
+			<img src="img/characterSelect/ggst/Ramlethal_Valentine_icon.png">
 			<img src="img/characterSelect/ggst/Sol_Badguy_icon.png">
 			<img src="img/characterSelect/ggst/Ky_Kiske_icon.png">
 			<img src="img/characterSelect/ggst/May_icon.png">
+			<img src="img/characterSelect/ggst/Leo_Whitefang_icon.png">
+			<img src="img/characterSelect/ggst/Goldlewis_Dickinson_icon.png">
+			<img src="img/characterSelect/ggst/Baiken_icon.png">
+			<img src="img/characterSelect/ggst/Elphelt_Valentine_icon.png">
+			<img src="img/characterSelect/ggst/Lucy_icon.png">
+			<img src="img/characterSelect/ggst/Queen_Dizzy_icon.png">
+			<img src="img/characterSelect/ggst/Sin_Kiske_icon.png">
+			<img src="img/characterSelect/ggst/Nagoriyuki_icon.png">
+			<img src="img/characterSelect/ggst/Axl_Low_icon.png">
+			<img src="img/characterSelect/ggst/Chipp_Zanuff_icon.png">
+			<img src="img/characterSelect/ggst/Potemkin_icon.png">
+			<img src="img/characterSelect/ggst/Giovanna_icon.png">
+			<img src="img/characterSelect/ggst/Jack-O'_icon.png">
+			<img src="img/characterSelect/ggst/Testament_icon.png">
+			<img src="img/characterSelect/ggst/A.B.A_icon.png">
+			<img src="img/characterSelect/ggst/Jam_Kuradoberi_icon.png">
+			<img src="img/characterSelect/ggst/Venom_icon.png">
+			<img src="img/characterSelect/ggst/Bedman_icon.png">
+			<img src="img/characterSelect/ggst/Anji_Mito_icon.png">
+			<img src="img/characterSelect/ggst/Faust_icon.png">
+			<img src="img/characterSelect/ggst/Millia_Rage_icon.png">
 			<img src="img/characterSelect/ggst/Zato-1_icon.png">
 			<img src="img/characterSelect/ggst/I-No_icon.png">
 			<img src="img/characterSelect/ggst/Happy_Chaos_icon.png">
-			<img src="img/characterSelect/ggst/Bedman_icon.png">
-			<img src="img/characterSelect/ggst/Elphelt_Valentine_icon.png">
-			<img src="img/characterSelect/ggst/Venom_icon.png">
-			<img src="img/characterSelect/ggst/Unika_icon.png">
-			<img src="img/characterSelect/ggst/A.B.A_icon.png">
-			<img src="img/characterSelect/ggst/Sin_Kiske_icon.png">
-			<img src="img/characterSelect/ggst/Baiken_icon.png">
-			<img src="img/characterSelect/ggst/Anji_Mito_icon.png">
-			<img src="img/characterSelect/ggst/Leo_Whitefang_icon.png">
-			<img src="img/characterSelect/ggst/Faust_icon.png">
-			<img src="img/characterSelect/ggst/Axl_Low_icon.png">
-			<img src="img/characterSelect/ggst/Random_icon.png">
-			<img src="img/characterSelect/ggst/Potemkin_icon.png">
-			<img src="img/characterSelect/ggst/Ramlethal_Valentine_icon.png">
-			<img src="img/characterSelect/ggst/Giovanna_icon.png">
-			<img src="img/characterSelect/ggst/Goldlewis_Dickinson_icon.png">
-			<img src="img/characterSelect/ggst/Bridget_icon.png">
-			<img src="img/characterSelect/ggst/Asuka_R._Kreutz_icon.png">
+			<img src="img/characterSelect/ggst/Johnny_icon.png">
 			<img src="img/characterSelect/ggst/Slayer_icon.png">
-			<img src="img/characterSelect/ggst/Lucy_icon.png">
 			<!---->
 			<audio muted=true src="audio/music/GGST - Smell of The Game Instrumental intro.ogg"></audio>
 			<audio muted=true src="audio/music/GGST - Smell of The Game Instrumental loop.ogg"></audio>
@@ -276,38 +292,39 @@
 			<audio muted=true src="audio/sfx/ggst/cancel.ogg"></audio>
 			<!---->
 			<audio muted=true src="audio/sfx/ggst/announcer/Charselect_call.ogg"></audio>
-			<audio muted=true src="audio/sfx/ggst/announcer/Queen_Dizzy_call.ogg"></audio>
-			<audio muted=true src="audio/sfx/ggst/announcer/Johnny_call.ogg"></audio>
-			<audio muted=true src="audio/sfx/ggst/announcer/Testament_call.ogg"></audio>
-			<audio muted=true src="audio/sfx/ggst/announcer/Jack-O'_call.ogg"></audio>
-			<audio muted=true src="audio/sfx/ggst/announcer/Nagoriyuki_call.ogg"></audio>
-			<audio muted=true src="audio/sfx/ggst/announcer/Millia_Rage_call.ogg"></audio>
-			<audio muted=true src="audio/sfx/ggst/announcer/Chipp_Zanuff_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/ggst/announcer/Unika_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/ggst/announcer/Asuka_R._Kreutz_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/ggst/announcer/Bridget_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/ggst/announcer/Ramlethal_Valentine_call.ogg"></audio>
 			<audio muted=true src="audio/sfx/ggst/announcer/Sol_Badguy_call.ogg"></audio>
 			<audio muted=true src="audio/sfx/ggst/announcer/Ky_Kiske_call.ogg"></audio>
 			<audio muted=true src="audio/sfx/ggst/announcer/May_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/ggst/announcer/Leo_Whitefang_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/ggst/announcer/Goldlewis_Dickinson_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/ggst/announcer/Baiken_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/ggst/announcer/Elphelt_Valentine_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/ggst/announcer/Lucy_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/ggst/announcer/Queen_Dizzy_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/ggst/announcer/Sin_Kiske_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/ggst/announcer/Nagoriyuki_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/ggst/announcer/Axl_Low_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/ggst/announcer/Chipp_Zanuff_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/ggst/announcer/Potemkin_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/ggst/announcer/Giovanna_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/ggst/announcer/Jack-O'_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/ggst/announcer/Testament_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/ggst/announcer/A.B.A_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/ggst/announcer/Jam_Kuradoberi_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/ggst/announcer/Venom_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/ggst/announcer/Bedman_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/ggst/announcer/Anji_Mito_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/ggst/announcer/Faust_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/ggst/announcer/Millia_Rage_call.ogg"></audio>
 			<audio muted=true src="audio/sfx/ggst/announcer/Zato-1_call.ogg"></audio>
 			<audio muted=true src="audio/sfx/ggst/announcer/I-No_call.ogg"></audio>
 			<audio muted=true src="audio/sfx/ggst/announcer/Happy_Chaos_call.ogg"></audio>
-			<audio muted=true src="audio/sfx/ggst/announcer/Bedman_call.ogg"></audio>
-			<audio muted=true src="audio/sfx/ggst/announcer/Elphelt_Valentine_call.ogg"></audio>
-			<audio muted=true src="audio/sfx/ggst/announcer/Venom_call.ogg"></audio>
-			<audio muted=true src="audio/sfx/ggst/announcer/Unika_call.ogg"></audio>
-			<audio muted=true src="audio/sfx/ggst/announcer/A.B.A_call.ogg"></audio>
-			<audio muted=true src="audio/sfx/ggst/announcer/Sin_Kiske_call.ogg"></audio>
-			<audio muted=true src="audio/sfx/ggst/announcer/Baiken_call.ogg"></audio>
-			<audio muted=true src="audio/sfx/ggst/announcer/Anji_Mito_call.ogg"></audio>
-			<audio muted=true src="audio/sfx/ggst/announcer/Leo_Whitefang_call.ogg"></audio>
-			<audio muted=true src="audio/sfx/ggst/announcer/Faust_call.ogg"></audio>
-			<audio muted=true src="audio/sfx/ggst/announcer/Axl_Low_call.ogg"></audio>
-			<audio muted=true src="audio/sfx/ggst/announcer/Potemkin_call.ogg"></audio>
-			<audio muted=true src="audio/sfx/ggst/announcer/Ramlethal_Valentine_call.ogg"></audio>
-			<audio muted=true src="audio/sfx/ggst/announcer/Giovanna_call.ogg"></audio>
-			<audio muted=true src="audio/sfx/ggst/announcer/Goldlewis_Dickinson_call.ogg"></audio>
-			<audio muted=true src="audio/sfx/ggst/announcer/Bridget_call.ogg"></audio>
-			<audio muted=true src="audio/sfx/ggst/announcer/Asuka_R._Kreutz_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/ggst/announcer/Johnny_call.ogg"></audio>
 			<audio muted=true src="audio/sfx/ggst/announcer/Slayer_call.ogg"></audio>
-			<audio muted=true src="audio/sfx/ggst/announcer/Lucy_call.ogg"></audio>
 		</div>
 	</body>
 </html>

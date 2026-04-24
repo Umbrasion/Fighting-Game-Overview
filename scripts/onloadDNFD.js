@@ -32,10 +32,12 @@ pageMusic.play();
 
 const sfx = {
 	cursor: new Audio("audio/sfx/dnfd/SE_Menu_CharaCursor.ogg"),
+	colorCursor: new Audio("audio/sfx/dnfd/SE_Menu_Cursor.ogg"),
 	confirm: new Audio("audio/sfx/dnfd/SE_Menu_CharaDecide.ogg"),
 	cancel: new Audio("audio/sfx/dnfd/SE_Menu_Cancel.ogg"),
 }
 sfx.cursor.volume = 0.6;
+sfx.colorCursor.volume = 0.3;
 sfx.confirm.volume = 0.2;
 sfx.cancel.volume = 0.25;
 
@@ -159,6 +161,7 @@ function runDisplay(characterName) {
 			case "Brawler":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 8,
 					playstyle: "",
 					difficulty: 1,
@@ -174,6 +177,7 @@ function runDisplay(characterName) {
 			case "Hitman":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 8,
 					playstyle: "",
 					difficulty: 1,
@@ -189,6 +193,7 @@ function runDisplay(characterName) {
 			case "Swift_Master":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 8,
 					playstyle: "",
 					difficulty: 1,
@@ -204,6 +209,7 @@ function runDisplay(characterName) {
 			case "Ranger":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 8,
 					playstyle: "",
 					difficulty: 1,
@@ -219,6 +225,7 @@ function runDisplay(characterName) {
 			case "Berserker":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 8,
 					playstyle: "",
 					difficulty: 1,
@@ -234,6 +241,7 @@ function runDisplay(characterName) {
 			case "Vanguard":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 8,
 					playstyle: "",
 					difficulty: 1,
@@ -249,6 +257,7 @@ function runDisplay(characterName) {
 			case "Launcher":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 8,
 					playstyle: "",
 					difficulty: 1,
@@ -264,6 +273,7 @@ function runDisplay(characterName) {
 			case "Enchantress":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 8,
 					playstyle: "",
 					difficulty: 1,
@@ -279,6 +289,7 @@ function runDisplay(characterName) {
 			case "Trouble_Shooter":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 8,
 					playstyle: "",
 					difficulty: 1,
@@ -294,6 +305,7 @@ function runDisplay(characterName) {
 			case "Battle_Mage":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 8,
 					playstyle: "",
 					difficulty: 1,
@@ -309,6 +321,7 @@ function runDisplay(characterName) {
 			case "Monk":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 8,
 					playstyle: "",
 					difficulty: 1,
@@ -324,6 +337,7 @@ function runDisplay(characterName) {
 			case "Dragon_Knight":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 8,
 					playstyle: "",
 					difficulty: 1,
@@ -339,6 +353,7 @@ function runDisplay(characterName) {
 			case "Kunoichi":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 8,
 					playstyle: "",
 					difficulty: 1,
@@ -354,6 +369,7 @@ function runDisplay(characterName) {
 			case "Inquisitor":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 8,
 					playstyle: "",
 					difficulty: 1,
@@ -369,6 +385,7 @@ function runDisplay(characterName) {
 			case "Striker":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 8,
 					playstyle: "",
 					difficulty: 1,
@@ -384,6 +401,7 @@ function runDisplay(characterName) {
 			case "Lost_Warrior":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 8,
 					playstyle: "",
 					difficulty: 1,
@@ -399,6 +417,7 @@ function runDisplay(characterName) {
 			case "Grappler":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 8,
 					playstyle: "",
 					difficulty: 1,
@@ -414,6 +433,7 @@ function runDisplay(characterName) {
 			case "Crusader":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 8,
 					playstyle: "",
 					difficulty: 1,
@@ -429,6 +449,7 @@ function runDisplay(characterName) {
 			case "Ghostblade":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 8,
 					playstyle: "",
 					difficulty: 1,
@@ -444,6 +465,7 @@ function runDisplay(characterName) {
 			case "Spectre":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 8,
 					playstyle: "",
 					difficulty: 1,
@@ -459,6 +481,7 @@ function runDisplay(characterName) {
 			case "Nen_Master":
 				displayInfo = {
 					filename: characterName,
+					nicknames: [""],
 					colors: 8,
 					playstyle: "",
 					difficulty: 1,

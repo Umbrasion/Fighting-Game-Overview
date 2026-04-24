@@ -1,0 +1,101 @@
+:root {
+    background-image: url("../../img/backgrounds/KoFXV.png");
+    background-size: 100% 100%;
+}
+
+body {
+    min-height: 100vh;
+}
+
+#info-portrait {
+    position: absolute;
+    top: 0px;
+    left: -2vw;
+    height: 100vh;
+}
+
+.selectbox-container {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 25vh;
+    display: flex;
+    flex-flow: column;
+    gap: 15px 0px;
+    margin: auto;
+}
+
+.selectbox-container img {
+    display: block;
+}
+
+.selectbox-container a {
+    position: relative;
+}
+
+#select-cursor {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+}
+
+.character-row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.character-row-top {
+    gap: 0px 7px;
+}
+
+.character-row-mid, .character-row-last {
+    gap: 0px 3px;
+}
+
+.character-row-mid :nth-child(3n - 1), .character-row-last :nth-child(3n) > img {
+    margin-right: 1px;
+}
+
+.character-row-mid :nth-child(3n), .character-row-last :nth-child(3n + 1) > img {
+    margin-right: 12px;
+}
+
+.character-row-last :nth-child(1) > img {
+    margin-right: 13px;
+}
+
+.character-row-last :nth-last-child(2) > img {
+    margin-right: 13px;
+}
+
+.character-row-mid :last-child, .character-row-last :last-child {
+    margin-right: 0px;
+}
+
+.selectbox-container :nth-child(odd) img {
+    height: 112px;
+}
+
+.selectbox-container :nth-child(even) img {
+    height: 113px;
+}
+
+.character-row-mid :nth-child(3n - 1) img, .character-row-last :nth-child(3n) img, .character-row-mid :nth-child(3n + 1) img, .character-row-last :nth-child(3n - 1) img, .character-row-top img {
+    width: 68px;
+}
+
+.character-row-mid :nth-child(3n) img, .character-row-last :nth-child(3n + 1) img {
+    width: 67px;
+}
+
+#character-randomteam img {
+    width: 208px;
+    height: 82px;
+}
+
+#character-random img {
+    width: 208px;
+    height: 82px;
+}

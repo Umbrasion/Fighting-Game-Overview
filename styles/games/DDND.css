@@ -1,6 +1,6 @@
 :root {
     background-color: black;
-    background-image: url("img/backgrounds/DDND_1.png");
+    background-image: url("../../img/backgrounds/DDND_1.png");
     background-position: top;
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -11,7 +11,7 @@ body {
 }
 
 #characterselect {
-    height: calc(100vh - 56px);
+    height: calc(100vh);
 }
 
 #info-portrait {
@@ -24,7 +24,7 @@ body {
 #info-name {
     font-size: 3em;
     font-weight: normal;
-    margin-top: calc(57.291666vh - 28px);
+    margin-top: calc(57.291666vh);
 }
 
 .selectbox-container {

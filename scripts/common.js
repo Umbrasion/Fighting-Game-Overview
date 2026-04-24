@@ -475,11 +475,34 @@ function updateOV2(displayInfo, gameName) {
 	}
 
 	overviewItems.difficulty.classList.add("rating-" + displayInfo.difficulty);
-	for (i = 0; i < displayInfo.difficulty; i++) {
-		overviewItems.difficulty.innerHTML += "&starf;";
-	}
-	for (i = starCap; i > displayInfo.difficulty; i--) {
-		overviewItems.difficulty.innerHTML += "&star;";
+	if (gameName === "gbvsr") {
+		switch (displayInfo.difficulty) {
+			case 1:
+				overviewItems.difficulty.innerHTML += `<img class='diff-star' src='img/characterSelect/gbvsr/Star.png'><img class='diff-star' src='img/characterSelect/gbvsr/Star_empty.png'><img class='diff-star' src='img/characterSelect/gbvsr/Star_empty.png'><img class='diff-star' src='img/characterSelect/gbvsr/Star_FLB_empty.png'><img class='diff-star' src='img/characterSelect/gbvsr/Star_FLB_empty.png'>`;
+				break;
+			case 2:
+				overviewItems.difficulty.innerHTML += `<img class='diff-star' src='img/characterSelect/gbvsr/Star.png'><img class='diff-star' src='img/characterSelect/gbvsr/Star.png'><img class='diff-star' src='img/characterSelect/gbvsr/Star_empty.png'><img class='diff-star' src='img/characterSelect/gbvsr/Star_FLB_empty.png'><img class='diff-star' src='img/characterSelect/gbvsr/Star_FLB_empty.png'>`;
+				break;
+			case 3:
+				overviewItems.difficulty.innerHTML += `<img class='diff-star' src='img/characterSelect/gbvsr/Star.png'><img class='diff-star' src='img/characterSelect/gbvsr/Star.png'><img class='diff-star' src='img/characterSelect/gbvsr/Star.png'><img class='diff-star' src='img/characterSelect/gbvsr/Star_FLB_empty.png'><img class='diff-star' src='img/characterSelect/gbvsr/Star_FLB_empty.png'>`;
+				break;
+			case 4:
+				overviewItems.difficulty.innerHTML += `<img class='diff-star' src='img/characterSelect/gbvsr/Star.png'><img class='diff-star' src='img/characterSelect/gbvsr/Star.png'><img class='diff-star' src='img/characterSelect/gbvsr/Star.png'><img class='diff-star' src='img/characterSelect/gbvsr/Star_FLB.png'><img class='diff-star' src='img/characterSelect/gbvsr/Star_FLB_empty.png'>`;
+				break;
+			case 5:
+				overviewItems.difficulty.innerHTML += `<img class='diff-star' src='img/characterSelect/gbvsr/Star.png'><img class='diff-star' src='img/characterSelect/gbvsr/Star.png'><img class='diff-star' src='img/characterSelect/gbvsr/Star.png'><img class='diff-star' src='img/characterSelect/gbvsr/Star_FLB.png'><img class='diff-star' src='img/characterSelect/gbvsr/Star_FLB.png'>`;
+				break;
+			case 6:
+				overviewItems.difficulty.innerHTML += `<img class='diff-star' src='img/characterSelect/gbvsr/Star.png'><img class='diff-star' src='img/characterSelect/gbvsr/Star.png'><img class='diff-star' src='img/characterSelect/gbvsr/Star.png'><img class='diff-star' src='img/characterSelect/gbvsr/Star_FLB.png'><img class='diff-star' src='img/characterSelect/gbvsr/Star_FLB.png'><img class='diff-star' src='img/characterSelect/gbvsr/Star_TRA.png'>`;
+				break;
+		}
+	} else {
+		for (i = 0; i < displayInfo.difficulty; i++) {
+			overviewItems.difficulty.innerHTML += "&starf;";
+		}
+		for (i = starCap; i > displayInfo.difficulty; i--) {
+			overviewItems.difficulty.innerHTML += "&star;";
+		}
 	}
 	overviewItems.difficulty.innerHTML += "</span>";
 	
@@ -508,14 +531,6 @@ function updateOV2(displayInfo, gameName) {
 	styleString += (50 - 9.86 * displayInfo.stats[4]) + "% " + (55.5 - 3.44 * displayInfo.stats[4]) + "%)";
 	
 	statGraph.style.clipPath = styleString;
-
-	switch (gameName) {
-		case "gbvsr":
-			if (displayInfo.filename === "Narmaya" || displayInfo.filename === "Gran" || displayInfo.filename === "Djeeta") {
-				// EX Toggle
-			}
-			break;
-	}
 }
 
 function setColor(colorForward = true) {
@@ -533,7 +548,7 @@ function setColor(colorForward = true) {
 	}
 
 	document.getElementById("info-image").src = document.getElementById("info-image").src.replace("Color_" + document.getElementById("info-image").src.split("/Color_")[1], "Color_" + currentColor + ".png");
-	switch (document.getElementById("info-image").src.split("portraits/")[1].split("/")[0]) {
+	switch (document.getElementsByClassName("game-logo")[0].src.split("logos/")[1].split("_logo")[0].toLowerCase()) {
 		case "isd":
 			if (currentColor === 1) {
 				document.getElementById("color-selector-text").innerHTML = "Original";
@@ -559,10 +574,15 @@ function setColor(colorForward = true) {
 			document.getElementById("color-selector-text").innerHTML = "Color " + currentColor;
 	}
 	try {
-		sfx.cursor.currentTime = 0;
-		sfx.cursor.play();
+		sfx.colorCursor.currentTime = 0;
+		sfx.colorCursor.play();
 	} catch (error) {
-		console.log("Audio not found");
+		try {
+			sfx.cursor.currentTime = 0;
+			sfx.cursor.play();
+		} catch (error) {
+			console.log("Audio not found");
+		}
 	}
 }
 
@@ -576,16 +596,23 @@ function hideDescription() {
 	}
 	previewDisplayOn = true;
 	interactionEnabled = true;
+	switch (document.getElementsByClassName("game-logo")[0].src.split("logos/")[1].split("_logo")[0].toLowerCase()) {
+		case "aocf":
+			document.getElementById("info-portrait").style.visibility = "visible";
+			document.getElementById("info-portrait-select").style.visibility = "hidden";
+			break;
+		case "mbaacc":
+			styleInteraction = true;
+			break;
+	}
 }
 
 // Initialization
 
 function initializePageDisplay(gameName, skipTransition = false) {
 	var gameStyle = document.getElementById("gamestyle");
-	//var gameScript = document.getElementById("gamescript");
 	if (gameName === undefined) {
 		window.location.reload();
-		//pageMusic.pause();
 	} else {
 		if (skipTransition) {
 			beginPageLoad();
@@ -644,7 +671,7 @@ function initializePageDisplay(gameName, skipTransition = false) {
 				document.body.innerHTML = ``;
 
 				function loadPage() {
-					document.body.innerHTML = `<button id="returnbutton" onclick="initializePageDisplay()">Back to Game Select</button>` + pageData/*.split('<div class="preload-container">')[0]*/;
+					document.body.innerHTML = `<button id="returnbutton" onclick="initializePageDisplay()">Back to Game Select</button>` + pageData;
 
 					if (gameName !== undefined) {
 						gameStyle.href = "styles/games/" + gameName + ".css";
@@ -720,6 +747,38 @@ if (/android|iphone|kindle|ipad/i.test(navigator.userAgent)) {
 
 window.onload = function() {
 	if (document.getElementById("navspace").dataset.goto !== "") {
-		initializePageDisplay(document.getElementById("navspace").dataset.goto, true)
+		initializePageDisplay(document.getElementById("navspace").dataset.goto, true);
 	}
 };
+
+document.addEventListener("keydown", function(e) {
+	if (e.key === "F1") {
+		if (document.getElementById("characterselect") !== null && document.getElementById("devcomm-container") === null) {
+			var curGame = document.getElementsByClassName("game-logo")[0].src.split("logos/")[1].split("_logo")[0].toLowerCase();
+			var devCommBox = document.createElement("div");
+			devCommBox.setAttribute("id", "devcomm-container");
+			var titleLine = document.createElement("h5");
+			titleLine.appendChild(document.createTextNode("DEVELOPER COMMENTARY"));
+			devCommBox.appendChild(titleLine);
+			
+			var linesOfText;
+			$.get("../data/devComm/" + curGame + ".txt", function(data) {
+				linesOfText = data;
+			}, "text").done(function() {
+				linesOfText = linesOfText.split(/\r?\n|\r|\n/g);
+				
+				linesOfText.forEach(element => {
+					var newLine = document.createElement("p");
+					newLine.appendChild(document.createTextNode(element));
+					devCommBox.appendChild(newLine);
+				});
+				console.log(devCommBox);
+				document.body.appendChild(devCommBox);
+			}).fail(function() {
+				console.log("DevComm not found");
+			});
+		} else if (document.getElementById("characterselect") !== null && document.getElementById("devcomm-container") !== null) {
+			document.getElementById("devcomm-container").remove();
+		}
+	}
+});

@@ -1,5 +1,12 @@
+:root {
+    --css-scale: 1;
+    background-image: url("../../img/backgrounds/DBFZ.png");
+    background-size: 100% 100%;
+    overflow-y: clip;
+}
+
 body {
-    height: 100vh;
+    min-height: 100vh;
     font-family: "Proba Pro";
 }
 
@@ -13,7 +20,7 @@ body {
     text-align: left;
     font-family: "DBZ 0";
     font-size: 2.5em;
-    transform: rotate(75deg) translate(57%, -340%);
+    transform: rotate(75deg) translate(50%, -340%);
     filter: drop-shadow(2px 2px black);
 }
 
@@ -29,21 +36,32 @@ body {
     margin: auto;
 }
 
-.selectbox-positioner {
+.portrait-area, .description-area {
+    padding: 0px 60px;
+}
+
+.selectbox-fullroster {
+    opacity: 0.5;
+}
+
+/* Icons */
+
+.selectbox-character {
     pointer-events: none;
     position: relative;
     width: 0px;
     height: 0px;
+
+    /* visibility: hidden; */
 }
 
 .selectbox-character img {
     transform-origin: center;
     transition: all 0.015s linear;
+    height: calc(128px * var(--css-scale));
 }
 
-.portrait-area, .description-area {
-    padding: 0px 60px;
-}
+/* Animations */
 
 .portrait-onhover {
     animation-name: portrait-onhover;

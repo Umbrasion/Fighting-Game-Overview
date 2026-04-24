@@ -1,39 +1,38 @@
 const chrPrevImg = document.getElementById("info-portrait");
 const chrName = document.getElementById("info-name");
-const chrSel = {
-	aoko: document.getElementById("character-aoko"),
-	shiki: document.getElementById("character-shiki"),
-	hime: document.getElementById("character-hime"),
-	nanaya: document.getElementById("character-nanaya"),
-	kouma: document.getElementById("character-kouma"),
-	miyako: document.getElementById("character-miyako"),
-	ciel: document.getElementById("character-ciel"),
-	sion: document.getElementById("character-sion"),
-	riesbyfe: document.getElementById("character-riesbyfe"),
-	vsion: document.getElementById("character-vsion"),
-	warachia: document.getElementById("character-warachia"),
-	roa: document.getElementById("character-roa"),
-	maids: document.getElementById("character-maids"),
-	akiha: document.getElementById("character-akiha"),
-	arcueid: document.getElementById("character-arcueid"),
-	pciel: document.getElementById("character-pciel"),
-	warc: document.getElementById("character-warc"),
-	vakiha: document.getElementById("character-vakiha"),
-	mech: document.getElementById("character-mech"),
-	seifuku: document.getElementById("character-seifuku"),
-	satsuki: document.getElementById("character-satsuki"),
-	len: document.getElementById("character-len"),
-	ryougi: document.getElementById("character-ryougi"),
-	wlen: document.getElementById("character-wlen"),
-	nero: document.getElementById("character-nero"),
-	necochaos: document.getElementById("character-necochaos"),
-	kohakumech: document.getElementById("character-kohakumech"),
-	hisui: document.getElementById("character-hisui"),
-	neco: document.getElementById("character-neco"),
-	kohaku: document.getElementById("character-kohaku"),
-	necomech: document.getElementById("character-necomech"),
-	random: document.getElementById("character-random"),
-}
+const chrSel = [
+	document.getElementById("character-aoko"),
+	document.getElementById("character-shiki"),
+	document.getElementById("character-hime"),
+	document.getElementById("character-nanaya"),
+	document.getElementById("character-kouma"),
+	document.getElementById("character-miyako"),
+	document.getElementById("character-ciel"),
+	document.getElementById("character-sion"),
+	document.getElementById("character-riesbyfe"),
+	document.getElementById("character-vsion"),
+	document.getElementById("character-warachia"),
+	document.getElementById("character-roa"),
+	document.getElementById("character-maids"),
+	document.getElementById("character-akiha"),
+	document.getElementById("character-arcueid"),
+	document.getElementById("character-pciel"),
+	document.getElementById("character-warc"),
+	document.getElementById("character-vakiha"),
+	document.getElementById("character-mech"),
+	document.getElementById("character-seifuku"),
+	document.getElementById("character-satsuki"),
+	document.getElementById("character-len"),
+	document.getElementById("character-ryougi"),
+	document.getElementById("character-wlen"),
+	document.getElementById("character-nero"),
+	document.getElementById("character-necochaos"),
+	document.getElementById("character-kohakumech"),
+	document.getElementById("character-hisui"),
+	document.getElementById("character-neco"),
+	document.getElementById("character-kohaku"),
+	document.getElementById("character-necomech"),
+]
 
 const pageMusic = new Audio("audio/music/MBAACC - Actor's Anteroom -Remastering- loop.ogg");
 pageMusic.loop = true;
@@ -59,20 +58,24 @@ const sfx = {
 sfx.cursor.volume = 0.5;
 sfx.confirm.volume = 0.5;
 
-var previewDisplayOn = true;
+var interactionEnabled = false;
+var styleInteraction = true;
 
 // Display on hover
 
-function hoverDisplay(charFileName, charNameHiragana) {
-	sfx.cursor.currentTime = 0;
-	sfx.cursor.play();
-	if (previewDisplayOn) {
+var previousCharacter = "";
+
+function hoverDisplay(charFileName, charIcon) {
+	if (charFileName !== previousCharacter && interactionEnabled) {
+		sfx.cursor.currentTime = 0;
+		sfx.cursor.play();
+
 		chrPrevImg.src = "img/portraits/mbaacc/" + charFileName + ".png";
 		chrPrevImg.onload = function() {
 			chrPrevImg.style.height = chrPrevImg.naturalHeight * 1.8 + "px";
 			document.getElementById("info-portrait-temp").style.height = chrPrevImg.style.height;
 		};
-		chrName.innerHTML = "<span style='font-size: 1.6em; font-style: italic'>" + charNameHiragana + "</span><br>";
+		chrName.innerHTML = "<span style='font-size: 1.6em; font-style: italic'>" + charIcon.dataset.nameJp + "</span><br>";
 		if (charFileName === "Aoko_Aozaki" || charFileName === "Shiki_Tohno" || charFileName === "Shiki_Nanaya" || charFileName === "Kouma_Kishima" || charFileName === "Miyako_Arima" || charFileName === "Akiha_Tohno" || charFileName === "Shiki_Ryougi") {
 			chrName.innerHTML += charFileName.split("_")[1].toUpperCase() + " " + charFileName.split("_")[0].toUpperCase();
 		} else if (charFileName === "Archetype_Earth") {
@@ -101,200 +104,43 @@ function hoverDisplay(charFileName, charNameHiragana) {
 		chrName.classList.remove("name-onhover");
 		void chrName.offsetWidth;
 		chrName.classList.add("name-onhover");
+
+		previousCharacter = charFileName;
 	}
 }
 
-chrSel.aoko.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Aoko_Aozaki", "蒼崎青子");
-	}
-);
+chrSel.forEach(element => {
+	element.addEventListener("mouseover",
+		() => {
+			hoverDisplay(element.onclick.toString().split("'")[1], element.children[0].children[0]);
+		}
+	);
+});
 
-chrSel.shiki.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Shiki_Tohno", "遠野志貴");
-	}
-);
-
-chrSel.hime.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Archetype_Earth", "真祖アルクェイド");
-	}
-);
-
-chrSel.nanaya.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Shiki_Nanaya", "七夜志貴");
-	}
-);
-
-chrSel.kouma.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Kouma_Kishima", "軋間紅摩");
-	}
-);
-
-chrSel.miyako.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Miyako_Arima", "有間都古");
-	}
-);
-
-chrSel.ciel.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Ciel", "シエル");
-	}
-);
-
-chrSel.sion.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Sion_Eltnam_Atlasia", "シオン");
-	}
-);
-
-chrSel.riesbyfe.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Riesbyfe_Stridberg", "リーズバイフェ");
-	}
-);
-
-chrSel.vsion.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Sion_TATARI", "吸血鬼シオン");
-	}
-);
-
-chrSel.warachia.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Warachia", "ワラキアの夜");
-	}
-);
-
-chrSel.roa.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Michael_Roa_Valdamjong", "ロア");
-	}
-);
-
-chrSel.maids.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Hisui_&_Kohaku", "翡翠&琥珀");
-	}
-);
-
-chrSel.akiha.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Akiha_Tohno", "遠野秋葉");
-	}
-);
-
-chrSel.arcueid.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Arcueid_Brunestud", "アルクェイド");
-	}
-);
-
-chrSel.pciel.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Powered_Ciel", "完全武装シエル");
-	}
-);
-
-chrSel.warc.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Red_Arcueid", "暴走アルクェイド");
-	}
-);
-
-chrSel.vakiha.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Akiha_Vermilion", "赤主秋葉");
-	}
-);
-
-chrSel.mech.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Mech-Hisui", "メカヒスイ");
-	}
-);
-
-chrSel.seifuku.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Akiha_Tohno_(Seifuku)", "遠野秋葉");
-	}
-);
-
-chrSel.satsuki.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Satsuki_Yumizuka", "弓塚さつき");
-	}
-);
-
-chrSel.len.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Len", "レン");
-	}
-);
-
-chrSel.ryougi.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Shiki_Ryougi", "両儀式");
-	}
-);
-
-chrSel.wlen.addEventListener("mouseover",
-	() => {
-		hoverDisplay("White_Len", "白レン");
-	}
-);
-
-chrSel.nero.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Nrvnqsr_Chaos", "ネロ・カオス");
-	}
-);
-
-chrSel.necochaos.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Neco-Arc_Chaos", "ネコアルク・カオス");
-	}
-);
-
-chrSel.kohakumech.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Kohaku_&_Mech", "琥珀&メカヒスイ");
-	}
-);
-
-chrSel.hisui.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Hisui", "翡翠");
-	}
-);
-
-chrSel.neco.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Neco-Arc", "ネコアルク");
-	}
-);
-
-chrSel.kohaku.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Kohaku", "琥珀");
-	}
-);
-
-chrSel.necomech.addEventListener("mouseover",
-	() => {
-		hoverDisplay("Neco_&_Mech", "ネコ&メカヒスイ");
-	}
-);
-
-chrSel.random.addEventListener("mouseover",
+document.getElementById("moonstyle-c").addEventListener("mouseover",
 	() => {
 		sfx.cursor.currentTime = 0;
 		sfx.cursor.play();
-		if (previewDisplayOn) {
+	}
+);
+document.getElementById("moonstyle-h").addEventListener("mouseover",
+	() => {
+		sfx.cursor.currentTime = 0;
+		sfx.cursor.play();
+	}
+);
+document.getElementById("moonstyle-f").addEventListener("mouseover",
+	() => {
+		sfx.cursor.currentTime = 0;
+		sfx.cursor.play();
+	}
+);
+
+document.getElementById("character-random").addEventListener("mouseover",
+	() => {
+		if (interactionEnabled) {
+			sfx.cursor.currentTime = 0;
+			sfx.cursor.play();
 			chrPrevImg.src = "";
 			chrName.innerHTML = "";
 		}
@@ -304,646 +150,1563 @@ chrSel.random.addEventListener("mouseover",
 // Display on click
 
 var selectBanter = new Audio();
-function runDisplay(characterName) {
-	previewDisplayOn = false;
-	
-	sfx.confirm.currentTime = 0;
-	sfx.confirm.play();
-	
-	initializeOV();
+function runDisplay(characterName, moonType = "") {
+	var moonStyleBox = document.getElementById("moonstyle-area");
 
-	if (characterName === "Random") {
-		switch (Math.floor(Math.random() * 31)) {
-			case 0:
-				characterName = "Aoko_Aozaki";
-				break;
-			case 1:
-				characterName = "Shiki_Tohno";
-				break;
-			case 2:
-				characterName = "Archetype_Earth";
-				break;
-			case 3:
-				characterName = "Shiki_Nanaya";
-				break;
-			case 4:
-				characterName = "Kouma_Kishima";
-				break;
-			case 5:
-				characterName = "Miyako_Arima";
-				break;
-			case 6:
-				characterName = "Ciel";
-				break;
-			case 7:
-				characterName = "Sion_Eltnam_Atlasia";
-				break;
-			case 8:
-				characterName = "Riesbyfe_Stridberg";
-				break;
-			case 9:
-				characterName = "Sion_TATARI";
-				break;
-			case 10:
-				characterName = "Warachia";
-				break;
-			case 11:
-				characterName = "Michael_Roa_Valdamjong";
-				break;
-			case 12:
-				characterName = "Hisui_&_Kohaku";
-				break;
-			case 13:
-				characterName = "Akiha_Tohno";
-				break;
-			case 14:
-				characterName = "Arcueid_Brunestud";
-				break;
-			case 15:
-				characterName = "Powered_Ciel";
-				break;
-			case 16:
-				characterName = "Red_Arcueid";
-				break;
-			case 17:
-				characterName = "Akiha_Vermilion";
-				break;
-			case 18:
-				characterName = "Mech-Hisui";
-				break;
-			case 19:
-				characterName = "Akiha_Tohno_(Seifuku)";
-				break;
-			case 20:
-				characterName = "Satsuki_Yumizuka";
-				break;
-			case 21:
-				characterName = "Len";
-				break;
-			case 22:
-				characterName = "Shiki_Ryougi";
-				break;
-			case 23:
-				characterName = "White_Len";
-				break;
-			case 24:
-				characterName = "Nrvnqsr_Chaos";
-				break;
-			case 25:
-				characterName = "Neco-Arc_Chaos";
-				break;
-			case 26:
-				characterName = "Kohaku_&_Mech";
-				break;
-			case 27:
-				characterName = "Hisui";
-				break;
-			case 28:
-				characterName = "Neco-Arc";
-				break;
-			case 29:
-				characterName = "Kohaku";
-				break;
-			case 30:
-				characterName = "Neco_&_Mech";
-				break;
+	if (moonType === "" && styleInteraction && interactionEnabled) {
+		interactionEnabled = false;
+		sfx.confirm.currentTime = 0;
+		sfx.confirm.play();
+
+		moonStyleBox.style.transform = "translate(0,0)";
+
+		if (characterName === "Random") {
+			characterName = chrSel[Math.floor(Math.random() * chrSel.length)].onclick.toString().split("'")[1];
+			chrPrevImg.src = "img/portraits/mbaacc/" + characterName + ".png";
+			chrPrevImg.onload = function() {
+				chrPrevImg.style.height = chrPrevImg.naturalHeight * 1.8 + "px";
+				document.getElementById("info-portrait-temp").style.height = chrPrevImg.style.height;
+			};
+			
+			var charIcon;
+			chrSel.forEach(element => {
+				if (element.onclick.toString().includes("'" + characterName + "'")) {
+					charIcon = element.children[0].children[0];
+				}
+			});
+
+			chrName.innerHTML = "<span style='font-size: 1.6em; font-style: italic'>" + charIcon.dataset.nameJp + "</span><br>";
+			if (characterName === "Aoko_Aozaki" || characterName === "Shiki_Tohno" || characterName === "Shiki_Nanaya" || characterName === "Kouma_Kishima" || characterName === "Miyako_Arima" || characterName === "Akiha_Tohno" || characterName === "Shiki_Ryougi") {
+				chrName.innerHTML += characterName.split("_")[1].toUpperCase() + " " + characterName.split("_")[0].toUpperCase();
+			} else if (characterName === "Archetype_Earth") {
+				chrName.innerHTML += "ARCHETYPE:EARTH";
+			} else if (characterName === "Hisui_&_Kohaku") {
+				chrName.innerHTML += "HISUI&KOHAKU";
+			} else if (characterName === "Arcueid_Brunestud") {
+				chrName.innerHTML += "ARCUEID=BRUNESTUD";
+			} else if (characterName === "Powered_Ciel") {
+				chrName.innerHTML += "POWERD CIEL";
+			} else if (characterName === "Akiha_Tohno_(Seifuku)") {
+				chrName.innerHTML += "TOHNO AKIHA";
+			} else if (characterName === "Satsuki_Yumizuka") {
+				chrName.innerHTML += "YUMIDUKA SATSUKI";
+			} else if (characterName === "Kohaku_&_Mech") {
+				chrName.innerHTML += "KOHA & MECH";
+			} else {
+				chrName.innerHTML += characterName.replace(/_/g, " ").toUpperCase();
+			}
 		}
-	}
-	
-	function writeCharInfo(detailInfo, ratings, likeOrDislike, charDescription, charFileName, charNameHiragana) {
-		updateOV(detailInfo, ratings, likeOrDislike, charDescription);
+		moonStyleBox.dataset.charName = characterName;
 		
-		chrPrevImg.src = "img/portraits/mbaacc/" + charFileName + ".png";
-		chrPrevImg.onload = function() {
-			chrPrevImg.style.height = chrPrevImg.naturalHeight * 1.8 + "px";
-			document.getElementById("info-portrait-temp").style.height = chrPrevImg.style.height;
-		};
-		chrName.innerHTML = "<span style='font-size: 1.6em; font-style: italic'>" + charNameHiragana + "</span><br>";
-		if (charFileName === "Aoko_Aozaki" || charFileName === "Shiki_Tohno" || charFileName === "Shiki_Nanaya" || charFileName === "Kouma_Kishima" || charFileName === "Miyako_Arima" || charFileName === "Akiha_Tohno" || charFileName === "Shiki_Ryougi") {
-			chrName.innerHTML += charFileName.split("_")[1].toUpperCase() + " " + charFileName.split("_")[0].toUpperCase();
-		} else if (charFileName === "Archetype_Earth") {
-			chrName.innerHTML += "ARCHETYPE:EARTH";
-		} else if (charFileName === "Hisui_&_Kohaku") {
-			chrName.innerHTML += "HISUI&KOHAKU";
-		} else if (charFileName === "Arcueid_Brunestud") {
-			chrName.innerHTML += "ARCUEID=BRUNESTUD";
-		} else if (charFileName === "Powered_Ciel") {
-			chrName.innerHTML += "POWERD CIEL";
-		} else if (charFileName === "Akiha_Tohno_(Seifuku)") {
-			chrName.innerHTML += "TOHNO AKIHA";
-		} else if (charFileName === "Satsuki_Yumizuka") {
-			chrName.innerHTML += "YUMIDUKA SATSUKI";
-		} else if (charFileName === "Kohaku_&_Mech") {
-			chrName.innerHTML += "KOHA & MECH";
-		} else {
-			chrName.innerHTML += charFileName.replace(/_/g, " ").toUpperCase();
-		}
-		
-		document.getElementById("info-portrait-temp").src = "img/portraits/mbaacc/" + charFileName + ".png";
+		document.getElementById("info-portrait-temp").src = "img/portraits/mbaacc/" + characterName + ".png";
 	
 		document.getElementById("info-portrait-temp").classList.remove("portrait-onselect");
 		void document.getElementById("info-portrait-temp").offsetWidth;
 		document.getElementById("info-portrait-temp").classList.add("portrait-onselect");
+	} else if (moonType !== "" && styleInteraction) {
+		styleInteraction = false;
+		
+		sfx.confirm.currentTime = 0;
+		sfx.confirm.play();
+
+		initializeOV("experimental");
+
+		characterName = moonStyleBox.dataset.charName;
+		moonStyleBox.style.transform = "";
+		
+		switch (characterName) {
+			case "Aoko_Aozaki":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "Shiki_Tohno":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "Archetype_Earth":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "Shiki_Nanaya":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "Kouma_Kishima":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "Miyako_Arima":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "Ciel":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "Sion_Eltnam_Atlasia":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "Riesbyfe_Stridberg":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "Sion_TATARI":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "Warachia":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "Michael_Roa_Valdamjong":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "Hisui_&_Kohaku":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "Akiha_Tohno":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "Arcueid_Brunestud":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "Powered_Ciel":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "Red_Arcueid":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "Akiha_Vermilion":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "Mech-Hisui":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "Akiha_Tohno_(Seifuku)":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "Satsuki_Yumizuka":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "Len":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "Shiki_Ryougi":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "White_Len":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "Nrvnqsr_Chaos":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "Neco-Arc_Chaos":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "Kohaku_&_Mech":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "Hisui":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "Neco-Arc":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "Kohaku":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+			case "Neco_&_Mech":
+				if (moonType === "C") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "H") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Half Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				} else if (moonType === "F") {
+					displayInfo = {
+						filename: characterName,
+						nicknames: [""],
+						colors: 19,
+						playstyle: "",
+						difficulty: 1,
+						mechanics: ["N/A"],
+						likes: [],
+						dislikes: [],
+						stats: [1,1,1,1,1],
+						bio: `
+							<p><b>Full Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+						`,
+					}
+				}
+				break;
+		}
+
+		updateOV2(displayInfo, "mbaacc");
 	}
-	
-	switch (characterName) {
-		case "Aoko_Aozaki":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"蒼崎青子"
-			);
-			break;
-		case "Shiki_Tohno":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"遠野志貴"
-			);
-			break;
-		case "Archetype_Earth":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>Archetype: Earth</b> is</p>
-				`,
-				characterName,
-				"真祖アルクェイド"
-			);
-			break;
-		case "Shiki_Nanaya":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"七夜志貴"
-			);
-			break;
-		case "Kouma_Kishima":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"軋間紅摩"
-			);
-			break;
-		case "Miyako_Arima":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"有間都古"
-			);
-			break;
-		case "Ciel":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"シエル"
-			);
-			break;
-		case "Sion_Eltnam_Atlasia":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"シオン"
-			);
-			break;
-		case "Riesbyfe_Stridberg":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"リーズバイフェ"
-			);
-			break;
-		case "Sion_TATARI":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"吸血鬼シオン"
-			);
-			break;
-		case "Warachia":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"ワラキアの夜"
-			);
-			break;
-		case "Michael_Roa_Valdamjong":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"ロア"
-			);
-			break;
-		case "Hisui_&_Kohaku":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"翡翠&琥珀"
-			);
-			break;
-		case "Akiha_Tohno":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"遠野秋葉"
-			);
-			break;
-		case "Arcueid_Brunestud":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"アルクェイド"
-			);
-			break;
-		case "Powered_Ciel":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"完全武装シエル"
-			);
-			break;
-		case "Red_Arcueid":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"暴走アルクェイド"
-			);
-			break;
-		case "Akiha_Vermilion":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"赤主秋葉"
-			);
-			break;
-		case "Mech-Hisui":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"メカヒスイ"
-			);
-			break;
-		case "Akiha_Tohno_(Seifuku)":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"遠野秋葉"
-			);
-			break;
-		case "Satsuki_Yumizuka":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"弓塚さつき"
-			);
-			break;
-		case "Len":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"レン"
-			);
-			break;
-		case "Shiki_Ryougi":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"両儀式"
-			);
-			break;
-		case "White_Len":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"白レン"
-			);
-			break;
-		case "Nrvnqsr_Chaos":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"ネロ・カオス"
-			);
-			break;
-		case "Neco-Arc_Chaos":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"ネコアルク・カオス"
-			);
-			break;
-		case "Kohaku_&_Mech":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"琥珀&メカヒスイ"
-			);
-			break;
-		case "Hisui":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"翡翠"
-			);
-			break;
-		case "Neco-Arc":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"ネコアルク"
-			);
-			break;
-		case "Kohaku":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"琥珀"
-			);
-			break;
-		case "Neco_&_Mech":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName,
-				"ネコ&メカヒスイ"
-			);
-			break;
-    }
 }
 
 function startupDisplay() {
@@ -952,47 +1715,47 @@ function startupDisplay() {
 	
 	var characterIcons = [
 		[
-			chrSel.aoko,
-			chrSel.shiki,
-			chrSel.hime,
-			chrSel.nanaya,
-			chrSel.kouma,
+			chrSel[0],
+			chrSel[1],
+			chrSel[2],
+			chrSel[3],
+			chrSel[4],
 		],
 		[
-			chrSel.miyako,
-			chrSel.ciel,
-			chrSel.sion,
-			chrSel.riesbyfe,
-			chrSel.vsion,
-			chrSel.warachia,
-			chrSel.roa,
+			chrSel[5],
+			chrSel[6],
+			chrSel[7],
+			chrSel[8],
+			chrSel[9],
+			chrSel[10],
+			chrSel[11],
 		],
 		[
-			chrSel.maids,
-			chrSel.akiha,
-			chrSel.arcueid,
-			chrSel.pciel,
-			chrSel.warc,
-			chrSel.vakiha,
-			chrSel.mech,
+			chrSel[12],
+			chrSel[13],
+			chrSel[14],
+			chrSel[15],
+			chrSel[16],
+			chrSel[17],
+			chrSel[18],
 		],
 		[
-			chrSel.seifuku,
-			chrSel.satsuki,
-			chrSel.len,
-			chrSel.ryougi,
-			chrSel.wlen,
-			chrSel.nero,
-			chrSel.necochaos,
+			chrSel[19],
+			chrSel[20],
+			chrSel[21],
+			chrSel[22],
+			chrSel[23],
+			chrSel[24],
+			chrSel[25],
 		],
 		[
-			chrSel.kohakumech,
-			chrSel.hisui,
-			chrSel.neco,
-			chrSel.kohaku,
-			chrSel.necomech,
+			chrSel[26],
+			chrSel[27],
+			chrSel[28],
+			chrSel[29],
+			chrSel[30],
 		],
-		chrSel.random,
+		document.getElementById("character-random"),
 	];
 	
 	function addIconAnims() {
@@ -1016,6 +1779,12 @@ function startupDisplay() {
 		columnPositionInverse--;
 		if (columnPosition !== 7) {
 			setTimeout(addIconAnims, 100);
+		} else {
+			setTimeout(function() {
+				interactionEnabled = true;
+				document.getElementsByClassName("selectbox-container")[0].style.pointerEvents = "all";
+				document.getElementById("moonstyle-area").style.transition = "all 0.5s ease-in-out";
+			}, 400);
 		}
 	}
 	
@@ -1086,7 +1855,3 @@ function textDisplay() {
 }
 
 setInterval(textDisplay, 666.6666666666666666666666666666);
-
-window.addEventListener("click", function() {
-	console.log(this.button);
-});

@@ -1,3 +1,12 @@
+:root {
+    background-image: url("../../img/backgrounds/GGXRD.png");
+    background-size: 100% 100%;
+}
+
+body {
+    min-height: 100vh;
+}
+
 .portrait-area {
     flex: 0px 1 0;
     overflow: visible;

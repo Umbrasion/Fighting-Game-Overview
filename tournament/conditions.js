@@ -1,13 +1,11 @@
 const conditionList = {
 	"AFQM": [
-		"1", // Default
-		"2", // 1 stock, 1 minute, best of 5
-		"3", // 100 stamina
-		"4", // Team battle with hard CPU Rend
-		"5", // 1 stock, 999 stamina
-		"6", // 
-		"7", // 
-		"8", // 
+		"0", // Default
+		"Rush Hour", // 1 stock, 1 minute, best of 5
+		"2", // 100 stamina
+		"3", // Team battle with hard CPU
+		"4", // 40 stamina, team battle against hard CPUs, last survivor
+		"5", // Ninja mirror match, 150 stamina
 	],
 	"AUAU": [
 		"You are an IMPOSTOR", // Default
@@ -17,459 +15,376 @@ const conditionList = {
 		"It's High Noon...", // Gun attacks only
 		"Task Management", // Task Mode
 		"Only Fundies", // Gone only
-		"Electrical Sabotage", // Blindfolded
+		"Electrical Sabotage", // Screen obscured
 		"Shhhhh!", // Secret characters only
 		"O2 Countdown", // 1 round, 5000 health
 	],
 	"AH3X": [
-		"1", // Default
-		"2", // Catherine dittos
-		"3", // Random battle
-		"4", // 
-		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
+		"0", // Default
+		"1", // Catherine mirror match
+		"2", // Random battle
+		"3", // Luck Arcana
+		"4", // Time Arcana
+		"5", // Eko mirror match
 	],
 	"BBCF": [
 		"The Wheel of Fate is Turning", // Default
+		"1", // 
 		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"BBTAG": [
 		"Can't Escape From Crossing Fate", // Default
-		"2", // 
-		"3", // 
+		"1", // Single-series teams
+		"2", // Random Select
+		"3", // Protagonists only
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"NSC": [
-		"1", // Default
-		"2", // Boss versions
-		"3", // Chaos mode
-		"4", // Max Chaos gauge
-		"5", // 1.5x attack rate
-		"6", // 
-		"7", // 
-		"8", // 
+		"0", // Default
+		"Time to Turn Up", // Boss versions
+		"Chaos Code Chaos Mode", // Chaos mode
+		"Power at Your Fingertips", // Max Chaos gauge
+		"Enhancement Inbound", // 1.5x attack rate
+		"5", // Random character
+	],
+	"DBAG": [
+		"Endless Crusade", // Default
+		"From Heaven to Hell", // Angel vs. Demon
+		"Day of Wrath", // Dies Irae Deus mirrors
+		"I'll Face Myself", // Base character vs. Alt character
+		"4", // Max input delay
+		"5", // Hidden HUD
 	],
 	"DNFD": [
 		"The Seeds of Volition Bring Forth A Challenger", // Default
+		"1", // 
 		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"DDND": [
 		"烂游戏", // Default
-		"2", // Mario dittos
-		"3", // Korone dittos
-		"4", // Glasses characters only
-		"5", // Hat characters only
-		"6", // 
-		"7", // 
-		"8", // 
+		"1", // Mario dittos
+		"2", // Korone dittos
+		"3", // 
+		"4", // 
+		"5", // High-speed matches
 	],
 	"DBFZ": [
 		"A Fierce Showdown is About to Begin", // Default
-		"2", // Only preset teams
 		"Heart Virus Inflicted", // Max input delay
 		"With Only Half My Strength...!", // 1v1 only
 		"Hi, I'm Goku!", // Goku/Goku fusions/Goku Black only
-		"6", // Only C assist
 		"That Wasn't Even My Full Power!", // Final character full Ki charge
 		"Don't Need Legs to Walk", // Super dash movement only
 	],
 	"EL2": [
 		"SET FIRE", // Default
+		"1", // 
 		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"FM": [
-		"1", // Default
-		"2", // Workshop
-		"3", // Random knockback angles
-		"4", // Stealth visibility
-		"5", // Fast game speed
-		"6", // Turbo mode on
-		"7", // Infinite jumps
-		"8", // Infinite assist
+		"0", // Default
+		"1", // Workshop
+		"2", // Random knockback angles
+		"3", // Stealth visibility
+		"4", // Fast game speed
+		"5", // Infinite assist
 	],
 	"GBVSR": [
 		"Believe in Victory", // Default
 		"SUBHL Woes", // Super Ultimate controls
-		"3", // Random characters
-		"4", // 
+		"Inspiration Struck", // Random characters
+		"Underdeveloped Grid", // Minimum handicap, best of 5
+		"Maledictory Halation", // Screen obscured
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"GGML": [
-		"Heaven or Hell", // Default
+		"Let's Rock!", // Default
+		"1", // 
 		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"GGST": [
 		"Here Comes Daredevil!", // Default
+		"1", // 
 		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"GGXRD": [
 		"Who Dares to Enter the Mayhem", // Default
+		"1", // Revelator version
 		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"GGACR": [
-		"Let's Rock!", // Default
-		"2", // EX characters
-		"3", // Gold characters
-		"4", // Shadow characters
+		"Heaven or Hell", // Default
+		"1", // EX characters
+		"2", // Gold characters
+		"3", // Shadow characters
+		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"HxHNI": [
-		"1", // Default
-		"2", // 20f input delay
+		"0", // Default
+		"1", // 20f input delay
+		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"ISD": [
 		"Let's Get Down to Business!", // Default
-		"2", // 
+		"Graduation Steam", // Played characters cannot be played again
 		"3", // 
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"KLKIF": [
-		"1", // Default
+		"0", // Default
+		"1", // 
 		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"KoFXIII": [
-		"1", // Default
+		"0", // Default
+		"1", // 
 		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"KoFXV": [
-		"1", // Default
+		"0", // Default
+		"1", // 
 		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"KF2": [
-		"1", // Default
+		"0", // Default
+		"1", // 
 		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"MnS": [
-		"1", // Default
+		"0", // Default
+		"1", // 
 		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"MvCIB": [
-		"1", // Default
+		"0", // Default
+		"1", // 
 		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"MBAACC": [
 		"Sweet Voice and Melty Blood", // Default
-		"2", // 
-		"3", // 
-		"4", // 
-		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
+		"1", // Players play characters that are alt versions of each other
+		"A Hymn for Full Moon", // Full Moon Style only
+		"3", // Duo characters only
+		"4", // High damage level
+		"5", // Random
 	],
 	"MBTL": [
 		"Open Your Magic Circuit", // Default
+		"1", // 
 		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"MAAB": [
 		"This is a Kingdom's Junction", // Default
-		"A familiar face?", // "Otherworldly" characters only (not assists)
-		"Nice chinchin!", // Foible Elle required as assist
-		"Elemental prowess", // Players must stick to a single element between character and assists
-		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
+		"A Familiar Face?", // "Otherworldly" characters only (not assists)
+		"Nice Chinchin!", // Foible Elle required as assist
+		"Elemental Prowess", // Players must stick to a single element between character and assists
+		"4", // Unique Snow White mirror match
+		"5", // "Arthur" characters only
 	],
 	"MVS": [
-		"1", // Default
+		"0", // Default
+		"1", // 
 		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"NASB2": [
-		"1", // Default
+		"0", // Default
+		"1", // 
 		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"P4AU": [
-		"1", // Default
+		"0", // Default
+		"1", // 
 		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"PKMNCC": [
-		"1", // Default
+		"0", // Default
+		"1", // 
 		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"PTDX": [
-		"1", // Default
+		"0", // Default
+		"1", // 
 		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"RoA": [
-		"1", // Default
+		"0", // Default
+		"1", // 
 		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"RoA2": [
-		"1", // Default
+		"0", // Default
+		"1", // 
 		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"SG": [
 		"It's Showtime!", // Default
-		"2", // 
-		"3", // 
-		"4", // 
-		"5", // 
 		"We've Only Got 1 Take!", // 30 second matches
 		"Stunt Double", // 2-character team, second position Double
 		"Skull...guys?", // 2-character team, only Big Band/Beowulf
+		"4", // 1v1 format
+		"5", // Ms. Fortune vs. Robo-Fortune
 	],
 	"SC": [
 		"Welcome to Slap City", // Default
-		"2", // 
-		"3", // 
 		"Greatest Death Sport", // Slap Ball Mode, standard
-		"5", // 
 		"Slap a Bestie on Their Face", // Get partner for teams
-		"Visualizing monitization!", // Business Casual Man dittos; first to kill with sell air heavy wins
+		"Visualizing Monitization!", // Business Casual Man dittos; first to kill with sell air heavy wins
 		"Wrath of the Father", // Team battle with one Really Joel's Dad CPU
+		"5", // Slap Ball Mode, sticky
 	],
 	"SF6": [
-		"1", // Default
+		"0", // Default
 		"Play by the rules", // Heaven & Hell mode, no gimmick
 		"Stay on your toes", // Down & Out mode, Bull Run gimmick, matches are FT3
 		"I've got a job for you", // Rules & Regulations mode, no gimmick
-		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
+		"4", // Street Fighter II characters only
+		"5", // Western vs. Eastern characters
 	],
 	"SSBC": [
-		"1", // Default
+		"0", // Default
+		"1", // 
 		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"SSBU": [
-		"1", // Default
+		"0", // Default
+		"1", // 
 		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"SSF2": [
-		"1", // Default
+		"0", // Default
+		"1", // 
 		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"REX": [
-		"1", // Default
+		"0", // Default
+		"1", // 
 		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"T8": [
-		"1", // Default
+		"0", // Default
+		"1", // Tekken Ball
 		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"SOKU": [
 		"Unperceiving of Natural Law", // Default
+		"1", // 
 		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"AoCF": [
 		"Spirit Possesion Bloom", // Default
-		"2", // 
-		"3", // 
-		"4", // 
-		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
+		"1", // Teams must include Jo'on or Ichrin
+		"2", // Random characters
+		"3", // Most expensive spell cards
+		"4", // Create a ship
+		"5", // Master Koishi mirror match
 	],
 	"UMvC3": [
-		"1", // Default
+		"0", // Default
+		"1", // 
 		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
 	],
 	"UFDK2": [
 		"クソゲ", // Default
 		"Just You and Me", // Solo mode
 		"Turbo-Tastic!", // Turbo 10-stars
-		"4", // 
-		"5", // 
 		"Kyanta Krazy", // Kyanta/Kyanta-like characters only
 		"Risking it All", // Parry type only
 		"We Are Kinoko", // 1 character Kinoko only (no solo mode)
 	],
 	"UNI2": [
 		"Recurring VOID Effect", // Default
+		"1", // 
 		"2", // 
 		"3", // 
 		"4", // 
-		"5", // 
-		"6", // 
-		"7", // 
-		"8", // 
+		"My Mind is CL-R", // Play on UNICLR
 	],
 };
 
@@ -494,16 +409,7 @@ function updateInfo(updateType, updateID) {
 		switch (updateID) {
 			case "AFQM":
 				rulesList.innerHTML = `
-					<li id="rules-bestof" class=""></li>
-					<li id="rules-lives" class=""></li>
-					<li id="rules-time" class=""></li>
-					<li id="rules-characters" class=""></li>
-					<li id="rules-stages" class=""></li>
-					<li id="rules-" class=""></li>
-					<li id="rules-" class=""></li>
-					<li id="rules-" class=""></li>
-					<li id="rules-" class=""></li>
-					<li id="rules-" class=""></li>
+					<li class=""></li>
 				`;
 				break;
 			case "AUAU":
@@ -513,11 +419,6 @@ function updateInfo(updateType, updateID) {
 					<li id="rules-time" class="">3000 health</li>
 					<li id="rules-characters" class="">All characters allowed; free pick</li>
 					<li id="rules-stages" class="">All stages allowed; free pick</li>
-					<li id="rules-" class=""></li>
-					<li id="rules-" class=""></li>
-					<li id="rules-" class=""></li>
-					<li id="rules-" class=""></li>
-					<li id="rules-" class=""></li>
 				`;
 				break;
 		}

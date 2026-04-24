@@ -60,24 +60,32 @@ var interactionEnabled = true;
 
 // Display on hover
 
-function hoverDisplay(charFileName) {
+function hoverDisplay(targetChar) {
 	if (interactionEnabled) {
+		var charFileName = targetChar.onclick.toString().split("'")[1];
+		
 		playCursor();
-		if (previewDisplayOn) {
-			if (charFileName === "Ninomae_Inanis") {
-				charFileName = "Ninomae_Ina'nis"
-			}
-			
-			chrPrevImg.src = "img/portraits/isd/" + charFileName + "_small.png";
-			chrName.src = "img/characterSelect/isd/logos/" + charFileName + "_logo.png";
+
+		if (charFileName === "Ninomae_Inanis") {
+			charFileName = "Ninomae_Ina'nis"
 		}
+		
+		var scaleMeasures = targetChar.dataset.scale.split(",");
+		if (scaleMeasures[0].includes("-")) {
+			chrPrevImg.style.transform = "scale(" + scaleMeasures[0] + ", " + scaleMeasures[0].replace("-", "") + ") translate(" + scaleMeasures[1] + "%, " + scaleMeasures[2] + "%)";
+		} else {
+			chrPrevImg.style.transform = "scale(" + scaleMeasures[0] + ") translate(" + scaleMeasures[1] + "%, " + scaleMeasures[2] + "%)";
+		}
+		
+		chrPrevImg.src = "img/portraits/isd/" + charFileName + "_small.png";
+		chrName.src = "img/characterSelect/isd/logos/" + charFileName + "_logo.png";
 	}
 }
 
 chrSel.forEach(element => {
 	element.addEventListener("mouseover",
-		(event) => {
-			hoverDisplay(event.target.onclick.toString().split("'")[1]);
+		() => {
+			hoverDisplay(element);
 		}
 	);
 });

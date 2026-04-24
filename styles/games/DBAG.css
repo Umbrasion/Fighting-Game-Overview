@@ -1,0 +1,37 @@
+:root {
+    --icon-scale: 2;
+    background-color: black;
+    background-image: url("../../img/backgrounds/DBAG.png");
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+body {
+    min-height: 100vh;
+}
+
+#characterselect {
+    padding: 0px;
+}
+
+.portrait-area {
+    margin-left: 4vw;
+}
+
+.p2-area {
+    margin-right: 4vw;
+}
+
+.selectbox-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: calc(10px * var(--icon-scale)) calc(13px * var(--icon-scale));
+    width: calc((58px * var(--icon-scale) * 4) + (13px * var(--icon-scale) * 3));
+    margin-top: 19vh;
+}
+
+.selectbox-character img {
+    width: calc(58px * var(--icon-scale));
+}

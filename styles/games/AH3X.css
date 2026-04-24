@@ -8,7 +8,7 @@ body {
 }
 
 #characterselect {
-    display: block;
+	padding-top: 28px;
 }
 
 .selectbox-container a {

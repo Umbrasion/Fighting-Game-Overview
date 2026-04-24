@@ -6,7 +6,11 @@
     background-position: center;
 }
 
-.portrait-area, .description-area {
+#characterselect {
+    margin-top: 30px;
+}
+
+.portrait-area, .p2-area {
     padding: 0px 40px;
 }
 
@@ -65,6 +69,25 @@ b, th, h2, h3 {
     animation-delay: 0s;
     animation-timing-function: ease-out;
     transform: rotate3d(0, 0, 0, 0);
+}
+
+#moonstyle-area {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-end;
+    gap: 40px;
+    height: 100%;
+    transform: translate(100%, 0);
+}
+
+.moonstyle-image {
+    width: 75%;
+    filter: brightness(0.7);
+    cursor: pointer;
+}
+
+.moonstyle-image:hover {
+    filter: brightness(1);
 }
 
 @keyframes icon-onstart {

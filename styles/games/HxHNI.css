@@ -1,9 +1,16 @@
 :root {
     overflow: clip;
+    background-image: url("../../img/backgrounds/HxHNI.png");
+    background-size: 100% 100%;
 }
 
 body {
     font-family: "Noto Sans JP";
+    min-height: 100vh;
+}
+
+#characterselect {
+    height: calc(100vh);
 }
 
 .selectbox-container {
@@ -18,7 +25,7 @@ body {
 
 #info-portrait {
     filter: drop-shadow(-22px 10px rgba(255,0,0,0.5));
-    transform: scale(2) translate(-8%, 22%);
+    transform: scale(2) translate(-8%, 23%);
 }
 
 #info-name {

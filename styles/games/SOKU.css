@@ -6,27 +6,42 @@ body {
     font-family: "STD Heavy";
 }
 
+.game-logo {
+    z-index: 98;
+}
+
 #characterselect {
-    max-width: 1080px;
+    height: 100vh;
+    aspect-ratio: 4 / 3;
     padding: 0px;
 }
 
 .preview-area {
     flex-direction: column;
     position: relative;
-    overflow: clip
+    overflow: clip;
+    height: 100%
+}
+
+.portrait-area, .p2-area {
+    height: 36.6666666666vh;
+    background-repeat: repeat-x;
+    background-size: 100%;
+    z-index: 97;
+    
+    animation-name: portraitbg-loop;
+    animation-duration: 21.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
 .portrait-area {
     background-image: url("../../img/characterSelect/soku/BG_P1.png");
-    background-repeat: repeat-x;
-    background-size: 100%;
-    
-    animation-name: portraitbg-loop;
-    animation-duration: 21.5s;
     animation-direction: reverse;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+}
+
+.p2-area {
+    background-image: url("../../img/characterSelect/soku/BG_P2.png");
 }
 
 @keyframes portraitbg-loop {
@@ -35,16 +50,17 @@ body {
     }
     
     to {
-        background-position: 1080px;
+        background-position: calc(36.6666666666vh / (11/40));
     }
 }
 
 #info-portrait {
+    position: relative;
     background-repeat: no-repeat;
-    background-size: 109.4%;
-    width: 1080px;
-    height: 298px;
+    background-size: cover;
+    height: 36.6666666666vh;
     display: block;
+    z-index: 99;
 }
 
 #info-name-area {
@@ -52,7 +68,7 @@ body {
 }
 
 #info-title {
-    font-size: 26px;
+    font-size: 1.8em;
     background: linear-gradient(to bottom, #FFFFFF, #FFFAB3);
     background-clip: text;
     color: transparent;
@@ -87,20 +103,18 @@ body {
 #css-pointer {
     position: absolute;
     z-index: 99;
-    width: 72px;
-    height: 72px;
+    height: 10vh;
     background-image: url("../../img/characterSelect/soku/CSS_Cogwheel.png");
     background-repeat: no-repeat;
     background-size: 100%;
-    top: -36px;
+    top: -5vh;
 }
 
 #css-needle {
     z-index: 101;
     position: absolute;
-    width: 48px;
-    height: 72px;
-    top: -11px;
+    height: 10vh;
+    top: -1.4583333333vh;
 }
 
 .selectbox-character {
@@ -109,16 +123,7 @@ body {
 }
 
 .selectbox-character, .selectbox-character img {
-    width: 54px;
-    height: 216px;
-}
-
-.description-area {
-    flex: 1 0 calc(100vh - 514px);
-    background-image: url("../../img/characterSelect/soku/BG_Menu.png");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    padding: 0px 10px;
+    height: 26.6666666666vh;
 }
 
 .portrait-onhover {

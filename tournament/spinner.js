@@ -5,6 +5,7 @@ var gameList = [
 	"BBCF",
 	"BBTAG",
 	"NSC",
+	"DBAG",
 	"DNFD",
 	"DDND",
 	"DBFZ",
@@ -140,9 +141,9 @@ function initiateRoll() {
 		void slotContainer.offsetWidth;
 		slotContainer.classList.add("sloticon-spinout");
 		
-		if (Math.floor(Math.random() * 100) < 2) {
-			randNum = gameList.length;
-			console.log("RNG Mode enabled")
+		if (Math.floor(Math.random() * 100) < 5) {
+			// randNum = gameList.length;
+			console.log("Special scenario rolled");
 		}
 		checkForBan: while (true) {
 			randNum = Math.floor(Math.random() * gameList.length);
@@ -163,7 +164,7 @@ function initiateRoll() {
 		}
 		
 		slotImages[0].src = "../img/logos/" + gameList[randNum] + "_logo.png";
-		if (randNum + 1 == gameList.length) {
+		if (randNum + 1 === gameList.length) {
 			slotImages[1].src = "../img/logos/" + gameList[0] + "_logo.png";
 		} else {
 			slotImages[1].src = "../img/logos/" + gameList[randNum + 1] + "_logo.png";
@@ -183,7 +184,11 @@ function initiateRoll() {
 		void slotContainerCondition.offsetWidth;
 		slotContainerCondition.classList.add("sloticon-spinout");
 		
-		randNum = Math.floor(Math.random() * (conditionList[currentGame].length));
+		if (Math.floor(Math.random() * 100) < 10) {
+			randNum = 0;
+		} else {
+			randNum = Math.floor(Math.random() * (conditionList[currentGame].length - 1) + 1);
+		}
 		
 		slotTexts[0].innerHTML = conditionList[currentGame][randNum];
 		

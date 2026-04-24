@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>About the Creator | Fighting Game Overview</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="styles/main.css">
+		<link rel="stylesheet" href="styles/infoColors.css">
+		<link id="gamestyle" rel="stylesheet" href="">
+		<style>
+			:root {
+				scrollbar-width: auto;
+			}
+
+			body {
+				padding: 16px 15vw;
+				font-size: 1.2em;
+			}
+
+			h1 {
+				text-align: center;
+			}
+
+			.mains-box {
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: center;
+				gap: 12px;
+			}
+
+			.game-area {
+				display: flex;
+				flex-flow: row nowrap;
+			}
+
+			.game-area .imagebox:nth-child(1) {
+				width: 180px;
+			}
+
+			.game-area .imagebox:nth-child(2) {
+				width: 316px;
+			}
+
+			.imagebox {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 8px;
+				border: 1px solid white;
+				padding: 6px;
+			}
+
+			.imagebox div {
+				display: flex;
+				flex-flow: column nowrap;
+				justify-content: center;
+			}
+
+			.mains-box img {
+				max-width: 180px;
+				max-height: 100px;
+			}
+
+			.characterbox img {
+				width: 100px;
+				height: 100px;
+				margin: auto;
+			}
+
+			figcaption {
+				text-align: center;
+				font-size: 0.9em;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="returnbutton" onclick="initializePageDisplay()">Back to Game Select</button>
+		<h1>About the Creator</h1>
+		<p>Hi! I'm <b>Umbrasion</b>, the creator and maintainer of this website. I've been an avid lover of fighting games ever since I started playing them and I deeply enjoy any and all fighting games across the genre. Every game on this site is one I personally own, so each aspect of the site is made out of pure passion for each and every game.</p>
+		<p>While I am not a top player by any means, I've always wanted to do something fun and engage with the fighting game community, so as someone who is familiar with coding and putting together websites, I ended up working on this! It's been slowly chipped away at and evolving since mid-2024, and I'll certainly be at it for a while. The intent has been to put something visually fun and appealing out there for people to appreciate and to maybe get some on-the-fence people to check out fighting games, or get existing fighting game players to try out some new games!</p>
+		<p>The website is always open to suggestions, so feel free to let me know anything that you think could be added or changed!</p>
+		<h1>My Mains</h1>
+		<div class="mains-box">
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/AFQM_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/AFQM_Eureka.png">
+						<figcaption>Eureka</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/AUAU_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/AUAU_Flame.png">
+						<figcaption>Flame</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/AH3X_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/AH3X_Dark_Heart.webp">
+						<figcaption>Dark Heart</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/BBCF_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/BBCF_Es.png">
+						<figcaption>Es</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/BBTAG_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/BBTAG_Linne.png">
+						<figcaption>Linne</figcaption>
+					</div>
+					<div class="characterbox">
+						<img src="img/misc/about/BBTAG_Noel_Vermillion.png">
+						<figcaption>Noel</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/NSC_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/NSC_Celia_II_Kai.png">
+						<figcaption>Celia II Kai</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/DBAG_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/DBAG_Yui.png">
+						<figcaption>Yui</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/DNFD_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/DNFD_Dragon_Knight.png">
+						<figcaption>Dragon Knight</figcaption>
+					</div>
+					<div class="characterbox">
+						<img src="img/misc/about/DNFD_Battle_Mage.png">
+						<figcaption>Dragon Knight</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/DDND_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/DDND_Korone.png">
+						<figcaption>Korone</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/DBFZ_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/DBFZ_Android_21.png">
+						<figcaption>Android 21</figcaption>
+					</div>
+					<div class="characterbox">
+						<img src="img/misc/about/DBFZ_Android_21_(Lab_Coat).png">
+						<figcaption>Lab Coat 21</figcaption>
+					</div>
+					<div class="characterbox">
+						<img src="img/misc/about/DBFZ_Cooler.png">
+						<figcaption>Cooler</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/EL2_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/EL2_Sisca.png">
+						<figcaption>Sisca</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/FM_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/FM_The_Watcher.webp">
+						<figcaption>The Watcher</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/GBVSR_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/GBVSR_Cagliostro.png">
+						<figcaption>Cagliostro</figcaption>
+					</div>
+					<div class="characterbox">
+						<img src="img/misc/about/GBVSR_Djeeta.png">
+						<figcaption>EX Djeeta</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/GGML_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/GGML_Baiken.png">
+						<figcaption>Baiken</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/GGST_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/GGST_Ramlethal_Valentine.png">
+						<figcaption>Ramlethal</figcaption>
+					</div>
+					<div class="characterbox">
+						<img src="img/misc/about/GGST_Jam_Kuradoberi.png">
+						<figcaption>Jam</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/GGXRD_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/GGXRD_Jam_Kuradoberi.png">
+						<figcaption>Jam</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/GGACR_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/GGACR_Baiken.png">
+						<figcaption>Baiken</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/HxHNI_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/HxHNI_Machi.png">
+						<figcaption>Machi</figcaption>
+					</div>
+					<div class="characterbox">
+						<img src="img/misc/about/HxHNI_Neferpitou.png">
+						<figcaption>Neferpitou</figcaption>
+					</div>
+					<div class="characterbox">
+						<img src="img/misc/about/HxHNI_Shizuku.webp">
+						<figcaption>Shizuku</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/ISD_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/ISD_Shirakami_Fubuki.png">
+						<figcaption>Fubuki</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/KLKIF_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/KLKIF_Nonon_Jakuzure.png">
+						<figcaption>Nonon</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/KoFXIII_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/KoFXIII_King.png">
+						<figcaption>King</figcaption>
+					</div>
+					<div class="characterbox">
+						<img src="img/misc/about/KoFXIII_Yuri_Sakazaki.png">
+						<figcaption>Yuri</figcaption>
+					</div>
+					<div class="characterbox">
+						<img src="img/misc/about/KoFXIII_Kula_Diamond.png">
+						<figcaption>Kula</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/KoFXV_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/KoFXV_Sylvie_Paula_Paula.png">
+						<figcaption>Sylvie</figcaption>
+					</div>
+					<div class="characterbox">
+						<img src="img/misc/about/KoFXV_Nakoruru.png">
+						<figcaption>Nakoruru</figcaption>
+					</div>
+					<div class="characterbox">
+						<img src="img/misc/about/KoFXV_King.png">
+						<figcaption>King</figcaption>
+					</div>
+				</div>
+			</div>
+			<!--div class="game-area">
+				<div class="imagebox"><img src="img/logos/KF2_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/.png">
+						<figcaption></figcaption>
+					</div>
+				</div>
+			</div-->
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/MnS_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/MnS_Dreadwyrm_Heir.png">
+						<figcaption>Dreadwyrm</figcaption>
+					</div>
+				</div>
+			</div>
+			<!--div class="game-area">
+				<div class="imagebox"><img src="img/logos/MvCIB_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/.png">
+						<figcaption></figcaption>
+					</div>
+				</div>
+			</div-->
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/MBAACC_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/MBAACC_White_Len.png">
+						<figcaption>H White Len</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/MBTL_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/MBTL_Ushiwakamaru.png">
+						<figcaption>Ushiwakamaru</figcaption>
+					</div>
+					<div class="characterbox">
+						<img src="img/misc/about/MBTL_Akiha_Tohno.png">
+						<figcaption>Akiha</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/MAAB_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/MAAB_Otherworldly_Koume_Sakiyama.png">
+						<figcaption>Koume</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/MVS_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/MVS_Harley_Quinn.webp">
+						<figcaption>Harley</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/NASB2_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/NASB2_Lucy_Loud.png">
+						<figcaption>Lucy</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/P4AU_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/P4AU_Marie.png">
+						<figcaption>Marie</figcaption>
+					</div>
+				</div>
+			</div>
+			<!--div class="game-area">
+				<div class="imagebox"><img src="img/logos/PKMNCC_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/.png">
+						<figcaption></figcaption>
+					</div>
+				</div>
+			</div-->
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/PTDX_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/PTDX_Braixen.png">
+						<figcaption>Braixen</figcaption>
+					</div>
+				</div>
+			</div>
+			<!--div class="game-area">
+				<div class="imagebox"><img src="img/logos/PP_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/.png">
+						<figcaption></figcaption>
+					</div>
+				</div>
+			</div-->
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/RoA_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/RoA_Clairen.png">
+						<figcaption>Clairen</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/RoA2_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/RoA2_Clairen.png">
+						<figcaption>Clairen</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/SG_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/SG_Ms._Fortune.jpg">
+						<figcaption>Ms. Fortune</figcaption>
+					</div>
+					<div class="characterbox">
+						<img src="img/misc/about/SG_Annie.jpg">
+						<figcaption>Annie</figcaption>
+					</div>
+					<div class="characterbox">
+						<img src="img/misc/about/SG_Marie.png">
+						<figcaption>Marie</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/SC_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/SC_Goddess_of_Explosions.png">
+						<figcaption>Goddess</figcaption>
+					</div>
+					<div class="characterbox">
+						<img src="img/misc/about/SC_Jenny_Fox.png">
+						<figcaption>Jenny Fox</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/SF6_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/SF6_Juri_Han.webp">
+						<figcaption>Juri</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/SSBC_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/SSBC_Chun-Li.png">
+						<figcaption>Chun-Li</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/SSBU_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/SSBU_Pyra_Mythra.png">
+						<figcaption>Aegis</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/SSF2_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/SSF2_Shiek.png">
+						<figcaption>Shiek</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/T8_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/T8_Reina.png">
+						<figcaption>Reina</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/SOKU_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/SOKU_Suika_Ibuki.png">
+						<figcaption>Suika</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/AoCF_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/AoCF_Jo'on_Yorigami.png">
+						<figcaption>Joon</figcaption>
+					</div>
+					<div class="characterbox">
+						<img src="img/misc/about/AoCF_Toyosatomimi_no_Miko.png">
+						<figcaption>Miko</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/UMvC3_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/UMvC3_Hsien-Ko.png">
+						<figcaption>Hsien-Ko</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/UFDK2_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/UFDK2_Myusha.png">
+						<figcaption>Myusha</figcaption>
+					</div>
+					<div class="characterbox">
+						<img src="img/misc/about/UFDK2_Natanee.png">
+						<figcaption>Natanee</figcaption>
+					</div>
+					<div class="characterbox">
+						<img src="img/misc/about/UFDK2_Anna.png">
+						<figcaption>Anna</figcaption>
+					</div>
+				</div>
+			</div>
+			<div class="game-area">
+				<div class="imagebox"><img src="img/logos/UNI2_logo.png"></div>
+				<div class="imagebox">
+					<div class="characterbox">
+						<img src="img/misc/about/UNI2_Wagner.png">
+						<figcaption>Wagner</figcaption>
+					</div>
+					<div class="characterbox">
+						<img src="img/misc/about/UNI2_Linne.png">
+						<figcaption>Linne</figcaption>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

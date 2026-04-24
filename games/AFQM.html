@@ -14,7 +14,77 @@
 		</style>
 	</head>
 	<body>
+		<img class="game-logo" src="img/logos/AFQM_logo.png">
+		<div class="bg-object-container">
+			<div class="bg-scroll-1"></div>
+			<div class="bg-scroll-2"></div>
+			<div class="bg-scroll-1"></div>
+			<div class="bg-scroll-2"></div>
+			<div class="bg-scroll-1"></div>
+			<div class="bg-scroll-2"></div>
+			<div class="bg-scroll-1"></div>
+			<div class="bg-scroll-2"></div>
+			<div class="bg-scroll-1"></div>
+			<div class="bg-scroll-2"></div>
+		</div>
 		<div id="characterselect">
+			<div class="preview-area">
+				<div class="selectbox-container">
+					<div class="selectbox-row">
+						<a id="character-eureka" onclick="runDisplay('Eureka')">
+							<img src="img/characterSelect/afqm/Eureka_icon.png">
+						</a>
+						<a id="character-knockt" onclick="runDisplay('Knockt')">
+							<img src="img/characterSelect/afqm/Knockt_icon.png">
+						</a>
+						<a id="character-rend" onclick="runDisplay('Rend')">
+							<img src="img/characterSelect/afqm/Rend_icon.png">
+						</a>
+						<a id="character-ninja" onclick="runDisplay('Ninja')">
+							<img src="img/characterSelect/afqm/Ninja_icon.png">
+						</a>
+					</div>
+					<div class="selectbox-row">
+						<a id="character-sarissae" onclick="runDisplay('Sarissae')">
+							<img src="img/characterSelect/afqm/Sarissae_icon.png">
+						</a>
+						<a id="character-random" onclick="runDisplay('Random')">
+							<img src="img/characterSelect/afqm/Random_icon.png">
+						</a>
+					</div>
+				</div>
+				<div class="portrait-area">
+					<div style="display: flex; flex-direction: column; width: 0px; height: 0px; margin: auto; justify-content: left; align-items: center">
+						<div style="width: fit-content">
+							<img id="info-portrait" src="" style="height: 92vh">
+						</div>
+					</div>
+					<h2 id="info-name" class="info-title" style="height: 1.2em"></h2>
+				</div>
+			</div>
+		</div>
+		<div class="description-bg">
+			<div class="description-area"></div>
+		</div>
+		<div class="preload-container">
+			<img src="img/characterSelect/afqm/BG_detail_1.png">
+			<img src="img/characterSelect/afqm/BG_detail_2.png">
+			<!---->
+			<img src="img/characterSelect/afqm/Eureka_icon.png">
+			<img src="img/characterSelect/afqm/Knockt_icon.png">
+			<img src="img/characterSelect/afqm/Rend_icon.png">
+			<img src="img/characterSelect/afqm/Ninja_icon.png">
+			<img src="img/characterSelect/afqm/Sarissae_icon.png">
+			<img src="img/characterSelect/afqm/Random_icon.png">
+			<!---->
+			<audio muted=true src="audio/sfx/afqm/Cursor_1.ogg"></audio>
+			<audio muted=true src="audio/sfx/afqm/Cursor_2.ogg"></audio>
+			<!---->
+			<audio muted=true src="audio/sfx/afqm/announcer/Eureka_select.ogg"></audio>
+			<audio muted=true src="audio/sfx/afqm/announcer/Knockt_select.ogg"></audio>
+			<audio muted=true src="audio/sfx/afqm/announcer/Rend_select.ogg"></audio>
+			<audio muted=true src="audio/sfx/afqm/announcer/Ninja_select.ogg"></audio>
+			<audio muted=true src="audio/sfx/afqm/announcer/Sarissae_select.ogg"></audio>
 		</div>
 	</body>
 </html>

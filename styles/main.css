@@ -81,7 +81,6 @@ a:hover {
 	width: auto;
 	margin: auto;
 	text-align: center;
-	padding: 28px;
 }
 
 .preview-area {
@@ -160,9 +159,7 @@ a:hover {
 
 #info-image {
 	display: block;
-	max-width: 100%;
-	max-height: 400px;
-	margin: 0px auto 12px;
+	/* margin: 0px auto 12px; */
 }
 
 .color-options {
@@ -233,7 +230,7 @@ div.selectbox-positioner {
 	height: 0px;
 }
 
-.selectbox-character, area {
+.selectbox-container a, .selectbox-character, area {
 	cursor: pointer;
 }
 
@@ -415,4 +412,25 @@ div.selectbox-positioner {
 @font-face {
 	font-family: "Mah Sans";
 	src: url("../fonts/MAHSANS.ttf");
+}
+
+#devcomm-container {
+	position: absolute;
+	top: 8px;
+	left: 8px;
+	z-index: 1000;
+	background-color: #19191E;
+	color: white;
+	font-family: sans-serif;
+	font-size: 0.9em;
+	max-width: 500px;
+	padding: 8px 12px;
+	border: solid gray 1px;
+	border-radius: 10px;
+}
+
+#devcomm-container h5 {
+	font-size: 1.1em;
+	margin: 1em 0px;
+	text-align: center;
 }

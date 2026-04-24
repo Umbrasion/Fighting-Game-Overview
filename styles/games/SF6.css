@@ -1,11 +1,16 @@
 :root {
     background-image: url("../../img/backgrounds/SF6.png");
-    background-size: 100% 100%;
+    background-size: 100% 100vh;
+    overflow-y: hidden;
 }
 
 body {
     height: fit-content;
     min-height: 100vh;
+}
+
+#characterselect {
+    margin-top: 5vh;
 }
 
 #info-name {

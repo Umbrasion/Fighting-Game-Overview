@@ -29,6 +29,7 @@ const chrSel = [
 	document.getElementById("character-elena"),
 	document.getElementById("character-sagat"),
 	document.getElementById("character-viper"),
+	document.getElementById("character-alex"),
 ];
 
 const pageMusic = new Audio("audio/music/SF6 - Reinvent the Game.ogg");
@@ -46,16 +47,19 @@ sfx.confirm.volume = 0.8;
 sfx.cancel.volume = 0.8;
 
 var previewDisplayOn = true;
+var interactionEnabled = true;
 
 // Display on hover
 
 function hoverDisplay(charFileName) {
-	sfx.cursor.currentTime = 0;
-	sfx.cursor.play();
-	if (previewDisplayOn) {
-		chrPrevImg.src = "img/portraits/sf6/" + charFileName + ".png";
-		document.getElementById("info-portrait-reflection").src = "img/portraits/sf6/" + charFileName + ".png";
-		chrName.innerHTML = charFileName.replace(/_/g, " ");
+	if (interactionEnabled) {
+		sfx.cursor.currentTime = 0;
+		sfx.cursor.play();
+		if (previewDisplayOn) {
+			chrPrevImg.src = "img/portraits/sf6/" + charFileName + ".png";
+			document.getElementById("info-portrait-reflection").src = "img/portraits/sf6/" + charFileName + ".png";
+			chrName.innerHTML = charFileName.replace(/_/g, " ");
+		}
 	}
 }
 
@@ -73,458 +77,504 @@ var announcer = new Audio();
 var banter = new Audio();
 
 function runDisplay(characterName) {
-	announcer.onended = function() {}
-	if (!announcer.paused) {
-		announcer.pause();
-	}
-	previewDisplayOn = false;
-	
-	sfx.confirm.currentTime = 0;
-	sfx.confirm.play();
-	
-	initializeOV();
-	
-	function writeCharInfo(detailInfo, ratings, likeOrDislike, charDescription, charFileName) {
-		updateOV(detailInfo, ratings, likeOrDislike, charDescription);
-		
-		chrPrevImg.src = "img/portraits/sf6/" + charFileName + ".png";
-		document.getElementById("info-portrait-reflection").src = "img/portraits/sf6/" + charFileName + ".png";
-		chrName.innerHTML = charFileName.replace(/_/g, " ");
+	if (interactionEnabled) {
+		interactionEnabled = false;
 
-		announcer = new Audio("audio/sfx/sf6/announcer/" + charFileName + "_call.ogg");
+		announcer.onended = function() {}
+		if (!announcer.paused) {
+			announcer.pause();
+		}
+		previewDisplayOn = false;
+		
+		sfx.confirm.currentTime = 0;
+		sfx.confirm.play();
+		
+		initializeOV("experimental");
+		
+		chrPrevImg.src = "img/portraits/sf6/" + characterName + ".png";
+		document.getElementById("info-portrait-reflection").src = "img/portraits/sf6/" + characterName + ".png";
+		chrName.innerHTML = characterName.replace(/_/g, " ");
+
+		announcer = new Audio("audio/sfx/sf6/announcer/" + characterName + "_call.ogg");
 		announcer.volume = 0.9;
 		announcer.play();
 		if (!banter.paused) {
 			banter.pause();
 		}
 		announcer.onended = function() {
-			banter = new Audio("audio/sfx/sf6/banter/" + charFileName + "_select.ogg");
+			banter = new Audio("audio/sfx/sf6/banter/" + characterName + "_select.ogg");
 			banter.volume = 0.9;
 			banter.currentTime = 0;
 			banter.play();
 		}
+		
+		switch (characterName) {
+			case "Luke":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Jamie":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Manon":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Kimberly":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Marisa":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Lily":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "JP":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Juri":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Dee_Jay":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Cammy":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Ryu":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "E._Honda":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Blanka":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Guile":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Ken":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Chun-Li":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Zangief":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Dhalsim":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Rashid":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "A.K.I.":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Ed":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Akuma":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "M._Bison":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Terry":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Mai":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Elena":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Sagat":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "C._Viper":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Alex":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+		}
+
+        updateOV2(displayInfo, "sf6");
 	}
-	
-	switch (characterName) {
-		case "Luke":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Jamie":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Manon":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Kimberly":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Marisa":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Lily":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "JP":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Juri":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Dee_Jay":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Cammy":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Ryu":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "E._Honda":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Blanka":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Guile":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Ken":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Chun-Li":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Zangief":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Dhalsim":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Rashid":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "A.K.I.":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Ed":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Akuma":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "M._Bison":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Terry":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Mai":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Elena":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "Sagat":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-		case "C._Viper":
-			writeCharInfo(
-				[
-					"<span class='archetype-'></span>",
-					"<span class='range-'></span>",
-					"<span class='unimech-none'>None</span>"
-				],
-				[1,1,1,1,1,1],
-				["<li></li>", "<li></li>"],
-				`
-				<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-				`,
-				characterName
-			);
-			break;
-    }
 }

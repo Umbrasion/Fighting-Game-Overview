@@ -1,6 +1,7 @@
 :root {
     background-image: url("../../img/backgrounds/GBVSR.png");
     overflow: clip;
+    animation: bg-loop 120s linear infinite reverse;
 }
 
 body {
@@ -10,7 +11,7 @@ body {
 }
 
 #characterselect {
-    display: block;
+	padding: 28px 0px;
 }
 
 #info-name {
@@ -45,11 +46,32 @@ body {
     opacity: 0;
 }
 
+#ex-select {
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    cursor: pointer;
+}
+
 .description-area {
     background-color: rgba(0,0,0,0.6);
     padding: 6px;
     border: solid white 2px;
     margin: 12px;
+}
+
+.diff-star {
+    height: 1.2em;
+}
+
+@keyframes bg-loop {
+    from {
+        background-position: 0vw;
+    }
+    
+    to {
+        background-position: 112.3958333vw;
+    }
 }
 
 .cssicon-onstart {

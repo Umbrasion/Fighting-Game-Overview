@@ -1,15 +1,61 @@
+:root {
+    background-image: url("../../img/backgrounds/GGST.png");
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+
 body {
     min-height: 100vh;
 }
 
+#returnbutton {
+    color: white;
+	background-color: #383838;
+    padding: 4px 12px;
+    border: 0px solid transparent;
+    border-radius: 4px;
+}
+
+#returnbutton:hover {
+	background-color: #C00000;
+    filter: drop-shadow(8px 8px 0px rgba(0,0,0,0.5))
+}
+
+.bg-decor {
+    position: absolute;
+}
+
+.bg-decor-playerbg {
+    aspect-ratio: 1 / 2;
+    background-size: contain;
+    height: 100vh;
+    mask-image: url("../../img/characterSelect/ggst/BG_Detail.png");
+    mask-mode: luminance;
+    mask-size: 100%;
+}
+
 #characterselect {
-    height: calc(100vh - 56px);
+    height: calc(100vh);
 }
 
 #info-name {
-	font-family: "Strive Impact";
-    font-size: 3em;
+    position: absolute;
+    bottom: calc(4vh + 220px);
+    left: 0px;
+	font-family: "Strive Impact", Impact;
+    font-size: 2.5em;
     font-weight: normal;
+    background-image: url("../../img/characterSelect/ggst/Nameplate.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 1.84em;
+    padding-top: 0.66em;
+    aspect-ratio: 8 / 1;
+}
+
+#info-portrait {
+    filter: drop-shadow(-60px 0px 0px rgba(0,0,0,0.5));
 }
 
 .selectbox-container {
@@ -17,23 +63,54 @@ body {
     left: 0px;
     right: 0px;
     bottom: 4vh;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    gap: 38px 18px;
-    width: 1682px;
+    gap: -2px 0px;
+    width: fit-content;
     margin: auto;
 }
 
-.selectbox-character {
-    filter: drop-shadow(0 4px 4px black);
+.selectbox-row {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    gap: 0px 8px;
+}
+
+.selectbox-character, .selectbox-character img, .selectbox-spacer {
+    width: 92px;
+    height: 82px;
 }
 
 #select-cursor {
     position: absolute;
-    width: 88px;
+    width: 97px;
+    height: 74px;
     pointer-events: none;
     z-index: 500;
     transition-property: all;
     transition-duration: 0.2s;
+}
+
+.description-bg .description-area {
+    background-image: radial-gradient(circle at bottom right, black 0%, black 20%, #212121 50%, #212121);
+    padding: 0px 0px 16px;
+    border: 2px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(45deg, #228A89, transparent, #EF3778) 2 1 1 2;
+}
+
+.description-area > :nth-child(2) {
+    padding: 0px 16px;
+}
+
+.description-bg .info-title {
+    background-color: black;
+    background-image: url("../../img/characterSelect/ggst/Window_icon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-clip: padding-box;
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(to right, transparent, #EF3778) 1;
+    padding: 16px 0px;
+    margin-bottom: 4px;
 }
