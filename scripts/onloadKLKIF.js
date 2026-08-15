@@ -289,18 +289,20 @@ function runDisplay(characterName, overrideDisableActions = false) {
 }
 
 var iterationCount = 0
-function randomDisplay() {
-	disableActions = true;
+function randomDisplay(overrideDisableActions = false) {
+    if (!disableActions && interactionEnabled || overrideDisableActions) {
+        disableActions = true;
 
-	hoverDisplay(chrSel[Math.floor(Math.random() * chrSel.length)]);
+        hoverDisplay(chrSel[Math.floor(Math.random() * chrSel.length)]);
 
-	iterationCount++;
-	if (iterationCount === 20) {
-		iterationCount = 0;
-		runDisplay("Random", true);
-	} else {
-		setTimeout(function() {
-			randomDisplay();
-		}, 100);
+        iterationCount++;
+        if (iterationCount === 20) {
+            iterationCount = 0;
+            runDisplay("Random", true);
+        } else {
+            setTimeout(function() {
+                randomDisplay(true);
+            }, 100);
+        }
 	}
 }

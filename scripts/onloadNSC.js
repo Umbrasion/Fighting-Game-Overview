@@ -8,9 +8,9 @@ pageMusic.volume = 0.2;
 pageMusic.play();
 
 const sfx = {
-	cursor: new Audio("audio/sfx/nsc/Cursor.ogg"),
-	confirm: new Audio("audio/sfx/nsc/Confirm.ogg"),
-	cancel: new Audio("audio/sfx/nsc/Cancel.ogg"),
+	cursor: new Audio("audio/sfx/nsc/cursor.ogg"),
+	confirm: new Audio("audio/sfx/nsc/confirm.ogg"),
+	cancel: new Audio("audio/sfx/nsc/cancel.ogg"),
 }
 sfx.cursor.volume = 0.3;
 sfx.confirm.volume = 0.3;
