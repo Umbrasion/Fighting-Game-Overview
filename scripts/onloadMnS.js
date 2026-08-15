@@ -111,26 +111,26 @@ $(window).resize(setLocations);
 
 function setLocations() {
 	var chrCoords = [381,43, 816,43, 781,138, 346,138];
-	autoResize("selectbox-fullroster", chrSel[0], chrCoords);
+	autoResize("css-fullroster", chrSel[0], chrCoords);
 	chrCoords = [342,149, 778,149, 744,242, 308,242];
-	autoResize("selectbox-fullroster", chrSel[1], chrCoords);
+	autoResize("css-fullroster", chrSel[1], chrCoords);
 	chrCoords = [304,253, 740,253, 706,346, 432,346];
-	autoResize("selectbox-fullroster", chrSel[2], chrCoords);
+	autoResize("css-fullroster", chrSel[2], chrCoords);
 	chrCoords = [266,358, 702,358, 670,448, 233,448];
-	autoResize("selectbox-fullroster", chrSel[3], chrCoords);
+	autoResize("css-fullroster", chrSel[3], chrCoords);
 	chrCoords = [229,460, 665,460, 632,552, 195,552];
-	autoResize("selectbox-fullroster", chrSel[4], chrCoords);
+	autoResize("css-fullroster", chrSel[4], chrCoords);
 	chrCoords = [191,564, 628,564, 595,656, 157,656];
-	autoResize("selectbox-fullroster", chrSel[5], chrCoords);
+	autoResize("css-fullroster", chrSel[5], chrCoords);
 	chrCoords = [153,668, 591,668, 558,758, 120,758];
-	autoResize("selectbox-fullroster", chrSel[6], chrCoords);
+	autoResize("css-fullroster", chrSel[6], chrCoords);
 	chrCoords = [116,769, 554,769, 520,863, 81,863];
-	autoResize("selectbox-fullroster", chrSel[7], chrCoords);
+	autoResize("css-fullroster", chrSel[7], chrCoords);
 	chrCoords = [77,875, 516,875, 482,968, 43,968];
-	autoResize("selectbox-fullroster", chrSel[8], chrCoords);
+	autoResize("css-fullroster", chrSel[8], chrCoords);
 }
 
-document.getElementsByClassName("selectbox-fullroster")[0].onload = setLocations;
+document.getElementsByClassName("css-fullroster")[0].onload = setLocations;
 
 // Failsafe in case it doesn't properly set things the first time
 setTimeout(setLocations,10);

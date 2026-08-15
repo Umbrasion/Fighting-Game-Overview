@@ -1,28 +1,14 @@
 const chrPrevImg = document.getElementById("info-portrait");
 const chrName = document.getElementById("info-name");
-const chrSel = [
-	document.getElementById("character-koume"),
-	document.getElementById("character-snowwhite"),
-	document.getElementById("character-bisclavret"),
-	document.getElementById("character-thief"),
-	document.getElementById("character-blade"),
-	document.getElementById("character-twinblade"),
-	document.getElementById("character-wildcat"),
-	document.getElementById("character-iai"),
-	document.getElementById("character-zechs"),
-	document.getElementById("character-nimue"),
-	document.getElementById("character-void"),
-	document.getElementById("character-riesz"),
-	document.getElementById("character-iori"),
-];
+const chrSel = Array.prototype.slice.call(document.getElementsByClassName("css-character"));
 
 const pageMusic = new Audio("audio/music/MAAB - Character Select loop.ogg");
 pageMusic.loop = true;
-pageMusic.volume = 0.3;
+pageMusic.volume = 0.3 * volumeModifier;
 pageMusic.preload = "auto";
 
 const pageMusicIntro = new Audio("audio/music/MAAB - Character Select intro.ogg");
-pageMusicIntro.volume = 0.3;
+pageMusicIntro.volume = 0.3 * volumeModifier;
 
 pageMusic.addEventListener("canplay", playMusic);
 function playMusic() {
@@ -42,41 +28,43 @@ sfx.cursor.volume = 0.2;
 sfx.confirm.volume = 0.2;
 sfx.cancel.volume = 0.2;
 
-var previewDisplayOn = true;
 var interactionEnabled = false;
 
 // Display on hover
 
 var previousCharacter = "";
 
-function hoverDisplay(charFileName, charIcon) {
-	if (charFileName !== previousCharacter && interactionEnabled) {
+function hoverDisplay(targetChar) {
+    var characterName = targetChar.onclick.toString().split("'")[1];
+    if (characterName !== previousCharacter && interactionEnabled) {
+        var charIcon = targetChar.children[1];
+        
         sfx.cursor.currentTime = 0;
         sfx.cursor.play();
-        if (previewDisplayOn) {
-            chrPrevImg.src = "img/portraits/maab/" + charFileName + ".png";
-            chrName.innerHTML = charFileName.replace(/_/g, " ");
-        }
+
+        chrPrevImg.src = "img/portraits/maab/" + characterName + ".png";
+        chrName.innerHTML = characterName.replace(/_/g, " ");
 
         resetIcons();
         charIcon.style.visibility = "visible";
         charIcon.classList.remove("icon-onhover");
         void charIcon.offsetWidth;
         charIcon.classList.add("icon-onhover");
-        previousCharacter = charFileName;
+
+        previousCharacter = characterName;
     }
 }
 
 function resetIcons() {
     chrSel.forEach(element => {
-        element.children[0].children[1].style.visibility = "hidden";
+        element.children[1].style.visibility = "hidden";
     });
 }
 
 chrSel.forEach(element => {
 	element.addEventListener("mouseover",
 		() => {
-			hoverDisplay(element.onclick.toString().split("'")[1], element.children[0].children[1]);
+			hoverDisplay(element);
 		}
 	);
 });
@@ -89,7 +77,6 @@ banter.play();
 
 function runDisplay(characterName) {
 	if (interactionEnabled) {
-        previewDisplayOn = false;
         interactionEnabled = false;
         
         sfx.confirm.currentTime = 0;
@@ -350,20 +337,20 @@ function startupDisplay() {
     if (cycleNum === 12) {
         clearInterval(iconInterval);
     }
-    chrSel[cycleNum].children[0].children[0].classList.add("icon-onstart");
-    chrSel[cycleNum].children[0].children[0].style.opacity = 1;
-    chrSel[cycleNum].children[0].children[1].style.opacity = 1;
+    chrSel[cycleNum].children[0].classList.add("icon-onstart");
+    chrSel[cycleNum].children[0].style.opacity = 1;
+    chrSel[cycleNum].children[1].style.opacity = 1;
     var iteration = cycleNum;
     setTimeout(function() {
-        chrSel[iteration].children[0].children[0].classList.remove("icon-onstart");
-        void chrSel[iteration].children[0].children[0].offsetWidth;
-        chrSel[iteration].children[0].children[0].classList.add("icon-onstart-spin");
+        chrSel[iteration].children[0].classList.remove("icon-onstart");
+        void chrSel[iteration].children[0].offsetWidth;
+        chrSel[iteration].children[0].classList.add("icon-onstart-spin");
         setTimeout(function() {
-            chrSel[iteration].children[0].children[0].src = "img/characterSelect/maab/" + chrSel[iteration].onclick.toString().split("'")[1] + "_icon.webp";
-            if (chrSel[12].children[0].children[0].src.includes("Otherworldly_Iori_Yagami")) {
+            chrSel[iteration].children[0].src = "img/characterSelect/maab/" + chrSel[iteration].onclick.toString().split("'")[1] + "_icon.webp";
+            if (chrSel[12].children[0].src.includes("Otherworldly_Iori_Yagami")) {
                 setTimeout(function() {
                     interactionEnabled = true;
-                    document.getElementsByClassName("selectbox-container")[0].style.pointerEvents = "all";
+                    document.getElementsByClassName("css-container")[0].style.pointerEvents = "all";
                 },100);
             }
         },100);

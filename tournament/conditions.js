@@ -1,63 +1,67 @@
 const conditionList = {
 	"AFQM": [
-		"0", // Default
-		"Rush Hour", // 1 stock, 1 minute, best of 5
-		"2", // 100 stamina
-		"3", // Team battle with hard CPU
-		"4", // 40 stamina, team battle against hard CPUs, last survivor
-		"5", // Ninja mirror match, 150 stamina
+		"Just One More Match", // Default
+		"A Few REALLY Quick Matches", // 1 stock, 1 minute, best of 5
+		"Beatdown", // 100 stamina
+		"I Am Thou, and Thou Art I", // Team battle with hard CPU
+		"Keep-Away", // 40 stamina, team battle against hard CPUs, last survivor
+		"Fortnite Gaming", // Ninja mirror match, 150 stamina
 	],
 	"AUAU": [
 		"You are an IMPOSTOR", // Default
 		"Emergency Meeting", // Full meter start
 		"Spacefaring No More", // Airblock off
-		"Play the Rainbow", // Random Select
-		"It's High Noon...", // Gun attacks only
 		"Task Management", // Task Mode
-		"Only Fundies", // Gone only
 		"Electrical Sabotage", // Screen obscured
 		"Shhhhh!", // Secret characters only
-		"O2 Countdown", // 1 round, 5000 health
 	],
 	"AH3X": [
-		"0", // Default
-		"1", // Catherine mirror match
-		"2", // Random battle
-		"3", // Luck Arcana
-		"4", // Time Arcana
-		"5", // Eko mirror match
+		"Girl's Fight Night", // Default
+		"Mecha Mayhem", // Catherine mirror match
+		"In the Hands of Arcana", // Random characters
+		"Life's a Gamble", // Luck Arcana
+		"Running on Borrowed Time", // Time Arcana
+		"Power of Friend(?)ship", // Commentators pick characters
+	],
+	"AVL": [
+		"Earth, Fire, Water, Air", // Default
+		"The Fire Nation Attacked", // Firebenders vs. Airbenders
+		"Master of All Four Elements", // Avatars only
+		"3", // 
+		"4", // 
+		"5", // 
 	],
 	"BBCF": [
 		"The Wheel of Fate is Turning", // Default
-		"1", // 
-		"2", // 
-		"3", // 
+		"Staring Into the Black Beast", // Screen obscured
+		"Voice From Beyond the Barrier", // Commentators pick characters
+		"So-Called Diverse Roster", // Variations of the same character only, a different version must be selected every match
 		"4", // 
 		"5", // 
 	],
 	"BBTAG": [
 		"Can't Escape From Crossing Fate", // Default
-		"1", // Single-series teams
-		"2", // Random Select
-		"3", // Protagonists only
-		"4", // 
+		"Birds of a Feather", // Single-series teams
+		"All Across the FGU", // Random characters
+		"3", // 
+		"Cross Tag Out", // Played characters cannot be played again
 		"5", // 
 	],
 	"NSC": [
-		"0", // Default
+		"New Sign of Catastrophe", // Default
 		"Time to Turn Up", // Boss versions
 		"Chaos Code Chaos Mode", // Chaos mode
 		"Power at Your Fingertips", // Max Chaos gauge
 		"Enhancement Inbound", // 1.5x attack rate
-		"5", // Random character
+		"Character Chaos", // Random characters
 	],
 	"DBAG": [
 		"Endless Crusade", // Default
 		"From Heaven to Hell", // Angel vs. Demon
 		"Day of Wrath", // Dies Irae Deus mirrors
 		"I'll Face Myself", // Base character vs. Alt character
-		"4", // Max input delay
-		"5", // Hidden HUD
+		"Can Slow Me Down", // Max input delay
+		"Blind to Your Sins", // Hidden HUD
 	],
 	"DNFD": [
 		"The Seeds of Volition Bring Forth A Challenger", // Default
@@ -68,12 +72,12 @@ const conditionList = {
 		"5", // 
 	],
 	"DDND": [
-		"烂游戏", // Default
-		"1", // Mario dittos
-		"2", // Korone dittos
-		"3", // 
-		"4", // 
-		"5", // High-speed matches
+		"狗屎游戏", // Default
+		"It's-a Me!", // Mario dittos
+		"DOOG DOOG Never Die", // Korone dittos
+		"It's in Your Hands", // Pick your opponent's character
+		"Dong Dong Does Die", // Played characters cannot be played again
+		"5", // 
 	],
 	"DBFZ": [
 		"A Fierce Showdown is About to Begin", // Default
@@ -92,32 +96,24 @@ const conditionList = {
 		"5", // 
 	],
 	"FM": [
-		"0", // Default
-		"1", // Workshop
-		"2", // Random knockback angles
-		"3", // Stealth visibility
-		"4", // Fast game speed
-		"5", // Infinite assist
+		"Making Frays", // Default
+		"1", // 
+		"Geometry Problem", // Random knockback angles
+		"Real Stealth-Like", // Stealth visibility
+		"Pick Up the Pace Already!", // Fast game speed
+		"The Cavalry Has Arrived", // Infinite assist
 	],
 	"GBVSR": [
 		"Believe in Victory", // Default
-		"SUBHL Woes", // Super Ultimate controls
+		"Solo SUBHL", // Super Ultimate controls
 		"Inspiration Struck", // Random characters
 		"Underdeveloped Grid", // Minimum handicap, best of 5
 		"Maledictory Halation", // Screen obscured
 		"5", // 
 	],
-	"GGML": [
-		"Let's Rock!", // Default
-		"1", // 
-		"2", // 
-		"3", // 
-		"4", // 
-		"5", // 
-	],
 	"GGST": [
 		"Here Comes Daredevil!", // Default
-		"1", // 
+		"Mirror of the World", // Reversed left/right controls
 		"2", // 
 		"3", // 
 		"4", // 
@@ -125,7 +121,7 @@ const conditionList = {
 	],
 	"GGXRD": [
 		"Who Dares to Enter the Mayhem", // Default
-		"1", // Revelator version
+		"Old Will Revealed", // Revelator version
 		"2", // 
 		"3", // 
 		"4", // 
@@ -133,26 +129,27 @@ const conditionList = {
 	],
 	"GGACR": [
 		"Heaven or Hell", // Default
-		"1", // EX characters
-		"2", // Gold characters
-		"3", // Shadow characters
+		"EX-tra Special", // EX characters
+		"All That Glitters", // Gold characters
+		"Just a Shadow of Yourself", // Shadow characters
 		"4", // 
 		"5", // 
 	],
 	"HxHNI": [
-		"0", // Default
-		"1", // 20f input delay
-		"2", // 
-		"3", // 
-		"4", // 
+		"The Power of Nen", // Default
+		"Perfectly Functional Netcode", // 20f input delay
+		"Caught in the Web", // Spiders only
+		"3", // Commentators pick characters
+		"4", // Both sides max handicap
 		"5", // 
 	],
 	"ISD": [
 		"Let's Get Down to Business!", // Default
-		"Graduation Steam", // Played characters cannot be played again
-		"3", // 
-		"4", // 
-		"5", // 
+		"Graduation Stream", // Played characters cannot be played again
+		"Technical Stream Difficulties...", // Screen obscured
+		"3",
+		"Bouncing On It", // Blazing Ball Bash
+		"Just a Myth", // Boss characters only
 	],
 	"KLKIF": [
 		"0", // Default
@@ -163,7 +160,7 @@ const conditionList = {
 		"5", // 
 	],
 	"KoFXIII": [
-		"0", // Default
+		"Expensive Beauty", // Default
 		"1", // 
 		"2", // 
 		"3", // 
@@ -171,31 +168,23 @@ const conditionList = {
 		"5", // 
 	],
 	"KoFXV": [
-		"0", // Default
-		"1", // 
-		"2", // 
+		"Here Comes a Battle of Titans", // Default
+		"Moving Up, and Away", // Switch characters on game win
+		"Birds of a Feather", // Existing teams only
 		"3", // 
 		"4", // 
 		"5", // 
 	],
 	"KF2": [
-		"0", // Default
-		"1", // 
-		"2", // 
-		"3", // 
-		"4", // 
-		"5", // 
-	],
-	"MnS": [
-		"0", // Default
-		"1", // 
+		"Adorable Violence", // Default
+		"Fighters 2", // Non-Kirby characters only
 		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
 	],
 	"MvCIB": [
-		"0", // Default
+		"Revived Legacy", // Default
 		"1", // 
 		"2", // 
 		"3", // 
@@ -206,9 +195,9 @@ const conditionList = {
 		"Sweet Voice and Melty Blood", // Default
 		"1", // Players play characters that are alt versions of each other
 		"A Hymn for Full Moon", // Full Moon Style only
-		"3", // Duo characters only
-		"4", // High damage level
-		"5", // Random
+		"Psuedo-Tag Fighter", // Duo characters only
+		"Better Kill Me in One Shot", // Highest damage level
+		"5", // Random characters
 	],
 	"MBTL": [
 		"Open Your Magic Circuit", // Default
@@ -223,40 +212,32 @@ const conditionList = {
 		"A Familiar Face?", // "Otherworldly" characters only (not assists)
 		"Nice Chinchin!", // Foible Elle required as assist
 		"Elemental Prowess", // Players must stick to a single element between character and assists
-		"4", // Unique Snow White mirror match
-		"5", // "Arthur" characters only
-	],
-	"MVS": [
-		"0", // Default
-		"1", // 
-		"2", // 
-		"3", // 
-		"4", // 
-		"5", // 
+		"Snow White and the 7 Years of Endlag", // Unique Snow White mirror match
+		"There's a Million of 'em!", // "Arthur" characters only
 	],
 	"NASB2": [
+		"Get a Nickeload of This", // Default
+		"Fighting Familiar Faces", // Character picks must match series
+		"F is for Friends", // Squads mode
+		"3", // All stages allowed, items on
+		"All-Stamina Brawl", // 100 stamina
+		"Tax Write-Off", // Played characters cannot be played again
+	],
+	"NPBZ": [
 		"0", // Default
-		"1", // 
+		"Cat Fight", // Sonico mirror matches
 		"2", // 
 		"3", // 
 		"4", // 
 		"5", // 
 	],
 	"P4AU": [
-		"0", // Default
-		"1", // 
-		"2", // 
+		"The Power Within You", // Default
+		"My Other Side", // Shadow Type characters only
+		"Perso...no?", // Sho mirror matches
 		"3", // 
-		"4", // 
-		"5", // 
-	],
-	"PKMNCC": [
-		"0", // Default
-		"1", // 
-		"2", // 
-		"3", // 
-		"4", // 
-		"5", // 
+		"A Fateful Reading", // Draw a Tarot card, must play a character that matches that card
+		"Who Art Thou...", // Random characters
 	],
 	"PTDX": [
 		"0", // Default
@@ -268,7 +249,7 @@ const conditionList = {
 	],
 	"RoA": [
 		"0", // Default
-		"1", // 
+		"1", // Workshop
 		"2", // 
 		"3", // 
 		"4", // 
@@ -287,8 +268,8 @@ const conditionList = {
 		"We've Only Got 1 Take!", // 30 second matches
 		"Stunt Double", // 2-character team, second position Double
 		"Skull...guys?", // 2-character team, only Big Band/Beowulf
-		"4", // 1v1 format
-		"5", // Ms. Fortune vs. Robo-Fortune
+		"I Can Do it Alone!", // 1v1 format
+		"Who's the REAL Copy?", // Ms. Fortune vs. Robo-Fortune
 	],
 	"SC": [
 		"Welcome to Slap City", // Default
@@ -296,15 +277,15 @@ const conditionList = {
 		"Slap a Bestie on Their Face", // Get partner for teams
 		"Visualizing Monitization!", // Business Casual Man dittos; first to kill with sell air heavy wins
 		"Wrath of the Father", // Team battle with one Really Joel's Dad CPU
-		"5", // Slap Ball Mode, sticky
+		"Taking Wide Steps", // Slap Ball Mode, sticky
 	],
 	"SF6": [
-		"0", // Default
+		"Hit the Streets!", // Default
 		"Play by the rules", // Heaven & Hell mode, no gimmick
 		"Stay on your toes", // Down & Out mode, Bull Run gimmick, matches are FT3
 		"I've got a job for you", // Rules & Regulations mode, no gimmick
-		"4", // Street Fighter II characters only
-		"5", // Western vs. Eastern characters
+		"Capcom's Golden Goose", // Street Fighter II characters only
+		"Split the World", // Western vs. Eastern characters
 	],
 	"SSBC": [
 		"0", // Default
@@ -330,17 +311,9 @@ const conditionList = {
 		"4", // 
 		"5", // 
 	],
-	"REX": [
-		"0", // Default
-		"1", // 
-		"2", // 
-		"3", // 
-		"4", // 
-		"5", // 
-	],
 	"T8": [
 		"0", // Default
-		"1", // Tekken Ball
+		"Fuck It, We Ball", // Tekken Ball
 		"2", // 
 		"3", // 
 		"4", // 
@@ -356,16 +329,16 @@ const conditionList = {
 	],
 	"AoCF": [
 		"Spirit Possesion Bloom", // Default
-		"1", // Teams must include Jo'on or Ichrin
+		"Some Extra Hands", // Teams must include Jo'on or Ichirin
 		"2", // Random characters
-		"3", // Most expensive spell cards
-		"4", // Create a ship
-		"5", // Master Koishi mirror match
+		"This One's Gonna Cost You", // Most expensive spell cards
+		"4", // 
+		"All In Your Mind", // Master Koishi mirror match
 	],
 	"UMvC3": [
-		"0", // Default
-		"1", // 
-		"2", // 
+		"Capcom Presents; Marvel Comics", // Default
+		"True Marvel vs. Capcom", // Marvel characters vs. Capcom characters
+		"She Can't Control It", // Phoenix on each team
 		"3", // 
 		"4", // 
 		"5", // 
@@ -375,29 +348,26 @@ const conditionList = {
 		"Just You and Me", // Solo mode
 		"Turbo-Tastic!", // Turbo 10-stars
 		"Kyanta Krazy", // Kyanta/Kyanta-like characters only
-		"Risking it All", // Parry type only
+		"Screw Justin Wong", // Parry type only
 		"We Are Kinoko", // 1 character Kinoko only (no solo mode)
 	],
 	"UNI2": [
 		"Recurring VOID Effect", // Default
-		"1", // 
+		"The Night Falls", // Screen obscured
 		"2", // 
 		"3", // 
 		"4", // 
-		"My Mind is CL-R", // Play on UNICLR
+		"My Mind is [CL-R]", // Play on UNICLR
 	],
 };
 
 const rulesList = document.getElementById("rules-list");
-const rulesListExtra1 = document.getElementById("rules-list-extra1");
-const rulesListExtra2 = document.getElementById("rules-list-extra2");
 const conditionName = document.getElementById("condition-name");
 const conditionDesc = document.getElementById("condition-description");
+const conditionRef = document.getElementById("condition-refimg");
 
 function resetInfo() {
 	rulesList.innerHTML = "";
-	rulesListExtra1.innerHTML = "";
-	rulesListExtra2.innerHTML = "";
 	conditionName.innerHTML = "";
 	conditionDesc.innerHTML = "";
 }
@@ -409,16 +379,16 @@ function updateInfo(updateType, updateID) {
 		switch (updateID) {
 			case "AFQM":
 				rulesList.innerHTML = `
-					<li class=""></li>
+					<li id=""></li>
 				`;
 				break;
 			case "AUAU":
 				rulesList.innerHTML = `
-					<li id="rules-bestof" class="">Best of 3</li>
-					<li id="rules-lives" class="">2 rounds to win set</li>
-					<li id="rules-time" class="">3000 health</li>
-					<li id="rules-characters" class="">All characters allowed; free pick</li>
-					<li id="rules-stages" class="">All stages allowed; free pick</li>
+					<li id="rules-bestof">Best of 3</li>
+					<li id="rules-lives">2 rounds to win set</li>
+					<li id="rules-health">3000 health</li>
+					<li id="rules-characters">All characters allowed; free pick</li>
+					<li id="rules-stages">All stages allowed; free pick</li>
 				`;
 				break;
 		}
@@ -434,6 +404,18 @@ function updateInfo(updateType, updateID) {
 				case "AFQM-1":
 					conditionDesc.innerHTML = "";
 					break;
+				case "AFQM-2":
+					conditionDesc.innerHTML = "";
+					break;
+				case "AFQM-3":
+					conditionDesc.innerHTML = "";
+					break;
+				case "AFQM-4":
+					conditionDesc.innerHTML = "";
+					break;
+				case "AFQM-5":
+					conditionDesc.innerHTML = "";
+					break;
 				
 				// Among Us Arena Ultimax
 				
@@ -444,25 +426,13 @@ function updateInfo(updateType, updateID) {
 					conditionDesc.innerHTML = "Airblocking is disabled for all matches, preventing players from blocking while in the air.";
 					break;
 				case "AUAU-3":
-					conditionDesc.innerHTML = "Both players must choose random characters and cannot select a specific character on their own.";
-					break;
-				case "AUAU-4":
-					conditionDesc.innerHTML = "Both players must only use attacks bound to the Gun button. No other attacks are allowed. Non-attacking actions such as blocking, bursting, etc. are still permitted.";
-					break;
-				case "AUAU-5":
 					conditionDesc.innerHTML = "Matches are played on Task Mode, a gamemode where both players must perform certain tasks to win a round rather than deplete the opponent's health.";
 					break;
-				case "AUAU-6":
-					conditionDesc.innerHTML = "Players may only select the secret character Gone, which can be accessed by scrolling to a hidden row between the top and bottom rows of the character select. Gone has a gray/seemingly missing color pallet and is unable to select a super.";
-					break;
-				case "AUAU-7":
+				case "AUAU-4":
 					conditionDesc.innerHTML = "Both players must in some way block their view of the screen, whether it be a blindfold, screen cover, etc. Players are not allowed to look at the screen during an active match, but may look during character select or on the results screen of a match.";
 					break;
-				case "AUAU-8":
+				case "AUAU-5":
 					conditionDesc.innerHTML = "Players may only select secret characters (Fortegreen, Undefined, Charcoal, or Gone), which can be accessed by scrolling to a hidden row between the top and bottom rows of the character select.";
-					break;
-				case "AUAU-9":
-					conditionDesc.innerHTML = "Players now only need 1 round to win a set; however, health is set to 5000 instead of the normal 3000.";
 					break;
 				
 				// Arcana Heart 3 LOVEMAX SIXSTARS!!!!!! XTEND
@@ -470,10 +440,52 @@ function updateInfo(updateType, updateID) {
 				case "AH3X-1":
 					conditionDesc.innerHTML = "";
 					break;
+				case "AH3X-2":
+					conditionDesc.innerHTML = "";
+					break;
+				case "AH3X-3":
+					conditionDesc.innerHTML = "";
+					break;
+				case "AH3X-4":
+					conditionDesc.innerHTML = "";
+					break;
+				case "AH3X-5":
+					conditionDesc.innerHTML = "";
+					break;
+				
+				// Avatar Legends: The Fighting Game
+				
+				case "AVL-1":
+					conditionDesc.innerHTML = "";
+					break;
+				case "AVL-2":
+					conditionDesc.innerHTML = "";
+					break;
+				case "AVL-3":
+					conditionDesc.innerHTML = "";
+					break;
+				case "AVL-4":
+					conditionDesc.innerHTML = "";
+					break;
+				case "AVL-5":
+					conditionDesc.innerHTML = "";
+					break;
 				
 				// BlazBlue: Central Fiction
 				
 				case "BBCF-1":
+					conditionDesc.innerHTML = "";
+					break;
+				case "BBCF-2":
+					conditionDesc.innerHTML = "";
+					break;
+				case "BBCF-3":
+					conditionDesc.innerHTML = "";
+					break;
+				case "BBCF-4":
+					conditionDesc.innerHTML = "";
+					break;
+				case "BBCF-5":
 					conditionDesc.innerHTML = "";
 					break;
 				
@@ -483,9 +495,27 @@ function updateInfo(updateType, updateID) {
 					conditionDesc.innerHTML = "";
 					break;
 				
+				// Chaos Code: New Sign of Catastrophe
+				
+				case "NSC-1":
+					conditionDesc.innerHTML = "";
+					break;
+				
+				// Daemon Bride: Additional Gain
+				
+				case "DBAG-1":
+					conditionDesc.innerHTML = "";
+					break;
+				
 				// DNF Duel
 				
 				case "DNFD-1":
+					conditionDesc.innerHTML = "";
+					break;
+				
+				// Dong Dong Never Die
+				
+				case "DDND-1":
 					conditionDesc.innerHTML = "";
 					break;
 				
@@ -513,12 +543,6 @@ function updateInfo(updateType, updateID) {
 					conditionDesc.innerHTML = "";
 					break;
 				
-				// Guilty Gear: The Missing Link
-				
-				case "GGML-1":
-					conditionDesc.innerHTML = "";
-					break;
-				
 				// Guilty Gear Strive
 				
 				case "GGST-1":
@@ -534,6 +558,12 @@ function updateInfo(updateType, updateID) {
 				// Guilty Gear XX Accent Core +R
 				
 				case "GGACR-1":
+					conditionDesc.innerHTML = "";
+					break;
+				
+				// HUNTERxHUNTER NENxIMPACT
+				
+				case "HxHNI-1":
 					conditionDesc.innerHTML = "";
 					break;
 				
@@ -567,12 +597,6 @@ function updateInfo(updateType, updateID) {
 					conditionDesc.innerHTML = "";
 					break;
 				
-				// Maiden & Spell
-				
-				case "MnS-1":
-					conditionDesc.innerHTML = "";
-					break;
-				
 				// Marvel vs. Capcom: Infinite & Beyond
 				
 				case "MvCIB-1":
@@ -593,13 +617,7 @@ function updateInfo(updateType, updateID) {
 				
 				// Million Arthur: Arcana Blood
 				
-				case "MAAC-1":
-					conditionDesc.innerHTML = "";
-					break;
-				
-				// Multiversus
-				
-				case "MVS-1":
+				case "MAAB-1":
 					conditionDesc.innerHTML = "";
 					break;
 				
@@ -609,27 +627,35 @@ function updateInfo(updateType, updateID) {
 					conditionDesc.innerHTML = "";
 					break;
 				
+				// Nitroplus Blasterz: Infinite Duel
+				
+				case "NPBZ-1":
+					conditionDesc.innerHTML = "";
+					break;
+				
 				// Persona 4 Arena Ultimax
 				
 				case "P4AU-1":
 					conditionDesc.innerHTML = "";
 					break;
-				
-				// Pokémon Close Combat
-				
-				case "PKMNCC-1":
+				case "P4AU-2":
+					conditionDesc.innerHTML = "";
+					break;
+				case "P4AU-3":
+					conditionDesc.innerHTML = "";
+					break;
+				case "P4AU-4":
+					conditionDesc.innerHTML = "Each player will have a Major Arcana Card pulled for them. Players may only choose characters represented by the card they pulled.";
+					conditionRef.innerHTML = "<a class='conref-link' onclick='commonImgBlowUp(this.children[0])'><img class='condition-reference' src='img/references/P4AU/Ref_Arcanas.png'></a>";
+					conditionAddFunction(updateID);
+					break;
+				case "P4AU-5":
 					conditionDesc.innerHTML = "";
 					break;
 				
 				// Pokkén Tournament DX
 				
 				case "PTDX-1":
-					conditionDesc.innerHTML = "";
-					break;
-				
-				// Project+
-				
-				case "PP-1":
 					conditionDesc.innerHTML = "";
 					break;
 				
@@ -718,5 +744,102 @@ function updateInfo(updateType, updateID) {
 					break;
 			}
 		}
+	}
+}
+
+function conditionAddFunction(condID) {
+	var functionArea = document.getElementById("condition-addfunction");
+	switch (condID) {
+		case "P4AU-4":
+			functionArea.innerHTML = `
+				<h3 id="arcanatitle" class="condition-functiontitle">CHOOSE YOUR ARCANA</h3>
+				<img id="arcanacard" class="condition-functionimg" src="img/arcana/Arcana_back.png">
+				<button class="condition-functionbutton" onclick="conditionFuncRef('arcana')">ROLL ARCANA</button>
+			`;
+			break;
+	}
+}
+
+function conditionFuncRef(reqFunction) {
+	switch (reqFunction) {
+		case "arcana":
+			var arcana = document.getElementById("arcanacard");
+			var arcanaTitle = document.getElementById("arcanatitle");
+			arcana.classList.remove("arcanacard-flip");
+			void arcana.offsetWidth;
+			arcana.classList.add("arcanacard-flip");
+			setTimeout(function() {
+				switch (Math.floor(Math.random() * 14)) {
+					case 0:
+						arcana.src = "img/arcana/Arcana_0.png";
+						arcanaTitle.innerHTML = "THE FOOL";
+						break;
+					case 1:
+						arcana.src = "img/arcana/Arcana_0j.png";
+						arcanaTitle.innerHTML = "THE JESTER";
+						break;
+					case 2:
+						arcana.src = "img/arcana/Arcana_1.png";
+						arcanaTitle.innerHTML = "THE MAGICIAN";
+						break;
+					case 3:
+						arcana.src = "img/arcana/Arcana_2.png";
+						arcanaTitle.innerHTML = "THE HIGH PRIESTESS";
+						break;
+					case 4:
+						arcana.src = "img/arcana/Arcana_3.png";
+						arcanaTitle.innerHTML = "THE EMPRESS";
+						break;
+					case 5:
+						arcana.src = "img/arcana/Arcana_4.png";
+						arcanaTitle.innerHTML = "THE EMPEROR";
+						break;
+					case 6:
+						arcana.src = "img/arcana/Arcana_6.png";
+						arcanaTitle.innerHTML = "THE LOVERS";
+						break;
+					case 7:
+						arcana.src = "img/arcana/Arcana_7.png";
+						arcanaTitle.innerHTML = "THE CHARIOT";
+						break;
+					case 8:
+						arcana.src = "img/arcana/Arcana_8.png";
+						arcanaTitle.innerHTML = "JUSTICE";
+						break;
+					case 9:
+						arcana.src = "img/arcana/Arcana_10.png";
+						arcanaTitle.innerHTML = "WHEEL OF FORTUNE";
+						break;
+					case 10:
+						arcana.src = "img/arcana/Arcana_17.png";
+						arcanaTitle.innerHTML = "THE STAR";
+						break;
+					case 11:
+						arcana.src = "img/arcana/Arcana_18.png";
+						arcanaTitle.innerHTML = "THE MOON";
+						break;
+					case 12:
+						arcana.src = "img/arcana/Arcana_19.png";
+						arcanaTitle.innerHTML = "THE SUN";
+						break;
+					case 13:
+						arcana.src = "img/arcana/Arcana_20.png";
+						arcanaTitle.innerHTML = "THE AEON";
+						break;
+				}
+			}, 400)
+			break;
+	}
+}
+
+function commonImgBlowUp(focusImage = "") {
+	const imgViewBG = document.getElementById("imgview-bg");
+	const imgViewBox = document.getElementById("imgview-container");
+	if (focusImage !== "") {
+		imgViewBG.style.visibility = "visible";
+		imgViewBox.innerHTML = `<img src=${focusImage.src}>`;
+	} else {
+		imgViewBG.style.visibility = "hidden";
+		imgViewBox.innerHTML = "";
 	}
 }

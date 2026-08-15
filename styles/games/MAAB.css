@@ -12,7 +12,7 @@ body {
     height: calc(100vh);
 }
 
-.selectbox-container {
+.css-container {
     position: absolute;
     left: 0px;
     right: 0px;
@@ -24,17 +24,17 @@ body {
     pointer-events: none;
 }
 
-.selectbox-character, .selectbox-container a {
+.css-character, .css-container a {
     position: relative;
     width: 117px;
     height: 171px;
 }
 
-.selectbox-character img {
+.css-character img {
     opacity: 0;
 }
 
-.selectbox-character img, .icon-selected {
+.css-character img, .icon-selected {
     position: absolute;
 }
 

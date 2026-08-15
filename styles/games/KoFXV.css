@@ -14,7 +14,7 @@ body {
     height: 100vh;
 }
 
-.selectbox-container {
+.css-container {
     position: absolute;
     left: 0px;
     right: 0px;
@@ -25,11 +25,11 @@ body {
     margin: auto;
 }
 
-.selectbox-container img {
+.css-container img {
     display: block;
 }
 
-.selectbox-container a {
+.css-container a {
     position: relative;
 }
 
@@ -74,11 +74,11 @@ body {
     margin-right: 0px;
 }
 
-.selectbox-container :nth-child(odd) img {
+.css-container :nth-child(odd) img {
     height: 112px;
 }
 
-.selectbox-container :nth-child(even) img {
+.css-container :nth-child(even) img {
     height: 113px;
 }
 

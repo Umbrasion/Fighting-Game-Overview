@@ -27,7 +27,7 @@ body {
     margin-top: calc(57.291666vh);
 }
 
-.selectbox-container {
+.css-container {
     position: absolute;
     left: 0px;
     right: 0px;
@@ -40,7 +40,7 @@ body {
     margin: auto;
 }
 
-.selectbox-container img {
+.css-container img {
     width: calc(52px * 2);
     height: calc(50px * 2);
 }

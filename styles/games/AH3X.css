@@ -11,16 +11,16 @@ body {
 	padding-top: 28px;
 }
 
-.selectbox-container a {
+.css-container a {
     display: inline-block;
 }
 
-.charactericon, .charactericon img {
+.css-character img {
     width: 146px;
     height: 104px;
 }
 
-.selectbox-character-row {
+.css-character-row {
     width: fit-content;
     display: flex;
     flex-flow: row wrap;

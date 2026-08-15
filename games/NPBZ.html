@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Nitroplus Blasterz: Heroines Infinite Duel | Fighting Game Overview</title>
+		<link rel="stylesheet" href="../styles/main.css">
+		<link rel="stylesheet" href="../styles/infoColors.css">
+		<link rel="stylesheet" href="../styles/games/NPBZ.css">
+		<script src="../scripts/common.js"></script>
+		<script src="../scripts/cssResize.js" defer></script>
+		<script src="../scripts/onloadNPBZ.js" defer></script>
+		<script src="../scripts/jquery-3.7.1.min.js"></script>
+	</head>
+	<body>
+		<img class="game-logo" src="img/logos/NPBZ_logo.png">
+		<div id="characterselect">
+			<div class="preview-area">
+				<div class="portrait-area">
+					<div style="display: flex; flex-direction: column; width: 0px; height: 0px; margin: auto; justify-content: left; align-items: center">
+						<div style="width: fit-content">
+							<img id="info-portrait" src="">
+						</div>
+					</div>
+					<h2 id="info-name" class="info-title" style="height: 1.2em"></h2>
+				</div>
+				<div class="css-container">
+					<a id="character-homura" onclick="runDisplay('Homura')" style="filter: drop-shadow(calc(-11px * var(--icon-scale)) calc(5px * var(--icon-scale)) 0px black)">
+						<div class="css-character">
+							<img src="img/characterSelect/npbz/Homura_icon.png" style="width: calc(71px * var(--icon-scale))">
+						</div>
+					</a>
+					<a id="character-saber" onclick="runDisplay('Saber')" style="margin-top: calc(4px * var(--icon-scale)); filter: drop-shadow(calc(-8px * var(--icon-scale)) calc(5px * var(--icon-scale)) 0px black)">
+						<div class="css-character">
+							<img src="img/characterSelect/npbz/Saber_icon.png" style="width: calc(70px * var(--icon-scale))">
+						</div>
+					</a>
+					<a id="character-ruili" onclick="runDisplay('Ruili')" style="margin-top: calc(10px * var(--icon-scale)); margin-left: calc(2px * var(--icon-scale)); filter: drop-shadow(calc(-5px * var(--icon-scale)) calc(5px * var(--icon-scale)) 0px black)">
+						<div class="css-character">
+							<img src="img/characterSelect/npbz/Ruili_icon.png" style="width: calc(69px * var(--icon-scale))">
+						</div>
+					</a>
+					<a id="character-ein" onclick="runDisplay('Ein')" style="margin-top: calc(15px * var(--icon-scale)); margin-left: calc(1px * var(--icon-scale)); filter: drop-shadow(calc(-3px * var(--icon-scale)) calc(5px * var(--icon-scale)) 0px black)">
+						<div class="css-character">
+							<img src="img/characterSelect/npbz/Ein_icon.png" style="width: calc(70px * var(--icon-scale))">
+						</div>
+					</a>
+					<a id="character-mora" onclick="runDisplay('Mora')" style="margin-top: calc(10px * var(--icon-scale)); margin-left: calc(1px * var(--icon-scale)); filter: drop-shadow(calc(5px * var(--icon-scale)) calc(5px * var(--icon-scale)) 0px black)">
+						<div class="css-character">
+							<img src="img/characterSelect/npbz/Mora_icon.png" style="width: calc(70px * var(--icon-scale))">
+						</div>
+					</a>
+					<a id="character-anna" onclick="runDisplay('Anna')" style="margin-top: calc(5px * var(--icon-scale)); margin-left: calc(1px * var(--icon-scale)); filter: drop-shadow(calc(8px * var(--icon-scale)) calc(5px * var(--icon-scale)) 0px black)">
+						<div class="css-character">
+							<img src="img/characterSelect/npbz/Anna_icon.png" style="width: calc(71px * var(--icon-scale))">
+						</div>
+					</a>
+					<a id="character-ouka" onclick="runDisplay('Ouka')" style="margin-right: calc(25px * var(--icon-scale)); filter: drop-shadow(calc(11px * var(--icon-scale)) calc(5px * var(--icon-scale)) 0px black)">
+						<div class="css-character">
+							<img src="img/characterSelect/npbz/Ouka_icon.png" style="width: calc(70px * var(--icon-scale))">
+						</div>
+					</a>
+					<a id="character-heart" onclick="runDisplay('Heart')" style="margin-top: calc(10px * var(--icon-scale)); margin-left: calc(25px * var(--icon-scale)); filter: drop-shadow(calc(-11px * var(--icon-scale)) calc(5px * var(--icon-scale)) 0px black)">
+						<div class="css-character">
+							<img src="img/characterSelect/npbz/Heart_icon.png" style="width: calc(71px * var(--icon-scale))">
+						</div>
+					</a>
+					<a id="character-ignis" onclick="runDisplay('Ignis')" style="margin-top: calc(7px * var(--icon-scale)); margin-right: calc(2px * var(--icon-scale)); filter: drop-shadow(calc(-5px * var(--icon-scale)) calc(5px * var(--icon-scale)) 0px black)">
+						<div class="css-character">
+							<img src="img/characterSelect/npbz/Ignis_icon.png" style="width: calc(70px * var(--icon-scale))">
+						</div>
+					</a>
+					<a id="character-muramasa" onclick="runDisplay('Muramasa')" style="margin-top: calc(1px * var(--icon-scale)); margin-right: calc(1px * var(--icon-scale)); filter: drop-shadow(calc(-8px * var(--icon-scale)) calc(5px * var(--icon-scale)) 0px black)">
+						<div class="css-character">
+							<img src="img/characterSelect/npbz/Muramasa_icon.png" style="width: calc(69px * var(--icon-scale))">
+						</div>
+					</a>
+					<a id="character-al" onclick="runDisplay('Al')" style="margin-right: calc(1px * var(--icon-scale)); filter: drop-shadow(calc(3px * var(--icon-scale)) calc(5px * var(--icon-scale)) 0px black)">
+						<div class="css-character">
+							<img src="img/characterSelect/npbz/Al_icon.png" style="width: calc(70px * var(--icon-scale))">
+						</div>
+					</a>
+					<a id="character-saya" onclick="runDisplay('Saya')" style="margin-top: calc(1px * var(--icon-scale)); margin-right: calc(1px * var(--icon-scale)); filter: drop-shadow(calc(5px * var(--icon-scale)) calc(5px * var(--icon-scale)) 0px black)">
+						<div class="css-character">
+							<img src="img/characterSelect/npbz/Saya_icon.png" style="width: calc(70px * var(--icon-scale))">
+						</div>
+					</a>
+					<a id="character-ethica" onclick="runDisplay('Ethica')" style="margin-top: calc(6px * var(--icon-scale)); margin-right: calc(1px * var(--icon-scale)); filter: drop-shadow(calc(8px * var(--icon-scale)) calc(5px * var(--icon-scale)) 0px black)">
+						<div class="css-character">
+							<img src="img/characterSelect/npbz/Ethica_icon.png" style="width: calc(70px * var(--icon-scale))">
+						</div>
+					</a>
+					<a id="character-sonico" onclick="runDisplay('Sonico')" style="margin-top: calc(10px * var(--icon-scale)); filter: drop-shadow(calc(11px * var(--icon-scale)) calc(5px * var(--icon-scale)) 0px black)">
+						<div class="css-character">
+							<img src="img/characterSelect/npbz/Sonico_icon.png" style="width: calc(70px * var(--icon-scale))">
+						</div>
+					</a>
+				</div>
+				<div class="p2-area"></div>
+			</div>
+		</div>
+		<div class="description-bg">
+			<div class="description-area"></div>
+		</div>
+		<div class="preload-container">
+			<img src="img/backgrounds/NPBZ.png">
+			<!---->
+			<img src="img/characterSelect/npbz/Homura_icon.png">
+			<img src="img/characterSelect/npbz/Saber_icon.png">
+			<img src="img/characterSelect/npbz/Ruili_icon.png">
+			<img src="img/characterSelect/npbz/Ein_icon.png">
+			<img src="img/characterSelect/npbz/Mora_icon.png">
+			<img src="img/characterSelect/npbz/Anna_icon.png">
+			<img src="img/characterSelect/npbz/Ouka_icon.png">
+			<img src="img/characterSelect/npbz/Heart_icon.png">
+			<img src="img/characterSelect/npbz/Ignis_icon.png">
+			<img src="img/characterSelect/npbz/Muramasa_icon.png">
+			<img src="img/characterSelect/npbz/Al_icon.png">
+			<img src="img/characterSelect/npbz/Saya_icon.png">
+			<img src="img/characterSelect/npbz/Ethica_icon.png">
+			<img src="img/characterSelect/npbz/Sonico_icon.png">
+			<!---->
+			<audio muted=true src="audio/music/NPBZ - Character Select.ogg"></audio>
+			<audio muted=true src="audio/sfx/npbz/Cursor.ogg"></audio>
+			<audio muted=true src="audio/sfx/npbz/Confirm.ogg"></audio>
+			<audio muted=true src="audio/sfx/npbz/Cancel.ogg"></audio>
+		</div>
+	</body>
+</html>

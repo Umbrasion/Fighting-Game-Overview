@@ -1,20 +1,20 @@
-.selectbox-container {
+.css-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: left;
     gap: 0px;
 }
 
-.selectbox-character {
+.css-character {
     width: 99px;
     height: 133px;
 }
 
-.selectbox-character img {
+.css-character img {
     position: relative;
 }
 
-a:hover .selectbox-character img {
+a:hover .css-character img {
     border-color: white;
     outline: 2px solid white;
     z-index: 500;
@@ -30,7 +30,7 @@ a:hover .selectbox-character img {
     z-index: 600;
 }
 
-.selectbox-scroll {
+.css-scroll {
     display: flex;
     flex-flow: row;
     justify-content: left;

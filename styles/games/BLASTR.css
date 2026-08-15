@@ -1,0 +1,20 @@
+:root {
+    --icon-scale: 1.5;
+}
+
+#info-portrait {
+    height: 80vh;
+}
+
+.css-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: calc(8px * var(--icon-scale)) calc(12px * var(--icon-scale));
+    width: calc(368px * var(--icon-scale));
+    filter: drop-shadow(calc(8px * var(--icon-scale)) calc(6px * var(--icon-scale)) 0px rgba(0,0,0,0.3));
+}
+
+.css-character img {
+    width: calc(64px * var(--icon-scale));
+}

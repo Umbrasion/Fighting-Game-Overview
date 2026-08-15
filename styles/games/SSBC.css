@@ -3,7 +3,7 @@
     font-size: 0px;
 }
 
-.selectbox-container {
+.css-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -11,15 +11,11 @@
     max-width: 1200px;
 }
 
-.selectbox-character {
-    
-}
-
-.selectbox-character img {
+.css-character img {
     width: 75px;
 }
 
-.selectbox-spacer {
+.css-spacer {
     display: inline-block;
     width: 75px;
 }

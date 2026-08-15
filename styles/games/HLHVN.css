@@ -1,0 +1,32 @@
+:root {
+    background-image: url("../../img/backgrounds/HLHVN.png");
+    background-size: 100% 100%;
+    overflow-y: clip;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.decor {
+    position: absolute;
+}
+
+#info-portrait, #info-name {
+    height: 92vh;
+}
+
+#info-name {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.css-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 4px 2px;
+    width: 500px;
+    margin-top: 12vh;
+}

@@ -2,6 +2,7 @@ var gameList = [
 	"AFQM",
 	"AUAU",
 	"AH3X",
+	"AVL",
 	"BBCF",
 	"BBTAG",
 	"NSC",
@@ -18,7 +19,7 @@ var gameList = [
 	"GGACR",
 	"HxHNI",
 	"ISD",
-	"KLKIF",
+	// "KLKIF",
 	"KoFXIII",
 	"KoFXV",
 	"KF2",
@@ -27,8 +28,9 @@ var gameList = [
 	"MBAACC",
 	"MBTL",
 	"MAAB",
-	"MVS",
+	// "MVS",
 	"NASB2",
+	"NPBZ",
 	"P4AU",
 	// "PKMNCC",
 	"PTDX",
@@ -40,7 +42,7 @@ var gameList = [
 	"SSBC",
 	"SSBU",
 	"SSF2",
-	"REX",
+	// "REX",
 	"T8",
 	"SOKU",
 	"AoCF",
@@ -54,6 +56,15 @@ var currentGame = "";
 var rollForGame = true;
 var randNum = 0;
 var randNumStored = 0;
+
+var exOptions = {
+	noConChance: 10, // Default: 10
+	ogoChance: 4, // Default: 4
+	ogoCooldown: 3, // Default: 3
+	ccChance: 4, // Default: 4
+	gameOverride: "", // Default: ""
+	conditionOverride: -1, // Default: -1
+}
 
 function initiateRoll() {
 	const slotImages = document.getElementsByClassName("slot-image");
@@ -141,41 +152,82 @@ function initiateRoll() {
 		void slotContainer.offsetWidth;
 		slotContainer.classList.add("sloticon-spinout");
 		
-		if (Math.floor(Math.random() * 100) < 5) {
-			// randNum = gameList.length;
-			console.log("Special scenario rolled");
-		}
-		checkForBan: while (true) {
-			randNum = Math.floor(Math.random() * gameList.length);
-			if (gameBanList.includes(gameList[randNum])) {
-				continue checkForBan;
+		if (gameList.indexOf(exOptions.gameOverride) !== -1) {
+			randNum = gameList.indexOf(exOptions.gameOverride);
+			setGameInfo();
+		} else {
+			if (Math.floor(Math.random() * 100) < exOptions.ogoChance && exOptions.ogoCooldown === 0) {
+				exOptions.ogoCooldown = 3;
+				handleDebug("cooldown");
+				/*
+					Special Scenario: OFF-GAME OUTBREAK
+					Rather than a game normally selectable, there will be a selection of alternate games
+					Players are able to agree on a game to play from the selection available
+					Conditions do not exist and are not rolled when the game is chosen
+					Each game may be a fighting game or may not, with game-specific scenarios
+
+					POTENTIAL LIST:
+						- Maiden & Spell
+							- Standard play, best of 3
+						- Umamusume: Pretty Derby - Party Dash
+							- Slapdash Grand Prix, best of 1
+							- No custom teams
+							- CPU teams set to Normal
+							- Winner is highest placement
+								- In the event of a tie, a Single Event match of player's choice will be a tiebreaker
+						- Super Smash REX
+							- 4 stocks, 7 minutes, random/gentleman stage
+							- No banned characters/stages
+						- CMC+
+							- 3 stocks, 7 minutes, random/gentleman stage
+						- Super Clash Project
+							- Battle mode, no stage selection
+						- Competitor's Choice
+							- Competitors may gentleman to a game of their own choosing
+							- The game may be any game that is 
+				*/
+				console.log("Off-Game Outbreak rolled");
+				setupOGO();
+				rollForGame = !rollForGame;
 			} else {
-				gameBanList.push(gameList[randNum]);
-				if (gameBanList.length > gameList.length - 5) {
-					document.getElementById("debug-button-" + gameBanList[0]).innerHTML = "ALLOWED";
-					document.getElementById("debug-button-" + gameBanList[0]).style.backgroundColor = "lightgreen";
-					gameBanList.splice(0, 1);
+				checkForBan: while (true) {
+					randNum = Math.floor(Math.random() * gameList.length);
+					if (gameBanList.includes(gameList[randNum])) {
+						continue checkForBan;
+					} else {
+						gameBanList.push(gameList[randNum]);
+						if (gameBanList.length > gameList.length - 5) {
+							document.getElementById("debug-button-" + gameBanList[0]).innerHTML = "ALLOWED";
+							document.getElementById("debug-button-" + gameBanList[0]).style.backgroundColor = "lightgreen";
+							gameBanList.splice(0, 1);
+						}
+						document.getElementById("debug-button-" + gameList[randNum]).innerHTML = "BANNED";
+						document.getElementById("debug-button-" + gameList[randNum]).style.backgroundColor = "tomato";
+						console.log(gameBanList);
+						break checkForBan;
+					}
 				}
-				document.getElementById("debug-button-" + gameList[randNum]).innerHTML = "BANNED";
-				document.getElementById("debug-button-" + gameList[randNum]).style.backgroundColor = "tomato";
-				console.log(gameBanList);
-				break checkForBan;
+				setGameInfo();
 			}
 		}
-		
-		slotImages[0].src = "../img/logos/" + gameList[randNum] + "_logo.png";
-		if (randNum + 1 === gameList.length) {
-			slotImages[1].src = "../img/logos/" + gameList[0] + "_logo.png";
-		} else {
-			slotImages[1].src = "../img/logos/" + gameList[randNum + 1] + "_logo.png";
+
+		function setGameInfo() {
+			slotImages[0].src = "../img/logos/" + gameList[randNum] + "_logo.png";
+			if (randNum + 1 === gameList.length) {
+				slotImages[1].src = "../img/logos/" + gameList[0] + "_logo.png";
+			} else {
+				slotImages[1].src = "../img/logos/" + gameList[randNum + 1] + "_logo.png";
+			}
+			
+			currentGame = gameList[randNum];
+			randNumStored = randNum;
+			updateInfo("game", currentGame);
+			playLights(true);
+
+			// selectSoundCall(currentGame);
+			
+			setTimeout(toggleButtons, 1000);
 		}
-		
-		currentGame = gameList[randNum];
-		randNumStored = randNum;
-		updateInfo("game", currentGame);
-		playLights(true);
-		
-		setTimeout(toggleButtons, 1000);
 	}
 	
 	function chooseCondition() {
@@ -183,31 +235,50 @@ function initiateRoll() {
 		slotContainerCondition.classList.remove("sloticon-spinin");
 		void slotContainerCondition.offsetWidth;
 		slotContainerCondition.classList.add("sloticon-spinout");
-		
-		if (Math.floor(Math.random() * 100) < 10) {
-			randNum = 0;
+
+		if (exOptions.conditionOverride > -1 && exOptions.conditionOverride < 6) {
+				randNum = exOptions.conditionOverride;
+				slotTexts[0].innerHTML = conditionList[currentGame][randNum];
+				updateInfo("condition", currentGame + "-" + randNum);
 		} else {
-			randNum = Math.floor(Math.random() * (conditionList[currentGame].length - 1) + 1);
+			if (Math.floor(Math.random() * 100) < exOptions.ccChance) {
+				// Commentator Clash condition
+				console.log("Commentator Clash active");
+				slotTexts[0].innerHTML = "Commentator Clash";
+				document.getElementById("condition-name").innerHTML = "Commentator Clash";
+				document.getElementById("condition-description").innerHTML = "Players choose a commentator to play in their place, who will then compete in their place in the game selected. The player wins if their selected commentator wins the set. Rules remain otherwise unchanged.";
+			} else {
+				if (Math.floor(Math.random() * 100) < exOptions.noConChance) {
+					randNum = 0;
+				} else {
+					randNum = Math.floor(Math.random() * (conditionList[currentGame].length - 1) + 1);
+				}
+				
+				slotTexts[0].innerHTML = conditionList[currentGame][randNum];
+				updateInfo("condition", currentGame + "-" + randNum);
+			}
 		}
-		
-		slotTexts[0].innerHTML = conditionList[currentGame][randNum];
-		
-		updateInfo("condition", currentGame + "-" + randNum);
 		playLights(true);
 		
 		setTimeout(toggleButtons, 1000);
-	}
-	
-	function toggleButtons() {
-		const rollButton = document.getElementById("main-button");
-		const rerollButton = document.getElementById("reroll-button");
-		if (rollButton.classList.contains("roll-button-null")) {
-			rollButton.classList.remove("roll-button-null");
-			rerollButton.classList.remove("roll-button-null");
-		} else {
-			rollButton.classList.add("roll-button-null");
-			rerollButton.classList.add("roll-button-null");
+
+		if (exOptions.ogoCooldown > 0) {
+			exOptions.ogoCooldown--;
+			handleDebug("cooldown");
+			// console.log("OGO cooldown now " + exOptions.ogoCooldown);
 		}
+	}
+}
+	
+function toggleButtons() {
+	const rollButton = document.getElementById("main-button");
+	const rerollButton = document.getElementById("reroll-button");
+	if (rollButton.classList.contains("roll-button-null")) {
+		rollButton.classList.remove("roll-button-null");
+		rerollButton.classList.remove("roll-button-null");
+	} else {
+		rollButton.classList.add("roll-button-null");
+		rerollButton.classList.add("roll-button-null");
 	}
 }
 
@@ -234,14 +305,61 @@ function toggleGame(gameName) {
 	console.log(gameBanList);
 }
 
+function selectSoundCall(gameSel) {
+	var gameCall = new Audio();
+	gameCall.volume = 0.2;
+	switch (gameSel) {
+		case "BBTAG":
+			gameCall.src = "SP_audio/sfx/BBTAG_Ragna_call1.wav";
+			gameCall.currentTime = 0;
+			gameCall.play();
+			gameCall.onended = function() {
+				switch (Math.floor(Math.random() * 100)) {
+					case 0:
+						gameCall.src = "SP_audio/sfx/BBTAG_Ragna_call2.wav";
+						break;
+					case 1:
+						gameCall.src = "SP_audio/sfx/BBTAG_Yu_call2.wav";
+						break;
+					case 2:
+						gameCall.src = "SP_audio/sfx/BBTAG_Hyde_call2.wav";
+						break;
+					case 3:
+						gameCall.src = "SP_audio/sfx/BBTAG_Ruby_call2.wav";
+						break;
+					case 4:
+						gameCall.src = "SP_audio/sfx/BBTAG_Heart_call2.wav";
+						break;
+					case 5:
+						gameCall.src = "SP_audio/sfx/BBTAG_Akatsuki_call2.wav";
+						break;
+					case 6:
+						gameCall.src = "SP_audio/sfx/BBTAG_Yumi_call2.wav";
+						break;
+				}
+				gameCall.currentTime = 0;
+				gameCall.play();
+			}
+			break;
+		default:
+			try {
+				gameCall.src = "SP_audio/sfx/" + gameSel + "_call.ogg";
+				gameCall.currentTime = 0;
+				gameCall.play();
+			} catch (error) {
+				console.log("No title call found");
+			}
+			break;
+	}
+}
+
 document.addEventListener("keydown", function(e) {
 	if (e.key === "F1") {
-		var debugArea = document.getElementById("debug-area");
-		console.log(debugArea.style.transform)
-		if (debugArea.style.transform === "translate(calc(-600px - 2vh), 0px)") {
-			debugArea.style.transform = "translate(0px, 0px)";
+		console.log(document.getElementById("debug-area").style.transform)
+		if (document.getElementById("debug-area").style.transform === "translate(calc(-600px - 2vh), 0px)") {
+			document.getElementById("debug-area").style.transform = "translate(0px, 0px)";
 		} else {
-			debugArea.style.transform = "translate(calc(-600px - 2vh), 0px)";
+			document.getElementById("debug-area").style.transform = "translate(calc(-600px - 2vh), 0px)";
 		}
 	}
 });
@@ -304,3 +422,35 @@ function playLights(endRoll = false) {
 		}, 200);
 	}
 }
+
+function handleDebug(debugPrompt) {
+	var debugArea = document.getElementById("debug-area");
+	var debugGameToggle = debugArea.children[0];
+	var debugDataInfo = debugArea.children[1];
+	switch (debugPrompt) {
+		case "setup":
+			var gameCount = 0;
+			var debugElement;
+			gameList.forEach(element => {
+				debugElement = `
+					<div class="debug-game">
+						<h5 class="debug-title">${element}</h5>
+						<button id="debug-button-${element}" class="debug-button" onclick="toggleGame('${element}')" style="background-color: lightgreen">ALLOWED</button>
+					</div>
+				`;
+				debugGameToggle.innerHTML += debugElement;
+				gameCount++;
+			});
+			debugElement = `
+				<div class="debug-info">Total Game Count: ${gameCount}</div>
+				<div id="debug-info-ogocooldown" class="debug-info">OGO Cooldown: ${exOptions.ogoCooldown}</div>
+			`;
+			debugDataInfo.innerHTML = debugElement;
+			break;
+		case "cooldown":
+			document.getElementById("debug-info-ogocooldown").innerHTML = `OGO Cooldown: ${exOptions.ogoCooldown}`;
+			break;
+	}
+}
+
+handleDebug("setup");

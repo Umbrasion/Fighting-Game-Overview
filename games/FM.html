@@ -11,56 +11,82 @@
 		<script src="../scripts/jquery-3.7.1.min.js"></script>
 	</head>
 	<body>
+		<img class="game-logo" src="img/logos/FM_logo.png">
 		<div id="characterselect">
-			<div class="selectbox-container">
-				<a href="Octodad.html">
-					<div class="selectbox selectbox-character">
-						<img src="img/characterSelect/fm/Octodad_icon.webp">
+			<div class="preview-area">
+				<div class="portrait-area">
+					<div style="display: flex; flex-direction: column; width: 0px; height: 0px; margin: auto; justify-content: left; align-items: center">
+						<div style="width: fit-content">
+							<img id="info-portrait" src="">
+						</div>
 					</div>
-				</a>
-				<a href="CommanderVideo.html">
-					<div class="selectbox selectbox-character">
-						<img src="img/characterSelect/fm/CommanderVideo_icon.webp">
-					</div>
-				</a>
-				<a href="">
-					<div class="selectbox selectbox-character">
-						<img src="img/characterSelect/fm/Hat_Kid_icon.webp">
-					</div>
-				</a>
-				<a href="Welltaro.html">
-					<div class="selectbox selectbox-character">
-						<img src="img/characterSelect/fm/Welltaro_icon.webp">
-					</div>
-				</a>
-				<a href="The_Watcher.html">
-					<div class="selectbox selectbox-character">
-						<img src="img/characterSelect/fm/The_Watcher_icon.webp">
-					</div>
-				</a>
-				<a href="Random_Character.html" class="size-small">
-					<div class="selectbox selectbox-character size-small">
-						<img src="img/characterSelect/fm/Random_icon.webp">
-					</div>
-				</a>
-				<a href="Orcane.html">
-					<div class="selectbox selectbox-character">
-						<img src="img/characterSelect/fm/Orcane_icon.webp">
-					</div>
-				</a>
-				<a href="Ultra_Fishbunjin_3000.html">
-					<div class="selectbox selectbox-character">
-						<img src="img/characterSelect/fm/Ultra_Fishbunjin_3000_icon.webp">
-					</div>
-				</a>
-				<div class="selectbox selectbox-character size-small">
-					<img src="img/characterSelect/fm/Workshop_icon.webp">
+					<h2 id="info-name" class="info-title" style="height: 1.2em"></h2>
 				</div>
+				<div class="css-container">
+					<a class="css-character" onclick="runDisplay('Octodad')">
+						<img src="img/characterSelect/fm/Octodad_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('CommanderVideo')">
+						<img src="img/characterSelect/fm/CommanderVideo_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Hat_Kid')">
+						<img src="img/characterSelect/fm/Hat_Kid_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Impostor')">
+						<img src="img/characterSelect/fm/Impostor_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Welltaro')">
+						<img src="img/characterSelect/fm/Welltaro_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('The_Watcher')">
+						<img src="img/characterSelect/fm/The_Watcher_icon.png">
+					</a>
+					<a class="css-character size-small" onclick="runDisplay('Random')">
+						<img src="img/characterSelect/fm/Random_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Orcane')">
+						<img src="img/characterSelect/fm/Orcane_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Guy_Spelunky')">
+						<img src="img/characterSelect/fm/Guy_Spelunky_icon.png">
+					</a>
+					<img src="img/characterSelect/fm/Locked_icon.png">
+					<a class="css-character" onclick="runDisplay('Ultra_Fishbunjin_3000')">
+						<img src="img/characterSelect/fm/Ultra_Fishbunjin_3000_icon.png">
+					</a>
+					<img class="size-small" src="img/characterSelect/fm/Workshop_icon.png">
+				</div>
+				<div class="p2-area"></div>
 			</div>
+		</div>
+		<div class="description-bg">
+			<div class="description-area"></div>
 		</div>
 		<div class="preload-container">
 			<audio muted=true src="audio/music/FM - Fraymakers Theme intro.ogg"></audio>
 			<audio muted=true src="audio/music/FM - Fraymakers Theme loop.ogg"></audio>
+			<!---->
+			<img src="img/portraits/fm/Octodad.webp">
+			<img src="img/portraits/fm/CommanderVideo.webp">
+			<img src="img/portraits/fm/Hat_Kid.webp">
+			<img src="img/portraits/fm/Impostor.webp">
+			<img src="img/portraits/fm/Welltaro.webp">
+			<img src="img/portraits/fm/The_Watcher.webp">
+			<img src="img/portraits/fm/Orcane.webp">
+			<img src="img/portraits/fm/Guy_Spelunky.webp">
+			<img src="img/portraits/fm/Ultra_Fishbunjin_3000.webp">
+			<img src="img/portraits/fm/Random.webp">
+			<!---->
+			<img src="img/characterSelect/fm/Octodad_icon.png">
+			<img src="img/characterSelect/fm/CommanderVideo_icon.png">
+			<img src="img/characterSelect/fm/Hat_Kid_icon.png">
+			<img src="img/characterSelect/fm/Impostor_icon.png">
+			<img src="img/characterSelect/fm/Welltaro_icon.png">
+			<img src="img/characterSelect/fm/The_Watcher_icon.png">
+			<img src="img/characterSelect/fm/Orcane_icon.png">
+			<img src="img/characterSelect/fm/Guy_Spelunky_icon.png">
+			<img src="img/characterSelect/fm/Locked_icon.png">
+			<img src="img/characterSelect/fm/Ultra_Fishbunjin_3000_icon.png">
 		</div>
 	</body>
 </html>

@@ -4,6 +4,7 @@
     background-size: auto 100vh;
     background-repeat: no-repeat;
     background-position: center;
+    overflow-y: hidden;
 }
 
 #characterselect {
@@ -36,11 +37,11 @@
     text-align: left;
 }
 
-b, th, h2, h3 {
+h2 {
     filter: drop-shadow(0px 0px 1px #7E00FF) drop-shadow(0px 0px 1px #7E00FF) drop-shadow(0px 0px 1px #7E00FF) drop-shadow(0px 0px 1px #7E00FF);
 }
 
-.selectbox-container {
+.css-container {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
@@ -53,22 +54,12 @@ b, th, h2, h3 {
     transform: rotate3d(0, 1, 0, -90deg);
 }
 
-.selectbox-row {
+.css-row {
     gap: 12px;
 }
 
-.selectbox-character img {
+.css-character img {
     width: 68px;
-}
-
-.icon-onstart {
-    animation-name: icon-onstart;
-    animation-duration: 0.5s;
-    animation-iteration-count: 1;
-    animation-direction: linear;
-    animation-delay: 0s;
-    animation-timing-function: ease-out;
-    transform: rotate3d(0, 0, 0, 0);
 }
 
 #moonstyle-area {
@@ -88,6 +79,21 @@ b, th, h2, h3 {
 
 .moonstyle-image:hover {
     filter: brightness(1);
+}
+
+.description-area {
+    background-color: rgba(0,0,0,0.6);
+    box-shadow: 0 2px 0 white inset, 0 -2px 0 white inset, 0 5px 0 rgba(0,0,0,0.5), 0 -5px 0 rgba(0,0,0,0.5);
+}
+
+.icon-onstart {
+    animation-name: icon-onstart;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-direction: linear;
+    animation-delay: 0s;
+    animation-timing-function: ease-out;
+    transform: rotate3d(0, 0, 0, 0);
 }
 
 @keyframes icon-onstart {
@@ -183,7 +189,7 @@ b, th, h2, h3 {
     position: absolute;
     font-family: serif;
     font-size: 24px;
-    color: rgba(163,139,145,0.8);
+    color: rgba(163,139,145,0.85);
     width: 100vw;
     opacity: 0;
 

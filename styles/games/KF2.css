@@ -2,28 +2,28 @@
     padding: 0px 40px;
 }
 
-.selectbox-container {
+.css-container {
     width: 100%;
     overflow: clip;
 }
 
-div.selectbox-positioner {
+div.css-positioner {
     width: fit-content;
     height: fit-content;
     position: absolute;
 }
 
-.selectbox-character {
+.css-character {
     width: fit-content;
     height: fit-content;
 }
 
-.selectbox-portrait {
+.css-portrait {
     filter: grayscale(0.65) contrast(0.7) brightness(1.2) drop-shadow(0 0 2px rgb(36, 36, 36));
     width: 100%;
 }
 
-.selectbox-fullroster {
+.css-fullroster {
     width: 100%;
     margin: auto;
 }

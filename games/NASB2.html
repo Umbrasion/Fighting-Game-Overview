@@ -11,7 +11,178 @@
 		<script src="../scripts/jquery-3.7.1.min.js"></script>
 	</head>
 	<body>
+		<img class="game-logo" src="img/logos/NASB2_logo.png">
 		<div id="characterselect">
+			<div class="preview-area">
+				<div class="portrait-area">
+					<h2 id="info-name" class="info-title" style="height: 1.2em"></h2>
+					<div style="display: flex; flex-direction: column; width: 0px; height: 0px; margin: auto; justify-content: left; align-items: center">
+						<div style="width: fit-content">
+							<img id="info-portrait" src="">
+						</div>
+					</div>
+				</div>
+				<div class="css-container">
+					<a class="css-character" onclick="runDisplay('SpongeBob')">
+						<img src="img/characterSelect/nasb2/SpongeBob_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Patrick')">
+						<img src="img/characterSelect/nasb2/Patrick_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Squidward')">
+						<img src="img/characterSelect/nasb2/Squidward_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Mecha_Plankton')">
+						<img src="img/characterSelect/nasb2/Mecha_Plankton_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('El_Tigre')">
+						<img src="img/characterSelect/nasb2/El_Tigre_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Rocko')">
+						<img src="img/characterSelect/nasb2/Rocko_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Jimmy_Neutron')">
+						<img src="img/characterSelect/nasb2/Jimmy_Neutron_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Lucy_Loud')">
+						<img src="img/characterSelect/nasb2/Lucy_Loud_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Angry_Beavers')">
+						<img src="img/characterSelect/nasb2/Angry_Beavers_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Garfield')">
+						<img src="img/characterSelect/nasb2/Garfield_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Aang')">
+						<img src="img/characterSelect/nasb2/Aang_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Korra')">
+						<img src="img/characterSelect/nasb2/Korra_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Azula')">
+						<img src="img/characterSelect/nasb2/Azula_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Raphael')">
+						<img src="img/characterSelect/nasb2/Raphael_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Donatello')">
+						<img src="img/characterSelect/nasb2/Donatello_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('April')">
+						<img src="img/characterSelect/nasb2/April_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Danny_Phantom')">
+						<img src="img/characterSelect/nasb2/Danny_Phantom_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Ember')">
+						<img src="img/characterSelect/nasb2/Ember_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Grandma_Gertie')">
+						<img src="img/characterSelect/nasb2/Grandma_Gertie_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Gerald')">
+						<img src="img/characterSelect/nasb2/Gerald_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Nigel')">
+						<img src="img/characterSelect/nasb2/Nigel_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Zim')">
+						<img src="img/characterSelect/nasb2/Zim_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Jenny_Wakeman')">
+						<img src="img/characterSelect/nasb2/Jenny_Wakeman_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Reptar')">
+						<img src="img/characterSelect/nasb2/Reptar_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Ren_&_Stimpy')">
+						<img src="img/characterSelect/nasb2/Ren_&_Stimpy_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Mr._Krabs')">
+						<img src="img/characterSelect/nasb2/Mr._Krabs_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Zuko')">
+						<img src="img/characterSelect/nasb2/Zuko_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Iroh')">
+						<img src="img/characterSelect/nasb2/Iroh_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Rocksteady')">
+						<img src="img/characterSelect/nasb2/Rocksteady_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Random')">
+						<img src="img/characterSelect/nasb2/Random_icon.png">
+					</a>
+				</div>
+				<div class="p2-area"></div>
+			</div>
+		</div>
+		<div class="description-bg">
+			<div class="description-area"></div>
+		</div>
+		<div class="preload-container">
+			<img src="img/backgrounds/NASB2.png">
+			<!---->
+			<img src="img/portraits/nasb2/SpongeBob.png">
+			<img src="img/portraits/nasb2/Patrick.png">
+			<img src="img/portraits/nasb2/Squidward.png">
+			<img src="img/portraits/nasb2/Mecha_Plankton.png">
+			<img src="img/portraits/nasb2/El_Tigre.png">
+			<img src="img/portraits/nasb2/Rocko.png">
+			<img src="img/portraits/nasb2/Jimmy_Neutron.png">
+			<img src="img/portraits/nasb2/Lucy_Loud.png">
+			<img src="img/portraits/nasb2/Angry_Beavers.png">
+			<img src="img/portraits/nasb2/Garfield.png">
+			<img src="img/portraits/nasb2/Aang.png">
+			<img src="img/portraits/nasb2/Korra.png">
+			<img src="img/portraits/nasb2/Azula.png">
+			<img src="img/portraits/nasb2/Raphael.png">
+			<img src="img/portraits/nasb2/Donatello.png">
+			<img src="img/portraits/nasb2/April.png">
+			<img src="img/portraits/nasb2/Danny_Phantom.png">
+			<img src="img/portraits/nasb2/Ember.png">
+			<img src="img/portraits/nasb2/Grandma_Gertie.png">
+			<img src="img/portraits/nasb2/Gerald.png">
+			<img src="img/portraits/nasb2/Nigel.png">
+			<img src="img/portraits/nasb2/Zim.png">
+			<img src="img/portraits/nasb2/Jenny_Wakeman.png">
+			<img src="img/portraits/nasb2/Reptar.png">
+			<img src="img/portraits/nasb2/Ren_&_Stimpy.png">
+			<img src="img/portraits/nasb2/Mr._Krabs.png">
+			<img src="img/portraits/nasb2/Zuko.png">
+			<img src="img/portraits/nasb2/Iroh.png">
+			<img src="img/portraits/nasb2/Rocksteady.png">
+			<!---->
+			<img src="img/characterSelect/nasb2/SpongeBob_icon.png">
+			<img src="img/characterSelect/nasb2/Patrick_icon.png">
+			<img src="img/characterSelect/nasb2/Squidward_icon.png">
+			<img src="img/characterSelect/nasb2/Mecha_Plankton_icon.png">
+			<img src="img/characterSelect/nasb2/El_Tigre_icon.png">
+			<img src="img/characterSelect/nasb2/Rocko_icon.png">
+			<img src="img/characterSelect/nasb2/Jimmy_Neutron_icon.png">
+			<img src="img/characterSelect/nasb2/Lucy_Loud_icon.png">
+			<img src="img/characterSelect/nasb2/Angry_Beavers_icon.png">
+			<img src="img/characterSelect/nasb2/Garfield_icon.png">
+			<img src="img/characterSelect/nasb2/Aang_icon.png">
+			<img src="img/characterSelect/nasb2/Korra_icon.png">
+			<img src="img/characterSelect/nasb2/Azula_icon.png">
+			<img src="img/characterSelect/nasb2/Raphael_icon.png">
+			<img src="img/characterSelect/nasb2/Donatello_icon.png">
+			<img src="img/characterSelect/nasb2/April_icon.png">
+			<img src="img/characterSelect/nasb2/Danny_Phantom_icon.png">
+			<img src="img/characterSelect/nasb2/Ember_icon.png">
+			<img src="img/characterSelect/nasb2/Grandma_Gertie_icon.png">
+			<img src="img/characterSelect/nasb2/Gerald_icon.png">
+			<img src="img/characterSelect/nasb2/Nigel_icon.png">
+			<img src="img/characterSelect/nasb2/Zim_icon.png">
+			<img src="img/characterSelect/nasb2/Jenny_Wakeman_icon.png">
+			<img src="img/characterSelect/nasb2/Reptar_icon.png">
+			<img src="img/characterSelect/nasb2/Ren_&_Stimpy_icon.png">
+			<img src="img/characterSelect/nasb2/Mr._Krabs_icon.png">
+			<img src="img/characterSelect/nasb2/Zuko_icon.png">
+			<img src="img/characterSelect/nasb2/Iroh_icon.png">
+			<img src="img/characterSelect/nasb2/Rocksteady_icon.png">
+			<img src="img/characterSelect/nasb2/Random_icon.png">
 		</div>
 	</body>
 </html>

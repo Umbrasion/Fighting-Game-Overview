@@ -23,7 +23,7 @@ body {
     margin-right: 4vw;
 }
 
-.selectbox-container {
+.css-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -32,6 +32,6 @@ body {
     margin-top: 19vh;
 }
 
-.selectbox-character img {
+.css-character img {
     width: calc(58px * var(--icon-scale));
 }

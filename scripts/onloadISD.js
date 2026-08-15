@@ -13,15 +13,16 @@ const chrSel = [
 	document.getElementById("character-ayame"),
 	document.getElementById("character-coco"),
 	document.getElementById("character-botan"),
+	document.getElementById("character-bijou"),
 ];
 
 const pageMusic = new Audio("audio/music/ISD - Who Wants a Showdown loop.ogg");
 pageMusic.loop = true;
-pageMusic.volume = 0.1;
+pageMusic.volume = 0.09;
 pageMusic.preload = "auto";
 
 const pageMusicIntro = new Audio("audio/music/ISD - Who Wants a Showdown intro.ogg");
-pageMusicIntro.volume = 0.1;
+pageMusicIntro.volume = 0.09;
 
 pageMusic.addEventListener("canplay", playMusic);
 function playMusic() {
@@ -61,9 +62,8 @@ var interactionEnabled = true;
 // Display on hover
 
 function hoverDisplay(targetChar) {
+	var charFileName = targetChar.onclick.toString().split("'")[1];
 	if (interactionEnabled) {
-		var charFileName = targetChar.onclick.toString().split("'")[1];
-		
 		playCursor();
 
 		if (charFileName === "Ninomae_Inanis") {
@@ -105,7 +105,9 @@ document.getElementById("character-random").addEventListener("mouseover",
 var banterNum = 0;
 var prevBanterNum = 0;
 var announcer = new Audio();
+announcer.volume = 0.4;
 var banter = new Audio();
+banter.volume = 0.4;
 
 function runDisplay(characterName) {
 	if (interactionEnabled) {
@@ -132,8 +134,7 @@ function runDisplay(characterName) {
 		chrPrevImg.src = "img/portraits/isd/" + characterName + "_small.png";
 		chrName.src = "img/characterSelect/isd/logos/" + characterName + "_logo.png";
 			
-		announcer = new Audio("audio/sfx/isd/announcer/" + characterName + "_call.ogg");
-		announcer.volume = 0.3;
+		announcer.src = "audio/sfx/isd/announcer/" + characterName + "_call.ogg";
 		announcer.play();
 		if (!banter.paused) {
 			banter.pause();
@@ -153,7 +154,7 @@ function runDisplay(characterName) {
 					case "Nakiri_Ayame": case "Ninomae_Ina'nis":
 						banterNum = Math.floor(Math.random() * 4 + 1);
 						break;
-					case "Aki_Rosenthal":
+					case "Aki_Rosenthal": case "Koseki_Bijou":
 						banterNum = Math.floor(Math.random() * 5 + 1);
 						break;
 				}
@@ -164,8 +165,7 @@ function runDisplay(characterName) {
 					break reroll;
 				}
 			}
-			banter = new Audio("audio/sfx/isd/banter/" + characterName + "_" + banterNum + ".ogg");
-			banter.volume = 0.3;
+			banter.src = "audio/sfx/isd/banter/" + characterName + "_" + banterNum + ".ogg";
 			banter.currentTime = 0;
 			banter.play();
 		}
@@ -174,7 +174,8 @@ function runDisplay(characterName) {
 			case "Shirakami_Fubuki":
 				displayInfo = {
 					filename: characterName,
-					colors: 20,
+					nicknames: [""],
+					colors: 23,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -189,7 +190,8 @@ function runDisplay(characterName) {
 			case "Inugami_Korone":
 				displayInfo = {
 					filename: characterName,
-					colors: 20,
+					nicknames: [""],
+					colors: 23,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -204,7 +206,8 @@ function runDisplay(characterName) {
 			case "Hoshimachi_Suisei":
 				displayInfo = {
 					filename: characterName,
-					colors: 20,
+					nicknames: [""],
+					colors: 23,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -219,7 +222,8 @@ function runDisplay(characterName) {
 			case "Hakui_Koyori":
 				displayInfo = {
 					filename: characterName,
-					colors: 20,
+					nicknames: [""],
+					colors: 23,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -234,7 +238,8 @@ function runDisplay(characterName) {
 			case "Tokino_Sora":
 				displayInfo = {
 					filename: characterName,
-					colors: 20,
+					nicknames: [""],
+					colors: 23,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -249,7 +254,8 @@ function runDisplay(characterName) {
 			case "Kureiji_Ollie":
 				displayInfo = {
 					filename: characterName,
-					colors: 20,
+					nicknames: [""],
+					colors: 23,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -264,7 +270,8 @@ function runDisplay(characterName) {
 			case "Ninomae_Ina'nis":
 				displayInfo = {
 					filename: characterName,
-					colors: 20,
+					nicknames: [""],
+					colors: 23,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -279,7 +286,8 @@ function runDisplay(characterName) {
 			case "Aki_Rosenthal":
 				displayInfo = {
 					filename: characterName,
-					colors: 20,
+					nicknames: [""],
+					colors: 23,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -294,7 +302,8 @@ function runDisplay(characterName) {
 			case "Usada_Pekora":
 				displayInfo = {
 					filename: characterName,
-					colors: 20,
+					nicknames: [""],
+					colors: 23,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -309,7 +318,8 @@ function runDisplay(characterName) {
 			case "Nakiri_Ayame":
 				displayInfo = {
 					filename: characterName,
-					colors: 20,
+					nicknames: [""],
+					colors: 23,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -324,7 +334,8 @@ function runDisplay(characterName) {
 			case "Kiryu_Coco":
 				displayInfo = {
 					filename: characterName,
-					colors: 20,
+					nicknames: [""],
+					colors: 23,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -339,7 +350,24 @@ function runDisplay(characterName) {
 			case "Shishiro_Botan":
 				displayInfo = {
 					filename: characterName,
-					colors: 20,
+					nicknames: [""],
+					colors: 23,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Koseki_Bijou":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 23,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],

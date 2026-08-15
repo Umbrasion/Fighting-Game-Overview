@@ -32,9 +32,11 @@ pageMusic.play();
 const sfx = {
 	cursor: new Audio("audio/sfx/soku/039.wav"),
 	confirm: new Audio("audio/sfx/soku/040.wav"),
+	cancel: new Audio("audio/sfx/soku/041.wav"),
 }
 sfx.cursor.volume = 0.15;
 sfx.confirm.volume = 0.09;
+sfx.cancel.volume = 0.12;
 
 var interactionEnabled = true;
 

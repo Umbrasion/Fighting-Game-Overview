@@ -825,7 +825,7 @@ function runDisplay(characterName) {
 }
 
 function startupDisplay() {
-	var iconArray = Array.prototype.slice.call(document.getElementsByClassName("selectbox-character"));
+	var iconArray = Array.prototype.slice.call(document.getElementsByClassName("css-character"));
 	iconArray[iconArray.length - 1].classList.add("cssiconextra-onstart");
 	iconArray = iconArray.splice(0, iconArray.length - 1);
 	

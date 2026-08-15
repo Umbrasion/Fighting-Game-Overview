@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HoloHeaven | Fighting Game Overview</title>
+		<link rel="stylesheet" href="../styles/main.css">
+		<link rel="stylesheet" href="../styles/infoColors.css">
+		<link rel="stylesheet" href="../styles/games/HLHVN.css">
+		<script src="../scripts/common.js"></script>
+		<script src="../scripts/cssResize.js" defer></script>
+		<script src="../scripts/onloadHLHVN.js" defer></script>
+		<script src="../scripts/jquery-3.7.1.min.js"></script>
+	</head>
+	<body>
+		<img class="game-logo" src="img/logos/HLHVN_logo.png">
+		<img class="decor" src="img/characterSelect/hlhvn/LowCurtain.png" style="top: 0; right: -15vw; height: 100vh">
+		<img class="decor" src="img/characterSelect/hlhvn/LowCurtain.png" style="top: 0; left: -15vw; height: 100vh; transform: scale(-1, 1)">
+		<img class="decor" src="img/characterSelect/hlhvn/HighCurtain.png" style="top: -5vh; left: 0; width: 100vw">
+		<img class="decor" src="img/characterSelect/hlhvn/Wood.png" style="top: 4vh; left: 0; right: 0; padding-left: 20px; margin: auto">
+		<div id="characterselect">
+			<div class="preview-area">
+				<div class="portrait-area">
+					<div style="display: flex; flex-direction: column; width: 0px; height: 0px; margin: auto; justify-content: left; align-items: center">
+						<div style="position: relative; width: fit-content; margin-top: 8vh">
+							<img id="info-portrait" src="">
+							<img id="info-name" src="">
+						</div>
+					</div>
+				</div>
+				<div class="css-container">
+					<a id="character-ollie" onclick="runDisplay('Ollie')">
+						<div class="css-character">
+							<img src="img/characterSelect/hlhvn/Ollie_icon.png">
+						</div>
+					</a>
+					<a id="character-suisei" onclick="runDisplay('Suisei')">
+						<div class="css-character">
+							<img src="img/characterSelect/hlhvn/Suisei_icon.png">
+						</div>
+					</a>
+					<a id="character-kanata" onclick="runDisplay('Kanata')">
+						<div class="css-character">
+							<img src="img/characterSelect/hlhvn/Kanata_icon.png">
+						</div>
+					</a>
+					<a id="character-mio" onclick="runDisplay('Mio')">
+						<div class="css-character">
+							<img src="img/characterSelect/hlhvn/Mio_icon.png">
+						</div>
+					</a>
+					<a id="character-subaru" onclick="runDisplay('Subaru')">
+						<div class="css-character">
+							<img src="img/characterSelect/hlhvn/Subaru_icon.png">
+						</div>
+					</a>
+					<a id="character-oga" onclick="runDisplay('Oga')">
+						<div class="css-character">
+							<img src="img/characterSelect/hlhvn/Oga_icon.png">
+						</div>
+					</a>
+					<a id="character-random" onclick="runDisplay('Random')">
+						<div class="css-character">
+							<img src="img/characterSelect/hlhvn/Random_icon.png">
+						</div>
+					</a>
+				</div>
+				<div class="p2-area"></div>
+			</div>
+		</div>
+		<div class="description-bg">
+			<div class="description-area"></div>
+		</div>
+		<div class="preload-container">
+			<img src="img/backgrounds/HLHVN.png">
+		</div>
+	</body>
+</html>

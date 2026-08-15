@@ -135,7 +135,7 @@ body {
     background: linear-gradient(to right, #D9DAD9, #A4A4A4);
 }
 
-.selectbox-container {
+.css-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -148,11 +148,11 @@ body {
     pointer-events: none;
 }
 
-.selectbox-container a {
+.css-container a {
     opacity: 0;
 }
 
-.selectbox-character img {
+.css-character img {
     width: 72px;
     filter: drop-shadow(0px 6px 7px rgba(0,0,0,1));
 }

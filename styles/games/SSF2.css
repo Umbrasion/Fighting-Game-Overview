@@ -2,7 +2,7 @@
     display: block;
 }
 
-.selectbox-container {
+.css-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -11,10 +11,10 @@
     /*border: 3px solid black;*/
 }
 
-.selectbox-character, .selectbox-character img {
+.css-character, .css-character img {
     /*height: 63px;*/
 }
 
-.selectbox-character img {
+.css-character img {
     display: block;
 }

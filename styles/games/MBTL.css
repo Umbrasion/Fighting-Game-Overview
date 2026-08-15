@@ -33,7 +33,7 @@ body {
     text-align: right;
 }
 
-.selectbox-container {
+.css-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -53,22 +53,37 @@ h1 {
     margin: 0px;
 }
 
-.selectbox-column {
+.css-column {
     width: 84px;
     height: fit-content;
 }
 
-.selectbox-column a {
+.css-column a {
     opacity: 0;
 }
 
-.selectbox-character, .selectbox-character img, .selectbox-spacer {
+.css-character, .css-character img, .css-spacer {
     width: 84px;
     height: 213px;
 }
 
-a.selectbox-spacer  {
+a.css-spacer  {
     margin-bottom: 10px;
+}
+
+.description-area {
+    background: linear-gradient(to right, rgba(14, 25, 44, 0.9), rgba(2, 34, 80, 0.9), rgba(14, 25, 44, 0.9));
+    border: solid transparent 2px;
+    border-left: solid transparent 0px;
+    border-right: solid transparent 0px;
+    border-image: linear-gradient(to right, #A2A2A2, #FFF, #A2A2A2) 2;
+}
+
+.description-area .info-title {
+    position: absolute;
+    top: -1.3em;
+    left: 0px;
+    width: 100%;
 }
 
 .cssicon-onstart {

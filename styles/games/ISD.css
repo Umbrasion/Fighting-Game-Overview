@@ -64,16 +64,16 @@ body {
     transform: scale(1.06);
 }
 
-.selectbox-container  {
+.css-container  {
     padding: 0px 24px;
 }
 
-.selectbox-container, .selectbox-fullroster  {
+.css-container, .css-fullroster  {
     width: 443px;
-    height: 518px;
+    height: 594px;
 }
 
-.selectbox-positioner {
+.css-positioner {
     pointer-events: none;
     position: relative;
     width: 0px;
@@ -81,7 +81,7 @@ body {
     transition: z-index 0s;
 }
 
-.selectbox-character img {
+.css-character img {
     width: 162px;
     height: 162px;
     transform-origin: center;

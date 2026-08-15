@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Phantom Breaker: Omnia | Fighting Game Overview</title>
+		<link rel="stylesheet" href="../styles/main.css">
+		<link rel="stylesheet" href="../styles/infoColors.css">
+		<link rel="stylesheet" href="../styles/games/T8.css">
+		<script src="../scripts/common.js"></script>
+		<script src="../scripts/cssResize.js" defer></script>
+		<script src="../scripts/onloadT8.js" defer></script>
+		<script src="../scripts/jquery-3.7.1.min.js"></script>
+	</head>
+	<body>
+		<img class="game-logo" src="img/logos/PBO_logo.png">
+		<div id="characterselect">
+			<div class="preview-area">
+				<div class="portrait-area">
+					<div style="display: flex; flex-direction: column; width: 0px; height: 0px; margin: auto; justify-content: left; align-items: center">
+						<div style="width: fit-content">
+							<img id="info-portrait" src="">
+						</div>
+					</div>
+					<h2 id="info-name" class="info-title" style="height: 1.2em"></h2>
+				</div>
+				<div class="css-container">
+					<div id="icon-rimi" class="css-character" style="left: 131px; top: 0px">
+						<img src="img/characterSelect/pbo/Rimi_icon.png">
+					</div>
+					<div id="icon-itsuki" class="css-character" style="left: 266px; top: 21px">
+						<img src="img/characterSelect/pbo/Itsuki_icon.png">
+					</div>
+					<div id="icon-waka" class="css-character" style="left: 397px; top: 37px">
+						<img src="img/characterSelect/pbo/Waka_icon.png">
+					</div>
+					<div id="icon-mikoto" class="css-character" style="left: 534px; top: 49px">
+						<img src="img/characterSelect/pbo/Mikoto_icon.png">
+					</div>
+					<div id="icon-maestra" class="css-character" style="left: 667px; top: 55px">
+						<img src="img/characterSelect/pbo/Maestra_icon.png">
+					</div>
+					<div id="icon-artifactor" class="css-character" style="left: 804px; top: 55px">
+						<img src="img/characterSelect/pbo/Artifactor_icon.png">
+					</div>
+					<div id="icon-m" class="css-character" style="left: 935px; top: 49px">
+						<img src="img/characterSelect/pbo/M_icon.png">
+					</div>
+					<div id="icon-infinity" class="css-character" style="left: 1063px; top: 37px">
+						<img src="img/characterSelect/pbo/Infinity_icon.png">
+					</div>
+					<div id="icon-cocoa" class="css-character" style="left: 1188px; top: 21px">
+						<img src="img/characterSelect/pbo/Cocoa_icon.png">
+					</div>
+					<div id="icon-kurisu" class="css-character" style="left: 1315px; top: 0px">
+						<img src="img/characterSelect/pbo/Kurisu_icon.png">
+					</div>
+					<div id="icon-l" class="css-character" style="left: 0px; top: 181px">
+						<img src="img/characterSelect/pbo/L_icon.png">
+					</div>
+					<div id="icon-tokiya" class="css-character" style="left: 130px; top: 201px">
+						<img src="img/characterSelect/pbo/Tokiya_icon.png">
+					</div>
+					<div id="icon-ria" class="css-character" style="left: 262px; top: 221px">
+						<img src="img/characterSelect/pbo/Ria_icon.png">
+					</div>
+					<div id="icon-fin" class="css-character" style="left: 393px; top: 235px">
+						<img src="img/characterSelect/pbo/Fin_icon.png">
+					</div>
+					<div id="icon-ende" class="css-character" style="left: 528px; top: 248px">
+						<img src="img/characterSelect/pbo/Ende_icon.png">
+					</div>
+					<div id="icon-sophia" class="css-character" style="left: 664px; top: 250px">
+						<img src="img/characterSelect/pbo/Sophia_icon.png">
+					</div>
+					<div id="icon-shizuka" class="css-character" style="left: 805px; top: 250px">
+						<img src="img/characterSelect/pbo/Shizuka_icon.png">
+					</div>
+					<div id="icon-ringaito" class="css-character" style="left: 936px; top: 248px">
+						<img src="img/characterSelect/pbo/Rin_&_Gaito_icon.png">
+					</div>
+					<div id="icon-yuzuha" class="css-character" style="left: 1065px; top: 235px">
+						<img src="img/characterSelect/pbo/Yuzuha_icon.png">
+					</div>
+					<div id="icon-mei" class="css-character" style="left: 1190px; top: 221px">
+						<img src="img/characterSelect/pbo/Mei_icon.png">
+					</div>
+					<div id="icon-ren" class="css-character" style="left: 1317px; top: 201px">
+						<img src="img/characterSelect/pbo/Ren_icon.png">
+					</div>
+					<div id="icon-shiromikoto" class="css-character" style="left: 1443px; top: 183px">
+						<img src="img/characterSelect/pbo/Shiro-Mikoto_icon.png">
+					</div>
+					<img class="css-fullroster" src="img/characterSelect/pbo/Full_Roster.webp" usemap="#mapselect">
+					<map name="mapselect">
+						<area id="character-rimi" onclick="runDisplay('Rimi')" shape="poly" coords="210,0, 264,10, 284,54, 256,155, 212,188, 153,178, 131,133, 165,32">
+						<area id="character-itsuki" onclick="runDisplay('Itsuki')" shape="poly" coords="335,21, 390,29, 412,71, 391,173, 350,208, 290,200, 266,156, 293,55">
+						<area id="character-waka" onclick="runDisplay('Waka')" shape="poly" coords="457,37, 512,43, 537,84, 522,188, 484,223, 424,217, 397,174, 417,73">
+						<area id="character-mikoto" onclick="runDisplay('Mikoto')" shape="poly" coords="585,49, 639,52, 667,93, 660,196, 623,234, 564,231, 534,189, 548,85">
+						<area id="character-maestra" onclick="runDisplay('Maestra')" shape="poly" coords="708,55, 763,56, 794,95, 794,199, 760,239, 700,238, 667,197, 674,93">
+						<area id="character-artifactor" onclick="runDisplay('Artifactor')" shape="poly" coords="835,56, 890,55, 924,93, 931,197, 898,238, 839,239, 805,201, 804,95">
+						<area id="character-m" onclick="runDisplay('M')" shape="poly" coords="963,52, 1017,49, 1054,85, 1068,189, 1038,231, 979,234, 943,197, 935,93">
+						<area id="character-infinity" onclick="runDisplay('Infinity')" shape="poly" coords="1089,42, 1143,37, 1182,72, 1203,175, 1176,218, 1117,224, 1077,187, 1063,84">
+						<area id="character-cocoa" onclick="runDisplay('Cocoa')" shape="poly" coords="1210,29, 1265,21, 1307,54, 1335,156, 1310,200, 1251,208, 1209,173, 1188,71">
+						<area id="character-kurisu" onclick="runDisplay('Kurisu')" shape="poly" coords="1335,10, 1390,0, 1434,32, 1468,133, 1446,178, 1387,188, 1344,156, 1315,53">
+						<area id="character-l" onclick="runDisplay('L')" shape="poly" coords="85,181, 139,191, 157,234, 123,337, 78,369, 20,359, 0,313, 39,213">
+						<area id="character-tokiya" onclick="runDisplay('Tokiya')" shape="poly" coords="206,201, 261,209, 281,252, 253,355, 210,389, 152,380, 130,336, 163,234">
+						<area id="character-ria" onclick="runDisplay('Ria')" shape="poly" coords="331,221, 386,228, 408,270, 386,374, 345,409, 286,402, 262,359, 289,256">
+						<area id="character-fin" onclick="runDisplay('Fin')" shape="poly" coords="453,235, 508,240, 533,282, 517,386, 479,422, 420,417, 393,374, 414,271">
+						<area id="character-ende" onclick="runDisplay('Ende')" shape="poly" coords="580,248, 636,252, 662,292, 652,397, 616,434, 557,430, 528,389, 543,285">
+						<area id="character-sophia" onclick="runDisplay('Sophia')" shape="poly" coords="708,250, 763,252, 792,292, 788,397, 754,435, 695,433, 664,393, 673,288">
+						<area id="character-shizuka" onclick="runDisplay('Shizuka')" shape="poly" coords="834,252, 889,250, 924,288, 933,392, 902,433, 843,435, 809,397, 805,292">
+						<area id="character-ringaito" onclick="runDisplay('Rin_&_Gaito')" shape="poly" coords="964,251, 1018,248, 1055,285, 1070,389, 1042,430, 982,434, 946,397, 936,292">
+						<area id="character-yuzuha" onclick="runDisplay('Yuzuha')" shape="poly" coords="1090,240, 1145,235, 1184,271, 1205,374, 1178,417, 1120,422, 1081,386, 1065,281">
+						<area id="character-mei" onclick="runDisplay('Mei')" shape="poly" coords="1212,228, 1268,221, 1309,255, 1336,359, 1313,401, 1253,409, 1212,374, 1190,270">
+						<area id="character-ren" onclick="runDisplay('Ren')" shape="poly" coords="1338,209, 1392,201, 1435,234, 1468,336, 1446,380, 1388,389, 1345,355, 1317,252">
+						<area id="character-shiromikoto" onclick="runDisplay('Shiro-Mikoto')" shape="poly" coords="1461,193, 1516,183, 1561,215, 1600,316, 1581,360, 1522,371, 1477,339, 1443,236">
+					</map>
+				</div>
+				<div class="p2-area"></div>
+			</div>
+		</div>
+		<div class="description-bg">
+			<div class="description-area"></div>
+		</div>
+		<div class="preload-container">
+			<img src="img/portraits/pbo/Rimi.png">
+			<img src="img/portraits/pbo/Itsuki.png">
+			<img src="img/portraits/pbo/Waka.png">
+			<img src="img/portraits/pbo/Mikoto.png">
+			<img src="img/portraits/pbo/Maestra.png">
+			<img src="img/portraits/pbo/Artifactor.png">
+			<img src="img/portraits/pbo/M.png">
+			<img src="img/portraits/pbo/Infinity.png">
+			<img src="img/portraits/pbo/Cocoa.png">
+			<img src="img/portraits/pbo/Kurisu.png">
+			<img src="img/portraits/pbo/L.png">
+			<img src="img/portraits/pbo/Tokiya.png">
+			<img src="img/portraits/pbo/Ria.png">
+			<img src="img/portraits/pbo/Fin.png">
+			<img src="img/portraits/pbo/Ende.png">
+			<img src="img/portraits/pbo/Sophia.png">
+			<img src="img/portraits/pbo/Shizuka.png">
+			<img src="img/portraits/pbo/Rin_&_Gaito.png">
+			<img src="img/portraits/pbo/Yuzuha.png">
+			<img src="img/portraits/pbo/Mei.png">
+			<img src="img/portraits/pbo/Ren.png">
+			<img src="img/portraits/pbo/Shiro-Mikoto.png">
+			<!---->
+			<img src="img/characterSelect/pbo/Rimi_icon.png">
+			<img src="img/characterSelect/pbo/Itsuki_icon.png">
+			<img src="img/characterSelect/pbo/Waka_icon.png">
+			<img src="img/characterSelect/pbo/Mikoto_icon.png">
+			<img src="img/characterSelect/pbo/Maestra_icon.png">
+			<img src="img/characterSelect/pbo/Artifactor_icon.png">
+			<img src="img/characterSelect/pbo/M_icon.png">
+			<img src="img/characterSelect/pbo/Infinity_icon.png">
+			<img src="img/characterSelect/pbo/Cocoa_icon.png">
+			<img src="img/characterSelect/pbo/Kurisu_icon.png">
+			<img src="img/characterSelect/pbo/L_icon.png">
+			<img src="img/characterSelect/pbo/Tokiya_icon.png">
+			<img src="img/characterSelect/pbo/Ria_icon.png">
+			<img src="img/characterSelect/pbo/Fin_icon.png">
+			<img src="img/characterSelect/pbo/Ende_icon.png">
+			<img src="img/characterSelect/pbo/Sophia_icon.png">
+			<img src="img/characterSelect/pbo/Shizuka_icon.png">
+			<img src="img/characterSelect/pbo/Rin_&_Gaito_icon.png">
+			<img src="img/characterSelect/pbo/Yuzuha_icon.png">
+			<img src="img/characterSelect/pbo/Mei_icon.png">
+			<img src="img/characterSelect/pbo/Ren_icon.png">
+			<img src="img/characterSelect/pbo/Shiro-Mikoto_icon.png">
+			<!---->
+			<audio muted=true src="audio/music/PBO - The Chosen Ones intro.ogg"></audio>
+			<audio muted=true src="audio/music/PBO - The Chosen Ones loop.ogg"></audio>
+			<audio muted=true src="audio/sfx/pbo/Cursor.ogg"></audio>
+			<audio muted=true src="audio/sfx/pbo/Confirm.ogg"></audio>
+			<audio muted=true src="audio/sfx/pbo/Cancel.ogg"></audio>
+			<!---->
+			<audio muted=true src="audio/sfx/pbo/announcer/CharSelect_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/pbo/announcer/Rimi_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/pbo/announcer/Itsuki_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/pbo/announcer/Waka_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/pbo/announcer/Mikoto_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/pbo/announcer/Maestra_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/pbo/announcer/Artifactor_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/pbo/announcer/M_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/pbo/announcer/Infinity_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/pbo/announcer/Cocoa_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/pbo/announcer/Kurisu_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/pbo/announcer/L_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/pbo/announcer/Tokiya_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/pbo/announcer/Ria_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/pbo/announcer/Fin_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/pbo/announcer/Ende_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/pbo/announcer/Sophia_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/pbo/announcer/Shizuka_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/pbo/announcer/Rin_&_Gaito_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/pbo/announcer/Yuzuha_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/pbo/announcer/Mei_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/pbo/announcer/Ren_call.ogg"></audio>
+			<audio muted=true src="audio/sfx/pbo/announcer/Shiro-Mikoto_call.ogg"></audio>
+		</div>
+	</body>
+</html>

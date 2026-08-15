@@ -24,10 +24,10 @@ const chrSel = [
 
 const pageMusic = new Audio("audio/music/AoCF - Blizzard of Scattering Possession Flowers loop.ogg");
 pageMusic.loop = true;
-pageMusic.volume = 0.1;
+pageMusic.volume = 0.08 * volumeModifier;
 
 const pageMusicIntro = new Audio("audio/music/AoCF - Blizzard of Scattering Possession Flowers intro.ogg");
-pageMusicIntro.volume = 0.1;
+pageMusicIntro.volume = 0.08 * volumeModifier;
 
 pageMusic.addEventListener("canplay", playMusic);
 function playMusic() {
@@ -144,7 +144,6 @@ function runDisplay(characterName) {
 		
 		if (characterName === "Random") {
 			characterName = chrSel[Math.floor(Math.random() * chrSel.length)].onclick.toString().split("'")[1];
-			console.log(characterName);
 		}
 
 		selectImage.src = "img/portraits/aocf/" + characterName + "_selected.png";
@@ -501,45 +500,45 @@ function runDisplay(characterName) {
 
 function setLocations() {
 	var chrCoords = [3,0, 124,0, 135,77, 39,77];
-	autoResize("selectbox-fullroster", chrSel[0], chrCoords);
+	autoResize("css-fullroster", chrSel[0], chrCoords);
 	chrCoords = [129,0, 248,0, 238,77, 140,77];
-	autoResize("selectbox-fullroster", document.getElementById("character-random"), chrCoords);
+	autoResize("css-fullroster", document.getElementById("character-random"), chrCoords);
 	chrCoords = [254,0, 375,0, 339,77, 244,77];
-	autoResize("selectbox-fullroster", chrSel[1], chrCoords);
+	autoResize("css-fullroster", chrSel[1], chrCoords);
 	chrCoords = [39,81, 135,81, 141,158, 54,158];
-	autoResize("selectbox-fullroster", chrSel[2], chrCoords);
+	autoResize("css-fullroster", chrSel[2], chrCoords);
 	chrCoords = [140,81, 238,81, 231,158, 147,158];
-	autoResize("selectbox-fullroster", chrSel[3], chrCoords);
+	autoResize("css-fullroster", chrSel[3], chrCoords);
 	chrCoords = [243,81, 339,81, 325,158, 237,158];
-	autoResize("selectbox-fullroster", chrSel[4], chrCoords);
+	autoResize("css-fullroster", chrSel[4], chrCoords);
 	chrCoords = [54,162, 142,162, 144,239, 60,239];
-	autoResize("selectbox-fullroster", chrSel[5], chrCoords);
+	autoResize("css-fullroster", chrSel[5], chrCoords);
 	chrCoords = [147,162, 231,162, 227,239, 150,239];
-	autoResize("selectbox-fullroster", chrSel[6], chrCoords);
+	autoResize("css-fullroster", chrSel[6], chrCoords);
 	chrCoords = [237,162, 324,162, 318,239, 234,239];
-	autoResize("selectbox-fullroster", chrSel[7], chrCoords);
+	autoResize("css-fullroster", chrSel[7], chrCoords);
 	chrCoords = [60,243, 144,243, 144,320, 60,320];
-	autoResize("selectbox-fullroster", chrSel[8], chrCoords);
+	autoResize("css-fullroster", chrSel[8], chrCoords);
 	chrCoords = [233,243, 318,243, 318,320, 233,320];
-	autoResize("selectbox-fullroster", chrSel[9], chrCoords);
+	autoResize("css-fullroster", chrSel[9], chrCoords);
 	chrCoords = [59,324, 144,324, 141,401, 54,401];
-	autoResize("selectbox-fullroster", chrSel[10], chrCoords);
+	autoResize("css-fullroster", chrSel[10], chrCoords);
 	chrCoords = [150,324, 229,324, 232,401, 146,401];
-	autoResize("selectbox-fullroster", chrSel[11], chrCoords);
+	autoResize("css-fullroster", chrSel[11], chrCoords);
 	chrCoords = [233,324, 319,324, 325,401, 237,401];
-	autoResize("selectbox-fullroster", chrSel[12], chrCoords);
+	autoResize("css-fullroster", chrSel[12], chrCoords);
 	chrCoords = [53,405, 140,405, 133,482, 38,482];
-	autoResize("selectbox-fullroster", chrSel[13], chrCoords);
+	autoResize("css-fullroster", chrSel[13], chrCoords);
 	chrCoords = [146,405, 232,405, 239,482, 139,482];
-	autoResize("selectbox-fullroster", chrSel[14], chrCoords);
+	autoResize("css-fullroster", chrSel[14], chrCoords);
 	chrCoords = [237,405, 325,405, 339,482, 245,482];
-	autoResize("selectbox-fullroster", chrSel[15], chrCoords);
+	autoResize("css-fullroster", chrSel[15], chrCoords);
 	chrCoords = [38,486, 133,486, 121,565, 0,565];
-	autoResize("selectbox-fullroster", chrSel[16], chrCoords);
+	autoResize("css-fullroster", chrSel[16], chrCoords);
 	chrCoords = [139,486, 239,486, 251,565, 127,565];
-	autoResize("selectbox-fullroster", chrSel[17], chrCoords);
+	autoResize("css-fullroster", chrSel[17], chrCoords);
 	chrCoords = [245,486, 340,486, 378,565, 257,565];
-	autoResize("selectbox-fullroster", chrSel[18], chrCoords);
+	autoResize("css-fullroster", chrSel[18], chrCoords);
 }
 
-document.getElementsByClassName("selectbox-fullroster")[0].onload = setInterval(setLocations, 1);
+document.getElementsByClassName("css-fullroster")[0].onload = setInterval(setLocations, 1);

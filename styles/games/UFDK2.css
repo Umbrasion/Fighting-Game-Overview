@@ -7,7 +7,11 @@ body {
     background-color: transparent;
 }
 
-.selectbox-character img {
+#characterselect {
+    padding: 28px;
+}
+
+.css-character img {
     display: block;
     width: 84px;
 }
@@ -16,7 +20,7 @@ body {
     display: block;
 }
 
-.selectbox-container {
+.css-container {
     position: relative;
     display: flex;
     flex-flow: row wrap;
@@ -29,4 +33,35 @@ body {
     position: absolute;
     width: 90px;
     pointer-events: none;
+}
+
+.description-bg .description-area {
+    background-image: linear-gradient(to bottom, #131317, #0012FC);
+    border: 4px solid white;
+}
+
+#returnbutton, .color-button, .description-exit {
+    background: transparent;
+    color: white;
+    border: 0px solid transparent;
+}
+
+.description-exit {
+    padding: 4px 4em;
+}
+
+.color-button {
+    padding: 4px 12px;
+}
+
+#returnbutton {
+    padding: 4px 8px 4px 5em;
+}
+
+.color-button:hover, .description-exit:hover {
+    background-color: rgba(255,0,0,0.9);
+}
+
+#returnbutton:hover {
+    background: linear-gradient(to left, rgba(255,0,0,0.9) 0%, rgba(255,0,0,0.9) 70%, rgba(255,0,0,0.1) 100%);
 }

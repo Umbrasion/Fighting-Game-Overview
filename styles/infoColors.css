@@ -1,9 +1,5 @@
 /* Archetypes */
 
-.info-table span {
-	font-weight: bold;
-}
-
 .archetype-allrounder {
 	background: linear-gradient(to right, #E57784, #94A4E0);
 	background-clip: text;

@@ -32,7 +32,7 @@ function autoResize(sizeSpace, chrMapArea, chrCoords, chrPortrait, iconPos) {
 	}
 }
 
-function flexResize(gapSize, container = document.getElementsByClassName("selectbox-container")[0], sampleImage = document.getElementById("sampleImage"), rowClass = "selectbox-row") {
+function flexResize(gapSize, container = document.getElementsByClassName("css-container")[0], sampleImage = document.getElementById("sampleImage"), rowClass = "css-row") {
 	var rowWidth = document.getElementsByClassName(rowClass)[0].offsetWidth;
 	var childCount = document.getElementsByClassName(rowClass)[0].childElementCount;
 	
@@ -42,8 +42,8 @@ function flexResize(gapSize, container = document.getElementsByClassName("select
 	gapSize[0] *= percentChange;
 	gapSize[1] *= percentChange;
 	
-	for (i = 0; i < document.getElementsByClassName("selectbox-image").length; i++) {
-		document.getElementsByClassName("selectbox-image")[i].style.width = imageWidth + "px";
+	for (i = 0; i < document.getElementsByClassName("css-image").length; i++) {
+		document.getElementsByClassName("css-image")[i].style.width = imageWidth + "px";
 	}
 	
 	var gapProportion = gapSize[0] / sampleImage.naturalWidth;

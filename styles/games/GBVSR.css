@@ -27,7 +27,7 @@ body {
     background-color: rgba(0,0,0,0.6);
 }
 
-.selectbox-container {
+.css-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -37,12 +37,12 @@ body {
     margin-top: 4vh;
 }
 
-.selectbox-character, .selectbox-character img, .selectbox-spacer {
+.css-character, .css-character img, .css-spacer {
     width: 64px;
     height: 184px;
 }
 
-.selectbox-character {
+.css-character {
     opacity: 0;
 }
 

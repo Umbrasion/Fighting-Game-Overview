@@ -1,6 +1,7 @@
 const chrPrevImg = document.getElementById("info-portrait");
 const chrName = document.getElementById("info-name");
 const chrSel = [
+	document.getElementById("character-roboky"),
 	document.getElementById("character-unika"),
 	document.getElementById("character-asuka"),
 	document.getElementById("character-bridget"),
@@ -89,14 +90,14 @@ var positionIDPrevious = 4;
 function positionCursor(positionID) {
 	var csCursor = document.getElementById("select-cursor");
 	csCursor.style.opacity = 1;
-	if (positionID < 11) {
-		csCursor.style.left = Math.floor(positionID % 11) * 100 + 89 + "px";
+	if (positionID < 12) {
+		csCursor.style.left = Math.floor(positionID % 12) * 100 - 11 + "px";
 		csCursor.style.top = "1px";
-	} else if (positionID > 21) {
-		csCursor.style.left = Math.floor(positionID % 11) * 100 - 11 + "px";
+	} else if (positionID > 22) {
+		csCursor.style.left = Math.floor(positionID % 11.5) * 100 - 11 + "px";
 		csCursor.style.top = "165px";
 	} else {
-		csCursor.style.left = Math.floor(positionID % 11) * 100 + 39 + "px";
+		csCursor.style.left = Math.floor(positionID % 11.5) * 100 + 39 + "px";
 		csCursor.style.top = "83px";
 	}
 	
@@ -172,6 +173,22 @@ function runDisplay(characterName) {
 		announcer.play();
 		
 		switch (characterName) {
+			case "Robo-Ky":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 16,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
 			case "Unika":
 				displayInfo = {
 					filename: characterName,

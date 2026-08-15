@@ -58,7 +58,7 @@ body {
     filter: drop-shadow(-60px 0px 0px rgba(0,0,0,0.5));
 }
 
-.selectbox-container {
+.css-container {
     position: absolute;
     left: 0px;
     right: 0px;
@@ -68,14 +68,14 @@ body {
     margin: auto;
 }
 
-.selectbox-row {
+.css-row {
     display: flex;
     flex-flow: row;
     justify-content: center;
     gap: 0px 8px;
 }
 
-.selectbox-character, .selectbox-character img, .selectbox-spacer {
+.css-character, .css-character img, .css-spacer {
     width: 92px;
     height: 82px;
 }

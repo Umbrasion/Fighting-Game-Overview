@@ -4,14 +4,319 @@
 		<title>Marvel vs. Capcom: Infinite &amp; Beyond | Fighting Game Overview</title>
 		<link rel="stylesheet" href="../styles/main.css">
 		<link rel="stylesheet" href="../styles/infoColors.css">
-		<link rel="stylesheet" href="../styles/games/MvCIB.css">
+		<link rel="stylesheet" href="../styles/games/onloadMvCIB.css">
 		<script src="../scripts/common.js"></script>
 		<script src="../scripts/cssResize.js" defer></script>
 		<script src="../scripts/onloadMvCIB.js" defer></script>
 		<script src="../scripts/jquery-3.7.1.min.js"></script>
 	</head>
 	<body>
+		<img class="game-logo" src="img/logos/MvCIB_logo.png">
 		<div id="characterselect">
+			<div class="preview-area">
+				<div class="portrait-area">
+					<div style="display: flex; flex-direction: column; width: 0px; height: 0px; margin: auto; justify-content: left; align-items: center">
+						<div style="width: fit-content">
+							<img id="info-portrait" src="">
+						</div>
+					</div>
+					<div>
+						<img id="info-name" class="info-title">
+					</div>
+				</div>
+				<div class="css-container">
+					<a class="css-character" onclick="runDisplay('Strider_Hiryu')">
+						<img src="img/characterSelect/mvcib/Strider_Hiryu_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Arthur')">
+						<img src="img/characterSelect/mvcib/Arthur_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Frank_West')">
+						<img src="img/characterSelect/mvcib/Frank_West_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Rocket_Raccoon')">
+						<img src="img/characterSelect/mvcib/Rocket_Raccoon_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Dr._Strange')">
+						<img src="img/characterSelect/mvcib/Dr._Strange_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Hawkeye')">
+						<img src="img/characterSelect/mvcib/Hawkeye_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Chris')">
+						<img src="img/characterSelect/mvcib/Chris_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('X')">
+						<img src="img/characterSelect/mvcib/X_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Zero')">
+						<img src="img/characterSelect/mvcib/Zero_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Ultron')">
+						<img src="img/characterSelect/mvcib/Ultron_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Gamora')">
+						<img src="img/characterSelect/mvcib/Gamora_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Ghost_Rider')">
+						<img src="img/characterSelect/mvcib/Ghost_Rider_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Nemesis')">
+						<img src="img/characterSelect/mvcib/Nemesis_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Dante')">
+						<img src="img/characterSelect/mvcib/Dante_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Ryu')">
+						<img src="img/characterSelect/mvcib/Ryu_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Iron_Man')">
+						<img src="img/characterSelect/mvcib/Iron_Man_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Thanos')">
+						<img src="img/characterSelect/mvcib/Thanos_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Nova')">
+						<img src="img/characterSelect/mvcib/Nova_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Spencer')">
+						<img src="img/characterSelect/mvcib/Spencer_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Chun-Li')">
+						<img src="img/characterSelect/mvcib/Chun-Li_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Morrigan')">
+						<img src="img/characterSelect/mvcib/Morrigan_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Hulk')">
+						<img src="img/characterSelect/mvcib/Hulk_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Captain_Marvel')">
+						<img src="img/characterSelect/mvcib/Captain_Marvel_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Thor')">
+						<img src="img/characterSelect/mvcib/Thor_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Jedah')">
+						<img src="img/characterSelect/mvcib/Jedah_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Firebrand')">
+						<img src="img/characterSelect/mvcib/Firebrand_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Mike_Haggar')">
+						<img src="img/characterSelect/mvcib/Mike_Haggar_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Captain_America')">
+						<img src="img/characterSelect/mvcib/Captain_America_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Spider-Man')">
+						<img src="img/characterSelect/mvcib/Spider-Man_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Dormammu')">
+						<img src="img/characterSelect/mvcib/Dormammu_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Sigma')">
+						<img src="img/characterSelect/mvcib/Sigma_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Monster_Hunter')">
+						<img src="img/characterSelect/mvcib/Monster_Hunter_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Winter_Soldier')">
+						<img src="img/characterSelect/mvcib/Winter_Soldier_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Black_Widow')">
+						<img src="img/characterSelect/mvcib/Black_Widow_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Venom')">
+						<img src="img/characterSelect/mvcib/Venom_icon.png">
+					</a>
+					<a class="css-character" onclick="runDisplay('Black_Panther')">
+						<img src="img/characterSelect/mvcib/Black_Panther_icon.png">
+					</a>
+				</div>
+				<div class="p2-area"></div>
+			</div>
+		</div>
+		<div class="description-bg">
+			<div class="description-area"></div>
+		</div>
+		<div class="preload-container">
+			<img src="img/backgrounds/MvCIB.png">
+			<!---->
+			<img src="img/portraits/mvcib/Strider_Hiryu.png">
+			<!---->
+			<img src="img/portraits/mvcib/Strider_Hiryu.png">
+			<img src="img/portraits/mvcib/Arthur.png">
+			<img src="img/portraits/mvcib/Frank_West.png">
+			<img src="img/portraits/mvcib/Rocket_Raccoon.png">
+			<img src="img/portraits/mvcib/Dr._Strange.png">
+			<img src="img/portraits/mvcib/Hawkeye.png">
+			<img src="img/portraits/mvcib/Chris.png">
+			<img src="img/portraits/mvcib/X.png">
+			<img src="img/portraits/mvcib/Zero.png">
+			<img src="img/portraits/mvcib/Ultron.png">
+			<img src="img/portraits/mvcib/Gamora.png">
+			<img src="img/portraits/mvcib/Ghost_Rider.png">
+			<img src="img/portraits/mvcib/Nemesis.png">
+			<img src="img/portraits/mvcib/Dante.png">
+			<img src="img/portraits/mvcib/Ryu.png">
+			<img src="img/portraits/mvcib/Iron_Man.png">
+			<img src="img/portraits/mvcib/Thanos.png">
+			<img src="img/portraits/mvcib/Nova.png">
+			<img src="img/portraits/mvcib/Spencer.png">
+			<img src="img/portraits/mvcib/Chun-Li.png">
+			<img src="img/portraits/mvcib/Morrigan.png">
+			<img src="img/portraits/mvcib/Hulk.png">
+			<img src="img/portraits/mvcib/Captain_Marvel.png">
+			<img src="img/portraits/mvcib/Thor.png">
+			<img src="img/portraits/mvcib/Jedah.png">
+			<img src="img/portraits/mvcib/Firebrand.png">
+			<img src="img/portraits/mvcib/Mike_Haggar.png">
+			<img src="img/portraits/mvcib/Captain_America.png">
+			<img src="img/portraits/mvcib/Spider-Man.png">
+			<img src="img/portraits/mvcib/Dormammu.png">
+			<img src="img/portraits/mvcib/Sigma.png">
+			<img src="img/portraits/mvcib/Monster_Hunter.png">
+			<img src="img/portraits/mvcib/Winter_Soldier.png">
+			<img src="img/portraits/mvcib/Black_Widow.png">
+			<img src="img/portraits/mvcib/Venom.png">
+			<img src="img/portraits/mvcib/Black_Panther.png">
+			<!---->
+			<img src="img/characterSelect/mvcib/Strider_Hiryu_icon.png">
+			<img src="img/characterSelect/mvcib/Arthur_icon.png">
+			<img src="img/characterSelect/mvcib/Frank_West_icon.png">
+			<img src="img/characterSelect/mvcib/Rocket_Raccoon_icon.png">
+			<img src="img/characterSelect/mvcib/Dr._Strange_icon.png">
+			<img src="img/characterSelect/mvcib/Hawkeye_icon.png">
+			<img src="img/characterSelect/mvcib/Chris_icon.png">
+			<img src="img/characterSelect/mvcib/X_icon.png">
+			<img src="img/characterSelect/mvcib/Zero_icon.png">
+			<img src="img/characterSelect/mvcib/Ultron_icon.png">
+			<img src="img/characterSelect/mvcib/Gamora_icon.png">
+			<img src="img/characterSelect/mvcib/Ghost_Rider_icon.png">
+			<img src="img/characterSelect/mvcib/Nemesis_icon.png">
+			<img src="img/characterSelect/mvcib/Dante_icon.png">
+			<img src="img/characterSelect/mvcib/Ryu_icon.png">
+			<img src="img/characterSelect/mvcib/Iron_Man_icon.png">
+			<img src="img/characterSelect/mvcib/Thanos_icon.png">
+			<img src="img/characterSelect/mvcib/Nova_icon.png">
+			<img src="img/characterSelect/mvcib/Spencer_icon.png">
+			<img src="img/characterSelect/mvcib/Chun-Li_icon.png">
+			<img src="img/characterSelect/mvcib/Morrigan_icon.png">
+			<img src="img/characterSelect/mvcib/Hulk_icon.png">
+			<img src="img/characterSelect/mvcib/Captain_Marvel_icon.png">
+			<img src="img/characterSelect/mvcib/Thor_icon.png">
+			<img src="img/characterSelect/mvcib/Jedah_icon.png">
+			<img src="img/characterSelect/mvcib/Firebrand_icon.png">
+			<img src="img/characterSelect/mvcib/Mike_Haggar_icon.png">
+			<img src="img/characterSelect/mvcib/Captain_America_icon.png">
+			<img src="img/characterSelect/mvcib/Spider-Man_icon.png">
+			<img src="img/characterSelect/mvcib/Dormammu_icon.png">
+			<img src="img/characterSelect/mvcib/Sigma_icon.png">
+			<img src="img/characterSelect/mvcib/Monster_Hunter_icon.png">
+			<img src="img/characterSelect/mvcib/Winter_Soldier_icon.png">
+			<img src="img/characterSelect/mvcib/Black_Widow_icon.png">
+			<img src="img/characterSelect/mvcib/Venom_icon.png">
+			<img src="img/characterSelect/mvcib/Black_Panther_icon.png">
+			<!---->
+			<img src="img/characterSelect/mvcib/Name_Strider_Hiryu.png">
+			<img src="img/characterSelect/mvcib/Name_Arthur.png">
+			<img src="img/characterSelect/mvcib/Name_Frank_West.png">
+			<img src="img/characterSelect/mvcib/Name_Rocket_Raccoon.png">
+			<img src="img/characterSelect/mvcib/Name_Dr._Strange.png">
+			<img src="img/characterSelect/mvcib/Name_Hawkeye.png">
+			<img src="img/characterSelect/mvcib/Name_Chris.png">
+			<img src="img/characterSelect/mvcib/Name_X.png">
+			<img src="img/characterSelect/mvcib/Name_Zero.png">
+			<img src="img/characterSelect/mvcib/Name_Ultron.png">
+			<img src="img/characterSelect/mvcib/Name_Gamora.png">
+			<img src="img/characterSelect/mvcib/Name_Ghost_Rider.png">
+			<img src="img/characterSelect/mvcib/Name_Nemesis.png">
+			<img src="img/characterSelect/mvcib/Name_Dante.png">
+			<img src="img/characterSelect/mvcib/Name_Ryu.png">
+			<img src="img/characterSelect/mvcib/Name_Iron_Man.png">
+			<img src="img/characterSelect/mvcib/Name_Thanos.png">
+			<img src="img/characterSelect/mvcib/Name_Nova.png">
+			<img src="img/characterSelect/mvcib/Name_Spencer.png">
+			<img src="img/characterSelect/mvcib/Name_Chun-Li.png">
+			<img src="img/characterSelect/mvcib/Name_Morrigan.png">
+			<img src="img/characterSelect/mvcib/Name_Hulk.png">
+			<img src="img/characterSelect/mvcib/Name_Captain_Marvel.png">
+			<img src="img/characterSelect/mvcib/Name_Thor.png">
+			<img src="img/characterSelect/mvcib/Name_Jedah.png">
+			<img src="img/characterSelect/mvcib/Name_Firebrand.png">
+			<img src="img/characterSelect/mvcib/Name_Mike_Haggar.png">
+			<img src="img/characterSelect/mvcib/Name_Captain_America.png">
+			<img src="img/characterSelect/mvcib/Name_Spider-Man.png">
+			<img src="img/characterSelect/mvcib/Name_Dormammu.png">
+			<img src="img/characterSelect/mvcib/Name_Sigma.png">
+			<img src="img/characterSelect/mvcib/Name_Monster_Hunter.png">
+			<img src="img/characterSelect/mvcib/Name_Winter_Soldier.png">
+			<img src="img/characterSelect/mvcib/Name_Black_Widow.png">
+			<img src="img/characterSelect/mvcib/Name_Venom.png">
+			<img src="img/characterSelect/mvcib/Name_Black_Panther.png">
+			<!---->
+			<audio muted=true src="audio/music/MvCIB - Character Select.ogg"></audio>
+			<audio muted=true src="audio/sfx/mvcib/SYS_83.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/SYS_84.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/SYS_85.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/SYS_88.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/SYS_95.wav"></audio>
+			<!---->
+			<audio muted=true src="audio/sfx/mvcib/banter/Strider_Hiryu_select.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Arthur_select.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Frank_West_select.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Chris_select.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/X_select1.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/X_select2.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Zero_select1.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Zero_select2.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Nemesis_select.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Dante_select1.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Dante_select2.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Ryu_select1.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Ryu_select2.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Spencer_select.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Chun-Li_select1.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Chun-Li_select2.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Morrigan_select1.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Morrigan_select2.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Jedah_select.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Firebrand_select.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Mike_Haggar_select1.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Mike_Haggar_select2.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Sigma_select1.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Sigma_select2.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Monster_Hunter_select1.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Monster_Hunter_select2.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Rocket_Raccoon_select.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Dr._Strange_select.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Hawkeye_select.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Ultron_select.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Gamora_select.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Ghost_Rider_select.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Iron_Man_select1.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Iron_Man_select2.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Thanos_select.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Nova_select1.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Nova_select2.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Hulk_select1.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Hulk_select2.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Captain_Marvel_select1.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Captain_Marvel_select2.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Thor_select.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Captain_America_select1.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Captain_America_select2.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Spider-Man_select.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Dormammu_select1.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Dormammu_select2.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Winter_Soldier_select.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Black_Widow_select1.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Black_Widow_select2.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Venom_select1.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Venom_select2.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Black_Panther_select1.wav"></audio>
+			<audio muted=true src="audio/sfx/mvcib/banter/Black_Panther_select2.wav"></audio>
 		</div>
 	</body>
 </html>

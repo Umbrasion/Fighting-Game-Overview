@@ -11,10 +11,10 @@
     background: black;
 }
 
-.selectbox-container {
+.css-container {
     margin: calc(90vh - 288px) auto auto;
 }
 
-.selectbox-character img {
+.css-character img {
     width: 96px;
 }

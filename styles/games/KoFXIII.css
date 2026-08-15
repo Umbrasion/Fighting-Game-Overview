@@ -17,31 +17,31 @@
     height: 0px;
 }
 
-.selectbox-container {
+.css-container {
     transform: translateY(-100%);
 }
 
-.selectbox-positioner {
+.css-positioner {
     position: relative;
     width: 0px;
     height: 0px;
 }
 
-.selectbox-positioner a {
+.css-positioner a {
     pointer-events: auto;
     cursor: pointer;
 }
 
-.selectbox-character, .selectbox-container a {
+.css-character, .css-container a {
     width: 50px;
     height: 124px;
 }
 
-.selectbox-character {
+.css-character {
     transform-origin: center;
     opacity: 0;
 }
 
-.selectbox-character:hover {
+.css-character:hover {
     opacity: 1;
 }

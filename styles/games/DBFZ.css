@@ -24,11 +24,11 @@ body {
     filter: drop-shadow(2px 2px black);
 }
 
-.selectbox-container, .selectbox-fullroster {
+.css-container, .css-fullroster {
     max-width: 100%;
 }
 
-.selectbox-container {
+.css-container {
     position: absolute;
     bottom: 40px;
     left: 0;
@@ -40,13 +40,13 @@ body {
     padding: 0px 60px;
 }
 
-.selectbox-fullroster {
+.css-fullroster {
     opacity: 0.5;
 }
 
 /* Icons */
 
-.selectbox-character {
+.css-character {
     pointer-events: none;
     position: relative;
     width: 0px;
@@ -55,7 +55,7 @@ body {
     /* visibility: hidden; */
 }
 
-.selectbox-character img {
+.css-character img {
     transform-origin: center;
     transition: all 0.015s linear;
     height: calc(128px * var(--css-scale));

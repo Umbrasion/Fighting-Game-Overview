@@ -1,17 +1,21 @@
-#characterselect {
-    display: block;
-    max-width: 717px;
+:root {
+    background-color: #FFEFEF;
 }
-.selectbox-container {
+
+.css-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     gap: 3px;
+    max-width: 861px;
+    margin-top: 5vh;
 }
-.selectbox-character {
+
+.css-character {
     width: 141px;
     height: 351px;
 }
-.size-small, .size-small img {
+
+.size-small {
     height: 174px;
 }

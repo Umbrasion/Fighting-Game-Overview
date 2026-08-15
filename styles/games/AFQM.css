@@ -43,7 +43,7 @@
     }
 }
 
-.selectbox-container {
+.css-container {
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -52,14 +52,14 @@
 	padding-top: 40px;
 }
 
-.selectbox-row {
+.css-row {
     gap: 20px;
 }
 
-.selectbox-row a {
+.css-row a {
     transition: all 0.3s;
 }
 
-.selectbox-row a:hover {
+.css-row a:hover {
     transform: scale(1.15);
 }

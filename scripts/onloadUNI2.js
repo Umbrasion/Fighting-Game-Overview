@@ -32,11 +32,11 @@ const chrSel = [
 
 const pageMusic = new Audio("audio/music/UNI2 - Begin System Celestial loop.ogg");
 pageMusic.loop = true;
-pageMusic.volume = 0.2;
+pageMusic.volume = 0.15 * volumeModifier;
 pageMusic.preload = "auto";
 
 const pageMusicIntro = new Audio("audio/music/UNI2 - Begin System Celestial intro.ogg");
-pageMusicIntro.volume = 0.2;
+pageMusicIntro.volume = 0.15 * volumeModifier;
 
 pageMusic.addEventListener("canplay", playMusic);
 function playMusic() {
@@ -51,12 +51,14 @@ const sfx = {
 	cursor: new Audio("audio/sfx/uni2/MoveCursor.wav"),
 	confirm: new Audio("audio/sfx/uni2/OK.wav"),
 	cancel: new Audio("audio/sfx/uni2/Cansel.wav"),
+	banter: new Audio("audio/sfx/uni2/Charselect_call.wav")
 }
 sfx.cursor.volume = 0.4;
 sfx.confirm.volume = 0.2;
 sfx.cancel.volume = 0.4;
+sfx.banter.volume = 0.3;
+sfx.banter.play();
 
-var previewDisplayOn = true;
 var interactionEnabled = false;
 
 function clearDisplay() {
@@ -66,33 +68,35 @@ function clearDisplay() {
 
 // Display on hover
 
+var previousCharacter = "";
+
 function hoverDisplay(targetChar) {
-	if (interactionEnabled) {
+	var charFileName = targetChar.parentElement.parentElement.onclick.toString().split("'")[1];
+	var scaleMeasures = targetChar.dataset.scale.split(",");
+	var lightingColor = targetChar.dataset.lightcolor.split(",");
+	if (charFileName !== previousCharacter && interactionEnabled) {
 		sfx.cursor.currentTime = 0;
 		sfx.cursor.play();
-		if (previewDisplayOn) {
-			clearTimeout(cycleRandom);
-			var charFileName = targetChar.parentElement.parentElement.onclick.toString().split("'")[1];
-			var scaleMeasures = targetChar.dataset.scale.split(",");
-			var lightingColor = targetChar.dataset.lightcolor.split(",");
+		clearTimeout(cycleRandom);
 
-			chrPrevImg.src = "img/portraits/uni2/" + charFileName + ".png";
-			chrName.innerHTML = charFileName.replace(/_/g, " ").toUpperCase();
-			chrPrevImg.classList.remove("portrait-onhover");
-			chrName.classList.remove("name-onhover");
-			void chrPrevImg.offsetWidth;
-			void chrName.offsetWidth;
-			chrPrevImg.classList.add("portrait-onhover");
-			chrName.classList.add("name-onhover");
+		chrPrevImg.src = "img/portraits/uni2/" + charFileName + ".png";
+		chrName.innerHTML = charFileName.replace(/_/g, " ").toUpperCase();
+		chrPrevImg.classList.remove("portrait-onhover");
+		chrName.classList.remove("name-onhover");
+		void chrPrevImg.offsetWidth;
+		void chrName.offsetWidth;
+		chrPrevImg.classList.add("portrait-onhover");
+		chrName.classList.add("name-onhover");
 
-			document.getElementById("character-lighting").style.background = "linear-gradient(65deg, rgba(" + lightingColor[0] + ", " + lightingColor[1] + ", " + lightingColor[2] + ", 0.7) 0%, rgba(0,0,0,0) 70%, rgba(0,0,0,0))";
-			chrPrevImg.style.transform = "scale(" + scaleMeasures[0] + ") translate(" + scaleMeasures[1] + "%, " + scaleMeasures[2] + "%)";
+		document.getElementById("character-lighting").style.background = "linear-gradient(65deg, rgba(" + lightingColor[0] + ", " + lightingColor[1] + ", " + lightingColor[2] + ", 0.7) 0%, rgba(0,0,0,0) 70%, rgba(0,0,0,0))";
+		chrPrevImg.style.transform = "scale(" + scaleMeasures[0] + ") translate(" + scaleMeasures[1] + "%, " + scaleMeasures[2] + "%)";
 
-			document.getElementById("flavor-text").innerHTML = targetChar.parentElement.parentElement.dataset.flavortext;
-			document.getElementById("flavor-text").classList.remove("flavortext-onhover");
-			void document.getElementById("flavor-text").offsetWidth;
-			document.getElementById("flavor-text").classList.add("flavortext-onhover");
-		}
+		document.getElementById("flavor-text").innerHTML = targetChar.parentElement.parentElement.dataset.flavortext;
+		document.getElementById("flavor-text").classList.remove("flavortext-onhover");
+		void document.getElementById("flavor-text").offsetWidth;
+		document.getElementById("flavor-text").classList.add("flavortext-onhover");
+
+        previousCharacter = charFileName;
 	}
 }
 
@@ -116,10 +120,10 @@ chrSel.forEach(element => {
 
 document.getElementById("character-random").addEventListener("mouseover",
 	() => {
-		sfx.cursor.currentTime = 0;
-		sfx.cursor.play();
-		document.getElementById("select-cursor").style.opacity = 0;
-		if (previewDisplayOn) {
+		if (interactionEnabled) {
+			sfx.cursor.currentTime = 0;
+			sfx.cursor.play();
+			document.getElementById("select-cursor").style.opacity = 0;
 			randomDisplay();
 		}
 	}
@@ -150,15 +154,11 @@ function randomDisplay() {
 
 // Display on click
 
-var banter = new Audio("audio/sfx/uni2/Charselect_call.wav");
-banter.volume = 0.3;
-banter.play();
 var colorNames = [];
 
 function runDisplay(characterName) {
 	if (interactionEnabled) {
 		clearTimeout(cycleRandom);
-		previewDisplayOn = false;
 		interactionEnabled = false;
 		chrPrevImg.parentElement.classList.remove("portrait-onselect");
 		void chrPrevImg.parentElement.offsetWidth;
@@ -193,13 +193,13 @@ function runDisplay(characterName) {
 		
 		initializeOV("experimental");
 		
-        if (!banter.paused) {
-			banter.pause();
+        if (!sfx.banter.paused) {
+			sfx.banter.pause();
 		}
 
-        banter = new Audio("audio/sfx/uni2/banter/" + characterName + "_select.wav");
-        banter.volume = 0.25;
-        banter.play();
+        sfx.banter = new Audio("audio/sfx/uni2/banter/" + characterName + "_select.wav");
+        sfx.banter.volume = 0.25;
+        sfx.banter.play();
 		
 		switch (characterName) {
 			case "Eltnum":
@@ -873,7 +873,7 @@ function startupDisplay() {
 			setTimeout(addClasses, 40);
 		} else {
 			setTimeout(function() {
-				document.getElementsByClassName("selectbox-container")[0].style.pointerEvents = "all";
+				document.getElementsByClassName("css-container")[0].style.pointerEvents = "all";
 				interactionEnabled = true;
 			}, 100);
 		}

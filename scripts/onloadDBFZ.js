@@ -104,7 +104,7 @@ function hoverDisplay(iconArea) {
 	var charFileName = iconArea.onclick.toString().split("'")[1];
 	if (interactionEnabled) {
 		var charIcon;
-		Array.prototype.slice.call(document.getElementsByClassName("selectbox-character")).forEach(iconBox => {
+		Array.prototype.slice.call(document.getElementsByClassName("css-character")).forEach(iconBox => {
 			iconBox.children[0].style.transform = "translate(0,0)";
 			if (iconBox.children[0].src.includes("/" + charFileName + "_icon")) {
 				charIcon = iconBox.children[0];
@@ -150,7 +150,7 @@ chrSel.forEach(element => {
 	element.addEventListener("mouseout",
 		() => {
 			if (interactionEnabled) {
-				Array.prototype.slice.call(document.getElementsByClassName("selectbox-character")).forEach(iconBox => {
+				Array.prototype.slice.call(document.getElementsByClassName("css-character")).forEach(iconBox => {
 					if (iconBox.children[0].src.includes("/" + element.onclick.toString().split("'")[1] + "_icon")) {
 						iconBox.children[0].style.transform = "translate(0,0)";
 					}
@@ -165,11 +165,11 @@ chrSel.forEach(element => {
 document.getElementById("character-random").addEventListener("mouseover",
 	() => {
 	if (interactionEnabled) {
-			Array.prototype.slice.call(document.getElementsByClassName("selectbox-character")).forEach(iconBox => {
+			Array.prototype.slice.call(document.getElementsByClassName("css-character")).forEach(iconBox => {
 				iconBox.children[0].style.transform = "translate(0,0)";
 			});
 
-			document.getElementsByClassName("selectbox-container")[0].children[0].children[0].style.transform = "translate(0, -10%)";
+			document.getElementsByClassName("css-container")[0].children[0].children[0].style.transform = "translate(0, -10%)";
 
 			clearTimeout(cycleRandom);
 			randomDisplay();
@@ -182,7 +182,7 @@ document.getElementById("character-random").addEventListener("mouseover",
 document.getElementById("character-random").addEventListener("mouseout",
 	() => {
 		if (interactionEnabled) {
-			Array.prototype.slice.call(document.getElementsByClassName("selectbox-character")).forEach(iconBox => {
+			Array.prototype.slice.call(document.getElementsByClassName("css-character")).forEach(iconBox => {
 				if (iconBox.children[0].src.includes("/Random_icon")) {
 					iconBox.children[0].style.transform = "translate(0,0)";
 				}
@@ -208,7 +208,7 @@ function runDisplay(characterName) {
 		interactionEnabled = false;
 		const descriptionArea = document.getElementsByClassName("description-area")[0];
 
-		Array.prototype.slice.call(document.getElementsByClassName("selectbox-character")).forEach(iconBox => {
+		Array.prototype.slice.call(document.getElementsByClassName("css-character")).forEach(iconBox => {
 			iconBox.children[0].style.transform = "translate(0,0)";
 		});
 		
@@ -985,10 +985,10 @@ function runDisplay(characterName) {
 $(window).resize(setScale);
 
 function setScale() {
-	var assetScale = document.getElementsByClassName("selectbox-fullroster")[0].clientWidth / document.getElementsByClassName("selectbox-fullroster")[0].naturalWidth;
+	var assetScale = document.getElementsByClassName("css-fullroster")[0].clientWidth / document.getElementsByClassName("css-fullroster")[0].naturalWidth;
 	checkFail: while (true) {
 		if (assetScale === NaN) {
-			assetScale = document.getElementsByClassName("selectbox-fullroster")[0].clientWidth / document.getElementsByClassName("selectbox-fullroster")[0].naturalWidth;
+			assetScale = document.getElementsByClassName("css-fullroster")[0].clientWidth / document.getElementsByClassName("css-fullroster")[0].naturalWidth;
 		} else {
 			break checkFail;
 		}
@@ -1001,7 +1001,7 @@ function setScale() {
 		var identifier = element.onclick.toString().split("'")[1];
 
 		var charIcon;
-		Array.prototype.slice.call(document.getElementsByClassName("selectbox-character")).forEach(iconBox => {
+		Array.prototype.slice.call(document.getElementsByClassName("css-character")).forEach(iconBox => {
 			if (iconBox.children[0].src.includes("/" + identifier + "_icon")) {
 				charIcon = iconBox;
 			}

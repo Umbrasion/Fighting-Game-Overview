@@ -28,17 +28,55 @@ body {
     text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
 }
 
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.4em;
+    background: linear-gradient(135deg,
+        #AE0001 0%, #AE0001 9.5%,
+        #FFDE00 9.5%, #FFDE00 10.5%,
+        #000 10.5%, #000 19.5%,
+        #FFDE00 19.5%, #FFDE00 20.5%,
+        #AE0001 20.5%, #AE0001 29.5%,
+        #FFDE00 29.5%, #FFDE00 30.5%,
+        #000 30.5%, #000 39.5%,
+        #FFDE00 39.5%, #FFDE00 40.5%,
+        #AE0001 40.5%, #AE0001 49.5%,
+        #FFDE00 49.5%, #FFDE00 50.5%,
+        #000 50.5%, #000 59.5%,
+        #FFDE00 59.5%, #FFDE00 60.5%,
+        #AE0001 60.5%, #AE0001 69.5%,
+        #FFDE00 69.5%, #FFDE00 70.5%,
+        #000 70.5%, #000 79.5%,
+        #FFDE00 79.5%, #FFDE00 80.5%,
+        #AE0001 80.5%, #AE0001 89.5%,
+        #FFDE00 89.5%, #FFDE00 90.5%,
+        #000 90.5%, #000 100%
+    );
+    height: 90px;
+    border-bottom: solid gold 4px;
+    border-image: linear-gradient(180deg, gold, gold 96%, #9B7715) 4;
+}
+
+header h1 {
+    text-align: center;
+    margin: 0px;
+    filter: drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px black);
+    animation: text-rainbow 30s linear 0s infinite normal;
+}
+
 main {
     display: flex;
     text-align: center;
+    position: relative;
 }
 
 .game-area, .main-area, .condition-area {
-    height: 100vh;
+    height: calc(100vh - 94px);
 }
 
 .main-area {
-    background: radial-gradient(circle at center, );
     border: 6vw solid transparent;
     border-top: 0px;
     border-bottom: 0px;
@@ -48,7 +86,7 @@ main {
     flex: 0px 1 0;
     background: linear-gradient(135deg, #17171A, #404346, #404346, #17171A);
     border: 4px solid transparent;
-    border-image: linear-gradient(135deg, #9B7715, #e4c828, #e4c828, #9B7715) 4;
+    border-image: linear-gradient(135deg, #9B7715, #E4C828, #E4C828, #9B7715) 4;
     border-top: transparent;
     border-bottom: transparent;
 }
@@ -60,11 +98,12 @@ main {
 
 .segment-subheader {
     font-size: 2em;
+    font-family: sans-serif;
     margin: 10px 0px;
 }
 
 .segment-info {
-    padding: 30px;
+    padding: 15px 30px;
     font-family: sans-serif;
     font-size: 1.2em;
     text-align: left;
@@ -206,6 +245,46 @@ main {
     border: solid #091F07 2px;
 }
 
+#condition-refimg {
+    padding: 10px;
+}
+
+.conref-link {
+    cursor: pointer;
+    width: 100%;
+}
+
+.condition-reference {
+    display: block;
+    max-width: calc(100% - 4px);
+    border: 2px solid white;
+    border-radius: 2px;
+}
+
+#imgview-bg {
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 200;
+    visibility: hidden;
+    user-select: none;
+}
+
+#imgview-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#imgview-container img {
+    border: 3px solid white;
+    border-radius: 3px;
+}
+
 .sloticon-spinin {
     animation: sloticon-spinin 0.3s ease-out 0s 1 normal;
 }
@@ -293,18 +372,170 @@ main {
     }
 }
 
-/* Debug Area*/
+/* Additional Condition Functions */
+
+#condition-addfunction {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    margin: auto;
+}
+
+.condition-functiontitle {
+    font-size: 2.5em;
+    font-family: monospace;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.condition-functionimg {
+    /* border: 2px solid white; */
+    /* border-radius: 2px; */
+    display: block;
+    flex: 0 0 auto;
+}
+
+.condition-functionbutton {
+    font-family: monospace;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+    padding: 8px 10px 6px;
+    background: linear-gradient(to bottom, #509244, #3A5E33);
+    border: solid #091F07 2px;
+    border-radius: 10px;
+    transition: all 0.08s;
+}
+
+.condition-functionbutton:hover {
+    background: linear-gradient(to bottom, #3A5E33, #3D6E34);
+}
+
+/* Additional Condition Functions: Specifics */
+
+.arcanacard-flip {
+    animation: arcanacard-flip 0.8s linear 0s 1 normal;
+}
+
+@keyframes arcanacard-flip {
+    0% {
+        transform: rotate3d(0,0,0,0);
+    }
+    
+    50% {
+        transform: rotate3d(0,1,0,90deg);
+    }
+    
+    100% {
+        transform: rotate3d(0,0,0,0);
+    }
+}
+
+/* OGO Area */
+
+#ogo-bg {
+    background-color: rgba(0,0,0,0.35);
+    position: absolute;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 200;
+    visibility: hidden;
+}
+
+#ogo-area {
+    --bg-opacity: 1;
+    position: absolute;
+    top: 90px;
+    left: 0px;
+    right: 0px;
+    background: linear-gradient(
+        135deg,
+        rgba(30, 48, 26, var(--bg-opacity)) 0%,
+        rgba(30, 48, 26, var(--bg-opacity)) 20%,
+        rgba(49, 78, 43, var(--bg-opacity)),
+        rgba(49, 78, 43, var(--bg-opacity)),
+        rgba(30, 48, 26, var(--bg-opacity)) 80%,
+        rgba(30, 48, 26, var(--bg-opacity)) 100%
+    );
+    width: 850px;
+    padding: 20px;
+    border: 4px solid transparent;
+    border-image: linear-gradient(135deg, #9B7715, #E4C828, #E4C828, #9B7715) 4;
+    margin: auto;
+}
+
+.ogo-title {
+    font-family: "DF POP Corn W12";
+    text-align: center;
+    font-size: 3.8em;
+    margin-top: 0.3em;
+}
+
+.options-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 50px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    height: 205px;
+}
+
+.logo-link {
+    display: block;
+    height: fit-content;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.logo-link:hover {
+    transform: scale(1.1);
+}
+
+.logo-ogo {
+    display: block;
+    width: 350px;
+}
+
+#popupbox-description {
+    position: absolute;
+    top: -4px;
+    left: 894px;
+    font-family: sans-serif;
+    font-size: 1.2em;
+    background: linear-gradient(135deg, #17171A, #404346, #404346, #17171A);
+    width: max-content;
+    max-width: 350px;
+    padding: 10px;
+    border: 4px solid transparent;
+    border-image: linear-gradient(135deg, #9B7715, #E4C828, #E4C828, #9B7715) 4;
+    opacity: 0;
+}
+
+#popupbox-description p {
+    margin: 0px;
+}
+
+/* Debug Area */
 
 #debug-area {
     position: absolute;
     top: 0;
     left: 0;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-content: start;
-    gap: 4px;
+    flex-flow: column;
+    gap: 12px;
     background-color: #3A5E33;
+    font-family: monospace;
     width: 586px;
     height: calc(98vh - 24px);
     padding: 8px;
@@ -315,17 +546,31 @@ main {
     overflow-y: auto;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    z-index: 500;
+}
+
+.debug-segment {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: start;
+    gap: 4px;
 }
 
 .debug-game {
     text-align: center;
-    font-family: monospace;
     background-color: #33502E;
     width: 100px;
     height: fit-content;
     padding: 5px;
     border: 2px solid #2D352B;
     border-radius: 5px;
+}
+
+.debug-info {
+    font-size: 2em;
+    text-align: center;
+    width: 100%;
 }
 
 .debug-title {

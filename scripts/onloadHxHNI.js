@@ -20,6 +20,7 @@ const chrSel = [
 	document.getElementById("character-neferpitou"),
 	document.getElementById("character-phinks"),
 	document.getElementById("character-shizuku"),
+	document.getElementById("character-zeno"),
 ];
 
 const pageMusic = new Audio("audio/music/HxHNI - Character Select.ogg");
@@ -396,6 +397,22 @@ function runDisplay(characterName) {
 				}
 				break;
 			case "Shizuku":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 19,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Zeno":
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],

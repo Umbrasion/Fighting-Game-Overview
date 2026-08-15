@@ -9,46 +9,18 @@
 		<script src="../scripts/jquery-3.7.1.min.js"></script>
 		<script src="spinner.js" defer></script>
 		<script src="conditions.js" defer></script>
+		<script src="ogo.js" defer></script>
 	</head>
 	<body>
+		<header>
+			<h1>READY OR NOT, GAMBLE!</h1>
+		</header>
 		<main>
 			<div class="game-area">
 				<h1 class="segment-header">RULES</h1>
 				<h2 id="game-name" class="segment-subheader"></h2>
 				<ul id="rules-list" class="segment-info">
-					<li id="rules-time" class=""></li>
-					<li id="rules-lives" class=""></li>
-					<li id="rules-stages" class=""></li>
-					<li id="rules-characters" class=""></li>
-					<li id="rules-" class=""></li>
-					<li id="rules-" class=""></li>
-					<li id="rules-" class=""></li>
-					<li id="rules-" class=""></li>
-					<li id="rules-" class=""></li>
-				</ul>
-				<h2 id="game-name-extra1" class="segment-subheader"></h2>
-				<ul id="rules-list-extra1" class="segment-info">
-					<li id="rules-time" class=""></li>
-					<li id="rules-lives" class=""></li>
-					<li id="rules-stages" class=""></li>
-					<li id="rules-characters" class=""></li>
-					<li id="rules-" class=""></li>
-					<li id="rules-" class=""></li>
-					<li id="rules-" class=""></li>
-					<li id="rules-" class=""></li>
-					<li id="rules-" class=""></li>
-				</ul>
-				<h2 id="game-name-extra2" class="segment-subheader"></h2>
-				<ul id="rules-list-extra2" class="segment-info">
-					<li id="rules-time" class=""></li>
-					<li id="rules-lives" class=""></li>
-					<li id="rules-stages" class=""></li>
-					<li id="rules-characters" class=""></li>
-					<li id="rules-" class=""></li>
-					<li id="rules-" class=""></li>
-					<li id="rules-" class=""></li>
-					<li id="rules-" class=""></li>
-					<li id="rules-" class=""></li>
+					<li></li>
 				</ul>
 			</div>
 			<div class="main-area">
@@ -92,208 +64,55 @@
 				</div>
 			</div>
 			<div class="condition-area">
-				<h1 class="segment-header">CONDITION</h1>
-				<h2 id="condition-name" class="segment-subheader"></h2>
-				<p id="condition-description" class="segment-info"></p>
-				<h2 id="condition-name-extra1" class="segment-subheader"></h2>
-				<p id="condition-description-extra1" class="segment-info"></p>
-				<h2 id="condition-name-extra2" class="segment-subheader"></h2>
-				<p id="condition-description-extra2" class="segment-info"></p>
+				<div>
+					<h1 class="segment-header">CONDITION</h1>
+					<h2 id="condition-name" class="segment-subheader"></h2>
+					<p id="condition-description" class="segment-info"></p>
+					<div id="condition-refimg" class="segment-info"></div>
+				</div>
+				<div id="condition-addfunction">
+				</div>
 			</div>
 		</main>
+		<div id="imgview-bg" onclick="commonImgBlowUp()">
+			<div id="imgview-container"></div>
+		</div>
+		<div id="ogo-bg">
+			<div id="ogo-area">
+				<h2 class="ogo-title">OFF-GAME OUTBREAK</h2>
+				<div class="options-container">
+					<div class="logo-container">
+						<a class="logo-link" onclick="setToGame('MnS')">
+							<img class="logo-ogo" src="SP_logos/MnS_logo.png" data-description="A PvP bullet hell where you have to dodge and weave around the opponent's bullets while firing off your own.">
+						</a>
+					</div>
+					<div class="logo-container">
+						<a class="logo-link" onclick="setToGame('UMAPD')">
+							<img class="logo-ogo" src="SP_logos/UMAPD_logo.png" data-description="A party game where you use a team of 5 characters to compete against other players in a set of various minigames.">
+						</a>
+					</div>
+					<div class="logo-container">
+						<a class="logo-link" onclick="setToGame('REX')">
+							<img class="logo-ogo" src="SP_logos/REX_logo.png" data-description="A platform fighter with a massive roster of characters and stages, built on the Project+ Brawl mod.">
+						</a>
+					</div>
+					<div class="logo-container">
+						<a class="logo-link" onclick="setToGame('CMC+')">
+							<img class="logo-ogo" src="SP_logos/CMC+_logo.png" data-description="A modpack for the platform fighter Super Smash Bros. Crusade, with a staggering amount of characters, assists, and stages.">
+						</a>
+					</div>
+					<div class="logo-container">
+						<a class="logo-link" onclick="setToGame('SCB')">
+							<img class="logo-ogo" src="SP_logos/SCB_logo.png" data-description="A PvP platformer where you take control of various characters from retro games and fight against other players using the tools the characters offer you.">
+						</a>
+					</div>
+				</div>
+				<div id="popupbox-description"></div>
+			</div>
+		</div>
 		<div id="debug-area" style="transform: translate(calc(-600px - 2vh), 0px)">
-			<div class="debug-game">
-				<h5 class="debug-title">AFQM</h5>
-				<button id="debug-button-AFQM" class="debug-button" onclick="toggleGame('AFQM')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">AUAU</h5>
-				<button id="debug-button-AUAU" class="debug-button" onclick="toggleGame('AUAU')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">AH3X</h5>
-				<button id="debug-button-AH3X" class="debug-button" onclick="toggleGame('AH3X')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">BBCF</h5>
-				<button id="debug-button-BBCF" class="debug-button" onclick="toggleGame('BBCF')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">BBTAG</h5>
-				<button id="debug-button-BBTAG" class="debug-button" onclick="toggleGame('BBTAG')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">NSC</h5>
-				<button id="debug-button-NSC" class="debug-button" onclick="toggleGame('NSC')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">DBAG</h5>
-				<button id="debug-button-DBAG" class="debug-button" onclick="toggleGame('DBAG')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">DNFD</h5>
-				<button id="debug-button-DNFD" class="debug-button" onclick="toggleGame('DNFD')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">DDND</h5>
-				<button id="debug-button-DDND" class="debug-button" onclick="toggleGame('DDND')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">DBFZ</h5>
-				<button id="debug-button-DBFZ" class="debug-button" onclick="toggleGame('DBFZ')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">EL2</h5>
-				<button id="debug-button-EL2" class="debug-button" onclick="toggleGame('EL2')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">FM</h5>
-				<button id="debug-button-FM" class="debug-button" onclick="toggleGame('FM')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">GBVSR</h5>
-				<button id="debug-button-GBVSR" class="debug-button" onclick="toggleGame('GBVSR')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<!--div class="debug-game">
-				<h5 class="debug-title">GGML</h5>
-				<button id="debug-button-GGML" class="debug-button" onclick="toggleGame('GGML')" style="background-color: lightgreen">ALLOWED</button>
-			</div-->
-			<div class="debug-game">
-				<h5 class="debug-title">GGST</h5>
-				<button id="debug-button-GGST" class="debug-button" onclick="toggleGame('GGST')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">GGXRD</h5>
-				<button id="debug-button-GGXRD" class="debug-button" onclick="toggleGame('GGXRD')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">GGACR</h5>
-				<button id="debug-button-GGACR" class="debug-button" onclick="toggleGame('GGACR')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">HxHNI</h5>
-				<button id="debug-button-HxHNI" class="debug-button" onclick="toggleGame('HxHNI')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">ISD</h5>
-				<button id="debug-button-ISD" class="debug-button" onclick="toggleGame('ISD')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">KLKIF</h5>
-				<button id="debug-button-KLKIF" class="debug-button" onclick="toggleGame('KLKIF')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">KoFXIII</h5>
-				<button id="debug-button-KoFXIII" class="debug-button" onclick="toggleGame('KoFXIII')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">KoFXV</h5>
-				<button id="debug-button-KoFXV" class="debug-button" onclick="toggleGame('KoFXV')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">KF2</h5>
-				<button id="debug-button-KF2" class="debug-button" onclick="toggleGame('KF2')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">MnS</h5>
-				<button id="debug-button-MnS" class="debug-button" onclick="toggleGame('MnS')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">MvCIB</h5>
-				<button id="debug-button-MvCIB" class="debug-button" onclick="toggleGame('MvCIB')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">MBAACC</h5>
-				<button id="debug-button-MBAACC" class="debug-button" onclick="toggleGame('MBAACC')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">MBTL</h5>
-				<button id="debug-button-MBTL" class="debug-button" onclick="toggleGame('MBTL')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">MAAB</h5>
-				<button id="debug-button-MAAB" class="debug-button" onclick="toggleGame('MAAB')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">MVS</h5>
-				<button id="debug-button-MVS" class="debug-button" onclick="toggleGame('MVS')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">NASB2</h5>
-				<button id="debug-button-NASB2" class="debug-button" onclick="toggleGame('NASB2')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">P4AU</h5>
-				<button id="debug-button-P4AU" class="debug-button" onclick="toggleGame('P4AU')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<!--div class="debug-game">
-				<h5 class="debug-title">PKMNCC</h5>
-				<button id="debug-button-PKMNCC" class="debug-button" onclick="toggleGame('PKMNCC')" style="background-color: lightgreen">ALLOWED</button>
-			</div-->
-			<div class="debug-game">
-				<h5 class="debug-title">PTDX</h5>
-				<button id="debug-button-PTDX" class="debug-button" onclick="toggleGame('PTDX')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">RoA</h5>
-				<button id="debug-button-RoA" class="debug-button" onclick="toggleGame('RoA')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">RoA2</h5>
-				<button id="debug-button-RoA2" class="debug-button" onclick="toggleGame('RoA2')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">SG</h5>
-				<button id="debug-button-SG" class="debug-button" onclick="toggleGame('SG')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">SC</h5>
-				<button id="debug-button-SC" class="debug-button" onclick="toggleGame('SC')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">SF6</h5>
-				<button id="debug-button-SF6" class="debug-button" onclick="toggleGame('SF6')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">SSBC</h5>
-				<button id="debug-button-SSBC" class="debug-button" onclick="toggleGame('SSBC')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">SSBU</h5>
-				<button id="debug-button-SSBU" class="debug-button" onclick="toggleGame('SSBU')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">SSF2</h5>
-				<button id="debug-button-SSF2" class="debug-button" onclick="toggleGame('SSF2')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">REX</h5>
-				<button id="debug-button-REX" class="debug-button" onclick="toggleGame('REX')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">T8</h5>
-				<button id="debug-button-T8" class="debug-button" onclick="toggleGame('T8')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">SOKU</h5>
-				<button id="debug-button-SOKU" class="debug-button" onclick="toggleGame('SOKU')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">AoCF</h5>
-				<button id="debug-button-AoCF" class="debug-button" onclick="toggleGame('AoCF')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">UMvC3</h5>
-				<button id="debug-button-UMvC3" class="debug-button" onclick="toggleGame('UMvC3')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">UFDK2</h5>
-				<button id="debug-button-UFDK2" class="debug-button" onclick="toggleGame('UFDK2')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
-			<div class="debug-game">
-				<h5 class="debug-title">UNI2</h5>
-				<button id="debug-button-UNI2" class="debug-button" onclick="toggleGame('UNI2')" style="background-color: lightgreen">ALLOWED</button>
-			</div>
+			<div class="debug-segment"></div>
+			<div class="debug-segment" style="flex-flow: column"></div>
 		</div>
 	</body>
 </html>

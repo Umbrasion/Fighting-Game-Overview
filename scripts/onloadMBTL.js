@@ -45,11 +45,13 @@ pageMusicIntro.onended = function() {
 const sfx = {
 	cursor: new Audio("audio/sfx/mbtl/Menu_MoveCursor.wav"),
 	confirm: new Audio("audio/sfx/mbtl/Menu_OK.wav"),
+	cancel: new Audio("audio/sfx/mbtl/Menu_Cancel.wav"),
     announcer: new Audio("audio/sfx/mbtl/Sys00_0900.wav"),
 	banter: new Audio("audio/sfx/mbtl/banter/Arcueid_Brunestud_idle1.wav"),
 }
 sfx.cursor.volume = 0.4;
 sfx.confirm.volume = 0.2;
+sfx.cancel.volume = 0.2;
 sfx.announcer.volume = 0.25;
 sfx.banter.volume = 0.25;
 sfx.announcer.play();
@@ -152,8 +154,6 @@ function runDisplay(characterName) {
 					charIcon = element.children[0].children[0];
 				}
 			});
-
-			console.log(charIcon);
 			
 			var scaleMeasures = charIcon.dataset.scale.split(",");
 			chrPrevImg.style.transform = "scale(" + scaleMeasures[0] + ") translate(" + scaleMeasures[1] + "%, " + scaleMeasures[2] + "%)";
@@ -171,7 +171,7 @@ function runDisplay(characterName) {
 			case "Powered_Ciel":
 				displayInfo = {
 					filename: characterName,
-					nicknames: [""],
+					nicknames: ["PCiel"],
 					colors: 25,
 					playstyle: "",
 					difficulty: 1,
@@ -187,7 +187,7 @@ function runDisplay(characterName) {
 			case "Hisui_&_Kohaku":
 				displayInfo = {
 					filename: characterName,
-					nicknames: [""],
+					nicknames: ["Maids"],
 					colors: 25,
 					playstyle: "",
 					difficulty: 1,
@@ -219,7 +219,7 @@ function runDisplay(characterName) {
 			case "Arcueid_Brunestud":
 				displayInfo = {
 					filename: characterName,
-					nicknames: [""],
+					nicknames: ["Arc"],
 					colors: 25,
 					playstyle: "",
 					difficulty: 1,
@@ -283,7 +283,7 @@ function runDisplay(characterName) {
 			case "Red_Arcueid":
 				displayInfo = {
 					filename: characterName,
-					nicknames: [""],
+					nicknames: ["Warc", "Red Arc"],
 					colors: 25,
 					playstyle: "",
 					difficulty: 1,
@@ -347,7 +347,7 @@ function runDisplay(characterName) {
 			case "Shiki_Tohno":
 				displayInfo = {
 					filename: characterName,
-					nicknames: [""],
+					nicknames: ["Shiki", "Tohno"],
 					colors: 25,
 					playstyle: "",
 					difficulty: 1,
@@ -363,7 +363,7 @@ function runDisplay(characterName) {
 			case "Michael_Roa_Valdamjong":
 				displayInfo = {
 					filename: characterName,
-					nicknames: [""],
+					nicknames: ["Roa"],
 					colors: 25,
 					playstyle: "",
 					difficulty: 1,
@@ -395,7 +395,7 @@ function runDisplay(characterName) {
 			case "Dead_Apostle_Noel":
 				displayInfo = {
 					filename: characterName,
-					nicknames: [""],
+					nicknames: ["DA-Noel", "DAN"],
 					colors: 25,
 					playstyle: "",
 					difficulty: 1,
@@ -507,7 +507,7 @@ function runDisplay(characterName) {
 			case "The_Count_of_Monte_Cristo":
 				displayInfo = {
 					filename: characterName,
-					nicknames: [""],
+					nicknames: ["Dantes"],
 					colors: 25,
 					playstyle: "",
 					difficulty: 1,
@@ -527,7 +527,7 @@ function runDisplay(characterName) {
 }
 
 function startupDisplay() {
-	var iconArray = Array.prototype.slice.call(document.getElementsByClassName("selectbox-character"));
+	var iconArray = Array.prototype.slice.call(document.getElementsByClassName("css-character"));
 	iconArray = iconArray.splice(0, iconArray.length - 1);
 	
 	var characterIconsL = [

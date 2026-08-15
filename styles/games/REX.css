@@ -7,24 +7,24 @@
     flex-flow: column wrap;
 }
 
-.selectbox-container {
+.css-container {
     display: flex;
     flex-flow: column wrap;
     margin: auto;
 }
 
-.selectbox-row {
+.css-row {
     display: flex;
     flex-flow: row;
 }
 
-div.selectbox-positioner {
+div.css-positioner {
     width: 73px;
     height: 60px;
     transform-origin: 36.5px 40px;
 }
 
-.selectbox-icon {
+.css-icon {
     position: absolute;
     top: 1px;
     left: -3px;
@@ -32,22 +32,22 @@ div.selectbox-positioner {
     margin: 0px;
 }
 
-.selectbox-icon-details {
+.css-icon-details {
     position: absolute;
     top: 0px;
     left: 0px;
     width: 73px;
 }
 
-.selectbox-icon-bg {
+.css-icon-bg {
     content: url("../../img/characterSelect/rex/icon_BG.png");
 }
 
-.selectbox-icon-border {
+.css-icon-border {
     content: url("../../img/characterSelect/rex/icon_border.png");
 }
 
-.selectbox-fullroster {
+.css-fullroster {
     position: absolute;
     top: 0px;
 }

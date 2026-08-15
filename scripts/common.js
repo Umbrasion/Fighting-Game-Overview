@@ -1,3 +1,5 @@
+var volumeModifier = 1;
+
 function initializeOV(formatType, infoTime = 600) {
 	switch (formatType) {
 		case "flexbox":
@@ -224,11 +226,11 @@ function initializeOV(formatType, infoTime = 600) {
 				</div>
 			`
 			break;
-		case "experimental":
+		default:
 			document.getElementsByClassName("description-area")[0].innerHTML = `
 				<h2 class="info-title">OVERVIEW</h2>
 				<div style="display: grid; grid-template-columns: 25% auto 25%; gap: 16px">
-					<div class="info-segement">
+					<div class="info-segment">
 						<div class="color-box">
 							<img id="info-image" src="">
 							<div class="color-options">
@@ -238,6 +240,10 @@ function initializeOV(formatType, infoTime = 600) {
 							</div>
 						</div>
 						<table class="info-table">
+							<tr>
+								<th>NICKNAMES</th>
+								<td id="overview-nicknames"></td>
+							</tr>
 							<tr>
 								<th>PLAYSTYLE</th>
 								<td id="overview-playstyle"></td>
@@ -252,7 +258,7 @@ function initializeOV(formatType, infoTime = 600) {
 							</tr>
 						</table>
 					</div>
-					<div class="info-segement">
+					<div class="info-segment">
 						<p id="overview-description" class="info-description"></p>
 						<table class="info-table">
 							<tr>
@@ -273,7 +279,7 @@ function initializeOV(formatType, infoTime = 600) {
 							</tr>
 						</table>
 					</div>
-					<div class="info-segement">
+					<div class="info-segment">
 						<h3 class="info-subtitle">RATINGS</h3>
 						<div id="stat-graph-background" class="stat-graph">
 							<div id="stat-graph-values" class="stat-graph"></div>
@@ -286,58 +292,6 @@ function initializeOV(formatType, infoTime = 600) {
 				document.getElementsByClassName("description-bg")[0].style.visibility = "visible";
 				document.getElementsByClassName("description-bg")[0].style.opacity = 1;
 			}, infoTime);
-			break;
-		default:
-			document.getElementsByClassName("description-area")[0].innerHTML = `
-				<h2 class="info-title">OVERVIEW</h2>
-				<table class="info-table">
-					<tbody>
-						<tr>
-							<th>PLAYSTYLE</th>
-							<th>EFFECTIVE RANGE</th>
-						</tr>
-						<tr>
-							<td style="vertical-align: middle" id="overview-playstyle">
-								<span class="archetype-"></span>
-							</td>
-							<td style="vertical-align: middle" id="overview-range">
-								<span class="range-"></span>
-							</td>
-						</tr>
-						<tr>
-							<th>UNIQUE MECHANICS</th>
-							<th>EASE OF USE</th>
-						</tr>
-						<tr>
-							<td style="vertical-align: middle" id="overview-mechanics">
-								<span class="unimech-none">None</span>
-							</td>
-							<td id="overview-rating-ease" class=""></td>
-						</tr>
-						<tr>
-							<th style="text-align: center">Play if you like:</th>
-							<th style="text-align: center">Avoid if you dislike:</th>
-						</tr>
-						<tr>
-							<td style="text-align: left">
-								<ul id="overview-list-like" class="list-likedislike">
-									
-								</ul>
-							</td>
-							<td style="text-align: left">
-								<ul id="overview-list-dislike" class="list-likedislike">
-									
-								</ul>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-				<h3 class="info-subtitle">RATINGS</h3>
-				<div id="stat-graph-background" class="stat-graph">
-					<div id="stat-graph-values" class="stat-graph"></div>
-				</div>
-				<div id="overview-description" class="info-description"></div>
-			`
 			break;
 	}
 }
@@ -441,6 +395,7 @@ var colorNumber;
 function updateOV2(displayInfo, gameName) {
 	var overviewItems = {
 		colors: document.getElementById("info-image"),
+		nicknames: document.getElementById("overview-nicknames"),
 		playstyle: document.getElementById("overview-playstyle"),
 		difficulty: document.getElementById("overview-difficulty"),
 		mechanics: document.getElementById("overview-mechanics"),
@@ -451,7 +406,11 @@ function updateOV2(displayInfo, gameName) {
 
 	colorNumber = displayInfo.colors;
 
-	overviewItems.colors.src = "img/portraits/" + gameName + "/colors/" + displayInfo.filename + "/Color_1.png";
+	if (gameName === "auau") {
+		overviewItems.colors.src = "img/portraits/" + gameName + "/" + displayInfo.filename + ".png";
+	} else {
+		overviewItems.colors.src = "img/portraits/" + gameName + "/colors/" + displayInfo.filename + "/Color_1.png";
+	}
 	if (displayInfo.colors > 1) {
 		switch (gameName) {
 			case "isd":
@@ -463,15 +422,28 @@ function updateOV2(displayInfo, gameName) {
 			default:
 				document.getElementById("color-selector-text").innerHTML = "Color 1";
 		}
+	} else {
+		document.getElementsByClassName("color-options")[0].style.visibility = "hidden";
 	}
 	
+	try {
+		if (displayInfo.nicknames.length === 1 && displayInfo.nicknames[0] === "") {
+			overviewItems.nicknames.innerHTML = "N/A";
+		} else {
+			displayInfo.nicknames.forEach(element => {
+				overviewItems.nicknames.innerHTML += "<span>" + element + "</span><br>";
+			});
+		}
+	} catch (error) {
+		console.log("Nicknames not found");
+		overviewItems.nicknames.innerHTML = "ERR";
+	}
+
 	overviewItems.playstyle.innerHTML = "<span class='style-" + displayInfo.playstyle.toLowerCase() + "'>" + displayInfo.playstyle + "</span>";
 
-	var starCap;
+	var starCap = 5;
 	if (displayInfo.difficulty === 6) {
 		starCap = 6;
-	} else {
-		starCap = 5;
 	}
 
 	overviewItems.difficulty.classList.add("rating-" + displayInfo.difficulty);
@@ -506,9 +478,13 @@ function updateOV2(displayInfo, gameName) {
 	}
 	overviewItems.difficulty.innerHTML += "</span>";
 	
-	displayInfo.mechanics.forEach(element => {
-		overviewItems.mechanics.innerHTML += "<span>" + element + "</span><br>";
-	});
+	if (displayInfo.mechanics.length === 1 && displayInfo.mechanics[0] === "") {
+		overviewItems.mechanics.innerHTML = "N/A";
+	} else {
+		displayInfo.mechanics.forEach(element => {
+			overviewItems.mechanics.innerHTML += "<span>" + element + "</span><br>";
+		});
+	}
 	
 	// overviewItems.likes.innerHTML = displayInfo.likes;
 	// overviewItems.dislikes.innerHTML = displayInfo.dislikes;
@@ -574,8 +550,27 @@ function setColor(colorForward = true) {
 			document.getElementById("color-selector-text").innerHTML = "Color " + currentColor;
 	}
 	try {
-		sfx.colorCursor.currentTime = 0;
-		sfx.colorCursor.play();
+		switch (document.getElementsByClassName("game-logo")[0].src.split("logos/")[1].split("_logo")[0].toLowerCase()) {
+			case "ggst":
+				if (colorForward) {
+					sfx.cursor.src = "audio/sfx/ggst/cursor_right.ogg";
+					sfx.cursor.currentTime = 0;
+					sfx.cursor.play();
+				} else {
+					sfx.cursor.src = "audio/sfx/ggst/cursor_left.ogg";
+					sfx.cursor.currentTime = 0;
+					sfx.cursor.play();
+				}
+				break;
+			case "ufdk2":
+				var randNum = Math.floor(Math.random() * 4);
+				sfx.cursor[randNum].currentTime = 0;
+				sfx.cursor[randNum].play();
+				break;
+			default:
+				sfx.colorCursor.currentTime = 0;
+				sfx.colorCursor.play();
+		}
 	} catch (error) {
 		try {
 			sfx.cursor.currentTime = 0;
@@ -596,6 +591,8 @@ function hideDescription() {
 	}
 	previewDisplayOn = true;
 	interactionEnabled = true;
+	chrPrevImg.classList.remove("portrait-onhover");
+	chrPrevImg.classList.remove("portrait-onselect");
 	switch (document.getElementsByClassName("game-logo")[0].src.split("logos/")[1].split("_logo")[0].toLowerCase()) {
 		case "aocf":
 			document.getElementById("info-portrait").style.visibility = "visible";
@@ -668,7 +665,8 @@ function initializePageDisplay(gameName, skipTransition = false) {
 				var pageData = text.split("<body>")[1].split("</body>")[0];
 
 				document.body.style = "";
-				document.body.innerHTML = ``;
+				document.body.innerHTML = `<div id="pageload-display">Loading assets (0/0)...</div>`;
+				var loadProgress = document.getElementById("pageload-display");
 
 				function loadPage() {
 					document.body.innerHTML = `<button id="returnbutton" onclick="initializePageDisplay()">Back to Game Select</button>` + pageData;
@@ -702,6 +700,8 @@ function initializePageDisplay(gameName, skipTransition = false) {
 					async function loadMedia(mediaUrlArray) {
 						const promiseArray = [];
 						const mediaArray = [];
+						const totalMedia = mediaUrlArray.length;
+						var loadedMedia = 0;
 
 						for (let mediaUrl of mediaUrlArray) {
 							promiseArray.push(new Promise(resolve => {
@@ -716,8 +716,15 @@ function initializePageDisplay(gameName, skipTransition = false) {
 								
 								media.src = mediaUrl;
 								mediaArray.push(media);
-							}));
+							}).then(() => updateProgress()));
 						}
+
+						function updateProgress() {
+							loadedMedia++;
+							loadProgress.innerHTML = "Loading assets (" + loadedMedia + "/" + totalMedia + ")...";
+						}
+
+						loadProgress.innerHTML = "Loading assets (" + loadedMedia + "/" + totalMedia + ")...";
 
 						await Promise.all(promiseArray);
 						return true;
@@ -730,6 +737,7 @@ function initializePageDisplay(gameName, skipTransition = false) {
 					});
 				} catch (error) {
 					console.log("No preload found, failed to preload");
+					loadProgress.innerHTML = "Failed to preload";
 					loadPage();
 				}
 			});

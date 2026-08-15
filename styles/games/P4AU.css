@@ -19,7 +19,7 @@ body {
     position: absolute;
     top: 0.8vw;
     right: 35vw;
-    z-index: 600;
+    z-index: 201;
     cursor: pointer;
 }
 
@@ -28,7 +28,7 @@ body {
     width: 300px;
 }
 
-.portrait-area, .description-area {
+.portrait-area {
     width: 0px;
     height: 0px;
     z-index: 100;
@@ -72,39 +72,33 @@ body {
     transform-origin: top right;
 }
 
-.description-area {
-    position: absolute;
-    width: 53vw;
-    transform: translate(-10vw,-1vh) rotate(-12deg);
-}
-
-.selectbox-container {
+.css-container {
     width: 100%;
     overflow: clip;
-    z-index: 500;
+    z-index: 200;
 }
 
-.selectbox-character img {
-    opacity: 0;
-    transform-origin: top left;
-}
-
-.selectbox-container, .selectbox-fullroster  {
+.css-container, .css-fullroster  {
     position: relative;
 }
 
-.selectbox-fullroster {
+.css-fullroster {
     width: 100%;
 }
 
-.selectbox-positioner {
+.css-character {
     pointer-events: none;
     position: relative;
     left: 0px;
     top: 0px;
     width: 0px;
     height: 0px;
-    z-index: 501;
+    z-index: 201;
+    opacity: 0;
+}
+
+.css-character img {
+    transform-origin: top left;
 }
 
 .portrait-onhover {

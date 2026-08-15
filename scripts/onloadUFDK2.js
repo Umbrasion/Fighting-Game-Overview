@@ -6,6 +6,7 @@ const chrSel = [
 	document.getElementById("character-chihiro"),
 	document.getElementById("character-blues"),
 	document.getElementById("character-sendou"),
+	document.getElementById("character-grandsky"),
 	document.getElementById("character-anna"),
 	document.getElementById("character-kyanta"),
 	document.getElementById("character-buttobi"),
@@ -48,12 +49,14 @@ const sfx = {
 		new Audio("audio/sfx/ufdk2/cursor4.ogg"),
 	],
 	confirm: new Audio("audio/sfx/ufdk2/confirm.ogg"),
+	cancel: new Audio("audio/sfx/ufdk2/cancel.ogg"),
 }
 sfx.cursor[0].volume = 0.6;
 sfx.cursor[1].volume = 0.6;
 sfx.cursor[2].volume = 0.6;
 sfx.cursor[3].volume = 0.6;
 sfx.confirm.volume = 0.7;
+sfx.cancel.volume = 0.1;
 
 var interactionEnabled = true;
 
@@ -114,7 +117,7 @@ function runDisplay(characterName) {
 			var randNum = Math.floor(Math.random() * chrSel.length);
 			characterName = chrSel[randNum].onclick.toString().split("'")[1];
 			positionCursor(chrSel[randNum].children[0].children[0].dataset.cursor);
-			chrPrevImg.src = "img/portraits/ufdk2/" + charFileName + ".png";
+			chrPrevImg.src = "img/portraits/ufdk2/" + characterName + ".png";
 		}
 
 		interactionEnabled = false;
@@ -185,6 +188,22 @@ function runDisplay(characterName) {
                 }
 				break;
 			case "Sendou":
+                displayInfo = {
+                    filename: characterName,
+					nicknames: [""],
+                    colors: 8,
+                    playstyle: "",
+                    difficulty: 1,
+                    mechanics: ["N/A"],
+                    likes: [],
+                    dislikes: [],
+                    stats: [1,1,1,1,1],
+                    bio: `
+                        <p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+                    `,
+                }
+				break;
+			case "GRANDSKY":
                 displayInfo = {
                     filename: characterName,
 					nicknames: [""],

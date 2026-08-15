@@ -30,6 +30,7 @@ const chrSel = [
 	document.getElementById("character-sagat"),
 	document.getElementById("character-viper"),
 	document.getElementById("character-alex"),
+	document.getElementById("character-ingrid"),
 ];
 
 const pageMusic = new Audio("audio/music/SF6 - Reinvent the Game.ogg");
@@ -113,7 +114,7 @@ function runDisplay(characterName) {
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],
-					colors: 19,
+					colors: 10,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -129,7 +130,7 @@ function runDisplay(characterName) {
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],
-					colors: 19,
+					colors: 10,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -145,7 +146,7 @@ function runDisplay(characterName) {
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],
-					colors: 19,
+					colors: 10,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -161,7 +162,7 @@ function runDisplay(characterName) {
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],
-					colors: 19,
+					colors: 10,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -177,7 +178,7 @@ function runDisplay(characterName) {
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],
-					colors: 19,
+					colors: 10,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -193,7 +194,7 @@ function runDisplay(characterName) {
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],
-					colors: 19,
+					colors: 10,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -209,7 +210,7 @@ function runDisplay(characterName) {
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],
-					colors: 19,
+					colors: 10,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -225,7 +226,7 @@ function runDisplay(characterName) {
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],
-					colors: 19,
+					colors: 10,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -241,7 +242,7 @@ function runDisplay(characterName) {
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],
-					colors: 19,
+					colors: 10,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -257,7 +258,7 @@ function runDisplay(characterName) {
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],
-					colors: 19,
+					colors: 10,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -273,7 +274,7 @@ function runDisplay(characterName) {
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],
-					colors: 19,
+					colors: 10,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -289,7 +290,7 @@ function runDisplay(characterName) {
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],
-					colors: 19,
+					colors: 10,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -305,7 +306,7 @@ function runDisplay(characterName) {
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],
-					colors: 19,
+					colors: 10,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -321,7 +322,7 @@ function runDisplay(characterName) {
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],
-					colors: 19,
+					colors: 10,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -337,7 +338,7 @@ function runDisplay(characterName) {
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],
-					colors: 19,
+					colors: 10,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -353,7 +354,7 @@ function runDisplay(characterName) {
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],
-					colors: 19,
+					colors: 10,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -369,7 +370,7 @@ function runDisplay(characterName) {
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],
-					colors: 19,
+					colors: 10,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -385,7 +386,7 @@ function runDisplay(characterName) {
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],
-					colors: 19,
+					colors: 10,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -401,7 +402,7 @@ function runDisplay(characterName) {
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],
-					colors: 19,
+					colors: 10,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -417,7 +418,7 @@ function runDisplay(characterName) {
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],
-					colors: 19,
+					colors: 10,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -433,7 +434,7 @@ function runDisplay(characterName) {
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],
-					colors: 19,
+					colors: 10,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -449,7 +450,7 @@ function runDisplay(characterName) {
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],
-					colors: 19,
+					colors: 10,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -465,7 +466,7 @@ function runDisplay(characterName) {
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],
-					colors: 19,
+					colors: 10,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -481,7 +482,7 @@ function runDisplay(characterName) {
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],
-					colors: 19,
+					colors: 10,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -497,7 +498,7 @@ function runDisplay(characterName) {
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],
-					colors: 19,
+					colors: 10,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -513,7 +514,7 @@ function runDisplay(characterName) {
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],
-					colors: 19,
+					colors: 10,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -529,7 +530,7 @@ function runDisplay(characterName) {
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],
-					colors: 19,
+					colors: 10,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -545,7 +546,7 @@ function runDisplay(characterName) {
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],
-					colors: 19,
+					colors: 10,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],
@@ -561,7 +562,23 @@ function runDisplay(characterName) {
 				displayInfo = {
 					filename: characterName,
 					nicknames: [""],
-					colors: 19,
+					colors: 10,
+					playstyle: "",
+					difficulty: 1,
+					mechanics: ["N/A"],
+					likes: [],
+					dislikes: [],
+					stats: [1,1,1,1,1],
+					bio: `
+						<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+					`,
+				}
+				break;
+			case "Ingrid":
+				displayInfo = {
+					filename: characterName,
+					nicknames: [""],
+					colors: 10,
 					playstyle: "",
 					difficulty: 1,
 					mechanics: ["N/A"],

@@ -36,15 +36,15 @@ body {
     padding: 0px 6%;
 }
 
-.selectbox-container {
+.css-container {
     width: fit-content;
 }
 
-.selectbox-container img {
+.css-container img {
     height: 100vh;
 }
 
-.selectbox-overlay {
+.css-overlay {
     pointer-events: none;
 }
 
@@ -63,4 +63,9 @@ body {
 
 th {
     font-weight: normal
+}
+
+.description-area {
+    /* background-image: url("../../img/characterSelect/sg/Layout_window.webp");
+    background-size: 100% 100%; */
 }

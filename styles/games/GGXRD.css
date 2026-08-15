@@ -12,12 +12,13 @@ body {
     overflow: visible;
 }
 
-.selectbox-container {
+.css-container {
     left: 0px;
     right: 0px;
+    top: 5vh;
 }
 
-.selectbox-positioner {
+.css-positioner {
     pointer-events: none;
     position: relative;
     width: 0px;
@@ -25,11 +26,11 @@ body {
     z-index: 50;
 }
 
-.selectbox-character img {
+.css-character img {
     user-select: none;
 }
 
-.selectbox-fullroster-sizer {
+.css-fullroster-sizer {
     display: block;
     user-select: none;
 }
@@ -42,7 +43,7 @@ body {
     pointer-events: none;
 }
 
-.selectbox-fullroster {
+.css-fullroster {
     position: relative;
     user-select: none;
 }
@@ -106,4 +107,43 @@ body {
     to {
         filter: brightness(1.7);
     }
+}
+
+/* Description Area */
+
+.description-area {
+    border: 7px solid #B9A06E;
+    outline: 5px solid #746647;
+    outline-offset: -6px;
+    background: linear-gradient(
+        rgba(165, 238, 235, 0.95) 0%,
+        rgba(195, 255, 187, 0.95) 2%,
+        rgba(125, 197, 125, 0.95) 12%,
+        rgba(125, 197, 125, 0.95) 30%,
+        rgba(195, 255, 187, 0.95) 98%,
+        rgba(165, 238, 235, 0.95) 100%
+    );
+}
+
+.description-area .info-title {
+    font-family: "Strive Impact";
+    font-size: 2em;
+    color: #2C6342;
+    background: #B5FF94;
+    padding: 4px 0px;
+    border-radius: 5px;
+    filter: drop-shadow(0px 5px 0px #73A55E) drop-shadow(0px 4px 0px #8FCF76);
+}
+
+.description-area .info-segment {
+    background: rgba(56, 115, 62, 0.95);
+    border: 8px solid rgba(56, 115, 62, 0.95);
+    border-radius: 5px;
+}
+
+.color-button, .description-exit {
+    background: rgba(56, 115, 62, 0.95);
+    color: #9FFF74;
+    border: 0px solid transparent;
+    border-radius: 5px;
 }

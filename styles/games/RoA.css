@@ -2,19 +2,19 @@
     display: block;
 }
 
-.selectbox-container, .selectbox-fullroster {
+.css-container, .css-fullroster {
     width: 956px;
     height: 190px;
 }
 
-.selectbox-positioner {
+.css-positioner {
     pointer-events: none;
     position: relative;
     width: 0px;
     height: 0px;
 }
 
-.selectbox-character img {
+.css-character img {
     width: 136px;
     height: 92px;
     transform-origin: center;

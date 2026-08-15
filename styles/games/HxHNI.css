@@ -13,7 +13,7 @@ body {
     height: calc(100vh);
 }
 
-.selectbox-container {
+.css-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;

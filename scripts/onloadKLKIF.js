@@ -1,18 +1,17 @@
 const chrPrevImg = document.getElementById("info-portrait");
 const chrName = document.getElementById("info-name");
-const chrSel = {
-	nudist: document.getElementById("character-nudist"),
-	nui: document.getElementById("character-nui"),
-	inumuta: document.getElementById("character-inumuta"),
-	gamagori: document.getElementById("character-gamagori"),
-	satsuki: document.getElementById("character-satsuki"),
-	random: document.getElementById("character-random"),
-	ryuko: document.getElementById("character-ryuko"),
-	sanageyama: document.getElementById("character-sanageyama"),
-	jakuzure: document.getElementById("character-jakuzure"),
-	ragyo: document.getElementById("character-ragyo"),
-	mako: document.getElementById("character-mako"),
-}
+const chrSel = [
+	document.getElementById("character-nudist"),
+	document.getElementById("character-nui"),
+	document.getElementById("character-inumuta"),
+	document.getElementById("character-gamagori"),
+	document.getElementById("character-satsuki"),
+	document.getElementById("character-ryuko"),
+	document.getElementById("character-sanageyama"),
+	document.getElementById("character-jakuzure"),
+	document.getElementById("character-ragyo"),
+	document.getElementById("character-mako"),
+]
 
 const pageMusic = new Audio("audio/music/KLKIF - Main Menu Theme loop.ogg");
 pageMusic.loop = true;
@@ -34,184 +33,47 @@ pageMusicIntro.onended = function() {
 const sfx = {
 	cursor: new Audio("audio/sfx/klkif/cursor.ogg"),
 	confirm: new Audio("audio/sfx/klkif/confirm.ogg"),
+	cancel: new Audio("audio/sfx/klkif/cancel.ogg"),
 }
 sfx.cursor.volume = 0.2;
 sfx.confirm.volume = 0.2;
+sfx.cancel.volume = 0.2;
 
 function clearDisplay() {
-	if (previewDisplayOn) {
-		chrPrevImg.src = "";
-		chrName.innerHTML = "";
-	}
+	chrPrevImg.src = "";
+	chrName.innerHTML = "";
 }
 
-var previewDisplayOn = true;
+var interactionEnabled = true;
 var disableActions = false;
 
 // Display on hover
 
-function hoverDisplay(charFileName) {
-	sfx.cursor.currentTime = 0;
-	sfx.cursor.play();
-	if (previewDisplayOn) {
+function hoverDisplay(targetChar) {
+	if (interactionEnabled) {
+		var charFileName = targetChar.onclick.toString().split("'")[1];
+		sfx.cursor.currentTime = 0;
+		sfx.cursor.play();
+
 		chrPrevImg.src = "img/portraits/klkif/" + charFileName + ".png";
 		chrName.innerHTML = charFileName.replace(/_/g, " ").toUpperCase();
+		
+		var scaleMeasures = targetChar.children[0].children[0].dataset.scale.split(",");
+		chrPrevImg.style.transform = "scale(" + scaleMeasures[0] + ") translate(" + scaleMeasures[1] + "%, " + scaleMeasures[2] + "%)";
 	}
 }
 
-chrSel.nudist.addEventListener("mouseover",
-	(event) => {
-		if (!disableActions) {
-			hoverDisplay("Nudist_Beach");
+chrSel.forEach(element => {
+	element.addEventListener("mouseover",
+		() => {
+			hoverDisplay(element);
 		}
-	}
-);
-chrSel.nudist.addEventListener("mouseout",
-	(event) => {
-		if (!disableActions) {
-			clearDisplay();
-		}
-	}
-);
+	);
+});
 
-chrSel.nui.addEventListener("mouseover",
-	(event) => {
-		if (!disableActions) {
-			hoverDisplay("Nui_Harime");
-		}
-	}
-);
-chrSel.nui.addEventListener("mouseout",
-	(event) => {
-		if (!disableActions) {
-			clearDisplay();
-		}
-	}
-);
-
-chrSel.inumuta.addEventListener("mouseover",
-	(event) => {
-		if (!disableActions) {
-			hoverDisplay("Houka_Inumuta");
-		}
-	}
-);
-chrSel.inumuta.addEventListener("mouseout",
-	(event) => {
-		if (!disableActions) {
-			clearDisplay();
-		}
-	}
-);
-
-chrSel.gamagori.addEventListener("mouseover",
-	(event) => {
-		if (!disableActions) {
-			hoverDisplay("Ira_Gamagoori");
-		}
-	}
-);
-chrSel.gamagori.addEventListener("mouseout",
-	(event) => {
-		if (!disableActions) {
-			clearDisplay();
-		}
-	}
-);
-
-chrSel.satsuki.addEventListener("mouseover",
-	(event) => {
-		if (!disableActions) {
-			hoverDisplay("Satsuki_Kiryuin");
-		}
-	}
-);
-chrSel.satsuki.addEventListener("mouseout",
-	(event) => {
-		if (!disableActions) {
-			clearDisplay();
-		}
-	}
-);
-
-chrSel.ryuko.addEventListener("mouseover",
-	(event) => {
-		if (!disableActions) {
-			hoverDisplay("Ryuko_Matoi");
-		}
-	}
-);
-chrSel.ryuko.addEventListener("mouseout",
-	(event) => {
-		if (!disableActions) {
-			clearDisplay();
-		}
-	}
-);
-
-chrSel.sanageyama.addEventListener("mouseover",
-	(event) => {
-		if (!disableActions) {
-			hoverDisplay("Uzu_Sanageyama");
-		}
-	}
-);
-chrSel.sanageyama.addEventListener("mouseout",
-	(event) => {
-		if (!disableActions) {
-			clearDisplay();
-		}
-	}
-);
-
-chrSel.jakuzure.addEventListener("mouseover",
-	(event) => {
-		if (!disableActions) {
-			hoverDisplay("Nonon_Jakuzure");
-		}
-	}
-);
-chrSel.jakuzure.addEventListener("mouseout",
-	(event) => {
-		if (!disableActions) {
-			clearDisplay();
-		}
-	}
-);
-
-chrSel.ragyo.addEventListener("mouseover",
-	(event) => {
-		if (!disableActions) {
-			hoverDisplay("Ragyo_Kiryuin");
-		}
-	}
-);
-chrSel.ragyo.addEventListener("mouseout",
-	(event) => {
-		if (!disableActions) {
-			clearDisplay();
-		}
-	}
-);
-
-chrSel.mako.addEventListener("mouseover",
-	(event) => {
-		if (!disableActions) {
-			hoverDisplay("Mako_Mankanshoku");
-		}
-	}
-);
-chrSel.mako.addEventListener("mouseout",
-	(event) => {
-		if (!disableActions) {
-			clearDisplay();
-		}
-	}
-);
-
-chrSel.random.addEventListener("mouseover",
-	(event) => {
-		if (!disableActions) {
+document.getElementById("character-random").addEventListener("mouseover",
+	() => {
+		if (!disableActions && interactionEnabled) {
 			sfx.cursor.currentTime = 0;
 			sfx.cursor.play();
 			clearDisplay();
@@ -224,258 +86,218 @@ chrSel.random.addEventListener("mouseover",
 var banter = new Audio();
 
 function runDisplay(characterName, overrideDisableActions = false) {
-	if (!disableActions || overrideDisableActions) {
+	if (!disableActions && interactionEnabled || overrideDisableActions) {
 		sfx.confirm.onended = function() {}
 		if (!banter.paused) {
 			banter.pause();
 		}
-		previewDisplayOn = false;
+
+		interactionEnabled = false;
 		disableActions = false;
 		
 		sfx.confirm.currentTime = 0;
 		sfx.confirm.play();
 		sfx.confirm.onended = function() {
-			banter = new Audio("audio/sfx/klkif/banter/" + characterName + "_select.ogg");
+			banter.src = "audio/sfx/klkif/banter/" + characterName + "_select.ogg";
 			banter.volume = 0.35;
 			banter.play();
 		};
 		
-		initializeOV("wide");
+		initializeOV("experimental");
 		
-		function writeCharInfo(detailInfo, ratings, likeOrDislike, charDescription, charFileName) {
-			updateOV(detailInfo, ratings, likeOrDislike, charDescription);
+		if (characterName === "Random") {
+			characterName = chrSel[Math.floor(Math.random() * chrSel.length)].onclick.toString().split("'")[1];
+			chrPrevImg.src = "img/portraits/klkif/" + characterName + ".png";
+			chrName.innerHTML = characterName.replace(/_/g, " ").toUpperCase();
+
+			var charIcon;
+			chrSel.forEach(element => {
+				if (element.children[0].children[0].src.includes("/" + characterName + "_icon")) {
+					charIcon = element.children[0].children[0];
+				}
+			});
 			
-			chrPrevImg.src = "img/portraits/klkif/" + charFileName + ".png";
-			chrName.innerHTML = charFileName.replace(/_/g, " ").toUpperCase();
+			var scaleMeasures = charIcon.dataset.scale.split(",");
+			chrPrevImg.style.transform = "scale(" + scaleMeasures[0] + ") translate(" + scaleMeasures[1] + "%, " + scaleMeasures[2] + "%)";
 		}
 		
 		switch (characterName) {
 			case "Nudist_Beach":
-				writeCharInfo(
-					[
-						"<span class='archetype-'></span>",
-						"<span class='range-'></span>",
-						"<span class='unimech-none'>None</span>"
-					],
-					[1,1,1,1,1,1],
-					["<li></li>", "<li></li>"],
-					`
-					<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-					`,
-					characterName
-				);
+                displayInfo = {
+                    filename: characterName,
+					nicknames: [""],
+                    colors: 3,
+                    playstyle: "",
+                    difficulty: 1,
+                    mechanics: ["N/A"],
+                    likes: [],
+                    dislikes: [],
+                    stats: [1,1,1,1,1],
+                    bio: `
+                        <p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+                    `,
+                }
 				break;
 			case "Nui_Harime":
-				writeCharInfo(
-					[
-						"<span class='archetype-'></span>",
-						"<span class='range-'></span>",
-						"<span class='unimech-none'>None</span>"
-					],
-					[1,1,1,1,1,1],
-					["<li></li>", "<li></li>"],
-					`
-					<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-					`,
-					characterName
-				);
+                displayInfo = {
+                    filename: characterName,
+					nicknames: [""],
+                    colors: 3,
+                    playstyle: "",
+                    difficulty: 1,
+                    mechanics: ["N/A"],
+                    likes: [],
+                    dislikes: [],
+                    stats: [1,1,1,1,1],
+                    bio: `
+                        <p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+                    `,
+                }
 				break;
 			case "Houka_Inumuta":
-				writeCharInfo(
-					[
-						"<span class='archetype-'></span>",
-						"<span class='range-'></span>",
-						"<span class='unimech-none'>None</span>"
-					],
-					[1,1,1,1,1,1],
-					["<li></li>", "<li></li>"],
-					`
-					<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-					`,
-					characterName
-				);
+                displayInfo = {
+                    filename: characterName,
+					nicknames: [""],
+                    colors: 3,
+                    playstyle: "",
+                    difficulty: 1,
+                    mechanics: ["N/A"],
+                    likes: [],
+                    dislikes: [],
+                    stats: [1,1,1,1,1],
+                    bio: `
+                        <p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+                    `,
+                }
 				break;
 			case "Ira_Gamagoori":
-				writeCharInfo(
-					[
-						"<span class='archetype-'></span>",
-						"<span class='range-'></span>",
-						"<span class='unimech-none'>None</span>"
-					],
-					[1,1,1,1,1,1],
-					["<li></li>", "<li></li>"],
-					`
-					<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-					`,
-					characterName
-				);
+                displayInfo = {
+                    filename: characterName,
+					nicknames: [""],
+                    colors: 3,
+                    playstyle: "",
+                    difficulty: 1,
+                    mechanics: ["N/A"],
+                    likes: [],
+                    dislikes: [],
+                    stats: [1,1,1,1,1],
+                    bio: `
+                        <p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+                    `,
+                }
 				break;
 			case "Satsuki_Kiryuin":
-				writeCharInfo(
-					[
-						"<span class='archetype-'></span>",
-						"<span class='range-'></span>",
-						"<span class='unimech-none'>None</span>"
-					],
-					[1,1,1,1,1,1],
-					["<li></li>", "<li></li>"],
-					`
-					<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-					`,
-					characterName
-				);
+                displayInfo = {
+                    filename: characterName,
+					nicknames: [""],
+                    colors: 3,
+                    playstyle: "",
+                    difficulty: 1,
+                    mechanics: ["N/A"],
+                    likes: [],
+                    dislikes: [],
+                    stats: [1,1,1,1,1],
+                    bio: `
+                        <p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+                    `,
+                }
 				break;
 			case "Ryuko_Matoi":
-				writeCharInfo(
-					[
-						"<span class='archetype-'></span>",
-						"<span class='range-'></span>",
-						"<span class='unimech-none'>None</span>"
-					],
-					[1,1,1,1,1,1],
-					["<li></li>", "<li></li>"],
-					`
-					<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-					`,
-					characterName
-				);
+                displayInfo = {
+                    filename: characterName,
+					nicknames: [""],
+                    colors: 3,
+                    playstyle: "",
+                    difficulty: 1,
+                    mechanics: ["N/A"],
+                    likes: [],
+                    dislikes: [],
+                    stats: [1,1,1,1,1],
+                    bio: `
+                        <p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+                    `,
+                }
 				break;
 			case "Uzu_Sanageyama":
-				writeCharInfo(
-					[
-						"<span class='archetype-'></span>",
-						"<span class='range-'></span>",
-						"<span class='unimech-none'>None</span>"
-					],
-					[1,1,1,1,1,1],
-					["<li></li>", "<li></li>"],
-					`
-					<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-					`,
-					characterName
-				);
+                displayInfo = {
+                    filename: characterName,
+					nicknames: [""],
+                    colors: 3,
+                    playstyle: "",
+                    difficulty: 1,
+                    mechanics: ["N/A"],
+                    likes: [],
+                    dislikes: [],
+                    stats: [1,1,1,1,1],
+                    bio: `
+                        <p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+                    `,
+                }
 				break;
 			case "Nonon_Jakuzure":
-				writeCharInfo(
-					[
-						"<span class='archetype-'></span>",
-						"<span class='range-'></span>",
-						"<span class='unimech-none'>None</span>"
-					],
-					[1,1,1,1,1,1],
-					["<li></li>", "<li></li>"],
-					`
-					<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-					`,
-					characterName
-				);
+                displayInfo = {
+                    filename: characterName,
+					nicknames: [""],
+                    colors: 3,
+                    playstyle: "",
+                    difficulty: 1,
+                    mechanics: ["N/A"],
+                    likes: [],
+                    dislikes: [],
+                    stats: [1,1,1,1,1],
+                    bio: `
+                        <p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+                    `,
+                }
 				break;
 			case "Ragyo_Kiryuin":
-				writeCharInfo(
-					[
-						"<span class='archetype-'></span>",
-						"<span class='range-'></span>",
-						"<span class='unimech-none'>None</span>"
-					],
-					[1,1,1,1,1,1],
-					["<li></li>", "<li></li>"],
-					`
-					<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-					`,
-					characterName
-				);
+                displayInfo = {
+                    filename: characterName,
+					nicknames: [""],
+                    colors: 3,
+                    playstyle: "",
+                    difficulty: 1,
+                    mechanics: ["N/A"],
+                    likes: [],
+                    dislikes: [],
+                    stats: [1,1,1,1,1],
+                    bio: `
+                        <p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+                    `,
+                }
 				break;
 			case "Mako_Mankanshoku":
-				writeCharInfo(
-					[
-						"<span class='archetype-'></span>",
-						"<span class='range-'></span>",
-						"<span class='unimech-none'>None</span>"
-					],
-					[1,1,1,1,1,1],
-					["<li></li>", "<li></li>"],
-					`
-					<p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
-					`,
-					characterName
-				);
+                displayInfo = {
+                    filename: characterName,
+					nicknames: [""],
+                    colors: 3,
+                    playstyle: "",
+                    difficulty: 1,
+                    mechanics: ["N/A"],
+                    likes: [],
+                    dislikes: [],
+                    stats: [1,1,1,1,1],
+                    bio: `
+                        <p><b>` + characterName.replace(/_/g, " ") + `</b> is</p>
+                    `,
+                }
 				break;
 		}
+
+        updateOV2(displayInfo, "klkif");
 	}
 }
 
 var iterationCount = 0
 function randomDisplay() {
-	previewDisplayOn = true;
 	disableActions = true;
-	
-	switch (Math.floor(Math.random() * 10)) {
-		case 0:
-			hoverDisplay("Nudist_Beach");
-			break;
-		case 1:
-			hoverDisplay("Nui_Harime");
-			break;
-		case 2:
-			hoverDisplay("Houka_Inumuta");
-			break;
-		case 3:
-			hoverDisplay("Ira_Gamagoori");
-			break;
-		case 4:
-			hoverDisplay("Satsuki_Kiryuin");
-			break;
-		case 5:
-			hoverDisplay("Ryuko_Matoi");
-			break;
-		case 6:
-			hoverDisplay("Uzu_Sanageyama");
-			break;
-		case 7:
-			hoverDisplay("Nonon_Jakuzure");
-			break;
-		case 8:
-			hoverDisplay("Ragyo_Kiryuin");
-			break;
-		case 9:
-			hoverDisplay("Mako_Mankanshoku");
-			break;
-	}
+
+	hoverDisplay(chrSel[Math.floor(Math.random() * chrSel.length)]);
+
 	iterationCount++;
 	if (iterationCount === 20) {
 		iterationCount = 0;
-		switch (Math.floor(Math.random() * 10)) {
-			case 0:
-				runDisplay("Nudist_Beach", true);
-				break;
-			case 1:
-				runDisplay("Nui_Harime", true);
-				break;
-			case 2:
-				runDisplay("Houka_Inumuta", true);
-				break;
-			case 3:
-				runDisplay("Ira_Gamagoori", true);
-				break;
-			case 4:
-				runDisplay("Satsuki_Kiryuin", true);
-				break;
-			case 5:
-				runDisplay("Ryuko_Matoi", true);
-				break;
-			case 6:
-				runDisplay("Uzu_Sanageyama", true);
-				break;
-			case 7:
-				runDisplay("Nonon_Jakuzure", true);
-				break;
-			case 8:
-				runDisplay("Ragyo_Kiryuin", true);
-				break;
-			case 9:
-				runDisplay("Mako_Mankanshoku", true);
-				break;
-		}
+		runDisplay("Random", true);
 	} else {
 		setTimeout(function() {
 			randomDisplay();

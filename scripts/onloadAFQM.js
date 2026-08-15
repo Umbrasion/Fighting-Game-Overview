@@ -8,14 +8,21 @@ const chrSel = [
 	document.getElementById("character-sarissae"),
 ];
 
+const pageMusic = new Audio("audio/music/AFQM - Menu.ogg");
+pageMusic.loop = true;
+pageMusic.volume = 0.3 * volumeModifier;
+pageMusic.play();
+
 const sfx = {
 	cursor: new Audio("audio/sfx/afqm/Cursor_1.ogg"),
 	colorCursor: new Audio("audio/sfx/afqm/Cursor_2.ogg"),
+	cancel: new Audio("audio/sfx/afqm/Cancel.ogg"),
     announcer: new Audio("audio/sfx/afqm/announcer/Eureka_select.ogg"),
 }
 sfx.cursor.volume = 0.4;
-sfx.colorCursor.volume = 0.2;
-sfx.announcer.volume = 0.2;
+sfx.colorCursor.volume = 0.4;
+sfx.cancel.volume = 0.4;
+sfx.announcer.volume = 0.3;
 
 var interactionEnabled = true;
 

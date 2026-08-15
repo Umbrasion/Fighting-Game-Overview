@@ -1,0 +1,28 @@
+:root {
+    background-image: url("../../img/backgrounds/NASB2.png");
+    background-size: 100% 100%;
+}
+
+body {
+    min-height: 100vh;
+}
+
+#info-portrait {
+    height: 90vh;
+}
+
+.css-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(92vh - 210px);
+    display: flex;
+    flex-flow: row wrap;
+    gap: 12px;
+    width: 1638px;
+    margin: auto;
+}
+
+.css-character img {
+    width: 98px;
+}

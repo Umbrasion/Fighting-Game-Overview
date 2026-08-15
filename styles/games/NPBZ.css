@@ -1,0 +1,19 @@
+:root {
+    background-image: url("../../img/backgrounds/NPBZ.png");
+    background-size: 100% 100%;
+    overflow-y: clip;
+    --icon-scale: 1.5;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.css-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: calc(11px * var(--icon-scale)) calc(12px * var(--icon-scale));
+    width: calc(593px * var(--icon-scale));
+    margin-top: 45vh;
+}

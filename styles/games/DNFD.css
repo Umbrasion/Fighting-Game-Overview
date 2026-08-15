@@ -52,11 +52,11 @@ body {
     transform-origin: left;
 }
 
-.selectbox-container, .selectbox-fullroster {
+.css-container, .css-fullroster {
     max-width: 100%;
 }
 
-.selectbox-container {
+.css-container {
     position: absolute;
     left: 0px;
     right: 0px;
@@ -79,19 +79,19 @@ body {
     pointer-events: none;
 }
 
-.selectbox-positioner {
+.css-character {
     pointer-events: none;
     position: relative;
     width: 0px;
     height: 0px;
 }
 
-.selectbox-character img {
+.css-character img {
     transform-origin: center;
     user-select: none;
 }
 
-.selectbox-fullroster {
+.css-fullroster {
     user-select: none;
 }
 

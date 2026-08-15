@@ -11,202 +11,286 @@
 		<script src="../scripts/jquery-3.7.1.min.js"></script>
 	</head>
 	<body>
+		<img class="game-logo" src="img/logos/AUAU_logo.png">
+		<img class="decor" src="img/characterSelect/auau/CSS_BG.png">
 		<div id="characterselect">
-			<div class="selectbox-container">
-				<div>
-					<div class="selectbox selectbox-title">Choose your 'Mongus</div>
-					<div class="selectbox selectbox-preview">
-						<img id="preview-character" src="img/characterSelect/auau/Blank.png">
+			<div class="preview-area">
+				<div class="portrait-area">
+					<img id="info-portrait" src="img/portraits/auau/Random.png">
+					<h2 id="info-name" class="info-title"></h2>
+				</div>
+				<div class="css-container">
+					<div class="css-section" style="height: calc(137px * var(--element-scale)); margin: calc(61px * var(--element-scale)) auto calc(15px * var(--element-scale))">
+						<a id="character-fortegreen" class="icon-secret" onclick="runDisplay('Fortegreen')">
+							<div class="css-character">
+								<img src="img/characterSelect/auau/Fortegreen_icon.png">
+							</div>
+						</a>
+						<a id="character-undefined" class="icon-secret" onclick="runDisplay('Undefined')">
+							<div class="css-character">
+								<img src="img/characterSelect/auau/Undefined_icon.png">
+							</div>
+						</a>
+						<a id="character-charcoal" class="icon-secret" onclick="runDisplay('Charcoal')">
+							<div class="css-character">
+								<img src="img/characterSelect/auau/Charcoal_icon.png">
+							</div>
+						</a>
+						<a id="character-gone" class="icon-secret" onclick="runDisplay('Gone')">
+							<div class="css-character">
+								<img src="img/characterSelect/auau/Gone_icon.png">
+							</div>
+						</a>
 					</div>
-					<div class="selectbox selectbox-name">
-						<span id="select-name">-</span>
+					<div style="height: calc(811px * var(--element-scale))">
+						<div class="css-section">
+							<a id="character-red" onclick="runDisplay('Red')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Red_icon.png">
+								</div>
+							</a>
+							<a id="character-blue" onclick="runDisplay('Blue')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Blue_icon.png">
+								</div>
+							</a>
+							<a id="character-green" onclick="runDisplay('Green')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Green_icon.png">
+								</div>
+							</a>
+							<a id="character-random" onclick="runDisplay('Random')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Random_icon.png">
+								</div>
+							</a>
+							<a id="character-pink" onclick="runDisplay('Pink')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Pink_icon.png">
+								</div>
+							</a>
+							<a id="character-orange" onclick="runDisplay('Orange')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Orange_icon.png">
+								</div>
+							</a>
+							<a id="character-yellow" onclick="runDisplay('Yellow')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Yellow_icon.png">
+								</div>
+							</a>
+							<a id="character-black" onclick="runDisplay('Black')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Black_icon.png">
+								</div>
+							</a>
+							<a id="character-white" onclick="runDisplay('White')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/White_icon.png">
+								</div>
+							</a>
+							<a id="character-purple" onclick="runDisplay('Purple')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Purple_icon.png">
+								</div>
+							</a>
+							<a id="character-brown" onclick="runDisplay('Brown')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Brown_icon.png">
+								</div>
+							</a>
+							<a id="character-cyan" onclick="runDisplay('Cyan')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Cyan_icon.png">
+								</div>
+							</a>
+							<a id="character-lime" onclick="runDisplay('Lime')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Lime_icon.png">
+								</div>
+							</a>
+							<a id="character-tan" onclick="runDisplay('Tan')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Tan_icon.png">
+								</div>
+							</a>
+							<a id="character-rose" onclick="runDisplay('Rose')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Rose_icon.png">
+								</div>
+							</a>
+							<a id="character-banana" onclick="runDisplay('Banana')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Banana_icon.png">
+								</div>
+							</a>
+							<a id="character-maroon" onclick="runDisplay('Maroon')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Maroon_icon.png">
+								</div>
+							</a>
+							<a id="character-gray" onclick="runDisplay('Gray')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Gray_icon.png">
+								</div>
+							</a>
+							<a id="character-coral" onclick="runDisplay('Coral')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Coral_icon.png">
+								</div>
+							</a>
+							<a id="character-olive" onclick="runDisplay('Olive')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Olive_icon.png">
+								</div>
+							</a>
+							<a id="character-mint" onclick="runDisplay('Mint')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Mint_icon.png">
+								</div>
+							</a>
+							<a id="character-chocolate" onclick="runDisplay('Chocolate')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Chocolate_icon.png">
+								</div>
+							</a>
+							<a id="character-teal" onclick="runDisplay('Teal')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Teal_icon.png">
+								</div>
+							</a>
+							<a id="character-flame" onclick="runDisplay('Flame')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Flame_icon.png">
+								</div>
+							</a>
+							<a id="character-navy" onclick="runDisplay('Navy')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Navy_icon.png">
+								</div>
+							</a>
+							<a id="character-gold" onclick="runDisplay('Gold')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Gold_icon.png">
+								</div>
+							</a>
+							<a id="character-sky" onclick="runDisplay('Sky')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Sky_icon.png">
+								</div>
+							</a>
+							<a id="character-apricot" onclick="runDisplay('Apricot')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Apricot_icon.png">
+								</div>
+							</a>
+							<a id="character-lavender" onclick="runDisplay('Lavender')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Lavender_icon.png">
+								</div>
+							</a>
+							<a id="character-chartreuse" onclick="runDisplay('Chartreuse')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Chartreuse_icon.png">
+								</div>
+							</a>
+							<a id="character-eggplant" onclick="runDisplay('Eggplant')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Eggplant_icon.png">
+								</div>
+							</a>
+							<a id="character-honey" onclick="runDisplay('Honey')">
+								<div class="css-character">
+									<img src="img/characterSelect/auau/Honey_icon.png">
+								</div>
+							</a>
+						</div>
 					</div>
 				</div>
-				<div>
-					<div class="selectbox selectbox-colors">
-						<a href="Impostor.html">
-							<div class="previewAUAU preview-row-top">
-								<img src="img/characterSelect/auau/Pet_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Red">
-							<div class="previewAUAU preview-row-top colorRed">
-								<img src="img/characterSelect/auau/Red_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Blue">
-							<div class="previewAUAU preview-row-top colorBlue">
-								<img src="img/characterSelect/auau/Blue_icon.webp">
-							</div>
-						</a>
-						<a href="Random_Color.html">
-							<div class="previewAUAU preview-row-top colorRandom">
-								<img src="img/characterSelect/auau/Random_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Green">
-							<div class="previewAUAU colorGreen">
-								<img src="img/characterSelect/auau/Green_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Pink">
-							<div class="previewAUAU colorPink">
-								<img src="img/characterSelect/auau/Pink_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Orange">
-							<div class="previewAUAU colorOrange">
-								<img src="img/characterSelect/auau/Orange_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Yellow">
-							<div class="previewAUAU colorYellow">
-								<img src="img/characterSelect/auau/Yellow_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Black">
-							<div class="previewAUAU colorBlack">
-								<img src="img/characterSelect/auau/Black_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#White">
-							<div class="previewAUAU colorWhite">
-								<img src="img/characterSelect/auau/White_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Purple">
-							<div class="previewAUAU colorPurple">
-								<img src="img/characterSelect/auau/Purple_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Brown">
-							<div class="previewAUAU colorBrown">
-								<img src="img/characterSelect/auau/Brown_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Cyan">
-							<div class="previewAUAU colorCyan">
-								<img src="img/characterSelect/auau/Cyan_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Lime">
-							<div class="previewAUAU colorLime">
-								<img src="img/characterSelect/auau/Lime_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Tan">
-							<div class="previewAUAU colorTan">
-								<img src="img/characterSelect/auau/Tan_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Rose">
-							<div class="previewAUAU colorRose">
-								<img src="img/characterSelect/auau/Rose_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Banana">
-							<div class="previewAUAU colorBanana">
-								<img src="img/characterSelect/auau/Banana_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Maroon">
-							<div class="previewAUAU colorMaroon">
-								<img src="img/characterSelect/auau/Maroon_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Grey">
-							<div class="previewAUAU colorGrey">
-								<img src="img/characterSelect/auau/Grey_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Coral">
-							<div class="previewAUAU colorCoral">
-								<img src="img/characterSelect/auau/Coral_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Olive">
-							<div class="previewAUAU colorOlive">
-								<img src="img/characterSelect/auau/Olive_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Mint">
-							<div class="previewAUAU colorMint">
-								<img src="img/characterSelect/auau/Mint_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Chocolate">
-							<div class="previewAUAU colorChocolate">
-								<img src="img/characterSelect/auau/Chocolate_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Teal">
-							<div class="previewAUAU colorTeal">
-								<img src="img/characterSelect/auau/Teal_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Flame">
-							<div class="previewAUAU colorFlame">
-								<img src="img/characterSelect/auau/Flame_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Navy">
-							<div class="previewAUAU colorNavy">
-								<img src="img/characterSelect/auau/Navy_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Gold">
-							<div class="previewAUAU colorGold">
-								<img src="img/characterSelect/auau/Gold_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Sky">
-							<div class="previewAUAU colorSky">
-								<img src="img/characterSelect/auau/Sky_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Apricot">
-							<div class="previewAUAU colorApricot">
-								<img src="img/characterSelect/auau/Apricot_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Lavender">
-							<div class="previewAUAU colorLavender">
-								<img src="img/characterSelect/auau/Lavender_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Chartreuse">
-							<div class="previewAUAU colorChartreuse">
-								<img src="img/characterSelect/auau/Chartreuse_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Eggplant">
-							<div class="previewAUAU colorEggplant">
-								<img src="img/characterSelect/auau/Eggplant_icon.webp">
-							</div>
-						</a>
-					</div>
-					<div class="selectbox selectbox-secret">
-						<a href="Colors.html#Fortegreen">
-							<div class="previewAUAU colorFortegreen">
-								<img src="img/characterSelect/auau/Fortegreen_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Undefined">
-							<div class="previewAUAU colorUndefined">
-								<img src="img/characterSelect/auau/Undefined_icon.webp">
-							</div>
-						</a>
-						<a href="Colors.html#Charcoal">
-							<div class="previewAUAU colorCharcoal">
-								<img src="img/characterSelect/auau/Charcoal_icon.webp">
-							</div>
-						</a>
-					</div>
-				</div>
+				<div class="p2-area"></div>
 			</div>
 		</div>
+		<div class="description-bg">
+			<div class="description-area"></div>
+		</div>
 		<div class="preload-container">
-			<audio muted=true src="audio/music/AUAU - Character Select.ogg"></audio>
+			<img src="img/backgrounds/AUAU.png">
+			<!---->
+			<img src="img/portraits/auau/Red.png">
+			<img src="img/portraits/auau/Blue.png">
+			<img src="img/portraits/auau/Green.png">
+			<img src="img/portraits/auau/Random.png">
+			<img src="img/portraits/auau/Pink.png">
+			<img src="img/portraits/auau/Orange.png">
+			<img src="img/portraits/auau/Yellow.png">
+			<img src="img/portraits/auau/Black.png">
+			<img src="img/portraits/auau/White.png">
+			<img src="img/portraits/auau/Purple.png">
+			<img src="img/portraits/auau/Brown.png">
+			<img src="img/portraits/auau/Cyan.png">
+			<img src="img/portraits/auau/Lime.png">
+			<img src="img/portraits/auau/Tan.png">
+			<img src="img/portraits/auau/Rose.png">
+			<img src="img/portraits/auau/Banana.png">
+			<img src="img/portraits/auau/Maroon.png">
+			<img src="img/portraits/auau/Gray.png">
+			<img src="img/portraits/auau/Coral.png">
+			<img src="img/portraits/auau/Olive.png">
+			<img src="img/portraits/auau/Mint.png">
+			<img src="img/portraits/auau/Chocolate.png">
+			<img src="img/portraits/auau/Teal.png">
+			<img src="img/portraits/auau/Flame.png">
+			<img src="img/portraits/auau/Navy.png">
+			<img src="img/portraits/auau/Gold.png">
+			<img src="img/portraits/auau/Sky.png">
+			<img src="img/portraits/auau/Apricot.png">
+			<img src="img/portraits/auau/Lavender.png">
+			<img src="img/portraits/auau/Chartreuse.png">
+			<img src="img/portraits/auau/Eggplant.png">
+			<img src="img/portraits/auau/Honey.png">
+			<img src="img/portraits/auau/Fortegreen.png">
+			<img src="img/portraits/auau/Undefined.png">
+			<img src="img/portraits/auau/Charcoal.png">
+			<img src="img/portraits/auau/Gone.png">
+			<!---->
+			<img src="img/characterSelect/auau/Red_icon.png">
+			<img src="img/characterSelect/auau/Blue_icon.png">
+			<img src="img/characterSelect/auau/Green_icon.png">
+			<img src="img/characterSelect/auau/Random_icon.png">
+			<img src="img/characterSelect/auau/Pink_icon.png">
+			<img src="img/characterSelect/auau/Orange_icon.png">
+			<img src="img/characterSelect/auau/Yellow_icon.png">
+			<img src="img/characterSelect/auau/Black_icon.png">
+			<img src="img/characterSelect/auau/White_icon.png">
+			<img src="img/characterSelect/auau/Purple_icon.png">
+			<img src="img/characterSelect/auau/Brown_icon.png">
+			<img src="img/characterSelect/auau/Cyan_icon.png">
+			<img src="img/characterSelect/auau/Lime_icon.png">
+			<img src="img/characterSelect/auau/Tan_icon.png">
+			<img src="img/characterSelect/auau/Rose_icon.png">
+			<img src="img/characterSelect/auau/Banana_icon.png">
+			<img src="img/characterSelect/auau/Maroon_icon.png">
+			<img src="img/characterSelect/auau/Gray_icon.png">
+			<img src="img/characterSelect/auau/Coral_icon.png">
+			<img src="img/characterSelect/auau/Olive_icon.png">
+			<img src="img/characterSelect/auau/Mint_icon.png">
+			<img src="img/characterSelect/auau/Chocolate_icon.png">
+			<img src="img/characterSelect/auau/Teal_icon.png">
+			<img src="img/characterSelect/auau/Flame_icon.png">
+			<img src="img/characterSelect/auau/Navy_icon.png">
+			<img src="img/characterSelect/auau/Gold_icon.png">
+			<img src="img/characterSelect/auau/Sky_icon.png">
+			<img src="img/characterSelect/auau/Apricot_icon.png">
+			<img src="img/characterSelect/auau/Lavender_icon.png">
+			<img src="img/characterSelect/auau/Chartreuse_icon.png">
+			<img src="img/characterSelect/auau/Eggplant_icon.png">
+			<img src="img/characterSelect/auau/Honey_icon.png">
+			<img src="img/characterSelect/auau/Fortegreen_icon.png">
+			<img src="img/characterSelect/auau/Undefined_icon.png">
+			<img src="img/characterSelect/auau/Charcoal_icon.png">
+			<img src="img/characterSelect/auau/Gone_icon.png">
+			<!---->
+			<audio muted=true src="audio/music/AUAU - BeatsToBeEjectedTo.wav"></audio>
 			<audio muted=true src="audio/sfx/auau/Player_SpawnIn2.wav"></audio>
 			<audio muted=true src="audio/sfx/auau/UI_Hover.wav"></audio>
 			<audio muted=true src="audio/sfx/auau/UI_Select.wav"></audio>

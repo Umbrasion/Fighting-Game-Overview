@@ -1,0 +1,42 @@
+:root {
+    background-image: url("../../img/backgrounds/MvCIB.png");
+    background-size: 100% 100%;
+}
+
+body {
+    min-height: 100vh;
+}
+
+#info-portrait {
+    height: 110vh;
+    transform: translate(0, -10vh);
+}
+
+#info-name {
+    width: 50%;
+    margin-top: 70vh;
+}
+
+.css-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 13px;
+    background-image: url("../../img/characterSelect/mvcib/css_bg.png");
+    width: 545px;
+    height: fit-content;
+    padding: 13px;
+    margin-top: 8vh;
+}
+
+.css-character, .css-character img {
+    width: 80px;
+}
+
+.css-character img {
+    background-color: rgba(0,0,0,0.5);
+}
+
+.css-character img:hover {
+    background-color: #005EBC;
+}

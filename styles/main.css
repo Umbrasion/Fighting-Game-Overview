@@ -1,4 +1,5 @@
 :root {
+	--gamebox-size: 280px;
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 	background-color: #19191E;
@@ -42,17 +43,16 @@ a:hover {
 	padding: 8px;
 	border: 1px solid gray;
 	border-radius: 5px;
-	width: 280px;
+	width: var(--gamebox-size);
 }
 
 .gamebox-logocontainer {
 	aspect-ratio: 1 / 1;
-	margin-bottom: 8px;
 }
 
 .gamebox-logo {
-	max-width: 100%;
-	max-height: 100%;
+	max-width: var(--gamebox-size);
+	max-height: var(--gamebox-size);
 	margin: 0;
 	position: relative;
 	top: 50%;
@@ -72,8 +72,13 @@ a:hover {
 	z-index: 99;
 }
 
-.info-loading {
-	text-align: center;
+#pageload-display {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	font-size: 1.4em;
+	font-weight: bold;
+	padding: 18px;
 }
 
 #characterselect {
@@ -159,7 +164,13 @@ a:hover {
 
 #info-image {
 	display: block;
-	/* margin: 0px auto 12px; */
+}
+
+.description-area #info-image {
+	margin: 0px auto 12px;
+	max-width: 100%;
+	max-height: 400px;
+	filter: drop-shadow(0px 0px 2px white);
 }
 
 .color-options {
@@ -209,43 +220,43 @@ a:hover {
 	margin: 8px auto 0px;
 }
 
-.selectbox-container {
+.css-container {
 	width: fit-content;
 	position: relative;
 	z-index: 101;
 }
 
-.selectbox-container a {
+.css-container a {
 	display: block;
 }
 
-.selectbox-container img {
+.css-container img {
 	user-select: none;
 }
 
-div.selectbox-positioner {
+div.css-positioner {
 	pointer-events: none;
 	position: relative;
 	width: 0px;
 	height: 0px;
 }
 
-.selectbox-container a, .selectbox-character, area {
+.css-container a, .css-character, area {
 	cursor: pointer;
 }
 
-.selectbox-character img {
+.css-character img {
 	display: block;
 }
 
-.selectbox-row {
+.css-row {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
 	max-width: 100%;
 }
 
-.selectbox-fullroster {
+.css-fullroster {
 	display: block;
 }
 

@@ -36,11 +36,11 @@ const chrSel = [
 
 const pageMusic = new Audio("audio/music/MBAACC - Actor's Anteroom -Remastering- loop.ogg");
 pageMusic.loop = true;
-pageMusic.volume = 0.2;
+pageMusic.volume = 0.2 * volumeModifier;
 pageMusic.preload = "auto";
 
 const pageMusicIntro = new Audio("audio/music/MBAACC - Actor's Anteroom -Remastering- intro.ogg");
-pageMusicIntro.volume = 0.2;
+pageMusicIntro.volume = 0.2 * volumeModifier;
 
 pageMusic.addEventListener("canplay", playMusic);
 function playMusic() {
@@ -65,35 +65,35 @@ var styleInteraction = true;
 
 var previousCharacter = "";
 
-function hoverDisplay(charFileName, charIcon) {
-	if (charFileName !== previousCharacter && interactionEnabled) {
+function hoverDisplay(characterName, charIcon) {
+	if (characterName !== previousCharacter && interactionEnabled) {
 		sfx.cursor.currentTime = 0;
 		sfx.cursor.play();
 
-		chrPrevImg.src = "img/portraits/mbaacc/" + charFileName + ".png";
+		chrPrevImg.src = "img/portraits/mbaacc/" + characterName + ".png";
 		chrPrevImg.onload = function() {
 			chrPrevImg.style.height = chrPrevImg.naturalHeight * 1.8 + "px";
 			document.getElementById("info-portrait-temp").style.height = chrPrevImg.style.height;
 		};
 		chrName.innerHTML = "<span style='font-size: 1.6em; font-style: italic'>" + charIcon.dataset.nameJp + "</span><br>";
-		if (charFileName === "Aoko_Aozaki" || charFileName === "Shiki_Tohno" || charFileName === "Shiki_Nanaya" || charFileName === "Kouma_Kishima" || charFileName === "Miyako_Arima" || charFileName === "Akiha_Tohno" || charFileName === "Shiki_Ryougi") {
-			chrName.innerHTML += charFileName.split("_")[1].toUpperCase() + " " + charFileName.split("_")[0].toUpperCase();
-		} else if (charFileName === "Archetype_Earth") {
+		if (characterName === "Aoko_Aozaki" || characterName === "Shiki_Tohno" || characterName === "Shiki_Nanaya" || characterName === "Kouma_Kishima" || characterName === "Miyako_Arima" || characterName === "Akiha_Tohno" || characterName === "Shiki_Ryougi") {
+			chrName.innerHTML += characterName.split("_")[1].toUpperCase() + " " + characterName.split("_")[0].toUpperCase();
+		} else if (characterName === "Archetype_Earth") {
 			chrName.innerHTML += "ARCHETYPE:EARTH";
-		} else if (charFileName === "Hisui_&_Kohaku") {
+		} else if (characterName === "Hisui_&_Kohaku") {
 			chrName.innerHTML += "HISUI&KOHAKU";
-		} else if (charFileName === "Arcueid_Brunestud") {
+		} else if (characterName === "Arcueid_Brunestud") {
 			chrName.innerHTML += "ARCUEID=BRUNESTUD";
-		} else if (charFileName === "Powered_Ciel") {
+		} else if (characterName === "Powered_Ciel") {
 			chrName.innerHTML += "POWERD CIEL";
-		} else if (charFileName === "Akiha_Tohno_(Seifuku)") {
+		} else if (characterName === "Akiha_Tohno_(Seifuku)") {
 			chrName.innerHTML += "TOHNO AKIHA";
-		} else if (charFileName === "Satsuki_Yumizuka") {
+		} else if (characterName === "Satsuki_Yumizuka") {
 			chrName.innerHTML += "YUMIDUKA SATSUKI";
-		} else if (charFileName === "Kohaku_&_Mech") {
+		} else if (characterName === "Kohaku_&_Mech") {
 			chrName.innerHTML += "KOHA & MECH";
 		} else {
-			chrName.innerHTML += charFileName.replace(/_/g, " ").toUpperCase();
+			chrName.innerHTML += characterName.replace(/_/g, " ").toUpperCase();
 		}
 
 		document.getElementById("info-portrait-temp").src = chrPrevImg.src;
@@ -105,7 +105,7 @@ function hoverDisplay(charFileName, charIcon) {
 		void chrName.offsetWidth;
 		chrName.classList.add("name-onhover");
 
-		previousCharacter = charFileName;
+		previousCharacter = characterName;
 	}
 }
 
@@ -138,11 +138,12 @@ document.getElementById("moonstyle-f").addEventListener("mouseover",
 
 document.getElementById("character-random").addEventListener("mouseover",
 	() => {
-		if (interactionEnabled) {
+		if (interactionEnabled && previousCharacter !== "Random") {
 			sfx.cursor.currentTime = 0;
 			sfx.cursor.play();
 			chrPrevImg.src = "";
 			chrName.innerHTML = "";
+			previousCharacter = "Random";
 		}
 	}
 );
@@ -162,6 +163,7 @@ function runDisplay(characterName, moonType = "") {
 
 		if (characterName === "Random") {
 			characterName = chrSel[Math.floor(Math.random() * chrSel.length)].onclick.toString().split("'")[1];
+			previousCharacter = characterName;
 			chrPrevImg.src = "img/portraits/mbaacc/" + characterName + ".png";
 			chrPrevImg.onload = function() {
 				chrPrevImg.style.height = chrPrevImg.naturalHeight * 1.8 + "px";
@@ -228,7 +230,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -276,7 +278,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -324,7 +326,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -372,7 +374,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -420,7 +422,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -468,7 +470,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -516,7 +518,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -564,7 +566,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -612,7 +614,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -660,7 +662,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -708,7 +710,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -756,7 +758,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -804,7 +806,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -852,7 +854,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -900,7 +902,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -948,7 +950,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -996,7 +998,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -1044,7 +1046,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -1092,7 +1094,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -1140,7 +1142,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -1188,7 +1190,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -1236,7 +1238,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -1284,7 +1286,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -1332,7 +1334,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -1380,7 +1382,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -1428,7 +1430,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -1476,7 +1478,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -1524,7 +1526,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -1572,7 +1574,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -1620,7 +1622,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -1668,7 +1670,7 @@ function runDisplay(characterName, moonType = "") {
 						dislikes: [],
 						stats: [1,1,1,1,1],
 						bio: `
-							<p><b>Crecent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
+							<p><b>Crescent Moon ` + characterName.replace(/_/g, " ") + `</b> is</p>
 						`,
 					}
 				} else if (moonType === "H") {
@@ -1710,7 +1712,7 @@ function runDisplay(characterName, moonType = "") {
 }
 
 function startupDisplay() {
-	var iconArray = Array.prototype.slice.call(document.getElementsByClassName("selectbox-character"));
+	var iconArray = Array.prototype.slice.call(document.getElementsByClassName("css-character"));
 	iconArray = iconArray.splice(0, iconArray.length - 1);
 	
 	var characterIcons = [
@@ -1782,7 +1784,7 @@ function startupDisplay() {
 		} else {
 			setTimeout(function() {
 				interactionEnabled = true;
-				document.getElementsByClassName("selectbox-container")[0].style.pointerEvents = "all";
+				document.getElementsByClassName("css-container")[0].style.pointerEvents = "all";
 				document.getElementById("moonstyle-area").style.transition = "all 0.5s ease-in-out";
 			}, 400);
 		}

@@ -89,7 +89,7 @@ body {
 #info-name {
     position: absolute;
     top: 75vh;
-    left: -28px;
+    left: 0px;
     z-index: 440;
     pointer-events: none;
     transform: scale(0.8, 1);
@@ -97,20 +97,20 @@ body {
     aspect-ratio: auto auto;
 }
 
-.selectbox-title, .fullroster-container {
+.css-title, .fullroster-container {
     position: absolute;
     left: 0;
     right: 0;
     margin: auto;
 }
 
-.selectbox-title {
+.css-title {
     top: -1vh;
     height: 11vh;
     z-index: 420;
 }
 
-.selectbox-fullroster {
+.css-fullroster {
     position: relative;
     height: calc(100vh - 200px);
     margin: auto;
