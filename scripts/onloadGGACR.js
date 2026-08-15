@@ -34,9 +34,9 @@ pageMusic.volume = 0.2;
 pageMusic.play();
 
 const sfx = {
-	cursor: new Audio("audio/sfx/ggacr/Cursor.wav"),
-	confirm: new Audio("audio/sfx/ggacr/Confirm.wav"),
-	cancel: new Audio("audio/sfx/ggacr/Cancel.wav"),
+	cursor: new Audio("audio/sfx/ggacr/cursor.wav"),
+	confirm: new Audio("audio/sfx/ggacr/confirm.wav"),
+	cancel: new Audio("audio/sfx/ggacr/cancel.wav"),
 	intro: new Audio("audio/sfx/ggacr/CharSelect_call.wav"),
 }
 sfx.cursor.volume = 0.2;

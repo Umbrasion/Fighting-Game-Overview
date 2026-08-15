@@ -21,12 +21,13 @@ pageMusicIntro.onended = function() {
 
 const sfx = {
 	cursor: new Audio("audio/sfx/nasb2/cursor.wav"),
-	colorCursor: new Audio("audio/sfx/nasb2/cursor.wav"),
-	confirm: new Audio("audio/sfx/nasb2/Confirm.wav"),
-	cancel: new Audio("audio/sfx/nasb2/Cancel.wav"),
+	colorCursor: new Audio("audio/sfx/nasb2/color_cursor.wav"),
+	confirm: new Audio("audio/sfx/nasb2/confirm.wav"),
+	cancel: new Audio("audio/sfx/nasb2/cancel.wav"),
 	announcer: new Audio("audio/sfx/nasb2/announcer/SpongeBob_call.wav"),
 }
 sfx.cursor.volume = 0.3;
+sfx.colorCursor.volume = 0.3;
 sfx.confirm.volume = 0.3;
 sfx.cancel.volume = 0.3;
 sfx.announcer.volume = 0.3;

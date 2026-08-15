@@ -20,9 +20,9 @@ pageMusicIntro.onended = function() {
 }
 
 const sfx = {
-	cursor: new Audio("audio/sfx/fm/Cursor.ogg"),
-	confirm: new Audio("audio/sfx/fm/Confirm.ogg"),
-	cancel: new Audio("audio/sfx/fm/Cancel.ogg"),
+	cursor: new Audio("audio/sfx/fm/cursor.ogg"),
+	confirm: new Audio("audio/sfx/fm/confirm.ogg"),
+	cancel: new Audio("audio/sfx/fm/cancel.ogg"),
 	announcer: new Audio("audio/sfx/fm/announcer/CSS_call1.ogg"),
 }
 sfx.cursor.volume = 0.2;
